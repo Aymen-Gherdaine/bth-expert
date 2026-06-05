@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
 import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -58,7 +60,11 @@ export default async function LangLayout({
       dir={dir}
       className={`${cormorant.variable} ${dmSans.variable}`}
     >
-      <body>{children}</body>
+      <body className="flex flex-col min-h-screen">
+        <Header lang={lang} />
+        <main className="flex-1">{children}</main>
+        <Footer lang={lang} />
+      </body>
     </html>
   );
 }

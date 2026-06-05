@@ -1,24 +1,15 @@
 import "server-only";
 import { notFound } from "next/navigation";
 import type frDict from "@/dictionaries/fr.json";
+import { locales, type Locale } from "./i18n-config";
 
-export const locales = ["fr", "ar", "en"] as const;
-export type Locale = (typeof locales)[number];
-
-export const defaultLocale: Locale = "fr";
-
-export const localeNames: Record<Locale, string> = {
-  fr: "Français",
-  ar: "العربية",
-  en: "English",
-};
-
-export const isRtl = (locale: Locale): boolean => locale === "ar";
+// Ré-exporte tout depuis i18n-config pour que les Server Components
+// gardent un seul point d'import : @/lib/i18n
+export * from "./i18n-config";
 
 /**
  * Valide qu'une string est une locale supportée.
  * Sinon déclenche un 404 (Next.js notFound).
- * Le middleware empêche normalement ce cas, mais on garde la sécurité runtime.
  */
 export function validateLocale(lang: string): Locale {
   if (!locales.includes(lang as Locale)) notFound();

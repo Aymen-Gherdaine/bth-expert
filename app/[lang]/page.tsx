@@ -1,4 +1,5 @@
 import { getDictionary, validateLocale } from "@/lib/i18n";
+import { Container } from "@/components/layout/Container";
 
 export default async function HomePage({
   params,
@@ -10,16 +11,20 @@ export default async function HomePage({
   const dict = await getDictionary(lang);
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-8">
-      <div className="text-center max-w-2xl">
-        <h1 className="text-5xl font-display font-medium mb-6">
-          BTH <em className="text-gold italic">Expert</em>
-        </h1>
-        <p className="text-muted text-lg mb-2">
-          Langue active : <strong className="text-ink">{lang}</strong>
+    <Container>
+      <section className="py-24 md:py-32 max-w-3xl">
+        <p className="text-xs uppercase tracking-widest text-gold mb-6">
+          {/* placeholder eyebrow */}
+          BTH Expert · Oran · Algérie
         </p>
-        <p className="text-muted text-sm">{dict.metadata.homeDescription}</p>
-      </div>
-    </main>
+        <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight leading-[1.05] mb-8">
+          Expertise <em className="text-gold italic">environnementale</em>
+          <br />& industrielle
+        </h1>
+        <p className="text-lg text-ink-soft leading-relaxed">
+          {dict.metadata.homeDescription}
+        </p>
+      </section>
+    </Container>
   );
 }
