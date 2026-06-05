@@ -10,10 +10,10 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 > Objectif : structure du projet prête à recevoir du contenu, sans aucune page de contenu encore.
 
 - [x] **0.1** — Scaffold Next.js 16 + TS + Tailwind v4 + branche `feat/architecture-base`
-- [ ] **0.2** — Design tokens dans `app/globals.css` (couleurs BTH, espacement, radius, shadows)
-- [ ] **0.3** — Polices : Cormorant Garamond + DM Sans via `next/font` dans le layout racine
-- [ ] **0.4** — Routing i18n : `app/[lang]/` + `lib/i18n.ts` + `dictionaries/{fr,ar,en}.json`
-- [ ] **0.5** — Layout racine + layout `[lang]` avec `dir="rtl"` conditionnel pour AR
+- [x] **0.2** — Design tokens dans `app/globals.css` (couleurs BTH, espacement, radius, shadows)
+- [x] **0.3** — Polices : Cormorant Garamond + DM Sans via `next/font` dans le layout racine
+- [x] **0.4** — Routing i18n : `app/[lang]/` + `lib/i18n.ts` + `dictionaries/{fr,ar,en}.json`
+- [x] **0.5** — Layout racine + layout `[lang]` avec `dir="rtl"` conditionnel pour AR
 - [ ] **0.6** — `lib/seo.ts` : helpers `buildMetadata()` avec hreflang multilingue
 - [ ] **0.7** — `lib/schema.ts` : générateurs JSON-LD (LocalBusiness, Service, Article, Person, FAQPage)
 - [ ] **0.8** — `lib/content.ts` : parsing markdown + frontmatter (gray-matter + remark)

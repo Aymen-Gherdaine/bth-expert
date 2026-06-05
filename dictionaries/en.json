@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "homeTitle": "BTH Expert — Certified Environmental Consultancy | Oran",
+    "homeDescription": "Environmental consultancy certified by the Algerian Ministry of Environment. Impact assessments, hazard studies, HSE audits and regulatory compliance in Oran and across Algeria."
+  },
+  "nav": {
+    "services": "Services",
+    "secteurs": "Sectors",
+    "equipe": "Team",
+    "projets": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "quote": "Request a Quote"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "zones": "Service Areas",
+    "language": "Language"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "contactUs": "Contact us"
+  }
+}
