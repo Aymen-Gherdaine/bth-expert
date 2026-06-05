@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "homeTitle": "BTH Expert — Bureau d'études environnemental agréé | Oran",
+    "homeDescription": "Bureau d'études agréé par le Ministère de l'Environnement algérien. Études d'impact, études de dangers, audits HSE et conformité réglementaire à Oran et dans toute l'Algérie."
+  },
+  "nav": {
+    "services": "Services",
+    "secteurs": "Secteurs",
+    "equipe": "Équipe",
+    "projets": "Projets",
+    "blog": "Blog",
+    "contact": "Contact",
+    "quote": "Demander un devis"
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "zones": "Zones d'intervention",
+    "language": "Langue"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "contactUs": "Contactez-nous"
+  }
+}
