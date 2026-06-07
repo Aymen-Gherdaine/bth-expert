@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
+import { schemaLocalBusiness } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { ContactForm } from "@/components/ui/ContactForm";
@@ -31,9 +32,15 @@ export default async function ContactPage({
   const lang = validateLocale(rawLang);
   const dict = await getDictionary(lang);
   const c = dict.contact;
+  const jsonLd = schemaLocalBusiness();
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ── Hero ─────────────────────────────────────────────── */}
       <Container>
         <div className="pt-32 pb-16 md:pt-40 md:pb-24 lg:grid lg:grid-cols-12 lg:gap-8">

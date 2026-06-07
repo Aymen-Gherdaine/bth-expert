@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
+import { schemaLocalBusiness } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 
@@ -33,6 +34,8 @@ export default async function ServicesPage({
   const s = dict.services;
   const items = dict.home.services.items;
 
+  const jsonLd = schemaLocalBusiness();
+
   const serviceLinks: Record<string, string> = {
     EIE: `/${lang}/services/etude-impact-environnemental`,
     EIA: `/${lang}/services/etude-impact-environnemental`,
@@ -40,6 +43,11 @@ export default async function ServicesPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ── Hero ─────────────────────────────────────────────── */}
       <Container>
         <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">

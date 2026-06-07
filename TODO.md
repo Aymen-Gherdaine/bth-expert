@@ -25,25 +25,25 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 
 ---
 
-## 🟢 Phase 1 — Pages prioritaires SEO (en français)
+## 🔵 Phase 1 — Pages prioritaires SEO (en français)
 
 > Objectif : les 5 pages qui vont ranker en premier. Toutes en FR uniquement.
 
 - [x] **1.1** — Composants layout : `Header`, `Footer`, `Nav`, `LangSwitcher`
 - [x] **1.2** — Composants UI base : `Button`, `Card`, `Section`, `Container`, `Badge`
-- [ ] **1.3** — Page **Accueil** (`/fr/`) : hero, stats, services preview, équipe preview, projets preview, CTA contact
-- [ ] **1.4** — Page **`/fr/oran/`** (SEO local prioritaire — non navbar)
-- [ ] **1.5** — Page **`/fr/services/etude-impact-environnemental/`** (mot-clé principal)
-- [ ] **1.6** — Page **`/fr/equipe/`** (Amine + Abdellah, signal E-E-A-T)
-- [ ] **1.7** — Page **`/fr/contact/`** (port du design actuel + form sécurisé serverless)
-- [ ] **1.8** — JSON-LD complet sur chaque page (via `lib/schema.ts`)
-- [ ] **1.9** — OG images générées par page (`opengraph-image.tsx`)
+- [x] **1.3** — Page **Accueil** (`/fr/`) : hero, stats, services preview, équipe preview, projets preview, CTA contact
+- [x] **1.4** — Page **`/fr/oran/`** (SEO local prioritaire — non navbar)
+- [x] **1.5** — Page **`/fr/services/etude-impact-environnemental/`** (mot-clé principal)
+- [x] **1.6** — Page **`/fr/equipe/`** (Amine + Abdellah, signal E-E-A-T)
+- [x] **1.7** — Page **`/fr/contact/`** (form sécurisé Netlify Forms + panel info)
+- [x] **1.8** — JSON-LD complet sur chaque page (LocalBusiness, Service, Person)
+- [x] **1.9** — OG images générées par page (`opengraph-image.tsx` au niveau `[lang]`)
 
 **Sortie Phase 1 :** site déployable avec les 5 pages SEO-prioritaires, prêt à indexer.
 
 ---
 
-## 🟡 Phase 2 — Complétude contenu
+## 🟢 Phase 2 — Complétude contenu
 
 - [ ] **2.1** — Pages services restantes : étude de dangers, audit, conformité, HSE
 - [ ] **2.2** — Pages secteurs : pétrochimie, pharmaceutique, agroalimentaire, BTP
