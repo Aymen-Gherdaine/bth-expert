@@ -21,6 +21,50 @@
     "learnMore": "En savoir plus",
     "contactUs": "Contactez-nous"
   },
+  "services": {
+    "meta": {
+      "title": "Services — Études environnementales & HSE | BTH Expert",
+      "description": "Études d'impact sur l'environnement, études de dangers, audits HSE et plans de gestion environnementale. BTH Expert, bureau d'études agréé à Oran."
+    },
+    "hero": {
+      "eyebrow": "Bureau d'études agréé",
+      "heading": "Nos services environnementaux",
+      "subheading": "Quatre grandes familles de prestations pour accompagner vos obligations réglementaires, de l'instruction du projet à la mise en exploitation."
+    }
+  },
+  "eie": {
+    "meta": {
+      "title": "Étude d'Impact sur l'Environnement (EIE) en Algérie — BTH Expert",
+      "description": "Bureau d'études agréé pour la réalisation des études d'impact environnemental (EIE) en Algérie. Rapports conformes aux exigences du Ministère de l'Environnement. Basé à Oran."
+    },
+    "hero": {
+      "eyebrow": "EIE · Agrément Ministère de l'Environnement",
+      "heading": "Étude d'Impact sur l'Environnement",
+      "subheading": "L'EIE est le document réglementaire qui évalue les impacts d'un projet sur son environnement naturel, humain et socio-économique. Sa réalisation est obligatoire pour tous les projets soumis à étude d'impact selon le décret exécutif n° 07-144."
+    },
+    "why": {
+      "heading": "Qui est concerné ?",
+      "description": "Tout porteur de projet industriel, minier, agricole ou d'infrastructure dont le projet figure sur la liste des travaux soumis à EIE est légalement tenu de produire cette étude avant l'obtention de son autorisation de construire ou d'exploitation."
+    },
+    "methodology": {
+      "heading": "Notre méthodologie",
+      "steps": [
+        { "number": "01", "title": "État initial du site", "description": "Inventaire des composantes environnementales : milieu physique, biologique, humain et paysager. Données mesurées sur site et données secondaires." },
+        { "number": "02", "title": "Analyse des impacts", "description": "Identification, qualification et hiérarchisation des impacts directs et indirects du projet sur les composantes environnementales. Impacts temporaires et permanents." },
+        { "number": "03", "title": "Mesures d'atténuation", "description": "Définition des mesures de suppression, réduction et compensation des impacts significatifs. Chaque mesure est chiffrée et planifiée." },
+        { "number": "04", "title": "Programme de surveillance", "description": "Indicateurs de suivi environnemental, fréquence des contrôles, seuils d'alerte et procédures de reporting au Ministère." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Livrable",
+      "description": "Un rapport EIE structuré, conforme au canevas réglementaire algérien, prêt pour le dépôt auprès de la Direction de l'Environnement de Wilaya (DEW) et la Direction de l'Industrie et des Mines (DIM)."
+    },
+    "cta": {
+      "heading": "Votre projet nécessite une EIE ?",
+      "description": "Transmettez-nous les éléments techniques de votre projet. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.",
+      "button": "Demander un devis"
+    }
+  },
   "oran": {
     "meta": {
       "title": "Bureau d'études environnemental à Oran — BTH Expert",

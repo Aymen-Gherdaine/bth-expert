@@ -21,6 +21,50 @@
     "learnMore": "Learn more",
     "contactUs": "Contact us"
   },
+  "services": {
+    "meta": {
+      "title": "Services — Environmental Studies & HSE | BTH Expert",
+      "description": "Environmental impact assessments, hazard studies, HSE audits and environmental management plans. BTH Expert, certified consultancy in Oran."
+    },
+    "hero": {
+      "eyebrow": "Certified consultancy",
+      "heading": "Our environmental services",
+      "subheading": "Four core service lines to support your regulatory obligations, from project inception to operational phase."
+    }
+  },
+  "eie": {
+    "meta": {
+      "title": "Environmental Impact Assessment (EIA) in Algeria — BTH Expert",
+      "description": "Certified consultancy for environmental impact assessments (EIA) in Algeria. Reports compliant with Ministry of Environment requirements. Based in Oran."
+    },
+    "hero": {
+      "eyebrow": "EIA · Ministry of Environment Certification",
+      "heading": "Environmental Impact Assessment",
+      "subheading": "An EIA is the regulatory document that evaluates a project's impacts on its natural, human and socio-economic environment. It is mandatory for all projects subject to impact assessment under Algerian law."
+    },
+    "why": {
+      "heading": "Who is required to submit one?",
+      "description": "Any owner of an industrial, mining, agricultural or infrastructure project listed among the works subject to EIA is legally required to produce this study before obtaining a building or operating permit."
+    },
+    "methodology": {
+      "heading": "Our methodology",
+      "steps": [
+        { "number": "01", "title": "Baseline site assessment", "description": "Inventory of environmental components: physical, biological, human and landscape settings. On-site measurements and secondary data." },
+        { "number": "02", "title": "Impact analysis", "description": "Identification, qualification and ranking of direct and indirect project impacts on environmental components. Temporary and permanent impacts." },
+        { "number": "03", "title": "Mitigation measures", "description": "Definition of suppression, reduction and compensation measures for significant impacts. Each measure is costed and scheduled." },
+        { "number": "04", "title": "Monitoring programme", "description": "Environmental monitoring indicators, inspection frequency, alert thresholds and Ministry reporting procedures." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Deliverable",
+      "description": "A structured EIA report, compliant with the Algerian regulatory template, ready for submission to the Wilaya Environment Directorate and the Directorate of Industry and Mines."
+    },
+    "cta": {
+      "heading": "Does your project require an EIA?",
+      "description": "Send us the technical details of your project. We assess the study scope and provide a quote within 48 hours.",
+      "button": "Request a Quote"
+    }
+  },
   "oran": {
     "meta": {
       "title": "Environmental Consultancy in Oran — BTH Expert",
