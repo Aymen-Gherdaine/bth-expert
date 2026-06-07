@@ -21,6 +21,37 @@
     "learnMore": "Learn more",
     "contactUs": "Contact us"
   },
+  "oran": {
+    "meta": {
+      "title": "Environmental Consultancy in Oran — BTH Expert",
+      "description": "BTH Expert, certified environmental consultancy based in Oran (Bir El Djir). Impact assessments, hazard studies and HSE audits for industrial projects in Oran and western Algeria."
+    },
+    "hero": {
+      "eyebrow": "Bir El Djir, Oran · Algeria",
+      "heading": "Environmental consultancy in Oran",
+      "subheading": "Certified by the Ministry of Environment, BTH Expert supports industrial, mining and infrastructure project owners in the wilaya of Oran and across western Algeria."
+    },
+    "services": {
+      "heading": "Our services in Oran",
+      "description": "From the project instruction phase through to environmental monitoring during operations, BTH Expert delivers studies compliant with the applicable Algerian regulatory framework."
+    },
+    "zones": {
+      "heading": "Service areas",
+      "description": "Based in Bir El Djir, Oran, BTH Expert operates across all wilayas of western Algeria.",
+      "wilayas": ["Oran", "Mostaganem", "Tlemcen", "Sidi Bel Abbès", "Relizane", "Mascara", "Aïn Témouchent"]
+    },
+    "nap": {
+      "heading": "Contact details",
+      "address": "40, Lotissement 119, Bir El Djir, Oran",
+      "phone": "+213 670 70 81 38",
+      "email": "info@bthexpert.dz"
+    },
+    "cta": {
+      "heading": "Your project in Oran",
+      "description": "Send us your project details. We assess your regulatory obligations and propose a tailored offer.",
+      "button": "Request a Quote"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Certified by the Ministry of Environment · Oran, Algeria",
