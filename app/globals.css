@@ -65,6 +65,29 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
+   Animations — hero fade-in (CSS, no JS required)
+   ═══════════════════════════════════════════════════════════ */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-hero {
+    animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-hero-1 { animation-delay: 0ms; }
+  .animate-hero-2 { animation-delay: 120ms; }
+  .animate-hero-3 { animation-delay: 240ms; }
+}
+
+/* ═══════════════════════════════════════════════════════════
    Base styles
    ═══════════════════════════════════════════════════════════ */
 @layer base {

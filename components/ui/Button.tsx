@@ -7,6 +7,10 @@ const variants = {
     "border border-line text-ink hover:border-brand hover:text-brand",
   ghost:
     "text-ink-soft hover:text-brand",
+  "outline-cream":
+    "border border-cream/25 text-cream hover:border-cream hover:bg-cream hover:text-brand",
+  "ghost-cream":
+    "text-cream/60 hover:text-cream",
 } as const;
 
 const sizes = {
