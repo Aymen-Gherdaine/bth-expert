@@ -20,5 +20,70 @@
   "common": {
     "learnMore": "En savoir plus",
     "contactUs": "Contactez-nous"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Agréé Ministère de l'Environnement · Oran, Algérie",
+      "headlinePart1": "Expertise",
+      "headlineEmphasis": "environnementale",
+      "headlinePart2": "& industrielle",
+      "subheading": "Bureau d'études certifié depuis 2009. Études d'impact, études de dangers, audits HSE — du projet à la conformité réglementaire.",
+      "cta": "Demander un devis",
+      "ctaSecondary": "Nos services"
+    },
+    "services": {
+      "sectionNumber": "01",
+      "eyebrow": "Services",
+      "heading": "Des études rigoureuses, des livrables conformes",
+      "items": [
+        {
+          "abbr": "EIE",
+          "title": "Étude d'Impact sur l'Environnement",
+          "description": "Évaluation complète des impacts environnementaux des projets industriels, miniers et d'infrastructure. Rapport conforme aux exigences du Ministère de l'Environnement."
+        },
+        {
+          "abbr": "EDD",
+          "title": "Étude de Dangers",
+          "description": "Analyse des risques majeurs pour les établissements classés. Scénarios d'accident, zones d'effet, mesures de prévention et plans d'urgence."
+        },
+        {
+          "abbr": "HSE",
+          "title": "Audit HSE",
+          "description": "Diagnostic de conformité hygiène, sécurité et environnement. Identification des écarts réglementaires et plan d'action priorisé."
+        },
+        {
+          "abbr": "PGE",
+          "title": "Plan de Gestion Environnementale",
+          "description": "Définition des mesures d'atténuation et de surveillance environnementale pour toute la durée de vie du projet."
+        }
+      ],
+      "itemCta": "En savoir plus",
+      "cta": "Voir tous les services"
+    },
+    "stats": {
+      "eyebrow": "En chiffres",
+      "items": [
+        { "value": "2009", "label": "Année de fondation", "highlight": true },
+        { "value": "15+", "label": "Années d'expérience", "highlight": false },
+        { "value": "200+", "label": "Projets réalisés", "highlight": false },
+        { "value": "12", "label": "Secteurs couverts", "highlight": false }
+      ]
+    },
+    "equipe": {
+      "sectionNumber": "02",
+      "eyebrow": "Équipe",
+      "heading": "Des experts reconnus par le Ministère",
+      "description": "Ingénieurs agréés, maîtrise du cadre réglementaire algérien et des standards ISO/IEC internationaux. BTH Expert intervient en partenariat avec BTH Consult pour les projets d'envergure régionale.",
+      "cta": "Rencontrer l'équipe"
+    },
+    "contact": {
+      "sectionNumber": "03",
+      "eyebrow": "Contact",
+      "heading": "Un projet en cours ? Parlons-en.",
+      "description": "Décrivez-nous votre projet, vos contraintes réglementaires et votre calendrier. Nous revenons vers vous sous 48h.",
+      "cta": "Demander un devis",
+      "phone": "+213 670 70 81 38",
+      "email": "info@bthexpert.dz"
+    }
   }
 }

@@ -20,5 +20,70 @@
   "common": {
     "learnMore": "Learn more",
     "contactUs": "Contact us"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Certified by the Ministry of Environment · Oran, Algeria",
+      "headlinePart1": "Environmental",
+      "headlineEmphasis": "& industrial",
+      "headlinePart2": "expertise",
+      "subheading": "Certified consultancy since 2009. Impact assessments, hazard studies, HSE audits — from project inception to regulatory compliance.",
+      "cta": "Request a Quote",
+      "ctaSecondary": "Our services"
+    },
+    "services": {
+      "sectionNumber": "01",
+      "eyebrow": "Services",
+      "heading": "Rigorous studies, compliant deliverables",
+      "items": [
+        {
+          "abbr": "EIA",
+          "title": "Environmental Impact Assessment",
+          "description": "Comprehensive evaluation of environmental impacts for industrial, mining and infrastructure projects. Report compliant with Ministry of Environment requirements."
+        },
+        {
+          "abbr": "HS",
+          "title": "Hazard Study",
+          "description": "Major risk analysis for classified establishments. Accident scenarios, effect zones, prevention measures and emergency plans."
+        },
+        {
+          "abbr": "HSE",
+          "title": "HSE Audit",
+          "description": "Health, safety and environment compliance diagnosis. Identification of regulatory gaps and prioritised action plan."
+        },
+        {
+          "abbr": "EMP",
+          "title": "Environmental Management Plan",
+          "description": "Definition of mitigation and environmental monitoring measures throughout the project lifecycle."
+        }
+      ],
+      "itemCta": "Learn more",
+      "cta": "View all services"
+    },
+    "stats": {
+      "eyebrow": "By the numbers",
+      "items": [
+        { "value": "2009", "label": "Year founded", "highlight": true },
+        { "value": "15+", "label": "Years of experience", "highlight": false },
+        { "value": "200+", "label": "Projects completed", "highlight": false },
+        { "value": "12", "label": "Sectors covered", "highlight": false }
+      ]
+    },
+    "equipe": {
+      "sectionNumber": "02",
+      "eyebrow": "Team",
+      "heading": "Experts recognised by the Ministry",
+      "description": "Accredited engineers with deep mastery of the Algerian regulatory framework and international ISO/IEC standards. BTH Expert operates in partnership with BTH Consult for regional-scale projects.",
+      "cta": "Meet the team"
+    },
+    "contact": {
+      "sectionNumber": "03",
+      "eyebrow": "Contact",
+      "heading": "A project underway? Let's talk.",
+      "description": "Tell us about your project, your regulatory constraints and your timeline. We respond within 48 hours.",
+      "cta": "Request a Quote",
+      "phone": "+213 670 70 81 38",
+      "email": "info@bthexpert.dz"
+    }
   }
 }
