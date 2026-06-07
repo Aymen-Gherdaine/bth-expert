@@ -21,6 +21,47 @@
     "learnMore": "Learn more",
     "contactUs": "Contact us"
   },
+  "contact": {
+    "meta": {
+      "title": "Contact — Request a Quote | BTH Expert",
+      "description": "Contact BTH Expert for an impact assessment, hazard study or HSE audit. Response within 48 hours. Based in Oran, operating across Algeria."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "heading": "Let's talk about your project.",
+      "subheading": "Describe your project, your regulatory obligations and your timeline. We respond within 48 working hours."
+    },
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+213 6xx xx xx xx",
+      "subject": "Subject",
+      "subjectOptions": {
+        "devis": "Request a quote",
+        "eie": "Environmental impact assessment",
+        "edd": "Hazard study",
+        "hse": "HSE audit",
+        "autre": "Other"
+      },
+      "message": "Project description",
+      "messagePlaceholder": "Project type, location, expected timeline...",
+      "submit": "Send request",
+      "submitting": "Sending...",
+      "successTitle": "Message received.",
+      "successMessage": "We acknowledge receipt of your request. Our team will contact you within 48 working hours.",
+      "errorMessage": "An error occurred. Please try again or contact us directly by email."
+    },
+    "info": {
+      "heading": "Contact information",
+      "phone": "+213 670 70 81 38",
+      "email": "info@bthexpert.dz",
+      "address": "40, Lotissement 119, Bir El Djir, Oran, Algeria",
+      "hours": "Sunday to Thursday, 8:00 am – 5:00 pm"
+    }
+  },
   "equipe": {
     "meta": {
       "title": "Team — Certified Environmental Experts | BTH Expert",
