@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
 import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -34,12 +35,16 @@ export async function generateMetadata({
   const dict = await getDictionary(lang);
 
   return {
-    metadataBase: new URL("https://bthexpert.com"),
+    ...buildMetadata({
+      lang,
+      path: "/",
+      title: dict.metadata.homeTitle,
+      description: dict.metadata.homeDescription,
+    }),
     title: {
       default: dict.metadata.homeTitle,
       template: "%s — BTH Expert",
     },
-    description: dict.metadata.homeDescription,
   };
 }
 
