@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Fraunces, Geist } from "next/font/google";
 import "../globals.css";
 import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const cormorant = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-dm-sans",
+  weight: ["400", "500"],
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -63,7 +63,7 @@ export default async function LangLayout({
     <html
       lang={lang}
       dir={dir}
-      className={`${cormorant.variable} ${dmSans.variable}`}
+      className={`${fraunces.variable} ${geist.variable}`}
     >
       <body className="flex flex-col min-h-screen">
         <Header lang={lang} />

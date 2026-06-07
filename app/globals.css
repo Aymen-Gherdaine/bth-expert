@@ -27,8 +27,8 @@
   --color-line:        #d8d0bc;
 
   /* ── Polices (variables remplies en tâche 0.3 par next/font) ── */
-  --font-display:      var(--font-cormorant), Georgia, serif;
-  --font-sans:         var(--font-dm-sans), system-ui, sans-serif;
+  --font-display:      var(--font-fraunces), Georgia, serif;
+  --font-sans:         var(--font-geist), system-ui, sans-serif;
 
   /* ── Easing — courbes premium (jamais les valeurs par défaut) ── */
   --ease-out-expo:     cubic-bezier(0.16, 1, 0.3, 1);
