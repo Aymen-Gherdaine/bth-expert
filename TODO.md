@@ -29,8 +29,8 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 
 > Objectif : les 5 pages qui vont ranker en premier. Toutes en FR uniquement.
 
-- [ ] **1.1** — Composants layout : `Header`, `Footer`, `Nav`, `LangSwitcher`
-- [ ] **1.2** — Composants UI base : `Button`, `Card`, `Section`, `Container`, `Badge`
+- [x] **1.1** — Composants layout : `Header`, `Footer`, `Nav`, `LangSwitcher`
+- [x] **1.2** — Composants UI base : `Button`, `Card`, `Section`, `Container`, `Badge`
 - [ ] **1.3** — Page **Accueil** (`/fr/`) : hero, stats, services preview, équipe preview, projets preview, CTA contact
 - [ ] **1.4** — Page **`/fr/oran/`** (SEO local prioritaire — non navbar)
 - [ ] **1.5** — Page **`/fr/services/etude-impact-environnemental/`** (mot-clé principal)
