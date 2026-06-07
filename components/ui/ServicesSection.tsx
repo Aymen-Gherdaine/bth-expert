@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
-import Link from "next/link";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import type { Locale } from "@/lib/i18n";
@@ -29,17 +29,8 @@ interface ServicesSectionProps {
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const listVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
-};
-
-const rowVariant = {
-  hidden: { opacity: 0, x: -18 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease } },
-};
-
 export function ServicesSection({ lang, services }: ServicesSectionProps) {
+  const [active, setActive] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -47,135 +38,173 @@ export function ServicesSection({ lang, services }: ServicesSectionProps) {
     offset: ["start end", "end start"],
   });
 
-  /* Image moves up 18% of its container height during scroll — parallax depth */
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"]);
+  /* Parallax: image translates ±5% during scroll. scale(1.12) covers the movement */
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
-    <section ref={sectionRef} className="relative bg-brand overflow-hidden">
-      <div className="lg:grid lg:grid-cols-[1fr_44%]">
+    <section ref={sectionRef} className="bg-brand overflow-hidden">
 
-        {/* ── LEFT : liste de services ───────────────────────── */}
-        <div
-          className="py-24 md:py-32 lg:py-40 px-6 sm:px-8 lg:pe-16"
-          style={{
-            paddingLeft: "max(1.5rem, calc((100vw - 1280px) / 2 + 5rem))",
-          }}
+      {/* ── Header ──────────────────────────────────────────────────── */}
+      <div className="px-6 sm:px-8 lg:px-16 xl:px-24 pt-24 md:pt-32 pb-12 md:pb-16">
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease }}
+          className="flex items-center gap-4 mb-10"
         >
-          {/* Label section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-8% 0px" }}
-            transition={{ duration: 0.6, ease }}
-            className="flex items-center gap-4 mb-12 md:mb-16"
-          >
-            <span className="font-display text-[var(--text-caption)] text-gold tracking-widest">
-              {services.sectionNumber}
-            </span>
-            <span className="h-px w-8 bg-gold/30 shrink-0" />
-            <span className="text-[var(--text-caption)] uppercase tracking-widest text-[var(--color-on-brand-faint)]">
-              {services.eyebrow}
-            </span>
-          </motion.div>
+          <span className="font-display text-[var(--text-caption)] text-gold tracking-widest">
+            {services.sectionNumber}
+          </span>
+          <span className="h-px w-8 bg-gold/30 shrink-0" />
+          <span className="text-[var(--text-caption)] uppercase tracking-widest text-[var(--color-on-brand-faint)]">
+            {services.eyebrow}
+          </span>
+        </motion.div>
 
-          {/* Heading */}
+        {/* Heading — clip-path wipe upward */}
+        <div className="overflow-hidden">
           <motion.h2
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: "108%", opacity: 0 }}
+            whileInView={{ y: "0%", opacity: 1 }}
             viewport={{ once: true, margin: "-8% 0px" }}
-            transition={{ duration: 0.9, ease }}
-            className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-16 md:mb-20 max-w-lg"
-            style={{ fontSize: "clamp(1.75rem, 3vw + 0.5rem, 3rem)" }}
+            transition={{ duration: 1, ease }}
+            className="font-display font-light text-cream max-w-2xl tracking-[-0.03em] leading-[1.05]"
+            style={{ fontSize: "clamp(1.75rem, 3vw + 0.5rem, 3.25rem)" }}
           >
             {services.heading}
           </motion.h2>
+        </div>
+      </div>
 
-          {/* Service rows */}
-          <motion.div
-            variants={listVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-6% 0px" }}
-            className="divide-y divide-cream/10"
-          >
-            {services.items.map((item, index) => (
-              <motion.div key={item.abbr} variants={rowVariant}>
-                <Link
-                  href={`/${lang}/services`}
-                  className="group flex items-center gap-5 py-7 lg:py-8"
-                >
-                  {/* Index */}
-                  <span className="font-display font-light tabular-nums shrink-0 w-7 text-[0.8rem] text-gold/40 group-hover:text-gold/70 transition-colors duration-500 ease-[var(--ease-out-expo)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+      {/* ── Split: accordion list + photo ───────────────────────────── */}
+      <div className="lg:grid lg:grid-cols-[56%_44%]">
 
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <span className="text-[0.7rem] uppercase tracking-widest text-[var(--color-on-brand-faint)] block mb-1.5">
-                      {item.abbr}
-                    </span>
-                    <h3
-                      className="font-display font-light text-cream group-hover:text-gold transition-colors duration-500 ease-[var(--ease-out-expo)] tracking-[-0.02em] leading-[1.15]"
-                      style={{ fontSize: "clamp(1.05rem, 1.5vw + 0.3rem, 1.5rem)" }}
+        {/* LEFT — accordion service list */}
+        <div className="px-6 sm:px-8 lg:px-16 xl:px-24 pb-20 md:pb-28">
+          <div className="border-t border-cream/15">
+            {services.items.map((item, i) => (
+              <div
+                key={item.abbr}
+                className="border-b border-cream/15 relative"
+                onMouseEnter={() => setActive(i)}
+                onMouseLeave={() => setActive(null)}
+              >
+                {/* Gold left bar — scaleY reveal on hover */}
+                <motion.div
+                  className="absolute left-0 top-0 bottom-0 w-[2px] bg-gold origin-top"
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: active === i ? 1 : 0 }}
+                  transition={{ duration: 0.35, ease }}
+                />
+
+                <div className="py-8 ps-6 cursor-default select-none">
+                  <div className="flex items-start gap-6 lg:gap-8">
+
+                    {/* Giant editorial number */}
+                    <span
+                      className={`font-display font-light tabular-nums shrink-0 leading-[0.85] transition-colors duration-500 ${
+                        active === i ? "text-gold" : "text-gold/25"
+                      }`}
+                      style={{ fontSize: "clamp(2.5rem, 4vw, 4rem)" }}
                     >
-                      {item.title}
-                    </h3>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+
+                    <div className="flex-1 min-w-0 pt-1">
+                      <span className="text-[0.68rem] uppercase tracking-widest text-cream/25 block mb-2">
+                        {item.abbr}
+                      </span>
+                      <h3
+                        className={`font-display font-light tracking-[-0.02em] leading-[1.1] transition-colors duration-500 ${
+                          active === i ? "text-gold" : "text-cream"
+                        }`}
+                        style={{ fontSize: "clamp(1.4rem, 2vw + 0.3rem, 2.2rem)" }}
+                      >
+                        {item.title}
+                      </h3>
+
+                      {/* Description — expands on hover */}
+                      <motion.div
+                        animate={{
+                          height: active === i ? "auto" : 0,
+                          opacity: active === i ? 1 : 0,
+                        }}
+                        initial={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease }}
+                        className="overflow-hidden"
+                      >
+                        <p
+                          className="text-[var(--color-on-brand-muted)] leading-[1.8] pt-5 pb-3"
+                          style={{ fontSize: "var(--text-body)" }}
+                        >
+                          {item.description}
+                        </p>
+                        <Link
+                          href={`/${lang}/services`}
+                          className="inline-flex items-center gap-2 text-gold text-sm group/link pb-1"
+                        >
+                          <span>{services.itemCta}</span>
+                          <span className="group-hover/link:translate-x-1 transition-transform duration-300 inline-block">
+                            →
+                          </span>
+                        </Link>
+                      </motion.div>
+                    </div>
                   </div>
-
-                  {/* Arrow — nudge on hover via CSS */}
-                  <span className="text-cream/20 group-hover:text-gold group-hover:translate-x-2 transition-all duration-500 ease-[var(--ease-out-expo)] text-xl shrink-0 select-none">
-                    →
-                  </span>
-                </Link>
-              </motion.div>
+                </div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.25, ease }}
-            className="mt-14"
-          >
+          <div className="mt-12">
             <Button href={`/${lang}/services`} variant="outline-cream">
               {services.cta}
             </Button>
-          </motion.div>
+          </div>
         </div>
 
-        {/* ── RIGHT : photo sticky avec parallax ─────────────── */}
-        <div className="hidden lg:block relative">
+        {/* RIGHT — photo : clip-path wipe + parallax */}
+        <div className="hidden lg:block relative min-h-[680px]">
 
-          {/* Filet or — séparateur premium entre les deux colonnes */}
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gold/20 z-10" />
+          {/* Gold separator */}
+          <div className="absolute left-0 inset-y-0 w-px bg-gold/20 z-10" />
 
-          <div className="sticky top-0 h-screen overflow-hidden">
-            {/* Parallax wrapper — surdimensionné pour éviter les bords blancs */}
+          {/* Clip-path wipe: inset bottom 100% → 0% — reveals upward */}
+          <motion.div
+            initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+            whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+            viewport={{ once: true, margin: "-10% 0px" }}
+            transition={{ duration: 1.4, ease }}
+            className="absolute inset-0 overflow-hidden"
+          >
+            {/* Parallax layer — scale(1.12) covers ±5% movement without white edges */}
             <motion.div
               style={{ y: imageY }}
-              className="absolute inset-0 scale-[1.22]"
+              className="absolute inset-0 scale-[1.12]"
             >
-              <Image
-                src="/section service.webp"
-                alt="Expert BTH Expert en intervention terrain à Oran, Algérie"
-                fill
-                className="object-cover"
-                sizes="44vw"
-              />
-              {/* Voile brand très subtil — garde la profondeur sans tuer la photo */}
-              <div className="absolute inset-0 bg-brand/20" />
+              {/* next/image fill requires a `relative` ancestor — this div serves that role */}
+              <div className="relative w-full h-full">
+                <Image
+                  src="/section service.webp"
+                  alt="Expert BTH Expert en intervention terrain, Bir El Djir, Oran, Algérie"
+                  fill
+                  className="object-cover"
+                  sizes="44vw"
+                />
+              </div>
+              <div className="absolute inset-0 bg-brand/15" />
             </motion.div>
+          </motion.div>
 
-            {/* Légende bas-droite */}
-            <div className="absolute bottom-8 right-8 z-10 text-end">
-              <p className="text-[0.68rem] text-cream/25 uppercase tracking-widest leading-relaxed">
-                Bir El Djir · Oran
-                <br />
-                Algérie
-              </p>
-            </div>
+          {/* Caption */}
+          <div className="absolute bottom-8 right-8 z-10">
+            <p className="text-[0.68rem] text-cream/25 uppercase tracking-widest text-end leading-relaxed">
+              Bir El Djir · Oran
+              <br />
+              Algérie
+            </p>
           </div>
         </div>
 
