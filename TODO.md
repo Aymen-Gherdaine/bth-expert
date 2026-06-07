@@ -14,8 +14,8 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [x] **0.3** — Polices : Cormorant Garamond + DM Sans via `next/font` dans le layout racine
 - [x] **0.4** — Routing i18n : `app/[lang]/` + `lib/i18n.ts` + `dictionaries/{fr,ar,en}.json`
 - [x] **0.5** — Layout racine + layout `[lang]` avec `dir="rtl"` conditionnel pour AR
-- [ ] **0.6** — `lib/seo.ts` : helpers `buildMetadata()` avec hreflang multilingue
-- [ ] **0.7** — `lib/schema.ts` : générateurs JSON-LD (LocalBusiness, Service, Article, Person, FAQPage)
+- [x] **0.6** — `lib/seo.ts` : helpers `buildMetadata()` avec hreflang multilingue
+- [x] **0.7** — `lib/schema.ts` : générateurs JSON-LD (LocalBusiness, Service, Article, Person, FAQPage)
 - [ ] **0.8** — `lib/content.ts` : parsing markdown + frontmatter (gray-matter + remark)
 - [ ] **0.9** — `app/sitemap.ts` : sitemap dynamique multilingue
 - [ ] **0.10** — `app/robots.ts` : autorise tout + référence sitemap
