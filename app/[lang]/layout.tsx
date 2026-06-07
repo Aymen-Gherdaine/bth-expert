@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   variable: "--font-fraunces",
   display: "swap",
@@ -68,7 +68,7 @@ export default async function LangLayout({
     >
       <body className="flex flex-col min-h-screen">
         <Header lang={lang} />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 min-w-0">{children}</main>
         <Footer lang={lang} />
       </body>
     </html>

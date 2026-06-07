@@ -6,9 +6,10 @@ import { locales, type Locale } from "@/lib/i18n-config";
 
 interface LangSwitcherProps {
   currentLocale: Locale;
+  isDark?: boolean;
 }
 
-export function LangSwitcher({ currentLocale }: LangSwitcherProps) {
+export function LangSwitcher({ currentLocale, isDark = false }: LangSwitcherProps) {
   const pathname = usePathname();
   const pathWithoutLocale = pathname.replace(`/${currentLocale}`, "") || "/";
 
@@ -16,13 +17,25 @@ export function LangSwitcher({ currentLocale }: LangSwitcherProps) {
     <div className="flex items-center gap-1 text-xs">
       {locales.map((locale, i) => (
         <span key={locale} className="flex items-center">
-          {i > 0 && <span className="text-line mx-2">·</span>}
+          {i > 0 && (
+            <span
+              className={`mx-2 transition-colors duration-500 ${
+                isDark ? "text-cream/20" : "text-line"
+              }`}
+            >
+              ·
+            </span>
+          )}
           <Link
             href={`/${locale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`}
-            className={`uppercase tracking-wider transition-colors ${
+            className={`uppercase tracking-wider transition-colors duration-500 ${
               locale === currentLocale
-                ? "text-brand font-medium"
-                : "text-muted hover:text-brand"
+                ? isDark
+                  ? "text-cream font-medium"
+                  : "text-brand font-medium"
+                : isDark
+                  ? "text-cream/40 hover:text-cream"
+                  : "text-muted hover:text-brand"
             }`}
           >
             {locale}
