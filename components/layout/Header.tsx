@@ -12,19 +12,22 @@ export async function Header({ lang }: HeaderProps) {
   const dict = await getDictionary(lang);
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/85 backdrop-blur-md border-b border-line">
+    <header className="sticky top-0 z-50 bg-cream border-b border-line">
       <Container>
-        <div className="flex items-center justify-between h-16">
-          <Link href={`/${lang}`} className="font-display text-xl tracking-wide text-brand">
-            BTH <em className="not-italic text-gold">Expert</em>
+        <div className="flex items-center justify-between h-20 lg:h-24">
+          <Link
+            href={`/${lang}`}
+            className="font-display text-2xl tracking-tight text-brand"
+          >
+            BTH Expert
           </Link>
 
-          <div className="flex items-center gap-7">
+          <div className="flex items-center gap-8">
             <Nav lang={lang} dict={dict} />
             <LangSwitcher currentLocale={lang} />
             <Link
               href={`/${lang}/contact`}
-              className="hidden sm:inline-flex items-center px-5 py-2 rounded-full bg-brand text-cream text-sm font-medium hover:bg-brand-deep transition-colors duration-200"
+              className="hidden sm:inline-flex items-center px-6 py-3 rounded-sm bg-brand text-cream text-[0.9375rem] font-medium tracking-tight hover:bg-brand-soft transition-[background-color] duration-300 ease-[var(--ease-out-expo)]"
             >
               {dict.nav.quote}
             </Link>
