@@ -3,7 +3,11 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import type { Locale } from "@/lib/i18n";
 
@@ -29,31 +33,30 @@ interface ServicesSectionProps {
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
+/* Overlay sur la photo augmente progressivement — le regard reste sur le texte */
+const overlays = [0.05, 0.2, 0.38, 0.52];
+
 export function ServicesSection({ lang, services }: ServicesSectionProps) {
-  const [active, setActive] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
+  const outerRef = useRef<HTMLDivElement>(null);
+  const N = services.items.length;
 
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
+    target: outerRef,
+    offset: ["start start", "end end"],
   });
 
-  /* Parallax: image translates ±5% during scroll. scale(1.12) covers the movement */
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    const idx = Math.min(Math.floor(v * N), N - 1);
+    setActive(idx);
+  });
 
   return (
-    <section ref={sectionRef} className="bg-brand overflow-hidden">
+    <section className="bg-brand overflow-hidden">
 
-      {/* ── Header ──────────────────────────────────────────────────── */}
-      <div className="px-6 sm:px-8 lg:px-16 xl:px-24 pt-24 md:pt-32 pb-12 md:pb-16">
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease }}
-          className="flex items-center gap-4 mb-10"
-        >
+      {/* ── Heading — toujours visible, grand, jamais caché ─── */}
+      <div className="px-6 sm:px-8 lg:px-16 xl:px-24 pt-24 md:pt-32 pb-16 md:pb-20">
+        <div className="flex items-center gap-4 mb-10">
           <span className="font-display text-[var(--text-caption)] text-gold tracking-widest">
             {services.sectionNumber}
           </span>
@@ -61,153 +64,185 @@ export function ServicesSection({ lang, services }: ServicesSectionProps) {
           <span className="text-[var(--text-caption)] uppercase tracking-widest text-[var(--color-on-brand-faint)]">
             {services.eyebrow}
           </span>
-        </motion.div>
+        </div>
 
-        {/* Heading — clip-path wipe upward */}
-        <div className="overflow-hidden">
-          <motion.h2
-            initial={{ y: "108%", opacity: 0 }}
-            whileInView={{ y: "0%", opacity: 1 }}
-            viewport={{ once: true, margin: "-8% 0px" }}
-            transition={{ duration: 1, ease }}
-            className="font-display font-light text-cream max-w-2xl tracking-[-0.03em] leading-[1.05]"
-            style={{ fontSize: "clamp(1.75rem, 3vw + 0.5rem, 3.25rem)" }}
-          >
-            {services.heading}
-          </motion.h2>
+        <h2
+          className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05]"
+          style={{ fontSize: "clamp(2.25rem, 5vw + 0.5rem, 5rem)" }}
+        >
+          {services.heading}
+        </h2>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════
+          DESKTOP — sticky scroll storytelling
+          Section prend N × 100vh. Sticky inner = 100vh.
+          Photo gauche fixe. Panels droite glissent au scroll.
+      ══════════════════════════════════════════════════════════ */}
+      <div
+        ref={outerRef}
+        className="hidden lg:block relative"
+        style={{ height: `${N * 100}vh` }}
+      >
+        <div className="sticky top-0 h-screen overflow-hidden grid grid-cols-2">
+
+          {/* ── LEFT: photo permanente ─────────────────────── */}
+          <div className="relative h-full overflow-hidden">
+            <Image
+              src="/section service.webp"
+              alt="Expert BTH Expert en intervention terrain, Bir El Djir, Oran, Algérie"
+              fill
+              className="object-cover"
+              sizes="50vw"
+              priority
+            />
+
+            {/* Overlay qui s'assombrit par service — dirige l'œil vers le texte */}
+            <motion.div
+              className="absolute inset-0 bg-brand pointer-events-none"
+              animate={{ opacity: overlays[active] ?? 0.05 }}
+              transition={{ duration: 1, ease }}
+            />
+
+            {/* Indicateur de progression — tirets verticaux gold */}
+            <div className="absolute bottom-12 left-10 z-10 flex flex-col gap-3 items-center">
+              {services.items.map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="w-px bg-gold rounded-full"
+                  animate={{
+                    height: active === i ? 48 : 10,
+                    opacity: active === i ? 1 : 0.25,
+                  }}
+                  transition={{ duration: 0.45, ease }}
+                />
+              ))}
+            </div>
+
+            {/* Légende */}
+            <div className="absolute bottom-12 right-10 z-10">
+              <p className="text-[0.65rem] text-cream/20 uppercase tracking-widest text-end leading-loose">
+                Bir El Djir · Oran
+                <br />
+                Algérie
+              </p>
+            </div>
+          </div>
+
+          {/* ── RIGHT: panels qui glissent ─────────────────── */}
+          <div className="relative h-full overflow-hidden bg-brand">
+
+            {/* Filet gold gauche */}
+            <div className="absolute left-0 inset-y-0 w-px bg-gold/20 z-10 pointer-events-none" />
+
+            {services.items.map((item, i) => (
+              <motion.div
+                key={item.abbr}
+                className="absolute inset-0 flex flex-col px-14 xl:px-20"
+                initial={{ y: i === 0 ? "0%" : "100%" }}
+                animate={{
+                  y: active === i ? "0%" : active > i ? "-100%" : "100%",
+                }}
+                transition={{ duration: 0.9, ease }}
+              >
+                {/* Numéro géant en fond — editorial */}
+                <div className="pt-12 mb-auto">
+                  <span
+                    className="font-display font-black text-cream/[0.04] leading-none select-none"
+                    style={{ fontSize: "clamp(7rem, 13vw, 16rem)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                {/* Contenu service — ancré en bas */}
+                <div className="pb-16">
+                  <span className="text-[0.68rem] uppercase tracking-[0.18em] text-[var(--color-on-brand-faint)] block mb-5">
+                    {item.abbr}
+                  </span>
+
+                  <h3
+                    className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-7"
+                    style={{ fontSize: "clamp(1.75rem, 3.5vw + 0.25rem, 3.5rem)" }}
+                  >
+                    {item.title}
+                  </h3>
+
+                  <p
+                    className="text-[var(--color-on-brand-muted)] leading-[1.85] max-w-md mb-10"
+                    style={{ fontSize: "var(--text-body)" }}
+                  >
+                    {item.description}
+                  </p>
+
+                  <Link
+                    href={`/${lang}/services`}
+                    className="group/link inline-flex items-center gap-3 text-gold"
+                    style={{ fontSize: "var(--text-small)" }}
+                  >
+                    <span className="uppercase tracking-widest">{services.itemCta}</span>
+                    <motion.span
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+                      className="inline-block"
+                    >
+                      →
+                    </motion.span>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* ── Split: accordion list + photo ───────────────────────────── */}
-      <div className="lg:grid lg:grid-cols-[56%_44%]">
+      {/* ══════════════════════════════════════════════════════════
+          MOBILE — liste simple (pas de sticky sur mobile)
+      ══════════════════════════════════════════════════════════ */}
+      <div className="lg:hidden">
+        {/* Photo mobile — pleine largeur */}
+        <div className="relative w-full h-[55vw] overflow-hidden mb-0">
+          <Image
+            src="/section service.webp"
+            alt="Expert BTH Expert terrain, Oran"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-brand/25" />
+        </div>
 
-        {/* LEFT — accordion service list */}
-        <div className="px-6 sm:px-8 lg:px-16 xl:px-24 pb-20 md:pb-28">
-          <div className="border-t border-cream/15">
-            {services.items.map((item, i) => (
-              <div
-                key={item.abbr}
-                className="border-b border-cream/15 relative"
-                onMouseEnter={() => setActive(i)}
-                onMouseLeave={() => setActive(null)}
+        <div className="px-6 sm:px-8 divide-y divide-cream/10 pb-4">
+          {services.items.map((item, i) => (
+            <div key={item.abbr} className="py-8">
+              <span
+                className="font-display font-light text-gold/25 leading-none block mb-3"
+                style={{ fontSize: "3.5rem" }}
               >
-                {/* Gold left bar — scaleY reveal on hover */}
-                <motion.div
-                  className="absolute left-0 top-0 bottom-0 w-[2px] bg-gold origin-top"
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: active === i ? 1 : 0 }}
-                  transition={{ duration: 0.35, ease }}
-                />
-
-                <div className="py-8 ps-6 cursor-default select-none">
-                  <div className="flex items-start gap-6 lg:gap-8">
-
-                    {/* Giant editorial number */}
-                    <span
-                      className={`font-display font-light tabular-nums shrink-0 leading-[0.85] transition-colors duration-500 ${
-                        active === i ? "text-gold" : "text-gold/25"
-                      }`}
-                      style={{ fontSize: "clamp(2.5rem, 4vw, 4rem)" }}
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-
-                    <div className="flex-1 min-w-0 pt-1">
-                      <span className="text-[0.68rem] uppercase tracking-widest text-cream/25 block mb-2">
-                        {item.abbr}
-                      </span>
-                      <h3
-                        className={`font-display font-light tracking-[-0.02em] leading-[1.1] transition-colors duration-500 ${
-                          active === i ? "text-gold" : "text-cream"
-                        }`}
-                        style={{ fontSize: "clamp(1.4rem, 2vw + 0.3rem, 2.2rem)" }}
-                      >
-                        {item.title}
-                      </h3>
-
-                      {/* Description — expands on hover */}
-                      <motion.div
-                        animate={{
-                          height: active === i ? "auto" : 0,
-                          opacity: active === i ? 1 : 0,
-                        }}
-                        initial={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease }}
-                        className="overflow-hidden"
-                      >
-                        <p
-                          className="text-[var(--color-on-brand-muted)] leading-[1.8] pt-5 pb-3"
-                          style={{ fontSize: "var(--text-body)" }}
-                        >
-                          {item.description}
-                        </p>
-                        <Link
-                          href={`/${lang}/services`}
-                          className="inline-flex items-center gap-2 text-gold text-sm group/link pb-1"
-                        >
-                          <span>{services.itemCta}</span>
-                          <span className="group-hover/link:translate-x-1 transition-transform duration-300 inline-block">
-                            →
-                          </span>
-                        </Link>
-                      </motion.div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12">
-            <Button href={`/${lang}/services`} variant="outline-cream">
-              {services.cta}
-            </Button>
-          </div>
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="text-[0.68rem] uppercase tracking-widest text-cream/25 block mb-2">
+                {item.abbr}
+              </span>
+              <h3
+                className="font-display font-light text-cream tracking-tight leading-snug mb-4"
+                style={{ fontSize: "clamp(1.3rem, 5vw, 1.75rem)" }}
+              >
+                {item.title}
+              </h3>
+              <p className="text-[var(--color-on-brand-muted)] text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* RIGHT — photo : clip-path wipe + parallax */}
-        <div className="hidden lg:block relative min-h-[680px]">
-
-          {/* Gold separator */}
-          <div className="absolute left-0 inset-y-0 w-px bg-gold/20 z-10" />
-
-          {/* Clip-path wipe: inset bottom 100% → 0% — reveals upward */}
-          <motion.div
-            initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
-            whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-            viewport={{ once: true, margin: "-10% 0px" }}
-            transition={{ duration: 1.4, ease }}
-            className="absolute inset-0 overflow-hidden"
-          >
-            {/* Parallax layer — scale(1.12) covers ±5% movement without white edges */}
-            <motion.div
-              style={{ y: imageY }}
-              className="absolute inset-0 scale-[1.12]"
-            >
-              {/* next/image fill requires a `relative` ancestor — this div serves that role */}
-              <div className="relative w-full h-full">
-                <Image
-                  src="/section service.webp"
-                  alt="Expert BTH Expert en intervention terrain, Bir El Djir, Oran, Algérie"
-                  fill
-                  className="object-cover"
-                  sizes="44vw"
-                />
-              </div>
-              <div className="absolute inset-0 bg-brand/15" />
-            </motion.div>
-          </motion.div>
-
-          {/* Caption */}
-          <div className="absolute bottom-8 right-8 z-10">
-            <p className="text-[0.68rem] text-cream/25 uppercase tracking-widest text-end leading-relaxed">
-              Bir El Djir · Oran
-              <br />
-              Algérie
-            </p>
-          </div>
-        </div>
-
+      {/* ── CTA ── */}
+      <div className="px-6 sm:px-8 lg:px-16 xl:px-24 pb-20 md:pb-28 pt-4">
+        <Button href={`/${lang}/services`} variant="outline-cream">
+          {services.cta}
+        </Button>
       </div>
     </section>
   );
