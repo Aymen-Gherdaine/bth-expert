@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "./Container";
 import { LangSwitcher } from "./LangSwitcher";
 import type { Locale } from "@/lib/i18n";
@@ -25,27 +26,35 @@ export function StickyHeader({
   ctaHref,
 }: StickyHeaderProps) {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  /* Transparent mode only on home page */
+  const isHome =
+    pathname === `/${lang}` || pathname === `/${lang}/`;
+  const light = isHome && !scrolled;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const light = !scrolled;
-
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-[var(--ease-out-expo)] ${
-        scrolled ? "bg-cream border-b border-line" : "bg-transparent"
+        light
+          ? "bg-transparent"
+          : "bg-cream border-b border-gold/30"
       }`}
     >
       <Container>
         <div className="flex items-center justify-between h-20 lg:h-24">
+
+          {/* Logo */}
           <Link
             href={`/${lang}`}
-            className={`font-display text-xl lg:text-2xl tracking-tight transition-colors duration-500 ease-[var(--ease-out-expo)] ${
+            className={`font-display font-medium text-xl lg:text-2xl tracking-tight transition-colors duration-500 ease-[var(--ease-out-expo)] ${
               light ? "text-cream" : "text-brand"
             }`}
           >
@@ -53,15 +62,17 @@ export function StickyHeader({
           </Link>
 
           <div className="flex items-center gap-5 lg:gap-8">
+
+            {/* Nav */}
             <nav className="hidden md:flex items-center gap-7 lg:gap-9">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-[0.9rem] transition-colors duration-500 ease-[var(--ease-out-expo)] ${
+                  className={`text-[0.9rem] font-medium transition-colors duration-500 ease-[var(--ease-out-expo)] ${
                     light
                       ? "text-cream/60 hover:text-cream"
-                      : "text-ink-soft hover:text-brand"
+                      : "text-ink hover:text-brand"
                   }`}
                 >
                   {item.label}
@@ -71,6 +82,7 @@ export function StickyHeader({
 
             <LangSwitcher currentLocale={lang} isDark={light} />
 
+            {/* CTA */}
             <Link
               href={ctaHref}
               className={`hidden sm:inline-flex items-center px-5 py-2.5 rounded-sm text-[0.875rem] font-medium tracking-tight transition-all duration-500 ease-[var(--ease-out-expo)] ${
@@ -81,6 +93,7 @@ export function StickyHeader({
             >
               {ctaLabel}
             </Link>
+
           </div>
         </div>
       </Container>

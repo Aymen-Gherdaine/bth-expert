@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1] as const;
+const viewport = { once: true, margin: "-6% 0px" } as const;
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -16,18 +16,15 @@ interface FadeInProps {
 export function FadeIn({
   children,
   delay = 0,
-  duration = 0.7,
+  duration = 0.75,
   y = 28,
   className,
 }: FadeInProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-6% 0px" });
-
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={viewport}
       transition={{ duration, delay, ease }}
       className={className}
     >
@@ -36,15 +33,19 @@ export function FadeIn({
   );
 }
 
-const containerVariants = {
+const staggerContainer = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.09 } },
-};
+} as const;
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
-};
+const staggerItem = {
+  hidden: { opacity: 0, y: 22 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease },
+  },
+} as const;
 
 interface StaggerProps {
   children: React.ReactNode;
@@ -52,15 +53,12 @@ interface StaggerProps {
 }
 
 export function FadeInStagger({ children, className }: StaggerProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-6% 0px" });
-
   return (
     <motion.div
-      ref={ref}
-      variants={containerVariants}
       initial="hidden"
-      animate={inView ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={viewport}
+      variants={staggerContainer}
       className={className}
     >
       {children}
@@ -76,7 +74,7 @@ export function FadeInItem({
   className?: string;
 }) {
   return (
-    <motion.div variants={itemVariants} className={className}>
+    <motion.div variants={staggerItem} className={className}>
       {children}
     </motion.div>
   );

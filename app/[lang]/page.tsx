@@ -6,6 +6,7 @@ import { schemaLocalBusiness } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { HeroSection } from "@/components/ui/HeroSection";
 import { Marquee } from "@/components/motion/Marquee";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 
@@ -46,65 +47,9 @@ export default async function HomePage({
       />
 
       {/* ── HERO ─────────────────────────────────────────────────────────
-          Full viewport, dark brand background.
-          Content anchored to bottom — cainlamarre.ca pattern.
-          CSS animations: no hydration delay, works in Server Component.
+          Client component — Framer Motion clip-path line reveal + stagger.
       ─────────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-brand min-h-[100dvh] flex flex-col justify-end overflow-hidden">
-
-        {/* Decorative large background letters */}
-        <div
-          aria-hidden
-          className="pointer-events-none select-none absolute inset-y-0 right-[-4%] flex items-center"
-        >
-          <span
-            className="font-display font-black leading-none text-cream"
-            style={{
-              fontSize: "clamp(14rem, 32vw, 42rem)",
-              opacity: 0.028,
-              letterSpacing: "-0.06em",
-            }}
-          >
-            BTH
-          </span>
-        </div>
-
-        <Container>
-          <div className="pb-16 md:pb-20 lg:pb-28 pt-36 md:pt-40">
-
-            {/* Gold eyebrow */}
-            <p className="animate-hero animate-hero-1 text-gold text-[var(--text-caption)] uppercase tracking-widest mb-10 md:mb-14">
-              {h.hero.eyebrow}
-            </p>
-
-            {/* Display headline — light weight, very large */}
-            <h1
-              className="animate-hero animate-hero-2 font-display font-light text-cream leading-[0.93] tracking-[-0.03em] mb-14 md:mb-16"
-              style={{ fontSize: "clamp(3rem, 9vw + 1rem, 9.5rem)" }}
-            >
-              <span className="block">{h.hero.headlinePart1}</span>
-              <em className="block italic">{h.hero.headlineEmphasis}</em>
-              <span className="block">{h.hero.headlinePart2}</span>
-            </h1>
-
-            {/* CTA row with horizontal rule */}
-            <div className="animate-hero animate-hero-3 border-t border-cream/10 pt-8 flex flex-wrap items-center justify-between gap-y-6 gap-x-8">
-              <div className="flex flex-wrap items-center gap-4">
-                <Button href={`/${lang}/contact`} variant="outline-cream">
-                  {h.hero.cta}
-                </Button>
-                <Button href={`/${lang}/services`} variant="ghost-cream">
-                  {h.hero.ctaSecondary} →
-                </Button>
-              </div>
-              <p className="text-cream/25 text-[var(--text-caption)] uppercase tracking-widest hidden lg:block">
-                Oran · Algérie · est. 2009
-              </p>
-            </div>
-
-          </div>
-        </Container>
-      </section>
+      <HeroSection lang={lang} hero={h.hero} />
 
       {/* ── MARQUEE — credentials ticker ─────────────────────────────── */}
       <Marquee />
