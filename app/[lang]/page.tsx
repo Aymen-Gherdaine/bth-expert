@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
@@ -7,8 +6,9 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { HeroSection } from "@/components/ui/HeroSection";
+import { ServicesSection } from "@/components/ui/ServicesSection";
 import { Marquee } from "@/components/motion/Marquee";
-import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
+import { FadeIn } from "@/components/motion/FadeIn";
 
 export async function generateMetadata({
   params,
@@ -84,74 +84,8 @@ export default async function HomePage({
         </div>
       </FadeIn>
 
-      {/* ── SERVICES ─────────────────────────────────────────────────── */}
-      <Container>
-        <Section number={h.services.sectionNumber} eyebrow={h.services.eyebrow}>
-
-          <FadeIn>
-            <div className="lg:grid lg:grid-cols-12 lg:gap-16 mb-16 md:mb-20">
-              <h2
-                className="font-display font-light text-ink lg:col-span-8 tracking-[-0.03em] leading-[1.05]"
-                style={{ fontSize: "clamp(1.75rem, 3vw + 0.5rem, 3rem)" }}
-              >
-                {h.services.heading}
-              </h2>
-            </div>
-          </FadeIn>
-
-          <FadeInStagger>
-            <div className="divide-y divide-line">
-              {h.services.items.map((item, index) => (
-                <FadeInItem key={item.abbr}>
-                  <div className="py-9 lg:grid lg:grid-cols-12 lg:gap-8 group">
-                    <div className="lg:col-span-1 mb-3 lg:mb-0 flex items-start">
-                      <span
-                        className="font-display font-light text-muted"
-                        style={{ fontSize: "clamp(0.9rem, 1.2vw, 1.1rem)" }}
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <div className="lg:col-span-4 mb-3 lg:mb-0">
-                      <span className="text-[var(--text-caption)] uppercase tracking-widest text-muted block mb-2">
-                        {item.abbr}
-                      </span>
-                      <h3
-                        className="font-display font-light text-ink group-hover:text-brand transition-colors duration-300 ease-[var(--ease-out-expo)] tracking-[-0.02em] leading-[1.15]"
-                        style={{ fontSize: "clamp(1.2rem, 1.8vw + 0.3rem, 1.75rem)" }}
-                      >
-                        {item.title}
-                      </h3>
-                    </div>
-                    <div className="lg:col-span-5 mb-5 lg:mb-0">
-                      <p className="text-[var(--text-body)] text-ink-soft leading-[1.75]">
-                        {item.description}
-                      </p>
-                    </div>
-                    <div className="lg:col-span-2 lg:text-right flex lg:justify-end items-start">
-                      <Link
-                        href={`/${lang}/services`}
-                        className="relative text-[var(--text-small)] text-muted group-hover:text-brand transition-colors duration-300 ease-[var(--ease-out-expo)] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-px after:bg-current after:origin-left after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-[var(--ease-out-expo)]"
-                      >
-                        {h.services.itemCta} →
-                      </Link>
-                    </div>
-                  </div>
-                </FadeInItem>
-              ))}
-            </div>
-          </FadeInStagger>
-
-          <FadeIn delay={0.1}>
-            <div className="mt-14">
-              <Button href={`/${lang}/services`} variant="secondary">
-                {h.services.cta}
-              </Button>
-            </div>
-          </FadeIn>
-
-        </Section>
-      </Container>
+      {/* ── SERVICES — split plein-écran + photo sticky parallax ────── */}
+      <ServicesSection lang={lang} services={h.services} />
 
       {/* ── MANIFESTO BAND — full bleed dark statement ───────────────── */}
       <FadeIn>
