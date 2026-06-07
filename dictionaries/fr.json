@@ -21,6 +21,34 @@
     "learnMore": "En savoir plus",
     "contactUs": "Contactez-nous"
   },
+  "equipe": {
+    "meta": {
+      "title": "Équipe — Experts environnementaux agréés | BTH Expert",
+      "description": "Rencontrez l'équipe de BTH Expert. Ingénieurs et experts agréés par le Ministère de l'Environnement algérien. Gérant : Amine Lahmer. Basé à Oran."
+    },
+    "hero": {
+      "eyebrow": "Experts agréés · Oran, Algérie",
+      "heading": "Notre équipe",
+      "subheading": "BTH Expert est constitué d'ingénieurs et de spécialistes accrédités, avec une maîtrise approfondie du cadre réglementaire algérien et des meilleures pratiques internationales en matière d'études environnementales."
+    },
+    "members": [
+      {
+        "name": "Amine Lahmer",
+        "role": "Gérant — Expert environnement",
+        "bio": "Ingénieur en environnement, Amine Lahmer dirige BTH Expert depuis sa fondation en 2009. Il supervise l'ensemble des études et garantit la conformité des livrables aux exigences réglementaires du Ministère de l'Environnement et de la Qualité de la Vie. Spécialiste des études d'impact sur l'environnement et des études de dangers pour les établissements industriels classés.",
+        "credentials": ["Agrément Ministère de l'Environnement", "Expert EIE", "Expert EDD"]
+      }
+    ],
+    "partner": {
+      "heading": "Partenariat BTH Consult",
+      "description": "Pour les projets d'envergure régionale ou nationale, BTH Expert intervient en partenariat stratégique avec BTH Consult, renforçant ainsi la capacité d'intervention et l'expertise mobilisable pour chaque mission."
+    },
+    "cta": {
+      "heading": "Travaillons ensemble",
+      "description": "Contactez notre équipe pour discuter de votre projet environnemental.",
+      "button": "Prendre contact"
+    }
+  },
   "services": {
     "meta": {
       "title": "Services — Études environnementales & HSE | BTH Expert",

@@ -21,6 +21,34 @@
     "learnMore": "Learn more",
     "contactUs": "Contact us"
   },
+  "equipe": {
+    "meta": {
+      "title": "Team — Certified Environmental Experts | BTH Expert",
+      "description": "Meet the BTH Expert team. Engineers and experts certified by the Algerian Ministry of Environment. Managing Director: Amine Lahmer. Based in Oran."
+    },
+    "hero": {
+      "eyebrow": "Certified experts · Oran, Algeria",
+      "heading": "Our team",
+      "subheading": "BTH Expert comprises accredited engineers and specialists with in-depth mastery of the Algerian regulatory framework and international best practice in environmental studies."
+    },
+    "members": [
+      {
+        "name": "Amine Lahmer",
+        "role": "Managing Director — Environmental Expert",
+        "bio": "Environmental engineer, Amine Lahmer has led BTH Expert since its founding in 2009. He oversees all studies and ensures deliverables comply with the requirements of the Ministry of Environment and Quality of Life. He specialises in environmental impact assessments and hazard studies for classified industrial establishments.",
+        "credentials": ["Ministry of Environment Certification", "EIA Expert", "Hazard Study Expert"]
+      }
+    ],
+    "partner": {
+      "heading": "BTH Consult partnership",
+      "description": "For regional or national-scale projects, BTH Expert operates in strategic partnership with BTH Consult, strengthening the intervention capacity and expertise mobilised for each assignment."
+    },
+    "cta": {
+      "heading": "Let's work together",
+      "description": "Contact our team to discuss your environmental project.",
+      "button": "Get in touch"
+    }
+  },
   "services": {
     "meta": {
       "title": "Services — Environmental Studies & HSE | BTH Expert",
