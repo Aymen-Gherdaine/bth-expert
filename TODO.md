@@ -18,7 +18,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [x] **0.7** — `lib/schema.ts` : générateurs JSON-LD (LocalBusiness, Service, Article, Person, FAQPage)
 - [x] **0.8** — `lib/content.ts` : parsing markdown + frontmatter (gray-matter + remark)
 - [x] **0.9** — `app/sitemap.ts` : sitemap dynamique multilingue
-- [ ] **0.10** — `app/robots.ts` : autorise tout + référence sitemap
+- [x] **0.10** — `app/robots.ts` : autorise tout + référence sitemap
 - [ ] **0.11** — `netlify.toml` : build settings + headers de sécurité
 
 **Sortie Phase 0 :** projet qui build, structure prête, aucune page de contenu encore.
