@@ -26,26 +26,38 @@
   --color-muted:       #6b7455;
   --color-line:        #d8d0bc;
 
+  /* ── Texte sur fond brand (footer) ── */
+  --color-on-brand-strong: var(--color-cream);
+  --color-on-brand-muted:  color-mix(in srgb, var(--color-cream) 65%, var(--color-brand));
+  --color-on-brand-faint:  color-mix(in srgb, var(--color-cream) 40%, var(--color-brand));
+
   /* ── Polices (variables remplies en tâche 0.3 par next/font) ── */
   --font-display:      var(--font-fraunces), Georgia, serif;
   --font-sans:         var(--font-geist), system-ui, sans-serif;
+
+  /* ── Échelle typographique fluide ── */
+  --text-display:  clamp(3rem, 6vw + 1rem, 5.5rem);
+  --text-h1:       clamp(2rem, 4vw + 0.5rem, 3.5rem);
+  --text-h2:       clamp(1.5rem, 2.5vw + 0.5rem, 2.25rem);
+  --text-h3:       clamp(1.25rem, 2vw, 1.625rem);
+  --text-body:     clamp(1rem, 0.4vw + 0.875rem, 1.0625rem);
+  --text-small:    0.9375rem;
+  --text-caption:  0.8125rem;
 
   /* ── Easing — courbes premium (jamais les valeurs par défaut) ── */
   --ease-out-expo:     cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart:    cubic-bezier(0.25, 1, 0.5, 1);
   --ease-in-out-soft:  cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* ── Border radius ── */
-  --radius-sm:         6px;
-  --radius-md:         10px;
-  --radius-lg:         16px;
-  --radius-xl:         24px;
-  --radius-full:       9999px;
+  /* ── Motion durations ── */
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
 
-  /* ── Shadows subtiles, jamais flashy ── */
-  --shadow-soft:       0 2px 14px rgb(26 46 30 / 0.06);
-  --shadow-medium:     0 8px 30px rgb(26 46 30 / 0.10);
-  --shadow-deep:       0 24px 60px rgb(26 46 30 / 0.14);
+  /* ── Border radius ── */
+  --radius-sm:         4px;
+  --radius-md:         6px;
+  --radius-full:       9999px;
 
   /* ── Containers ── */
   --container-max:     1280px;
@@ -57,7 +69,6 @@
    ═══════════════════════════════════════════════════════════ */
 @layer base {
   html {
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -69,7 +80,7 @@
     font-family: var(--font-sans);
   }
 
-  /* Titres : Cormorant Garamond, serré, premium */
+  /* Titres : Fraunces, serré, premium */
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 500;
