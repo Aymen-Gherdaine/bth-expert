@@ -64,6 +64,7 @@ export default async function LangLayout({
       lang={lang}
       dir={dir}
       className={`${fraunces.variable} ${geist.variable}`}
+      suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen">
         <Header lang={lang} />
