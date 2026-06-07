@@ -43,7 +43,7 @@ Email:     info@bthexpert.dz
 Téléphone: +213 (670) 70 81 38
 Adresse:   40, Lotissement 119, Bir El Djir, Oran, Algérie
 Fondé:     2009
-Experts:   Amine Lahmer (Gérant), Abdellah
+Experts:   Amine Lahmer (Gérant)
 Partenaire: BTH Consult
 ```
 
