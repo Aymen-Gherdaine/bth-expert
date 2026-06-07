@@ -44,6 +44,7 @@ Avant toute décision technique, ces principes tranchent les arbitrages :
 | Framework | **Next.js 16 (App Router)** | Stack déjà maîtrisé, cohérent avec BTH Hub. SSG natif = SEO maximal. |
 | Langage | **TypeScript** | Sécurité de typage, refactoring sûr, standard senior. |
 | Styles | **Tailwind CSS v4** | Cohérent avec BTH Hub. Design tokens centralisés. |
+| Design system | docs/DESIGN-MANIFESTO.md | Loi du système. À relire avant toute décision visuelle. |
 | Animations | **Framer Motion** | Animations premium (spring, blur, easing custom). |
 | Contenu | **Decap CMS → Markdown/MDX (git-based)** | Le CMS écrit du markdown dans le repo → Next.js build des pages statiques. Pas de base de données à sécuriser. |
 | Rendu | **SSG (`generateStaticParams` + Server Components)** | HTML complet au build = Google reçoit tout. |
@@ -305,8 +306,9 @@ Couleurs:
   --white:  #FFFFFF
 
 Typographie:
-  Titres:  Cormorant Garamond (serif, caractère, premium)
-  Corps:   DM Sans (sans-serif, lisibilité)
+  Display:  Fraunces (variable, Google Fonts, opsz axis)
+  Body:     Geist (Google Fonts, weights 400/500)
+  Voir docs/DESIGN-MANIFESTO.md section 3 pour le système complet.
 ```
 
 ### 6.2 Principes UX premium
