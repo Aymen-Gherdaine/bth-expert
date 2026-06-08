@@ -54,7 +54,7 @@ export default async function HomePage({
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 30% 70%, var(--color-brand-soft) 0%, var(--color-brand-deep) 55%, #050a06 100%)",
+              "linear-gradient(to bottom, var(--color-brand) 0%, var(--color-brand-deep) 50%, #060d07 100%)",
           }}
         />
         <div

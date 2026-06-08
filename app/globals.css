@@ -165,12 +165,14 @@ header[data-overlay="true"] .nav-link[aria-current="page"],
 header[data-overlay="true"] .lang-switcher-locale,
 header[data-overlay="true"] .lang-switcher-sep {
   color: inherit;
+  transition: none; /* prevent CSS transition fighting scroll-driven animation on reverse scroll */
 }
 
 /* Gold hover works on both dark (transparent) and cream (solid) backgrounds */
 header[data-overlay="true"] .nav-link:hover,
 header[data-overlay="true"] .lang-switcher-locale:hover {
   color: var(--color-gold);
+  transition: color var(--duration-fast) var(--ease-out-expo);
 }
 
 /* ─────────────────────────────────────────────────────────────
