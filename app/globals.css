@@ -198,3 +198,32 @@
     transition: none;
   }
 }
+
+/* Scroll pulse — vertical track with a moving gold segment, looped */
+.scroll-pulse {
+  position: absolute;
+  width: 1px;
+  height: 64px;
+  background: rgb(245 240 232 / 0.18);
+  overflow: hidden;
+  pointer-events: none;
+}
+.scroll-pulse::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 36%;
+  background: var(--color-gold);
+  animation: scroll-pulse-loop 2.4s var(--ease-in-out-soft) infinite;
+}
+@keyframes scroll-pulse-loop {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(280%); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-pulse::after { animation: none; opacity: 0.5; transform: translateY(80%); }
+}

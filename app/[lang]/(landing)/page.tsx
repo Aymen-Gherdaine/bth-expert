@@ -104,10 +104,7 @@ export default async function HomePage({
           </div>
         </Container>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 text-cream/50">
-          <span className="text-[0.6875rem] uppercase tracking-[0.3em]">Scroll</span>
-          <span aria-hidden className="block w-px h-10 bg-cream/30" />
-        </div>
+        <span aria-hidden className="scroll-pulse absolute bottom-8 right-8 lg:bottom-10 lg:right-12 z-10" />
       </section>
 
       {/* ── MARQUEE — credentials ticker ─────────────────────────────── */}
