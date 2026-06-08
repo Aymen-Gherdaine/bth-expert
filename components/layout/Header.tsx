@@ -37,7 +37,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                 alt="BTH Expert"
                 height={36}
                 width={120}
-                className="h-8 lg:h-9 w-auto"
+                className="h-9 lg:h-11 w-auto"
                 priority
               />
             </Link>
