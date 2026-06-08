@@ -5,6 +5,7 @@ import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default async function LangLayout({
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen" suppressHydrationWarning>
+        <SmoothScroll />
         <Header lang={lang} />
         <main className="flex-1 min-w-0">{children}</main>
         <Footer lang={lang} />
