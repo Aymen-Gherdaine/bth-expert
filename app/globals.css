@@ -114,3 +114,37 @@
     border-radius: var(--radius-sm);
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Header scroll-driven transition
+   Pure CSS. No JS. animation-timeline: scroll() (Chrome 115+,
+   Safari 17.4+, Firefox 131+). Graceful fallback: header keeps
+   its initial state on unsupported browsers.
+   ───────────────────────────────────────────────────────────── */
+@keyframes header-solidify {
+  to {
+    background-color: rgb(250 247 242 / 0.9);
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    border-bottom-color: var(--color-line);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  header[data-overlay="true"] {
+    animation: header-solidify linear both;
+    animation-timeline: scroll();
+    animation-range: 0 50px;
+  }
+}
+
+/* Accessibility: skip animation, render solid state directly */
+@media (prefers-reduced-motion: reduce) {
+  header[data-overlay="true"] {
+    background-color: rgb(250 247 242 / 0.9);
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    border-bottom-color: var(--color-line);
+    animation: none;
+  }
+}
