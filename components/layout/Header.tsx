@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { Container } from "./Container";
 import { Nav } from "./Nav";
 import { LangSwitcher } from "./LangSwitcher";
-import { LogoMark } from "@/components/brand/LogoMark";
 
 interface HeaderProps {
   lang: Locale;
@@ -32,8 +32,14 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
               className="header-item header-logo flex items-center gap-3"
               style={{ "--enter-delay": "0ms" } as React.CSSProperties}
             >
-              <LogoMark className="w-5 h-7 lg:w-6 lg:h-8" />
-              <span className="font-display text-xl tracking-tight hidden sm:inline">BTH Expert</span>
+              <Image
+                src="/logo-fond-blanc.webp"
+                alt="BTH Expert"
+                height={36}
+                width={120}
+                className="h-8 lg:h-9 w-auto"
+                priority
+              />
             </Link>
 
             <div className="flex items-center gap-7">
