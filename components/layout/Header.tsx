@@ -32,14 +32,24 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
               className="header-item header-logo flex items-center gap-3"
               style={{ "--enter-delay": "0ms" } as React.CSSProperties}
             >
-              <Image
-                src="/logo.png"
-                alt="BTH Expert"
-                height={36}
-                width={120}
-                className="h-9 lg:h-11 w-auto"
-                priority
-              />
+              <div className="relative h-9 lg:h-11">
+                <Image
+                  src="/bth-expert-logo-dark-transparent.svg"
+                  alt="BTH Expert"
+                  height={44}
+                  width={157}
+                  className="header-logo-dark h-full w-auto"
+                  priority
+                />
+                <Image
+                  src="/bth-expert-logo-light-transparent.svg"
+                  alt=""
+                  height={44}
+                  width={157}
+                  className="header-logo-light absolute inset-0 h-full w-auto opacity-0"
+                  priority
+                />
+              </div>
             </Link>
 
             <div className="flex items-center gap-7">
