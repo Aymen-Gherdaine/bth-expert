@@ -1,244 +1,408 @@
-# BTH Expert — Design Manifesto
+# BTH Expert — Design Manifesto (v2.1)
 
-> La loi du système. Aucune décision visuelle hors de ce document.
-> Si une décision n'est pas couverte ici, elle se prend en relisant les principes du Nord — jamais par instinct.
-
----
-
-## 1. Le Nord
-
-BTH Expert est un cabinet d'études environnementales certifié par le Ministère. Son site doit projeter ce que projettent les cabinets premium dans le monde : **autorité tranquille, rigueur éditoriale, qualité documentaire**. Pas une SaaS. Pas une agence digitale. Pas un site "moderne".
-
-**La référence n'est pas une autre startup. La référence est un livre, un rapport ministériel, ou un cabinet d'avocats new-yorkais.**
-
-Trois principes structurent toutes les décisions :
-
-1. **La typographie porte la marque.** Pas les couleurs, pas les images, pas les effets.
-2. **La restriction signale le niveau.** Premium = enlever. Cheap = ajouter.
-3. **Le contenu dicte la grille.** Pas l'inverse.
+> La loi du système. Remplace la v1 et v2.
+> v1 était dogmatique et sec — elle a produit du plat. v2 a corrigé la direction. v2.1 intègre les décisions de terrain : pas de blur, container premium, header color-adaptive.
+> Principe directeur : **un site éditorial, cinématique, qui bouge avec finesse — pas une brochure, pas un PDF interactif.**
 
 ---
 
-## 2. Les 8 lois
+## 0. Ce que v1 avait faux (à ne jamais refaire)
 
-### 01 — Zéro effet décoratif
-Aucun `box-shadow`. Aucun `backdrop-blur`. Aucun `gradient` (sauf SVG techniques). Aucun glow. Aucun glassmorphism. Si un élément a besoin d'une ombre pour exister, il ne devrait pas exister.
+- ❌ "Zéro shadow, zéro blur, zéro gradient" → FAUX. Apple/Stripe/Linear ont des shadows subtiles et des gradients de marque. La différence c'est la **maîtrise**, pas l'absence. En revanche, le blur (backdrop-filter) est interdit pour BTH — ce n'est pas notre esthétique.
+- ❌ "Motion invisible ou pas du tout" → FAUX. La règle réelle : **motion partout, mais imperceptible**.
+- ❌ "Imagerie optionnelle, le texte porte tout" → FAUX pour notre direction. Les sites qu'on vise sont **image-led** : l'image EST le design.
+- ❌ Header à 96px "aéré" → FAUX. Le luxe vient de l'exécution serrée à 64-80px, pas de l'espace gratuit.
 
-### 02 — Une famille display, une famille body. Point
-**Fraunces** pour le display (variable, supports italic native, opsz axis). **Geist** pour le body (400 et 500, c'est tout). Toute autre police est interdite.
-
-### 03 — Échelle éditoriale
-Hiérarchie typographique forte ou pas de hiérarchie du tout. `clamp()` agressif sur les titres. Letter-spacing négatif sur le serif display (-0.02em). Line-height serré sur les titres (1.05–1.15), généreux sur le corps (1.65–1.75).
-
-### 04 — Numérotation éditoriale partout
-Sections numérotées 01, 02, 03. C'est l'opposé du SaaS — c'est le signal "document de qualité, structuré, pensé". Présent dans Pentagram, dans les rapports McKinsey, dans tous les cabinets sérieux.
-
-### 05 — Layout asymétrique
-Pas de grilles 3-colonnes répétées. Une grille 12 utilisée à 5/12, 7/12, 11/12 selon le contenu. La symétrie répétée est le signal d'un site fait par template, pas par senior designer.
-
-### 06 — Motion invisible ou pas du tout
-Pas de fade-in au scroll. Pas de parallax. Pas de cards qui montent. Pas d'AOS. Les seules motions autorisées : transitions de page (200–300ms cubic-bezier custom), underline qui se trace au hover sur les liens, cursor change sur les zones cliquables. C'est tout.
-
-### 07 — Imagerie intentionnelle ou absente
-Photographie sur site (projets réels, format documentaire, noir et blanc ou couleur désaturée). OU illustration ligne fine éditoriale. OU rien — le texte porte tout. Jamais d'icônes Lucide partout. Jamais d'illustrations 3D AI. Jamais d'Unsplash.
-
-### 08 — Le détail invisible compte
-Hyphens activés, veuves/orphelines évitées, smart quotes (« » au lieu de " "), espaces insécables avant les ponctuations doubles, ligatures activées. Le lecteur ne le voit pas — il le ressent.
+**Leçon : premium ≠ minimalisme sec. Premium = craft, profondeur maîtrisée, motion fine, image forte.**
 
 ---
 
-## 3. Système typographique
+## 1. Le Nord (v2.1)
+
+BTH Expert est un cabinet d'études environnementales. Le site doit être **immersif et cinématique** (on entre dedans), **éditorial** (architecture de magazine d'expertise, pas de vitrine), et **vivant** (tout bouge subtilement, rien ne saute aux yeux).
+
+Quatre principes tranchent tout :
+
+1. **L'image porte l'émotion, la typo porte l'autorité, la motion porte la vie.** Les trois ensemble.
+2. **Le hero est cinématique.** Image full-bleed avec Ken Burns subtle + parallax léger, texte minimal en overlay. On entre dans le site comme dans un film.
+3. **Le corps respire en clair.** Cream dominant. Le vert foncé est une **ponctuation** (hero, carte, footer), jamais la toile de fond.
+4. **La finesse est dans les détails invisibles.** Easing custom, letter-spacing calibré, staggers, grain photo unifié. Le visiteur ne les voit pas — il sent "ce site est différent".
+
+---
+
+## 2. Système typographique
 
 ### Display — Fraunces (variable, Google Fonts)
-- Axes utilisés : `opsz` (9–144), `wght` (300–700), italic
-- Usage : H1, H2, H3, citations, eyebrows display
-- Letter-spacing : -0.02em sur grandes tailles, -0.01em sur moyennes
-- Line-height : 1.05 sur display, 1.15 sur H1, 1.2 sur H2
+- Axes : `opsz` (optical sizing, 9-144), `wght` (300-600), italic natif
+- Usage : hero, H1, H2, H3, citations, chiffres clés
+- Letter-spacing : **-0.03em** sur les très grandes tailles (hero), -0.02em sur H1, -0.01em sur H2/H3
+- Line-height : 1.0 sur hero, 1.1 sur H1, 1.2 sur H2
+- L'italique de Fraunces est un **outil de hiérarchie** (ex. *environnementale* en italique dans le hero) — usage intentionnel, pas décoratif
 
 ### Body — Geist (Google Fonts)
-- Weights : **400, 500 uniquement** (jamais 300, jamais 600+)
-- Usage : corps, nav, UI, captions
-- Line-height : 1.7 sur corps, 1.5 sur captions
-- Letter-spacing : 0 sur corps, +0.08em sur caps/eyebrows
+- Weights : 400, 500 uniquement
+- Line-height : 1.7 corps, 1.5 captions
+- Letter-spacing : 0 corps, +0.12em sur les eyebrows/labels en capitales
 
-### Échelle (tokens CSS)
+### Échelle (tokens, clamp pour fluidité)
 
 | Token | Mobile | Desktop | Usage |
 |---|---|---|---|
-| `--text-display` | 3rem | 5.5rem | Hero |
-| `--text-h1` | 2rem | 3.5rem | Page titles |
+| `--text-hero` | 2.75rem | 6.5rem | Hero titles |
+| `--text-display` | 2.25rem | 4rem | Section statements géants |
+| `--text-h1` | 2rem | 3.25rem | Page titles |
 | `--text-h2` | 1.5rem | 2.25rem | Section titles |
 | `--text-h3` | 1.25rem | 1.625rem | Subsections |
-| `--text-body` | 1rem | 1.0625rem | Body text |
-| `--text-small` | 0.875rem | 0.9375rem | Secondary |
-| `--text-caption` | 0.75rem | 0.8125rem | Labels, eyebrows |
+| `--text-body` | 1rem | 1.0625rem | Body |
+| `--text-small` | 0.9375rem | 0.9375rem | Secondary |
+| `--text-caption` | 0.75rem | 0.8125rem | Eyebrows, labels |
 
-Tout `clamp()`-isé pour fluidité entre mobile et desktop.
+### Animation des textes (signature du site)
+- **Hero & grands titres** : reveal par mots, mask + translateY (de 100% à 0), stagger 60-80ms, easing `expo.out`, durée 0.8-1s. Jamais lettre par lettre sur du texte long (trop lourd) — uniquement sur des titres courts si l'effet le mérite.
+- **Titres de section** : reveal par lignes au scroll (ScrollTrigger), une ligne après l'autre.
+- **Corps** : fade + translateY léger (16px), au scroll, stagger sur les paragraphes.
+- **Chiffres clés** : count-up animé jusqu'à la valeur finale quand ils entrent dans le viewport.
+- **Eyebrows / numéros de section** : fade simple, légèrement avant le titre qu'ils annoncent.
 
 ---
 
-## 4. Système chromatique
+## 3. Système chromatique (enrichi)
 
-### Trois couleurs de marque. Point.
+### Couleurs de marque (inchangées)
 
 | Token | Hex | Rôle |
 |---|---|---|
-| `--color-brand` | `#1a2e1e` | Vert forêt — fonds sombres, autorité, texte sur cream |
-| `--color-gold` | `#c9a96e` | Or — repère, jamais décoration. **2 instances par page max.** |
-| `--color-cream` | `#f5f0e8` | Crème — surface principale |
+| `--color-brand` | `#1a2e1e` | Vert forêt — ponctuation, overlays hero, footer |
+| `--color-brand-deep` | `#0f1c12` | Vert profond — overlays sombres, contrastes |
+| `--color-brand-soft` | `#2a4530` | Vert adouci — hovers, surfaces vertes secondaires |
+| `--color-gold` | `#c9a96e` | Or — repère, 2-3 instances par écran max |
+| `--color-gold-deep` | `#a88a4c` | Or profond — hovers gold |
 
-### Règle du gold
-Le gold est un **repère**, pas une décoration. Il marque ce qui est important (un numéro de section, une donnée chiffrée, un détail typographique signifiant). Il ne souligne pas les H1. Il n'encadre pas les cards. Il n'apparaît pas sur les bordures de section. Il n'apparaît pas dans les logos texte. **Si tu peux enlever le gold sans changer le sens, enlève-le.**
+### Surfaces claires — LA TOILE (nouvelles + existantes)
 
-### Couleurs dérivées (warm-only, jamais de gris froid)
-- `--color-ink` : `#1a2e1e` — texte principal
-- `--color-ink-soft` : `#3d4a40` — texte secondaire
-- `--color-muted` : `#6b7455` — texte tertiaire, captions
-- `--color-line` : `#d8d0bc` — filets rares, séparateurs
+| Token | Hex | Rôle |
+|---|---|---|
+| `--color-cream-soft` | `#faf7f2` | Surface la plus claire — sections aérées |
+| `--color-cream` | `#f5f0e8` | Surface par défaut |
+| `--color-cream-warm` | `#efe7d6` | Beige chaud, sections alternées |
+| `--color-cream-deep` | `#ede8dc` | Surface plus dense — séparation douce |
+| `--color-forest-light` | `#eef2ec` | Vert-cream très subtil, touches environnementales |
 
-### Texte sur fond brand (footer) — via `color-mix()`
-- `--color-on-brand-strong` : cream pleine
-- `--color-on-brand-muted` : `color-mix(in srgb, cream 65%, brand)`
-- `--color-on-brand-faint` : `color-mix(in srgb, cream 40%, brand)`
+### Texte
 
-Plus jamais d'opacités arbitraires (`/40`, `/60`, `/80`).
+| Token | Hex | Rôle |
+|---|---|---|
+| `--color-ink` | `#1a2e1e` | Texte principal sur clair |
+| `--color-ink-soft` | `#3d4a40` | Texte secondaire |
+| `--color-muted` | `#6b7455` | Tertiaire, captions |
+| `--color-line` | `#d8d0bc` | Filets, séparateurs |
+
+### Texte sur fond brand (footer, hero overlay) — via `color-mix()`
+
+| Token | Définition |
+|---|---|
+| `--color-on-brand-strong` | `var(--color-cream)` |
+| `--color-on-brand-muted` | `color-mix(in srgb, cream 65%, brand)` |
+| `--color-on-brand-faint` | `color-mix(in srgb, cream 40%, brand)` |
+
+### Overlays cinématiques (pour le hero image-led)
+
+| Token | Définition | Rôle |
+|---|---|---|
+| `--overlay-hero` | `linear-gradient(180deg, rgba(15,28,18,0.35) 0%, rgba(15,28,18,0.65) 100%)` | Lisibilité du texte sur image hero |
+| `--overlay-hero-side` | `linear-gradient(90deg, rgba(15,28,18,0.7) 0%, transparent 70%)` | Pour texte aligné à gauche (style GISI) |
+
+### Le ratio lumière (LA règle clé)
+
+- **Hero** : sombre, mais par l'**image cinématique** + overlay, pas par un aplat vert plein
+- **Corps** : cream dominant, alternance `cream-soft` → `cream-warm` → `cream` → `forest-light` pour les transitions
+- **Ponctuation verte** : carte des zones, une section statement forte, footer
+- **Règle du gold** : repère, jamais décoration. 2-3 instances par écran. Pas de soulignement de titre, pas d'encadrement de card.
 
 ---
 
-## 5. Système d'espacement et de proportion
+## 4. Système d'imagerie — IMAGE-LED + anti-AI-cheap
 
-### Échelle
-Base 4px. Multiples utilisés : 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 · 192.
+**C'est le cœur de la direction. Tout est généré en IA. La discipline anti-cheap n'est pas optionnelle : c'est ce qui sépare GISI d'un site amateur.**
 
-### Padding container (latéral)
-- Mobile : 24px
-- Tablet : 48px
-- Desktop : 80px
-- Wide : 128px
+### Hero cinématique — stratégie image
 
-### Rythme vertical des sections
-- Petite section : 64–96px
-- Section standard : 96–160px
-- Section hero : 160–240px
+La stratégie hero est **image fixe avec Ken Burns subtle (zoom lent ~8s) + parallax léger au scroll**. Pas de vidéo pour l'instant — plus léger, autoplay mobile sans souci, génération IA cohérente sur des plans atmosphériques. Vidéo restera une option future si la génération Veo 3 / Sora 2 donne un résultat fiable sur des plans industriels sans humains.
 
-### Max-widths
-- `--container-max` : 1280px (sections marketing)
-- `--container-narrow` : 720px (texte éditorial long, blog)
-- `--container-prose` : 640px (prose dense)
+### Les tells de l'AI slop (à éliminer absolument)
+
+- Visages déformés, mains incohérentes → **JAMAIS de personnes, visages, mains**
+- Sur-saturation, couleurs criardes → désaturer systématiquement
+- Sur-netteté "plastique", rendu HDR → grain + matte + lumière naturelle
+- Symétrie parfaite irréelle → compositions asymétriques
+- Texte/logos/machines complexes illisibles → éviter ces sujets, ou plans larges où le détail disparaît
+- "Look Midjourney" générique → style references documentaires précises
+
+### Règles de génération pour BTH
+
+**Sujets autorisés :**
+- Paysages industriels en plan large (raffineries au loin, silhouettes d'usines au crépuscule)
+- Textures : béton, métal patiné, surfaces d'eau, fumée/vapeur, terre, végétation aride algérienne
+- Nature : paysages désertiques, côtes oranaises, végétation méditerranéenne, ciels
+- Détails atmosphériques : contre-jour, brume, heure dorée, reflets
+
+**Sujets interdits :**
+- Personnes, visages, mains, silhouettes humaines proches
+- Logos, marques, texte
+- Machines complexes en gros plan (les détails AI cassent)
+- Scènes "corporate stock" (réunions, poignées de main, sourires)
+
+**Direction artistique obligatoire (dans chaque prompt) :**
+- Style : photographie documentaire, film 35mm, désaturé
+- Lumière : naturelle, heure dorée douce ou brume — jamais HDR
+- Composition : asymétrique, espace négatif, règle des tiers
+- Palette : tirer vers vert/cream/désaturé pour coller à la marque
+- Grain : film grain léger
+
+### Le secret de cohérence : le post-traitement unifié
+
+Des images AI générées séparément sont disparates. **Ce qui les transforme en collection cohérente premium : un même color grade + grain appliqué à TOUTES.**
+- Même LUT/color grade (tirage vert-désaturé chaud)
+- Même grain
+- Même contraste
+- Même format selon usage
+
+C'est cette étape qui fait la différence entre "images AI collées" et "direction photographique de cabinet".
+
+### Outils
+- **Images** : Nano Banana 2 (Gemini 3 Pro Image), Flux 1.1, Midjourney v7
+- **Vidéo hero (future)** : Veo 3, Sora 2, Kling (plans atmosphériques uniquement, jamais de scènes humaines)
+- **Voix off** (si vidéos explicatives) : ElevenLabs
+- **Post-traitement** : color grade + grain uniforme, batch
+
+### Ce qui reste NON-IA
+- Portraits équipe → vrais photos (crédibilité non-négociable)
+- Logos clients → jamais générés (risque juridique)
+
+---
+
+## 5. Système de motion — GSAP + Framer Motion + Lenis
+
+### Stack
+
+| Lib | Rôle |
+|---|---|
+| **Lenis** | Smooth scroll de base (toute la page) |
+| **GSAP + ScrollTrigger** | Pin scroll, timelines, reveals au scroll, count-up, parallax léger contrôlé |
+| **Framer Motion** | Composants React, page transitions, hover states, layout animations |
+
+Règle de répartition : GSAP pour tout ce qui est lié au scroll ; Framer Motion pour tout ce qui est lié à l'interaction et aux composants. On ne mélange pas les deux sur un même élément.
+
+### Les 3 patterns (validés)
+
+**Pattern 1 — Pin scroll cinématique (DOMINANT)**
+Un élément reste fixe (image, schéma, chiffre) pendant que le contenu défile à côté. Via `ScrollTrigger.create({ pin: true })`.
+*Application BTH : section services — image/schéma fixe à gauche, les services défilent à droite un par un.*
+
+**Pattern 2 — Cross-fade de surfaces (DOMINANT)**
+Le fond change progressivement entre sections (`cream-soft` → `cream-warm` → `cream`). Le contenu apparaît en stagger (eyebrow → titre → corps), chaque élément son easing.
+
+**Pattern 3 — Lignes & textes qui se tracent (ACCENT ponctuel)**
+Filets gold qui se tracent au scroll (scaleX). Grands titres reveal par mots. Chiffres en count-up. Usage parcimonieux — pas sur chaque section.
+
+### Easings (tokens)
+
+| Token | Courbe | Usage |
+|---|---|---|
+| `--ease-out-expo` | `cubic-bezier(0.16, 1, 0.3, 1)` | Reveals, entrées |
+| `--ease-out-quart` | `cubic-bezier(0.25, 1, 0.5, 1)` | Transitions douces |
+| `--ease-in-out-soft` | `cubic-bezier(0.4, 0, 0.2, 1)` | Symétrique |
+
+GSAP : utiliser `expo.out`, `power3.out`, `power4.out`. **Jamais `linear` ni les défauts.**
+
+### Durations (tokens)
+
+| Token | Valeur | Usage |
+|---|---|---|
+| `--duration-fast` | 200ms | Hover, focus |
+| `--duration-base` | 400ms | Transitions standard |
+| `--duration-slow` | 700ms | Reveals, page transitions |
+| `--duration-hero` | 1000ms | Hero reveal initial |
+
+### Le storytelling au scroll
+
+Le scroll n'est pas une liste, c'est une **narration**. Chaque page raconte : **contexte → expertise → preuve → action**.
+- Home : hero immersif → qui on est (chiffres) → ce qu'on fait (services en pin scroll) → où on agit (carte) → preuve (projets/insights) → action (contact)
+- Pages services : le problème réglementaire → notre méthode (process en pin scroll) → les livrables → FAQ → CTA
+
+### Règles de motion
+
+**Autorisé :**
+- Pin scroll, cross-fade, text reveal, count-up, parallax léger (≤15% de déplacement), underline trace, hover micro-shifts
+- Page transitions (fade + léger translate, 400-700ms)
+- Hover : letter-spacing micro-shift (+0.01em), color shift texte, underline trace
+- Ken Burns subtle sur images hero (zoom lent ~8s)
+
+**Interdit :**
+- AOS / fade-up générique sur tout
+- Scroll-jacking brutal (qui empêche de scroller librement)
+- Parallax fort (> 15%)
+- Magnetic buttons, blob followers, cursor custom envahissant
+- Loaders prétentieux (un fade d'entrée subtil max)
+- Tout ce qui empêche de skipper / scroller vite
+- `backdrop-blur`, `backdrop-filter` — interdits en toutes circonstances
+
+### Accessibilité motion
+- `prefers-reduced-motion` : désactive pin scroll, parallax, count-up, Ken Burns. Garde les fades simples. **Obligatoire.**
+
+---
+
+## 6. Système de profondeur
+
+La profondeur EST autorisée — subtile, à la Apple/Linear.
+
+### Shadows (tokens, ultra-subtiles)
+
+| Token | Valeur | Usage |
+|---|---|---|
+| `--shadow-subtle` | `0 1px 2px rgb(26 46 30 / 0.04), 0 2px 8px rgb(26 46 30 / 0.04)` | Cards, éléments flottants |
+| `--shadow-card` | `0 1px 3px rgb(26 46 30 / 0.05), 0 8px 24px rgb(26 46 30 / 0.06)` | Cards importantes, widgets |
+| `--shadow-float` | `0 4px 12px rgb(26 46 30 / 0.08), 0 16px 48px rgb(26 46 30 / 0.08)` | Modales, overlays |
+
+**Règle :** double-couche (une ombre serrée + une diffuse), opacité très basse (≤ 0.08), teintée brand (jamais noir pur). Si l'ombre se voit franchement, elle est trop forte.
+
+### Blur — INTERDIT
+
+Pas de `backdrop-blur`, pas de `backdrop-filter`, en aucune circonstance. Ni sur le header, ni sur les overlays, ni sur les modales. La profondeur passe **uniquement** par color, border, shadow subtle. Les overlays utilisent des fonds opaques ou semi-opaques (ex. `bg-brand-deep/80`), jamais du blur.
+
+### Gradients de marque (subtils)
+- Glow de la carte zones (vert → transparent, radial)
+- Overlays hero (définis section 3)
+- Jamais de gradient multi-couleurs décoratif
 
 ### Radius
-- `--radius-sm` : 4px (boutons, inputs)
-- `--radius-md` : 6px (cards rares)
-- **Aucun lg, xl, 2xl, 3xl. Aucun `rounded-full` sauf points/avatars très exceptionnels.**
+
+| Token | Valeur |
+|---|---|
+| `--radius-sm` | 4px (boutons, inputs) |
+| `--radius-md` | 8px (cards) |
+| `--radius-lg` | 12px (widgets, images) |
+| `--radius-full` | 9999px (points, avatars) |
+
+Jamais 16px+ sur des boutons.
 
 ---
 
-## 6. Système de motion
+## 7. Header — luxe par l'exécution
 
-### Durations
-- `--duration-fast` : 200ms (hover, focus)
-- `--duration-base` : 300ms (transitions standard)
-- `--duration-slow` : 500ms (transitions de page)
+### Dimensions
+- **Hauteur : `h-16 lg:h-20`** (64px / 80px)
+- **Logo** : mark SVG fin (la feuille mesurée) + wordmark Fraunces. Mark visible sur toutes les tailles, wordmark masqué sous sm.
+- **Nav** : 4 items max (Services / Projets / Équipe / Contact), `text-[0.9375rem]` font-medium tracking-tight, hover underline qui se trace (pseudo-element scaleX)
+- **CTA** : `rounded-sm`, letter-spacing premium, micro letter-spacing-shift au hover
+- **Lang switcher** : discret, FR · AR · EN
 
-### Easings
-- `--ease-out-expo` : `cubic-bezier(0.16, 1, 0.3, 1)` — sortie premium
-- `--ease-out-quart` : `cubic-bezier(0.25, 1, 0.5, 1)` — sortie douce
-- `--ease-in-out-soft` : `cubic-bezier(0.4, 0, 0.2, 1)` — symétrique
+### État scrollé (après 50px)
+- `bg-cream-soft` solid + `border-bottom-color: var(--color-line)`
+- Pas d'opacité, **pas de backdrop-filter**
+- Transition CSS scroll-driven sur `background-color` et `border-color` uniquement
 
-### Autorisé
-- Underline qui se trace au hover (scaleX du pseudo-élément)
-- Color shift au hover (texte uniquement, jamais sur fond plein)
-- Transition de page (fade 200–300ms, easing custom)
-- Cursor change sur zones cliquables
-- Letter-spacing micro-shift sur les CTAs (+0.01em au hover)
+### Color adaptation (overlay ↔ solid)
+Le header a deux états visuels selon la page :
+- **Overlay** (landing, transparent au-dessus du hero sombre) : logo (mark + wordmark), nav items, lang switcher → en **cream**, entièrement visibles sur le fond cinématique sombre. Au scroll, ils transitionnent vers **ink/brand**.
+- **Solid** (pages intérieures) : logo, nav, lang → en **ink/brand** dès le départ. Fond cream-soft.
+- **CTA bouton** : style indépendant (`bg-brand text-cream`) dans les deux états. Il a son propre contraste, il ne s'adapte pas.
+- **Hover** : doit rester pertinent dans les deux modes. En overlay : cream → gold. En solid : ink-soft → ink.
+- **Transition** : synchronisée avec l'animation du background, via CSS scroll-driven (cascade `color`/`currentColor` ou `@property` sur custom properties animatables).
 
-### Interdit
-- AOS, scroll-trigger fade-up
-- Parallax
-- Cards qui montent au scroll
-- Tilting, magnetic buttons, blob followers
-- Loaders animés (sauf form submit subtle)
-- `scroll-behavior: smooth` global
-- Cursor custom (sauf change de forme sur liens)
+### Entrée animée
+- Éléments du header fade-in au load avec stagger CSS pur (via `--enter-delay` custom property sur `.header-item`).
+- `prefers-reduced-motion` : pas d'animation d'entrée.
 
 ---
 
-## 7. Système d'imagerie
+## 8. Layout & sections
 
-### Trois directions autorisées (choisir UNE par projet)
+### Container
+- **Container par défaut : pas de max-width strict.** Le padding latéral seul délimite le contenu. (Cap soft optionnel à ~1680px pour écrans XXL.)
+- **Padding latéral progressif** : ~20px mobile / 24px sm / 32px md / 40px lg / 48px xl / 64px 2xl.
+- **Variantes éditoriales** : `--container-narrow` (720px) et `--container-prose` (640px) pour la prose longue uniquement — ces variantes conservent un max-width fixe.
+- **Référence** : Cain Lamarre, Flyward, AKFA, GISI — contenu à ~95% du viewport sur grand écran. Les bandes vides latérales lisent "petite marque" en B2B.
+- Hero et certaines sections cinématiques : full-bleed (100vw).
 
-**a. Photographie documentaire sur site.** Projets réels, anonymisés si besoin. Noir et blanc ou couleur très désaturée. Format strict : 3:2 ou 4:5. Pas de portraits sourires en chemise blanche.
+### Grille & asymétrie
+- Grille 12 colonnes utilisée à 5/12, 7/12, 11/12 selon le contenu. Pas de 3-colonnes répété.
 
-**b. Illustration ligne fine éditoriale.** Schémas techniques (process EIE, méthodologie EDD, cartes zones d'intervention) au trait fin, monochrome brand ou ink-soft.
+### Alternance de surfaces
+- Chaque section change de toile (cream-soft → cream-warm → cream → forest-light → brand pour ponctuation).
 
-**c. Aucune imagerie.** Le texte porte tout. La typographie est l'image.
+### Rythme vertical
+- Sections 96-160px de padding vertical, hero 100vh.
 
-### Interdit absolument
-- Photos stock Unsplash/Pexels (les concurrents en abusent — c'est la signature du cheap)
-- Icônes Lucide / Heroicons partout (utilisables 1–2 fois max sur tout le site, pour des micro-indicateurs)
-- Illustrations 3D AI
-- Memojis, mascottes, abstractions colorées
-- Photos people-stock générique
-
----
-
-## 8. La blacklist
-
-Liste explicite de ce qui ne doit **jamais** apparaître dans le code :
-
-**Effets CSS :**
-- `backdrop-blur`, `backdrop-filter`
-- `box-shadow` décoratif (les seules ombres permises sont sur form inputs au focus)
-- `bg-gradient-*` (sauf gradients de marque très subtils en SVG)
-- `text-shadow`
-
-**Geometry :**
-- `rounded-full` sur boutons (jamais)
-- `rounded-2xl`, `rounded-3xl` (jamais)
-- `rounded-xl` (jamais)
-
-**Patterns visuels :**
-- Glassmorphism
-- Neumorphism
-- Dark mode
-- Light mode toggle
-- Particules animées, étoiles, blobs
-- Cursor custom
-- Scroll-jacking, locomotive scroll spectaculaire
-- Loading screens prétentieux
-
-**Polices interdites :**
-Inter, Roboto, Montserrat, Poppins, Open Sans, Lato, Nunito, Outfit, Plus Jakarta Sans, Cormorant Garamond, DM Sans, Playfair Display, Space Grotesk.
-
-**Couleurs interdites :**
-Tout violet, magenta, cyan, néon. Tout dégradé multi-couleurs. Tout gris froid (zinc, slate, neutral Tailwind défaut).
+### Numérotation éditoriale
+- 01, 02, 03 sur les sections (signal cabinet).
 
 ---
 
-## 9. Références — les sites qui incarnent ce manifesto
+## 9. La formule Home BTH (structure cible)
 
-À consulter avant chaque décision visuelle importante :
-
-- **pentagram.com** — typographie éditoriale absolue, case studies sans décor
-- **klim.co.nz** — typo-led extreme, comment un site retient sans rien d'autre
-- **practique.com** — cabinet d'architecture, exactement le ton visé
-- **burohappold.com** — cabinet ingénierie premium international, référence directe
-- **stripe.com/customers** — comment atteindre un niveau cabinet en SaaS
-- **arcadis.com** — cabinet environnemental international (palette claire récente)
-- **rambol l.com** — autre référence environnement, plus moderne
-
----
-
-## 10. Comment ce document s'applique
-
-**Avant d'écrire du code :** relire la section 2 (les 8 lois) et la section 8 (la blacklist).
-
-**Pendant le code :** si un effet visuel n'est pas explicitement autorisé dans les sections 5–7, il est interdit.
-
-**Pendant la review :** chercher activement la blacklist. Un seul élément blacklisté = la PR ne mergue pas.
-
-**Mise à jour de ce document :** uniquement avec décision explicite documentée dans un commit dédié au manifesto. Pas de drift silencieux.
+1. **Hero cinématique** — full-bleed 100vh, image terrain IA (Ken Burns subtle + parallax léger) + overlay + titre Fraunces reveal par mots + CTA gold + CTA ghost. Style GISI/Price&Pierce. **Scroll indicator** : bas à droite, track vertical fin + pulse gold descendante en boucle, aucun label (jamais le mot "Scroll").
+2. **Barre de stats** — 2009 / 15+ / 200+ / 12, count-up au scroll.
+3. **Qui nous sommes** — statement court + lien équipe. Surface cream-warm.
+4. **Services en pin scroll** — image/schéma fixe + services qui défilent (pattern 1, via ScrollTrigger). LA section signature.
+5. **Carte des zones d'intervention** — Algérie avec glow gold sur Oran + widget adresse (style Cain Lamarre). Ponctuation verte.
+6. **Statement environnemental** — grande phrase Fraunces sur surface forte ("Chaque projet industriel commence par une question environnementale").
+7. **Projets / Insights** — cards éditoriales (style Arcadis Featured Insights + Atkins Beyond Engineering).
+8. **CTA contact** — "Un projet en cours ? Parlons-en." + form ou lien.
+9. **Footer** — vert foncé, asymétrique 6/3/3, ponctuation finale.
 
 ---
 
-*Document évolutif. Version 1 — Juin 2026.*
+## 10. Blacklist v2.1
+
+**Toujours interdit (vrais signaux cheap) :**
+- `backdrop-blur`, `backdrop-filter` — en toutes circonstances
+- Photos/vidéos AI avec personnes, visages, mains
+- Stock générique corporate (poignées de main, sourires)
+- AOS fade-up générique
+- Scroll-jacking brutal, parallax fort (>15%)
+- `rounded-full` sur boutons, `rounded-2xl`/`3xl`
+- Gradients multi-couleurs décoratifs, néon, violet/cyan/magenta
+- Gris froid (zinc/slate/neutral Tailwind)
+- Dark mode toggle
+- Polices : Inter, Roboto, Montserrat, Poppins, Cormorant Garamond, DM Sans, Playfair Display, Space Grotesk
+- Gold en décoration (soulignement titre, encadrement card)
+
+**Autorisé avec maîtrise :**
+- Shadows subtiles (≤ 0.08 opacité, teintées brand, double-couche)
+- Gradients de marque subtils (glow carte, overlays hero)
+- Radius jusqu'à 12px (cards/widgets, pas boutons)
+- Motion riche (pin scroll, cross-fade, reveals, count-up, parallax léger, Ken Burns)
+
+---
+
+## 11. Références (recalibrées)
+
+**Structure & ton cabinet :**
+- **Cain Lamarre** (cainlamarre.ca) — ⭐ étoile polaire. Palette identique, ton cabinet, carte glow, expertises 2 colonnes
+- **GISI** (gisi.com) — ⭐ hero cinématique full-bleed image-led
+- **Price & Pierce** (price-pierce.co.uk) — ⭐ hero vidéo cinématique, immersion totale
+- **Flyward** (flyward.com) — header clean, layout premium, CTA minimal
+- **AKFA** (akfa.uz) — container large, contenu ~95% du viewport, header transparent
+- **Arcadis** (arcadis.com) — aération, grandes photos éditoriales, Featured Insights
+- **Atkins Réalis** — chiffres énormes, magazine "Beyond Engineering" (PAS leurs gradients flashy)
+
+**Motion & craft :**
+- **Apple** — pin scroll cinématique, profondeur subtile, motion imperceptible
+- **Stripe** — cross-fade sections, stagger, gradients de marque maîtrisés
+- **Linear** — précision des détails, motion qui chuchote
+- **Vercel** — text reveals, lignes qui se tracent
+
+---
+
+## 12. Application
+
+- **Avant de coder** : relire sections 1, 5 (motion), 4 (imagerie).
+- **Pendant** : si un effet n'est pas dans les sections 4-6, il est interdit.
+- **Review** : chercher la blacklist (section 10). Un seul élément blacklisté = pas de merge.
+- **Imagerie** : toute image passe par le post-traitement unifié (section 4). Pas d'image brute AI en production.
+- **Mise à jour de ce doc** : commit dédié uniquement.
+
+---
+
+*v2.1 — Juin 2026. Intègre les décisions de terrain : pas de blur, container premium, header color-adaptive, Ken Burns hero, scroll indicator bottom-right.*
