@@ -73,7 +73,6 @@
   --radius-full: 9999px;
 
   /* ── Containers ── */
-  --container-max:    1280px;
   --container-narrow: 720px;
   --container-prose:  640px;
 }
@@ -122,11 +121,15 @@
    its initial state on unsupported browsers.
    ───────────────────────────────────────────────────────────── */
 @keyframes header-solidify {
+  from {
+    color: var(--color-cream);
+  }
   to {
     background-color: rgb(250 247 242 / 0.9);
     backdrop-filter: blur(12px) saturate(1.4);
     -webkit-backdrop-filter: blur(12px) saturate(1.4);
     border-bottom-color: var(--color-line);
+    color: var(--color-ink);
   }
 }
 
@@ -145,8 +148,29 @@
     backdrop-filter: blur(12px) saturate(1.4);
     -webkit-backdrop-filter: blur(12px) saturate(1.4);
     border-bottom-color: var(--color-line);
+    color: var(--color-ink);
     animation: none;
   }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Overlay header: non-CTA children inherit animated color cascade
+   Specificity (0,0,2,1) beats all Tailwind color utilities (0,0,1,0)
+   CTA button excluded — not targeted by any selector below
+   ───────────────────────────────────────────────────────────── */
+header[data-overlay="true"] .header-logo,
+header[data-overlay="true"] .header-logo span,
+header[data-overlay="true"] .nav-link,
+header[data-overlay="true"] .nav-link[aria-current="page"],
+header[data-overlay="true"] .lang-switcher-locale,
+header[data-overlay="true"] .lang-switcher-sep {
+  color: inherit;
+}
+
+/* Gold hover works on both dark (transparent) and cream (solid) backgrounds */
+header[data-overlay="true"] .nav-link:hover,
+header[data-overlay="true"] .lang-switcher-locale:hover {
+  color: var(--color-gold);
 }
 
 /* ─────────────────────────────────────────────────────────────

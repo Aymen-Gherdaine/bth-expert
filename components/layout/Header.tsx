@@ -29,7 +29,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
 
             <Link
               href={`/${lang}`}
-              className="header-item flex items-center gap-3 text-ink"
+              className="header-item header-logo flex items-center gap-3"
               style={{ "--enter-delay": "0ms" } as React.CSSProperties}
             >
               <LogoMark className="w-5 h-7 lg:w-6 lg:h-8" />
