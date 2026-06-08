@@ -33,7 +33,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
               style={{ "--enter-delay": "0ms" } as React.CSSProperties}
             >
               <Image
-                src="/logo-fond-blanc.webp"
+                src="/logo.png"
                 alt="BTH Expert"
                 height={36}
                 width={120}
