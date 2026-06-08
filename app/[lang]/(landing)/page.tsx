@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { HeroSection } from "@/components/ui/HeroSection";
+import { RevealText } from "@/components/animations/RevealText";
 import { ServicesSection } from "@/components/ui/ServicesSection";
 import { Marquee } from "@/components/motion/Marquee";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -46,10 +47,68 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── HERO ─────────────────────────────────────────────────────────
-          Client component — Framer Motion clip-path line reveal + stagger.
-      ─────────────────────────────────────────────────────────────────── */}
-      <HeroSection lang={lang} hero={h.hero} />
+      {/* ── HERO — cinematic full-bleed, word-reveal on entry ─────────── */}
+      <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32">
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 30% 70%, var(--color-brand-soft) 0%, var(--color-brand-deep) 55%, #050a06 100%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ background: "var(--overlay-hero-side)" }}
+        />
+
+        <Container className="relative z-10">
+          <div className="max-w-3xl">
+            <RevealText
+              className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
+              delay={0.1}
+            >
+              Cabinet d&apos;études environnementales · Agréé Ministère
+            </RevealText>
+
+            <RevealText
+              as="h1"
+              className="font-display font-medium text-[length:var(--text-hero)] text-cream leading-[1.0] tracking-[-0.03em]"
+              delay={0.25}
+            >
+              Expertise environnementale &amp; industrielle
+            </RevealText>
+
+            <RevealText
+              className="block mt-10 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
+              delay={0.6}
+            >
+              Études d&apos;impact, études de dangers, audits HSE et conformité réglementaire pour l&apos;industrie algérienne depuis 2009.
+            </RevealText>
+
+            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <Link
+                href={`/${lang}/contact`}
+                className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              >
+                Discuter d&apos;un projet
+              </Link>
+              <Link
+                href={`/${lang}/services`}
+                className="inline-flex items-center text-cream/90 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)]"
+              >
+                Nos services <span className="ml-2">→</span>
+              </Link>
+            </div>
+          </div>
+        </Container>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 text-cream/50">
+          <span className="text-[0.6875rem] uppercase tracking-[0.3em]">Scroll</span>
+          <span aria-hidden className="block w-px h-10 bg-cream/30" />
+        </div>
+      </section>
 
       {/* ── MARQUEE — credentials ticker ─────────────────────────────── */}
       <Marquee />
