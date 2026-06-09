@@ -122,19 +122,25 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
   return (
     <section className="bg-white">
 
-      {/* ── Section header — matches other sections (number + eyebrow + title) */}
+      {/* ── Section header ───────────────────────────────────────────── */}
       <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pt-24 md:pt-32 pb-16 md:pb-20">
-        <div className="flex items-baseline gap-4 mb-10 md:mb-12">
-          <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest">
+        <div className="flex items-baseline gap-5 mb-10 md:mb-14">
+          <span
+            className="font-display text-gold"
+            style={{ fontSize: "var(--text-h3)", letterSpacing: "-0.01em" }}
+          >
             {services.sectionNumber}
           </span>
-          <span className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted">
+          <span
+            className="font-sans uppercase text-muted tracking-[0.18em]"
+            style={{ fontSize: "var(--text-small)" }}
+          >
             {services.eyebrow}
           </span>
         </div>
         <h2
           className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"
-          style={{ fontSize: "var(--text-h2)" }}
+          style={{ fontSize: "clamp(2.25rem, 4vw + 0.75rem, 4.75rem)" }}
         >
           {services.heading}
         </h2>

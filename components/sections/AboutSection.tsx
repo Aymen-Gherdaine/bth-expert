@@ -34,8 +34,8 @@ export function AboutSection({ lang }: AboutSectionProps) {
   });
 
   return (
-    <section className="bg-cream-warm relative z-10">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
+    <section className="bg-cream-warm relative z-10 min-h-screen flex flex-col justify-center">
+      <div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
 
         {/* Gold traced line */}
         <div
