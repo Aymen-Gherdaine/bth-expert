@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesPin } from "@/components/sections/ServicesPin";
+import { CredentialBand } from "@/components/sections/CredentialBand";
 import { Marquee } from "@/components/motion/Marquee";
 import { FadeIn } from "@/components/motion/FadeIn";
 
@@ -110,35 +111,8 @@ export default async function HomePage({
       {/* ── MARQUEE — credentials ticker ─────────────────────────────── */}
       <Marquee />
 
-      {/* ── STATS — monumental numbers ───────────────────────────────── */}
-      <FadeIn>
-        <div className="border-b border-line">
-          <Container>
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-line">
-              {h.stats.items.map((item) => (
-                <div
-                  key={item.label}
-                  className="py-12 lg:py-16 px-6 first:ps-0 last:pe-0"
-                >
-                  <div
-                    className={`font-display font-light leading-none tracking-[-0.04em] mb-3 ${
-                      item.highlight ? "text-gold" : "text-ink"
-                    }`}
-                    style={{
-                      fontSize: "clamp(2.5rem, 5vw + 1rem, 5.5rem)",
-                    }}
-                  >
-                    {item.value}
-                  </div>
-                  <div className="text-[var(--text-caption)] uppercase tracking-widest text-muted">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </div>
-      </FadeIn>
+      {/* ── AGRÉMENT — credential bridge between hero and services ─────── */}
+      <CredentialBand />
 
       {/* ── SERVICES — split plein-écran + photo sticky parallax ────── */}
       <ServicesPin lang={lang} services={h.services} />
