@@ -8,8 +8,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesPin } from "@/components/sections/ServicesPin";
-import { CredentialBand } from "@/components/sections/CredentialBand";
-import { Marquee } from "@/components/motion/Marquee";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 
 export async function generateMetadata({
@@ -108,11 +107,8 @@ export default async function HomePage({
         <span aria-hidden className="scroll-pulse absolute bottom-8 right-8 lg:bottom-10 lg:right-12 z-10" />
       </section>
 
-      {/* ── MARQUEE — credentials ticker ─────────────────────────────── */}
-      <Marquee />
-
-      {/* ── AGRÉMENT — credential bridge between hero and services ─────── */}
-      <CredentialBand />
+      {/* ── À PROPOS — credential bridge between hero and services ─────── */}
+      <AboutSection lang={lang} />
 
       {/* ── SERVICES — split plein-écran + photo sticky parallax ────── */}
       <ServicesPin lang={lang} services={h.services} />
