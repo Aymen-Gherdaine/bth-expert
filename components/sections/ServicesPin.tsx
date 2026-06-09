@@ -120,7 +120,7 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
   });
 
   return (
-    <section className="bg-white">
+    <section className="bg-white relative z-10">
 
       {/* ── Section header ───────────────────────────────────────────── */}
       <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pt-24 md:pt-32 pb-16 md:pb-20">

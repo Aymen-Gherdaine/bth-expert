@@ -61,10 +61,9 @@ export function AboutSection({ lang }: AboutSectionProps) {
       mm.add("(min-width: 1024px)", () => {
         gsap.fromTo(
           section,
-          { y: 0, scale: 1, borderRadius: "0 0 0 0" },
+          { y: 0, borderRadius: "0 0 0 0" },
           {
-            y: "-8%",
-            scale: 0.97,
+            y: "-10%",
             borderRadius: "0 0 14px 14px",
             ease: "none",
             scrollTrigger: {

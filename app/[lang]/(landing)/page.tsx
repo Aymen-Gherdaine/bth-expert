@@ -111,7 +111,8 @@ export default async function HomePage({
       </HeroCurtain>
 
       {/* ── POST-HERO — scrolls over the pinned hero ─────────────────── */}
-      <div className="relative z-10">
+      {/* bg-cream-warm plugs any gap from About's curtain retreat, keeps hero hidden */}
+      <div className="relative z-10 bg-cream-warm">
 
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
       <AboutSection lang={lang} />
