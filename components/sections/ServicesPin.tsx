@@ -35,10 +35,10 @@ const PLACEHOLDERS = [
 ];
 
 export function ServicesPin({ lang, services }: ServicesPinProps) {
-  const bodyRef      = useRef<HTMLDivElement>(null);
-  const imgRefs      = useRef<(HTMLDivElement | null)[]>([]);
-  const textRefs     = useRef<(HTMLDivElement | null)[]>([]);
-  const activeIdx    = useRef<number>(-1);
+  const bodyRef   = useRef<HTMLDivElement>(null);
+  const imgRefs   = useRef<(HTMLDivElement | null)[]>([]);
+  const textRefs  = useRef<(HTMLDivElement | null)[]>([]);
+  const activeIdx = useRef<number>(-1);
 
   useGSAP(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -51,31 +51,29 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
       if (idx === prev) return;
       activeIdx.current = idx;
 
-      // Crossfade images
       imgRefs.current.forEach((el, i) => {
         if (!el) return;
         gsap.to(el, {
           opacity: i === idx ? 1 : 0,
-          duration: i === idx ? 0.7 : 0.35,
+          duration: i === idx ? 0.65 : 0.3,
           ease: "power2.inOut",
           overwrite: true,
         });
       });
 
-      // Transition text blocks
       textRefs.current.forEach((el, i) => {
         if (!el) return;
         if (i === idx) {
           gsap.fromTo(
             el,
-            { opacity: 0, y: 28 },
-            { opacity: 1, y: 0, duration: 0.55, ease: "expo.out", overwrite: true }
+            { opacity: 0, y: 24 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", overwrite: true }
           );
         } else {
           gsap.to(el, {
             opacity: 0,
-            y: i < idx ? -20 : 20,
-            duration: 0.3,
+            y: i < idx ? -16 : 16,
+            duration: 0.25,
             ease: "power2.in",
             overwrite: true,
           });
@@ -86,24 +84,25 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
-      // Init: first service visible, rest hidden
+      // GSAP set overrides the initial CSS opacity-0 classes
       imgRefs.current.forEach((el, i) =>
         el && gsap.set(el, { opacity: i === 0 ? 1 : 0 })
       );
       textRefs.current.forEach((el, i) =>
-        el && gsap.set(el, { opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 28 })
+        el && gsap.set(el, { opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 24 })
       );
       activeIdx.current = 0;
 
+      // 200px per service — one wheel click (~100-120px) crosses the 100px threshold
       ScrollTrigger.create({
         trigger: bodyRef.current,
         start: "top top",
-        end: () => `+=${N * window.innerHeight}`,
+        end: () => `+=${(N - 1) * 200}`,
         pin: true,
         pinSpacing: true,
         snap: {
           snapTo: 1 / (N - 1),
-          duration: { min: 0.3, max: 0.6 },
+          duration: { min: 0.25, max: 0.45 },
           ease: "power2.inOut",
         },
         onUpdate(self) {
@@ -123,8 +122,16 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
   return (
     <section className="bg-white">
 
-      {/* ── Section header ──────────────────────────────────────────── */}
+      {/* ── Section header — matches other sections (number + eyebrow + title) */}
       <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pt-24 md:pt-32 pb-16 md:pb-20">
+        <div className="flex items-baseline gap-4 mb-10 md:mb-12">
+          <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest">
+            {services.sectionNumber}
+          </span>
+          <span className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted">
+            {services.eyebrow}
+          </span>
+        </div>
         <h2
           className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"
           style={{ fontSize: "var(--text-h2)" }}
@@ -137,7 +144,6 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
       <div className="lg:hidden divide-y divide-line/20">
         {services.items.map((item, i) => (
           <div key={item.abbr} className="pb-16">
-            {/* Per-service placeholder image */}
             <div
               aria-hidden
               className="w-full mb-8"
@@ -182,7 +188,7 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
         className="hidden lg:grid h-screen"
         style={{ gridTemplateColumns: "5fr 7fr" }}
       >
-        {/* Left: stacked placeholder images — frame stays fixed, content crossfades */}
+        {/* Left: stacked placeholder images */}
         <div
           className="relative px-10 xl:px-12 2xl:px-16 flex items-center"
           aria-hidden
@@ -195,20 +201,22 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
               <div
                 key={item.abbr}
                 ref={(el) => { imgRefs.current[i] = el; }}
-                className="absolute inset-0"
+                // CSS initial state prevents hydration flash: non-first items hidden
+                className={`absolute inset-0${i !== 0 ? " opacity-0" : ""}`}
                 style={{ background: PLACEHOLDERS[i % PLACEHOLDERS.length] }}
               />
             ))}
           </div>
         </div>
 
-        {/* Right: stacked text blocks — one visible at a time */}
+        {/* Right: stacked text blocks */}
         <div className="relative border-s border-line/30">
           {services.items.map((item, i) => (
             <div
               key={item.abbr}
               ref={(el) => { textRefs.current[i] = el; }}
-              className="absolute inset-0 flex flex-col justify-center px-12 xl:px-16"
+              // CSS initial state: non-first items hidden + offset
+              className={`absolute inset-0 flex flex-col justify-center px-12 xl:px-16${i !== 0 ? " opacity-0 translate-y-6" : ""}`}
             >
               <span
                 className="block font-display text-gold mb-8"
