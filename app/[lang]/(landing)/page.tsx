@@ -7,7 +7,7 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RevealText } from "@/components/animations/RevealText";
-import { ServicesSection } from "@/components/ui/ServicesSection";
+import { ServicesPin } from "@/components/sections/ServicesPin";
 import { Marquee } from "@/components/motion/Marquee";
 import { FadeIn } from "@/components/motion/FadeIn";
 
@@ -141,7 +141,7 @@ export default async function HomePage({
       </FadeIn>
 
       {/* ── SERVICES — split plein-écran + photo sticky parallax ────── */}
-      <ServicesSection lang={lang} services={h.services} />
+      <ServicesPin lang={lang} services={h.services} />
 
       {/* ── MANIFESTO BAND — full bleed dark statement ───────────────── */}
       <FadeIn>
