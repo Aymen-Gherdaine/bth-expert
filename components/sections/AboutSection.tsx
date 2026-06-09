@@ -14,27 +14,79 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({ lang }: AboutSectionProps) {
-  const lineRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const lineRef    = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const line = lineRef.current;
-    if (!line) return;
 
-    gsap.fromTo(
-      line,
-      { scaleX: 0, transformOrigin: "left center" },
-      {
-        scaleX: 1,
-        duration: 1.4,
-        ease: "expo.out",
-        scrollTrigger: { trigger: line, start: "top 85%", once: true },
-      }
-    );
+    // Gold traced line on entry
+    const line = lineRef.current;
+    if (line) {
+      gsap.fromTo(
+        line,
+        { scaleX: 0, transformOrigin: "left center" },
+        {
+          scaleX: 1,
+          duration: 1.4,
+          ease: "expo.out",
+          scrollTrigger: { trigger: line, start: "top 85%", once: true },
+        }
+      );
+    }
+
+    // Curtain-up retreat as Services scrolls over — mirrors HeroCurtain behavior
+    const section = sectionRef.current;
+    if (section) {
+      const mm = gsap.matchMedia();
+
+      mm.add("(max-width: 1023px)", () => {
+        gsap.fromTo(
+          section,
+          { y: 0, borderRadius: "0 0 0 0" },
+          {
+            y: "-12%",
+            borderRadius: "0 0 10px 10px",
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
+
+      mm.add("(min-width: 1024px)", () => {
+        gsap.fromTo(
+          section,
+          { y: 0, scale: 1, borderRadius: "0 0 0 0" },
+          {
+            y: "-8%",
+            scale: 0.97,
+            borderRadius: "0 0 14px 14px",
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
+
+      return () => mm.revert();
+    }
   });
 
   return (
-    <section className="bg-cream-warm relative z-10 min-h-screen flex flex-col justify-center">
+    // No explicit z-index — DOM order (ServicesPin comes after) handles stacking
+    <section
+      ref={sectionRef}
+      className="bg-cream-warm min-h-screen flex flex-col justify-center overflow-hidden"
+    >
       <div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
 
         {/* Gold traced line */}
