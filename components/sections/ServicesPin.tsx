@@ -51,29 +51,27 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
       if (idx === prev) return;
       activeIdx.current = idx;
 
+      // Equal-duration crossfade — no gap where both are invisible
       imgRefs.current.forEach((el, i) => {
         if (!el) return;
         gsap.to(el, {
           opacity: i === idx ? 1 : 0,
-          duration: i === idx ? 0.65 : 0.3,
+          duration: 0.65,
           ease: "power2.inOut",
           overwrite: true,
         });
       });
 
+      // gsap.to (not fromTo) — continues from current state, no forced opacity:0 jump
       textRefs.current.forEach((el, i) => {
         if (!el) return;
         if (i === idx) {
-          gsap.fromTo(
-            el,
-            { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", overwrite: true }
-          );
+          gsap.to(el, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out", overwrite: true });
         } else {
           gsap.to(el, {
             opacity: 0,
-            y: i < idx ? -16 : 16,
-            duration: 0.25,
+            y: i < idx ? -24 : 24,
+            duration: 0.35,
             ease: "power2.in",
             overwrite: true,
           });
@@ -102,12 +100,17 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
         pinSpacing: true,
         snap: {
           snapTo: 1 / (N - 1),
-          duration: { min: 0.25, max: 0.45 },
+          duration: { min: 0.35, max: 0.55 },
           ease: "power2.inOut",
         },
         onUpdate(self) {
-          const idx = Math.min(Math.round(self.progress * (N - 1)), N - 1);
-          goTo(idx);
+          // Only fire when within 5% of a snap point — prevents oscillation
+          // during Lenis deceleration and snap animation
+          const rawP = self.progress * (N - 1);
+          const idx  = Math.min(Math.round(rawP), N - 1);
+          if (Math.abs(rawP - idx) < 0.05 && idx !== activeIdx.current) {
+            goTo(idx);
+          }
         },
       });
 
