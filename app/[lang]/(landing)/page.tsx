@@ -10,6 +10,7 @@ import { RevealText } from "@/components/animations/RevealText";
 import { ServicesPin } from "@/components/sections/ServicesPin";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { HeroCurtain } from "@/components/motion/HeroCurtain";
 
 export async function generateMetadata({
   params,
@@ -47,65 +48,70 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── HERO — cinematic full-bleed, word-reveal on entry ─────────── */}
-      <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32">
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, var(--color-brand) 0%, var(--color-brand-deep) 50%, #060d07 100%)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{ background: "var(--overlay-hero-side)" }}
-        />
+      {/* ── HERO — cinematic full-bleed, curtain-up on scroll ─────────── */}
+      <HeroCurtain>
+        <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32">
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, var(--color-brand) 0%, var(--color-brand-deep) 50%, #060d07 100%)",
+            }}
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{ background: "var(--overlay-hero-side)" }}
+          />
 
-        <Container className="relative z-10">
-          <div className="max-w-3xl">
-            <RevealText
-              className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
-              delay={0.1}
-            >
-              Cabinet d&apos;études environnementales · Agréé Ministère
-            </RevealText>
-
-            <RevealText
-              as="h1"
-              className="font-display font-medium text-[length:var(--text-hero)] text-cream leading-[1.0] tracking-[-0.03em]"
-              delay={0.25}
-            >
-              Expertise environnementale &amp; industrielle
-            </RevealText>
-
-            <RevealText
-              className="block mt-10 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
-              delay={0.6}
-            >
-              Études d&apos;impact, études de dangers, audits HSE et conformité réglementaire pour l&apos;industrie algérienne depuis 2009.
-            </RevealText>
-
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Link
-                href={`/${lang}/contact`}
-                className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+          <Container className="relative z-10">
+            <div className="max-w-3xl">
+              <RevealText
+                className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
+                delay={0.1}
               >
-                Discuter d&apos;un projet
-              </Link>
-              <Link
-                href={`/${lang}/services`}
-                className="inline-flex items-center text-cream/90 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)]"
+                Cabinet d&apos;études environnementales · Agréé Ministère
+              </RevealText>
+
+              <RevealText
+                as="h1"
+                className="font-display font-medium text-[length:var(--text-hero)] text-cream leading-[1.0] tracking-[-0.03em]"
+                delay={0.25}
               >
-                Nos services <span className="ml-2">→</span>
-              </Link>
+                Expertise environnementale &amp; industrielle
+              </RevealText>
+
+              <RevealText
+                className="block mt-10 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
+                delay={0.6}
+              >
+                Études d&apos;impact, études de dangers, audits HSE et conformité réglementaire pour l&apos;industrie algérienne depuis 2009.
+              </RevealText>
+
+              <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Link
+                  href={`/${lang}/contact`}
+                  className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                >
+                  Discuter d&apos;un projet
+                </Link>
+                <Link
+                  href={`/${lang}/services`}
+                  className="inline-flex items-center text-cream/90 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)]"
+                >
+                  Nos services <span className="ml-2">→</span>
+                </Link>
+              </div>
             </div>
-          </div>
-        </Container>
+          </Container>
 
-        <span aria-hidden className="scroll-pulse absolute bottom-8 right-8 lg:bottom-10 lg:right-12 z-10" />
-      </section>
+          <span aria-hidden className="scroll-pulse absolute bottom-8 right-8 lg:bottom-10 lg:right-12 z-10" />
+        </section>
+      </HeroCurtain>
+
+      {/* ── POST-HERO — scrolls over the pinned hero ─────────────────── */}
+      <div className="relative z-10">
 
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
       <AboutSection lang={lang} />
@@ -204,6 +210,8 @@ export default async function HomePage({
           </Container>
         </div>
       </FadeIn>
+
+      </div>{/* end post-hero z-10 wrapper */}
     </>
   );
 }

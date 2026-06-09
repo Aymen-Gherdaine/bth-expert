@@ -7,8 +7,6 @@ import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import type { Locale } from "@/lib/i18n";
 
-// Silence unused-import lint — ScrollTrigger must be imported to activate
-// type augmentation so the `scrollTrigger` gsap config key is recognised.
 void ScrollTrigger;
 
 interface AboutSectionProps {
@@ -16,99 +14,55 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({ lang }: AboutSectionProps) {
-  const imgRef   = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLSpanElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
     const img = imgRef.current;
-    if (img) {
-      gsap.fromTo(
-        img,
-        { opacity: 0, scale: 1.04 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.1,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: img,
-            start: "top 80%",
-            once: true,
-          },
-        }
-      );
-    }
+    if (!img) return;
 
-    const badge = badgeRef.current;
-    if (badge) {
-      badge.textContent = "0";
-      const counter = { val: 0 };
-      gsap.to(counter, {
-        val: 100,
-        duration: 1.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: badge,
-          start: "top 85%",
-          once: true,
-        },
-        onUpdate() {
-          badge.textContent = Math.round(counter.val).toString();
-        },
-      });
-    }
+    gsap.fromTo(
+      img,
+      { opacity: 0, scale: 1.05 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1.2,
+        ease: "expo.out",
+        scrollTrigger: { trigger: img, start: "top 80%", once: true },
+      }
+    );
   });
 
   return (
-    <section className="bg-cream-warm">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+    <section className="bg-cream-warm relative z-10">
+      <div className="pt-24 lg:pt-32 pb-28 lg:pb-40">
 
-          {/* ── Image — first in DOM → above text on mobile ─────────── */}
-          <div className="mb-12 lg:mb-0 lg:col-span-7 lg:col-start-6 lg:row-start-1">
-            <div className="relative overflow-hidden rounded-lg">
-              {/* Placeholder — replaced with real terrain photo in Phase 2 */}
-              <div
-                ref={imgRef}
-                className="w-full aspect-[16/10] lg:aspect-[4/5]"
-                style={{
-                  background:
-                    "linear-gradient(160deg, #1a4a20 0%, #0d2812 35%, #0a1a0c 100%)",
-                }}
-              />
-
-              {/* 100+ badge */}
-              <div
-                className="absolute bottom-6 right-6 px-6 py-4 rounded-md"
-                style={{ backgroundColor: "rgba(26, 46, 30, 0.82)" }}
-              >
-                <span
-                  className="block font-display text-gold leading-none"
-                  style={{
-                    fontSize: "clamp(2.25rem, 4vw, 3.25rem)",
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  <span ref={badgeRef}>100</span>+
-                </span>
-                <span
-                  className="block font-sans mt-1"
-                  style={{
-                    fontSize: "var(--text-caption)",
-                    letterSpacing: "0.1em",
-                    color: "rgba(245, 240, 232, 0.7)",
-                  }}
-                >
-                  Projets réalisés
-                </span>
-              </div>
-            </div>
+        {/* Image — full-width mobile, 10/12 desktop */}
+        <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+          <div className="relative w-full lg:w-10/12 overflow-hidden rounded-lg">
+            <div
+              ref={imgRef}
+              className="w-full aspect-[4/3] lg:aspect-[3/2]"
+              style={{
+                background:
+                  "linear-gradient(160deg, #1a4a20 0%, #0d2812 35%, #0a1a0c 100%)",
+              }}
+            />
+            {/* Gradient at image bottom — eases transition to text block */}
+            <div
+              className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, #efe7d6 0%, transparent 100%)",
+              }}
+            />
           </div>
+        </div>
 
-          {/* ── Text — second in DOM → below image on mobile ────────── */}
-          <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
+        {/* Text block — below image on mobile, overlaps image on desktop */}
+        <div className="mt-10 lg:-mt-28 relative z-10 px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+          <div className="max-w-xl">
             <FadeInStagger>
 
               <FadeInItem>
@@ -125,7 +79,8 @@ export function AboutSection({ lang }: AboutSectionProps) {
                   className="font-display font-light text-ink tracking-[-0.02em] leading-[1.2] mb-8"
                   style={{ fontSize: "var(--text-h2)" }}
                 >
-                  Un bureau d&apos;études agréé par le Ministère de l&apos;Environnement
+                  Un bureau d&apos;études agréé par le Ministère de
+                  l&apos;Environnement
                 </h2>
               </FadeInItem>
 
@@ -134,10 +89,10 @@ export function AboutSection({ lang }: AboutSectionProps) {
                   className="font-sans text-ink-soft leading-[1.75] mb-5"
                   style={{ fontSize: "var(--text-body)" }}
                 >
-                  BTH Expert est une société agréée de conseil et d&apos;ingénierie
-                  environnementale, intervenant dans les domaines de
-                  l&apos;environnement, de la sécurité et de l&apos;hygiène en
-                  région Ouest algérienne.
+                  BTH Expert est une société agréée de conseil et
+                  d&apos;ingénierie environnementale, intervenant dans les
+                  domaines de l&apos;environnement, de la sécurité et de
+                  l&apos;hygiène en région Ouest algérienne.
                 </p>
               </FadeInItem>
 
@@ -147,9 +102,9 @@ export function AboutSection({ lang }: AboutSectionProps) {
                   style={{ fontSize: "var(--text-body)" }}
                 >
                   Fondé en 2009, le bureau accompagne les industriels dans leur
-                  mise en conformité réglementaire — études d&apos;impact, audits HSE,
-                  plans de gestion environnementale — avec des livrables prêts à
-                  déposer auprès des autorités compétentes.
+                  mise en conformité réglementaire — études d&apos;impact,
+                  audits HSE, plans de gestion environnementale — avec des
+                  livrables prêts à déposer auprès des autorités compétentes.
                 </p>
               </FadeInItem>
 
@@ -158,14 +113,14 @@ export function AboutSection({ lang }: AboutSectionProps) {
                   href={`/${lang}/contact`}
                   className="inline-flex items-center gap-2 text-ink text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
-                  Travaillons ensemble <span aria-hidden>→</span>
+                  En savoir plus <span aria-hidden>→</span>
                 </Link>
               </FadeInItem>
 
             </FadeInStagger>
           </div>
-
         </div>
+
       </div>
     </section>
   );
