@@ -275,3 +275,12 @@ header[data-overlay="true"] .lang-switcher-locale:hover {
 @media (prefers-reduced-motion: reduce) {
   .scroll-pulse::after { animation: none; opacity: 0.5; transform: translateY(80%); }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Services pin — reduced motion: no pin, show the full vertical
+   stack (all services visible) at every width, hide the pinned view.
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .services-pinned { display: none !important; }
+  .services-stack  { display: block !important; }
+}
