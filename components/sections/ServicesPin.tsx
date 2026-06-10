@@ -62,20 +62,16 @@ export function ServicesPin({ lang, services }: ServicesPinProps) {
         });
       });
 
-      // gsap.to (not fromTo) — continues from current state, no forced opacity:0 jump
+      // Same ease + same duration on both: opacity_in(t) + opacity_out(t) = 1.0 — no flash
       textRefs.current.forEach((el, i) => {
         if (!el) return;
-        if (i === idx) {
-          gsap.to(el, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out", overwrite: true });
-        } else {
-          gsap.to(el, {
-            opacity: 0,
-            y: i < idx ? -24 : 24,
-            duration: 0.35,
-            ease: "power2.in",
-            overwrite: true,
-          });
-        }
+        gsap.to(el, {
+          opacity: i === idx ? 1 : 0,
+          y: i === idx ? 0 : i < idx ? -24 : 24,
+          duration: 0.45,
+          ease: "power2.inOut",
+          overwrite: true,
+        });
       });
     }
 
