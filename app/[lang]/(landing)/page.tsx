@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesPin } from "@/components/sections/ServicesPin";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { StatementSection } from "@/components/sections/StatementSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
 
@@ -120,28 +121,8 @@ export default async function HomePage({
       {/* ── SERVICES — split plein-écran + photo sticky parallax ────── */}
       <ServicesPin lang={lang} services={h.services} />
 
-      {/* ── MANIFESTO BAND — full bleed dark statement ───────────────── */}
-      <FadeIn>
-        <div className="bg-brand-deep">
-          <Container>
-            <div className="py-20 md:py-28 lg:grid lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7 mb-6 lg:mb-0">
-                <p
-                  className="font-display font-light text-cream leading-[1.1] tracking-[-0.03em]"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw + 0.5rem, 3.25rem)" }}
-                >
-                  Chaque projet industriel commence par une question environnementale.
-                </p>
-              </div>
-              <div className="lg:col-span-4 lg:col-start-9 flex items-end">
-                <p className="text-[var(--text-body)] text-[var(--color-on-brand-muted)] leading-[1.75]">
-                  BTH Expert transforme vos obligations réglementaires en avantage concurrentiel — études conformes, livrables prêts à déposer.
-                </p>
-              </div>
-            </div>
-          </Container>
-        </div>
-      </FadeIn>
+      {/* ── STATEMENT ENVIRONNEMENTAL — dark typography punctuation ───── */}
+      <StatementSection lang={lang} />
 
       {/* ── ÉQUIPE ───────────────────────────────────────────────────── */}
       <Container>
