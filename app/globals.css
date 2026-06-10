@@ -277,10 +277,10 @@ header[data-overlay="true"] .lang-switcher-locale:hover {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Services pin — reduced motion: no pin, show the full vertical
-   stack (all services visible) at every width, hide the pinned view.
+   Services — GISI-style full-screen blocks. Shorter on mobile so
+   the next block peeks; taller on desktop (not full 100vh).
    ───────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .services-pinned { display: none !important; }
-  .services-stack  { display: block !important; }
+.service-block { min-height: 60vh; }
+@media (min-width: 1024px) {
+  .service-block { min-height: 85vh; }
 }
