@@ -7,7 +7,7 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RevealText } from "@/components/animations/RevealText";
-import { ServicesPin } from "@/components/sections/ServicesPin";
+import { ServicesList } from "@/components/sections/ServicesList";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { StatementSection } from "@/components/sections/StatementSection";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -118,8 +118,8 @@ export default async function HomePage({
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
       <AboutSection lang={lang} />
 
-      {/* ── SERVICES — split plein-écran + photo sticky parallax ────── */}
-      <ServicesPin lang={lang} services={h.services} />
+      {/* ── SERVICES — clean two-column expertise list on white ─────── */}
+      <ServicesList lang={lang} services={h.services} />
 
       {/* ── STATEMENT ENVIRONNEMENTAL — dark typography punctuation ───── */}
       <StatementSection lang={lang} />

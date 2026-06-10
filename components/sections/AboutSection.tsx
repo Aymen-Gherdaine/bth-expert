@@ -81,7 +81,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
   });
 
   return (
-    // No explicit z-index — DOM order (ServicesPin comes after) handles stacking
+    // No explicit z-index — DOM order (ServicesList comes after) handles stacking
     <section
       ref={sectionRef}
       className="bg-cream-warm min-h-screen flex flex-col justify-center overflow-hidden"
