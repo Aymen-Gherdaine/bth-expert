@@ -15,7 +15,10 @@
   "footer": {
     "rights": "All rights reserved",
     "zones": "Service Areas",
-    "language": "Language"
+    "language": "Language",
+    "navigation": "Navigation",
+    "about": "About",
+    "secteursList": ["Industry & Petrochemicals", "Energy & Hydrocarbons", "Infrastructure & Construction", "Agriculture & Hydraulics"]
   },
   "common": {
     "learnMore": "Learn more",

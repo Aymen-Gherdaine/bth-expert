@@ -15,7 +15,10 @@
   "footer": {
     "rights": "Tous droits réservés",
     "zones": "Zones d'intervention",
-    "language": "Langue"
+    "language": "Langue",
+    "navigation": "Navigation",
+    "about": "À propos",
+    "secteursList": ["Industrie & Pétrochimie", "Énergie & Hydrocarbures", "Infrastructures & BTP", "Agriculture & Hydraulique"]
   },
   "common": {
     "learnMore": "En savoir plus",

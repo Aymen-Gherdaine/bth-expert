@@ -1,0 +1,244 @@
+"use client";
+
+import { useRef } from "react";
+import Link from "next/link";
+import { useGSAP } from "@gsap/react";
+import { gsap, SplitText } from "@/lib/gsap";
+import type { Locale } from "@/lib/i18n";
+
+interface ZonesSectionProps {
+  lang: Locale;
+}
+
+/**
+ * Zones d'intervention + Nous trouver — merged dark section.
+ * The Algeria map is an atmospheric background silhouette bleeding off
+ * the right edge; the Oran gold beacon is the single focal point. All
+ * contact info lives directly on the dark surface (no white card).
+ *
+ * Map path generated from public-domain GeoJSON (equirectangular
+ * projection, cos(mid-lat) corrected). Oran sits at its exact
+ * geographic position within the same projection.
+ */
+
+const ALGERIA_PATH =
+  "M760 568.4L634.1 647.7L527.7 729.6L475.9 748.1L435.1 752.2L434.7 725.7L417.7 718.9L394.8 707L386.1 687.5L262.1 596.6L138.2 505.8L0 404.9L0.7 396.9L0.7 394.1L0.4 344.7L59.7 314L96.4 307.6L126.5 296.5L140.5 275.6L183.5 259.1L185.1 228.3L206.3 224.6L223 209.2L271 202.2L277.8 186L268.1 177.2L255.4 133.2L253.2 107.9L239.4 81.2L274.7 58.5L314.4 51.2L337.6 34L373 21.4L435.3 13.9L496 10.6L514.6 16.7L549.2 0.3L588.4 0L603.4 9.7L628.5 7.2L621 28.5L626.9 68.2L618.2 102.6L595.6 125.8L598.8 157.2L628.9 182L629.2 192.1L651.8 208.9L667.5 283.7L679.4 320.4L681.4 339.8L674.9 373.8L677.6 392.8L672.9 415.5L676.1 441.7L661.5 459.1L683.2 489.5L684.6 507.3L697.7 530.6L714.9 522.9L743.9 542.3L760 568.4Z";
+
+const ORAN = { x: 295.8, y: 59.2 };
+// Faint connector traced from the Oran beacon toward the contact text (left).
+const CONNECTOR_PATH = "M295.8 59.2 C 200 130, 110 220, 12 318";
+
+export function ZonesSection({ lang }: ZonesSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const eyebrowRef = useRef<HTMLParagraphElement>(null);
+  const lineRef = useRef<HTMLSpanElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const addressRef = useRef<HTMLDivElement>(null);
+  const linksRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<SVGSVGElement>(null);
+  const mapPathRef = useRef<SVGPathElement>(null);
+  const connectorRef = useRef<SVGPathElement>(null);
+  const glowRef = useRef<SVGCircleElement>(null);
+  const pulseRef = useRef<SVGCircleElement>(null);
+  const dotRef = useRef<SVGCircleElement>(null);
+
+  useGSAP(
+    () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const heading = headingRef.current;
+      const connector = connectorRef.current;
+      if (!heading || !connector) return;
+
+      const len = connector.getTotalLength();
+      gsap.set(connector, { strokeDasharray: len });
+
+      const split = new SplitText(heading, { type: "lines" });
+
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: sectionRef.current, start: "top 72%", once: true },
+      });
+
+      // Map silhouette + beacon enter first (atmospheric backdrop)
+      tl.from(mapRef.current, {
+        opacity: 0,
+        scale: 1.05,
+        transformOrigin: "right center",
+        duration: 1.4,
+        ease: "expo.out",
+      })
+        .from(
+          mapPathRef.current,
+          { opacity: 0, duration: 1.2, ease: "sine.out" },
+          "<"
+        )
+        .from(
+          glowRef.current,
+          {
+            scale: 0,
+            opacity: 0,
+            transformOrigin: "50% 50%",
+            duration: 1.1,
+            ease: "expo.out",
+          },
+          "-=0.8"
+        )
+        .from(
+          [pulseRef.current, dotRef.current],
+          { scale: 0, opacity: 0, transformOrigin: "50% 50%", duration: 0.8, ease: "back.out(1.6)" },
+          "-=0.6"
+        )
+        // Contact text stagger: eyebrow → line → title → address → links
+        .from(eyebrowRef.current, { opacity: 0, y: 14, duration: 0.7, ease: "expo.out" }, "-=1.1")
+        .from(lineRef.current, { scaleX: 0, transformOrigin: "left center", duration: 0.8, ease: "expo.out" }, "-=0.5")
+        .from(split.lines, { opacity: 0, y: 28, duration: 0.95, stagger: 0.1, ease: "expo.out" }, "-=0.6")
+        .from(connector, { strokeDashoffset: len, duration: 1.1, ease: "power2.inOut" }, "-=0.7")
+        .from(addressRef.current, { opacity: 0, y: 16, duration: 0.7, ease: "expo.out" }, "-=0.9")
+        .from(linksRef.current, { opacity: 0, y: 16, duration: 0.7, ease: "expo.out" }, "-=0.5")
+        .call(() => {
+          // Beacon loop — expanding ring + breathing core dot
+          gsap.to(pulseRef.current, {
+            scale: 2.8,
+            opacity: 0,
+            transformOrigin: "50% 50%",
+            duration: 2.6,
+            repeat: -1,
+            ease: "sine.out",
+          });
+          gsap.to(dotRef.current, {
+            scale: 1.35,
+            transformOrigin: "50% 50%",
+            duration: 1.6,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+          });
+        });
+
+      return () => split.revert();
+    },
+    { scope: sectionRef }
+  );
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative flex flex-col justify-center overflow-hidden bg-brand-deep min-h-screen py-28 lg:py-32"
+    >
+      {/* ── Map — atmospheric background, bleeds off the right edge ── */}
+      <div
+        aria-hidden
+        className="pointer-events-none select-none order-2 mt-16 w-full max-w-[16rem] mx-auto opacity-70 lg:order-none lg:mt-0 lg:max-w-none lg:mx-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[38%] xl:w-[36%] lg:flex lg:items-center lg:justify-end"
+      >
+        <svg
+          ref={mapRef}
+          viewBox="0 0 760 753"
+          role="img"
+          aria-label="Carte de l'Algérie — BTH Expert intervient depuis Oran dans tout l'Ouest algérien"
+          className="w-full lg:translate-x-[14%]"
+        >
+          <defs>
+            <linearGradient id="dz-map-fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="var(--color-brand-soft)" />
+              <stop offset="100%" stopColor="var(--color-brand)" />
+            </linearGradient>
+            <radialGradient id="dz-oran-glow">
+              <stop offset="0%" stopColor="var(--color-gold)" stopOpacity="0.55" />
+              <stop offset="45%" stopColor="var(--color-gold)" stopOpacity="0.18" />
+              <stop offset="100%" stopColor="var(--color-gold)" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+
+          {/* Algeria silhouette — subtle tonal shape */}
+          <path
+            ref={mapPathRef}
+            d={ALGERIA_PATH}
+            fill="url(#dz-map-fill)"
+            opacity="0.4"
+          />
+
+          {/* Faint connector — beacon toward the contact text */}
+          <path
+            ref={connectorRef}
+            d={CONNECTOR_PATH}
+            fill="none"
+            stroke="var(--color-gold)"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity="0.3"
+          />
+
+          {/* Oran — gold radial glow + pulsing beacon (focal point) */}
+          <circle ref={glowRef} cx={ORAN.x} cy={ORAN.y} r="118" fill="url(#dz-oran-glow)" />
+          <circle
+            ref={pulseRef}
+            cx={ORAN.x}
+            cy={ORAN.y}
+            r="12"
+            fill="none"
+            stroke="var(--color-gold)"
+            strokeWidth="1.5"
+            opacity="0.6"
+          />
+          <circle ref={dotRef} cx={ORAN.x} cy={ORAN.y} r="6" fill="var(--color-gold)" />
+        </svg>
+      </div>
+
+      {/* ── Contact — integrated directly on the dark surface ── */}
+      <div className="relative z-10 order-1 lg:order-none w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+        <div className="lg:w-[48%] lg:max-w-[34rem]">
+          <p
+            ref={eyebrowRef}
+            className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.22em] text-gold"
+          >
+            — Zones d&apos;intervention
+          </p>
+          <span
+            ref={lineRef}
+            aria-hidden
+            className="mt-5 mb-7 block h-px w-12 origin-left bg-gold/60"
+          />
+
+          <h2
+            ref={headingRef}
+            className="font-display font-light text-cream tracking-[-0.03em] leading-[1.12] pb-2 text-[length:var(--text-display)]"
+          >
+            Oran, au cœur de l&apos;Ouest algérien
+          </h2>
+
+          <address
+            ref={addressRef}
+            className="not-italic mt-8 text-[length:var(--text-body)] text-cream/80 leading-[1.7]"
+          >
+            40, Lotissement 119
+            <br />
+            Bir El Djir, Oran
+          </address>
+
+          <div
+            ref={linksRef}
+            className="mt-7 flex flex-col gap-2.5 text-[length:var(--text-small)]"
+          >
+            <a
+              href="tel:+213670708138"
+              className="w-fit text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            >
+              +213 (670) 70 81 38
+            </a>
+            <a
+              href="mailto:info@bthexpert.dz"
+              className="w-fit text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            >
+              info@bthexpert.dz
+            </a>
+            <Link
+              href={`/${lang}/contact`}
+              className="mt-4 inline-flex w-fit items-center gap-2 font-sans font-medium text-gold tracking-tight hover:gap-3 hover:text-cream transition-[gap,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            >
+              Nous contacter <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -4,14 +4,14 @@ import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesList } from "@/components/sections/ServicesList";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { StatementSection } from "@/components/sections/StatementSection";
+import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
+import { HeroBackground } from "@/components/motion/HeroBackground";
 
 export async function generateMetadata({
   params,
@@ -51,19 +51,33 @@ export default async function HomePage({
 
       {/* ── HERO — cinematic full-bleed, curtain-up on scroll ─────────── */}
       <HeroCurtain>
-        <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32">
+        <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32 bg-brand-deep">
+          {/* Full-bleed image — Ken Burns + scroll parallax, sits behind every overlay */}
+          <HeroBackground src="/hero.webp" />
+
+          {/* Side overlay — darkens the left where the text sits, for legibility */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{ background: "var(--overlay-hero-side)" }}
+          />
+          {/* Extra bottom darkening under the headline + CTAs (subtle) */}
           <div
             aria-hidden
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, var(--color-brand) 0%, var(--color-brand-deep) 50%, #060d07 100%)",
+                "linear-gradient(to top, rgb(6 13 7 / 0.55) 0%, transparent 45%)",
             }}
           />
+          {/* Top scrim — keeps the cream header legible over bright sky; fades to nothing */}
           <div
             aria-hidden
-            className="absolute inset-0"
-            style={{ background: "var(--overlay-hero-side)" }}
+            className="absolute inset-x-0 top-0 h-32 lg:h-40"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgb(15 28 18 / 0.55) 0%, rgb(15 28 18 / 0.25) 40%, transparent 100%)",
+            }}
           />
 
           <Container className="relative z-10">
@@ -124,74 +138,43 @@ export default async function HomePage({
       {/* ── STATEMENT ENVIRONNEMENTAL — dark typography punctuation ───── */}
       <StatementSection lang={lang} />
 
-      {/* ── ÉQUIPE ───────────────────────────────────────────────────── */}
-      <Container>
-        <Section number={h.equipe.sectionNumber} eyebrow={h.equipe.eyebrow}>
+      {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
+      <ZonesSection lang={lang} />
+
+      {/* ── CTA CONTACT — full-bleed image section, breaks the green wall ── */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-deep">
+        {/* Same Ken Burns + parallax treatment as the hero, no preload (below fold) */}
+        <HeroBackground src="/hero.webp" priority={false} />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ background: "var(--overlay-hero)" }}
+        />
+        <Container className="relative z-10">
           <FadeIn>
-            <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-6 mb-10 lg:mb-0">
-                <h2
-                  className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05] mb-10"
-                  style={{ fontSize: "clamp(1.75rem, 3vw + 0.5rem, 3rem)" }}
-                >
-                  {h.equipe.heading}
-                </h2>
-                <Button href={`/${lang}/equipe`} variant="secondary">
-                  {h.equipe.cta}
-                </Button>
-              </div>
-              <div className="lg:col-span-5 lg:col-start-8 flex items-center">
-                <p className="text-[var(--text-body)] text-ink-soft leading-[1.75]">
-                  {h.equipe.description}
-                </p>
-              </div>
+            <div className="max-w-3xl">
+              <p className="text-[var(--text-caption)] uppercase tracking-widest text-gold mb-6">
+                {h.contact.eyebrow}
+              </p>
+              <h2
+                className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-8"
+                style={{ fontSize: "clamp(2.25rem, 4vw + 0.5rem, 4.5rem)" }}
+              >
+                {h.contact.heading}
+              </h2>
+              <p className="text-[var(--text-body)] text-cream/75 leading-[1.75] max-w-lg mb-12">
+                {h.contact.description}
+              </p>
+              <Link
+                href={`/${lang}/contact`}
+                className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              >
+                {h.contact.cta}
+              </Link>
             </div>
           </FadeIn>
-        </Section>
-      </Container>
-
-      {/* ── CTA CONTACT ──────────────────────────────────────────────── */}
-      <FadeIn>
-        <div className="bg-brand">
-          <Container>
-            <Section tight>
-              <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-                <div className="lg:col-span-8 mb-10 lg:mb-0">
-                  <p className="text-[var(--text-caption)] uppercase tracking-widest text-[var(--color-on-brand-faint)] mb-6">
-                    {h.contact.eyebrow}
-                  </p>
-                  <h2
-                    className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-8"
-                    style={{ fontSize: "clamp(2rem, 4vw + 0.5rem, 4rem)" }}
-                  >
-                    {h.contact.heading}
-                  </h2>
-                  <p className="text-[var(--text-body)] text-[var(--color-on-brand-muted)] leading-[1.75] max-w-lg mb-10">
-                    {h.contact.description}
-                  </p>
-                  <Button href={`/${lang}/contact`} variant="outline-cream">
-                    {h.contact.cta}
-                  </Button>
-                </div>
-                <div className="lg:col-span-4 flex flex-col justify-center gap-5 text-[var(--color-on-brand-muted)] text-[var(--text-small)]">
-                  <a
-                    href={`tel:${h.contact.phone.replace(/\s/g, "")}`}
-                    className="hover:text-cream transition-colors duration-300 ease-[var(--ease-out-expo)]"
-                  >
-                    {h.contact.phone}
-                  </a>
-                  <a
-                    href={`mailto:${h.contact.email}`}
-                    className="hover:text-cream transition-colors duration-300 ease-[var(--ease-out-expo)]"
-                  >
-                    {h.contact.email}
-                  </a>
-                </div>
-              </div>
-            </Section>
-          </Container>
-        </div>
-      </FadeIn>
+        </Container>
+      </section>
 
       </div>{/* end post-hero z-10 wrapper */}
     </>

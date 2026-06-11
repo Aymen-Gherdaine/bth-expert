@@ -15,7 +15,8 @@ export default async function InteriorLayout({
   return (
     <>
       <Header lang={lang} />
-      <main className="flex-1 min-w-0">{children}</main>
+      {/* relative z-10 + opaque bg: slides over the sticky footer (reveal effect) */}
+      <main className="flex-1 min-w-0 relative z-10 bg-cream pb-40 lg:pb-56">{children}</main>
       <Footer lang={lang} />
     </>
   );
