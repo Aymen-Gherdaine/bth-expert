@@ -12,9 +12,10 @@ interface ZonesSectionProps {
 
 /**
  * Zones d'intervention + Nous trouver — merged dark section.
- * The Algeria map is an atmospheric background silhouette bleeding off
- * the right edge; the Oran gold beacon is the single focal point. All
- * contact info lives directly on the dark surface (no white card).
+ * The Algeria map sits contained on the right (brand-soft on brand-deep);
+ * the Oran gold beacon is the home base, with coverage rays radiating
+ * toward the other regions ("based in Oran, serving all of Algeria").
+ * All contact info lives directly on the dark surface (no white card).
  *
  * Map path generated from public-domain GeoJSON (equirectangular
  * projection, cos(mid-lat) corrected). Oran sits at its exact
@@ -27,6 +28,17 @@ const ALGERIA_PATH =
 const ORAN = { x: 295.8, y: 59.2 };
 // Faint connector traced from the Oran beacon toward the contact text (left).
 const CONNECTOR_PATH = "M295.8 59.2 C 200 130, 110 220, 12 318";
+
+// Coverage rays — from the Oran base toward the rest of the country
+// (Alger, Constantine, Hassi Messaoud, Tamanrasset, Adrar). Endpoints sit
+// at plausible positions within the same equirectangular projection.
+const COVERAGE_RAYS = [
+  { d: "M295.8 59.2 Q 380 28, 452 22", end: { x: 452, y: 22 } },
+  { d: "M295.8 59.2 Q 455 48, 598 36", end: { x: 598, y: 36 } },
+  { d: "M295.8 59.2 Q 440 140, 560 235", end: { x: 560, y: 235 } },
+  { d: "M295.8 59.2 Q 405 300, 478 555", end: { x: 478, y: 555 } },
+  { d: "M295.8 59.2 Q 258 205, 245 350", end: { x: 245, y: 350 } },
+];
 
 export function ZonesSection({ lang }: ZonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -51,6 +63,14 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
 
       const len = connector.getTotalLength();
       gsap.set(connector, { strokeDasharray: len });
+
+      // Coverage rays start undrawn; reduced-motion never reaches this code,
+      // so the static fallback is fully drawn rays + visible endpoint dots.
+      const rays = gsap.utils.toArray<SVGPathElement>(".dz-ray");
+      rays.forEach((ray) => {
+        const rayLen = ray.getTotalLength();
+        gsap.set(ray, { strokeDasharray: rayLen, strokeDashoffset: rayLen });
+      });
 
       const split = new SplitText(heading, { type: "lines" });
 
@@ -86,6 +106,25 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
           [pulseRef.current, dotRef.current],
           { scale: 0, opacity: 0, transformOrigin: "50% 50%", duration: 0.8, ease: "back.out(1.6)" },
           "-=0.6"
+        )
+        // Radial gold wave — expands once from Oran across the country
+        .fromTo(
+          ".dz-wave",
+          { opacity: 0.4, scale: 0.15, transformOrigin: "50% 50%" },
+          { opacity: 0, scale: 9, duration: 2.4, ease: "power1.out" },
+          "-=0.3"
+        )
+        // Rays draw out from Oran toward each region, staggered
+        .to(
+          ".dz-ray",
+          { strokeDashoffset: 0, duration: 1.3, stagger: 0.14, ease: "power2.inOut" },
+          "<+0.1"
+        )
+        // Each endpoint lights up as its ray arrives
+        .from(
+          ".dz-ray-dot",
+          { scale: 0, opacity: 0, transformOrigin: "50% 50%", duration: 0.5, stagger: 0.14, ease: "back.out(2)" },
+          "<+0.9"
         )
         // Contact text stagger: eyebrow → line → title → address → links
         .from(eyebrowRef.current, { opacity: 0, y: 14, duration: 0.7, ease: "expo.out" }, "-=1.1")
@@ -127,20 +166,16 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
       {/* ── Map — atmospheric background, bleeds off the right edge ── */}
       <div
         aria-hidden
-        className="pointer-events-none select-none order-2 mt-16 w-full max-w-[16rem] mx-auto opacity-70 lg:order-none lg:mt-0 lg:max-w-none lg:mx-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[38%] xl:w-[36%] lg:flex lg:items-center lg:justify-end"
+        className="pointer-events-none select-none order-2 mt-16 w-full max-w-[16rem] mx-auto lg:order-none lg:mt-0 lg:max-w-none lg:mx-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[38%] xl:w-[36%] lg:flex lg:items-center lg:justify-end lg:pe-10 xl:pe-16"
       >
         <svg
           ref={mapRef}
           viewBox="0 0 760 753"
           role="img"
           aria-label="Carte de l'Algérie — BTH Expert intervient depuis Oran dans tout l'Ouest algérien"
-          className="w-full lg:translate-x-[14%]"
+          className="w-full overflow-visible"
         >
           <defs>
-            <linearGradient id="dz-map-fill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="var(--color-brand-soft)" />
-              <stop offset="100%" stopColor="var(--color-brand)" />
-            </linearGradient>
             <radialGradient id="dz-oran-glow">
               <stop offset="0%" stopColor="var(--color-gold)" stopOpacity="0.55" />
               <stop offset="45%" stopColor="var(--color-gold)" stopOpacity="0.18" />
@@ -148,12 +183,12 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
             </radialGradient>
           </defs>
 
-          {/* Algeria silhouette — subtle tonal shape */}
+          {/* Algeria silhouette — brand-soft on brand-deep so it clearly detaches */}
           <path
             ref={mapPathRef}
             d={ALGERIA_PATH}
-            fill="url(#dz-map-fill)"
-            opacity="0.4"
+            fill="var(--color-brand-soft)"
+            opacity="0.9"
           />
 
           {/* Faint connector — beacon toward the contact text */}
@@ -167,7 +202,40 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
             opacity="0.3"
           />
 
-          {/* Oran — gold radial glow + pulsing beacon (focal point) */}
+          {/* Coverage rays — Oran base toward each region, drawn in on scroll */}
+          {COVERAGE_RAYS.map((ray) => (
+            <g key={ray.d}>
+              <path
+                className="dz-ray"
+                d={ray.d}
+                fill="none"
+                stroke="var(--color-gold)"
+                strokeWidth="1"
+                strokeLinecap="round"
+                opacity="0.4"
+              />
+              <circle
+                className="dz-ray-dot"
+                cx={ray.end.x}
+                cy={ray.end.y}
+                r="3.5"
+                fill="var(--color-gold)"
+                opacity="0.55"
+              />
+            </g>
+          ))}
+
+          {/* Radial gold wave — invisible at rest, pulsed once by the timeline */}
+          <circle
+            className="dz-wave"
+            cx={ORAN.x}
+            cy={ORAN.y}
+            r="70"
+            fill="url(#dz-oran-glow)"
+            opacity="0"
+          />
+
+          {/* Oran — gold radial glow + pulsing beacon, drawn LAST so it sits on top */}
           <circle ref={glowRef} cx={ORAN.x} cy={ORAN.y} r="118" fill="url(#dz-oran-glow)" />
           <circle
             ref={pulseRef}
@@ -176,10 +244,10 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
             r="12"
             fill="none"
             stroke="var(--color-gold)"
-            strokeWidth="1.5"
-            opacity="0.6"
+            strokeWidth="2"
+            opacity="0.7"
           />
-          <circle ref={dotRef} cx={ORAN.x} cy={ORAN.y} r="6" fill="var(--color-gold)" />
+          <circle ref={dotRef} cx={ORAN.x} cy={ORAN.y} r="6.5" fill="var(--color-gold)" />
         </svg>
       </div>
 
