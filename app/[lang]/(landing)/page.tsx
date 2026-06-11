@@ -8,7 +8,6 @@ import { RevealText } from "@/components/animations/RevealText";
 import { ServicesList } from "@/components/sections/ServicesList";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { StatementSection } from "@/components/sections/StatementSection";
 import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
@@ -139,9 +138,6 @@ export default async function HomePage({
 
       {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
       <ProjectsSection lang={lang} />
-
-      {/* ── STATEMENT ENVIRONNEMENTAL — dark typography punctuation ───── */}
-      <StatementSection lang={lang} />
 
       {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
       <ZonesSection lang={lang} />
