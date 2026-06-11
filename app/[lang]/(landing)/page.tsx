@@ -12,6 +12,7 @@ import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
 import { HeroBackground } from "@/components/motion/HeroBackground";
+import { CtaVideo } from "@/components/motion/CtaVideo";
 
 export async function generateMetadata({
   params,
@@ -143,12 +144,16 @@ export default async function HomePage({
 
       {/* ── CTA CONTACT — full-bleed image section, breaks the green wall ── */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-deep">
-        {/* Same Ken Burns + parallax treatment as the hero, no preload (below fold) */}
-        <HeroBackground src="/hero.webp" priority={false} />
+        {/* Background video — deferred load, poster first, fades in once playing */}
+        <CtaVideo src="/video_cta.mp4" poster="/video_cta-poster.webp" />
+        {/* Green-black overlay for text contrast over the moving image */}
         <div
           aria-hidden
           className="absolute inset-0"
-          style={{ background: "var(--overlay-hero)" }}
+          style={{
+            background:
+              "linear-gradient(180deg, rgb(10 22 13 / 0.5) 0%, rgb(4 10 6 / 0.78) 100%)",
+          }}
         />
         <Container className="relative z-10">
           <FadeIn>
