@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesList } from "@/components/sections/ServicesList";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { StatementSection } from "@/components/sections/StatementSection";
 import { ZonesSection } from "@/components/sections/ZonesSection";
@@ -135,6 +136,9 @@ export default async function HomePage({
 
       {/* ── SERVICES — clean two-column expertise list on white ─────── */}
       <ServicesList lang={lang} services={h.services} />
+
+      {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
+      <ProjectsSection lang={lang} />
 
       {/* ── STATEMENT ENVIRONNEMENTAL — dark typography punctuation ───── */}
       <StatementSection lang={lang} />
