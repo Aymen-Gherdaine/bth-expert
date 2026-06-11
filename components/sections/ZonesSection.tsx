@@ -166,7 +166,7 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
       {/* ── Map — atmospheric background, bleeds off the right edge ── */}
       <div
         aria-hidden
-        className="pointer-events-none select-none order-2 mt-16 w-full max-w-[16rem] mx-auto lg:order-none lg:mt-0 lg:max-w-none lg:mx-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[38%] xl:w-[36%] lg:flex lg:items-center lg:justify-end lg:pe-10 xl:pe-16"
+        className="pointer-events-none select-none order-2 mt-16 w-full max-w-[16rem] mx-auto lg:order-none lg:mt-0 lg:max-w-none lg:mx-0 lg:absolute lg:inset-y-0 lg:right-16 xl:right-24 2xl:right-32 lg:w-[38%] xl:w-[36%] lg:flex lg:items-center lg:justify-end"
       >
         <svg
           ref={mapRef}
