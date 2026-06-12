@@ -7,6 +7,7 @@ import { gsap, SplitText } from "@/lib/gsap";
 interface RevealTextProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   delay?: number;
   as?: React.ElementType;
 }
@@ -14,6 +15,7 @@ interface RevealTextProps {
 export function RevealText({
   children,
   className,
+  style,
   delay = 0,
   as: Tag = "div",
 }: RevealTextProps) {
@@ -40,7 +42,7 @@ export function RevealText({
   );
 
   return (
-    <Tag ref={ref as never} className={className}>
+    <Tag ref={ref as never} className={className} style={style}>
       {children}
     </Tag>
   );

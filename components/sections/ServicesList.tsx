@@ -100,7 +100,7 @@ export function ServicesList({ lang, services }: ServicesListProps) {
 
   return (
     <section ref={sectionRef} className="bg-white relative z-10">
-      <div className={`${PADX} pt-24 lg:pt-32 pb-14 lg:pb-20`}>
+      <div className={`${PADX} pt-12 lg:pt-16 pb-14 lg:pb-20`}>
         {/* ── Header ─────────────────────────────────────────────── */}
         <div data-services-header>
           <span

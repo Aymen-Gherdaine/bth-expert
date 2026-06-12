@@ -138,7 +138,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
           section,
           { y: 0, borderRadius: "0 0 0 0" },
           {
-            y: "-12%",
+            y: "-6%",
             borderRadius: "0 0 10px 10px",
             ease: "none",
             scrollTrigger: {
@@ -156,7 +156,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
           section,
           { y: 0, borderRadius: "0 0 0 0" },
           {
-            y: "-10%",
+            y: "-5%",
             borderRadius: "0 0 14px 14px",
             ease: "none",
             scrollTrigger: {

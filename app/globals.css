@@ -120,16 +120,19 @@
    Safari 17.4+, Firefox 131+). Graceful fallback: header keeps
    its initial state on unsupported browsers.
    ───────────────────────────────────────────────────────────── */
+/* Overlay header solidifies into deep brand green — it reads correctly
+   over BOTH the dark hero/about and the light sections below, so there is
+   no "right moment" problem with the sticky 100vh hero. Logo stays light. */
 @keyframes header-solidify {
   from {
     color: var(--color-cream);
   }
   to {
-    background-color: rgb(250 247 242 / 0.9);
-    backdrop-filter: blur(12px) saturate(1.4);
-    -webkit-backdrop-filter: blur(12px) saturate(1.4);
-    border-bottom-color: var(--color-line);
-    color: var(--color-ink);
+    background-color: rgb(15 28 18 / 0.92);
+    backdrop-filter: blur(12px) saturate(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2);
+    border-bottom-color: rgb(245 240 232 / 0.08);
+    color: var(--color-cream);
   }
 }
 
@@ -156,40 +159,22 @@
     animation-timeline: scroll();
     animation-range: 0 50px;
   }
-  header[data-overlay="true"] .header-logo-light {
-    animation: logo-light-show linear both;
-    animation-timeline: scroll();
-    animation-range: 0 50px;
-  }
-  header[data-overlay="true"] .header-logo-dark {
-    animation: logo-dark-show linear both;
-    animation-timeline: scroll();
-    animation-range: 0 50px;
-  }
 }
 
-@keyframes logo-light-show {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-@keyframes logo-dark-show {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+/* Overlay pages keep the light logo at all times (header stays dark) */
+header[data-overlay="true"] .header-logo-light { opacity: 1; }
+header[data-overlay="true"] .header-logo-dark  { opacity: 0; }
 
 /* Accessibility: skip animation, render solid state directly */
 @media (prefers-reduced-motion: reduce) {
   header[data-overlay="true"] {
-    background-color: rgb(250 247 242 / 0.9);
-    backdrop-filter: blur(12px) saturate(1.4);
-    -webkit-backdrop-filter: blur(12px) saturate(1.4);
-    border-bottom-color: var(--color-line);
-    color: var(--color-ink);
+    background-color: rgb(15 28 18 / 0.92);
+    backdrop-filter: blur(12px) saturate(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2);
+    border-bottom-color: rgb(245 240 232 / 0.08);
+    color: var(--color-cream);
     animation: none;
   }
-  header[data-overlay="true"] .header-logo-light { opacity: 0; animation: none; }
-  header[data-overlay="true"] .header-logo-dark  { opacity: 1; animation: none; }
 }
 
 /* ─────────────────────────────────────────────────────────────

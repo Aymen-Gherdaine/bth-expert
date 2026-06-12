@@ -16,7 +16,7 @@ export function NavLink({ href, children }: NavLinkProps) {
     <Link
       href={href}
       aria-current={isActive ? "page" : undefined}
-      className="nav-link relative text-[0.9375rem] text-ink-soft hover:text-ink transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+      className="nav-link relative text-[1rem] font-medium tracking-[0.01em] text-ink-soft hover:text-ink transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
     >
       {children}
     </Link>

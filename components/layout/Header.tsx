@@ -40,7 +40,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
               <div
                 className={[
                   "flex items-center gap-6 font-sans",
-                  overlay ? "text-cream/60" : "text-muted",
+                  overlay ? "text-cream/75" : "text-muted",
                 ].join(" ")}
                 style={{ fontSize: "0.75rem", letterSpacing: "0.04em" }}
               >

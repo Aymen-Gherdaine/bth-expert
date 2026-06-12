@@ -75,7 +75,7 @@ export default async function HomePage({
           <div aria-hidden className="hero-grain absolute inset-0" />
 
           <Container className="relative z-10">
-            <div className="max-w-3xl">
+            <div className="max-w-4xl">
               <RevealText
                 className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
                 delay={0.1}
@@ -85,20 +85,21 @@ export default async function HomePage({
 
               <RevealText
                 as="h1"
-                className="font-display font-medium text-[length:var(--text-hero)] text-cream leading-[1.0] tracking-[-0.03em]"
+                className="font-display font-medium text-cream leading-[1.06] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(2.5rem, 3.4vw + 0.9rem, 4.5rem)" }}
                 delay={0.25}
               >
                 Expertise environnementale &amp; industrielle
               </RevealText>
 
               <RevealText
-                className="block mt-10 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
+                className="block mt-8 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
                 delay={0.6}
               >
                 Études d&apos;impact, études de dangers, audits HSE et conformité réglementaire pour l&apos;industrie algérienne depuis 2009.
               </RevealText>
 
-              <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
                 <Link
                   href={`/${lang}/contact`}
                   className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
