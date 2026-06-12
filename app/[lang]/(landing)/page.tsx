@@ -11,6 +11,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
+import { HeroBackground } from "@/components/motion/HeroBackground";
 import { CtaVideo } from "@/components/motion/CtaVideo";
 
 export async function generateMetadata({
@@ -52,9 +53,25 @@ export default async function HomePage({
       {/* ── HERO — cinematic full-bleed, curtain-up on scroll ─────────── */}
       <HeroCurtain>
         <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32 bg-brand-deep">
-          {/* Atmosphere — layered light on deep green, no imagery to fight the type */}
-          <div aria-hidden className="hero-atmosphere absolute inset-0" />
-          <div aria-hidden className="hero-halo absolute inset-0" />
+          {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
+          <HeroBackground src="/hero.webp" />
+
+          {/* Uniform deep-green veil — the image reads as texture, type stays king */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{ backgroundColor: "rgb(12 20 14 / 0.62)" }}
+          />
+          {/* Slight extra weight at the bottom, under headline + CTAs */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to top, rgb(8 14 9 / 0.35) 0%, transparent 50%)",
+            }}
+          />
+          {/* Film grain — kills the flat digital feel */}
           <div aria-hidden className="hero-grain absolute inset-0" />
 
           <Container className="relative z-10">

@@ -276,37 +276,11 @@ header[data-overlay="true"] .lang-switcher-locale:hover {
   .scroll-pulse::after { animation: none; opacity: 0.5; transform: translateY(80%); }
 }
 
-/* ─────────────────────────────────────────────────────────────
-   Hero atmosphere — pure light and depth, no imagery.
-   Layered radial halos over deep brand green + film grain.
-   ───────────────────────────────────────────────────────────── */
-.hero-atmosphere {
-  background:
-    radial-gradient(120% 90% at 78% 92%, rgb(201 169 110 / 0.12) 0%, transparent 55%),
-    radial-gradient(90% 70% at 12% 8%, rgb(42 69 48 / 0.5) 0%, transparent 60%),
-    linear-gradient(168deg, #10200f 0%, #0c1a0e 50%, #08120a 100%);
-}
-
-/* Breathing gold halo — barely-there warmth that keeps the frame alive */
-.hero-halo {
-  background: radial-gradient(50% 42% at 72% 82%, rgb(201 169 110 / 0.10), transparent 65%);
-  animation: hero-halo-breathe 14s var(--ease-in-out-soft) infinite alternate;
-  will-change: opacity, transform;
-}
-@keyframes hero-halo-breathe {
-  from { opacity: 0.5; transform: scale(1); }
-  to   { opacity: 1;   transform: scale(1.1); }
-}
-
 /* Film grain — SVG turbulence, imperceptible but kills flat digital feel */
 .hero-grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity: 0.05;
   mix-blend-mode: overlay;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-halo { animation: none; opacity: 0.75; }
 }
 
 /* ── Hero Ken Burns — slow ambient zoom, plays once and holds ──────────── */

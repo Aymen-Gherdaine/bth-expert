@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
@@ -62,7 +63,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
         split = new SplitText(manifesto, { type: "words" });
         gsap.fromTo(
           split.words,
-          { opacity: 0.13 },
+          { opacity: 0.16 },
           {
             opacity: 1,
             stagger: 0.06,
@@ -75,6 +76,18 @@ export function AboutSection({ lang }: AboutSectionProps) {
             },
           }
         );
+      }
+
+      // ── Image — quiet reveal ───────────────────────────────────────
+      const figure = section.querySelector<HTMLElement>("[data-about-figure]");
+      if (figure) {
+        gsap.from(figure, {
+          y: 36,
+          opacity: 0,
+          duration: 1.1,
+          ease: "expo.out",
+          scrollTrigger: { trigger: figure, start: "top 85%", once: true },
+        });
       }
 
       // ── Body + CTA — quiet rise once the manifesto is read ─────────
@@ -161,10 +174,11 @@ export function AboutSection({ lang }: AboutSectionProps) {
   );
 
   return (
-    // No explicit z-index — DOM order (ServicesList comes after) handles stacking
+    // Night section, GISI-style — the page stays dark after the hero,
+    // light arrives with Services. DOM order handles stacking.
     <section
       ref={sectionRef}
-      className="bg-cream-warm overflow-hidden"
+      className="bg-brand-deep overflow-hidden"
     >
       <div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-28 lg:py-40">
 
@@ -172,7 +186,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
         <div
           ref={lineRef}
           className="h-px mb-14 lg:mb-16"
-          style={{ backgroundColor: "var(--color-gold)", opacity: 0.35 }}
+          style={{ backgroundColor: "var(--color-gold)", opacity: 0.3 }}
         />
 
         <span
@@ -183,10 +197,10 @@ export function AboutSection({ lang }: AboutSectionProps) {
           À PROPOS
         </span>
 
-        {/* Manifesto — one statement, read at scroll pace */}
+        {/* Manifesto — cream words light up over the night green */}
         <h2
           data-about-manifesto
-          className="font-display font-light text-ink tracking-[-0.025em] leading-[1.16] max-w-6xl"
+          className="font-display font-light text-cream tracking-[-0.025em] leading-[1.16] max-w-6xl"
           style={{ fontSize: "clamp(2rem, 3.2vw + 0.75rem, 3.9rem)" }}
         >
           Un bureau d&apos;études agréé par le Ministère de
@@ -194,13 +208,40 @@ export function AboutSection({ lang }: AboutSectionProps) {
           depuis 2009 — pour que chaque projet avance, en conformité.
         </h2>
 
-        {/* Supporting copy — two quiet columns, Apple-style restraint */}
-        <div className="mt-16 lg:mt-24 lg:grid lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5 lg:col-start-7">
+        {/* Figure + supporting copy — small captioned image, GISI restraint */}
+        <div className="mt-20 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-16">
+
+          <figure data-about-figure className="lg:col-span-4 mb-14 lg:mb-0">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <Image
+                src="/about-industry.webp"
+                alt="Silhouette d'un complexe industriel au crépuscule"
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                quality={80}
+                className="object-cover"
+              />
+            </div>
+            <figcaption
+              className="mt-4 font-sans"
+              style={{
+                fontSize: "var(--text-caption)",
+                color: "var(--color-on-brand-faint)",
+                letterSpacing: "0.04em",
+              }}
+            >
+              L&apos;industrie et son environnement — le cœur de notre métier
+            </figcaption>
+          </figure>
+
+          <div className="lg:col-span-5 lg:col-start-7 flex flex-col justify-center">
             <p
               data-about-body
-              className="font-sans text-ink-soft leading-[1.75] mb-5"
-              style={{ fontSize: "var(--text-body)" }}
+              className="font-sans leading-[1.75] mb-5"
+              style={{
+                fontSize: "var(--text-body)",
+                color: "var(--color-on-brand-muted)",
+              }}
             >
               BTH Expert est une société agréée de conseil et
               d&apos;ingénierie environnementale, intervenant dans les
@@ -209,8 +250,11 @@ export function AboutSection({ lang }: AboutSectionProps) {
             </p>
             <p
               data-about-body
-              className="font-sans text-ink-soft leading-[1.75] mb-10"
-              style={{ fontSize: "var(--text-body)" }}
+              className="font-sans leading-[1.75] mb-10"
+              style={{
+                fontSize: "var(--text-body)",
+                color: "var(--color-on-brand-muted)",
+              }}
             >
               Études d&apos;impact, audits HSE, plans de gestion
               environnementale — des livrables rigoureux, prêts à déposer
@@ -219,30 +263,35 @@ export function AboutSection({ lang }: AboutSectionProps) {
             <Link
               data-about-cta
               href={`/${lang}/contact`}
-              className="inline-flex items-center gap-2 text-ink text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="inline-flex items-center gap-2 text-cream text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               En savoir plus <span aria-hidden>→</span>
             </Link>
           </div>
+
         </div>
 
-        {/* Stat band — oversized serif numerals, hairline-ruled */}
+        {/* Stat band — cream numerals over night green, gold hairlines */}
         <div className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-3 gap-y-12 gap-x-10">
           {STATS.map((s) => (
             <div key={s.label} data-about-stat>
               <div
                 className="h-px mb-7"
-                style={{ backgroundColor: "var(--color-gold)", opacity: 0.35 }}
+                style={{ backgroundColor: "var(--color-gold)", opacity: 0.3 }}
               />
               <span
-                className="block font-display font-light text-ink leading-none tracking-[-0.03em]"
+                className="block font-display font-light text-cream leading-none tracking-[-0.03em]"
                 style={{ fontSize: "clamp(3.5rem, 5.5vw + 1rem, 6.5rem)" }}
               >
                 {s.value}
               </span>
               <span
-                className="mt-4 block font-sans uppercase text-ink-soft"
-                style={{ fontSize: "var(--text-caption)", letterSpacing: "0.18em" }}
+                className="mt-4 block font-sans uppercase"
+                style={{
+                  fontSize: "var(--text-caption)",
+                  letterSpacing: "0.18em",
+                  color: "var(--color-on-brand-faint)",
+                }}
               >
                 {s.label}
               </span>
