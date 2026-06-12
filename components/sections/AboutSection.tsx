@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
@@ -78,17 +77,22 @@ export function AboutSection({ lang }: AboutSectionProps) {
         );
       }
 
-      // ── Image — quiet reveal ───────────────────────────────────────
-      const figure = section.querySelector<HTMLElement>("[data-about-figure]");
-      if (figure) {
-        gsap.from(figure, {
-          y: 36,
-          opacity: 0,
-          duration: 1.1,
-          ease: "expo.out",
-          scrollTrigger: { trigger: figure, start: "top 85%", once: true },
-        });
-      }
+      // ── Domain rows — hairline traces in, then label rises ─────────
+      const domains = gsap.utils.toArray<HTMLElement>(
+        section.querySelectorAll("[data-about-domain]")
+      );
+      domains.forEach((row, i) => {
+        const rule  = row.querySelector<HTMLElement>("[data-domain-rule]");
+        const label = row.querySelector<HTMLElement>("[data-domain-label]");
+        if (!rule || !label) return;
+        gsap
+          .timeline({
+            defaults: { ease: "expo.out" },
+            scrollTrigger: { trigger: row, start: "top 88%", once: true },
+          })
+          .from(rule, { scaleX: 0, transformOrigin: "left center", duration: 0.9 }, i * 0.05)
+          .from(label, { opacity: 0, y: 18, duration: 0.7 }, i * 0.05 + 0.25);
+      });
 
       // ── Body + CTA — quiet rise once the manifesto is read ─────────
       const bodies = section.querySelectorAll<HTMLElement>("[data-about-body]");
@@ -208,38 +212,45 @@ export function AboutSection({ lang }: AboutSectionProps) {
           depuis 2009 — pour que chaque projet avance, en conformité.
         </h2>
 
-        {/* Figure + supporting copy — small captioned image, GISI restraint */}
+        {/* Domains index + supporting copy — typography only, no imagery */}
         <div className="mt-20 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-16">
 
-          <figure data-about-figure className="lg:col-span-4 mb-14 lg:mb-0">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-              <Image
-                src="/about-industry.webp"
-                alt="Silhouette d'un complexe industriel au crépuscule"
-                fill
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                quality={80}
-                className="object-cover"
-              />
-            </div>
-            <figcaption
-              className="mt-4 font-sans"
-              style={{
-                fontSize: "var(--text-caption)",
-                color: "var(--color-on-brand-faint)",
-                letterSpacing: "0.04em",
-              }}
-            >
-              L&apos;industrie et son environnement — le cœur de notre métier
-            </figcaption>
-          </figure>
+          <div className="lg:col-span-5 mb-14 lg:mb-0">
+            {[
+              "Environnement",
+              "Sécurité industrielle",
+              "Hygiène & santé au travail",
+            ].map((domain, i) => (
+              <div key={domain} data-about-domain className="py-6 lg:py-7">
+                <div
+                  data-domain-rule
+                  className="h-px mb-6"
+                  style={{ backgroundColor: "var(--color-gold)", opacity: 0.3 }}
+                />
+                <div data-domain-label className="flex items-baseline gap-5">
+                  <span
+                    className="font-display text-gold tabular-nums"
+                    style={{ fontSize: "var(--text-small)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className="font-display font-light text-cream tracking-[-0.02em]"
+                    style={{ fontSize: "var(--text-h3)" }}
+                  >
+                    {domain}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
 
-          <div className="lg:col-span-5 lg:col-start-7 flex flex-col justify-center">
+          <div className="lg:col-span-5 lg:col-start-8 flex flex-col justify-center">
             <p
               data-about-body
-              className="font-sans leading-[1.75] mb-5"
+              className="font-sans leading-[1.7] mb-6"
               style={{
-                fontSize: "var(--text-body)",
+                fontSize: "clamp(1.0625rem, 0.5vw + 0.95rem, 1.3125rem)",
                 color: "var(--color-on-brand-muted)",
               }}
             >
@@ -250,9 +261,9 @@ export function AboutSection({ lang }: AboutSectionProps) {
             </p>
             <p
               data-about-body
-              className="font-sans leading-[1.75] mb-10"
+              className="font-sans leading-[1.7] mb-10"
               style={{
-                fontSize: "var(--text-body)",
+                fontSize: "clamp(1.0625rem, 0.5vw + 0.95rem, 1.3125rem)",
                 color: "var(--color-on-brand-muted)",
               }}
             >

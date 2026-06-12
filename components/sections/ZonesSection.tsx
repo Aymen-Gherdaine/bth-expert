@@ -74,11 +74,24 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
 
       const split = new SplitText(heading, { type: "lines" });
 
+      // ── Text — independent timeline, fires as soon as the section nears
+      //    the viewport (the map choreography must never delay the copy).
+      gsap
+        .timeline({
+          defaults: { ease: "expo.out" },
+          scrollTrigger: { trigger: sectionRef.current, start: "top 82%", once: true },
+        })
+        .from(eyebrowRef.current, { opacity: 0, y: 14, duration: 0.7 }, 0)
+        .from(lineRef.current, { scaleX: 0, transformOrigin: "left center", duration: 0.8 }, 0.15)
+        .from(split.lines, { opacity: 0, y: 28, duration: 0.95, stagger: 0.1 }, 0.2)
+        .from(addressRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.55)
+        .from(linksRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.7);
+
+      // ── Map — its own slower choreography, in parallel ──────────────
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: sectionRef.current, start: "top 72%", once: true },
+        scrollTrigger: { trigger: sectionRef.current, start: "top 75%", once: true },
       });
 
-      // Map silhouette + beacon enter first (atmospheric backdrop)
       tl.from(mapRef.current, {
         opacity: 0,
         scale: 1.05,
@@ -126,13 +139,7 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
           { scale: 0, opacity: 0, transformOrigin: "50% 50%", duration: 0.5, stagger: 0.14, ease: "back.out(2)" },
           "<+0.9"
         )
-        // Contact text stagger: eyebrow → line → title → address → links
-        .from(eyebrowRef.current, { opacity: 0, y: 14, duration: 0.7, ease: "expo.out" }, "-=1.1")
-        .from(lineRef.current, { scaleX: 0, transformOrigin: "left center", duration: 0.8, ease: "expo.out" }, "-=0.5")
-        .from(split.lines, { opacity: 0, y: 28, duration: 0.95, stagger: 0.1, ease: "expo.out" }, "-=0.6")
-        .from(connector, { strokeDashoffset: len, duration: 1.1, ease: "power2.inOut" }, "-=0.7")
-        .from(addressRef.current, { opacity: 0, y: 16, duration: 0.7, ease: "expo.out" }, "-=0.9")
-        .from(linksRef.current, { opacity: 0, y: 16, duration: 0.7, ease: "expo.out" }, "-=0.5")
+        .from(connector, { strokeDashoffset: len, duration: 1.1, ease: "power2.inOut" }, "-=1.2")
         .call(() => {
           // Beacon loop — expanding ring + breathing core dot
           gsap.to(pulseRef.current, {
