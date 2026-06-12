@@ -17,7 +17,7 @@ export function Nav({ lang, dict, className, style }: NavProps) {
   ];
 
   return (
-    <nav className={`hidden md:flex items-center gap-9 ${className ?? ""}`} style={style}>
+    <nav className={`hidden md:flex items-center gap-10 ${className ?? ""}`} style={style}>
       {items.map((item) => (
         <NavLink key={item.href} href={item.href}>
           {item.label}

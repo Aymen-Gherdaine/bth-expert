@@ -133,7 +133,24 @@
   }
 }
 
+/* Utility topbar — slides away over the same scroll range the main bar
+   solidifies. Height + opacity collapse keeps the document flow stable
+   (the wrapper is fixed; only the visual band retracts). */
+@keyframes topbar-collapse {
+  to {
+    height: 0;
+    opacity: 0;
+    border-bottom-color: transparent;
+  }
+}
+
 @supports (animation-timeline: scroll()) {
+  .header-topbar {
+    animation: topbar-collapse linear both;
+    animation-timeline: scroll();
+    animation-range: 0 50px;
+  }
+
   header[data-overlay="true"] {
     animation: header-solidify linear both;
     animation-timeline: scroll();
