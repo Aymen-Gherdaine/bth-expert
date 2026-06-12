@@ -51,6 +51,9 @@ export default async function HomePage({
       />
 
       {/* ── HERO — cinematic full-bleed, curtain-up on scroll ─────────── */}
+      {/* bg-brand-deep behind the curtain: the scale/translate retreat
+          exposes dark green at the edges, never the cream page bg */}
+      <div className="bg-brand-deep">
       <HeroCurtain>
         <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32 bg-brand-deep">
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
@@ -119,6 +122,7 @@ export default async function HomePage({
           <span aria-hidden className="scroll-pulse absolute bottom-8 right-8 lg:bottom-10 lg:right-12 z-10" />
         </section>
       </HeroCurtain>
+      </div>
 
       {/* ── POST-HERO — scrolls over the pinned hero ─────────────────── */}
       {/* bg-white plugs any gap from About's curtain retreat, keeps hero hidden */}
