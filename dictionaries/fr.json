@@ -31,38 +31,65 @@
     },
     "hero": {
       "eyebrow": "Contact",
-      "heading": "Parlons de votre projet.",
-      "subheading": "Décrivez votre projet, vos obligations réglementaires et votre calendrier. Nous revenons vers vous sous 48 heures ouvrables."
+      "headingStart": "Parlons de votre",
+      "headingEmphasis": "projet",
+      "intro": "Vous avez un projet industriel nécessitant un accompagnement environnemental ou réglementaire ? Contactez-nous pour une consultation initiale."
+    },
+    "info": {
+      "emailLabel": "Email",
+      "email": "info@bthexpert.dz",
+      "phoneLabel": "Téléphone",
+      "phone": "+213 670 70 81 38",
+      "addressLabel": "Adresse",
+      "address": "40, Lotissement 119, Bir El Djir, Oran, Algérie"
     },
     "form": {
       "name": "Nom complet",
-      "namePlaceholder": "Votre nom",
-      "email": "Adresse email",
-      "emailPlaceholder": "votre@email.com",
-      "phone": "Téléphone (optionnel)",
-      "phonePlaceholder": "+213 6xx xx xx xx",
-      "subject": "Objet de la demande",
-      "subjectOptions": {
-        "devis": "Demande de devis",
-        "eie": "Étude d'impact environnemental",
+      "email": "Courriel",
+      "phone": "Téléphone",
+      "projectType": "Type de projet",
+      "projectTypePlaceholder": "Sélectionnez un type",
+      "projectTypeOptions": {
+        "eie": "Étude d'impact",
         "edd": "Étude de dangers",
         "hse": "Audit HSE",
+        "conformite": "Conformité réglementaire",
         "autre": "Autre"
       },
-      "message": "Description du projet",
-      "messagePlaceholder": "Nature du projet, localisation, calendrier prévisionnel...",
-      "submit": "Envoyer la demande",
+      "message": "Message",
+      "consentPrefix": "En cochant cette case, j'accepte la",
+      "consentLink": "politique de confidentialité",
+      "submit": "Envoyer le message",
       "submitting": "Envoi en cours...",
-      "successTitle": "Message reçu.",
-      "successMessage": "Nous accusons réception de votre demande. Notre équipe vous contactera sous 48 heures ouvrables.",
-      "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email."
+      "successTitle": "Message envoyé.",
+      "successMessage": "Merci, nous vous répondrons sous 48 heures.",
+      "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.dz."
     },
-    "info": {
-      "heading": "Informations de contact",
-      "phone": "+213 670 70 81 38",
-      "email": "info@bthexpert.dz",
-      "address": "40, Lotissement 119, Bir El Djir, Oran, Algérie",
-      "hours": "Du dimanche au jeudi, 8h00 – 17h00"
+    "process": {
+      "eyebrow": "Notre processus",
+      "heading": "À quoi s'attendre",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Votre demande",
+          "description": "Vous nous décrivez votre projet et vos obligations réglementaires."
+        },
+        {
+          "number": "02",
+          "title": "Consultation initiale",
+          "description": "Un expert évalue gratuitement votre besoin et le cadre réglementaire applicable."
+        },
+        {
+          "number": "03",
+          "title": "Proposition & devis",
+          "description": "Nous vous remettons une proposition technique détaillée et un devis."
+        },
+        {
+          "number": "04",
+          "title": "Démarrage de l'étude",
+          "description": "Une fois validé, nous lançons l'étude avec des livrables conformes."
+        }
+      ]
     }
   },
   "equipe": {

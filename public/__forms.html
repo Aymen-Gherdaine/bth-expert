@@ -1,0 +1,26 @@
+<!doctype html>
+<!--
+  Static form definition for Netlify Forms build-time detection.
+  The App Router renders pages dynamically at build, so Netlify's
+  parser needs this plain HTML mirror. Field names MUST match the
+  React form in components/ui/ContactForm.tsx exactly.
+-->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>BTH Expert — Formulaires</title>
+  </head>
+  <body>
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="lang" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="projectType"></select>
+      <textarea name="message"></textarea>
+      <input type="checkbox" name="consent" />
+    </form>
+  </body>
+</html>
