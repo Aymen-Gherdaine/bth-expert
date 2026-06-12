@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
@@ -74,6 +75,37 @@ export function AboutSection({ lang }: AboutSectionProps) {
       // CTA last.
       if (cta) tl.from(cta, { y: 16, opacity: 0, duration: 0.7 }, 0.45);
 
+      // ── Image — slow settle-in zoom + scroll parallax ───────────────
+      const imgWrap  = section.querySelector<HTMLElement>("[data-about-image]");
+      const imgInner = section.querySelector<HTMLElement>("[data-about-image-inner]");
+      if (imgWrap && imgInner) {
+        gsap.fromTo(
+          imgInner,
+          { scale: 1.12 },
+          {
+            scale: 1,
+            duration: 1.8,
+            ease: "expo.out",
+            scrollTrigger: { trigger: imgWrap, start: "top 85%", once: true },
+          }
+        );
+        // Inner layer is oversized vertically (±8%) so the travel never shows an edge.
+        gsap.fromTo(
+          imgInner,
+          { yPercent: -5 },
+          {
+            yPercent: 5,
+            ease: "none",
+            scrollTrigger: {
+              trigger: imgWrap,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      }
+
       // ── Curtain-up retreat as Services scrolls over (parallax) ──────
       const mm = gsap.matchMedia();
 
@@ -136,10 +168,10 @@ export function AboutSection({ lang }: AboutSectionProps) {
           style={{ backgroundColor: "var(--color-gold)", opacity: 0.35 }}
         />
 
-        <div className="lg:grid lg:grid-cols-12 lg:gap-16">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
 
-          {/* Left: eyebrow + heading */}
-          <div data-about-col className="lg:col-span-5 mb-12 lg:mb-0">
+          {/* Left: text column — eyebrow, heading, body, CTA */}
+          <div data-about-col className="lg:col-span-5 mb-14 lg:mb-0">
             <span
               data-about-eyebrow
               className="block font-sans uppercase text-gold mb-8"
@@ -155,16 +187,9 @@ export function AboutSection({ lang }: AboutSectionProps) {
               Un bureau d&apos;études agréé par le Ministère de
               l&apos;Environnement
             </h2>
-          </div>
-
-          {/* Right: body + CTA */}
-          <div
-            data-about-col
-            className="lg:col-span-6 lg:col-start-7 flex flex-col justify-end"
-          >
             <p
               data-about-body
-              className="font-sans text-ink-soft leading-[1.75] mb-5"
+              className="font-sans text-ink-soft leading-[1.75] mt-10 mb-5"
               style={{ fontSize: "var(--text-body)" }}
             >
               BTH Expert est une société agréée de conseil et
@@ -189,6 +214,30 @@ export function AboutSection({ lang }: AboutSectionProps) {
             >
               En savoir plus <span aria-hidden>→</span>
             </Link>
+          </div>
+
+          {/* Right: cinematic field image — settle-in zoom + scroll parallax */}
+          <div data-about-col className="lg:col-span-6 lg:col-start-7">
+            <div
+              data-about-image
+              className="relative aspect-[4/3] overflow-hidden rounded-sm"
+            >
+              {/* Oversized inner layer (±8%) gives the parallax travel headroom */}
+              <div
+                data-about-image-inner
+                className="absolute inset-x-0"
+                style={{ top: "-8%", bottom: "-8%" }}
+              >
+                <Image
+                  src="/about-engineer.webp"
+                  alt="Ingénieur BTH Expert inspectant un site industriel en Algérie"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  quality={80}
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
 
         </div>
