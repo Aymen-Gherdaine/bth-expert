@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
@@ -45,77 +44,63 @@ export function AboutSection({ lang }: AboutSectionProps) {
         );
       }
 
-      // ── Text reveal — staggered eyebrow→title→body→CTA ─────────────
-      const eyebrow  = section.querySelector<HTMLElement>("[data-about-eyebrow]");
-      const titleEl  = section.querySelector<HTMLElement>("[data-about-title]");
-      const bodies   = section.querySelectorAll<HTMLElement>("[data-about-body]");
-      const cta      = section.querySelector<HTMLElement>("[data-about-cta]");
+      // ── Eyebrow ────────────────────────────────────────────────────
+      const eyebrow = section.querySelector<HTMLElement>("[data-about-eyebrow]");
+      if (eyebrow) {
+        gsap.from(eyebrow, {
+          y: 16,
+          opacity: 0,
+          duration: 0.7,
+          ease: "expo.out",
+          scrollTrigger: { trigger: eyebrow, start: "top 85%", once: true },
+        });
+      }
 
-      const tl = gsap.timeline({
-        defaults: { ease: "expo.out" },
-        scrollTrigger: { trigger: section, start: "top 80%", once: true },
-      });
-
-      if (eyebrow) tl.from(eyebrow, { y: 16, opacity: 0, duration: 0.7 }, 0);
-
-      // Title — word-by-word rise (same engine as RevealText).
-      if (titleEl) {
-        split = new SplitText(titleEl, { type: "words" });
-        tl.from(
+      // ── Manifesto — words light up one by one as the user scrolls ──
+      const manifesto = section.querySelector<HTMLElement>("[data-about-manifesto]");
+      if (manifesto) {
+        split = new SplitText(manifesto, { type: "words" });
+        gsap.fromTo(
           split.words,
-          { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.05 },
-          0.1
-        );
-      }
-
-      if (bodies.length) {
-        tl.from(bodies, { y: 20, opacity: 0, duration: 0.8, stagger: 0.12 }, 0.4);
-      }
-
-      if (cta) tl.from(cta, { y: 16, opacity: 0, duration: 0.7 }, 0.55);
-
-      // ── Image — clip-reveal, settle-in zoom, scroll parallax ───────
-      const imgWrap  = section.querySelector<HTMLElement>("[data-about-image]");
-      const imgInner = section.querySelector<HTMLElement>("[data-about-image-inner]");
-      if (imgWrap && imgInner) {
-        gsap.fromTo(
-          imgWrap,
-          { clipPath: "inset(0 100% 0 0)" },
+          { opacity: 0.13 },
           {
-            clipPath: "inset(0 0% 0 0)",
-            duration: 1.4,
-            ease: "expo.inOut",
-            scrollTrigger: { trigger: imgWrap, start: "top 78%", once: true },
-          }
-        );
-        gsap.fromTo(
-          imgInner,
-          { scale: 1.15 },
-          {
-            scale: 1,
-            duration: 2.2,
-            ease: "expo.out",
-            scrollTrigger: { trigger: imgWrap, start: "top 78%", once: true },
-          }
-        );
-        // Inner layer is oversized vertically (±8%) so the travel never shows an edge.
-        gsap.fromTo(
-          imgInner,
-          { yPercent: -5 },
-          {
-            yPercent: 5,
+            opacity: 1,
+            stagger: 0.06,
             ease: "none",
             scrollTrigger: {
-              trigger: imgWrap,
-              start: "top bottom",
-              end: "bottom top",
+              trigger: manifesto,
+              start: "top 80%",
+              end: "top 25%",
               scrub: true,
             },
           }
         );
       }
 
-      // ── Stats — rise + count cadence ───────────────────────────────
+      // ── Body + CTA — quiet rise once the manifesto is read ─────────
+      const bodies = section.querySelectorAll<HTMLElement>("[data-about-body]");
+      const cta    = section.querySelector<HTMLElement>("[data-about-cta]");
+      if (bodies.length) {
+        gsap.from(bodies, {
+          y: 24,
+          opacity: 0,
+          duration: 0.9,
+          ease: "expo.out",
+          stagger: 0.15,
+          scrollTrigger: { trigger: bodies[0], start: "top 85%", once: true },
+        });
+      }
+      if (cta) {
+        gsap.from(cta, {
+          y: 16,
+          opacity: 0,
+          duration: 0.7,
+          ease: "expo.out",
+          scrollTrigger: { trigger: cta, start: "top 90%", once: true },
+        });
+      }
+
+      // ── Stats — rise in sequence ───────────────────────────────────
       const stats = section.querySelectorAll<HTMLElement>("[data-about-stat]");
       if (stats.length) {
         gsap.from(stats, {
@@ -181,7 +166,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
       ref={sectionRef}
       className="bg-cream-warm overflow-hidden"
     >
-      <div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
+      <div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-28 lg:py-40">
 
         {/* Gold traced line */}
         <div
@@ -190,50 +175,28 @@ export function AboutSection({ lang }: AboutSectionProps) {
           style={{ backgroundColor: "var(--color-gold)", opacity: 0.35 }}
         />
 
-        {/* Eyebrow + oversized editorial statement */}
         <span
           data-about-eyebrow
-          className="block font-sans uppercase text-gold mb-8"
+          className="block font-sans uppercase text-gold mb-10"
           style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
         >
           À PROPOS
         </span>
+
+        {/* Manifesto — one statement, read at scroll pace */}
         <h2
-          data-about-title
-          className="font-display font-light text-ink tracking-[-0.025em] leading-[1.08] max-w-5xl"
-          style={{ fontSize: "clamp(2.5rem, 4.5vw + 0.5rem, 4.75rem)" }}
+          data-about-manifesto
+          className="font-display font-light text-ink tracking-[-0.025em] leading-[1.16] max-w-6xl"
+          style={{ fontSize: "clamp(2rem, 3.2vw + 0.75rem, 3.9rem)" }}
         >
           Un bureau d&apos;études agréé par le Ministère de
-          l&apos;Environnement
+          l&apos;Environnement, au service de l&apos;industrie algérienne
+          depuis 2009 — pour que chaque projet avance, en conformité.
         </h2>
 
-        {/* Image bleeding to the left viewport edge + text column right */}
+        {/* Supporting copy — two quiet columns, Apple-style restraint */}
         <div className="mt-16 lg:mt-24 lg:grid lg:grid-cols-12 lg:gap-16">
-
-          <div className="lg:col-span-7 mb-12 lg:mb-0">
-            <div
-              data-about-image
-              className="relative overflow-hidden aspect-[3/2] lg:aspect-[16/11] -ms-5 -me-5 sm:-ms-6 sm:-me-6 md:-ms-8 md:-me-8 lg:-ms-10 lg:me-0 xl:-ms-12 2xl:-ms-16"
-            >
-              {/* Oversized inner layer (±8%) gives the parallax travel headroom */}
-              <div
-                data-about-image-inner
-                className="absolute inset-x-0"
-                style={{ top: "-8%", bottom: "-8%" }}
-              >
-                <Image
-                  src="/about-field.webp"
-                  alt="Opérateur industriel sur site, contre-jour dans la vapeur"
-                  fill
-                  sizes="(min-width: 1024px) 60vw, 100vw"
-                  quality={80}
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 flex flex-col justify-center">
+          <div className="lg:col-span-5 lg:col-start-7">
             <p
               data-about-body
               className="font-sans text-ink-soft leading-[1.75] mb-5"
@@ -249,10 +212,9 @@ export function AboutSection({ lang }: AboutSectionProps) {
               className="font-sans text-ink-soft leading-[1.75] mb-10"
               style={{ fontSize: "var(--text-body)" }}
             >
-              Fondé en 2009, le bureau accompagne les industriels dans leur
-              mise en conformité réglementaire — études d&apos;impact,
-              audits HSE, plans de gestion environnementale — avec des
-              livrables prêts à déposer auprès des autorités compétentes.
+              Études d&apos;impact, audits HSE, plans de gestion
+              environnementale — des livrables rigoureux, prêts à déposer
+              auprès des autorités compétentes.
             </p>
             <Link
               data-about-cta
@@ -262,11 +224,10 @@ export function AboutSection({ lang }: AboutSectionProps) {
               En savoir plus <span aria-hidden>→</span>
             </Link>
           </div>
-
         </div>
 
         {/* Stat band — oversized serif numerals, hairline-ruled */}
-        <div className="mt-20 lg:mt-28 grid grid-cols-1 sm:grid-cols-3 gap-y-12 gap-x-10">
+        <div className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-3 gap-y-12 gap-x-10">
           {STATS.map((s) => (
             <div key={s.label} data-about-stat>
               <div

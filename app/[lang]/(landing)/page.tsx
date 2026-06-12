@@ -11,7 +11,6 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
-import { HeroBackground } from "@/components/motion/HeroBackground";
 import { CtaVideo } from "@/components/motion/CtaVideo";
 
 export async function generateMetadata({
@@ -53,33 +52,10 @@ export default async function HomePage({
       {/* ── HERO — cinematic full-bleed, curtain-up on scroll ─────────── */}
       <HeroCurtain>
         <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32 bg-brand-deep">
-          {/* Full-bleed image — Ken Burns + scroll parallax, sits behind every overlay */}
-          <HeroBackground src="/hero.webp" />
-
-          {/* Side overlay — darkens the left where the text sits, for legibility */}
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{ background: "var(--overlay-hero-side)" }}
-          />
-          {/* Extra bottom darkening under the headline + CTAs (subtle) */}
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, rgb(6 13 7 / 0.55) 0%, transparent 45%)",
-            }}
-          />
-          {/* Top scrim — keeps the cream header legible over bright sky; fades to nothing */}
-          <div
-            aria-hidden
-            className="absolute inset-x-0 top-0 h-32 lg:h-40"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgb(15 28 18 / 0.55) 0%, rgb(15 28 18 / 0.25) 40%, transparent 100%)",
-            }}
-          />
+          {/* Atmosphere — layered light on deep green, no imagery to fight the type */}
+          <div aria-hidden className="hero-atmosphere absolute inset-0" />
+          <div aria-hidden className="hero-halo absolute inset-0" />
+          <div aria-hidden className="hero-grain absolute inset-0" />
 
           <Container className="relative z-10">
             <div className="max-w-3xl">
