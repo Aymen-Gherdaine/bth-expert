@@ -419,6 +419,71 @@
       "button": "Get in touch"
     }
   },
+  "projets": {
+    "meta": {
+      "title": "Projects & references — Environmental studies | BTH Expert",
+      "description": "Impact assessments, hazard studies and HSE audits delivered by BTH Expert for industry, energy and hydraulics in Algeria. Examples of work by sector."
+    },
+    "hero": {
+      "eyebrow": "References",
+      "heading": "Studies that secure projects",
+      "subheading": "A glimpse of our environmental and regulatory work, from petrochemical complexes to irrigated areas. Over 20 projects delivered for 150 industrial partners."
+    },
+    "filterAll": "All sectors",
+    "detail": {
+      "secteurLabel": "Sector",
+      "missionLabel": "Scope",
+      "anneeLabel": "Year",
+      "contexteLabel": "Context",
+      "demarcheLabel": "Our intervention",
+      "resultatLabel": "Outcome",
+      "disclaimer": "Representative example — details to be confirmed with the client.",
+      "backLabel": "All projects",
+      "cta": {
+        "heading": "A similar project?",
+        "description": "Describe your project and its context. We assess your obligations and provide a quote within 48 hours.",
+        "button": "Request a Quote"
+      }
+    },
+    "items": [
+      {
+        "slug": "complexe-petrochimique-arzew",
+        "secteur": "Industry & Petrochemicals",
+        "secteurSlug": "industrie-petrochimie",
+        "title": "Impact assessment for a petrochemical complex",
+        "excerpt": "EIA and hazard study for a petrochemical unit in the Arzew industrial zone.",
+        "mission": ["Impact assessment", "Hazard study"],
+        "annee": "2022",
+        "contexte": "Installation of a new processing unit within an existing industrial zone, close to third parties and sensitive environments. Subject to authorisation, the project required an environmental assessment and a characterisation of major risks before review.",
+        "demarche": "Baseline site survey, analysis of impacts on air, water and the human environment, modelling of major-accident scenarios (thermal and overpressure effects) and definition of mitigation and risk-control measures.",
+        "resultat": "A complete regulatory file — EIA and hazard study — submitted to the wilaya authorities, together with an environmental management plan and an internal emergency plan."
+      },
+      {
+        "slug": "cimenterie-ouest-algerien",
+        "secteur": "Industry & Petrochemicals",
+        "secteurSlug": "industrie-petrochimie",
+        "title": "HSE audit & compliance for a cement plant",
+        "excerpt": "Regulatory-compliance diagnosis and HSE action plan for an operating cement plant.",
+        "mission": ["HSE audit", "Regulatory compliance"],
+        "annee": "2021",
+        "contexte": "An operating cement plant sought to secure its regulatory compliance and structure its HSE approach ahead of an inspection by the competent authorities.",
+        "demarche": "Document review of permits and registers, site visit, gap analysis against applicable requirements and prioritisation of corrective actions.",
+        "resultat": "A compliance grid, a gap register and a prioritised action plan, supporting the site's compliance over twelve months."
+      },
+      {
+        "slug": "perimetre-irrigue-plaine-mina",
+        "secteur": "Agriculture & Hydraulics",
+        "secteurSlug": "agriculture-hydraulique",
+        "title": "Impact assessment for an irrigated area",
+        "excerpt": "Environmental assessment and water-resource management for an agricultural irrigation project.",
+        "mission": ["Impact assessment", "Environmental management plan"],
+        "annee": "2023",
+        "contexte": "Development of an irrigated area drawing on water resources over a large agricultural footprint, with stakes for soils, natural environments and neighbouring uses.",
+        "demarche": "Baseline characterisation, assessment of effects on water resources and soils, and definition of an environmental surveillance and monitoring programme.",
+        "resultat": "A validated impact assessment and an operational environmental management plan for the works and operation phases."
+      }
+    ]
+  },
   "home": {
     "hero": {
       "eyebrow": "Certified by the Ministry of Environment · Oran, Algeria",

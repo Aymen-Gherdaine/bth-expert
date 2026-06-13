@@ -419,6 +419,71 @@
       "button": "Prendre contact"
     }
   },
+  "projets": {
+    "meta": {
+      "title": "Projets & réalisations — Études environnementales | BTH Expert",
+      "description": "Études d'impact, études de dangers et audits HSE menés par BTH Expert pour l'industrie, l'énergie et l'hydraulique en Algérie. Exemples de réalisations par secteur."
+    },
+    "hero": {
+      "eyebrow": "Réalisations",
+      "heading": "Des études qui sécurisent les projets",
+      "subheading": "Un aperçu de nos interventions environnementales et réglementaires, du complexe pétrochimique au périmètre irrigué. Plus de 20 réalisations pour 150 partenaires industriels."
+    },
+    "filterAll": "Tous les secteurs",
+    "detail": {
+      "secteurLabel": "Secteur",
+      "missionLabel": "Mission",
+      "anneeLabel": "Année",
+      "contexteLabel": "Contexte",
+      "demarcheLabel": "Notre intervention",
+      "resultatLabel": "Résultat",
+      "disclaimer": "Exemple représentatif — détails à valider avec le client.",
+      "backLabel": "Tous les projets",
+      "cta": {
+        "heading": "Un projet similaire ?",
+        "description": "Décrivez-nous votre projet et son contexte. Nous évaluons vos obligations et vous remettons une offre sous 48h.",
+        "button": "Demander un devis"
+      }
+    },
+    "items": [
+      {
+        "slug": "complexe-petrochimique-arzew",
+        "secteur": "Industrie & Pétrochimie",
+        "secteurSlug": "industrie-petrochimie",
+        "title": "Étude d'impact d'un complexe pétrochimique",
+        "excerpt": "EIE et étude de dangers pour une unité pétrochimique de la zone industrielle d'Arzew.",
+        "mission": ["Étude d'impact", "Étude de dangers"],
+        "annee": "2022",
+        "contexte": "Implantation d'une nouvelle unité de transformation au sein d'une zone industrielle existante, à proximité de tiers et de milieux sensibles. Le projet, soumis à autorisation, nécessitait une évaluation environnementale et une caractérisation des risques majeurs avant instruction.",
+        "demarche": "État initial du site, analyse des impacts sur l'air, l'eau et le milieu humain, modélisation des scénarios d'accident majeur (effets thermiques et de surpression) et définition des mesures d'atténuation et de maîtrise des risques.",
+        "resultat": "Un dossier réglementaire complet — EIE et EDD — déposé auprès des autorités de wilaya, assorti d'un plan de gestion environnementale et d'un plan d'urgence interne."
+      },
+      {
+        "slug": "cimenterie-ouest-algerien",
+        "secteur": "Industrie & Pétrochimie",
+        "secteurSlug": "industrie-petrochimie",
+        "title": "Audit HSE & conformité d'une cimenterie",
+        "excerpt": "Diagnostic de conformité réglementaire et plan d'action HSE pour une cimenterie en exploitation.",
+        "mission": ["Audit HSE", "Conformité réglementaire"],
+        "annee": "2021",
+        "contexte": "Un site cimentier en exploitation souhaitait sécuriser sa conformité réglementaire et structurer sa démarche HSE avant un audit des autorités compétentes.",
+        "demarche": "Revue documentaire des autorisations et registres, visite de terrain, analyse des écarts au regard des exigences applicables et hiérarchisation des actions correctives.",
+        "resultat": "Une grille de conformité, un registre des écarts et un plan d'action priorisé, support de la mise en conformité du site sur douze mois."
+      },
+      {
+        "slug": "perimetre-irrigue-plaine-mina",
+        "secteur": "Agriculture & Hydraulique",
+        "secteurSlug": "agriculture-hydraulique",
+        "title": "Étude d'impact d'un périmètre irrigué",
+        "excerpt": "Évaluation environnementale et gestion de la ressource en eau pour un projet d'irrigation agricole.",
+        "mission": ["Étude d'impact", "Plan de gestion environnementale"],
+        "annee": "2023",
+        "contexte": "Aménagement d'un périmètre irrigué mobilisant la ressource en eau sur une large emprise agricole, avec des enjeux sur les sols, les milieux naturels et les usages riverains.",
+        "demarche": "Caractérisation de l'état initial, évaluation des effets sur la ressource en eau et les sols, et définition d'un programme de surveillance et de suivi environnemental.",
+        "resultat": "Une étude d'impact validée et un plan de gestion environnementale opérationnel pour les phases travaux et exploitation."
+      }
+    ]
+  },
   "home": {
     "hero": {
       "eyebrow": "Agréé Ministère de l'Environnement · Oran, Algérie",
