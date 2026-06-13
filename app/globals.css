@@ -166,6 +166,46 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
+   Mobile navigation drawer
+   ───────────────────────────────────────────────────────────── */
+.mobile-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo),
+              visibility 0s linear 0.5s;
+}
+.mobile-menu[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 0.4s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo);
+}
+.mobile-menu-link {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo);
+}
+.mobile-menu[data-open="true"] .mobile-menu-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .mobile-menu[data-open="true"],
+  .mobile-menu-link,
+  .mobile-menu[data-open="true"] .mobile-menu-link {
+    transform: none;
+    transition: opacity 0.2s linear, visibility 0s;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
    Scroll-to-top control — hidden until past the first viewport
    ───────────────────────────────────────────────────────────── */
 .scroll-top {

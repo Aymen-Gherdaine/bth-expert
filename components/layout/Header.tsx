@@ -5,6 +5,7 @@ import { Container } from "./Container";
 import { Nav } from "./Nav";
 import { LangSwitcher } from "./LangSwitcher";
 import { HeaderScrollState } from "./HeaderScrollState";
+import { MobileMenu } from "./MobileMenu";
 
 interface HeaderProps {
   lang: Locale;
@@ -112,6 +113,19 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                 dict={dict}
                 className="header-item"
                 style={{ "--enter-delay": "60ms" } as React.CSSProperties}
+              />
+
+              <MobileMenu
+                items={[
+                  { href: `/${lang}/services`, label: dict.nav.services },
+                  { href: `/${lang}/projets`, label: dict.nav.projets },
+                  { href: `/${lang}/equipe`, label: dict.nav.equipe },
+                  { href: `/${lang}/contact`, label: dict.nav.contact },
+                ]}
+                phone="+213 (670) 70 81 38"
+                email="info@bthexpert.dz"
+                ctaLabel={dict.nav.quote}
+                ctaHref={`/${lang}/contact`}
               />
 
             </div>
