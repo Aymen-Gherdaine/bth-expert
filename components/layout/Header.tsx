@@ -118,6 +118,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
               <MobileMenu
                 items={[
                   { href: `/${lang}/services`, label: dict.nav.services },
+                  { href: `/${lang}/secteurs`, label: dict.nav.secteurs },
                   { href: `/${lang}/projets`, label: dict.nav.projets },
                   { href: `/${lang}/equipe`, label: dict.nav.equipe },
                   { href: `/${lang}/contact`, label: dict.nav.contact },

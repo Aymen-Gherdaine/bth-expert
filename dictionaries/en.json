@@ -295,6 +295,79 @@
       "button": "Request a Quote"
     }
   },
+  "secteurs": {
+    "meta": {
+      "title": "Sectors of intervention — Environmental studies | BTH Expert",
+      "description": "BTH Expert supports industry & petrochemicals, energy & hydrocarbons, infrastructure & construction, and agriculture & hydraulics. Impact assessments, hazard studies and HSE audits in Algeria."
+    },
+    "hero": {
+      "eyebrow": "Sectors",
+      "heading": "Expertise by sector",
+      "subheading": "Every industry carries its own environmental and regulatory challenges. BTH Expert adapts its methodology to the technical realities of your sector."
+    },
+    "enjeuxLabel": "Key challenges",
+    "sousSecteursLabel": "Areas covered",
+    "prestationsLabel": "Related services",
+    "cta": {
+      "heading": "A project in your sector?",
+      "description": "Describe your project and its industrial context. We assess your regulatory obligations and provide a quote within 48 hours.",
+      "button": "Request a Quote"
+    },
+    "list": [
+      {
+        "slug": "industrie-petrochimie",
+        "title": "Industry & Petrochemicals",
+        "tagline": "Refining, cement works, metallurgy and surface treatment: processes with high impact and hazard potential.",
+        "intro": "Industrial and petrochemical sites concentrate the most demanding environmental and safety challenges: air and water emissions, hazardous-material storage, major-accident risks. BTH Expert supports these facilities from the impact assessment to risk control.",
+        "enjeux": [
+          { "title": "Classified facilities", "description": "Impact assessments and hazard studies for establishments subject to authorisation." },
+          { "title": "Emissions & discharges", "description": "Characterisation and reduction of air and water emissions and special waste." },
+          { "title": "Major-accident risk", "description": "Scenarios, effect zones and prevention plans for hazardous processes." }
+        ],
+        "sousSecteurs": ["Refining & petrochemicals", "Cement works", "Metallurgy", "Surface treatment", "Chemicals & fine chemicals"],
+        "prestations": ["Environmental impact assessment", "Hazard study", "HSE audit", "Environmental management plan"]
+      },
+      {
+        "slug": "energie-hydrocarbures",
+        "title": "Energy & Hydrocarbons",
+        "tagline": "Exploration, production, transport and storage of hydrocarbons, power generation: strategic and sensitive infrastructure.",
+        "intro": "The energy and hydrocarbons sector operates extensive, sensitive infrastructure subject to a strict regulatory framework. BTH Expert works across the whole chain, from the production field to transport and storage facilities.",
+        "enjeux": [
+          { "title": "Extensive sites", "description": "Assessment of impacts over vast footprints and varied environments." },
+          { "title": "Facility safety", "description": "Hazard studies for storage, transport and treatment units." },
+          { "title": "Transition & efficiency", "description": "Integrating energy and renewable-energy considerations into projects." }
+        ],
+        "sousSecteurs": ["Upstream oil & gas", "Transport & storage", "Power generation", "Renewable energy"],
+        "prestations": ["Environmental impact assessment", "Hazard study", "HSE audit", "Environmental management plan"]
+      },
+      {
+        "slug": "infrastructures-btp",
+        "title": "Infrastructure & Construction",
+        "tagline": "Roads, engineering structures, activity zones, buildings and developments: structuring projects with a large footprint.",
+        "intro": "Infrastructure and construction projects transform the territory for the long term. BTH Expert supports owners and contractors in anticipating impacts, securing authorisations and organising the environmental monitoring of works.",
+        "enjeux": [
+          { "title": "Footprint & territory", "description": "Assessment of impacts on environments, landscape and neighbouring populations." },
+          { "title": "Works phase", "description": "Management plans and monitoring of nuisances during the works phase." },
+          { "title": "Authorisations", "description": "Preparation of the regulatory files required to obtain permits." }
+        ],
+        "sousSecteurs": ["Roads & engineering structures", "Activity & industrial zones", "Building & real estate", "Urban development"],
+        "prestations": ["Environmental impact assessment", "Environmental management plan", "HSE audit"]
+      },
+      {
+        "slug": "agriculture-hydraulique",
+        "title": "Agriculture & Hydraulics",
+        "tagline": "Irrigated areas, dams, treatment plants and agro-industrial projects: water resources at the heart of the challenges.",
+        "intro": "Agriculture and hydraulics mobilise water resources and soils over large areas. BTH Expert assesses impacts, optimises water management and supports the compliance of agro-industrial and hydraulic projects.",
+        "enjeux": [
+          { "title": "Water resources", "description": "Preserving the quality and availability of water for environments and uses." },
+          { "title": "Soils & environments", "description": "Assessment of effects on soils, biodiversity and sensitive ecosystems." },
+          { "title": "Treatment & discharges", "description": "Design and monitoring of treatment systems and discharge management." }
+        ],
+        "sousSecteurs": ["Irrigated areas", "Dams & reservoirs", "Treatment plants", "Agro-industry"],
+        "prestations": ["Environmental impact assessment", "Water treatment", "Environmental management plan"]
+      }
+    ]
+  },
   "home": {
     "hero": {
       "eyebrow": "Certified by the Ministry of Environment · Oran, Algeria",

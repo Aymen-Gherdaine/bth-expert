@@ -79,8 +79,15 @@ export async function Footer({ lang }: FooterProps) {
           <div className="lg:col-span-2">
             <h4 className={columnHeaderClass}>{dict.nav.secteurs}</h4>{/* span balanced after removing Zones */}
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
-              {dict.footer.secteursList.map((secteur) => (
-                <li key={secteur}>{secteur}</li>
+              {dict.secteurs.list.map((secteur) => (
+                <li key={secteur.slug}>
+                  <Link
+                    href={`/${lang}/secteurs/${secteur.slug}`}
+                    className={linkClass}
+                  >
+                    {secteur.title}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

@@ -295,6 +295,79 @@
       "button": "Demander un devis"
     }
   },
+  "secteurs": {
+    "meta": {
+      "title": "Secteurs d'intervention — Études environnementales | BTH Expert",
+      "description": "BTH Expert accompagne l'industrie & pétrochimie, l'énergie & hydrocarbures, les infrastructures & BTP et l'agriculture & hydraulique. Études d'impact, études de dangers et audits HSE en Algérie."
+    },
+    "hero": {
+      "eyebrow": "Secteurs",
+      "heading": "Une expertise par secteur",
+      "subheading": "Chaque industrie porte ses propres enjeux environnementaux et réglementaires. BTH Expert adapte sa méthodologie aux réalités techniques de votre secteur d'activité."
+    },
+    "enjeuxLabel": "Enjeux clés",
+    "sousSecteursLabel": "Domaines couverts",
+    "prestationsLabel": "Prestations associées",
+    "cta": {
+      "heading": "Un projet dans votre secteur ?",
+      "description": "Décrivez-nous votre projet et son contexte industriel. Nous évaluons vos obligations réglementaires et vous remettons une offre sous 48h.",
+      "button": "Demander un devis"
+    },
+    "list": [
+      {
+        "slug": "industrie-petrochimie",
+        "title": "Industrie & Pétrochimie",
+        "tagline": "Raffinage, cimenteries, métallurgie et traitements de surface : des procédés à fort potentiel d'impact et de danger.",
+        "intro": "Les sites industriels et pétrochimiques concentrent les enjeux environnementaux et de sécurité les plus exigeants : rejets atmosphériques et aqueux, stockage de produits dangereux, risques d'accident majeur. BTH Expert accompagne ces installations de l'étude d'impact à la maîtrise des risques.",
+        "enjeux": [
+          { "title": "Installations classées", "description": "Études d'impact et études de dangers pour les établissements soumis à autorisation." },
+          { "title": "Rejets & émissions", "description": "Caractérisation et réduction des rejets atmosphériques, aqueux et des déchets spéciaux." },
+          { "title": "Risque d'accident majeur", "description": "Scénarios, zones d'effet et plans de prévention pour les procédés à risque." }
+        ],
+        "sousSecteurs": ["Raffinage & pétrochimie", "Cimenteries", "Métallurgie", "Traitements de surface", "Chimie & parachimie"],
+        "prestations": ["Étude d'impact environnemental", "Étude de dangers", "Audit HSE", "Plan de gestion environnementale"]
+      },
+      {
+        "slug": "energie-hydrocarbures",
+        "title": "Énergie & Hydrocarbures",
+        "tagline": "Exploration, production, transport et stockage d'hydrocarbures, production d'énergie : des infrastructures stratégiques et sensibles.",
+        "intro": "Le secteur de l'énergie et des hydrocarbures opère des infrastructures étendues et sensibles, soumises à un cadre réglementaire strict. BTH Expert intervient sur l'ensemble de la chaîne, du champ de production aux installations de transport et de stockage.",
+        "enjeux": [
+          { "title": "Sites étendus", "description": "Évaluation des impacts sur de vastes emprises et des milieux variés." },
+          { "title": "Sécurité des installations", "description": "Études de dangers pour le stockage, le transport et les unités de traitement." },
+          { "title": "Transition & efficacité", "description": "Intégration des enjeux énergétiques et des énergies renouvelables dans les projets." }
+        ],
+        "sousSecteurs": ["Amont pétrolier & gazier", "Transport & stockage", "Production électrique", "Énergies renouvelables"],
+        "prestations": ["Étude d'impact environnemental", "Étude de dangers", "Audit HSE", "Plan de gestion environnementale"]
+      },
+      {
+        "slug": "infrastructures-btp",
+        "title": "Infrastructures & BTP",
+        "tagline": "Routes, ouvrages d'art, zones d'activité, bâtiments et aménagements : des projets structurants à forte emprise.",
+        "intro": "Les projets d'infrastructure et de BTP transforment durablement le territoire. BTH Expert accompagne maîtres d'ouvrage et entreprises pour anticiper les impacts, sécuriser les autorisations et organiser le suivi environnemental des chantiers.",
+        "enjeux": [
+          { "title": "Emprise & territoire", "description": "Évaluation des impacts sur les milieux, le paysage et les populations riveraines." },
+          { "title": "Phase chantier", "description": "Plans de gestion et suivi des nuisances en phase travaux." },
+          { "title": "Autorisations", "description": "Constitution des dossiers réglementaires nécessaires à l'obtention des permis." }
+        ],
+        "sousSecteurs": ["Routes & ouvrages d'art", "Zones d'activité & industrielles", "Bâtiment & immobilier", "Aménagement urbain"],
+        "prestations": ["Étude d'impact environnemental", "Plan de gestion environnementale", "Audit HSE"]
+      },
+      {
+        "slug": "agriculture-hydraulique",
+        "title": "Agriculture & Hydraulique",
+        "tagline": "Périmètres irrigués, barrages, stations d'épuration et projets agro-industriels : la ressource en eau au cœur des enjeux.",
+        "intro": "L'agriculture et l'hydraulique mobilisent la ressource en eau et les sols sur de larges étendues. BTH Expert évalue les impacts, optimise la gestion de l'eau et accompagne la mise en conformité des projets agro-industriels et hydrauliques.",
+        "enjeux": [
+          { "title": "Ressource en eau", "description": "Préservation de la qualité et de la disponibilité de l'eau pour les milieux et les usages." },
+          { "title": "Sols & milieux", "description": "Évaluation des effets sur les sols, la biodiversité et les écosystèmes sensibles." },
+          { "title": "Épuration & rejets", "description": "Conception et suivi des dispositifs d'épuration et de gestion des rejets." }
+        ],
+        "sousSecteurs": ["Périmètres irrigués", "Barrages & retenues", "Stations d'épuration", "Agro-industrie"],
+        "prestations": ["Étude d'impact environnemental", "Épuration des eaux", "Plan de gestion environnementale"]
+      }
+    ]
+  },
   "home": {
     "hero": {
       "eyebrow": "Agréé Ministère de l'Environnement · Oran, Algérie",
