@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "./Container";
+import { LangSwitcher } from "./LangSwitcher";
 import { getDictionary, type Locale } from "@/lib/i18n";
 
 interface FooterProps {
@@ -16,7 +17,6 @@ const columnHeaderClass =
 export async function Footer({ lang }: FooterProps) {
   const dict = await getDictionary(lang);
   const year = new Date().getFullYear();
-  const [firstZone, ...otherZones] = dict.oran.zones.wilayas;
 
   return (
     // GISI-style reveal: footer sticks to the viewport bottom behind the
@@ -49,7 +49,7 @@ export async function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Navigation */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <h4 className={columnHeaderClass}>{dict.footer.navigation}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
@@ -77,7 +77,7 @@ export async function Footer({ lang }: FooterProps) {
 
           {/* Secteurs */}
           <div className="lg:col-span-2">
-            <h4 className={columnHeaderClass}>{dict.nav.secteurs}</h4>
+            <h4 className={columnHeaderClass}>{dict.nav.secteurs}</h4>{/* span balanced after removing Zones */}
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               {dict.footer.secteursList.map((secteur) => (
                 <li key={secteur}>{secteur}</li>
@@ -85,23 +85,8 @@ export async function Footer({ lang }: FooterProps) {
             </ul>
           </div>
 
-          {/* Zones d'intervention */}
-          <div className="lg:col-span-2">
-            <h4 className={columnHeaderClass}>{dict.footer.zones}</h4>
-            <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
-              <li>
-                <Link href={`/${lang}/oran`} className={linkClass}>
-                  {firstZone}
-                </Link>
-              </li>
-              {otherZones.map((zone) => (
-                <li key={zone}>{zone}</li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <h4 className={columnHeaderClass}>{dict.nav.contact}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
@@ -124,9 +109,9 @@ export async function Footer({ lang }: FooterProps) {
         </div>
 
         {/* Bottom strip */}
-        <div className="border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))] py-6 flex items-center justify-between text-xs text-[var(--color-on-brand-faint)]">
+        <div className="border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))] py-6 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-[var(--color-on-brand-faint)]">
           <span>© {year} BTH Expert. {dict.footer.rights}.</span>
-          <span className="hidden sm:inline">Bir El Djir, Oran · Algérie</span>
+          <LangSwitcher currentLocale={lang} isDark />
         </div>
       </Container>
     </footer>
