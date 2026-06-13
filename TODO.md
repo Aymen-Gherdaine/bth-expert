@@ -49,7 +49,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [x] **2.2** — Pages secteurs : industrie & pétrochimie, énergie & hydrocarbures, infrastructures & BTP, agriculture & hydraulique
 - [x] **2.3** — Page **`/fr/a-propos/`** : histoire, agrément, partenariat BTH Consult
 - [x] **2.4** — Études de cas : 3 projets détaillés avec page dédiée (contenu indicatif, à valider client)
-- [ ] **2.5** — Page **`/fr/projets/`** : liste avec filtres par secteur
+- [x] **2.5** — Page **`/fr/projets/`** : liste avec filtres par secteur
 
 **Sortie Phase 2 :** contenu complet en français.
 
