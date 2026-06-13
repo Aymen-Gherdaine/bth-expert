@@ -368,6 +368,57 @@
       }
     ]
   },
+  "apropos": {
+    "meta": {
+      "title": "About — Accredited environmental consultancy | BTH Expert",
+      "description": "BTH Expert, an accredited environmental consultancy in Oran since 2009. History, ministerial accreditation, BTH Consult partnership and a multidisciplinary approach serving Algerian industry."
+    },
+    "hero": {
+      "eyebrow": "About · Since 2009",
+      "heading": "A consultancy serving Algerian industry",
+      "subheading": "Since 2009, BTH Expert has supported industrial project owners in managing their environmental and regulatory obligations, from impact assessment to compliance."
+    },
+    "timeline": {
+      "eyebrow": "Our journey",
+      "heading": "Fifteen years of environmental expertise",
+      "milestones": [
+        { "year": "2009", "title": "BTH Expert founded", "description": "The consultancy is established in Oran, with the ambition of supporting western Algeria's industry on its environmental challenges." },
+        { "year": "2012", "title": "Ministerial accreditation", "description": "Recognition of the firm's expertise by the Ministry of Environment, authorising regulatory studies." },
+        { "year": "2016", "title": "Broader sectors", "description": "Activity expands to energy, infrastructure and hydraulics, beyond industry and petrochemicals." },
+        { "year": "2020", "title": "BTH Consult partnership", "description": "A strategic alliance with BTH Consult to mobilise multidisciplinary expertise on large-scale projects." },
+        { "year": "Today", "title": "Over 20 projects delivered", "description": "A portfolio of impact assessments, hazard studies and HSE audits carried out for more than 150 industrial partners." }
+      ]
+    },
+    "agrement": {
+      "heading": "Accreditation & compliance",
+      "description": "BTH Expert is accredited by the Ministry of Environment and Quality of Life to carry out impact assessments and hazard studies. Every deliverable follows the Algerian regulatory template and the requirements of the wilaya directorates (DEW, DIM)."
+    },
+    "partner": {
+      "heading": "BTH Consult partnership",
+      "description": "Our model combines the expertise of an accredited consultant with the know-how of BTH Consult. This partnership strengthens our capacity to act and mobilises a multidisciplinary team — environment, water, health, safety and engineering — for projects of regional and national scale."
+    },
+    "values": {
+      "eyebrow": "Our approach",
+      "heading": "Regulatory rigour, field expertise",
+      "items": [
+        { "title": "Accredited expertise", "description": "Studies compliant with the Algerian regulatory framework, led by recognised specialists." },
+        { "title": "Multidisciplinary approach", "description": "Environment, water, health, safety and engineering brought together around every project." },
+        { "title": "Industrial proximity", "description": "A close knowledge of the realities on the ground in western Algeria and its industries." }
+      ]
+    },
+    "stats": {
+      "items": [
+        { "value": "2009", "label": "Year founded" },
+        { "value": "20+", "label": "Projects delivered" },
+        { "value": "150+", "label": "Industrial partners" }
+      ]
+    },
+    "cta": {
+      "heading": "Let's work together",
+      "description": "Let's discuss your environmental project and your regulatory obligations.",
+      "button": "Get in touch"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Certified by the Ministry of Environment · Oran, Algeria",

@@ -45,9 +45,9 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 
 ## 🟢 Phase 2 — Complétude contenu
 
-- [ ] **2.1** — Pages services restantes : étude de dangers, audit, conformité, HSE
-- [ ] **2.2** — Pages secteurs : pétrochimie, pharmaceutique, agroalimentaire, BTP
-- [ ] **2.3** — Page **`/fr/a-propos/`** : histoire, agrément, partenariat BTH Consult
+- [x] **2.1** — Pages services restantes : étude de dangers (EDD), audit HSE, plan de gestion (PGE)
+- [x] **2.2** — Pages secteurs : industrie & pétrochimie, énergie & hydrocarbures, infrastructures & BTP, agriculture & hydraulique
+- [x] **2.3** — Page **`/fr/a-propos/`** : histoire, agrément, partenariat BTH Consult
 - [ ] **2.4** — Études de cas : 2 à 3 projets détaillés avec page dédiée
 - [ ] **2.5** — Page **`/fr/projets/`** : liste avec filtres par secteur
 

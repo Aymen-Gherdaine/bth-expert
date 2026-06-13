@@ -53,7 +53,7 @@ export async function Footer({ lang }: FooterProps) {
             <h4 className={columnHeaderClass}>{dict.footer.navigation}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
-                <Link href={`/${lang}/equipe`} className={linkClass}>
+                <Link href={`/${lang}/a-propos`} className={linkClass}>
                   {dict.footer.about}
                 </Link>
               </li>
