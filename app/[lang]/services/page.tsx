@@ -39,6 +39,11 @@ export default async function ServicesPage({
   const serviceLinks: Record<string, string> = {
     EIE: `/${lang}/services/etude-impact-environnemental`,
     EIA: `/${lang}/services/etude-impact-environnemental`,
+    EDD: `/${lang}/services/etude-de-dangers`,
+    HS: `/${lang}/services/etude-de-dangers`,
+    HSE: `/${lang}/services/audit-hse`,
+    PGE: `/${lang}/services/plan-gestion-environnementale`,
+    EMP: `/${lang}/services/plan-gestion-environnementale`,
   };
 
   return (

@@ -165,6 +165,105 @@
       "button": "Demander un devis"
     }
   },
+  "edd": {
+    "meta": {
+      "title": "Étude de Dangers (EDD) pour établissements classés — BTH Expert",
+      "description": "Bureau d'études agréé pour la réalisation des études de dangers (EDD) en Algérie : analyse des risques majeurs, scénarios d'accident, zones d'effet et plans de prévention. Basé à Oran."
+    },
+    "hero": {
+      "eyebrow": "EDD · Établissements classés",
+      "heading": "Étude de Dangers",
+      "subheading": "L'étude de dangers identifie et caractérise les risques d'accident majeur d'une installation industrielle, évalue leurs conséquences et définit les mesures de maîtrise. Elle est exigée pour les établissements classés soumis à autorisation."
+    },
+    "why": {
+      "heading": "Qui est concerné ?",
+      "description": "Tout exploitant d'une installation classée pour la protection de l'environnement soumise à autorisation — stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression — doit produire une étude de dangers avant la mise en exploitation et la réviser à chaque modification substantielle."
+    },
+    "methodology": {
+      "heading": "Notre méthodologie",
+      "steps": [
+        { "number": "01", "title": "Description & environnement", "description": "Caractérisation de l'installation, des produits, des procédés et de la vulnérabilité de l'environnement : populations, milieux sensibles et effets dominos potentiels." },
+        { "number": "02", "title": "Identification des dangers", "description": "Analyse systématique des potentiels de dangers par méthode reconnue (APR, HAZOP), exploitation du retour d'accidentologie et recensement des scénarios redoutés." },
+        { "number": "03", "title": "Analyse des risques & modélisation", "description": "Quantification des scénarios majeurs : effets thermiques, de surpression et toxiques, calcul des zones d'effet et cartographie des distances d'isolement." },
+        { "number": "04", "title": "Maîtrise des risques", "description": "Définition des barrières de prévention et de protection, du plan d'urgence interne et des dispositions d'intervention en cas d'accident." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Livrable",
+      "description": "Un rapport d'étude de dangers conforme au cadre réglementaire algérien, intégrant la cartographie des zones d'effet et le plan de maîtrise des risques, prêt pour le dépôt auprès des autorités compétentes."
+    },
+    "cta": {
+      "heading": "Votre installation requiert une EDD ?",
+      "description": "Transmettez-nous les caractéristiques de votre installation et de vos procédés. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.",
+      "button": "Demander un devis"
+    }
+  },
+  "hse": {
+    "meta": {
+      "title": "Audit HSE & conformité réglementaire — BTH Expert",
+      "description": "Audit hygiène, sécurité et environnement (HSE) et diagnostic de conformité réglementaire pour sites industriels en Algérie. Identification des écarts et plan d'action priorisé. Bureau d'études agréé à Oran."
+    },
+    "hero": {
+      "eyebrow": "HSE · Conformité réglementaire",
+      "heading": "Audit HSE & conformité",
+      "subheading": "L'audit HSE dresse l'état de conformité d'un site au regard des exigences d'hygiène, de sécurité et d'environnement. Il met en évidence les écarts réglementaires et hiérarchise les actions correctives à engager."
+    },
+    "why": {
+      "heading": "Qui est concerné ?",
+      "description": "Tout site industriel ou tertiaire souhaitant sécuriser sa conformité réglementaire, préparer une inspection, engager une démarche ISO 14001 / 45001 ou maîtriser ses risques HSE avant une acquisition, une extension ou une certification."
+    },
+    "methodology": {
+      "heading": "Notre méthodologie",
+      "steps": [
+        { "number": "01", "title": "Revue documentaire", "description": "Analyse des autorisations, arrêtés, registres et procédures existantes au regard des obligations réglementaires applicables au site." },
+        { "number": "02", "title": "Visite de terrain", "description": "Inspection des installations, des postes de travail et des dispositifs de sécurité ; entretiens avec les responsables et observation des pratiques réelles." },
+        { "number": "03", "title": "Analyse des écarts", "description": "Confrontation de l'existant aux exigences légales et normatives, qualification de la criticité de chaque écart constaté." },
+        { "number": "04", "title": "Plan d'action priorisé", "description": "Recommandations chiffrées et planifiées, hiérarchisées par niveau de risque et par échéance réglementaire." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Livrable",
+      "description": "Un rapport d'audit HSE complet : grille de conformité réglementaire, registre des écarts et plan d'action priorisé, support de pilotage pour la mise en conformité du site."
+    },
+    "cta": {
+      "heading": "Besoin d'un audit HSE ?",
+      "description": "Décrivez-nous votre site et vos objectifs de conformité. Nous définissons le périmètre de l'audit et vous remettons une offre sous 48h.",
+      "button": "Demander un devis"
+    }
+  },
+  "pge": {
+    "meta": {
+      "title": "Plan de Gestion Environnementale (PGE) — BTH Expert",
+      "description": "Élaboration de plans de gestion environnementale (PGE) pour le suivi des mesures d'atténuation sur toute la durée de vie d'un projet. Bureau d'études agréé en Algérie, basé à Oran."
+    },
+    "hero": {
+      "eyebrow": "PGE · Suivi environnemental",
+      "heading": "Plan de Gestion Environnementale",
+      "subheading": "Le plan de gestion environnementale traduit les engagements de l'étude d'impact en mesures concrètes : il organise l'atténuation, la surveillance et le suivi des effets d'un projet, de la phase travaux à l'exploitation."
+    },
+    "why": {
+      "heading": "Qui est concerné ?",
+      "description": "Tout porteur de projet dont l'étude d'impact a prescrit des mesures d'atténuation et de suivi, ainsi que les exploitants tenus de démontrer la bonne mise en œuvre de leurs engagements environnementaux auprès des autorités."
+    },
+    "methodology": {
+      "heading": "Notre méthodologie",
+      "steps": [
+        { "number": "01", "title": "Cadrage des engagements", "description": "Reprise des mesures d'atténuation et de compensation issues de l'étude d'impact et traduction en actions opérationnelles attribuées et planifiées." },
+        { "number": "02", "title": "Programme de surveillance", "description": "Définition des indicateurs, des paramètres à mesurer, des fréquences de contrôle et des seuils d'alerte par composante environnementale." },
+        { "number": "03", "title": "Dispositif de suivi", "description": "Organisation des responsabilités, des procédures de reporting et des modalités de contrôle en phase travaux comme en phase exploitation." },
+        { "number": "04", "title": "Amélioration continue", "description": "Mécanismes de revue, de mise à jour des mesures et de traitement des non-conformités tout au long de la vie du projet." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Livrable",
+      "description": "Un plan de gestion environnementale opérationnel : matrice des mesures, programme de surveillance et de suivi, indicateurs et modèle de reporting, directement exploitable par les équipes du projet."
+    },
+    "cta": {
+      "heading": "Structurer votre suivi environnemental ?",
+      "description": "Communiquez-nous les prescriptions de votre étude d'impact. Nous bâtissons un plan de gestion adapté à votre projet et vous remettons une offre sous 48h.",
+      "button": "Demander un devis"
+    }
+  },
   "oran": {
     "meta": {
       "title": "Bureau d'études environnemental à Oran — BTH Expert",

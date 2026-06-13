@@ -165,6 +165,105 @@
       "button": "Request a Quote"
     }
   },
+  "edd": {
+    "meta": {
+      "title": "Hazard Study (HS) for classified facilities — BTH Expert",
+      "description": "Accredited consultancy for hazard studies (HS) in Algeria: major-risk analysis, accident scenarios, effect zones and prevention plans. Based in Oran."
+    },
+    "hero": {
+      "eyebrow": "HS · Classified facilities",
+      "heading": "Hazard Study",
+      "subheading": "A hazard study identifies and characterises the major-accident risks of an industrial facility, assesses their consequences and defines the control measures. It is required for classified establishments subject to authorisation."
+    },
+    "why": {
+      "heading": "Who is concerned?",
+      "description": "Any operator of a classified facility for environmental protection subject to authorisation — hydrocarbon storage, petrochemical units, hazardous-material depots, pressure equipment — must produce a hazard study before commissioning and revise it at every substantial modification."
+    },
+    "methodology": {
+      "heading": "Our methodology",
+      "steps": [
+        { "number": "01", "title": "Description & environment", "description": "Characterisation of the facility, products, processes and the vulnerability of the surroundings: populations, sensitive environments and potential domino effects." },
+        { "number": "02", "title": "Hazard identification", "description": "Systematic analysis of hazard potentials using recognised methods (PHA, HAZOP), review of accident records and listing of dreaded scenarios." },
+        { "number": "03", "title": "Risk analysis & modelling", "description": "Quantification of major scenarios: thermal, overpressure and toxic effects, calculation of effect zones and mapping of separation distances." },
+        { "number": "04", "title": "Risk control", "description": "Definition of prevention and protection barriers, the internal emergency plan and response arrangements in the event of an accident." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Deliverable",
+      "description": "A hazard-study report compliant with the Algerian regulatory framework, including effect-zone mapping and the risk-control plan, ready for submission to the competent authorities."
+    },
+    "cta": {
+      "heading": "Does your facility require a hazard study?",
+      "description": "Send us the characteristics of your facility and processes. We assess the study scope and provide a quote within 48 hours.",
+      "button": "Request a Quote"
+    }
+  },
+  "hse": {
+    "meta": {
+      "title": "HSE Audit & regulatory compliance — BTH Expert",
+      "description": "Health, safety and environment (HSE) audit and regulatory-compliance diagnosis for industrial sites in Algeria. Gap identification and prioritised action plan. Accredited consultancy in Oran."
+    },
+    "hero": {
+      "eyebrow": "HSE · Regulatory compliance",
+      "heading": "HSE Audit & compliance",
+      "subheading": "An HSE audit establishes a site's compliance status against health, safety and environment requirements. It highlights regulatory gaps and prioritises the corrective actions to undertake."
+    },
+    "why": {
+      "heading": "Who is concerned?",
+      "description": "Any industrial or commercial site seeking to secure its regulatory compliance, prepare for an inspection, engage in an ISO 14001 / 45001 process, or control its HSE risks ahead of an acquisition, expansion or certification."
+    },
+    "methodology": {
+      "heading": "Our methodology",
+      "steps": [
+        { "number": "01", "title": "Document review", "description": "Analysis of existing permits, orders, registers and procedures against the regulatory obligations applicable to the site." },
+        { "number": "02", "title": "Site visit", "description": "Inspection of facilities, workstations and safety devices; interviews with managers and observation of actual practices." },
+        { "number": "03", "title": "Gap analysis", "description": "Comparison of the existing situation with legal and normative requirements, rating the criticality of each gap found." },
+        { "number": "04", "title": "Prioritised action plan", "description": "Costed and scheduled recommendations, ranked by risk level and regulatory deadline." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Deliverable",
+      "description": "A complete HSE audit report: regulatory-compliance grid, gap register and prioritised action plan — a steering tool for bringing the site into compliance."
+    },
+    "cta": {
+      "heading": "Need an HSE audit?",
+      "description": "Describe your site and your compliance objectives. We define the audit scope and provide a quote within 48 hours.",
+      "button": "Request a Quote"
+    }
+  },
+  "pge": {
+    "meta": {
+      "title": "Environmental Management Plan (EMP) — BTH Expert",
+      "description": "Development of environmental management plans (EMP) to monitor mitigation measures across a project's whole life cycle. Accredited consultancy in Algeria, based in Oran."
+    },
+    "hero": {
+      "eyebrow": "EMP · Environmental monitoring",
+      "heading": "Environmental Management Plan",
+      "subheading": "An environmental management plan turns the commitments of the impact assessment into concrete measures: it organises the mitigation, surveillance and monitoring of a project's effects, from the works phase to operation."
+    },
+    "why": {
+      "heading": "Who is concerned?",
+      "description": "Any project owner whose impact assessment has prescribed mitigation and monitoring measures, as well as operators required to demonstrate the proper implementation of their environmental commitments to the authorities."
+    },
+    "methodology": {
+      "heading": "Our methodology",
+      "steps": [
+        { "number": "01", "title": "Framing the commitments", "description": "Carrying over the mitigation and compensation measures from the impact assessment and translating them into assigned, scheduled operational actions." },
+        { "number": "02", "title": "Surveillance programme", "description": "Definition of indicators, parameters to be measured, control frequencies and alert thresholds for each environmental component." },
+        { "number": "03", "title": "Monitoring system", "description": "Organisation of responsibilities, reporting procedures and control arrangements during both the works and operation phases." },
+        { "number": "04", "title": "Continuous improvement", "description": "Mechanisms for review, updating of measures and handling of non-conformities throughout the project's life." }
+      ]
+    },
+    "deliverable": {
+      "heading": "Deliverable",
+      "description": "An operational environmental management plan: measures matrix, surveillance and monitoring programme, indicators and reporting template — directly usable by the project teams."
+    },
+    "cta": {
+      "heading": "Structure your environmental monitoring?",
+      "description": "Send us the requirements from your impact assessment. We build a management plan tailored to your project and provide a quote within 48 hours.",
+      "button": "Request a Quote"
+    }
+  },
   "oran": {
     "meta": {
       "title": "Environmental Consultancy in Oran — BTH Expert",
