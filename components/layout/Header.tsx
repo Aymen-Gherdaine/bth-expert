@@ -4,6 +4,7 @@ import { getDictionary, type Locale } from "@/lib/i18n";
 import { Container } from "./Container";
 import { Nav } from "./Nav";
 import { LangSwitcher } from "./LangSwitcher";
+import { HeaderScrollState } from "./HeaderScrollState";
 
 interface HeaderProps {
   lang: Locale;
@@ -23,7 +24,13 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-50">
+      <div
+        id="site-header"
+        data-overlay={overlay ? "true" : "false"}
+        data-solid="false"
+        className="fixed inset-x-0 top-0 z-50"
+      >
+        <HeaderScrollState />
 
         {/* ── Utility topbar — collapses on scroll ─────────────────── */}
         <div

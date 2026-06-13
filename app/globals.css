@@ -115,84 +115,74 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Header scroll-driven transition
-   Pure CSS. No JS. animation-timeline: scroll() (Chrome 115+,
-   Safari 17.4+, Firefox 131+). Graceful fallback: header keeps
-   its initial state on unsupported browsers.
+   Header scroll transition
+   JS toggles [data-solid] on #site-header past the hero (see
+   HeaderScrollState). A single threshold flip with CSS transitions
+   crossfades bg, text, logo and the utility topbar together — no
+   half-transparent / half-cream mid-states, reliable across browsers.
    ───────────────────────────────────────────────────────────── */
-/* Overlay header solidifies into cream — but only across the END of the
-   sticky hero (60vh -> 100vh): no cream band over the full-screen hero,
-   fully solid by the time the next section scrolls under it. */
-@keyframes header-solidify {
-  from {
-    color: var(--color-cream);
-  }
-  to {
-    background-color: rgb(250 247 242 / 0.94);
-    backdrop-filter: blur(12px) saturate(1.4);
-    -webkit-backdrop-filter: blur(12px) saturate(1.4);
-    border-bottom-color: var(--color-line);
-    color: var(--color-ink);
-  }
+#site-header[data-overlay="true"] header {
+  color: var(--color-cream);
+  transition: background-color 0.5s var(--ease-out-expo),
+              border-color 0.5s var(--ease-out-expo),
+              color 0.5s var(--ease-out-expo),
+              backdrop-filter 0.5s var(--ease-out-expo);
+}
+#site-header[data-overlay="true"][data-solid="true"] header {
+  background-color: rgb(250 247 242 / 0.94);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  border-bottom-color: var(--color-line);
+  color: var(--color-ink);
 }
 
-/* Utility topbar — slides away over the same scroll range the main bar
-   solidifies. Height + opacity collapse keeps the document flow stable
-   (the wrapper is fixed; only the visual band retracts). */
-@keyframes topbar-collapse {
-  to {
-    height: 0;
-    opacity: 0;
-    border-bottom-color: transparent;
-  }
+/* Utility topbar — collapses together with the solidify (overlay only) */
+.header-topbar {
+  transition: height 0.5s var(--ease-out-expo),
+              opacity 0.4s var(--ease-out-expo),
+              border-color 0.5s var(--ease-out-expo);
+}
+#site-header[data-overlay="true"][data-solid="true"] .header-topbar {
+  height: 0;
+  opacity: 0;
+  border-bottom-color: transparent;
 }
 
-@supports (animation-timeline: scroll()) {
-  .header-topbar {
-    animation: topbar-collapse linear both;
-    animation-timeline: scroll();
-    animation-range: 0 50px;
-  }
-
-  header[data-overlay="true"] {
-    animation: header-solidify linear both;
-    animation-timeline: scroll();
-    animation-range: 60vh 100vh;
-  }
-  header[data-overlay="true"] .header-logo-light {
-    animation: logo-light-show linear both;
-    animation-timeline: scroll();
-    animation-range: 60vh 100vh;
-  }
-  header[data-overlay="true"] .header-logo-dark {
-    animation: logo-dark-show linear both;
-    animation-timeline: scroll();
-    animation-range: 60vh 100vh;
-  }
+/* Logo crossfade — light over the hero, dark once the header is solid */
+.header-logo-light,
+.header-logo-dark {
+  transition: opacity 0.45s var(--ease-out-expo);
 }
+#site-header[data-overlay="true"] .header-logo-light { opacity: 1; }
+#site-header[data-overlay="true"] .header-logo-dark  { opacity: 0; }
+#site-header[data-overlay="true"][data-solid="true"] .header-logo-light { opacity: 0; }
+#site-header[data-overlay="true"][data-solid="true"] .header-logo-dark  { opacity: 1; }
 
-@keyframes logo-light-show {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-@keyframes logo-dark-show {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* Accessibility: skip animation, render solid state directly */
 @media (prefers-reduced-motion: reduce) {
-  header[data-overlay="true"] {
-    background-color: rgb(250 247 242 / 0.94);
-    backdrop-filter: blur(12px) saturate(1.4);
-    -webkit-backdrop-filter: blur(12px) saturate(1.4);
-    border-bottom-color: var(--color-line);
-    color: var(--color-ink);
-    animation: none;
-  }
-  header[data-overlay="true"] .header-logo-light { opacity: 0; animation: none; }
-  header[data-overlay="true"] .header-logo-dark  { opacity: 1; animation: none; }
+  #site-header[data-overlay="true"] header,
+  .header-topbar,
+  .header-logo-light,
+  .header-logo-dark { transition: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Scroll-to-top control — hidden until past the first viewport
+   ───────────────────────────────────────────────────────────── */
+.scroll-top {
+  opacity: 0;
+  transform: translateY(14px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.45s var(--ease-out-expo),
+              transform 0.45s var(--ease-out-expo);
+}
+.scroll-top[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top { transition: opacity 0.2s linear; transform: none; }
+  .scroll-top[data-visible="true"] { transform: none; }
 }
 
 /* ─────────────────────────────────────────────────────────────
