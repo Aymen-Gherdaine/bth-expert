@@ -87,10 +87,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
   }
 
   return (
-    <div
-      ref={cardRef}
-      className="bg-white rounded-[var(--radius-md)] border border-line shadow-[var(--shadow-subtle)] p-6 sm:p-8 lg:p-10"
-    >
+    <div ref={cardRef}>
       {state === "success" ? (
         <div className="py-12 text-center" role="status">
           <p className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] text-ink mb-4">
@@ -110,7 +107,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
           onSubmit={handleSubmit}
           onChange={handleChange}
           noValidate
-          className="space-y-6"
+          className="space-y-5"
         >
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="lang" value={lang} />
@@ -137,7 +134,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
             />
           </div>
 
-          <div className="sm:grid sm:grid-cols-2 sm:gap-6 space-y-6 sm:space-y-0">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-5 space-y-5 sm:space-y-0">
             <div data-form-field>
               <label htmlFor="email" className={labelCls}>
                 {dict.email}
@@ -199,7 +196,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               id="message"
               name="message"
               required
-              rows={5}
+              rows={4}
               className={`${inputCls} resize-none`}
             />
           </div>
