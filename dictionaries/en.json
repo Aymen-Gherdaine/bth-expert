@@ -39,56 +39,56 @@
       "heading": "Contact details",
       "emailLabel": "Email",
       "email": "info@bthexpert.dz",
-      "phoneLabel": "Téléphone",
+      "phoneLabel": "Phone",
       "phone": "+213 670 70 81 38",
-      "addressLabel": "Adresse",
+      "addressLabel": "Address",
       "address": "40, Lotissement 119, Bir El Djir, Oran, Algérie"
     },
     "form": {
-      "name": "Nom complet",
-      "email": "Courriel",
-      "phone": "Téléphone",
-      "projectType": "Type de projet",
-      "projectTypePlaceholder": "Sélectionnez un type",
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "projectType": "Project type",
+      "projectTypePlaceholder": "Select a type",
       "projectTypeOptions": {
-        "eie": "Étude d'impact",
-        "edd": "Étude de dangers",
-        "hse": "Audit HSE",
-        "conformite": "Conformité réglementaire",
-        "autre": "Autre"
+        "eie": "Impact assessment",
+        "edd": "Hazard study",
+        "hse": "HSE audit",
+        "conformite": "Regulatory compliance",
+        "autre": "Other"
       },
       "message": "Message",
-      "consentPrefix": "En cochant cette case, j'accepte la",
-      "consentLink": "politique de confidentialité",
-      "submit": "Envoyer le message",
-      "submitting": "Envoi en cours...",
-      "successTitle": "Message envoyé.",
-      "successMessage": "Merci, nous vous répondrons sous 48 heures.",
-      "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.dz."
+      "consentPrefix": "By ticking this box, I accept the",
+      "consentLink": "privacy policy",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "successTitle": "Message sent.",
+      "successMessage": "Thank you, we will reply within 48 hours.",
+      "errorMessage": "Something went wrong. Please try again or email us directly at info@bthexpert.dz."
     },
     "process": {
-      "eyebrow": "Notre processus",
-      "heading": "À quoi s'attendre",
+      "eyebrow": "Our process",
+      "heading": "What to expect",
       "steps": [
         {
           "number": "01",
-          "title": "Votre demande",
-          "description": "Vous nous décrivez votre projet et vos obligations réglementaires."
+          "title": "Your enquiry",
+          "description": "You describe your project and your regulatory obligations."
         },
         {
           "number": "02",
-          "title": "Consultation initiale",
-          "description": "Un expert évalue gratuitement votre besoin et le cadre réglementaire applicable."
+          "title": "Initial consultation",
+          "description": "An expert assesses your needs and the applicable regulatory framework, free of charge."
         },
         {
           "number": "03",
-          "title": "Proposition & devis",
-          "description": "Nous vous remettons une proposition technique détaillée et un devis."
+          "title": "Proposal & quote",
+          "description": "We provide you with a detailed technical proposal and a quote."
         },
         {
           "number": "04",
-          "title": "Démarrage de l'étude",
-          "description": "Une fois validé, nous lançons l'étude avec des livrables conformes."
+          "title": "Study kick-off",
+          "description": "Once approved, we launch the study with compliant deliverables."
         }
       ]
     }
