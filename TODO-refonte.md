@@ -23,10 +23,10 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 ## Phase 4 — Copy POV
 - [x] `content(copy): POV hero + about` — `dictionaries/fr.json` + `AboutSection.tsx`
 
-## Phase 5 — Pages services
-- [ ] `feat(svc): hero image-led + contexte POV` — template + `ServiceHero.tsx`
-- [ ] `feat(svc): méthode pin-scroll` — `MethodPinScroll.tsx`
-- [ ] `feat(svc): FAQ + livrable band` — `Faq.tsx`
+## Phase 5 — Pages services (option B clair éditorial, 4 pages)
+- [x] `feat(svc): layout + composants premium` — `services/layout.tsx`, `ServiceHero`, `MethodPinScroll`, `Faq`, `ServicePageBody`
+- [x] `feat(svc): 4 pages branchées` — eie/edd/hse/pge → `ServicePageBody` + heroMeta/faq (FR props)
+- [ ] (suite) migrer heroMeta/faq vers le pipeline i18n (fr→ar/en) quand souhaité
 
 ## Phase 6 — Mobile premium
 - [ ] `feat(mobile): sections mobile-native`
