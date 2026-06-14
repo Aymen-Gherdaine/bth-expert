@@ -78,7 +78,7 @@ export function ContactProcess({ dict }: ContactProcessProps) {
   );
 
   return (
-    <section ref={sectionRef} className="bg-cream-warm overflow-hidden">
+    <section ref={sectionRef} className="bg-white border-t border-line overflow-hidden">
       <Container>
         <div className="py-24 lg:py-32">
           <span

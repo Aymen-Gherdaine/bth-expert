@@ -76,7 +76,7 @@ export default async function ContactPage({
       {/* ── Full-viewport contact: intro (left) + form card (right) ──
           Pure white canvas. The form stays entirely within the first
           screen on desktop — no scroll to read or fill it. ───────── */}
-      <section className="bg-cream flex items-center min-h-[calc(100svh-6.25rem)] lg:min-h-[calc(100svh-6.75rem)]">
+      <section className="bg-cream-warm flex items-center min-h-[calc(100svh-6.25rem)] lg:min-h-[calc(100svh-6.75rem)]">
         <Container className="w-full">
           <div className="py-12 lg:py-16 grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Left: intro */}
@@ -84,7 +84,7 @@ export default async function ContactPage({
               {/* Avatar cluster — team + brand mark.
                   TODO: swap initials for real team photos when provided. */}
               <div className="flex items-center -space-x-4 mb-9">
-                <span className="relative size-16 rounded-full ring-4 ring-cream overflow-hidden">
+                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
                   <Image
                     src="/amine.jpg"
                     alt="Amine Lahmer"
@@ -93,10 +93,10 @@ export default async function ContactPage({
                     className="object-cover"
                   />
                 </span>
-                <span className="relative z-10 grid place-items-center size-16 rounded-full bg-gold ring-4 ring-cream">
+                <span className="relative z-10 grid place-items-center size-16 rounded-full bg-gold ring-4 ring-cream-warm">
                   <LogoMark className="h-7 w-auto text-brand-deep" />
                 </span>
-                <span className="relative size-16 rounded-full ring-4 ring-cream overflow-hidden">
+                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
                   <Image
                     src="/abdellah.jpg"
                     alt="Abdellah"
@@ -115,7 +115,7 @@ export default async function ContactPage({
               </span>
               <RevealText
                 as="h1"
-                className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[var(--text-h1)] text-ink mb-6"
+                className="font-display font-medium tracking-[-0.02em] leading-[1.02] text-[clamp(2.5rem,2.5vw+1.5rem,3.5rem)] text-ink mb-6"
               >
                 {c.hero.headingStart}{" "}
                 <em className="italic font-light text-gold">
