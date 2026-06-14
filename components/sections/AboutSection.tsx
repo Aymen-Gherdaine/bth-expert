@@ -56,7 +56,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
         });
       }
 
-      // ── Manifesto — words light up one by one as the user scrolls ──
+      // ── Manifesto — words ink in one by one as the user scrolls ────
       const manifesto = section.querySelector<HTMLElement>("[data-about-manifesto]");
       if (manifesto) {
         split = new SplitText(manifesto, { type: "words" });
@@ -178,11 +178,11 @@ export function AboutSection({ lang }: AboutSectionProps) {
   );
 
   return (
-    // Night section, GISI-style — the page stays dark after the hero,
-    // light arrives with Services. DOM order handles stacking.
+    // Cream credential section — the warm body opens here, right after the
+    // cinematic hero. Dark green is reserved for punctuation (hero, zones).
     <section
       ref={sectionRef}
-      className="bg-brand-deep overflow-hidden"
+      className="bg-cream-soft overflow-hidden"
     >
       <div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-28 lg:py-40">
 
@@ -190,7 +190,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
         <div
           ref={lineRef}
           className="h-px mb-14 lg:mb-16"
-          style={{ backgroundColor: "var(--color-gold)", opacity: 0.3 }}
+          style={{ backgroundColor: "var(--color-gold)", opacity: 0.5 }}
         />
 
         <span
@@ -201,10 +201,10 @@ export function AboutSection({ lang }: AboutSectionProps) {
           À PROPOS
         </span>
 
-        {/* Manifesto — cream words light up over the night green */}
+        {/* Manifesto — ink words light up over the warm cream */}
         <h2
           data-about-manifesto
-          className="font-display font-light text-cream tracking-[-0.025em] leading-[1.16] max-w-6xl"
+          className="font-display font-light text-ink tracking-[-0.025em] leading-[1.16] max-w-6xl"
           style={{ fontSize: "clamp(2rem, 3.2vw + 0.75rem, 3.9rem)" }}
         >
           Un bureau d&apos;études agréé par le Ministère de
@@ -225,7 +225,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
                 <div
                   data-domain-rule
                   className="h-px mb-6"
-                  style={{ backgroundColor: "var(--color-gold)", opacity: 0.3 }}
+                  style={{ backgroundColor: "var(--color-line)" }}
                 />
                 <div data-domain-label className="flex items-baseline gap-5">
                   <span
@@ -235,7 +235,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span
-                    className="font-display font-light text-cream tracking-[-0.02em]"
+                    className="font-display font-light text-ink tracking-[-0.02em]"
                     style={{ fontSize: "var(--text-h3)" }}
                   >
                     {domain}
@@ -251,7 +251,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
               className="font-sans leading-[1.7] mb-6"
               style={{
                 fontSize: "clamp(1.0625rem, 0.5vw + 0.95rem, 1.3125rem)",
-                color: "var(--color-on-brand-muted)",
+                color: "var(--color-ink-soft)",
               }}
             >
               BTH Expert est une société agréée de conseil et
@@ -264,7 +264,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
               className="font-sans leading-[1.7] mb-10"
               style={{
                 fontSize: "clamp(1.0625rem, 0.5vw + 0.95rem, 1.3125rem)",
-                color: "var(--color-on-brand-muted)",
+                color: "var(--color-ink-soft)",
               }}
             >
               Études d&apos;impact, audits HSE, plans de gestion
@@ -274,7 +274,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
             <Link
               data-about-cta
               href={`/${lang}/contact`}
-              className="inline-flex items-center gap-2 text-cream text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="inline-flex items-center gap-2 text-ink text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               En savoir plus <span aria-hidden>→</span>
             </Link>
@@ -282,16 +282,16 @@ export function AboutSection({ lang }: AboutSectionProps) {
 
         </div>
 
-        {/* Stat band — cream numerals over night green, gold hairlines */}
+        {/* Stat band — ink numerals over warm cream, neutral hairlines */}
         <div className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-3 gap-y-12 gap-x-10">
           {STATS.map((s) => (
             <div key={s.label} data-about-stat>
               <div
                 className="h-px mb-7"
-                style={{ backgroundColor: "var(--color-gold)", opacity: 0.3 }}
+                style={{ backgroundColor: "var(--color-line)" }}
               />
               <span
-                className="block font-display font-light text-cream leading-none tracking-[-0.03em]"
+                className="block font-display font-light text-ink leading-none tracking-[-0.03em]"
                 style={{ fontSize: "clamp(3.5rem, 5.5vw + 1rem, 6.5rem)" }}
               >
                 {s.value}
@@ -301,7 +301,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
                 style={{
                   fontSize: "var(--text-caption)",
                   letterSpacing: "0.18em",
-                  color: "var(--color-on-brand-faint)",
+                  color: "var(--color-muted)",
                 }}
               >
                 {s.label}

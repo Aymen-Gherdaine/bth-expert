@@ -13,7 +13,7 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 - [ ] `refine(hero): voile gradient` — `page.tsx`
 
 ## Phase 2 — Cream-dominant (plus gros levier)
-- [ ] `refactor(landing): cream-dominant` — `page.tsx`, `AboutSection.tsx`, `ServicesList.tsx`
+- [x] `refactor(landing): cream-dominant` — `AboutSection.tsx` (dark→cream), `page.tsx` (wrapper)
 
 ## Phase 3 — Sections signature
 - [x] ⭐ `feat(services): pin-scroll` — nouveau `ServicesPinScroll.tsx` **(proof, en premier)**
