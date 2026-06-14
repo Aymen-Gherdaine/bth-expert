@@ -7,6 +7,8 @@ import { ContactForm } from "@/components/ui/ContactForm";
 import { ContactProcess } from "@/components/sections/ContactProcess";
 import { RevealText } from "@/components/animations/RevealText";
 import { SectionReveal } from "@/components/motion/SectionReveal";
+import { LogoMark } from "@/components/brand/LogoMark";
+import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -26,10 +28,10 @@ export async function generateMetadata({
 }
 
 const captionCls =
-  "block text-[var(--text-caption)] uppercase tracking-widest text-gold mb-1";
+  "block text-[var(--text-caption)] uppercase tracking-widest text-gold mb-1.5";
 
 const valueLinkCls =
-  "text-[var(--text-body)] text-ink-soft leading-[1.7] hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "text-[var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 // TODO: real profile URLs once the client provides them (same as Footer)
 const socialLinks = [
@@ -60,6 +62,9 @@ export default async function ContactPage({
   const dict = await getDictionary(lang);
   const c = dict.contact;
   const jsonLd = schemaLocalBusiness();
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    c.info.address
+  )}`;
 
   return (
     <>
@@ -68,24 +73,40 @@ export default async function ContactPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── Full-viewport contact: intro (left) + form (right) ──────
-          The form sits entirely within the first screen — no scroll
-          needed to read it or fill it (Cain Lamarre pattern). ───── */}
-      <section className="relative overflow-hidden flex items-center min-h-[calc(100svh-6.25rem)] lg:min-h-[calc(100svh-6.75rem)]">
-        {/* Soft brand gradient — Cain Lamarre warmth, GISI restraint */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -left-40 -top-32 h-[30rem] w-[30rem] rounded-full bg-brand/[0.07] blur-[100px]"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -bottom-32 h-[34rem] w-[34rem] rounded-full bg-gold/[0.10] blur-[120px]"
-        />
-
-        <Container className="relative w-full">
+      {/* ── Full-viewport contact: intro (left) + form card (right) ──
+          Pure white canvas. The form stays entirely within the first
+          screen on desktop — no scroll to read or fill it. ───────── */}
+      <section className="bg-cream flex items-center min-h-[calc(100svh-6.25rem)] lg:min-h-[calc(100svh-6.75rem)]">
+        <Container className="w-full">
           <div className="py-12 lg:py-16 grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Left: intro */}
             <div className="lg:col-span-5">
+              {/* Avatar cluster — team + brand mark.
+                  TODO: swap initials for real team photos when provided. */}
+              <div className="flex items-center -space-x-4 mb-9">
+                <span className="relative size-16 rounded-full ring-4 ring-cream overflow-hidden">
+                  <Image
+                    src="/amine.jpg"
+                    alt="Amine Lahmer"
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </span>
+                <span className="relative z-10 grid place-items-center size-16 rounded-full bg-gold ring-4 ring-cream">
+                  <LogoMark className="h-7 w-auto text-brand-deep" />
+                </span>
+                <span className="relative size-16 rounded-full ring-4 ring-cream overflow-hidden">
+                  <Image
+                    src="/abdellah.jpg"
+                    alt="Abdellah"
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </span>
+              </div>
+
               <span
                 className="block font-sans uppercase text-gold mb-6"
                 style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
@@ -101,23 +122,47 @@ export default async function ContactPage({
                   {c.hero.headingEmphasis}
                 </em>
               </RevealText>
-              <p className="text-[var(--text-body)] text-muted leading-[1.7] max-w-md mb-8">
+              <p className="text-[1.0625rem] lg:text-[1.125rem] text-ink leading-[1.65] max-w-md mb-8">
                 {c.hero.intro}
               </p>
 
               <SectionReveal>
-                {/* Compact contact line — reachable without scrolling */}
-                <div className="flex flex-col gap-1.5 mb-8">
-                  <a href={`mailto:${c.info.email}`} className={valueLinkCls}>
-                    {c.info.email}
-                  </a>
-                  <a
-                    href={`tel:${c.info.phone.replace(/\s/g, "")}`}
-                    className={valueLinkCls}
-                  >
-                    {c.info.phone}
-                  </a>
-                </div>
+                <div aria-hidden className="h-px bg-line max-w-md mb-8" />
+                <dl className="space-y-5 mb-9">
+                  <div>
+                    <dt className={captionCls}>{c.info.emailLabel}</dt>
+                    <dd>
+                      <a href={`mailto:${c.info.email}`} className={valueLinkCls}>
+                        {c.info.email}
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className={captionCls}>{c.info.phoneLabel}</dt>
+                    <dd>
+                      <a
+                        href={`tel:${c.info.phone.replace(/\s/g, "")}`}
+                        className={valueLinkCls}
+                      >
+                        {c.info.phone}
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className={captionCls}>{c.info.addressLabel}</dt>
+                    <dd>
+                      <a
+                        href={mapsHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${valueLinkCls} inline-flex items-center gap-1.5`}
+                      >
+                        {c.info.address}
+                        <span aria-hidden className="text-gold">→</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
 
                 <div className="flex gap-3">
                   {socialLinks.map((social) => (
@@ -141,56 +186,13 @@ export default async function ContactPage({
               </SectionReveal>
             </div>
 
-            {/* Right: form — no card, sits on the canvas */}
+            {/* Right: form card */}
             <div className="lg:col-span-6 lg:col-start-7">
               <ContactForm dict={c.form} lang={lang} />
             </div>
           </div>
         </Container>
       </section>
-
-      {/* ── Coordonnées — full NAP, below the fold ──────────────── */}
-      <div className="border-t border-line bg-cream-deep">
-        <Container>
-          <div className="py-16 lg:py-20">
-            <h2
-              className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15] mb-10"
-              style={{ fontSize: "var(--text-h2)" }}
-            >
-              {c.info.heading}
-            </h2>
-            <dl className="grid gap-8 sm:grid-cols-3">
-              <div>
-                <dt className={captionCls}>{c.info.emailLabel}</dt>
-                <dd>
-                  <a href={`mailto:${c.info.email}`} className={valueLinkCls}>
-                    {c.info.email}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className={captionCls}>{c.info.phoneLabel}</dt>
-                <dd>
-                  <a
-                    href={`tel:${c.info.phone.replace(/\s/g, "")}`}
-                    className={valueLinkCls}
-                  >
-                    {c.info.phone}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className={captionCls}>{c.info.addressLabel}</dt>
-                <dd>
-                  <address className="not-italic text-[var(--text-body)] text-ink-soft leading-[1.7]">
-                    {c.info.address}
-                  </address>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </Container>
-      </div>
 
       {/* ── "À quoi s'attendre" process ────────────────────────── */}
       <ContactProcess dict={c.process} />

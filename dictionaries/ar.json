@@ -48,6 +48,10 @@
       "name": "الاسم الكامل",
       "email": "البريد الإلكتروني",
       "phone": "الهاتف",
+      "namePlaceholder": "اسمكم الكامل",
+      "emailPlaceholder": "بريدكم الإلكتروني",
+      "phonePlaceholder": "رقم هاتفكم",
+      "messagePlaceholder": "صِفوا مشروعكم بإيجاز",
       "projectType": "نوع المشروع",
       "projectTypePlaceholder": "اختر نوعاً",
       "projectTypeOptions": {

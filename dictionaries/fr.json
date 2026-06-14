@@ -48,6 +48,10 @@
       "name": "Nom complet",
       "email": "Courriel",
       "phone": "Téléphone",
+      "namePlaceholder": "Votre nom complet",
+      "emailPlaceholder": "Votre adresse e-mail",
+      "phonePlaceholder": "Votre numéro de téléphone",
+      "messagePlaceholder": "Décrivez votre projet en quelques mots",
       "projectType": "Type de projet",
       "projectTypePlaceholder": "Sélectionnez un type",
       "projectTypeOptions": {

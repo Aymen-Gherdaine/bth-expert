@@ -18,10 +18,10 @@ interface ContactFormProps {
 type FormState = "idle" | "submitting" | "success" | "error";
 
 const labelCls =
-  "block text-[var(--text-caption)] uppercase tracking-widest text-muted mb-2";
+  "block text-[var(--text-small)] font-medium text-ink mb-2";
 
 const inputCls =
-  "w-full bg-white border border-line rounded-[var(--radius-sm)] px-4 py-3 text-[var(--text-body)] text-ink placeholder:text-muted focus:border-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "w-full bg-white border border-line rounded-[var(--radius-md)] px-4 py-3.5 text-[var(--text-body)] text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--color-gold)_22%,transparent)] transition-[border-color,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 function Required() {
   return (
@@ -49,7 +49,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
         duration: 0.9,
         stagger: 0.08,
         ease: "expo.out",
-        scrollTrigger: { trigger: card, start: "top 85%", once: true },
+        delay: 0.15,
       });
     },
     { scope: cardRef }
@@ -87,7 +87,10 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
   }
 
   return (
-    <div ref={cardRef}>
+    <div
+      ref={cardRef}
+      className="bg-white rounded-[20px] border border-line p-6 sm:p-9 lg:p-10"
+    >
       {state === "success" ? (
         <div className="py-12 text-center" role="status">
           <p className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] text-ink mb-4">
@@ -129,6 +132,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               name="name"
               type="text"
               required
+              placeholder={dict.namePlaceholder}
               className={inputCls}
               autoComplete="name"
             />
@@ -146,6 +150,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
                 type="email"
                 required
                 pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                placeholder={dict.emailPlaceholder}
                 className={inputCls}
                 autoComplete="email"
               />
@@ -158,6 +163,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
                 id="phone"
                 name="phone"
                 type="tel"
+                placeholder={dict.phonePlaceholder}
                 className={inputCls}
                 autoComplete="tel"
               />
@@ -197,6 +203,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               name="message"
               required
               rows={4}
+              placeholder={dict.messagePlaceholder}
               className={`${inputCls} resize-none`}
             />
           </div>
@@ -232,7 +239,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
             <button
               type="submit"
               disabled={!isValid || state === "submitting"}
-              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-[var(--radius-sm)] bg-brand text-cream text-[0.9375rem] font-medium tracking-tight hover:bg-brand-soft hover:tracking-[0.02em] transition-[background-color,letter-spacing,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] disabled:bg-line disabled:text-muted disabled:cursor-not-allowed disabled:tracking-tight"
+              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-[var(--radius-md)] bg-brand text-cream text-[0.9375rem] font-medium tracking-tight hover:bg-brand-soft hover:tracking-[0.02em] transition-[background-color,letter-spacing,opacity] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-brand disabled:hover:tracking-tight"
             >
               {state === "submitting" ? dict.submitting : dict.submit}
             </button>
