@@ -82,23 +82,25 @@ export default async function HomePage({
                 className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
                 delay={0.1}
               >
-                Cabinet d&apos;études environnementales · Agréé Ministère
+                {h.hero.eyebrow}
               </RevealText>
 
               <RevealText
                 as="h1"
-                className="font-display font-medium text-cream leading-[1.06] tracking-[-0.03em]"
-                style={{ fontSize: "clamp(2.5rem, 3.4vw + 0.9rem, 4.5rem)" }}
+                className="font-display font-medium text-cream leading-[1.04] tracking-[-0.03em]"
+                style={{ fontSize: "var(--text-hero)" }}
                 delay={0.25}
               >
-                Expertise environnementale &amp; industrielle
+                {h.hero.headlinePart1}{" "}
+                <span className="italic">{h.hero.headlineEmphasis}</span>{" "}
+                {h.hero.headlinePart2}
               </RevealText>
 
               <RevealText
                 className="block mt-8 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
                 delay={0.6}
               >
-                Études d&apos;impact, études de dangers, audits HSE et conformité réglementaire pour l&apos;industrie algérienne depuis 2009.
+                {h.hero.subheading}
               </RevealText>
 
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
@@ -106,13 +108,13 @@ export default async function HomePage({
                   href={`/${lang}/contact`}
                   className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
-                  Discuter d&apos;un projet
+                  {h.hero.cta}
                 </Link>
                 <Link
                   href={`/${lang}/services`}
                   className="inline-flex items-center text-cream/90 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)]"
                 >
-                  Nos services <span className="ml-2">→</span>
+                  {h.hero.ctaSecondary} <span className="ml-2">→</span>
                 </Link>
               </div>
             </div>
