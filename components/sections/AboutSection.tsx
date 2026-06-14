@@ -207,9 +207,9 @@ export function AboutSection({ lang }: AboutSectionProps) {
           className="font-display font-light text-ink tracking-[-0.025em] leading-[1.16] max-w-6xl"
           style={{ fontSize: "clamp(2rem, 3.2vw + 0.75rem, 3.9rem)" }}
         >
-          Un bureau d&apos;études agréé par le Ministère de
-          l&apos;Environnement, au service de l&apos;industrie algérienne
-          depuis 2009 — pour que chaque projet avance, en conformité.
+          Aucun projet industriel n&apos;obtient son autorisation sans
+          étude environnementale conforme. C&apos;est notre métier depuis
+          2009.
         </h2>
 
         {/* Domains index + supporting copy — typography only, no imagery */}

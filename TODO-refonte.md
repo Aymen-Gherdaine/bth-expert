@@ -21,7 +21,7 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 - [ ] `feat(statement): brancher StatementSection` — `page.tsx`
 
 ## Phase 4 — Copy POV
-- [ ] `content(copy): POV hero + about` — `dictionaries/fr.json`
+- [x] `content(copy): POV hero + about` — `dictionaries/fr.json` + `AboutSection.tsx`
 
 ## Phase 5 — Pages services
 - [ ] `feat(svc): hero image-led + contexte POV` — template + `ServiceHero.tsx`
