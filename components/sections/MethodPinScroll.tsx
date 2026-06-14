@@ -126,7 +126,7 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
                   src={image}
                   alt=""
                   fill
-                  quality={70}
+                  quality={75}
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover opacity-70"
                 />
