@@ -57,13 +57,13 @@ export default async function ServicesPage({
       <Container>
         <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-9">
-            <p className="text-[var(--text-caption)] uppercase tracking-widest text-muted mb-8">
+            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
               {s.hero.eyebrow}
             </p>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[var(--text-h1)] text-ink mb-8">
+            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
               {s.hero.heading}
             </h1>
-            <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
+            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
               {s.hero.subheading}
             </p>
           </div>
@@ -79,20 +79,20 @@ export default async function ServicesPage({
               const content = (
                 <div className="py-10 lg:grid lg:grid-cols-12 lg:gap-8 group">
                   <div className="lg:col-span-1 mb-2 lg:mb-0">
-                    <span className="font-display text-[var(--text-caption)] text-muted tracking-widest">
+                    <span className="font-display text-[length:var(--text-caption)] text-muted tracking-widest">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
                   <div className="lg:col-span-4 mb-3 lg:mb-0">
-                    <span className="text-[var(--text-caption)] uppercase tracking-widest text-muted block mb-1">
+                    <span className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted block mb-1">
                       {item.abbr}
                     </span>
-                    <h2 className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink group-hover:text-brand transition-colors duration-300 ease-[var(--ease-out-expo)]">
+                    <h2 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink group-hover:text-brand transition-colors duration-300 ease-[var(--ease-out-expo)]">
                       {item.title}
                     </h2>
                   </div>
                   <div className="lg:col-span-6 lg:col-start-6">
-                    <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                    <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                       {item.description}
                     </p>
                   </div>

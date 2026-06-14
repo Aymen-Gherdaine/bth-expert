@@ -22,12 +22,12 @@ export function Section({
       {(number || eyebrow) && (
         <div className="flex items-baseline gap-4 mb-12 md:mb-16">
           {number && (
-            <span className="font-display text-[var(--text-caption)] text-gold tracking-widest">
+            <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest">
               {number}
             </span>
           )}
           {eyebrow && (
-            <span className="text-[var(--text-caption)] uppercase tracking-widest text-muted">
+            <span className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted">
               {eyebrow}
             </span>
           )}

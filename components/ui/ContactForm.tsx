@@ -18,10 +18,10 @@ interface ContactFormProps {
 type FormState = "idle" | "submitting" | "success" | "error";
 
 const labelCls =
-  "block text-[var(--text-small)] font-medium text-ink mb-2";
+  "block text-[length:var(--text-small)] font-medium text-ink mb-2";
 
 const inputCls =
-  "w-full bg-white border border-line rounded-[var(--radius-md)] px-4 py-3.5 text-[var(--text-body)] text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--color-gold)_22%,transparent)] transition-[border-color,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "w-full bg-white border border-line rounded-[var(--radius-md)] px-4 py-3.5 text-[length:var(--text-body)] text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--color-gold)_22%,transparent)] transition-[border-color,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 function Required() {
   return (
@@ -93,10 +93,10 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
     >
       {state === "success" ? (
         <div className="py-12 text-center" role="status">
-          <p className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] text-ink mb-4">
+          <p className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] text-ink mb-4">
             {dict.successTitle}
           </p>
-          <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+          <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
             {dict.successMessage}
           </p>
         </div>
@@ -209,7 +209,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
           </div>
 
           <div data-form-field>
-            <label className="flex items-start gap-3 cursor-pointer text-[var(--text-small)] text-ink-soft leading-[1.6]">
+            <label className="flex items-start gap-3 cursor-pointer text-[length:var(--text-small)] text-ink-soft leading-[1.6]">
               <input
                 type="checkbox"
                 name="consent"
@@ -230,7 +230,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
           </div>
 
           {state === "error" && (
-            <p className="text-[var(--text-small)] text-[#b42318]" role="alert">
+            <p className="text-[length:var(--text-small)] text-[#b42318]" role="alert">
               {dict.errorMessage}
             </p>
           )}

@@ -57,11 +57,11 @@ export function ServicesSection({ lang, services }: ServicesSectionProps) {
       {/* ── Heading — toujours visible, grand, jamais caché ─── */}
       <div className="px-6 sm:px-8 lg:px-16 xl:px-24 pt-24 md:pt-32 pb-16 md:pb-20">
         <div className="flex items-center gap-4 mb-10">
-          <span className="font-display text-[var(--text-caption)] text-gold tracking-widest">
+          <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest">
             {services.sectionNumber}
           </span>
           <span className="h-px w-8 bg-gold/30 shrink-0" />
-          <span className="text-[var(--text-caption)] uppercase tracking-widest text-[var(--color-on-brand-faint)]">
+          <span className="text-[length:var(--text-caption)] uppercase tracking-widest text-[var(--color-on-brand-faint)]">
             {services.eyebrow}
           </span>
         </div>

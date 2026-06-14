@@ -123,7 +123,7 @@ export function ContactProcess({ dict }: ContactProcessProps) {
                   >
                     {step.title}
                   </h3>
-                  <p className="font-sans text-ink-soft text-[var(--text-small)] leading-[1.7]">
+                  <p className="font-sans text-ink-soft text-[length:var(--text-small)] leading-[1.7]">
                     {step.description}
                   </p>
                 </li>

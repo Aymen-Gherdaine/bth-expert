@@ -46,13 +46,13 @@ export default async function OranPage({
       <Container>
         <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-9">
-            <p className="text-[var(--text-caption)] uppercase tracking-widest text-muted mb-8">
+            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
               {o.hero.eyebrow}
             </p>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[var(--text-h1)] text-ink mb-8">
+            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
               {o.hero.heading}
             </h1>
-            <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
+            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
               {o.hero.subheading}
             </p>
           </div>
@@ -65,12 +65,12 @@ export default async function OranPage({
           <Section tight>
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-5 mb-8 lg:mb-0">
-                <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
+                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
                   {o.services.heading}
                 </h2>
               </div>
               <div className="lg:col-span-6 lg:col-start-7">
-                <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                   {o.services.description}
                 </p>
               </div>
@@ -84,10 +84,10 @@ export default async function OranPage({
         <Section tight>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5 mb-8 lg:mb-0">
-              <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-4">
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-4">
                 {o.zones.heading}
               </h2>
-              <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                 {o.zones.description}
               </p>
             </div>
@@ -96,7 +96,7 @@ export default async function OranPage({
                 {o.zones.wilayas.map((wilaya) => (
                   <li
                     key={wilaya}
-                    className="py-4 text-[var(--text-body)] text-ink-soft"
+                    className="py-4 text-[length:var(--text-body)] text-ink-soft"
                   >
                     {wilaya}
                   </li>
@@ -111,10 +111,10 @@ export default async function OranPage({
       <div className="border-t border-line bg-cream-deep">
         <Container>
           <Section tight>
-            <h2 className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] text-ink mb-8">
+            <h2 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] text-ink mb-8">
               {o.nap.heading}
             </h2>
-            <div className="lg:grid lg:grid-cols-3 gap-8 text-[var(--text-body)] text-ink-soft leading-[1.7]">
+            <div className="lg:grid lg:grid-cols-3 gap-8 text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
               <address className="not-italic">
                 {o.nap.address}
               </address>
@@ -140,10 +140,10 @@ export default async function OranPage({
         <Section tight>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
                 {o.cta.heading}
               </h2>
-              <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] mb-8">
+              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] mb-8">
                 {o.cta.description}
               </p>
               <Button href={`/${lang}/contact`}>{o.cta.button}</Button>

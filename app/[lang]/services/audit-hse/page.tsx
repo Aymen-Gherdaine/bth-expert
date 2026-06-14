@@ -53,13 +53,13 @@ export default async function HSEPage({
       <Container>
         <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-9">
-            <p className="text-[var(--text-caption)] uppercase tracking-widest text-muted mb-8">
+            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
               {e.hero.eyebrow}
             </p>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[var(--text-h1)] text-ink mb-8">
+            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
               {e.hero.heading}
             </h1>
-            <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
+            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
               {e.hero.subheading}
             </p>
           </div>
@@ -72,12 +72,12 @@ export default async function HSEPage({
           <Section tight>
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4 mb-8 lg:mb-0">
-                <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
+                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
                   {e.why.heading}
                 </h2>
               </div>
               <div className="lg:col-span-7 lg:col-start-6">
-                <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                   {e.why.description}
                 </p>
               </div>
@@ -93,17 +93,17 @@ export default async function HSEPage({
             {e.methodology.steps.map((step) => (
               <div key={step.number} className="py-8 lg:grid lg:grid-cols-12 lg:gap-8">
                 <div className="lg:col-span-1 mb-2 lg:mb-0">
-                  <span className="font-display text-[var(--text-caption)] text-gold tracking-widest">
+                  <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest">
                     {step.number}
                   </span>
                 </div>
                 <div className="lg:col-span-4 mb-3 lg:mb-0">
-                  <h3 className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink">
+                  <h3 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink">
                     {step.title}
                   </h3>
                 </div>
                 <div className="lg:col-span-6 lg:col-start-6">
-                  <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                  <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                     {step.description}
                   </p>
                 </div>
@@ -119,12 +119,12 @@ export default async function HSEPage({
           <Section tight>
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4 mb-8 lg:mb-0">
-                <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
+                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
                   {e.deliverable.heading}
                 </h2>
               </div>
               <div className="lg:col-span-7 lg:col-start-6">
-                <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                   {e.deliverable.description}
                 </p>
               </div>
@@ -138,10 +138,10 @@ export default async function HSEPage({
         <Section tight>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
                 {e.cta.heading}
               </h2>
-              <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] mb-8">
+              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] mb-8">
                 {e.cta.description}
               </p>
               <Button href={`/${lang}/contact`}>{e.cta.button}</Button>

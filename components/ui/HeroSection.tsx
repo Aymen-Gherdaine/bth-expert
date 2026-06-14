@@ -76,7 +76,7 @@ export function HeroSection({ lang, hero }: HeroSectionProps) {
           {/* Eyebrow — gold */}
           <motion.p
             variants={fade}
-            className="text-gold text-[var(--text-caption)] uppercase tracking-widest mb-10 md:mb-14"
+            className="text-gold text-[length:var(--text-caption)] uppercase tracking-widest mb-10 md:mb-14"
           >
             {hero.eyebrow}
           </motion.p>

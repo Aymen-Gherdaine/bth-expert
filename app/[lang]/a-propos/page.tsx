@@ -48,16 +48,16 @@ export default async function AboutPage({
       <Container>
         <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-10">
-            <p className="text-[var(--text-caption)] uppercase tracking-widest text-muted mb-8">
+            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
               {a.hero.eyebrow}
             </p>
             <RevealText
               as="h1"
-              className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[var(--text-h1)] text-ink mb-8"
+              className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8"
             >
               {a.hero.heading}
             </RevealText>
-            <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] max-w-3xl">
+            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-3xl">
               {a.hero.subheading}
             </p>
           </div>
@@ -76,12 +76,12 @@ export default async function AboutPage({
         <Section tight>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4 mb-8 lg:mb-0">
-              <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
                 {a.agrement.heading}
               </h2>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                 {a.agrement.description}
               </p>
             </div>
@@ -95,12 +95,12 @@ export default async function AboutPage({
           <Section tight>
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4 mb-8 lg:mb-0">
-                <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
+                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
                   {a.partner.heading}
                 </h2>
               </div>
               <div className="lg:col-span-7 lg:col-start-6">
-                <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                   {a.partner.description}
                 </p>
               </div>
@@ -113,19 +113,19 @@ export default async function AboutPage({
       <Container>
         <Section number="01" eyebrow={a.values.eyebrow}>
           <SectionReveal>
-            <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-12 lg:mb-16 max-w-2xl">
+            <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-12 lg:mb-16 max-w-2xl">
               {a.values.heading}
             </h2>
             <div className="grid gap-10 md:grid-cols-3 md:gap-8">
               {a.values.items.map((item, index) => (
                 <div key={item.title}>
-                  <span className="font-display text-[var(--text-caption)] text-gold tracking-widest block mb-4">
+                  <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest block mb-4">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink mb-3">
+                  <h3 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-[var(--text-small)] text-ink-soft leading-[1.7]">
+                  <p className="text-[length:var(--text-small)] text-ink-soft leading-[1.7]">
                     {item.description}
                   </p>
                 </div>
@@ -144,7 +144,7 @@ export default async function AboutPage({
                 <p className="font-display text-gold tracking-[-0.02em] leading-none mb-3 text-[clamp(2.5rem,4vw,3.5rem)]">
                   {stat.value}
                 </p>
-                <p className="text-[var(--text-small)] uppercase tracking-widest text-muted">
+                <p className="text-[length:var(--text-small)] uppercase tracking-widest text-muted">
                   {stat.label}
                 </p>
               </div>
@@ -158,10 +158,10 @@ export default async function AboutPage({
         <Section tight>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
                 {a.cta.heading}
               </h2>
-              <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] mb-8">
+              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] mb-8">
                 {a.cta.description}
               </p>
               <Button href={`/${lang}/contact`}>{a.cta.button}</Button>

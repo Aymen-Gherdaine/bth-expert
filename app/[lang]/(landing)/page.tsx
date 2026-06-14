@@ -154,7 +154,7 @@ export default async function HomePage({
         <Container className="relative z-10">
           <FadeIn>
             <div className="max-w-3xl">
-              <p className="text-[var(--text-caption)] uppercase tracking-widest text-gold mb-6">
+              <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-6">
                 {h.contact.eyebrow}
               </p>
               <h2
@@ -163,7 +163,7 @@ export default async function HomePage({
               >
                 {h.contact.heading}
               </h2>
-              <p className="text-[var(--text-body)] text-cream/75 leading-[1.75] max-w-lg mb-12">
+              <p className="text-[length:var(--text-body)] text-cream/75 leading-[1.75] max-w-lg mb-12">
                 {h.contact.description}
               </p>
               <Link

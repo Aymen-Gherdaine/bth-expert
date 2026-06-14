@@ -52,13 +52,13 @@ export default async function EquipePage({
       <Container>
         <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-9">
-            <p className="text-[var(--text-caption)] uppercase tracking-widest text-muted mb-8">
+            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
               {eq.hero.eyebrow}
             </p>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[var(--text-h1)] text-ink mb-8">
+            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
               {eq.hero.heading}
             </h1>
-            <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
+            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
               {eq.hero.subheading}
             </p>
           </div>
@@ -73,21 +73,21 @@ export default async function EquipePage({
               <div className="lg:grid lg:grid-cols-12 lg:gap-16">
                 <div className="lg:col-span-4 mb-8 lg:mb-0">
                   <div className="w-16 h-16 rounded-sm bg-cream-deep border border-line mb-6 flex items-center justify-center">
-                    <span className="font-display text-[var(--text-h3)] text-muted font-medium">
+                    <span className="font-display text-[length:var(--text-h3)] text-muted font-medium">
                       {member.name.charAt(0)}
                     </span>
                   </div>
-                  <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-2">
+                  <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-2">
                     {member.name}
                   </h2>
-                  <p className="text-[var(--text-small)] text-muted mb-6">
+                  <p className="text-[length:var(--text-small)] text-muted mb-6">
                     {member.role}
                   </p>
                   <ul className="space-y-2">
                     {member.credentials.map((cred) => (
                       <li
                         key={cred}
-                        className="text-[var(--text-caption)] uppercase tracking-widest text-muted border-l-2 border-line ps-3"
+                        className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted border-l-2 border-line ps-3"
                       >
                         {cred}
                       </li>
@@ -95,7 +95,7 @@ export default async function EquipePage({
                   </ul>
                 </div>
                 <div className="lg:col-span-7 lg:col-start-6">
-                  <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                  <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                     {member.bio}
                   </p>
                 </div>
@@ -111,12 +111,12 @@ export default async function EquipePage({
           <Section tight>
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4 mb-8 lg:mb-0">
-                <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
+                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
                   {eq.partner.heading}
                 </h2>
               </div>
               <div className="lg:col-span-7 lg:col-start-6">
-                <p className="text-[var(--text-body)] text-ink-soft leading-[1.7]">
+                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
                   {eq.partner.description}
                 </p>
               </div>
@@ -130,10 +130,10 @@ export default async function EquipePage({
         <Section tight>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <h2 className="font-display text-[var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
                 {eq.cta.heading}
               </h2>
-              <p className="text-[var(--text-body)] text-ink-soft leading-[1.7] mb-8">
+              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] mb-8">
                 {eq.cta.description}
               </p>
               <Button href={`/${lang}/contact`}>{eq.cta.button}</Button>

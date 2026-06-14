@@ -60,7 +60,7 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
   const filterCls = (isActive: boolean) =>
     [
       "relative font-sans uppercase tracking-widest pb-1 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]",
-      "text-[var(--text-caption)]",
+      "text-[length:var(--text-caption)]",
       isActive ? "text-ink" : "text-muted hover:text-ink",
       isActive
         ? "after:absolute after:inset-x-0 after:-bottom-px after:h-px after:bg-gold"
@@ -102,24 +102,24 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
             className="group block border border-line rounded-[var(--radius-md)] bg-cream-soft p-7 lg:p-8 hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-[transform,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             <div className="flex items-center justify-between mb-5">
-              <span className="text-[var(--text-caption)] uppercase tracking-widest text-gold">
+              <span className="text-[length:var(--text-caption)] uppercase tracking-widest text-gold">
                 {item.secteur}
               </span>
-              <span className="text-[var(--text-caption)] text-muted tabular-nums">
+              <span className="text-[length:var(--text-caption)] text-muted tabular-nums">
                 {item.annee}
               </span>
             </div>
-            <h2 className="font-display text-[var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink group-hover:text-brand transition-colors duration-300 ease-[var(--ease-out-expo)] mb-3">
+            <h2 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink group-hover:text-brand transition-colors duration-300 ease-[var(--ease-out-expo)] mb-3">
               {item.title}
             </h2>
-            <p className="text-[var(--text-small)] text-ink-soft leading-[1.7] mb-5">
+            <p className="text-[length:var(--text-small)] text-ink-soft leading-[1.7] mb-5">
               {item.excerpt}
             </p>
             <div className="flex flex-wrap gap-2">
               {item.mission.map((m) => (
                 <span
                   key={m}
-                  className="inline-flex items-center rounded-full border border-line px-3 py-1 text-[var(--text-caption)] text-muted"
+                  className="inline-flex items-center rounded-full border border-line px-3 py-1 text-[length:var(--text-caption)] text-muted"
                 >
                   {m}
                 </span>

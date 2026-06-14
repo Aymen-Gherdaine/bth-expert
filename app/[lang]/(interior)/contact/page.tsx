@@ -28,10 +28,10 @@ export async function generateMetadata({
 }
 
 const captionCls =
-  "block text-[var(--text-caption)] uppercase tracking-widest text-gold mb-1.5";
+  "block text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-1.5";
 
 const valueLinkCls =
-  "text-[var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "text-[length:var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 // TODO: real profile URLs once the client provides them (same as Footer)
 const socialLinks = [
