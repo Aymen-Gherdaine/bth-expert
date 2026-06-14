@@ -5,7 +5,7 @@ import { schemaLocalBusiness } from "@/lib/schema";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
-import { ServicesList } from "@/components/sections/ServicesList";
+import { ServicesPinScroll } from "@/components/sections/ServicesPinScroll";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ZonesSection } from "@/components/sections/ZonesSection";
@@ -129,8 +129,8 @@ export default async function HomePage({
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
       <AboutSection lang={lang} />
 
-      {/* ── SERVICES — clean two-column expertise list on white ─────── */}
-      <ServicesList lang={lang} services={h.services} />
+      {/* ── SERVICES — signature pin-scroll: sticky visual, rows scroll past ── */}
+      <ServicesPinScroll lang={lang} services={h.services} />
 
       {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
       <ProjectsSection lang={lang} />

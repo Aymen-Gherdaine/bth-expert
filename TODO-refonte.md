@@ -16,7 +16,7 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 - [ ] `refactor(landing): cream-dominant` — `page.tsx`, `AboutSection.tsx`, `ServicesList.tsx`
 
 ## Phase 3 — Sections signature
-- [ ] ⭐ `feat(services): pin-scroll` — nouveau `ServicesPinScroll.tsx` **(proof, en premier)**
+- [x] ⭐ `feat(services): pin-scroll` — nouveau `ServicesPinScroll.tsx` **(proof, en premier)**
 - [ ] `feat(stats): barre count-up` — nouveau `StatsBand.tsx`
 - [ ] `feat(statement): brancher StatementSection` — `page.tsx`
 
