@@ -102,6 +102,32 @@
     color: var(--color-ink);
   }
 
+  /* Scrollbar — white track with inset border, green pill thumb */
+  ::-webkit-scrollbar {
+    width: 18px;
+    height: 18px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-left: 1px solid #e8e8e8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-brand);
+    border-radius: var(--radius-full);
+    border: 3px solid #ffffff;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-soft);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: var(--color-brand-deep);
+  }
+  /* Firefox — auto keeps the native width so scrollbar-color is respected */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-brand) #ffffff;
+  }
+
   ::selection {
     background-color: var(--color-brand);
     color: var(--color-cream);

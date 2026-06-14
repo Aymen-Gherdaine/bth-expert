@@ -32,7 +32,7 @@ export async function Footer({ lang }: FooterProps) {
               alt="BTH Expert"
               width={530}
               height={149}
-              className="h-12 w-auto mb-6 brightness-0 invert"
+              className="h-12 w-auto mb-6"
             />
             <p className="text-[var(--color-on-brand-muted)] text-sm leading-relaxed max-w-sm mb-8">
               {dict.metadata.homeDescription}
