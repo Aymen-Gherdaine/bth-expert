@@ -10,7 +10,7 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 ## Phase 1 — Hero
 - [x] `fix(hero): échelle typo + italique + i18n` — `page.tsx`
 - [x] `fix(motion): RevealText vrai masque` — `RevealText.tsx`
-- [ ] `refine(hero): voile gradient` — `page.tsx`
+- [x] `refine(hero): voile gradient` — `page.tsx`
 
 ## Phase 2 — Cream-dominant (plus gros levier)
 - [x] `refactor(landing): cream-dominant` — `AboutSection.tsx` (dark→cream), `page.tsx` (wrapper)

@@ -58,20 +58,18 @@ export default async function HomePage({
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
           <HeroBackground src="/hero.webp" />
 
-          {/* Uniform deep-green veil — the image reads as texture, type stays king */}
+          {/* Cinematic gradient veil — lets the image read up top, holds the
+              type legible below (manifesto §3, --overlay-hero) */}
           <div
             aria-hidden
             className="absolute inset-0"
-            style={{ backgroundColor: "rgb(12 20 14 / 0.62)" }}
+            style={{ background: "var(--overlay-hero)" }}
           />
-          {/* Slight extra weight at the bottom, under headline + CTAs */}
+          {/* Side weight for the bottom-left headline (--overlay-hero-side) */}
           <div
             aria-hidden
             className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, rgb(8 14 9 / 0.35) 0%, transparent 50%)",
-            }}
+            style={{ background: "var(--overlay-hero-side)" }}
           />
           {/* Film grain — kills the flat digital feel */}
           <div aria-hidden className="hero-grain absolute inset-0" />
