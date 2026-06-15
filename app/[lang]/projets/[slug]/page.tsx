@@ -4,10 +4,12 @@ import Link from "next/link";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaArticle } from "@/lib/schema";
-import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
+import { ServiceHero } from "@/components/sections/ServiceHero";
+import { ProjetNarrative } from "@/components/sections/ProjetNarrative";
+import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import fr from "@/dictionaries/fr.json";
+
+const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export function generateStaticParams() {
   return fr.projets.items.map((p) => ({ slug: p.slug }));
@@ -52,10 +54,7 @@ export default async function ProjetPage({
     datePublished: `${item.annee}-01-01`,
   });
 
-  const chipCls =
-    "inline-flex items-center rounded-full border border-line px-4 py-2 text-[length:var(--text-small)] text-ink-soft";
-
-  const blocks = [
+  const beats = [
     { label: d.contexteLabel, body: item.contexte },
     { label: d.demarcheLabel, body: item.demarche },
     { label: d.resultatLabel, body: item.resultat },
@@ -68,112 +67,125 @@ export default async function ProjetPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <Container>
-        <div className="pt-32 pb-12 md:pt-40 md:pb-16 lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-9">
-            <Link
-              href={`/${lang}/secteurs/${item.secteurSlug}`}
-              className="inline-block text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-8 hover:text-gold-deep transition-colors duration-[var(--duration-fast)]"
-            >
-              {item.secteur}
-            </Link>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
-              {item.title}
-            </h1>
-            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
-              {item.excerpt}
-            </p>
+      {/* ── Hero — secteur breadcrumb above the shared editorial ServiceHero ─ */}
+      <div className="bg-cream-soft">
+        <div className={`${PADX} pt-16 lg:pt-24`}>
+          <Link
+            href={`/${lang}/secteurs/${item.secteurSlug}`}
+            className="group inline-flex items-center gap-2 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+          >
+            <span
+              aria-hidden
+              className="w-6 h-px bg-gold transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-9"
+            />
+            {item.secteur}
+          </Link>
+        </div>
+      </div>
+      <ServiceHero eyebrow={item.secteur} heading={item.title} subheading={item.excerpt} />
+
+      {/* ── Meta strip — secteur / mission chips / année, enlivened ───── */}
+      <section className="bg-cream-soft">
+        <div className={`${PADX} pb-4 lg:pb-8`}>
+          <div className="border-t border-line pt-10 lg:pt-12">
+            <FadeInStagger className="grid gap-10 sm:grid-cols-3">
+              <FadeInItem>
+                <dt className="font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3">
+                  {d.secteurLabel}
+                </dt>
+                <dd
+                  className="font-display font-light text-ink tracking-[-0.01em] leading-[1.2]"
+                  style={{ fontSize: "var(--text-h3)" }}
+                >
+                  {item.secteur}
+                </dd>
+              </FadeInItem>
+
+              <FadeInItem>
+                <dt className="font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3">
+                  {d.missionLabel}
+                </dt>
+                <dd className="flex flex-wrap gap-2">
+                  {item.mission.map((m) => (
+                    <span
+                      key={m}
+                      className="inline-flex items-center rounded-full border border-line px-4 py-1.5 font-sans text-[length:var(--text-small)] text-ink-soft transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] hover:border-gold hover:text-ink"
+                    >
+                      {m}
+                    </span>
+                  ))}
+                </dd>
+              </FadeInItem>
+
+              <FadeInItem>
+                <dt className="font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3">
+                  {d.anneeLabel}
+                </dt>
+                <dd
+                  className="font-display font-light text-ink tracking-[-0.01em] leading-[1.2] tabular-nums"
+                  style={{ fontSize: "var(--text-h3)" }}
+                >
+                  {item.annee}
+                </dd>
+              </FadeInItem>
+            </FadeInStagger>
           </div>
         </div>
-      </Container>
+      </section>
 
-      {/* ── Meta strip ───────────────────────────────────────── */}
-      <div className="border-y border-line">
-        <Container>
-          <dl className="py-8 grid gap-8 sm:grid-cols-3">
-            <div>
-              <dt className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-2">
-                {d.secteurLabel}
-              </dt>
-              <dd className="text-[length:var(--text-body)] text-ink">{item.secteur}</dd>
-            </div>
-            <div>
-              <dt className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-2">
-                {d.missionLabel}
-              </dt>
-              <dd className="flex flex-wrap gap-2">
-                {item.mission.map((m) => (
-                  <span key={m} className={chipCls}>
-                    {m}
-                  </span>
-                ))}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-2">
-                {d.anneeLabel}
-              </dt>
-              <dd className="text-[length:var(--text-body)] text-ink">{item.annee}</dd>
-            </div>
-          </dl>
-        </Container>
-      </div>
+      {/* ── Narrative — contexte → intervention → résultat, 3-beat sequence ─ */}
+      <ProjetNarrative beats={beats} />
 
-      {/* ── Body: contexte / intervention / résultat ─────────── */}
-      <Container>
-        <Section tight>
-          <div className="divide-y divide-line">
-            {blocks.map((block) => (
-              <div
-                key={block.label}
-                className="py-10 first:pt-0 lg:grid lg:grid-cols-12 lg:gap-16"
+      {/* ── Disclaimer ───────────────────────────────────────── */}
+      <section className="bg-cream-soft">
+        <div className={`${PADX} pb-20 lg:pb-28`}>
+          <FadeIn>
+            <p className="font-sans text-[length:var(--text-caption)] text-muted italic">
+              {d.disclaimer}
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── CTA — dark punctuation band + back link ──────────── */}
+      <section className="bg-brand-deep">
+        <div className={`${PADX} py-24 lg:py-32`}>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-16">
+            <FadeIn className="lg:col-span-8">
+              <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
+              <h2
+                className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-6"
+                style={{ fontSize: "clamp(2.25rem, 3.4vw + 1rem, 4.5rem)" }}
               >
-                <div className="lg:col-span-4 mb-4 lg:mb-0">
-                  <h2 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink">
-                    {block.label}
-                  </h2>
-                </div>
-                <div className="lg:col-span-7 lg:col-start-6">
-                  <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
-                    {block.body}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-10 text-[length:var(--text-caption)] text-muted italic">
-            {d.disclaimer}
-          </p>
-        </Section>
-      </Container>
-
-      {/* ── CTA + back ───────────────────────────────────────── */}
-      <div className="border-t border-line bg-cream-deep">
-        <Container>
-          <Section tight>
-            <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
-                  {d.cta.heading}
-                </h2>
-                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] mb-8">
-                  {d.cta.description}
-                </p>
-                <div className="flex flex-wrap items-center gap-6">
-                  <Button href={`/${lang}/contact`}>{d.cta.button}</Button>
-                  <Link
-                    href={`/${lang}/projets`}
-                    className="text-[length:var(--text-small)] uppercase tracking-widest text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                {d.cta.heading}
+              </h2>
+              <p className="font-sans text-cream/75 leading-[1.75] text-[length:var(--text-body)] mb-10 max-w-xl">
+                {d.cta.description}
+              </p>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Link
+                  href={`/${lang}/contact`}
+                  className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                >
+                  {d.cta.button}
+                </Link>
+                <Link
+                  href={`/${lang}/projets`}
+                  className="group inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                >
+                  <span
+                    aria-hidden
+                    className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:-translate-x-1"
                   >
-                    ← {d.backLabel}
-                  </Link>
-                </div>
+                    ←
+                  </span>
+                  {d.backLabel}
+                </Link>
               </div>
-            </div>
-          </Section>
-        </Container>
-      </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

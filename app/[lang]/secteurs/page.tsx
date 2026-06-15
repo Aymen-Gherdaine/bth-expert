@@ -3,8 +3,10 @@ import Link from "next/link";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
-import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/ui/Section";
+import { ServiceHero } from "@/components/sections/ServiceHero";
+import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
+
+const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export async function generateMetadata({
   params,
@@ -42,55 +44,62 @@ export default async function SecteursPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <Container>
-        <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-9">
-            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
-              {s.hero.eyebrow}
-            </p>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
-              {s.hero.heading}
-            </h1>
-            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
-              {s.hero.subheading}
-            </p>
-          </div>
-        </div>
-      </Container>
+      {/* ── Hero — shared editorial light hero ───────────────── */}
+      <ServiceHero
+        eyebrow={s.hero.eyebrow}
+        heading={s.hero.heading}
+        subheading={s.hero.subheading}
+      />
 
-      {/* ── Sector index ──────────────────────────────────────── */}
-      <Container>
-        <Section tight>
-          <div className="divide-y divide-line">
+      {/* ── Sector index — animated editorial rhythm ─────────── */}
+      <section className="bg-cream-soft">
+        <div className={`${PADX} pb-24 lg:pb-32`}>
+          <FadeInStagger className="border-t border-line">
             {s.list.map((item, index) => (
-              <Link
-                key={item.slug}
-                href={`/${lang}/secteurs/${item.slug}`}
-                className="block"
-              >
-                <div className="py-10 lg:grid lg:grid-cols-12 lg:gap-8 group">
-                  <div className="lg:col-span-1 mb-2 lg:mb-0">
-                    <span className="font-display text-[length:var(--text-caption)] text-muted tracking-widest">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+              <FadeInItem key={item.slug}>
+                <Link
+                  href={`/${lang}/secteurs/${item.slug}`}
+                  className="group block border-b border-line"
+                >
+                  <div className="py-10 lg:py-14 lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12">
+                    {/* Index numeral */}
+                    <div className="lg:col-span-2 mb-5 lg:mb-0">
+                      <span
+                        aria-hidden
+                        className="font-display font-light text-line tabular-nums leading-none tracking-[-0.02em] transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-gold"
+                        style={{ fontSize: "clamp(2.75rem, 4vw + 1rem, 4.5rem)" }}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <div className="lg:col-span-4 mb-4 lg:mb-0">
+                      <h2
+                        className="font-display font-light text-ink tracking-[-0.02em] leading-[1.12] transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-brand"
+                        style={{ fontSize: "var(--text-h2)" }}
+                      >
+                        {item.title}
+                      </h2>
+                    </div>
+
+                    {/* Tagline + gold filet that grows on hover */}
+                    <div className="lg:col-span-5 lg:col-start-7 flex flex-col justify-center">
+                      <p className="font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]">
+                        {item.tagline}
+                      </p>
+                      <span
+                        aria-hidden
+                        className="mt-6 h-px w-10 bg-gold origin-left transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[2.4]"
+                      />
+                    </div>
                   </div>
-                  <div className="lg:col-span-4 mb-3 lg:mb-0">
-                    <h2 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink group-hover:text-brand transition-colors duration-300 ease-[var(--ease-out-expo)]">
-                      {item.title}
-                    </h2>
-                  </div>
-                  <div className="lg:col-span-6 lg:col-start-6">
-                    <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
-                      {item.tagline}
-                    </p>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </FadeInItem>
             ))}
-          </div>
-        </Section>
-      </Container>
+          </FadeInStagger>
+        </div>
+      </section>
     </>
   );
 }

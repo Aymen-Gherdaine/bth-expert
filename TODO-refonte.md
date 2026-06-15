@@ -37,6 +37,13 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 - [x] `refine(motion): allonger la tenue du pin` — `ServicesPinScroll`, `MethodPinScroll`
 - [~] cross-fade des surfaces — **sauté** (gain marginal, tons cream proches, risque)
 
+## Phase 8 — Pages intérieures fades (refonte éditoriale, 4 subagents parallèles)
+- [x] `feat(pages): refonte éditoriale` — services(index) · secteurs(index+détail) · projets(hero+détail) · équipe · à-propos · oran
+  - ServiceHero partout, reveals FadeIn/RevealText, numéraux, filets or, bandes sombres de ponctuation ; équipe = vraies photos (amine/abdellah)
+  - 6 composants : `ServicesIndexList`, `ProjetNarrative`, `EquipeMembers`, `EquipeCtaBand`, `OranBody`, `OranCtaBand`
+  - 0 asset / 0 clé i18n / 0 token ajouté (lecture seule fr.json + globals.css + composants partagés) ; build 0 warning, 64 pages SSG
+  - contact laissé tel quel (déjà premium, « ca va »)
+
 ## Phase 0 — Hygiène ✅ (voir plus haut)
 
 ---

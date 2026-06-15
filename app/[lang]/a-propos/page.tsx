@@ -5,6 +5,8 @@ import { schemaLocalBusiness } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { ServiceHero } from "@/components/sections/ServiceHero";
+import { FadeIn } from "@/components/motion/FadeIn";
 import { RevealText } from "@/components/animations/RevealText";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 import { AboutTimeline } from "@/components/sections/AboutTimeline";
@@ -45,24 +47,11 @@ export default async function AboutPage({
       />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <Container>
-        <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-10">
-            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
-              {a.hero.eyebrow}
-            </p>
-            <RevealText
-              as="h1"
-              className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8"
-            >
-              {a.hero.heading}
-            </RevealText>
-            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-3xl">
-              {a.hero.subheading}
-            </p>
-          </div>
-        </div>
-      </Container>
+      <ServiceHero
+        eyebrow={a.hero.eyebrow}
+        heading={a.hero.heading}
+        subheading={a.hero.subheading}
+      />
 
       {/* ── Histoire (timeline) ──────────────────────────────── */}
       <AboutTimeline
@@ -76,14 +65,22 @@ export default async function AboutPage({
         <Section tight>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4 mb-8 lg:mb-0">
-              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
-                {a.agrement.heading}
-              </h2>
+              <FadeIn>
+                <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
+                <RevealText
+                  as="h2"
+                  className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink"
+                >
+                  {a.agrement.heading}
+                </RevealText>
+              </FadeIn>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
-                {a.agrement.description}
-              </p>
+              <FadeIn delay={0.1}>
+                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.8]">
+                  {a.agrement.description}
+                </p>
+              </FadeIn>
             </div>
           </div>
         </Section>
@@ -95,14 +92,19 @@ export default async function AboutPage({
           <Section tight>
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4 mb-8 lg:mb-0">
-                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
-                  {a.partner.heading}
-                </h2>
+                <FadeIn>
+                  <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
+                  <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
+                    {a.partner.heading}
+                  </h2>
+                </FadeIn>
               </div>
               <div className="lg:col-span-7 lg:col-start-6">
-                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
-                  {a.partner.description}
-                </p>
+                <FadeIn delay={0.1}>
+                  <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.8]">
+                    {a.partner.description}
+                  </p>
+                </FadeIn>
               </div>
             </div>
           </Section>

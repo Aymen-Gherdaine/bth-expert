@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaPerson } from "@/lib/schema";
-import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
+import { ServiceHero } from "@/components/sections/ServiceHero";
+import { EquipeMembers } from "@/components/sections/EquipeMembers";
+import { EquipeCtaBand } from "@/components/sections/EquipeCtaBand";
 
 export async function generateMetadata({
   params,
@@ -48,99 +48,15 @@ export default async function EquipePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <Container>
-        <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-9">
-            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
-              {eq.hero.eyebrow}
-            </p>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
-              {eq.hero.heading}
-            </h1>
-            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
-              {eq.hero.subheading}
-            </p>
-          </div>
-        </div>
-      </Container>
+      <ServiceHero
+        eyebrow={eq.hero.eyebrow}
+        heading={eq.hero.heading}
+        subheading={eq.hero.subheading}
+      />
 
-      {/* ── Members ──────────────────────────────────────────── */}
-      <div className="border-t border-line">
-        <Container>
-          {eq.members.map((member, index) => (
-            <Section key={member.name} tight={index > 0}>
-              <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-                <div className="lg:col-span-4 mb-8 lg:mb-0">
-                  <div className="w-16 h-16 rounded-sm bg-cream-deep border border-line mb-6 flex items-center justify-center">
-                    <span className="font-display text-[length:var(--text-h3)] text-muted font-medium">
-                      {member.name.charAt(0)}
-                    </span>
-                  </div>
-                  <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-2">
-                    {member.name}
-                  </h2>
-                  <p className="text-[length:var(--text-small)] text-muted mb-6">
-                    {member.role}
-                  </p>
-                  <ul className="space-y-2">
-                    {member.credentials.map((cred) => (
-                      <li
-                        key={cred}
-                        className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted border-l-2 border-line ps-3"
-                      >
-                        {cred}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="lg:col-span-7 lg:col-start-6">
-                  <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-            </Section>
-          ))}
-        </Container>
-      </div>
+      <EquipeMembers members={eq.members} partner={eq.partner} />
 
-      {/* ── Partner ──────────────────────────────────────────── */}
-      <div className="border-t border-line bg-cream-deep">
-        <Container>
-          <Section tight>
-            <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-4 mb-8 lg:mb-0">
-                <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
-                  {eq.partner.heading}
-                </h2>
-              </div>
-              <div className="lg:col-span-7 lg:col-start-6">
-                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7]">
-                  {eq.partner.description}
-                </p>
-              </div>
-            </div>
-          </Section>
-        </Container>
-      </div>
-
-      {/* ── CTA ──────────────────────────────────────────────── */}
-      <Container>
-        <Section tight>
-          <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-7">
-              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-6">
-                {eq.cta.heading}
-              </h2>
-              <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] mb-8">
-                {eq.cta.description}
-              </p>
-              <Button href={`/${lang}/contact`}>{eq.cta.button}</Button>
-            </div>
-          </div>
-        </Section>
-      </Container>
+      <EquipeCtaBand lang={lang} cta={eq.cta} />
     </>
   );
 }

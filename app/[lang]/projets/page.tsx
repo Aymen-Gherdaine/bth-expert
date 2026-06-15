@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
+import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ProjectsFilter } from "@/components/sections/ProjectsFilter";
 
 export async function generateMetadata({
@@ -42,29 +43,21 @@ export default async function ProjetsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <Container>
-        <div className="pt-32 pb-24 md:pt-40 md:pb-32 lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-9">
-            <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-muted mb-8">
-              {p.hero.eyebrow}
-            </p>
-            <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.05] text-[length:var(--text-h1)] text-ink mb-8">
-              {p.hero.heading}
-            </h1>
-            <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.7] max-w-2xl">
-              {p.hero.subheading}
-            </p>
-          </div>
-        </div>
-      </Container>
+      {/* ── Hero — shared editorial ServiceHero (was a flat pt-32 block) ─ */}
+      <ServiceHero
+        eyebrow={p.hero.eyebrow}
+        heading={p.hero.heading}
+        subheading={p.hero.subheading}
+      />
 
-      {/* ── Filterable project grid ───────────────────────────── */}
-      <Container>
-        <Section tight>
-          <ProjectsFilter items={p.items} allLabel={p.filterAll} lang={lang} />
-        </Section>
-      </Container>
+      {/* ── Filterable project grid (unchanged: hover-lift cards + stagger) ─ */}
+      <div className="bg-cream-soft">
+        <Container>
+          <Section tight>
+            <ProjectsFilter items={p.items} allLabel={p.filterAll} lang={lang} />
+          </Section>
+        </Container>
+      </div>
     </>
   );
 }
