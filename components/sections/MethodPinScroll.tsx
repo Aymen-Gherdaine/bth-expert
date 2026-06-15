@@ -128,10 +128,10 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
         </span>
 
         <div className="mt-10 lg:mt-14 lg:grid lg:grid-cols-12 lg:gap-14 xl:gap-16">
-          {/* Sticky image panel */}
-          <div className="hidden lg:block lg:col-span-5">
+          {/* Image band on mobile, sticky panel the steps scroll past on desktop */}
+          <div className="lg:col-span-5 mb-12 lg:mb-0">
             <div className="lg:sticky lg:top-28">
-              <div className="relative aspect-[4/5] max-h-[34rem] w-full overflow-hidden rounded-[var(--radius-lg)] bg-brand-deep">
+              <div className="relative aspect-[3/2] lg:aspect-[4/5] max-h-[34rem] w-full overflow-hidden rounded-[var(--radius-lg)] bg-brand-deep">
                 <Image
                   src={image}
                   alt=""

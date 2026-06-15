@@ -161,10 +161,10 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
 
         {/* ── Pin grid ───────────────────────────────────────────── */}
         <div className="mt-14 lg:mt-20 lg:grid lg:grid-cols-12 lg:gap-14 xl:gap-16">
-          {/* LEFT — sticky visual the rows scroll past */}
-          <div className="hidden lg:block lg:col-span-5">
+          {/* LEFT — image band on mobile, sticky panel the rows scroll past on desktop */}
+          <div className="lg:col-span-5 mb-12 lg:mb-0">
             <div className="lg:sticky lg:top-28">
-              <div className="relative aspect-[4/5] max-h-[34rem] w-full overflow-hidden rounded-[var(--radius-lg)] bg-brand-deep">
+              <div className="relative aspect-[3/2] lg:aspect-[4/5] max-h-[34rem] w-full overflow-hidden rounded-[var(--radius-lg)] bg-brand-deep">
                 <div
                   aria-hidden
                   className="absolute inset-0"
