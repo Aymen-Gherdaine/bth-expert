@@ -4,6 +4,7 @@ import "../globals.css";
 import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -75,7 +76,7 @@ export default async function LangLayout({
     >
       <body className="min-h-screen" suppressHydrationWarning>
         <SmoothScroll />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );
