@@ -68,12 +68,14 @@ export function ServicePageBody({
         <div className={`${PADX} pb-20 lg:pb-28`}>
           <div className="border-t border-line pt-16 lg:pt-20 lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
             <div className="lg:col-span-4 mb-8 lg:mb-0">
-              <h2
-                className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15]"
-                style={{ fontSize: "var(--text-h2)" }}
-              >
-                {service.why.heading}
-              </h2>
+              <FadeIn>
+                <h2
+                  className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15]"
+                  style={{ fontSize: "var(--text-h2)" }}
+                >
+                  {service.why.heading}
+                </h2>
+              </FadeIn>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
               <FadeIn>
@@ -99,15 +101,20 @@ export function ServicePageBody({
       {/* Livrable — dark punctuation band */}
       <section className="bg-brand-deep">
         <div className={`${PADX} py-24 lg:py-32`}>
-          <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-8">
-            {service.deliverable.heading}
-          </span>
-          <p
-            className="font-display font-light text-cream tracking-[-0.02em] leading-[1.3] max-w-4xl"
-            style={{ fontSize: "var(--text-h2)" }}
-          >
-            {service.deliverable.description}
-          </p>
+          <FadeIn>
+            <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
+            <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
+              {service.deliverable.heading}
+            </span>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p
+              className="mt-8 font-display font-light text-cream tracking-[-0.02em] leading-[1.3] max-w-4xl"
+              style={{ fontSize: "var(--text-h2)" }}
+            >
+              {service.deliverable.description}
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -118,7 +125,7 @@ export function ServicePageBody({
       <section className="bg-cream-soft">
         <div className={`${PADX} pb-24 lg:pb-32`}>
           <div className="border-t border-line pt-16 lg:pt-20 lg:grid lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-7">
+            <FadeIn className="lg:col-span-7">
               <h2
                 className="font-display font-light text-ink tracking-[-0.03em] leading-[1.1] mb-6"
                 style={{ fontSize: "var(--text-h1)" }}
@@ -134,7 +141,7 @@ export function ServicePageBody({
               >
                 {service.cta.button}
               </Link>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>

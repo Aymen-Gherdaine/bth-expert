@@ -1,4 +1,5 @@
 import { RevealText } from "@/components/animations/RevealText";
+import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 
 interface MetaItem {
   label: string;
@@ -50,9 +51,9 @@ export function ServiceHero({ eyebrow, heading, subheading, meta }: ServiceHeroP
           </div>
 
           {meta && meta.length > 0 && (
-            <div className="mt-14 lg:mt-0 lg:col-span-3 lg:col-start-10 lg:border-s lg:border-line lg:ps-10 flex flex-col justify-center gap-8">
+            <FadeInStagger className="mt-14 lg:mt-0 lg:col-span-3 lg:col-start-10 lg:border-s lg:border-line lg:ps-10 flex flex-col justify-center gap-8">
               {meta.map((m) => (
-                <div key={m.label}>
+                <FadeInItem key={m.label}>
                   <div
                     className="font-sans uppercase tracking-[0.14em] text-muted mb-2"
                     style={{ fontSize: "var(--text-caption)" }}
@@ -65,9 +66,9 @@ export function ServiceHero({ eyebrow, heading, subheading, meta }: ServiceHeroP
                   >
                     {m.value}
                   </div>
-                </div>
+                </FadeInItem>
               ))}
-            </div>
+            </FadeInStagger>
           )}
         </div>
       </div>
