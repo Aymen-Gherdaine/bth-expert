@@ -29,7 +29,8 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 - [ ] (suite) migrer heroMeta/faq vers le pipeline i18n (fr→ar/en) quand souhaité
 
 ## Phase 6 — Mobile premium
-- [ ] `feat(mobile): sections mobile-native`
+- [x] `feat(mobile): gate pin choreography to desktop` — `ServicesPinScroll`, `MethodPinScroll` (mobile = rows pleine opacité, scannables ; hero/stats/services vérifiés premium à 390px)
+- [ ] (optionnel) bande image mobile pour les sections pin (image cachée < lg actuellement)
 
 ## Phase 7 — Polish motion
 - [ ] `refine(motion): cross-fade + élaguer`

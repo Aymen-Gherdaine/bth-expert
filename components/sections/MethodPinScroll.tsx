@@ -51,24 +51,9 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
       if (reduce) return;
 
       const rows = gsap.utils.toArray<HTMLElement>(section.querySelectorAll("[data-step]"));
-      const numEl = section.querySelector<HTMLElement>("[data-active-num]");
-      const fillEl = section.querySelector<HTMLElement>("[data-progress]");
 
-      const setActive = (i: number) => {
-        rows.forEach((r, j) =>
-          gsap.to(r, { opacity: j === i ? 1 : 0.32, duration: 0.4, ease: "power2.out" })
-        );
-        if (numEl) {
-          numEl.textContent = steps[i]?.number ?? String(i + 1).padStart(2, "0");
-          gsap.fromTo(
-            numEl,
-            { opacity: 0, yPercent: 12 },
-            { opacity: 1, yPercent: 0, duration: 0.5, ease: "expo.out" }
-          );
-        }
-      };
-
-      rows.forEach((row, i) => {
+      // ── Step reveal — every viewport ───────────────────────────────
+      rows.forEach((row) => {
         gsap.from(row, {
           opacity: 0,
           y: 24,
@@ -77,31 +62,56 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
           scrollTrigger: { trigger: row, start: "top 85%", once: true },
           onComplete: () => gsap.set(row, { clearProps: "opacity,transform" }),
         });
-        ScrollTrigger.create({
-          trigger: row,
-          start: "top 55%",
-          end: "bottom 55%",
-          onToggle: (self) => {
-            if (self.isActive) setActive(i);
-          },
-        });
       });
 
-      setActive(0);
+      // ── Pin choreography — desktop only (sticky panel is hidden < lg).
+      // On mobile the steps simply stack and read at full opacity.
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const numEl = section.querySelector<HTMLElement>("[data-active-num]");
+        const fillEl = section.querySelector<HTMLElement>("[data-progress]");
 
-      const rightCol = section.querySelector<HTMLElement>("[data-steps]");
-      if (fillEl && rightCol) {
-        gsap.fromTo(
-          fillEl,
-          { scaleY: 0 },
-          {
-            scaleY: 1,
-            ease: "none",
-            transformOrigin: "top center",
-            scrollTrigger: { trigger: rightCol, start: "top 60%", end: "bottom 70%", scrub: true },
+        const setActive = (i: number) => {
+          rows.forEach((r, j) =>
+            gsap.to(r, { opacity: j === i ? 1 : 0.32, duration: 0.4, ease: "power2.out" })
+          );
+          if (numEl) {
+            numEl.textContent = steps[i]?.number ?? String(i + 1).padStart(2, "0");
+            gsap.fromTo(
+              numEl,
+              { opacity: 0, yPercent: 12 },
+              { opacity: 1, yPercent: 0, duration: 0.5, ease: "expo.out" }
+            );
           }
-        );
-      }
+        };
+
+        rows.forEach((row, i) => {
+          ScrollTrigger.create({
+            trigger: row,
+            start: "top 55%",
+            end: "bottom 55%",
+            onToggle: (self) => {
+              if (self.isActive) setActive(i);
+            },
+          });
+        });
+
+        setActive(0);
+
+        const rightCol = section.querySelector<HTMLElement>("[data-steps]");
+        if (fillEl && rightCol) {
+          gsap.fromTo(
+            fillEl,
+            { scaleY: 0 },
+            {
+              scaleY: 1,
+              ease: "none",
+              transformOrigin: "top center",
+              scrollTrigger: { trigger: rightCol, start: "top 60%", end: "bottom 70%", scrub: true },
+            }
+          );
+        }
+      });
     },
     { scope: sectionRef }
   );
