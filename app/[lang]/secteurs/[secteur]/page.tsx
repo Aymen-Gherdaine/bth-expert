@@ -6,6 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { schemaService } from "@/lib/schema";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
+import { TerrainBackdrop } from "@/components/sections/Terrain";
 import fr from "@/dictionaries/fr.json";
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
@@ -114,9 +115,10 @@ export default async function SecteurPage({
         </div>
       </section>
 
-      {/* ── Punctuation — dark band restating the sector promise ── */}
-      <section className="bg-brand-deep">
-        <div className={`${PADX} py-24 lg:py-32`}>
+      {/* ── Punctuation — dark band over the sector's bespoke artwork ── */}
+      <section className="relative isolate overflow-hidden bg-brand-deep">
+        <TerrainBackdrop src={`/generated/sector-${secteur}.svg`} />
+        <div className={`relative z-10 ${PADX} py-24 lg:py-32`}>
           <FadeIn>
             <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
             <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">

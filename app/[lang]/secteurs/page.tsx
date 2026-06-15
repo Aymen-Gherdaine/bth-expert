@@ -5,6 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
+import { TerrainCover } from "@/components/sections/Terrain";
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
@@ -100,6 +101,9 @@ export default async function SecteursPage({
           </FadeInStagger>
         </div>
       </section>
+
+      {/* ── Closing terrain plate — bespoke topographic artwork ──── */}
+      <TerrainCover src="/generated/section-secteurs.svg" eyebrow={s.hero.eyebrow} />
     </>
   );
 }

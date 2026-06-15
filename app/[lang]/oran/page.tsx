@@ -50,7 +50,7 @@ export default async function OranPage({
 
       <OranBody services={o.services} zones={o.zones} nap={o.nap} />
 
-      <OranCtaBand lang={lang} cta={o.cta} />
+      <OranCtaBand lang={lang} cta={o.cta} art="/generated/section-oran.svg" />
     </>
   );
 }

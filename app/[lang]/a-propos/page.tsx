@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ServiceHero } from "@/components/sections/ServiceHero";
+import { TerrainCover } from "@/components/sections/Terrain";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { RevealText } from "@/components/animations/RevealText";
 import { SectionReveal } from "@/components/motion/SectionReveal";
@@ -154,6 +155,9 @@ export default async function AboutPage({
           </div>
         </Container>
       </div>
+
+      {/* ── Terrain plate — bespoke topographic artwork ──────── */}
+      <TerrainCover src="/generated/section-apropos.svg" eyebrow={a.hero.eyebrow} />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <Container>

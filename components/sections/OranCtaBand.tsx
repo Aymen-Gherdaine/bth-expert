@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { TerrainBackdrop } from "@/components/sections/Terrain";
 
 interface OranCtaBandProps {
   lang: string;
   cta: { heading: string; description: string; button: string };
+  art?: string;
 }
 
 /**
@@ -13,10 +15,11 @@ interface OranCtaBandProps {
  * heading, supporting line and a gold pill link to contact. Mirrors the
  * livrable band of ServicePageBody. Copy is dictionary-driven.
  */
-export function OranCtaBand({ lang, cta }: OranCtaBandProps) {
+export function OranCtaBand({ lang, cta, art }: OranCtaBandProps) {
   return (
-    <section className="bg-brand-deep">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
+    <section className="relative isolate overflow-hidden bg-brand-deep">
+      {art ? <TerrainBackdrop src={art} /> : null}
+      <div className="relative z-10 px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-end">
           <div className="lg:col-span-8">
             <FadeIn>

@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { TerrainBackdrop } from "@/components/sections/Terrain";
 
 interface EquipeCtaBandProps {
   lang: string;
   cta: { heading: string; description: string; button: string };
+  art?: string;
 }
 
 /**
@@ -14,10 +16,11 @@ interface EquipeCtaBandProps {
  * link to contact. Mirrors the livrable band of ServicePageBody so the team
  * page lands with the same editorial weight. Copy is dictionary-driven.
  */
-export function EquipeCtaBand({ lang, cta }: EquipeCtaBandProps) {
+export function EquipeCtaBand({ lang, cta, art }: EquipeCtaBandProps) {
   return (
-    <section className="bg-brand-deep">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
+    <section className="relative isolate overflow-hidden bg-brand-deep">
+      {art ? <TerrainBackdrop src={art} /> : null}
+      <div className="relative z-10 px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-end">
           <div className="lg:col-span-8">
             <FadeIn>

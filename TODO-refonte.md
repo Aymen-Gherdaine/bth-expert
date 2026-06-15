@@ -43,6 +43,9 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
   - 6 composants : `ServicesIndexList`, `ProjetNarrative`, `EquipeMembers`, `EquipeCtaBand`, `OranBody`, `OranCtaBand`
   - 0 asset / 0 clé i18n / 0 token ajouté (lecture seule fr.json + globals.css + composants partagés) ; build 0 warning, 64 pages SSG
   - contact laissé tel quel (déjà premium, « ca va »)
+- [x] `feat(art): imagerie vectorielle bespoke` — photo-gen hors crédits → 13 SVG « topographiques » palette marque générés par `scripts/gen-art.mjs` → `public/generated/`
+  - composant `Terrain.tsx` ; bandes terrain par secteur + projet (fond des bandes sombres) + plaques de clôture services/secteurs/projets/à-propos + bandes CTA oran/équipe
+  - CSS background + voile de lisibilité (pas de `<img>`) ; 0 clé i18n ; build 0 warning, vérifié live
 
 ## Phase 0 — Hygiène ✅ (voir plus haut)
 

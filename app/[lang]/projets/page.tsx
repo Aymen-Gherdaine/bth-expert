@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ProjectsFilter } from "@/components/sections/ProjectsFilter";
+import { TerrainCover } from "@/components/sections/Terrain";
 
 export async function generateMetadata({
   params,
@@ -58,6 +59,9 @@ export default async function ProjetsPage({
           </Section>
         </Container>
       </div>
+
+      {/* ── Closing terrain plate — bespoke topographic artwork ──── */}
+      <TerrainCover src="/generated/section-projets.svg" eyebrow={p.hero.eyebrow} />
     </>
   );
 }

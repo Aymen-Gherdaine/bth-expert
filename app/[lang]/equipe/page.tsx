@@ -56,7 +56,7 @@ export default async function EquipePage({
 
       <EquipeMembers members={eq.members} partner={eq.partner} />
 
-      <EquipeCtaBand lang={lang} cta={eq.cta} />
+      <EquipeCtaBand lang={lang} cta={eq.cta} art="/generated/section-equipe.svg" />
     </>
   );
 }
