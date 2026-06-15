@@ -53,11 +53,6 @@ export async function Footer({ lang }: FooterProps) {
             <h4 className={columnHeaderClass}>{dict.footer.navigation}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
-                <Link href={`/${lang}/a-propos`} className={linkClass}>
-                  {dict.footer.about}
-                </Link>
-              </li>
-              <li>
                 <Link href={`/${lang}/services`} className={linkClass}>
                   {dict.nav.services}
                 </Link>
@@ -68,6 +63,11 @@ export async function Footer({ lang }: FooterProps) {
                 </Link>
               </li>
               <li>
+                <Link href={`/${lang}/equipe`} className={linkClass}>
+                  {dict.nav.equipe}
+                </Link>
+              </li>
+              <li>
                 <Link href={`/${lang}/contact`} className={linkClass}>
                   {dict.nav.contact}
                 </Link>
@@ -75,20 +75,30 @@ export async function Footer({ lang }: FooterProps) {
             </ul>
           </div>
 
-          {/* Secteurs */}
+          {/* Expertises — the four service pages (aligned to the comp) */}
           <div className="lg:col-span-2">
-            <h4 className={columnHeaderClass}>{dict.nav.secteurs}</h4>{/* span balanced after removing Zones */}
+            <h4 className={columnHeaderClass}>Expertises</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
-              {dict.secteurs.list.map((secteur) => (
-                <li key={secteur.slug}>
-                  <Link
-                    href={`/${lang}/secteurs/${secteur.slug}`}
-                    className={linkClass}
-                  >
-                    {secteur.title}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href={`/${lang}/services/etude-impact-environnemental`} className={linkClass}>
+                  Étude d&apos;impact
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/services/etude-de-dangers`} className={linkClass}>
+                  Étude de dangers
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/services/audit-hse`} className={linkClass}>
+                  Audit HSE
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/services/plan-gestion-environnementale`} className={linkClass}>
+                  Plan de gestion
+                </Link>
+              </li>
             </ul>
           </div>
 
