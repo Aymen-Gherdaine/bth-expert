@@ -75,7 +75,7 @@ export function ScrollToTop() {
       </svg>
 
       {/* Core */}
-      <span className="relative grid h-[44px] w-[44px] place-items-center rounded-full bg-brand-deep/85 text-cream [backdrop-filter:blur(6px)] transition-colors duration-300 ease-[var(--ease-out-expo)] group-hover:bg-gold group-hover:text-brand-deep">
+      <span className="relative grid h-[44px] w-[44px] place-items-center rounded-full bg-brand-deep/90 text-cream transition-colors duration-300 ease-[var(--ease-out-expo)] group-hover:bg-gold group-hover:text-brand-deep">
         <svg
           width="16"
           height="16"

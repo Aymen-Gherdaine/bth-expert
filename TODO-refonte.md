@@ -5,7 +5,7 @@ Branche : `refonte/premium-storytelling` · Plan détaillé : [`docs/REFONTE-PLA
 Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaque commit.
 
 ## Phase 0 — Hygiène
-- [ ] `fix(header): retirer backdrop-blur` — `app/globals.css`
+- [x] `fix(header): retirer backdrop-blur` — globals.css + Header.tsx + ScrollToTop (0 backdrop-filter dans le code)
 
 ## Phase 1 — Hero
 - [x] `fix(hero): échelle typo + italique + i18n` — `page.tsx`
@@ -37,8 +37,7 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 - [x] `refine(motion): allonger la tenue du pin` — `ServicesPinScroll`, `MethodPinScroll`
 - [~] cross-fade des surfaces — **sauté** (gain marginal, tons cream proches, risque)
 
-## Phase 0 — Hygiène (reste)
-- [ ] `fix(header): retirer backdrop-blur` — `globals.css` + `Header.tsx` (violation blacklist §10, dernier item)
+## Phase 0 — Hygiène ✅ (voir plus haut)
 
 ---
 Légende : `[ ]` à faire · `[~]` en cours · `[x]` fait & commité

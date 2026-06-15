@@ -151,13 +151,10 @@
   color: var(--color-cream);
   transition: background-color 0.5s var(--ease-out-expo),
               border-color 0.5s var(--ease-out-expo),
-              color 0.5s var(--ease-out-expo),
-              backdrop-filter 0.5s var(--ease-out-expo);
+              color 0.5s var(--ease-out-expo);
 }
 #site-header[data-overlay="true"][data-solid="true"] header {
-  background-color: rgb(250 247 242 / 0.94);
-  backdrop-filter: blur(12px) saturate(1.4);
-  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  background-color: rgb(250 247 242 / 0.96);
   border-bottom-color: var(--color-line);
   color: var(--color-ink);
 }

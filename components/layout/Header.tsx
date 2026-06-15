@@ -40,7 +40,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
             "header-topbar h-9 overflow-hidden",
             overlay
               ? "border-b border-cream/10"
-              : "bg-white/85 [backdrop-filter:blur(12px)] border-b border-line/40",
+              : "bg-white/95 border-b border-line/40",
           ].join(" ")}
         >
           <Container className="h-full">
@@ -77,7 +77,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
             "h-16 lg:h-[4.5rem]",
             overlay
               ? "bg-transparent border-b border-transparent"
-              : "bg-white/90 [backdrop-filter:blur(12px)_saturate(1.4)] border-b border-line/50",
+              : "bg-white/95 border-b border-line/50",
           ].join(" ")}
         >
           <Container className="h-full">
