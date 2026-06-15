@@ -10,12 +10,6 @@ interface AboutSectionProps {
   lang: Locale;
 }
 
-const STATS = [
-  { value: "2009", label: "Année de fondation" },
-  { value: "17", label: "Années d'expertise" },
-  { value: "3", label: "Domaines d'intervention" },
-];
-
 export function AboutSection({ lang }: AboutSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const lineRef    = useRef<HTMLDivElement>(null);
@@ -114,19 +108,6 @@ export function AboutSection({ lang }: AboutSectionProps) {
           duration: 0.7,
           ease: "expo.out",
           scrollTrigger: { trigger: cta, start: "top 90%", once: true },
-        });
-      }
-
-      // ── Stats — rise in sequence ───────────────────────────────────
-      const stats = section.querySelectorAll<HTMLElement>("[data-about-stat]");
-      if (stats.length) {
-        gsap.from(stats, {
-          y: 44,
-          opacity: 0,
-          duration: 1,
-          ease: "expo.out",
-          stagger: 0.14,
-          scrollTrigger: { trigger: stats[0], start: "top 88%", once: true },
         });
       }
 
@@ -280,34 +261,6 @@ export function AboutSection({ lang }: AboutSectionProps) {
             </Link>
           </div>
 
-        </div>
-
-        {/* Stat band — ink numerals over warm cream, neutral hairlines */}
-        <div className="mt-24 lg:mt-32 grid grid-cols-1 sm:grid-cols-3 gap-y-12 gap-x-10">
-          {STATS.map((s) => (
-            <div key={s.label} data-about-stat>
-              <div
-                className="h-px mb-7"
-                style={{ backgroundColor: "var(--color-line)" }}
-              />
-              <span
-                className="block font-display font-light text-ink leading-none tracking-[-0.03em]"
-                style={{ fontSize: "clamp(3.5rem, 5.5vw + 1rem, 6.5rem)" }}
-              >
-                {s.value}
-              </span>
-              <span
-                className="mt-4 block font-sans uppercase"
-                style={{
-                  fontSize: "var(--text-caption)",
-                  letterSpacing: "0.18em",
-                  color: "var(--color-muted)",
-                }}
-              >
-                {s.label}
-              </span>
-            </div>
-          ))}
         </div>
 
       </div>

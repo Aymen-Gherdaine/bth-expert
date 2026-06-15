@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesPinScroll } from "@/components/sections/ServicesPinScroll";
+import { StatsBand } from "@/components/sections/StatsBand";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ZonesSection } from "@/components/sections/ZonesSection";
@@ -125,6 +126,9 @@ export default async function HomePage({
       {/* ── POST-HERO — scrolls over the pinned hero ─────────────────── */}
       {/* cream-soft plugs any gap from About's curtain retreat, keeps hero hidden */}
       <div className="relative z-10 bg-cream-soft">
+
+      {/* ── EN CHIFFRES — count-up credibility band right after the hero ── */}
+      <StatsBand stats={h.stats} />
 
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
       <AboutSection lang={lang} />
