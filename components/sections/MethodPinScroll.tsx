@@ -131,7 +131,7 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
           {/* Image band on mobile, sticky panel the steps scroll past on desktop */}
           <div className="lg:col-span-5 mb-12 lg:mb-0">
             <div className="lg:sticky lg:top-28">
-              <div className="relative aspect-[3/2] lg:aspect-[4/5] max-h-[34rem] w-full overflow-hidden rounded-[var(--radius-lg)] bg-brand-deep">
+              <div className="relative aspect-[3/2] lg:aspect-[4/5] max-h-[30rem] w-full overflow-hidden rounded-[var(--radius-lg)] bg-brand-deep">
                 <Image
                   src={image}
                   alt=""
@@ -179,7 +179,7 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
           {/* Steps */}
           <div data-steps className="lg:col-span-7 lg:col-start-6 border-b border-line">
             {steps.map((step) => (
-              <div key={step.number} data-step className="border-t border-line py-8 lg:py-10">
+              <div key={step.number} data-step className="border-t border-line py-8 lg:py-14">
                 <div className="flex items-start gap-5 lg:gap-7">
                   <span className="shrink-0 pt-1.5 w-9 font-display text-gold leading-none text-[length:var(--text-small)] tabular-nums">
                     {step.number}
