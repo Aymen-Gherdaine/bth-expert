@@ -9,6 +9,7 @@ import { ServicesPinScroll } from "@/components/sections/ServicesPinScroll";
 import { StatsBand } from "@/components/sections/StatsBand";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { StatementSection } from "@/components/sections/StatementSection";
 import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
@@ -138,6 +139,9 @@ export default async function HomePage({
 
       {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
       <ProjectsSection lang={lang} />
+
+      {/* ── STATEMENT — cream pause + clip-path photo wipe before the dark ── */}
+      <StatementSection lang={lang} />
 
       {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
       <ZonesSection lang={lang} />

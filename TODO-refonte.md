@@ -18,7 +18,7 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 ## Phase 3 — Sections signature
 - [x] ⭐ `feat(services): pin-scroll` — nouveau `ServicesPinScroll.tsx` **(proof, en premier)**
 - [x] `feat(stats): barre count-up` — nouveau `StatsBand.tsx` (consolidé, retiré d'About)
-- [ ] `feat(statement): brancher StatementSection` — `page.tsx`
+- [x] `feat(statement): brancher StatementSection` — `page.tsx` (+ bg froid→cream-warm)
 
 ## Phase 4 — Copy POV
 - [x] `content(copy): POV hero + about` — `dictionaries/fr.json` + `AboutSection.tsx`
