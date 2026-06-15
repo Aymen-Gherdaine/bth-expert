@@ -30,10 +30,15 @@ Règle : **1 case = 1 commit**, `npm run build` 0 erreur / 0 warning avant chaqu
 
 ## Phase 6 — Mobile premium
 - [x] `feat(mobile): gate pin choreography to desktop` — `ServicesPinScroll`, `MethodPinScroll` (mobile = rows pleine opacité, scannables ; hero/stats/services vérifiés premium à 390px)
-- [ ] (optionnel) bande image mobile pour les sections pin (image cachée < lg actuellement)
+- [x] bande image mobile pour les sections pin — ajoutée (`ServicesPinScroll` + `MethodPinScroll`)
 
 ## Phase 7 — Polish motion
-- [ ] `refine(motion): cross-fade + élaguer`
+- [x] `feat(a11y): reduced-motion pour framer-motion` — `MotionProvider` global (MotionConfig)
+- [x] `refine(motion): allonger la tenue du pin` — `ServicesPinScroll`, `MethodPinScroll`
+- [~] cross-fade des surfaces — **sauté** (gain marginal, tons cream proches, risque)
+
+## Phase 0 — Hygiène (reste)
+- [ ] `fix(header): retirer backdrop-blur` — `globals.css` + `Header.tsx` (violation blacklist §10, dernier item)
 
 ---
 Légende : `[ ]` à faire · `[~]` en cours · `[x]` fait & commité
