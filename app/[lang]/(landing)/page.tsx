@@ -56,7 +56,7 @@ export default async function HomePage({
           Same mechanism as the footer reveal: the hero is sticky (z-0) inside
           the tall <main>, the post-hero block (z-10, opaque) slides over it. */}
       <HeroCurtain>
-        <section className="relative min-h-screen flex items-end overflow-hidden pb-20 lg:pb-32 bg-brand-deep">
+        <section className="relative min-h-screen flex items-end overflow-hidden pb-16 lg:pb-24 bg-brand-deep">
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
           <HeroBackground src="/hero.webp" />
 
