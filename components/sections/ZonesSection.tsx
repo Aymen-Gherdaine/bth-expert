@@ -53,6 +53,7 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
   const glowRef = useRef<SVGCircleElement>(null);
   const pulseRef = useRef<SVGCircleElement>(null);
   const dotRef = useRef<SVGCircleElement>(null);
+  const wilayasRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -85,7 +86,8 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
         .from(lineRef.current, { scaleX: 0, transformOrigin: "left center", duration: 0.8 }, 0.15)
         .from(split.lines, { opacity: 0, y: 28, duration: 0.95, stagger: 0.1 }, 0.2)
         .from(addressRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.55)
-        .from(linksRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.7);
+        .from(linksRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.7)
+        .from(wilayasRef.current, { opacity: 0, y: 14, duration: 0.7 }, 0.85);
 
       // ── Map — its own slower choreography, in parallel ──────────────
       const tl = gsap.timeline({
@@ -313,6 +315,15 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
             </Link>
           </div>
 
+          <div ref={wilayasRef} className="mt-9 pt-7 border-t border-cream/10">
+            <p className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.18em] text-gold/80 mb-3">
+              Wilayas couvertes
+            </p>
+            <p className="text-[length:var(--text-small)] text-cream/55 leading-[1.8] max-w-md">
+              Oran · Mostaganem · Tlemcen · Sidi Bel Abbès · Relizane · Mascara · Aïn
+              Témouchent · Tiaret · Saïda
+            </p>
+          </div>
         </div>
       </div>
     </section>
