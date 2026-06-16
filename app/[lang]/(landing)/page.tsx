@@ -78,6 +78,7 @@ export default async function HomePage({
 
           <Container className="relative z-10">
             <div className="max-w-4xl">
+              <span aria-hidden className="block w-14 h-px bg-gold mb-7 origin-left" />
               <RevealText
                 className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
                 delay={0.1}
