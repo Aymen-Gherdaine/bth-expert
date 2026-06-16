@@ -19,7 +19,7 @@ const sizes = {
 } as const;
 
 const base =
-  "inline-flex items-center justify-center font-medium tracking-tight rounded-sm transition-[background-color,color,border-color] duration-300 ease-[var(--ease-out-expo)]";
+  "inline-flex items-center justify-center font-medium tracking-tight rounded-sm transition-[background-color,color,border-color,transform] duration-300 ease-[var(--ease-out-expo)] hover:scale-[1.02] active:scale-[0.98]";
 
 type LinkProps = {
   href: string;

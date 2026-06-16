@@ -200,7 +200,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
                   className={`col-span-2 ${layout.num} font-display text-gold leading-none tabular-nums`}
                   style={{ fontSize: "clamp(1.25rem, 1rem + 1vw, 1.875rem)" }}
                 >
-                  <span className="inline-block transition-[scale] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-[1.08]">
+                  <span className="inline-block transition-[scale] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-[1.12]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </span>

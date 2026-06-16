@@ -60,8 +60,8 @@ export function EquipeMembers({ members, partner }: EquipeMembersProps) {
                       className="object-cover"
                     />
                   ) : (
-                    <div className="absolute inset-0 grid place-items-center border border-line">
-                      <span className="font-display font-light text-muted leading-none text-[clamp(4rem,8vw,7rem)]">
+                    <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-gold/10 to-brand/20 ring-1 ring-inset ring-line/60">
+                      <span className="font-display font-light text-muted/70 leading-none text-[clamp(4rem,8vw,7rem)]">
                         {member.name.charAt(0)}
                       </span>
                     </div>

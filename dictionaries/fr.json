@@ -11,7 +11,8 @@
     "apropos": "À propos",
     "blog": "Blog",
     "contact": "Contact",
-    "quote": "Demander un devis"
+    "quote": "Demander un devis",
+    "skipToContent": "Passer au contenu"
   },
   "footer": {
     "rights": "Tous droits réservés",
@@ -47,12 +48,12 @@
     },
     "form": {
       "name": "Nom complet",
-      "email": "Courriel",
-      "phone": "Téléphone",
+      "email": "Email (optionnel)",
+      "phone": "Téléphone / WhatsApp",
       "namePlaceholder": "Votre nom complet",
       "emailPlaceholder": "Votre adresse e-mail",
-      "phonePlaceholder": "Votre numéro de téléphone",
-      "messagePlaceholder": "Décrivez votre projet en quelques mots",
+      "phonePlaceholder": "+213 6XX XX XX XX",
+      "messagePlaceholder": "Décrivez votre projet en quelques mots — nous vous rappelons pour en discuter",
       "projectType": "Type de projet",
       "projectTypePlaceholder": "Sélectionnez un type",
       "projectTypeOptions": {
@@ -62,13 +63,14 @@
         "conformite": "Conformité réglementaire",
         "autre": "Autre"
       },
-      "message": "Message",
-      "consentPrefix": "En cochant cette case, j'accepte la",
-      "consentLink": "politique de confidentialité",
-      "submit": "Envoyer le message",
+      "message": "Message (facultatif)",
+      "privacyNote": "Vos données sont utilisées uniquement pour vous répondre.",
+      "whatsapp": "Discuter sur WhatsApp",
+      "responseTime": "Réponse sous 24h garantie",
+      "submit": "Envoyer ma demande",
       "submitting": "Envoi en cours...",
       "successTitle": "Message envoyé.",
-      "successMessage": "Merci, nous vous répondrons sous 48 heures.",
+      "successMessage": "Merci, nous vous répondrons sous 24 heures.",
       "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.dz."
     },
     "process": {
@@ -496,7 +498,7 @@
       "headlineEmphasis": "environnementale",
       "headlinePart2": "& industrielle",
       "subheading": "Bureau d'études agréé depuis 2009. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.",
-      "cta": "Demander un devis",
+      "cta": "Discutons",
       "ctaSecondary": "Nos services"
     },
     "services": {
@@ -552,6 +554,16 @@
       "cta": "Demander un devis",
       "phone": "+213 670 70 81 38",
       "email": "info@bthexpert.dz"
+    },
+    "faq": {
+      "heading": "Questions fréquentes",
+      "items": [
+        { "q": "Quels projets nécessitent une étude d'impact en Algérie ?", "a": "Tout projet figurant sur la liste du décret exécutif 07-144 (installations classées, carrières, projets hydrauliques, etc.) doit faire l'objet d'une EIE avant toute autorisation de construire ou d'exploiter." },
+        { "q": "Quel est le délai moyen pour obtenir une autorisation environnementale ?", "a": "Comptez 2 à 6 mois selon l'ampleur du projet et la wilaya. L'étude elle-même prend de quelques semaines à plusieurs mois ; la phase d'enquête publique (pour les grands projets) allonge le délai." },
+        { "q": "BTH Expert intervient-il hors d'Oran ?", "a": "Oui. Basé à Oran, nous intervenons dans toute l'Algérie, avec une concentration sur l'Ouest algérien : Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane et les wilayas limitrophes." },
+        { "q": "Qu'est-ce qu'un agrément Ministère de l'Environnement ?", "a": "C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé depuis 2009." },
+        { "q": "Combien coûte une étude environnementale ?", "a": "Le coût dépend du type d'étude, de l'ampleur du projet et de sa localisation. Nous établissons un devis personnalisé après une consultation initiale gratuite. Contactez-nous pour en discuter." }
+      ]
     }
   }
 }

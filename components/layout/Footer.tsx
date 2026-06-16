@@ -41,7 +41,6 @@ export async function Footer({ lang }: FooterProps) {
               {dict.metadata.homeDescription}
             </p>
             <div className="flex gap-6 text-sm text-[var(--color-on-brand-muted)]">
-              {/* TODO: real profile URLs once the client provides them */}
               <a href="#" aria-label="LinkedIn" className={linkClass}>
                 LinkedIn
               </a>
@@ -52,7 +51,7 @@ export async function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Navigation */}
-          <div className="lg:col-span-3">
+          <div className="col-span-1 lg:col-span-3">
             <h4 className={columnHeaderClass}>{dict.footer.navigation}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
@@ -79,7 +78,7 @@ export async function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Expertises — the four service pages (aligned to the comp) */}
-          <div className="lg:col-span-2">
+          <div className="col-span-1 lg:col-span-2">
             <h4 className={columnHeaderClass}>Expertises</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
@@ -106,7 +105,7 @@ export async function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-3">
+          <div className="col-span-2 lg:col-span-3">
             <h4 className={columnHeaderClass}>{dict.nav.contact}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>

@@ -42,7 +42,7 @@ export function EquipeCtaBand({ lang, cta, art }: EquipeCtaBandProps) {
           <FadeIn delay={0.15} className="mt-10 lg:mt-0 lg:col-span-4 lg:flex lg:justify-end">
             <Link
               href={`/${lang}/contact`}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:gap-3 transition-[background-color,gap] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:gap-3 hover:tracking-[0.01em] hover:scale-[1.02] active:scale-[0.98] transition-[background-color,gap,letter-spacing,transform] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {cta.button}
               <span aria-hidden>→</span>

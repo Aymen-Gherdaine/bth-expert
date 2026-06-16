@@ -137,7 +137,7 @@ export function ServicePageBody({
               </p>
               <Link
                 href={`/${lang}/contact`}
-                className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] hover:scale-[1.02] active:scale-[0.98] transition-[background-color,letter-spacing,transform] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
               >
                 {service.cta.button}
               </Link>

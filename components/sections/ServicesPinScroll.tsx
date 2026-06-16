@@ -93,13 +93,17 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
             numEl.textContent = String(i + 1).padStart(2, "0");
             gsap.fromTo(
               numEl,
-              { opacity: 0, yPercent: 12 },
-              { opacity: 1, yPercent: 0, duration: 0.5, ease: "expo.out" }
+              { opacity: 0, yPercent: 12, xPercent: -6, scale: 0.85 },
+              { opacity: 1, yPercent: 0, xPercent: 0, scale: 1, duration: 0.55, ease: "expo.out" }
             );
           }
           if (labelEl) {
             labelEl.textContent = services.items[i]?.abbr ?? "";
-            gsap.fromTo(labelEl, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "expo.out" });
+            gsap.fromTo(
+              labelEl,
+              { opacity: 0, yPercent: -12 },
+              { opacity: 1, yPercent: 0, duration: 0.45, ease: "expo.out" }
+            );
           }
         };
 

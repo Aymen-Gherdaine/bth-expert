@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaLocalBusiness } from "@/lib/schema";
+import { schemaLocalBusiness, schemaFAQ } from "@/lib/schema";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
@@ -14,7 +14,9 @@ import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
 import { HeroBackground } from "@/components/motion/HeroBackground";
+import { HeroFilet } from "@/components/motion/HeroFilet";
 import { CtaVideo } from "@/components/motion/CtaVideo";
+import { Faq } from "@/components/sections/Faq";
 
 export async function generateMetadata({
   params,
@@ -44,6 +46,7 @@ export default async function HomePage({
   const h = dict.home;
 
   const jsonLd = schemaLocalBusiness();
+  const jsonLdFaq = schemaFAQ(h.faq.items.map((i) => ({ question: i.q, answer: i.a })));
 
   return (
     <>
@@ -51,12 +54,16 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
 
       {/* ── HERO — pinned full-bleed; the next section covers it on scroll ──
           Same mechanism as the footer reveal: the hero is sticky (z-0) inside
           the tall <main>, the post-hero block (z-10, opaque) slides over it. */}
       <HeroCurtain>
-        <section className="relative min-h-svh flex items-center lg:items-end overflow-hidden py-28 lg:py-0 lg:pb-24 bg-brand-deep">
+        <section className="relative min-h-svh flex items-end overflow-hidden pt-20 pb-24 lg:py-0 lg:pb-24 bg-brand-deep">
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
           <HeroBackground src="/hero.webp" />
 
@@ -78,7 +85,7 @@ export default async function HomePage({
 
           <Container className="relative z-10">
             <div className="max-w-4xl">
-              <span aria-hidden className="block w-14 h-px bg-gold mb-7 origin-left" />
+              <HeroFilet className="block w-14 h-px bg-gold mb-7 origin-left" />
               <RevealText
                 className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
                 delay={0.1}
@@ -88,7 +95,7 @@ export default async function HomePage({
 
               <RevealText
                 as="h1"
-                className="font-display font-medium text-cream leading-[1.1] sm:leading-[1.04] tracking-[-0.03em]"
+                className="font-display font-light text-cream leading-[1.1] sm:leading-[1.04] tracking-[-0.03em]"
                 style={{ fontSize: "var(--text-hero)" }}
                 delay={0.25}
               >
@@ -107,7 +114,7 @@ export default async function HomePage({
               </RevealText>
 
               <RevealText
-                className="block mt-8 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
+                className="block mt-8 font-sans text-cream text-[length:var(--text-body)] max-w-xl leading-relaxed"
                 delay={0.6}
               >
                 {h.hero.subheading}
@@ -155,6 +162,9 @@ export default async function HomePage({
 
       {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
       <ZonesSection lang={lang} />
+
+      {/* ── FAQ — credibility + SEO, natural break before CTA ───────────── */}
+      <Faq heading={h.faq.heading} items={h.faq.items} />
 
       {/* ── CTA CONTACT — full-bleed image section, breaks the green wall ── */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-deep">

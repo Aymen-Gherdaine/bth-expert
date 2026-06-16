@@ -17,7 +17,7 @@ export default async function LandingLayout({
     <>
       <Header lang={lang} overlay />
       {/* relative z-10 + opaque bg: slides over the sticky footer (reveal effect) */}
-      <main className="relative z-10 bg-cream">{children}</main>
+      <main id="main-content" className="relative z-10 bg-cream">{children}</main>
       <Footer lang={lang} />
       <ScrollToTop />
     </>

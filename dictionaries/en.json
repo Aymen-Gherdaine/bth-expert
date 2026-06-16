@@ -11,7 +11,8 @@
     "apropos": "About",
     "blog": "Blog",
     "contact": "Contact",
-    "quote": "Request a Quote"
+    "quote": "Request a Quote",
+    "skipToContent": "Skip to content"
   },
   "footer": {
     "rights": "All rights reserved",
@@ -47,12 +48,12 @@
     },
     "form": {
       "name": "Full name",
-      "email": "Email",
-      "phone": "Phone",
+      "email": "Email (optional)",
+      "phone": "Phone / WhatsApp",
       "namePlaceholder": "Your full name",
       "emailPlaceholder": "Your email address",
-      "phonePlaceholder": "Your phone number",
-      "messagePlaceholder": "Briefly describe your project",
+      "phonePlaceholder": "+213 6XX XX XX XX",
+      "messagePlaceholder": "Briefly describe your project — we will call you to discuss",
       "projectType": "Project type",
       "projectTypePlaceholder": "Select a type",
       "projectTypeOptions": {
@@ -62,13 +63,14 @@
         "conformite": "Regulatory compliance",
         "autre": "Other"
       },
-      "message": "Message",
-      "consentPrefix": "By ticking this box, I accept the",
-      "consentLink": "privacy policy",
-      "submit": "Send message",
+      "message": "Message (optional)",
+      "privacyNote": "Your data is used solely to respond to your enquiry.",
+      "whatsapp": "Chat on WhatsApp",
+      "responseTime": "Response within 24h guaranteed",
+      "submit": "Send my request",
       "submitting": "Sending...",
       "successTitle": "Message sent.",
-      "successMessage": "Thank you, we will reply within 48 hours.",
+      "successMessage": "Thank you, we will reply within 24 hours.",
       "errorMessage": "Something went wrong. Please try again or email us directly at info@bthexpert.dz."
     },
     "process": {
@@ -496,7 +498,7 @@
       "headlineEmphasis": "& industrial",
       "headlinePart2": "expertise",
       "subheading": "Certified consultancy since 2009. Impact assessments, hazard studies, HSE audits — from project inception to regulatory compliance.",
-      "cta": "Request a Quote",
+      "cta": "Let's talk",
       "ctaSecondary": "Our services"
     },
     "services": {
@@ -552,6 +554,16 @@
       "cta": "Request a Quote",
       "phone": "+213 670 70 81 38",
       "email": "info@bthexpert.dz"
+    },
+    "faq": {
+      "heading": "Frequently asked questions",
+      "items": [
+        { "q": "Which projects require an environmental impact assessment in Algeria?", "a": "Any project listed under executive decree 07-144 (classified facilities, quarries, hydraulic projects, etc.) must undergo an EIA before any construction or operating permit can be granted." },
+        { "q": "How long does it take to obtain an environmental permit?", "a": "Allow 2 to 6 months depending on the scale of the project and the wilaya. The study itself takes from a few weeks to several months; the public inquiry phase (for large projects) extends the timeline." },
+        { "q": "Does BTH Expert operate outside Oran?", "a": "Yes. Based in Oran, we operate throughout Algeria, with a focus on western Algeria: Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane and neighbouring wilayas." },
+        { "q": "What is a Ministry of Environment accreditation?", "a": "It is an official accreditation issued by the Ministry of Environment and Quality of Life, certifying that the consultancy is authorised to carry out EIAs and hazard studies. BTH Expert has been accredited since 2009." },
+        { "q": "How much does an environmental study cost?", "a": "The cost depends on the type of study, the scale of the project and its location. We provide a personalised quote after a free initial consultation. Contact us to discuss." }
+      ]
     }
   }
 }
