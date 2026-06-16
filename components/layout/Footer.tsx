@@ -12,8 +12,10 @@ interface FooterProps {
 const linkClass =
   "hover:text-[var(--color-gold)] transition-colors duration-300 ease-[var(--ease-out-expo)]";
 
-const columnHeaderClass =
-  "text-xs uppercase tracking-widest text-gold mb-4 pt-4 border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))]";
+const columnHeaderClass = "text-xs uppercase tracking-widest text-gold mb-4";
+
+const dividerClass =
+  "pt-4 border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))]";
 
 export async function Footer({ lang }: FooterProps) {
   const dict = await getDictionary(lang);
@@ -57,62 +59,64 @@ export async function Footer({ lang }: FooterProps) {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div className="col-span-1 lg:col-span-3">
-            <h4 className={columnHeaderClass}>{dict.footer.navigation}</h4>
-            <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
-              <li>
-                <Link href={`/${lang}/services`} className={linkClass}>
-                  {dict.nav.services}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/projets`} className={linkClass}>
-                  {dict.nav.projets}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/equipe`} className={linkClass}>
-                  {dict.nav.equipe}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/contact`} className={linkClass}>
-                  {dict.nav.contact}
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation + Expertises — share one continuous divider, not two broken halves */}
+          <div className={`col-span-2 lg:col-span-5 grid grid-cols-2 lg:grid-cols-5 gap-x-8 ${dividerClass}`}>
+            <div className="lg:col-span-3">
+              <h4 className={columnHeaderClass}>{dict.footer.navigation}</h4>
+              <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+                <li>
+                  <Link href={`/${lang}/services`} className={linkClass}>
+                    {dict.nav.services}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/projets`} className={linkClass}>
+                    {dict.nav.projets}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/equipe`} className={linkClass}>
+                    {dict.nav.equipe}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/contact`} className={linkClass}>
+                    {dict.nav.contact}
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Expertises — the four service pages (aligned to the comp) */}
-          <div className="col-span-1 lg:col-span-2">
-            <h4 className={columnHeaderClass}>Expertises</h4>
-            <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
-              <li>
-                <Link href={`/${lang}/services/etude-impact-environnemental`} className={linkClass}>
-                  Étude d&apos;impact
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services/etude-de-dangers`} className={linkClass}>
-                  Étude de dangers
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services/audit-hse`} className={linkClass}>
-                  Audit HSE
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services/plan-gestion-environnementale`} className={linkClass}>
-                  Plan de gestion
-                </Link>
-              </li>
-            </ul>
+            {/* Expertises — the four service pages (aligned to the comp) */}
+            <div className="lg:col-span-2">
+              <h4 className={columnHeaderClass}>Expertises</h4>
+              <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+                <li>
+                  <Link href={`/${lang}/services/etude-impact-environnemental`} className={linkClass}>
+                    Étude d&apos;impact
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/services/etude-de-dangers`} className={linkClass}>
+                    Étude de dangers
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/services/audit-hse`} className={linkClass}>
+                    Audit HSE
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/services/plan-gestion-environnementale`} className={linkClass}>
+                    Plan de gestion
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Contact */}
-          <div className="col-span-2 lg:col-span-3">
+          <div className={`col-span-2 lg:col-span-3 ${dividerClass}`}>
             <h4 className={columnHeaderClass}>{dict.nav.contact}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
