@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaLocalBusiness } from "@/lib/schema";
+import { schemaLocalBusiness, schemaFAQ } from "@/lib/schema";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
@@ -16,6 +16,7 @@ import { HeroCurtain } from "@/components/motion/HeroCurtain";
 import { HeroBackground } from "@/components/motion/HeroBackground";
 import { HeroFilet } from "@/components/motion/HeroFilet";
 import { CtaVideo } from "@/components/motion/CtaVideo";
+import { Faq } from "@/components/sections/Faq";
 
 export async function generateMetadata({
   params,
@@ -45,12 +46,17 @@ export default async function HomePage({
   const h = dict.home;
 
   const jsonLd = schemaLocalBusiness();
+  const jsonLdFaq = schemaFAQ(h.faq.items.map((i) => ({ question: i.q, answer: i.a })));
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
 
       {/* ── HERO — pinned full-bleed; the next section covers it on scroll ──
@@ -156,6 +162,9 @@ export default async function HomePage({
 
       {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
       <ZonesSection lang={lang} />
+
+      {/* ── FAQ — credibility + SEO, natural break before CTA ───────────── */}
+      <Faq heading={h.faq.heading} items={h.faq.items} />
 
       {/* ── CTA CONTACT — full-bleed image section, breaks the green wall ── */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-deep">

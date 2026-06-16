@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaService } from "@/lib/schema";
+import { schemaService, schemaFAQ } from "@/lib/schema";
 import { ServicePageBody } from "@/components/sections/ServicePageBody";
 
 const PATH = "/services/audit-hse";
@@ -59,12 +59,17 @@ export default async function HSEPage({
     description: dict.hse.meta.description,
     serviceType: "Audit HSE",
   });
+  const jsonLdFaq = schemaFAQ(faq.map((i) => ({ question: i.q, answer: i.a })));
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
       <ServicePageBody lang={lang} service={dict.hse} heroMeta={heroMeta} faq={faq} />
     </>

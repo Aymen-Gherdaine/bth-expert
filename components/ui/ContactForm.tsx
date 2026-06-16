@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import type { Dictionary } from "@/lib/i18n";
@@ -142,14 +141,11 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
             <div data-form-field>
               <label htmlFor="email" className={labelCls}>
                 {dict.email}
-                <Required />
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
-                required
-                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                 placeholder={dict.emailPlaceholder}
                 className={inputCls}
                 autoComplete="email"
@@ -158,11 +154,13 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
             <div data-form-field>
               <label htmlFor="phone" className={labelCls}>
                 {dict.phone}
+                <Required />
               </label>
               <input
                 id="phone"
                 name="phone"
                 type="tel"
+                required
                 placeholder={dict.phonePlaceholder}
                 className={inputCls}
                 autoComplete="tel"
@@ -201,32 +199,10 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
             <textarea
               id="message"
               name="message"
-              required
               rows={4}
               placeholder={dict.messagePlaceholder}
               className={`${inputCls} resize-none`}
             />
-          </div>
-
-          <div data-form-field>
-            <label className="flex items-start gap-3 cursor-pointer text-[length:var(--text-small)] text-ink-soft leading-[1.6]">
-              <input
-                type="checkbox"
-                name="consent"
-                required
-                className="mt-1 size-4 shrink-0 accent-[var(--color-brand)]"
-              />
-              <span>
-                {dict.consentPrefix}{" "}
-                <Link
-                  href={`/${lang}/confidentialite`}
-                  className="underline underline-offset-2 hover:text-gold transition-colors duration-[var(--duration-fast)] ease-[var(--ease-out-expo)]"
-                >
-                  {dict.consentLink}
-                </Link>
-                .<Required />
-              </span>
-            </label>
           </div>
 
           {state === "error" && (
@@ -234,6 +210,10 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               {dict.errorMessage}
             </p>
           )}
+
+          <p className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
+            {dict.privacyNote}
+          </p>
 
           <div data-form-field>
             <button
