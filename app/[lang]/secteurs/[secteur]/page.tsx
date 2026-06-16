@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaService } from "@/lib/schema";
+import { schemaService, schemaBreadcrumb } from "@/lib/schema";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
@@ -52,6 +52,10 @@ export default async function SecteurPage({
     description: item.tagline,
     serviceType: item.title,
   });
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },
+    { name: item.title, url: `https://bthexpert.com/${lang}/secteurs/${secteur}` },
+  ]);
 
   const chipCls =
     "inline-flex items-center rounded-full border border-line px-4 py-2 text-[length:var(--text-small)] text-ink-soft transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] hover:border-gold hover:text-ink";
@@ -61,6 +65,10 @@ export default async function SecteurPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
       {/* ── Hero — shared editorial light hero ───────────────── */}
