@@ -56,7 +56,7 @@ export default async function HomePage({
           Same mechanism as the footer reveal: the hero is sticky (z-0) inside
           the tall <main>, the post-hero block (z-10, opaque) slides over it. */}
       <HeroCurtain>
-        <section className="relative min-h-[82svh] lg:min-h-screen flex items-end overflow-hidden pb-16 lg:pb-24 bg-brand-deep">
+        <section className="relative min-h-svh flex items-center lg:items-end overflow-hidden py-28 lg:py-0 lg:pb-24 bg-brand-deep">
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
           <HeroBackground src="/hero.webp" />
 
@@ -92,8 +92,17 @@ export default async function HomePage({
                 delay={0.25}
               >
                 {h.hero.headlinePart1}{" "}
-                <span className="italic">{h.hero.headlineEmphasis}</span>{" "}
-                {h.hero.headlinePart2}
+                <span className="italic font-normal">{h.hero.headlineEmphasis}</span>{" "}
+                {(() => {
+                  const [lead, ...rest] = h.hero.headlinePart2.split(" ");
+                  if (lead !== "&") return h.hero.headlinePart2;
+                  return (
+                    <>
+                      <span className="italic font-light">{"&"}</span>
+                      {rest.length ? ` ${rest.join(" ")}` : ""}
+                    </>
+                  );
+                })()}
               </RevealText>
 
               <RevealText
@@ -120,7 +129,7 @@ export default async function HomePage({
             </div>
           </Container>
 
-          <span aria-hidden className="scroll-pulse absolute bottom-8 right-8 lg:bottom-10 lg:right-12 z-10" />
+          <span aria-hidden className="scroll-pulse absolute bottom-6 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:bottom-10 lg:right-12 z-10" />
         </section>
       </HeroCurtain>
 
