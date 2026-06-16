@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "./Container";
 import { LangSwitcher } from "./LangSwitcher";
 import { getDictionary, type Locale } from "@/lib/i18n";
+import { socialLinks } from "@/lib/social-links";
 
 interface FooterProps {
   lang: Locale;
@@ -40,13 +41,19 @@ export async function Footer({ lang }: FooterProps) {
             <p className="text-[var(--color-on-brand-muted)] text-sm leading-relaxed max-w-sm mb-6">
               {dict.metadata.homeDescription}
             </p>
-            <div className="flex gap-6 text-sm text-[var(--color-on-brand-muted)]">
-              <a href="#" aria-label="LinkedIn" className={linkClass}>
-                LinkedIn
-              </a>
-              <a href="#" aria-label="Facebook" className={linkClass}>
-                Facebook
-              </a>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="flex items-center justify-center size-9 rounded-full bg-cream/10 text-cream hover:bg-gold hover:text-brand-deep transition-colors duration-300 ease-[var(--ease-out-expo)]"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="size-4">
+                    <path d={social.path} />
+                  </svg>
+                </a>
+              ))}
             </div>
           </div>
 
