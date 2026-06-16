@@ -161,8 +161,11 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
 
         {/* ── Pin grid ───────────────────────────────────────────── */}
         <div className="mt-14 lg:mt-20 lg:grid lg:grid-cols-12 lg:gap-14 xl:gap-16">
-          {/* LEFT — image band on mobile, sticky panel the rows scroll past on desktop */}
-          <div className="lg:col-span-5 mb-12 lg:mb-0">
+          {/* LEFT — sticky panel the rows scroll past on desktop. Hidden on
+              mobile: with no pin the panel would freeze on "01" and read as a
+              broken visual divorced from the list. Mobile shows the numbered
+              rows alone, each carrying its own index. */}
+          <div className="hidden lg:col-span-5 lg:mb-0 lg:block">
             <div className="lg:sticky lg:top-28">
               <div className="relative aspect-[3/2] lg:aspect-[4/5] max-h-[30rem] w-full overflow-hidden rounded-[var(--radius-lg)] bg-brand-deep">
                 <div

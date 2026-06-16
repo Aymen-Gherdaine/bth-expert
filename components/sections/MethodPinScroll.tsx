@@ -148,10 +148,13 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
                       "linear-gradient(180deg, rgb(10 22 13 / 0.45) 0%, rgb(8 14 9 / 0.82) 100%)",
                   }}
                 />
+                {/* Big active number — desktop only; on mobile there is no
+                    pin to drive it, so it would freeze on "01" and read as a
+                    broken "step 1" label over the banner. */}
                 <span
                   data-active-num
                   aria-hidden
-                  className="absolute left-7 bottom-12 font-display font-light text-cream/90 leading-none"
+                  className="hidden lg:block absolute left-7 bottom-12 font-display font-light text-cream/90 leading-none"
                   style={{ fontSize: "8rem", letterSpacing: "-0.03em" }}
                 >
                   {steps[0]?.number ?? "01"}
@@ -164,7 +167,7 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
                 </span>
                 <span
                   aria-hidden
-                  className="absolute right-7 top-8 bottom-8 w-px bg-cream/15 overflow-hidden"
+                  className="hidden lg:block absolute right-7 top-8 bottom-8 w-px bg-cream/15 overflow-hidden"
                 >
                   <span
                     data-progress
