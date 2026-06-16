@@ -290,7 +290,12 @@ header[data-overlay="true"] .lang-switcher-locale:hover {
   transform: scaleX(1);
 }
 .nav-link[aria-current="page"] {
-  color: var(--color-ink);
+  color: var(--color-gold);
+}
+.nav-link[aria-current="page"]::after {
+  height: 2px;
+  bottom: -5px;
+  background: var(--color-gold);
 }
 
 /* ─────────────────────────────────────────────────────────────

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
-import { ServiceHero } from "@/components/sections/ServiceHero";
+import { TerrainHero } from "@/components/sections/TerrainHero";
 import { ServicesIndexList } from "@/components/sections/ServicesIndexList";
-import { TerrainCover } from "@/components/sections/Terrain";
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
@@ -61,7 +60,8 @@ export default async function ServicesPage({
       />
 
       {/* ── Hero — shared editorial light hero ─────────────────── */}
-      <ServiceHero
+      <TerrainHero
+        src="/generated/section-services.svg"
         eyebrow={s.hero.eyebrow}
         heading={s.hero.heading}
         subheading={s.hero.subheading}
@@ -73,9 +73,6 @@ export default async function ServicesPage({
           <ServicesIndexList items={indexItems} />
         </div>
       </section>
-
-      {/* ── Closing terrain plate — bespoke topographic artwork ──── */}
-      <TerrainCover src="/generated/section-services.svg" eyebrow={s.hero.eyebrow} />
     </>
   );
 }

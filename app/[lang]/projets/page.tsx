@@ -4,9 +4,8 @@ import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
-import { ServiceHero } from "@/components/sections/ServiceHero";
+import { TerrainHero } from "@/components/sections/TerrainHero";
 import { ProjectsFilter } from "@/components/sections/ProjectsFilter";
-import { TerrainCover } from "@/components/sections/Terrain";
 
 export async function generateMetadata({
   params,
@@ -45,7 +44,8 @@ export default async function ProjetsPage({
       />
 
       {/* ── Hero — shared editorial ServiceHero (was a flat pt-32 block) ─ */}
-      <ServiceHero
+      <TerrainHero
+        src="/generated/section-projets.svg"
         eyebrow={p.hero.eyebrow}
         heading={p.hero.heading}
         subheading={p.hero.subheading}
@@ -59,9 +59,6 @@ export default async function ProjetsPage({
           </Section>
         </Container>
       </div>
-
-      {/* ── Closing terrain plate — bespoke topographic artwork ──── */}
-      <TerrainCover src="/generated/section-projets.svg" eyebrow={p.hero.eyebrow} />
     </>
   );
 }
