@@ -12,7 +12,7 @@ const linkClass =
   "hover:text-[var(--color-gold)] transition-colors duration-300 ease-[var(--ease-out-expo)]";
 
 const columnHeaderClass =
-  "text-xs uppercase tracking-widest text-gold mb-5 pt-4 border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))]";
+  "text-xs uppercase tracking-widest text-gold mb-4 pt-4 border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))]";
 
 export async function Footer({ lang }: FooterProps) {
   const dict = await getDictionary(lang);
@@ -27,7 +27,7 @@ export async function Footer({ lang }: FooterProps) {
     // translucent header — so the reveal is gated to lg, normal flow below.
     <footer className="relative lg:sticky bottom-0 z-0 bg-brand-deep text-cream">
       <Container>
-        <div className="pt-14 lg:pt-28 pb-12 lg:pb-16 grid gap-x-10 gap-y-10 lg:gap-y-14 grid-cols-2 lg:grid-cols-12">
+        <div className="pt-12 lg:pt-28 pb-8 lg:pb-16 grid gap-x-8 gap-y-8 lg:gap-y-14 grid-cols-2 lg:grid-cols-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-4 lg:pe-12">
             <Image
@@ -35,9 +35,9 @@ export async function Footer({ lang }: FooterProps) {
               alt="BTH Expert"
               width={530}
               height={149}
-              className="h-12 w-auto mb-6"
+              className="h-10 lg:h-12 w-auto mb-5"
             />
-            <p className="text-[var(--color-on-brand-muted)] text-sm leading-relaxed max-w-sm mb-8">
+            <p className="text-[var(--color-on-brand-muted)] text-sm leading-relaxed max-w-sm mb-6">
               {dict.metadata.homeDescription}
             </p>
             <div className="flex gap-6 text-sm text-[var(--color-on-brand-muted)]">
@@ -129,7 +129,7 @@ export async function Footer({ lang }: FooterProps) {
         </div>
 
         {/* Bottom strip */}
-        <div className="border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))] py-6 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-[var(--color-on-brand-faint)]">
+        <div className="border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))] py-5 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-[var(--color-on-brand-faint)]">
           <span>© {year} BTH Expert. {dict.footer.rights}.</span>
           <LangSwitcher currentLocale={lang} isDark />
         </div>
