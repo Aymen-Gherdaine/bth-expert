@@ -100,6 +100,15 @@
   --tracking-normal:   0em;
   --tracking-wide:     0.14em;
   --tracking-display:  0.22em;
+
+  /* ── Leading tokens ── */
+  --leading-tight:    1.15;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.75;
+  --leading-loose:    1.9;
+
+  /* ── Prose body text (slightly larger than UI body) ── */
+  --text-body-prose: clamp(1.0625rem, 0.5vw + 0.95rem, 1.1875rem);
 }
 
 /* ═══════════════════════════════════════════════════════════

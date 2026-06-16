@@ -65,6 +65,12 @@ export function StatsBand({ stats }: StatsBandProps) {
         scrollTrigger: { trigger: section, start: "top 82%", once: true },
       });
 
+      // Labels start hidden so they can reveal after the odometer settles
+      const labels = gsap.utils.toArray<HTMLElement>(
+        section.querySelectorAll("[data-stat-label]")
+      );
+      gsap.set(labels, { opacity: 0 });
+
       // ── Odometer: each digit scrolls to its value on scroll-in ─────────
       // Units stop first, hundreds stop last → natural mechanical counter feel.
       ScrollTrigger.create({
@@ -72,7 +78,7 @@ export function StatsBand({ stats }: StatsBandProps) {
         start: "top 75%",
         once: true,
         onEnter: () => {
-          cells.forEach((cell) => {
+          cells.forEach((cell, cellIdx) => {
             const tracks = cell.querySelectorAll<HTMLElement>("[data-digit-track]");
             tracks.forEach((track, i) => {
               const target = parseInt(track.dataset.target ?? "0");
@@ -84,6 +90,22 @@ export function StatsBand({ stats }: StatsBandProps) {
                 { y: `${-(target * SLOT_H)}em`, duration, ease: "expo.out" }
               );
             });
+            // Label fades in after the longest digit has settled
+            const label = cell.querySelector<HTMLElement>("[data-stat-label]");
+            if (label) {
+              const settleDuration = 1.0 + Math.max(0, tracks.length - 1) * 0.18;
+              gsap.fromTo(
+                label,
+                { opacity: 0, y: 8 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.55,
+                  ease: "expo.out",
+                  delay: settleDuration * 0.65 + cellIdx * 0.1,
+                }
+              );
+            }
           });
         },
       });
@@ -140,6 +162,7 @@ export function StatsBand({ stats }: StatsBandProps) {
                   </span>
                 </div>
                 <span
+                  data-stat-label
                   className="mt-4 block font-sans uppercase text-muted"
                   style={{ fontSize: "var(--text-caption)", letterSpacing: "0.16em" }}
                 >
