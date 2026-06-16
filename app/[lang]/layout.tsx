@@ -75,6 +75,12 @@ export default async function LangLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen" suppressHydrationWarning>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[110] focus:px-4 focus:py-2 focus:bg-brand focus:text-cream focus:rounded-sm focus:text-sm focus:font-sans focus:font-medium"
+        >
+          Passer au contenu
+        </a>
         <SmoothScroll />
         <MotionProvider>{children}</MotionProvider>
       </body>

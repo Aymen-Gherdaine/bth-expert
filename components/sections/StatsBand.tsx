@@ -60,7 +60,6 @@ export function StatsBand({ stats }: StatsBandProps) {
         onEnter: () => {
           nums.forEach((el) => {
             const target = parseFloat(el.dataset.target || "0");
-            const suffix = el.dataset.suffix || "";
             const obj = { v: 0 };
             gsap.to(obj, {
               v: target,
@@ -70,7 +69,7 @@ export function StatsBand({ stats }: StatsBandProps) {
                 el.textContent = String(Math.round(obj.v));
               },
               onComplete: () => {
-                el.textContent = String(target) + suffix;
+                el.textContent = String(target);
               },
             });
           });
@@ -96,13 +95,10 @@ export function StatsBand({ stats }: StatsBandProps) {
               <div key={s.label} data-stat>
                 <span aria-hidden className="block w-11 h-px bg-gold mb-6" />
                 <span
-                  data-num
-                  data-target={num}
-                  data-suffix={suffix}
                   className="block font-display font-light text-ink leading-none tracking-[-0.03em]"
                   style={{ fontSize: "clamp(3rem, 4.5vw + 0.5rem, 5rem)" }}
                 >
-                  {s.value}
+                  <span data-num data-target={num}>{num}</span><span data-suffix>{suffix}</span>
                 </span>
                 <span
                   className="mt-4 block font-sans uppercase text-muted"
