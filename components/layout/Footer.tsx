@@ -22,7 +22,10 @@ export async function Footer({ lang }: FooterProps) {
     // GISI-style reveal: footer sticks to the viewport bottom behind the
     // z-indexed page content (<main>), which slides up to uncover it at
     // the end of the scroll. No fixed positioning, no measured heights.
-    <footer className="sticky bottom-0 z-0 bg-brand-deep text-cream">
+    // Mobile: the footer is taller than the viewport, so `sticky bottom-0`
+    // would pin its top off-screen (logo unreachable) AND bleed through the
+    // translucent header — so the reveal is gated to lg, normal flow below.
+    <footer className="relative lg:sticky bottom-0 z-0 bg-brand-deep text-cream">
       <Container>
         <div className="pt-20 lg:pt-28 pb-16 grid gap-x-10 gap-y-14 grid-cols-2 lg:grid-cols-12">
           {/* Brand */}
