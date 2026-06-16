@@ -63,28 +63,30 @@ export default async function ContactPage({
           <div className="py-12 lg:py-16 grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Left: intro */}
             <div className="lg:col-span-5">
-              {/* Avatar cluster — team + brand mark. */}
-              <div className="flex items-center -space-x-4 mb-9">
-                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
-                  <Image
-                    src="/amine.jpg"
-                    alt="Amine Lahmer"
-                    fill
-                    sizes="64px"
-                    className="object-cover"
-                  />
-                </span>
-                <span className="relative z-10 grid place-items-center size-16 rounded-full bg-gold ring-4 ring-cream-warm">
-                  <LogoMark className="h-7 w-auto text-brand-deep" />
-                </span>
-                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
-                  <Image
-                    src="/abdellah.jpg"
-                    alt="Abdellah"
-                    fill
-                    sizes="64px"
-                    className="object-cover"
-                  />
+              {/* Avatar cluster — team photos, brand mark as a small accent badge. */}
+              <div className="flex items-center gap-3 mb-9">
+                <div className="flex -space-x-3">
+                  <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
+                    <Image
+                      src="/amine.jpg"
+                      alt="Amine Lahmer"
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
+                  </span>
+                  <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
+                    <Image
+                      src="/abdellah.jpg"
+                      alt="Abdellah"
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
+                  </span>
+                </div>
+                <span className="grid place-items-center size-9 rounded-full bg-gold ring-4 ring-cream-warm">
+                  <LogoMark className="h-4 w-auto text-brand-deep" />
                 </span>
               </div>
 
