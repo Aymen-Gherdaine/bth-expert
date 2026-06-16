@@ -62,11 +62,15 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref }: MobileMen
         onClick={() => setOpen(true)}
         aria-label="Ouvrir le menu"
         aria-expanded={open}
-        className="relative z-[60] grid h-10 w-10 place-items-center -me-2"
+        className="group relative z-[60] grid h-10 w-10 place-items-center -me-2"
       >
-        <span className="relative block h-3 w-6">
-          <span className="absolute left-0 top-0 h-px w-6 bg-current" />
-          <span className="absolute left-0 bottom-0 h-px w-6 bg-current" />
+        {/* Strata mark — uneven contour lines (gold middle) echoing the
+            topographic artwork; they align into a clean hamburger on
+            hover/focus. */}
+        <span className="flex h-[18px] w-6 flex-col items-start justify-between">
+          <span className="h-px w-6 bg-current transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+          <span className="h-px w-3.5 bg-gold transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-6 group-focus-visible:w-6" />
+          <span className="h-px w-5 bg-current transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-6 group-focus-visible:w-6" />
         </span>
       </button>
 
