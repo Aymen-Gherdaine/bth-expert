@@ -7,7 +7,7 @@ import { ServicePageBody } from "@/components/sections/ServicePageBody";
 const PATH = "/services/etude-impact-environnemental";
 
 const heroMeta = [
-  { label: "Cadre", value: "Décret 07-144" },
+  { label: "Cadre", value: "Décret 07-145" },
   { label: "Livrable", value: "Rapport EIE" },
   { label: "Dépôt", value: "DEW / DIM" },
 ];
@@ -15,7 +15,7 @@ const heroMeta = [
 const faq = [
   {
     q: "Quand l'étude d'impact est-elle obligatoire ?",
-    a: "Dès que votre projet figure sur la liste réglementaire des travaux soumis à étude d'impact (décret exécutif 07-144). L'EIE conditionne l'autorisation de construire ou d'exploiter.",
+    a: "Dès que votre projet figure sur la liste réglementaire des travaux soumis à étude d'impact (décret exécutif n° 07-145). L'EIE conditionne l'autorisation de construire ou d'exploiter.",
   },
   {
     q: "Combien de temps prend une EIE ?",
