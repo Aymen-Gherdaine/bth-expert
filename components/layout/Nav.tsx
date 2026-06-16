@@ -10,10 +10,10 @@ interface NavProps {
 
 export function Nav({ lang, dict, className, style }: NavProps) {
   const items = [
+    { href: `/${lang}/a-propos`, label: dict.nav.apropos },
     { href: `/${lang}/services`, label: dict.nav.services },
     { href: `/${lang}/secteurs`, label: dict.nav.secteurs },
     { href: `/${lang}/projets`, label: dict.nav.projets },
-    { href: `/${lang}/a-propos`, label: dict.nav.apropos },
     { href: `/${lang}/equipe`, label: dict.nav.equipe },
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];
