@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaLocalBusiness } from "@/lib/schema";
+import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -38,12 +38,19 @@ export default async function AboutPage({
   const dict = await getDictionary(lang);
   const a = dict.apropos;
   const jsonLd = schemaLocalBusiness();
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.apropos, url: `https://bthexpert.com/${lang}/a-propos` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
       {/* ── Hero — dark cinematic terrain mini-hero ───────────── */}

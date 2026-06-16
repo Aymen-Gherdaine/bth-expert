@@ -491,6 +491,21 @@
       }
     ]
   },
+  "blog": {
+    "meta": {
+      "title": "Blog — Environmental Regulation in Algeria | BTH Expert",
+      "description": "Analysis, guides and regulatory news on environmental impact assessment, hazard studies and environmental compliance in Algeria, by BTH Expert."
+    },
+    "hero": {
+      "eyebrow": "Resources · Environmental Regulation",
+      "heading": "The BTH Expert Blog",
+      "subheading": "Regulatory insights and practical guides on environmental impact assessment, hazard studies and environmental compliance in Algeria, by our team of licensed experts."
+    },
+    "readMore": "Read the article",
+    "backLabel": "Back to blog",
+    "empty": "Articles in this language are coming soon. Please check the French version of the blog.",
+    "publishedOn": "Published on"
+  },
   "home": {
     "hero": {
       "eyebrow": "Certified by the Ministry of Environment · Oran, Algeria",
@@ -558,7 +573,7 @@
     "faq": {
       "heading": "Frequently asked questions",
       "items": [
-        { "q": "Which projects require an environmental impact assessment in Algeria?", "a": "Any project listed under executive decree 07-144 (classified facilities, quarries, hydraulic projects, etc.) must undergo an EIA before any construction or operating permit can be granted." },
+        { "q": "Which projects require an environmental impact assessment in Algeria?", "a": "Any project listed under executive decree 07-145 (classified facilities, quarries, hydraulic projects, etc.) must undergo an EIA before any construction or operating permit can be granted." },
         { "q": "How long does it take to obtain an environmental permit?", "a": "Allow 2 to 6 months depending on the scale of the project and the wilaya. The study itself takes from a few weeks to several months; the public inquiry phase (for large projects) extends the timeline." },
         { "q": "Does BTH Expert operate outside Oran?", "a": "Yes. Based in Oran, we operate throughout Algeria, with a focus on western Algeria: Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane and neighbouring wilayas." },
         { "q": "What is a Ministry of Environment accreditation?", "a": "It is an official accreditation issued by the Ministry of Environment and Quality of Life, certifying that the consultancy is authorised to carry out EIAs and hazard studies. BTH Expert has been accredited since 2009." },

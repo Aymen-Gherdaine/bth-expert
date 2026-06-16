@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaLocalBusiness } from "@/lib/schema";
+import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { TerrainHero } from "@/components/sections/TerrainHero";
 import { ServicesIndexList } from "@/components/sections/ServicesIndexList";
 
@@ -36,6 +36,9 @@ export default async function ServicesPage({
   const items = dict.home.services.items;
 
   const jsonLd = schemaLocalBusiness();
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
+  ]);
 
   const serviceLinks: Record<string, string> = {
     EIE: `/${lang}/services/etude-impact-environnemental`,
@@ -57,6 +60,10 @@ export default async function ServicesPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
       {/* ── Hero — shared editorial light hero ─────────────────── */}
