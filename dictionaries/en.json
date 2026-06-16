@@ -11,7 +11,8 @@
     "apropos": "About",
     "blog": "Blog",
     "contact": "Contact",
-    "quote": "Request a Quote"
+    "quote": "Request a Quote",
+    "skipToContent": "Skip to content"
   },
   "footer": {
     "rights": "All rights reserved",

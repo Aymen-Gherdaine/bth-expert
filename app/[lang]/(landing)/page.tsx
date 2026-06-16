@@ -14,6 +14,7 @@ import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
 import { HeroBackground } from "@/components/motion/HeroBackground";
+import { HeroFilet } from "@/components/motion/HeroFilet";
 import { CtaVideo } from "@/components/motion/CtaVideo";
 
 export async function generateMetadata({
@@ -78,7 +79,7 @@ export default async function HomePage({
 
           <Container className="relative z-10">
             <div className="max-w-4xl">
-              <span aria-hidden className="block w-14 h-px bg-gold mb-7 origin-left" />
+              <HeroFilet className="block w-14 h-px bg-gold mb-7 origin-left" />
               <RevealText
                 className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
                 delay={0.1}
@@ -88,7 +89,7 @@ export default async function HomePage({
 
               <RevealText
                 as="h1"
-                className="font-display font-medium text-cream leading-[1.1] sm:leading-[1.04] tracking-[-0.03em]"
+                className="font-display font-light text-cream leading-[1.1] sm:leading-[1.04] tracking-[-0.03em]"
                 style={{ fontSize: "var(--text-hero)" }}
                 delay={0.25}
               >
@@ -107,7 +108,7 @@ export default async function HomePage({
               </RevealText>
 
               <RevealText
-                className="block mt-8 font-sans text-cream/75 text-[length:var(--text-body)] max-w-xl leading-relaxed"
+                className="block mt-8 font-sans text-cream text-[length:var(--text-body)] max-w-xl leading-relaxed"
                 delay={0.6}
               >
                 {h.hero.subheading}
