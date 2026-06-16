@@ -87,7 +87,7 @@ export default async function HomePage({
 
               <RevealText
                 as="h1"
-                className="font-display font-medium text-cream leading-[1.04] tracking-[-0.03em]"
+                className="font-display font-medium text-cream leading-[1.1] sm:leading-[1.04] tracking-[-0.03em]"
                 style={{ fontSize: "var(--text-hero)" }}
                 delay={0.25}
               >
