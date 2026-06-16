@@ -27,7 +27,7 @@ export async function Footer({ lang }: FooterProps) {
     // translucent header — so the reveal is gated to lg, normal flow below.
     <footer className="relative lg:sticky bottom-0 z-0 bg-brand-deep text-cream">
       <Container>
-        <div className="pt-20 lg:pt-28 pb-16 grid gap-x-10 gap-y-14 grid-cols-2 lg:grid-cols-12">
+        <div className="pt-14 lg:pt-28 pb-12 lg:pb-16 grid gap-x-10 gap-y-10 lg:gap-y-14 grid-cols-2 lg:grid-cols-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-4 lg:pe-12">
             <Image
