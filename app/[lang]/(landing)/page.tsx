@@ -63,7 +63,7 @@ export default async function HomePage({
           Same mechanism as the footer reveal: the hero is sticky (z-0) inside
           the tall <main>, the post-hero block (z-10, opaque) slides over it. */}
       <HeroCurtain>
-        <section className="relative min-h-svh flex items-end overflow-hidden pt-20 pb-24 lg:py-0 lg:pb-24 bg-brand-deep">
+        <section className="relative min-h-svh flex items-end overflow-hidden pt-20 pb-10 lg:py-0 lg:pb-24 bg-brand-deep">
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
           <HeroBackground src="/hero.webp" />
 
@@ -129,15 +129,17 @@ export default async function HomePage({
                 </Link>
                 <Link
                   href={`/${lang}/services`}
-                  className="inline-flex items-center text-cream/90 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)]"
+                  className="group inline-flex items-center gap-2.5 text-cream/75 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
-                  {h.hero.ctaSecondary} <span className="ml-2">→</span>
+                  <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                  {h.hero.ctaSecondary}
+                  <span aria-hidden className="translate-x-0 group-hover:translate-x-1 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
                 </Link>
               </div>
             </div>
           </Container>
 
-          <span aria-hidden className="scroll-pulse absolute bottom-6 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:bottom-10 lg:right-12 z-10" />
+          <span aria-hidden className="scroll-pulse absolute bottom-6 right-5 lg:bottom-10 lg:right-12 z-10" />
         </section>
       </HeroCurtain>
 
