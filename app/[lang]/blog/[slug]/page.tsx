@@ -3,11 +3,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, validateLocale, locales } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaArticle, schemaBreadcrumb } from "@/lib/schema";
+import { schemaArticle, schemaBreadcrumb, schemaFAQ } from "@/lib/schema";
 import { getContent, listContent } from "@/lib/content";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ArticleBody } from "@/components/sections/ArticleBody";
+import { Faq } from "@/components/sections/Faq";
 import { FadeIn } from "@/components/motion/FadeIn";
+
+interface BlogFaqItem {
+  q: string;
+  a: string;
+}
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
@@ -79,12 +85,24 @@ export default async function BlogPostPage({
     { name: post.frontmatter.title, url },
   ]);
 
+  const faq = post.frontmatter.faq as BlogFaqItem[] | undefined;
+  const jsonLdFaq =
+    faq && faq.length > 0
+      ? schemaFAQ(faq.map((item) => ({ question: item.q, answer: item.a })))
+      : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {jsonLdFaq && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
@@ -97,6 +115,8 @@ export default async function BlogPostPage({
       />
 
       <ArticleBody html={post.html} />
+
+      {faq && faq.length > 0 && <Faq heading="Questions fréquentes" items={faq} />}
 
       <section className="bg-cream-soft">
         <div className={`${PADX} pb-20 lg:pb-28`}>
