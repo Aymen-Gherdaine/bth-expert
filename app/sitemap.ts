@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n-config";
+import { listContentByDate } from "@/lib/content";
 import fr from "@/dictionaries/fr.json";
 
 const BASE_URL = "https://bthexpert.com";
@@ -16,6 +17,7 @@ const STATIC_ROUTES = [
   { path: "/secteurs/",                                 priority: 0.7, freq: "monthly" },
   { path: "/equipe/",                                   priority: 0.8, freq: "monthly" },
   { path: "/projets/",                                  priority: 0.7, freq: "monthly" },
+  { path: "/blog/",                                     priority: 0.6, freq: "weekly"  },
   { path: "/oran/",                                     priority: 0.9, freq: "monthly" },
   { path: "/a-propos/",                                 priority: 0.6, freq: "yearly"  },
   { path: "/contact/",                                  priority: 0.8, freq: "yearly"  },
@@ -25,7 +27,7 @@ function url(lang: string, path: string): string {
   return `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const { path, priority, freq } of STATIC_ROUTES) {
@@ -54,6 +56,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: url(lang, `/projets/${projet.slug}/`),
         priority: 0.7,
         changeFrequency: "yearly",
+      });
+    }
+  }
+
+  for (const lang of locales) {
+    const posts = await listContentByDate(lang, "blog");
+    for (const post of posts) {
+      entries.push({
+        url: url(lang, `/blog/${post.slug}/`),
+        priority: 0.6,
+        changeFrequency: "monthly",
+        lastModified: post.frontmatter.date,
       });
     }
   }

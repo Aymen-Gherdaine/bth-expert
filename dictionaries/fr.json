@@ -491,6 +491,21 @@
       }
     ]
   },
+  "blog": {
+    "meta": {
+      "title": "Blog — Réglementation environnementale en Algérie | BTH Expert",
+      "description": "Analyses, guides et actualités réglementaires sur l'étude d'impact, l'étude de dangers et la conformité environnementale en Algérie, par BTH Expert."
+    },
+    "hero": {
+      "eyebrow": "Ressources · Réglementation environnementale",
+      "heading": "Le blog BTH Expert",
+      "subheading": "Décryptages réglementaires et guides pratiques sur l'étude d'impact, l'étude de dangers et la conformité environnementale en Algérie, par notre équipe d'experts agréés."
+    },
+    "readMore": "Lire l'article",
+    "backLabel": "Retour au blog",
+    "empty": "Les articles en cette langue arrivent prochainement. Consultez la version française du blog.",
+    "publishedOn": "Publié le"
+  },
   "home": {
     "hero": {
       "eyebrow": "Agréé Ministère de l'Environnement · Oran, Algérie",

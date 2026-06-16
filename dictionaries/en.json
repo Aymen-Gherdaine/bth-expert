@@ -491,6 +491,21 @@
       }
     ]
   },
+  "blog": {
+    "meta": {
+      "title": "Blog — Environmental Regulation in Algeria | BTH Expert",
+      "description": "Analysis, guides and regulatory news on environmental impact assessment, hazard studies and environmental compliance in Algeria, by BTH Expert."
+    },
+    "hero": {
+      "eyebrow": "Resources · Environmental Regulation",
+      "heading": "The BTH Expert Blog",
+      "subheading": "Regulatory insights and practical guides on environmental impact assessment, hazard studies and environmental compliance in Algeria, by our team of licensed experts."
+    },
+    "readMore": "Read the article",
+    "backLabel": "Back to blog",
+    "empty": "Articles in this language are coming soon. Please check the French version of the blog.",
+    "publishedOn": "Published on"
+  },
   "home": {
     "hero": {
       "eyebrow": "Certified by the Ministry of Environment · Oran, Algeria",
