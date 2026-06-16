@@ -89,9 +89,9 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
         .from(linksRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.7)
         .from(wilayasRef.current, { opacity: 0, y: 14, duration: 0.7 }, 0.85);
 
-      // ── Map — its own slower choreography, in parallel ──────────────
+      // ── Map — fires when the SVG itself enters the viewport ──────────
       const tl = gsap.timeline({
-        scrollTrigger: { trigger: sectionRef.current, start: "top 75%", once: true },
+        scrollTrigger: { trigger: mapRef.current, start: "top 85%", once: true },
       });
 
       tl.from(mapRef.current, {
@@ -316,12 +316,8 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
           </div>
 
           <div ref={wilayasRef} className="mt-9 pt-7 border-t border-cream/10">
-            <p className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.18em] text-gold/80 mb-3">
-              Wilayas couvertes
-            </p>
             <p className="text-[length:var(--text-small)] text-cream/55 leading-[1.8] max-w-md">
-              Oran · Mostaganem · Tlemcen · Sidi Bel Abbès · Relizane · Mascara · Aïn
-              Témouchent · Tiaret · Saïda
+              Nous couvrons toutes les wilayas d&apos;Algérie.
             </p>
           </div>
         </div>
