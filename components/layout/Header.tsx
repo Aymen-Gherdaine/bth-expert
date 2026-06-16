@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { Container } from "./Container";
+import { BrandLink } from "./BrandLink";
 import { Nav } from "./Nav";
 import { LangSwitcher } from "./LangSwitcher";
 import { HeaderScrollState } from "./HeaderScrollState";
@@ -83,7 +83,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
           <Container className="h-full">
             <div className="flex items-center justify-between h-full">
 
-              <Link
+              <BrandLink
                 href={`/${lang}`}
                 className="header-item header-logo flex items-center gap-3"
                 style={{ "--enter-delay": "0ms" } as React.CSSProperties}
@@ -106,7 +106,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                     priority
                   />
                 </div>
-              </Link>
+              </BrandLink>
 
               <Nav
                 lang={lang}

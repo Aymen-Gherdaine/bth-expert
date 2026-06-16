@@ -1,13 +1,19 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 export function SmoothScroll() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Lenis owns the scroll position, so the browser's own restoration can't
+    // reach it — manage it explicitly (see the route-change reset below).
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
     const lenis = new Lenis({ duration: 1.2 });
     lenis.on("scroll", ScrollTrigger.update);
@@ -24,6 +30,14 @@ export function SmoothScroll() {
       delete (window as unknown as { lenis?: Lenis }).lenis;
     };
   }, []);
+
+  // New route = start at the top. Without this, Lenis holds the previous
+  // scroll position, so links to another page (and the logo) landed mid-page.
+  useEffect(() => {
+    const lenis = (window as unknown as { lenis?: Lenis }).lenis;
+    if (lenis) lenis.scrollTo(0, { immediate: true });
+    else window.scrollTo(0, 0);
+  }, [pathname]);
 
   return null;
 }
