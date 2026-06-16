@@ -70,7 +70,7 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             priority={priority}
             quality={75}
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-[50%_58%]"
           />
         </div>
       </div>
