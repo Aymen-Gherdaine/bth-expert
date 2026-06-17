@@ -9,6 +9,7 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ArticleBody } from "@/components/sections/ArticleBody";
 import { Faq } from "@/components/sections/Faq";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { TerrainBackdrop } from "@/components/sections/Terrain";
 
 interface BlogFaqItem {
   q: string;
@@ -113,6 +114,12 @@ export default async function BlogPostPage({
         heading={post.frontmatter.title}
         subheading={post.frontmatter.description}
       />
+
+      {post.frontmatter.image && (
+        <section className="relative isolate overflow-hidden bg-brand-deep h-[clamp(14rem,28vw,22rem)]">
+          <TerrainBackdrop src={post.frontmatter.image} />
+        </section>
+      )}
 
       <ArticleBody html={post.html} />
 

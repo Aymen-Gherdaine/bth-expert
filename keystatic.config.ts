@@ -94,6 +94,11 @@ export default config({
           multiline: true,
           validation: { isRequired: true },
         }),
+        image: fields.text({
+          label: "Image de couverture",
+          description:
+            "Chemin vers une illustration existante dans /public/generated (ex: /generated/sector-industrie-petrochimie.svg). Laisser vide pour aucune image.",
+        }),
         date: fields.date({ label: "Date de publication", validation: { isRequired: true } }),
         author: fields.text({ label: "Auteur", defaultValue: "BTH Expert" }),
         tags: fields.array(fields.text({ label: "Tag" }), {

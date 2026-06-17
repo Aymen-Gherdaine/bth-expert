@@ -180,6 +180,7 @@ function frontmatterToYaml(fm: BlogFrontmatter): string {
   lines.push(`description: ${JSON.stringify(fm.description)}`);
   if (fm.date) lines.push(`date: "${fm.date}"`);
   if (fm.author) lines.push(`author: ${JSON.stringify(fm.author)}`);
+  if (fm.image) lines.push(`image: ${JSON.stringify(fm.image)}`);
   if (fm.tags && fm.tags.length > 0) {
     lines.push(`tags: ${JSON.stringify(fm.tags)}`);
   }
