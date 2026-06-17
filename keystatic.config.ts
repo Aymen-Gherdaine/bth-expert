@@ -68,8 +68,18 @@ const faqItem = fields.object({
 });
 
 export default config({
+  // Stockage "github" : Keystatic committe directement sur le dépôt via
+  // l'API GitHub (au lieu d'écrire sur le disque local, qui ne persiste
+  // pas sur les fonctions serverless de Netlify). Nécessite une app GitHub
+  // OAuth dont les identifiants sont fournis via les variables d'env
+  // KEYSTATIC_GITHUB_CLIENT_ID, KEYSTATIC_GITHUB_CLIENT_SECRET et
+  // KEYSTATIC_SECRET (chaîne aléatoire ≥ 32 caractères) — jamais en dur ici.
   storage: {
-    kind: "local",
+    kind: "github",
+    repo: {
+      owner: "Aymen-Gherdaine",
+      name: "bth-expert",
+    },
   },
   collections: {
     blog: collection({

@@ -7,7 +7,7 @@
  * `draftArticle`/`editArticle`), et le commit directement dans
  * `content/fr/blog/{slug}.md` avec `status: draft` — il n'apparaît jamais
  * sur le site public (cf. lib/content.ts) tant qu'un humain ne le repasse
- * pas en "Publié" depuis l'admin Keystatic (/admin). L'image de couverture
+ * pas en "Publié" depuis l'admin Keystatic (/keystatic). L'image de couverture
  * vient du champ `image` du sujet (illustration déjà existante dans
  * `/public/generated`, pas de génération d'image).
  *
@@ -276,7 +276,7 @@ const handler = async (): Promise<Response> => {
     const markdown = buildMarkdown(topic, article);
     await commitArticle(topic, markdown);
 
-    const message = `Brouillon créé pour "${topic.title}" (content/fr/blog/${topic.slug}.md) — à valider dans /admin.`;
+    const message = `Brouillon créé pour "${topic.title}" (content/fr/blog/${topic.slug}.md) — à valider dans /keystatic.`;
     console.log(message);
     return new Response(JSON.stringify({ skipped: false, slug: topic.slug, message }), { status: 200 });
   } catch (err) {

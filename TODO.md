@@ -63,7 +63,11 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [x] **3.4** — Agent IA blog : Netlify scheduled function (mensuel) + API Anthropic + draft mode
   - ⚠️ [CLIENT/CONFIG] Variables d'env à ajouter sur Netlify avant que ça tourne : `ANTHROPIC_API_KEY`, `BLOG_AGENT_GITHUB_TOKEN` (PAT GitHub, accès écriture au repo). Optionnel : `GITHUB_REPO`, `BLOG_AGENT_BRANCH`, `ANTHROPIC_MODEL`. Voir commentaire en tête de `netlify/functions/generate-blog-post.mts`.
   - Sujets prédéfinis dans `netlify/functions/blog-topics.json` (12 sujets) — chaque exécution traite le premier sujet non encore présent dans `content/fr/blog/`.
-  - Les articles générés arrivent en `status: draft` (jamais visibles publiquement) — à valider/publier depuis `/admin`.
+  - Les articles générés arrivent en `status: draft` (jamais visibles publiquement) — à valider/publier depuis `/keystatic`.
+  - Génération en deux passes (premier jet + relecture éditoriale) pour limiter le ton « IA générique » ; image de couverture par sujet (illustrations déjà existantes dans `/public/generated`, pas de génération d'image).
+- [x] **3.4b** — Stockage Keystatic en mode `github` (au lieu de `local`) pour que `/keystatic` persiste réellement les modifications une fois déployé sur Netlify (le mode `local` écrit sur un disque qui ne survit pas aux fonctions serverless).
+  - ⚠️ [CLIENT/CONFIG] Créer une app GitHub OAuth (Settings → Developer settings → OAuth Apps) avec comme callback URL `https://<domaine-production>/api/keystatic/github/oauth/callback`. Ajouter sur Netlify : `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET` (chaîne aléatoire ≥ 32 caractères).
+  - Le chemin `/keystatic` et `/api/keystatic` est codé en dur dans `@keystatic/core` (pas de préfixe configurable) — ne pas le renommer en `/admin` à nouveau, ça casserait l'auth GitHub.
 - [x] **3.5** — Script `scripts/translate.ts` : FR → AR + EN via API Anthropic avec glossaire métier
   - Glossaire métier dans `scripts/glossary.json` (construit à partir des traductions déjà en place sur le site).
   - Régénère entièrement `dictionaries/{ar,en}.json` depuis `dictionaries/fr.json`, et traduit les articles de blog **publiés** (`status` ≠ `draft`) vers `content/{ar,en}/blog/`. N'écrase pas un article déjà traduit sauf `--force`.
