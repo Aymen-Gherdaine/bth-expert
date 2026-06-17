@@ -22,6 +22,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     // Ne s'applique pas aux assets statiques, API routes, admin Keystatic, etc.
-    "/((?!_next|api|keystatic|.*\\..*).*)",
+    "/((?!_next|api|admin|.*\\..*).*)",
   ],
 };
