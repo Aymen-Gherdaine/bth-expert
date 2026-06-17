@@ -9,3 +9,7 @@ readMore: Lire l'article
 backLabel: Retour au blog
 empty: Les articles en cette langue arrivent prochainement. Consultez la version française du blog.
 publishedOn: Publié le
+pagination:
+  previous: Page précédente
+  next: Page suivante
+  pageLabel: Page {current} sur {total}

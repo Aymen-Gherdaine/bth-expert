@@ -468,6 +468,16 @@ export default config({
         backLabel: fields.text({ label: "Retour au blog" }),
         empty: fields.text({ label: "Message — aucun article", multiline: true }),
         publishedOn: fields.text({ label: "Publié le" }),
+        pagination: fields.object(
+          {
+            previous: fields.text({ label: "Page précédente" }),
+            next: fields.text({ label: "Page suivante" }),
+            pageLabel: fields.text({
+              label: "Label de page (utiliser {current} et {total})",
+            }),
+          },
+          { label: "Pagination" }
+        ),
       },
     }),
 

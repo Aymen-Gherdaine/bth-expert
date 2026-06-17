@@ -59,7 +59,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 
 - [x] **3.1** — Installation Keystatic + intégration Next.js
 - [x] **3.2** — Schémas Keystatic : tous les champs texte du site (collections services/secteurs/projets/équipe/blog + singletons pour chaque page), génération de `dictionaries/fr.json` via `npm run content:sync` (lancé en `prebuild`)
-- [ ] **3.3** — Système de blog : pages dynamiques `[slug]`, listing, pagination
+- [x] **3.3** — Système de blog : pages dynamiques `[slug]`, listing, pagination
 - [ ] **3.4** — Agent IA blog : Netlify scheduled function (mensuel) + API Anthropic + draft mode
 - [ ] **3.5** — Script `scripts/translate.ts` : FR → AR + EN via API Anthropic avec glossaire métier
 - [ ] **3.6** — GitHub Action `.github/workflows/translate.yml` : déclenchée sur push `content/fr/**`

@@ -819,7 +819,12 @@
     "readMore": "Read the article",
     "backLabel": "Back to blog",
     "empty": "Articles in this language are coming soon. Please check the French version of the blog.",
-    "publishedOn": "Published on"
+    "publishedOn": "Published on",
+    "pagination": {
+      "previous": "Previous page",
+      "next": "Next page",
+      "pageLabel": "Page {current} of {total}"
+    }
   },
   "home": {
     "hero": {
