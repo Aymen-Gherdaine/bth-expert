@@ -62,6 +62,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [x] **3.3** — Système de blog : pages dynamiques `[slug]`, listing, pagination
 - [x] **3.4** — Agent IA blog : Netlify scheduled function (mensuel) + API Anthropic + draft mode
   - ⚠️ [CLIENT/CONFIG] Variables d'env à ajouter sur Netlify avant que ça tourne : `ANTHROPIC_API_KEY`, `BLOG_AGENT_GITHUB_TOKEN` (PAT GitHub, accès écriture au repo). Optionnel : `GITHUB_REPO`, `BLOG_AGENT_BRANCH`, `ANTHROPIC_MODEL`. Voir commentaire en tête de `netlify/functions/generate-blog-post.mts`.
+  - ⚠️ [CLIENT/CONFIG] `BLOG_AGENT_GITHUB_TOKEN` créé le 2026-06-17 avec expiration à 366 jours → à régénérer avant le **2027-06-17**, sinon l'agent blog échoue silencieusement (la fonction tourne mais le commit GitHub échoue).
   - Sujets prédéfinis dans `netlify/functions/blog-topics.json` (12 sujets) — chaque exécution traite le premier sujet non encore présent dans `content/fr/blog/`.
   - Les articles générés arrivent en `status: draft` (jamais visibles publiquement) — à valider/publier depuis `/keystatic`.
   - Génération en deux passes (premier jet + relecture éditoriale) pour limiter le ton « IA générique » ; image de couverture par sujet (illustrations déjà existantes dans `/public/generated`, pas de génération d'image).
