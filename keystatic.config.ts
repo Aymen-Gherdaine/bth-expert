@@ -68,18 +68,15 @@ const faqItem = fields.object({
 });
 
 export default config({
-  // Stockage "github" : Keystatic committe directement sur le dépôt via
-  // l'API GitHub (au lieu d'écrire sur le disque local, qui ne persiste
-  // pas sur les fonctions serverless de Netlify). Nécessite une app GitHub
-  // OAuth dont les identifiants sont fournis via les variables d'env
-  // KEYSTATIC_GITHUB_CLIENT_ID, KEYSTATIC_GITHUB_CLIENT_SECRET et
-  // KEYSTATIC_SECRET (chaîne aléatoire ≥ 32 caractères) — jamais en dur ici.
+  // Stockage "cloud" : authentification et synchronisation gérées par
+  // Keystatic Cloud (cloud.keystatic.com), qui committe sur le dépôt GitHub
+  // en coulisses. Permet aux éditeurs (le client) de se connecter par email,
+  // sans avoir besoin d'un compte GitHub ni d'accès au dépôt.
   storage: {
-    kind: "github",
-    repo: {
-      owner: "Aymen-Gherdaine",
-      name: "bth-expert",
-    },
+    kind: "cloud",
+  },
+  cloud: {
+    project: "bth-expert/bth-expert",
   },
   collections: {
     blog: collection({
