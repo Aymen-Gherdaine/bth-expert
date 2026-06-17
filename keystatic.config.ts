@@ -79,6 +79,16 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Titre" } }),
+        status: fields.select({
+          label: "Statut",
+          description:
+            "Un article en brouillon n'est jamais visible sur le site public (ni listing, ni sitemap) tant qu'il n'est pas repassé en « Publié ».",
+          options: [
+            { label: "Publié", value: "published" },
+            { label: "Brouillon", value: "draft" },
+          ],
+          defaultValue: "published",
+        }),
         description: fields.text({
           label: "Description (meta SEO)",
           multiline: true,
