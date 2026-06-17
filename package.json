@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "content:sync": "tsx scripts/sync-content.ts",
+    "translate": "tsx scripts/translate.ts",
     "prebuild": "npm run content:sync",
     "build": "next build",
     "start": "next start",
