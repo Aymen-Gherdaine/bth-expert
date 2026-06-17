@@ -1,0 +1,23 @@
+slug: industrie-petrochimie
+order: 1
+title: Industrie & Pétrochimie
+tagline: 'Raffinage, cimenteries, métallurgie et traitements de surface : des procédés à fort potentiel d''impact et de danger.'
+intro: 'Les sites industriels et pétrochimiques concentrent les enjeux environnementaux et de sécurité les plus exigeants : rejets atmosphériques et aqueux, stockage de produits dangereux, risques d''accident majeur. BTH Expert accompagne ces installations de l''étude d''impact à la maîtrise des risques.'
+enjeux:
+  - title: Installations classées
+    description: Études d'impact et études de dangers pour les établissements soumis à autorisation.
+  - title: Rejets & émissions
+    description: Caractérisation et réduction des rejets atmosphériques, aqueux et des déchets spéciaux.
+  - title: Risque d'accident majeur
+    description: Scénarios, zones d'effet et plans de prévention pour les procédés à risque.
+sousSecteurs:
+  - Raffinage & pétrochimie
+  - Cimenteries
+  - Métallurgie
+  - Traitements de surface
+  - Chimie & parachimie
+prestations:
+  - Étude d'impact environnemental
+  - Étude de dangers
+  - Audit HSE
+  - Plan de gestion environnementale

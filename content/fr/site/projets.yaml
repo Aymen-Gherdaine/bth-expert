@@ -1,0 +1,21 @@
+meta:
+  title: Projets & réalisations — Études environnementales | BTH Expert
+  description: Études d'impact, études de dangers et audits HSE menés par BTH Expert pour l'industrie, l'énergie et l'hydraulique en Algérie. Exemples de réalisations par secteur.
+hero:
+  eyebrow: Réalisations
+  heading: Des études qui sécurisent les projets
+  subheading: Un aperçu de nos interventions environnementales et réglementaires, du complexe pétrochimique au périmètre irrigué. Plus de 20 réalisations pour 150 partenaires industriels.
+filterAll: Tous les secteurs
+detail:
+  secteurLabel: Secteur
+  missionLabel: Mission
+  anneeLabel: Année
+  contexteLabel: Contexte
+  demarcheLabel: Notre intervention
+  resultatLabel: Résultat
+  disclaimer: Exemple représentatif — détails à valider avec le client.
+  backLabel: Tous les projets
+  cta:
+    heading: Un projet similaire ?
+    description: Décrivez-nous votre projet et son contexte. Nous évaluons vos obligations et vous remettons une offre sous 48h.
+    button: Demander un devis

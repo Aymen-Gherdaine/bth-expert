@@ -1,0 +1,21 @@
+slug: agriculture-hydraulique
+order: 4
+title: Agriculture & Hydraulique
+tagline: 'Périmètres irrigués, barrages, stations d''épuration et projets agro-industriels : la ressource en eau au cœur des enjeux.'
+intro: L'agriculture et l'hydraulique mobilisent la ressource en eau et les sols sur de larges étendues. BTH Expert évalue les impacts, optimise la gestion de l'eau et accompagne la mise en conformité des projets agro-industriels et hydrauliques.
+enjeux:
+  - title: Ressource en eau
+    description: Préservation de la qualité et de la disponibilité de l'eau pour les milieux et les usages.
+  - title: Sols & milieux
+    description: Évaluation des effets sur les sols, la biodiversité et les écosystèmes sensibles.
+  - title: Épuration & rejets
+    description: Conception et suivi des dispositifs d'épuration et de gestion des rejets.
+sousSecteurs:
+  - Périmètres irrigués
+  - Barrages & retenues
+  - Stations d'épuration
+  - Agro-industrie
+prestations:
+  - Étude d'impact environnemental
+  - Épuration des eaux
+  - Plan de gestion environnementale

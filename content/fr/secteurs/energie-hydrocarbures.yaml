@@ -1,0 +1,22 @@
+slug: energie-hydrocarbures
+order: 2
+title: Énergie & Hydrocarbures
+tagline: 'Exploration, production, transport et stockage d''hydrocarbures, production d''énergie : des infrastructures stratégiques et sensibles.'
+intro: Le secteur de l'énergie et des hydrocarbures opère des infrastructures étendues et sensibles, soumises à un cadre réglementaire strict. BTH Expert intervient sur l'ensemble de la chaîne, du champ de production aux installations de transport et de stockage.
+enjeux:
+  - title: Sites étendus
+    description: Évaluation des impacts sur de vastes emprises et des milieux variés.
+  - title: Sécurité des installations
+    description: Études de dangers pour le stockage, le transport et les unités de traitement.
+  - title: Transition & efficacité
+    description: Intégration des enjeux énergétiques et des énergies renouvelables dans les projets.
+sousSecteurs:
+  - Amont pétrolier & gazier
+  - Transport & stockage
+  - Production électrique
+  - Énergies renouvelables
+prestations:
+  - Étude d'impact environnemental
+  - Étude de dangers
+  - Audit HSE
+  - Plan de gestion environnementale

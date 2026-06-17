@@ -1,0 +1,47 @@
+slug: edd
+meta:
+  title: Étude de Dangers (EDD) pour établissements classés — BTH Expert
+  description: 'Bureau d''études agréé pour la réalisation des études de dangers (EDD) en Algérie : analyse des risques majeurs, scénarios d''accident, zones d''effet et plans de prévention. Basé à Oran.'
+hero:
+  eyebrow: EDD · Établissements classés
+  heading: Étude de Dangers
+  subheading: L'étude de dangers identifie et caractérise les risques d'accident majeur d'une installation industrielle, évalue leurs conséquences et définit les mesures de maîtrise. Elle est exigée pour les établissements classés soumis à autorisation.
+heroMeta:
+  - label: Concerne
+    value: Établissements classés
+  - label: Méthodes
+    value: APR · HAZOP
+  - label: Livrable
+    value: Rapport EDD
+why:
+  heading: Qui est concerné ?
+  description: Tout exploitant d'une installation classée pour la protection de l'environnement soumise à autorisation — stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression — doit produire une étude de dangers avant la mise en exploitation et la réviser à chaque modification substantielle.
+methodology:
+  heading: Notre méthodologie
+  steps:
+    - number: '01'
+      title: Description & environnement
+      description: 'Caractérisation de l''installation, des produits, des procédés et de la vulnérabilité de l''environnement : populations, milieux sensibles et effets dominos potentiels.'
+    - number: '02'
+      title: Identification des dangers
+      description: Analyse systématique des potentiels de dangers par méthode reconnue (APR, HAZOP), exploitation du retour d'accidentologie et recensement des scénarios redoutés.
+    - number: '03'
+      title: Analyse des risques & modélisation
+      description: 'Quantification des scénarios majeurs : effets thermiques, de surpression et toxiques, calcul des zones d''effet et cartographie des distances d''isolement.'
+    - number: '04'
+      title: Maîtrise des risques
+      description: Définition des barrières de prévention et de protection, du plan d'urgence interne et des dispositions d'intervention en cas d'accident.
+deliverable:
+  heading: Livrable
+  description: Un rapport d'étude de dangers conforme au cadre réglementaire algérien, intégrant la cartographie des zones d'effet et le plan de maîtrise des risques, prêt pour le dépôt auprès des autorités compétentes.
+faq:
+  - q: Mon installation est-elle concernée ?
+    a: 'Toute installation classée soumise à autorisation : stockage d''hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression.'
+  - q: Que contient l'étude de dangers ?
+    a: Identification des dangers, modélisation des scénarios majeurs (effets thermiques, surpression, toxiques), cartographie des zones d'effet et plan de maîtrise des risques.
+  - q: Faut-il la réviser ?
+    a: Oui — à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre.
+cta:
+  heading: Votre installation requiert une EDD ?
+  description: Transmettez-nous les caractéristiques de votre installation et de vos procédés. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.
+  button: Demander un devis
