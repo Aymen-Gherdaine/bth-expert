@@ -1,0 +1,21 @@
+slug: infrastructures-btp
+order: 3
+title: Infrastructures & BTP
+tagline: 'Routes, ouvrages d''art, zones d''activité, bâtiments et aménagements : des projets structurants à forte emprise.'
+intro: Les projets d'infrastructure et de BTP transforment durablement le territoire. BTH Expert accompagne maîtres d'ouvrage et entreprises pour anticiper les impacts, sécuriser les autorisations et organiser le suivi environnemental des chantiers.
+enjeux:
+  - title: Emprise & territoire
+    description: Évaluation des impacts sur les milieux, le paysage et les populations riveraines.
+  - title: Phase chantier
+    description: Plans de gestion et suivi des nuisances en phase travaux.
+  - title: Autorisations
+    description: Constitution des dossiers réglementaires nécessaires à l'obtention des permis.
+sousSecteurs:
+  - Routes & ouvrages d'art
+  - Zones d'activité & industrielles
+  - Bâtiment & immobilier
+  - Aménagement urbain
+prestations:
+  - Étude d'impact environnemental
+  - Plan de gestion environnementale
+  - Audit HSE

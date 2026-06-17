@@ -6,27 +6,6 @@ import { ServicePageBody } from "@/components/sections/ServicePageBody";
 
 const PATH = "/services/etude-impact-environnemental";
 
-const heroMeta = [
-  { label: "Cadre", value: "Décret 07-145" },
-  { label: "Livrable", value: "Rapport EIE" },
-  { label: "Dépôt", value: "DEW / DIM" },
-];
-
-const faq = [
-  {
-    q: "Quand l'étude d'impact est-elle obligatoire ?",
-    a: "Dès que votre projet figure sur la liste réglementaire des travaux soumis à étude d'impact (décret exécutif n° 07-145). L'EIE conditionne l'autorisation de construire ou d'exploiter.",
-  },
-  {
-    q: "Combien de temps prend une EIE ?",
-    a: "Selon l'ampleur et la sensibilité du site, de quelques semaines à quelques mois. Nous cadrons le délai dès la consultation initiale.",
-  },
-  {
-    q: "Qui valide le rapport final ?",
-    a: "Les autorités de wilaya — Direction de l'Environnement (DEW) et Direction de l'Industrie et des Mines (DIM).",
-  },
-];
-
 export async function generateMetadata({
   params,
 }: {
@@ -59,7 +38,7 @@ export default async function EIEPage({
     description: dict.eie.meta.description,
     serviceType: "Étude d'Impact Environnemental",
   });
-  const jsonLdFaq = schemaFAQ(faq.map((i) => ({ question: i.q, answer: i.a })));
+  const jsonLdFaq = schemaFAQ(dict.eie.faq.map((i) => ({ question: i.q, answer: i.a })));
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
     { name: dict.eie.hero.heading, url: `https://bthexpert.com/${lang}${PATH}` },
@@ -79,7 +58,7 @@ export default async function EIEPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <ServicePageBody lang={lang} service={dict.eie} heroMeta={heroMeta} faq={faq} />
+      <ServicePageBody lang={lang} service={dict.eie} heroMeta={dict.eie.heroMeta} faq={dict.eie.faq} />
     </>
   );
 }

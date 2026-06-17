@@ -1,0 +1,30 @@
+meta:
+  title: Bureau d'études environnemental à Oran — BTH Expert
+  description: BTH Expert, bureau d'études environnemental agréé basé à Oran (Bir El Djir). Études d'impact, études de dangers et audits HSE pour les projets industriels à Oran et dans l'ouest algérien.
+hero:
+  eyebrow: Bir El Djir, Oran · Algérie
+  heading: Bureau d'études environnemental à Oran
+  subheading: Agréé par le Ministère de l'Environnement, BTH Expert accompagne les porteurs de projets industriels, miniers et d'infrastructure dans la wilaya d'Oran et l'ensemble de l'Algérie occidentale.
+services:
+  heading: Nos prestations à Oran
+  description: De la phase d'instruction du projet jusqu'au suivi environnemental en phase exploitation, BTH Expert fournit des études conformes au cadre réglementaire algérien en vigueur.
+zones:
+  heading: Zones d'intervention
+  description: Basé à Bir El Djir, Oran, BTH Expert intervient dans l'ensemble des wilayas de l'ouest algérien.
+  wilayas:
+    - Oran
+    - Mostaganem
+    - Tlemcen
+    - Sidi Bel Abbès
+    - Relizane
+    - Mascara
+    - Aïn Témouchent
+nap:
+  heading: Coordonnées
+  address: 40, Lotissement 119, Bir El Djir, Oran
+  phone: +213 670 70 81 38
+  email: info@bthexpert.dz
+cta:
+  heading: Votre projet à Oran
+  description: Transmettez-nous les caractéristiques de votre projet. Nous évaluons vos obligations réglementaires et vous proposons une offre adaptée.
+  button: Demander un devis

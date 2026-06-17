@@ -1,0 +1,47 @@
+slug: pge
+meta:
+  title: Plan de Gestion Environnementale (PGE) — BTH Expert
+  description: Élaboration de plans de gestion environnementale (PGE) pour le suivi des mesures d'atténuation sur toute la durée de vie d'un projet. Bureau d'études agréé en Algérie, basé à Oran.
+hero:
+  eyebrow: PGE · Suivi environnemental
+  heading: Plan de Gestion Environnementale
+  subheading: 'Le plan de gestion environnementale traduit les engagements de l''étude d''impact en mesures concrètes : il organise l''atténuation, la surveillance et le suivi des effets d''un projet, de la phase travaux à l''exploitation.'
+heroMeta:
+  - label: Phase
+    value: Travaux → exploitation
+  - label: Suit
+    value: Mesures d'atténuation
+  - label: Livrable
+    value: Plan opérationnel
+why:
+  heading: Qui est concerné ?
+  description: Tout porteur de projet dont l'étude d'impact a prescrit des mesures d'atténuation et de suivi, ainsi que les exploitants tenus de démontrer la bonne mise en œuvre de leurs engagements environnementaux auprès des autorités.
+methodology:
+  heading: Notre méthodologie
+  steps:
+    - number: '01'
+      title: Cadrage des engagements
+      description: Reprise des mesures d'atténuation et de compensation issues de l'étude d'impact et traduction en actions opérationnelles attribuées et planifiées.
+    - number: '02'
+      title: Programme de surveillance
+      description: Définition des indicateurs, des paramètres à mesurer, des fréquences de contrôle et des seuils d'alerte par composante environnementale.
+    - number: '03'
+      title: Dispositif de suivi
+      description: Organisation des responsabilités, des procédures de reporting et des modalités de contrôle en phase travaux comme en phase exploitation.
+    - number: '04'
+      title: Amélioration continue
+      description: Mécanismes de revue, de mise à jour des mesures et de traitement des non-conformités tout au long de la vie du projet.
+deliverable:
+  heading: Livrable
+  description: 'Un plan de gestion environnementale opérationnel : matrice des mesures, programme de surveillance et de suivi, indicateurs et modèle de reporting, directement exploitable par les équipes du projet.'
+faq:
+  - q: À quoi sert un PGE ?
+    a: 'Il traduit les engagements de l''étude d''impact en mesures concrètes : atténuation, surveillance et suivi sur toute la durée de vie du projet.'
+  - q: Qui est concerné ?
+    a: Tout porteur de projet dont l'étude d'impact a prescrit des mesures de suivi, et les exploitants tenus de démontrer leurs engagements.
+  - q: Que contient le livrable ?
+    a: Une matrice des mesures, un programme de surveillance, des indicateurs et un modèle de reporting exploitables par vos équipes.
+cta:
+  heading: Structurer votre suivi environnemental ?
+  description: Communiquez-nous les prescriptions de votre étude d'impact. Nous bâtissons un plan de gestion adapté à votre projet et vous remettons une offre sous 48h.
+  button: Demander un devis
