@@ -59,10 +59,23 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 
 - [x] **3.1** — Installation Keystatic + intégration Next.js
 - [x] **3.2** — Schémas Keystatic : tous les champs texte du site (collections services/secteurs/projets/équipe/blog + singletons pour chaque page), génération de `dictionaries/fr.json` via `npm run content:sync` (lancé en `prebuild`)
-- [ ] **3.3** — Système de blog : pages dynamiques `[slug]`, listing, pagination
-- [ ] **3.4** — Agent IA blog : Netlify scheduled function (mensuel) + API Anthropic + draft mode
-- [ ] **3.5** — Script `scripts/translate.ts` : FR → AR + EN via API Anthropic avec glossaire métier
-- [ ] **3.6** — GitHub Action `.github/workflows/translate.yml` : déclenchée sur push `content/fr/**`
+- [x] **3.3** — Système de blog : pages dynamiques `[slug]`, listing, pagination
+- [x] **3.4** — Agent IA blog : Netlify scheduled function (mensuel) + API Anthropic + draft mode
+  - ⚠️ [CLIENT/CONFIG] Variables d'env à ajouter sur Netlify avant que ça tourne : `ANTHROPIC_API_KEY`, `BLOG_AGENT_GITHUB_TOKEN` (PAT GitHub, accès écriture au repo). Optionnel : `GITHUB_REPO`, `BLOG_AGENT_BRANCH`, `ANTHROPIC_MODEL`. Voir commentaire en tête de `netlify/functions/generate-blog-post.mts`.
+  - ⚠️ [CLIENT/CONFIG] `BLOG_AGENT_GITHUB_TOKEN` créé le 2026-06-17 avec expiration à 366 jours → à régénérer avant le **2027-06-17**, sinon l'agent blog échoue silencieusement (la fonction tourne mais le commit GitHub échoue).
+  - Sujets prédéfinis dans `netlify/functions/blog-topics.json` (12 sujets) — chaque exécution traite le premier sujet non encore présent dans `content/fr/blog/`.
+  - Les articles générés arrivent en `status: draft` (jamais visibles publiquement) — à valider/publier depuis `/keystatic`.
+  - Génération en deux passes (premier jet + relecture éditoriale) pour limiter le ton « IA générique » ; image de couverture par sujet (illustrations déjà existantes dans `/public/generated`, pas de génération d'image).
+- [x] **3.4b** — Stockage Keystatic en mode `cloud` (Keystatic Cloud, projet `bth-expert/bth-expert`) au lieu de `local`, pour que `/keystatic` persiste réellement les modifications une fois déployé sur Netlify (le mode `local` écrit sur un disque qui ne survit pas aux fonctions serverless) et pour que le client édite le contenu **sans avoir besoin d'un compte GitHub** (authentification par email via cloud.keystatic.com, jusqu'à 3 utilisateurs gratuits par équipe).
+  - Le chemin `/keystatic` (page et API) est codé en dur dans `@keystatic/core` quel que soit le mode de stockage choisi (vérifié pour `local`, `github` et `cloud`) — ne jamais le renommer en `/admin`.
+  - ⚠️ [CLIENT/CONFIG] Inviter le client comme membre de la team Keystatic Cloud (cloud.keystatic.com → team → invite par email) une fois le CMS testé et validé.
+  - Aucune variable d'env Netlify requise pour Keystatic en mode `cloud` (l'auth passe par cloud.keystatic.com, pas par notre app). Les variables `KEYSTATIC_GITHUB_CLIENT_ID` / `KEYSTATIC_GITHUB_CLIENT_SECRET` / `KEYSTATIC_SECRET` posées précédemment pour le mode `github` ne sont plus utilisées — peuvent être retirées de Netlify (pas urgent, sans risque si laissées).
+  - Le chemin `/keystatic` et `/api/keystatic` est codé en dur dans `@keystatic/core` (pas de préfixe configurable) — ne pas le renommer en `/admin` à nouveau, ça casserait l'auth GitHub.
+- [x] **3.5** — Script `scripts/translate.ts` : FR → AR + EN via API Anthropic avec glossaire métier
+  - Glossaire métier dans `scripts/glossary.json` (construit à partir des traductions déjà en place sur le site).
+  - Régénère entièrement `dictionaries/{ar,en}.json` depuis `dictionaries/fr.json`, et traduit les articles de blog **publiés** (`status` ≠ `draft`) vers `content/{ar,en}/blog/`. N'écrase pas un article déjà traduit sauf `--force`.
+- [x] **3.6** — GitHub Action `.github/workflows/translate.yml` : déclenchée sur push `content/fr/**` (branche `main`), commit auto des fichiers traduits.
+  - ⚠️ [CLIENT/CONFIG] Ajouter le secret `ANTHROPIC_API_KEY` dans Settings → Secrets → Actions du repo GitHub (en plus de la variable d'env du même nom sur Netlify, utilisée par l'agent blog).
 - [ ] **3.7** — Test traduction complète sur 1 article + 1 page service
 - [ ] **3.8** — Génération + publication du premier article validé
 

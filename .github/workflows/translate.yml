@@ -1,0 +1,49 @@
+name: Traduction FR → AR/EN
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/fr/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: translate-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Régénérer dictionaries/fr.json
+        run: npm run content:sync
+
+      - name: Traduire FR → AR + EN
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run translate
+
+      - name: Commit et push si changement
+        run: |
+          git config user.name "bth-expert-bot"
+          git config user.email "bot@bthexpert.dz"
+          git add dictionaries/ar.json dictionaries/en.json content/ar content/en
+          if git diff --cached --quiet; then
+            echo "Aucun changement de traduction."
+            exit 0
+          fi
+          git commit -m "chore: traduction auto FR → AR/EN [skip ci]"
+          git push origin HEAD:main

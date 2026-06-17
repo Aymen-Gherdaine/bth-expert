@@ -68,8 +68,15 @@ const faqItem = fields.object({
 });
 
 export default config({
+  // Stockage "cloud" : authentification et synchronisation gérées par
+  // Keystatic Cloud (cloud.keystatic.com), qui committe sur le dépôt GitHub
+  // en coulisses. Permet aux éditeurs (le client) de se connecter par email,
+  // sans avoir besoin d'un compte GitHub ni d'accès au dépôt.
   storage: {
-    kind: "local",
+    kind: "cloud",
+  },
+  cloud: {
+    project: "bth-expert/bth-expert",
   },
   collections: {
     blog: collection({
@@ -79,10 +86,25 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Titre" } }),
+        status: fields.select({
+          label: "Statut",
+          description:
+            "Un article en brouillon n'est jamais visible sur le site public (ni listing, ni sitemap) tant qu'il n'est pas repassé en « Publié ».",
+          options: [
+            { label: "Publié", value: "published" },
+            { label: "Brouillon", value: "draft" },
+          ],
+          defaultValue: "published",
+        }),
         description: fields.text({
           label: "Description (meta SEO)",
           multiline: true,
           validation: { isRequired: true },
+        }),
+        image: fields.text({
+          label: "Image de couverture",
+          description:
+            "Chemin vers une illustration existante dans /public/generated (ex: /generated/sector-industrie-petrochimie.svg). Laisser vide pour aucune image.",
         }),
         date: fields.date({ label: "Date de publication", validation: { isRequired: true } }),
         author: fields.text({ label: "Auteur", defaultValue: "BTH Expert" }),
@@ -468,6 +490,16 @@ export default config({
         backLabel: fields.text({ label: "Retour au blog" }),
         empty: fields.text({ label: "Message — aucun article", multiline: true }),
         publishedOn: fields.text({ label: "Publié le" }),
+        pagination: fields.object(
+          {
+            previous: fields.text({ label: "Page précédente" }),
+            next: fields.text({ label: "Page suivante" }),
+            pageLabel: fields.text({
+              label: "Label de page (utiliser {current} et {total})",
+            }),
+          },
+          { label: "Pagination" }
+        ),
       },
     }),
 

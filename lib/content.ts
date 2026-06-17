@@ -16,6 +16,7 @@ export interface ContentFrontmatter {
   image?: string;
   author?: string;
   tags?: string[];
+  status?: "draft" | "published";
   [key: string]: unknown;
 }
 
@@ -46,6 +47,11 @@ export async function getContent(
 
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
+
+  // Un article en brouillon n'est jamais exposé côté public (page détail,
+  // listing ou sitemap) — seule l'UI Keystatic y donne accès.
+  if (data.status === "draft") return null;
+
   const html = await markdownToHtml(content);
 
   return {

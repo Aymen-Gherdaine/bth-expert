@@ -1,0 +1,54 @@
+[
+  {
+    "fr": "Étude d'Impact sur l'Environnement",
+    "ar": "دراسة التأثير على البيئة",
+    "en": "Environmental Impact Assessment (EIA)"
+  },
+  { "fr": "EIE", "ar": "دراسة التأثير على البيئة (EIE)", "en": "EIE" },
+  { "fr": "Étude de Dangers", "ar": "دراسة الأخطار", "en": "Hazard Study" },
+  { "fr": "EDD", "ar": "دراسة الأخطار (EDD)", "en": "EDD" },
+  { "fr": "Audit HSE", "ar": "تدقيق HSE", "en": "HSE Audit" },
+  {
+    "fr": "Plan de Gestion Environnementale",
+    "ar": "مخطط التسيير البيئي",
+    "en": "Environmental Management Plan"
+  },
+  { "fr": "PGE", "ar": "مخطط التسيير البيئي (PGE)", "en": "PGE" },
+  {
+    "fr": "Bureau d'études environnemental agréé",
+    "ar": "مكتب الدراسات البيئية المعتمد",
+    "en": "Certified Environmental Consultancy"
+  },
+  {
+    "fr": "bureau d'études agréé",
+    "ar": "مكتب دراسات معتمد",
+    "en": "certified consultancy"
+  },
+  {
+    "fr": "Ministère de l'Environnement",
+    "ar": "وزارة البيئة",
+    "en": "Ministry of Environment"
+  },
+  { "fr": "agrément", "ar": "الاعتماد", "en": "accreditation" },
+  {
+    "fr": "Direction de l'Environnement de Wilaya",
+    "ar": "مديرية البيئة للولاية",
+    "en": "Wilaya Department of the Environment"
+  },
+  { "fr": "décret exécutif", "ar": "المرسوم التنفيذي", "en": "executive decree" },
+  { "fr": "wilaya", "ar": "ولاية", "en": "wilaya" },
+  { "fr": "Services", "ar": "الخدمات", "en": "Services" },
+  { "fr": "Secteurs", "ar": "القطاعات", "en": "Sectors" },
+  { "fr": "Équipe", "ar": "الفريق", "en": "Team" },
+  { "fr": "Projets", "ar": "المشاريع", "en": "Projects" },
+  { "fr": "Blog", "ar": "المدونة", "en": "Blog" },
+  { "fr": "Contact", "ar": "اتصل بنا", "en": "Contact" },
+  { "fr": "Oran", "ar": "وهران", "en": "Oran" },
+  { "fr": "Algérie", "ar": "الجزائر", "en": "Algeria" },
+  {
+    "fr": "BTH Consult",
+    "ar": "BTH Consult",
+    "en": "BTH Consult"
+  },
+  { "fr": "BTH Expert", "ar": "BTH Expert", "en": "BTH Expert" }
+]
