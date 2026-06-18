@@ -164,9 +164,9 @@
       "description": "Certified consultancy for conducting Environmental Impact Assessments (EIA) in Algeria. Reports compliant with the requirements of the Ministry of Environment. Based in Oran."
     },
     "hero": {
-      "eyebrow": "EIE · Accreditation Ministry of Environment",
+      "eyebrow": "EIA · Accredited by the Ministry of Environment",
       "heading": "Environmental Impact Assessment",
-      "subheading": "The EIE is the regulatory document that evaluates the impacts of a project on its natural, human, and socio-economic environment. Its completion is mandatory for all projects subject to environmental impact assessment under executive decree No. 07-145."
+      "subheading": "The EIA is the regulatory document that evaluates the impacts of a project on its natural, human, and socio-economic environment. Its completion is mandatory for all projects subject to environmental impact assessment under executive decree No. 07-145."
     },
     "heroMeta": [
       {
@@ -175,7 +175,7 @@
       },
       {
         "label": "Deliverable",
-        "value": "EIE Report"
+        "value": "EIA Report"
       },
       {
         "label": "Submission",
@@ -184,7 +184,7 @@
     ],
     "why": {
       "heading": "Who is concerned?",
-      "description": "Any industrial, mining, agricultural, or infrastructure project owner whose project appears on the list of works subject to EIE is legally required to produce this study before obtaining a construction or operating permit."
+      "description": "Any industrial, mining, agricultural, or infrastructure project owner whose project appears on the list of works subject to EIA is legally required to produce this study before obtaining a construction or operating permit."
     },
     "methodology": {
       "heading": "Our methodology",
@@ -213,15 +213,15 @@
     },
     "deliverable": {
       "heading": "Deliverable",
-      "description": "A structured EIE report, compliant with the Algerian regulatory framework, ready for submission to the Wilaya Department of the Environment (DEW) and the Directorate of Industry and Mines (DIM)."
+      "description": "A structured EIA report, compliant with the Algerian regulatory framework, ready for submission to the Wilaya Department of the Environment (DEW) and the Directorate of Industry and Mines (DIM)."
     },
     "faq": [
       {
         "q": "When is an Environmental Impact Assessment mandatory?",
-        "a": "As soon as your project appears on the regulatory list of works subject to environmental impact assessment (executive decree No. 07-145). The EIE is a prerequisite for obtaining a construction or operating permit."
+        "a": "As soon as your project appears on the regulatory list of works subject to environmental impact assessment (executive decree No. 07-145). The EIA is a prerequisite for obtaining a construction or operating permit."
       },
       {
-        "q": "How long does an EIE take?",
+        "q": "How long does an EIA take?",
         "a": "Depending on the scale and sensitivity of the site, it can take from a few weeks to a few months. We define the timeline from the initial consultation."
       },
       {
@@ -230,7 +230,7 @@
       }
     ],
     "cta": {
-      "heading": "Does your project require an EIE?",
+      "heading": "Does your project require an EIA?",
       "description": "Send us the technical details of your project. We assess the scope of the study and provide you with a quote within 48 hours.",
       "button": "Request a quote"
     }
@@ -260,11 +260,11 @@
       }
     ],
     "why": {
-      "heading": "Who Is Concerned?",
+      "heading": "Who is concerned?",
       "description": "Any operator of a classified installation for environmental protection subject to authorization — hydrocarbon storage, petrochemical units, hazardous material depots, pressure equipment — must produce a Hazard Study before commissioning and revise it after each substantial modification."
     },
     "methodology": {
-      "heading": "Our Methodology",
+      "heading": "Our methodology",
       "steps": [
         {
           "number": "01",
@@ -307,7 +307,7 @@
       }
     ],
     "cta": {
-      "heading": "Does Your Installation Require an EDD?",
+      "heading": "Does your installation require an EDD?",
       "description": "Send us the characteristics of your installation and processes. We will assess the scope of the study and provide you with a quote within 48 hours.",
       "button": "Request a Quote"
     }
@@ -341,7 +341,7 @@
       "description": "Any industrial or tertiary site wishing to secure its regulatory compliance, prepare for an inspection, initiate an ISO 14001 / 45001 approach, or manage its HSE risks ahead of an acquisition, expansion or certification."
     },
     "methodology": {
-      "heading": "Our Methodology",
+      "heading": "Our methodology",
       "steps": [
         {
           "number": "01",
@@ -790,7 +790,7 @@
         "secteur": "Industry & Petrochemicals",
         "secteurSlug": "industrie-petrochimie",
         "title": "Environmental Impact Assessment of a Petrochemical Complex",
-        "excerpt": "EIE and Hazard Study for a petrochemical unit in the Arzew industrial zone.",
+        "excerpt": "EIA and Hazard Study for a petrochemical unit in the Arzew industrial zone.",
         "mission": [
           "Environmental Impact Assessment",
           "Hazard Study"
@@ -798,7 +798,7 @@
         "annee": "2022",
         "contexte": "Installation of a new processing unit within an existing industrial zone, in proximity to third parties and sensitive environments. The project, subject to authorization, required an environmental assessment and characterization of major risks prior to review.",
         "demarche": "Initial site assessment, analysis of impacts on air, water and the human environment, modelling of major accident scenarios (thermal and overpressure effects) and definition of mitigation and risk control measures.",
-        "resultat": "A complete regulatory file — EIE and EDD — submitted to the wilaya authorities, accompanied by an Environmental Management Plan and an internal emergency plan."
+        "resultat": "A complete regulatory file — EIA and EDD — submitted to the wilaya authorities, accompanied by an Environmental Management Plan and an internal emergency plan."
       },
       {
         "slug": "cimenterie-ouest-algerien",
@@ -869,7 +869,7 @@
       "heading": "Rigorous studies, compliant deliverables",
       "items": [
         {
-          "abbr": "EIE",
+          "abbr": "EIA",
           "title": "Environmental Impact Assessment (EIA)",
           "description": "Comprehensive assessment of the environmental impacts of industrial, mining, and infrastructure projects. Report compliant with the requirements of the Ministry of Environment."
         },
@@ -938,7 +938,7 @@
       "items": [
         {
           "q": "Which projects require an environmental impact assessment in Algeria?",
-          "a": "Any project listed in executive decree 07-145 (classified installations, quarries, hydraulic projects, etc.) must undergo an EIE before any construction or operating permit is granted."
+          "a": "Any project listed in executive decree 07-145 (classified installations, quarries, hydraulic projects, etc.) must undergo an EIA before any construction or operating permit is granted."
         },
         {
           "q": "What is the average timeframe to obtain an environmental authorization?",
@@ -950,7 +950,7 @@
         },
         {
           "q": "What is a Ministry of Environment accreditation?",
-          "a": "It is an official accreditation issued by the Ministry of Environment and Quality of Life, certifying that the certified consultancy is authorized to carry out EIEs and hazard studies. BTH Expert is accredited."
+          "a": "It is an official accreditation issued by the Ministry of Environment and Quality of Life, certifying that the certified consultancy is authorized to carry out EIAs and hazard studies. BTH Expert is accredited."
         },
         {
           "q": "How much does an environmental study cost?",
