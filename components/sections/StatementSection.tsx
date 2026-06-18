@@ -153,8 +153,8 @@ export function StatementSection({ lang }: StatementSectionProps) {
               {/* Oversized inner layer: slack for the parallax travel + settle-scale */}
               <div ref={photoInnerRef} className="absolute inset-[-6%]">
                 <Image
-                  src="/section service.webp"
-                  alt="Site industriel — études environnementales BTH Expert"
+                  src="/cimenterie-algerie.png"
+                  alt="Complexe industriel en Algérie — études environnementales BTH Expert"
                   fill
                   quality={75}
                   sizes="(min-width: 1024px) 40vw, 100vw"
