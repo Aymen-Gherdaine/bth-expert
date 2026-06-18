@@ -31,7 +31,7 @@ export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroPr
         }}
       />
       <div
-        className={`relative z-10 ${PADX} flex flex-col justify-end min-h-[56vh] lg:min-h-[62vh] pt-20 lg:pt-28 pb-14 lg:pb-20`}
+        className={`relative z-10 ${PADX} flex flex-col justify-end min-h-[100dvh] pt-20 lg:pt-28 pb-14 lg:pb-20`}
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-9 xl:col-span-8">

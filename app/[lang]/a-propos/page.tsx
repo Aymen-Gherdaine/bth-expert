@@ -9,7 +9,6 @@ import { TerrainHero } from "@/components/sections/TerrainHero";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { RevealText } from "@/components/animations/RevealText";
 import { SectionReveal } from "@/components/motion/SectionReveal";
-import { AboutTimeline } from "@/components/sections/AboutTimeline";
 
 export async function generateMetadata({
   params,
@@ -53,19 +52,12 @@ export default async function AboutPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      {/* ── Hero — dark cinematic terrain mini-hero ───────────── */}
+      {/* ── Hero — full-height dark cinematic hero ────────────── */}
       <TerrainHero
         src="/generated/section-apropos.svg"
         eyebrow={a.hero.eyebrow}
         heading={a.hero.heading}
         subheading={a.hero.subheading}
-      />
-
-      {/* ── Histoire (timeline) ──────────────────────────────── */}
-      <AboutTimeline
-        eyebrow={a.timeline.eyebrow}
-        heading={a.timeline.heading}
-        milestones={a.timeline.milestones}
       />
 
       {/* ── Agrément & conformité ────────────────────────────── */}
@@ -150,30 +142,32 @@ export default async function AboutPage({
       </Container>
 
       {/* ── Notre approche ───────────────────────────────────── */}
-      <Container>
-        <Section number="01" eyebrow={a.values.eyebrow}>
-          <SectionReveal>
-            <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-12 lg:mb-16 max-w-2xl">
-              {a.values.heading}
-            </h2>
-            <div className="grid gap-10 md:grid-cols-3 md:gap-8">
-              {a.values.items.map((item, index) => (
-                <div key={item.title}>
-                  <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest block mb-4">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-[length:var(--text-small)] text-ink-soft leading-[1.7]">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </SectionReveal>
-        </Section>
-      </Container>
+      <div className="border-t border-line bg-cream-deep">
+        <Container>
+          <Section number="01" eyebrow={a.values.eyebrow}>
+            <SectionReveal>
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-12 lg:mb-16 max-w-2xl">
+                {a.values.heading}
+              </h2>
+              <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+                {a.values.items.map((item, index) => (
+                  <div key={item.title}>
+                    <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest block mb-4">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-[length:var(--text-small)] text-ink-soft leading-[1.7]">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </SectionReveal>
+          </Section>
+        </Container>
+      </div>
 
       {/* ── Stats band ───────────────────────────────────────── */}
       <div className="border-y border-line bg-cream-deep">
