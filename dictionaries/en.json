@@ -846,6 +846,7 @@
     "backLabel": "Back to Blog",
     "empty": "Articles in this language are coming soon. Please consult the French version of the blog.",
     "publishedOn": "Published on",
+    "readingTimeLabel": "min read",
     "pagination": {
       "previous": "Previous page",
       "next": "Next page",

@@ -147,7 +147,7 @@ async function main() {
           resultat: entry.resultat,
         })),
     },
-    blog: blogPage,
+    blog: { ...blogPage, readingTimeLabel: "min de lecture" },
     home,
   };
 

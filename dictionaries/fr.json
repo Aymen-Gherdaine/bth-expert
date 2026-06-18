@@ -850,7 +850,8 @@
       "previous": "Page précédente",
       "next": "Page suivante",
       "pageLabel": "Page {current} sur {total}"
-    }
+    },
+    "readingTimeLabel": "min de lecture"
   },
   "home": {
     "hero": {
