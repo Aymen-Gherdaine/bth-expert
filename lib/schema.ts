@@ -31,7 +31,6 @@ export function schemaLocalBusiness() {
     url: BASE_URL,
     telephone: "+213670708138",
     email: "info@bthexpert.dz",
-    foundingDate: "2009",
     address: BTH_ADDRESS,
     geo: BTH_GEO,
     areaServed: { "@type": "Country", name: "Algérie" },

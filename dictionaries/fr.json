@@ -118,12 +118,12 @@
     "members": [
       {
         "name": "Amine Lahmer",
-        "role": "Gérant — Expert environnement",
-        "bio": "Ingénieur en environnement, Amine Lahmer dirige BTH Expert depuis sa fondation en 2009. Il supervise l'ensemble des études et garantit la conformité des livrables aux exigences réglementaires du Ministère de l'Environnement et de la Qualité de la Vie. Spécialiste des études d'impact sur l'environnement et des études de dangers pour les établissements industriels classés.",
+        "role": "Co-fondateur & Gérant — Expert environnement",
+        "bio": "Ingénieur en environnement, titulaire d'une maîtrise de l'École de technologie supérieure (ÉTS, Montréal), Amine Lahmer a forgé son expertise au sein de grands groupes d'ingénierie internationaux — dont AtkinsRéalis — et sur des projets industriels complexes en Algérie et au Canada. Certifié par l'Institut Algérien du Pétrole (Sonatrach/IAP), il maîtrise les référentiels réglementaires algériens et les standards internationaux en matière d'études d'impact, d'études de dangers et de gestion des risques. Il co-fonde BTH Expert avec l'ambition d'apporter à l'industrie algérienne une expertise de premier plan, ancrée dans les meilleures pratiques mondiales.",
         "credentials": [
-          "Agrément Ministère de l'Environnement",
-          "Expert EIE",
-          "Expert EDD"
+          "M.Sc. Génie de l'environnement — ÉTS Montréal",
+          "Certifié Sonatrach / IAP",
+          "Agrément Ministère de l'Environnement"
         ]
       }
     ],
@@ -646,41 +646,41 @@
   "apropos": {
     "meta": {
       "title": "À propos — Bureau d'études environnemental agréé | BTH Expert",
-      "description": "BTH Expert, bureau d'études environnemental agréé à Oran depuis 2009. Histoire, agrément ministériel, partenariat BTH Consult et approche pluridisciplinaire au service de l'industrie algérienne."
+      "description": "BTH Expert, bureau d'études environnemental agréé à Oran. Expertise internationale, agrément ministériel et approche pluridisciplinaire au service de l'industrie algérienne."
     },
     "hero": {
-      "eyebrow": "À propos · Depuis 2009",
+      "eyebrow": "À propos · Bureau agréé · Oran, Algérie",
       "heading": "Un bureau d'études au service de l'industrie algérienne",
-      "subheading": "Depuis 2009, BTH Expert accompagne les porteurs de projets industriels dans la maîtrise de leurs obligations environnementales et réglementaires, de l'étude d'impact à la conformité."
+      "subheading": "BTH Expert réunit une expertise internationale — forgée au sein des grands groupes d'ingénierie mondiaux — et une connaissance fine du cadre réglementaire algérien, pour accompagner les porteurs de projets industriels de l'étude d'impact à la conformité."
     },
     "timeline": {
       "eyebrow": "Notre parcours",
-      "heading": "Quinze ans d'expertise environnementale",
+      "heading": "Une expertise internationale au service de l'Algérie",
       "milestones": [
         {
-          "year": "2009",
-          "title": "Création de BTH Expert",
-          "description": "Fondation du bureau d'études à Oran, avec l'ambition d'accompagner l'industrie de l'ouest algérien sur ses enjeux environnementaux."
+          "year": "Formation",
+          "title": "Maîtrise en génie de l'environnement",
+          "description": "Formation à l'École de technologie supérieure (ÉTS, Montréal) — expertise en évaluation des impacts environnementaux, gestion des risques industriels et standards internationaux."
         },
         {
-          "year": "2012",
+          "year": "Terrain",
+          "title": "Certification Sonatrach / IAP",
+          "description": "Certification par l'Institut Algérien du Pétrole, ancrant l'expertise dans les réalités de l'industrie énergétique algérienne."
+        },
+        {
+          "year": "International",
+          "title": "Grands groupes d'ingénierie",
+          "description": "Parcours professionnel au sein de groupes d'ingénierie de premier plan — dont AtkinsRéalis — sur des projets environnementaux complexes en Algérie et à l'international."
+        },
+        {
+          "year": "Agrément",
           "title": "Agrément ministériel",
-          "description": "Reconnaissance de l'expertise par le Ministère de l'Environnement, autorisant la réalisation des études réglementaires."
+          "description": "Reconnaissance par le Ministère de l'Environnement et de la Qualité de la Vie, autorisant la réalisation des études d'impact et des études de dangers en Algérie."
         },
         {
-          "year": "2016",
-          "title": "Élargissement des secteurs",
-          "description": "Extension de l'activité à l'énergie, aux infrastructures et à l'hydraulique, au-delà de l'industrie et de la pétrochimie."
-        },
-        {
-          "year": "2020",
-          "title": "Partenariat BTH Consult",
-          "description": "Alliance stratégique avec BTH Consult pour mobiliser une expertise pluridisciplinaire sur les projets d'envergure."
-        },
-        {
-          "year": "Aujourd'hui",
-          "title": "Plus de 20 réalisations",
-          "description": "Un portefeuille d'études d'impact, d'études de dangers et d'audits HSE menés pour plus de 150 partenaires industriels."
+          "year": "2026",
+          "title": "Création de BTH Expert",
+          "description": "Fondation du bureau d'études à Oran, avec l'ambition d'apporter une expertise internationale de premier plan à l'industrie algérienne."
         }
       ]
     },
@@ -713,8 +713,8 @@
     "stats": {
       "items": [
         {
-          "value": "2009",
-          "label": "Année de fondation"
+          "value": "10+",
+          "label": "Années d'expérience"
         },
         {
           "value": "20+",
@@ -832,7 +832,7 @@
       "headlinePart1": "Expertise",
       "headlineEmphasis": "environnementale",
       "headlinePart2": "& industrielle",
-      "subheading": "Bureau d'études agréé depuis 2009. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.",
+      "subheading": "Bureau d'études agréé. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.",
       "cta": "Parlez-nous de votre projet",
       "ctaSecondary": "Nos services"
     },
@@ -869,23 +869,23 @@
       "eyebrow": "En chiffres",
       "items": [
         {
-          "value": "2009",
-          "label": "Année de fondation",
+          "value": "10+",
+          "label": "Années d'expérience",
           "highlight": true
         },
         {
-          "value": "15+",
-          "label": "Années d'expérience",
+          "value": "20+",
+          "label": "Études réalisées",
           "highlight": false
         },
         {
-          "value": "200+",
-          "label": "Projets réalisés",
+          "value": "4",
+          "label": "Familles de services",
           "highlight": false
         },
         {
-          "value": "12",
-          "label": "Secteurs couverts",
+          "value": "Agréé",
+          "label": "Ministère de l'Environnement",
           "highlight": false
         }
       ]
@@ -923,7 +923,7 @@
         },
         {
           "q": "Qu'est-ce qu'un agrément Ministère de l'Environnement ?",
-          "a": "C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé depuis 2009."
+          "a": "C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé."
         },
         {
           "q": "Combien coûte une étude environnementale ?",

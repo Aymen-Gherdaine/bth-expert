@@ -3,7 +3,7 @@ hero:
   headlinePart1: Expertise
   headlineEmphasis: environnementale
   headlinePart2: '& industrielle'
-  subheading: Bureau d'études agréé depuis 2009. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.
+  subheading: Bureau d'études agréé. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.
   cta: Parlez-nous de votre projet
   ctaSecondary: Nos services
 services:
@@ -28,17 +28,17 @@ services:
 stats:
   eyebrow: En chiffres
   items:
-    - value: '2009'
-      label: Année de fondation
-      highlight: true
-    - value: 15+
+    - value: 10+
       label: Années d'expérience
+      highlight: true
+    - value: 20+
+      label: Études réalisées
       highlight: false
-    - value: 200+
-      label: Projets réalisés
+    - value: '4'
+      label: Familles de services
       highlight: false
-    - value: '12'
-      label: Secteurs couverts
+    - value: Agréé
+      label: Ministère de l'Environnement
       highlight: false
 equipe:
   sectionNumber: '02'
@@ -64,6 +64,6 @@ faq:
     - q: BTH Expert intervient-il hors d'Oran ?
       a: 'Oui. Basé à Oran, nous intervenons dans toute l''Algérie, avec une concentration sur l''Ouest algérien : Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane et les wilayas limitrophes.'
     - q: Qu'est-ce qu'un agrément Ministère de l'Environnement ?
-      a: C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé depuis 2009.
+      a: C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé.
     - q: Combien coûte une étude environnementale ?
       a: Le coût dépend du type d'étude, de l'ampleur du projet et de sa localisation. Nous établissons un devis personnalisé après une consultation initiale gratuite. Contactez-nous pour en discuter.

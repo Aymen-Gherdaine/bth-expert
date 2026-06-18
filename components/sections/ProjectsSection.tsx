@@ -150,7 +150,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
             data-reveal
             className="order-3 lg:order-none mt-6 lg:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1 max-w-md font-sans text-muted leading-[1.7] text-[length:var(--text-small)]"
           >
-            Depuis 2009, des études menées pour l&apos;industrie algérienne —
+            Des études menées pour l&apos;industrie algérienne —
             dossiers conformes, déposés et défendus jusqu&apos;à
             l&apos;approbation.
           </p>

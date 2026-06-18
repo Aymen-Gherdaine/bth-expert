@@ -26,7 +26,8 @@ interface EquipeMembersProps {
 
 /** Map a member name to one of the existing portraits, like the contact page. */
 function photoFor(name: string): string | null {
-  if (name === "Amine Lahmer") return "/amine.jpg";
+  // Amine photo placeholder — uncomment when photo available
+  // if (name === "Amine Lahmer") return "/amine.jpg";
   if (name.startsWith("Abdellah")) return "/abdellah.jpg";
   return null;
 }
