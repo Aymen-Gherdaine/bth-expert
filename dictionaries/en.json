@@ -112,24 +112,34 @@
     },
     "hero": {
       "eyebrow": "Certified Experts · Oran, Algeria",
-      "heading": "Our Team",
-      "subheading": "BTH Expert is composed of accredited engineers and specialists, with in-depth command of the Algerian regulatory framework and international best practices in environmental studies."
+      "heading": "Experts & partners",
+      "subheading": "BTH Expert brings together international expertise built within leading Canadian engineering groups, combined with deep knowledge of Algeria's regulatory and industrial environment."
     },
     "members": [
       {
         "name": "Amine Lahmer",
         "role": "Co-founder & Manager — Environmental Expert",
-        "bio": "An environmental engineer holding a Master's degree from the École de technologie supérieure (ÉTS, Montreal), Amine Lahmer built his expertise within major international engineering groups — including AtkinsRéalis — and on complex industrial projects in Algeria and Canada. Certified by the Algerian Petroleum Institute (Sonatrach/IAP), he has a thorough command of Algerian regulatory frameworks and international standards in impact assessments, hazard studies, and risk management. He co-founded BTH Expert with the ambition of bringing world-class expertise to Algerian industry, grounded in global best practices.",
+        "bio": "An environmental engineer, Amine Lahmer gained several years of field experience within major Canadian engineering groups — notably GHD and AtkinsRéalis — on complex industrial projects in Algeria and Canada. Certified by the Algerian Petroleum Institute (Sonatrach/IAP), he is well-versed in Algerian regulatory frameworks and international standards in impact assessment, hazard studies and industrial risk management. He co-founded BTH Expert with the ambition of bringing world-class, field-tested expertise to Algerian industry.",
         "credentials": [
-          "M.Sc. Environmental Engineering — ÉTS Montreal",
-          "Certified Sonatrach / IAP",
-          "Ministry of Environment Accreditation"
+          "GHD · AtkinsRéalis",
+          "Sonatrach / IAP Certified",
+          "Ministry of Environment Accredited"
+        ]
+      },
+      {
+        "name": "Hakim Belgouini",
+        "role": "Senior Consultant — BTH Consult",
+        "bio": "With over 40 years of experience in environmental studies and industrial projects across Algeria, Hakim Belgouini is a recognised expert in western and central Algeria. As head of BTH Consult, he brings deep knowledge of Algerian regulatory frameworks and an established network with regional authorities and industrial project owners to every engagement.",
+        "credentials": [
+          "40+ years of experience",
+          "BTH Consult",
+          "Western · Central Algeria"
         ]
       }
     ],
     "partner": {
       "heading": "BTH Consult Partnership",
-      "description": "For regional or national-scale projects, BTH Expert operates in strategic partnership with BTH Consult, thereby strengthening the operational capacity and expertise available for each assignment."
+      "description": "BTH Expert and BTH Consult operate as a structured partnership for large-scale projects. This alliance combines Amine Lahmer's international engineering expertise with Hakim Belgouini's 40 years of Algerian field practice — providing complete technical and regulatory coverage on every assignment."
     },
     "cta": {
       "heading": "Let's Work Together",
@@ -730,6 +740,22 @@
       "heading": "Let's work together",
       "description": "Let's discuss your environmental project and your regulatory obligations.",
       "button": "Get in touch"
+    },
+    "expertise": {
+      "eyebrow": "Expertise",
+      "heading": "The expertise behind every study",
+      "experts": [
+        {
+          "name": "Amine Lahmer",
+          "role": "Co-founder & Managing Director",
+          "description": "Several years of field experience within major Canadian engineering groups — notably GHD and AtkinsRéalis — on complex industrial projects in Algeria and Canada. Certified by Sonatrach/IAP and accredited by Algeria's Ministry of Environment."
+        },
+        {
+          "name": "Hakim Belgouini",
+          "role": "Senior Consultant — BTH Consult",
+          "description": "Over 40 years of experience in environmental studies and industrial projects in Algeria. Deep knowledge of the regulatory landscape in western and central Algeria, serving large-scale regional and national projects."
+        }
+      ]
     }
   },
   "projets": {

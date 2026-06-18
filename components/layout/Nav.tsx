@@ -14,7 +14,6 @@ export function Nav({ lang, dict, className, style }: NavProps) {
     { href: `/${lang}/services`, label: dict.nav.services },
     { href: `/${lang}/secteurs`, label: dict.nav.secteurs },
     { href: `/${lang}/projets`, label: dict.nav.projets },
-    { href: `/${lang}/equipe`, label: dict.nav.equipe },
     { href: `/${lang}/blog`, label: dict.nav.blog },
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];
