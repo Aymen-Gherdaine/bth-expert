@@ -42,8 +42,8 @@ Site vitrine premium pour **BTH Expert**, bureau d'études environnemental agré
 Email:     info@bthexpert.dz
 Téléphone: +213 (670) 70 81 38
 Adresse:   40, Lotissement 119, Bir El Djir, Oran, Algérie
-Fondé:     2009
-Experts:   Amine Lahmer (Gérant)
+Fondé:     2026
+Experts:   Amine Lahmer (Co-fondateur & Gérant)
 Partenaire: BTH Consult
 ```
 
