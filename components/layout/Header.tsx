@@ -121,7 +121,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                   { href: `/${lang}/services`, label: dict.nav.services },
                   { href: `/${lang}/secteurs`, label: dict.nav.secteurs },
                   { href: `/${lang}/projets`, label: dict.nav.projets },
-                  { href: `/${lang}/equipe`, label: dict.nav.equipe },
+                  { href: `/${lang}/blog`, label: dict.nav.blog },
                   { href: `/${lang}/contact`, label: dict.nav.contact },
                 ]}
                 phone="+213 (670) 70 81 38"

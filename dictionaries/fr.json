@@ -20,7 +20,12 @@
     "language": "Langue",
     "navigation": "Navigation",
     "about": "À propos",
-    "secteursList": ["Industrie & Pétrochimie", "Énergie & Hydrocarbures", "Infrastructures & BTP", "Agriculture & Hydraulique"]
+    "secteursList": [
+      "Industrie & Pétrochimie",
+      "Énergie & Hydrocarbures",
+      "Infrastructures & BTP",
+      "Agriculture & Hydraulique"
+    ]
   },
   "common": {
     "learnMore": "En savoir plus",
@@ -107,20 +112,34 @@
     },
     "hero": {
       "eyebrow": "Experts agréés · Oran, Algérie",
-      "heading": "Notre équipe",
-      "subheading": "BTH Expert est constitué d'ingénieurs et de spécialistes accrédités, avec une maîtrise approfondie du cadre réglementaire algérien et des meilleures pratiques internationales en matière d'études environnementales."
+      "heading": "Experts & partenaires",
+      "subheading": "BTH Expert mobilise une expertise internationale forgée au sein des grands groupes d'ingénierie canadiens, combinée à un ancrage profond dans les réalités réglementaires et industrielles de l'Algérie."
     },
     "members": [
       {
         "name": "Amine Lahmer",
-        "role": "Gérant — Expert environnement",
-        "bio": "Ingénieur en environnement, Amine Lahmer dirige BTH Expert depuis sa fondation en 2009. Il supervise l'ensemble des études et garantit la conformité des livrables aux exigences réglementaires du Ministère de l'Environnement et de la Qualité de la Vie. Spécialiste des études d'impact sur l'environnement et des études de dangers pour les établissements industriels classés.",
-        "credentials": ["Agrément Ministère de l'Environnement", "Expert EIE", "Expert EDD"]
+        "role": "Co-fondateur & Gérant — Expert environnement",
+        "bio": "Ingénieur en environnement, Amine Lahmer a acquis plusieurs années d'expérience terrain au sein de grands groupes d'ingénierie canadiens — notamment GHD et AtkinsRéalis — sur des projets industriels complexes en Algérie et au Canada. Certifié par l'Institut Algérien du Pétrole (Sonatrach/IAP), il maîtrise les référentiels réglementaires algériens et les standards internationaux en matière d'études d'impact, d'études de dangers et de gestion des risques industriels. Il co-fonde BTH Expert avec l'ambition d'apporter à l'industrie algérienne une expertise de premier plan forgée sur le terrain international.",
+        "credentials": [
+          "GHD · AtkinsRéalis",
+          "Certifié Sonatrach / IAP",
+          "Agrément Ministère de l'Environnement"
+        ]
+      },
+      {
+        "name": "Hakim Belgouini",
+        "role": "Partenaire — BTH Consult",
+        "bio": "Fort de plus de 40 ans d'expérience dans les études environnementales et les projets industriels en Algérie, Hakim Belgouini est un référent reconnu du secteur dans l'ouest et le centre du pays. À la tête de BTH Consult, il apporte à chaque mission un ancrage profond dans les réalités réglementaires algériennes et un réseau éprouvé auprès des administrations de wilaya et des maîtres d'ouvrage industriels.",
+        "credentials": [
+          "40+ ans d'expérience",
+          "BTH Consult",
+          "Ouest · Centre Algérie"
+        ]
       }
     ],
     "partner": {
       "heading": "Partenariat BTH Consult",
-      "description": "Pour les projets d'envergure régionale ou nationale, BTH Expert intervient en partenariat stratégique avec BTH Consult, renforçant ainsi la capacité d'intervention et l'expertise mobilisable pour chaque mission."
+      "description": "BTH Expert et BTH Consult forment un partenariat structuré pour les projets d'envergure. Cette alliance réunit complémentairement l'expertise internationale d'Amine Lahmer et les 40 années de pratique terrain de Hakim Belgouini en Algérie — garantissant une couverture technique et réglementaire complète sur chaque mission."
     },
     "cta": {
       "heading": "Travaillons ensemble",
@@ -147,8 +166,22 @@
     "hero": {
       "eyebrow": "EIE · Agrément Ministère de l'Environnement",
       "heading": "Étude d'Impact sur l'Environnement",
-      "subheading": "L'EIE est le document réglementaire qui évalue les impacts d'un projet sur son environnement naturel, humain et socio-économique. Sa réalisation est obligatoire pour tous les projets soumis à étude d'impact selon le décret exécutif n° 07-144."
+      "subheading": "L'EIE est le document réglementaire qui évalue les impacts d'un projet sur son environnement naturel, humain et socio-économique. Sa réalisation est obligatoire pour tous les projets soumis à étude d'impact selon le décret exécutif n° 07-145."
     },
+    "heroMeta": [
+      {
+        "label": "Cadre",
+        "value": "Décret 07-145"
+      },
+      {
+        "label": "Livrable",
+        "value": "Rapport EIE"
+      },
+      {
+        "label": "Dépôt",
+        "value": "DEW / DIM"
+      }
+    ],
     "why": {
       "heading": "Qui est concerné ?",
       "description": "Tout porteur de projet industriel, minier, agricole ou d'infrastructure dont le projet figure sur la liste des travaux soumis à EIE est légalement tenu de produire cette étude avant l'obtention de son autorisation de construire ou d'exploitation."
@@ -156,16 +189,46 @@
     "methodology": {
       "heading": "Notre méthodologie",
       "steps": [
-        { "number": "01", "title": "État initial du site", "description": "Inventaire des composantes environnementales : milieu physique, biologique, humain et paysager. Données mesurées sur site et données secondaires." },
-        { "number": "02", "title": "Analyse des impacts", "description": "Identification, qualification et hiérarchisation des impacts directs et indirects du projet sur les composantes environnementales. Impacts temporaires et permanents." },
-        { "number": "03", "title": "Mesures d'atténuation", "description": "Définition des mesures de suppression, réduction et compensation des impacts significatifs. Chaque mesure est chiffrée et planifiée." },
-        { "number": "04", "title": "Programme de surveillance", "description": "Indicateurs de suivi environnemental, fréquence des contrôles, seuils d'alerte et procédures de reporting au Ministère." }
+        {
+          "number": "01",
+          "title": "État initial du site",
+          "description": "Inventaire des composantes environnementales : milieu physique, biologique, humain et paysager. Données mesurées sur site et données secondaires."
+        },
+        {
+          "number": "02",
+          "title": "Analyse des impacts",
+          "description": "Identification, qualification et hiérarchisation des impacts directs et indirects du projet sur les composantes environnementales. Impacts temporaires et permanents."
+        },
+        {
+          "number": "03",
+          "title": "Mesures d'atténuation",
+          "description": "Définition des mesures de suppression, réduction et compensation des impacts significatifs. Chaque mesure est chiffrée et planifiée."
+        },
+        {
+          "number": "04",
+          "title": "Programme de surveillance",
+          "description": "Indicateurs de suivi environnemental, fréquence des contrôles, seuils d'alerte et procédures de reporting au Ministère."
+        }
       ]
     },
     "deliverable": {
       "heading": "Livrable",
       "description": "Un rapport EIE structuré, conforme au canevas réglementaire algérien, prêt pour le dépôt auprès de la Direction de l'Environnement de Wilaya (DEW) et la Direction de l'Industrie et des Mines (DIM)."
     },
+    "faq": [
+      {
+        "q": "Quand l'étude d'impact est-elle obligatoire ?",
+        "a": "Dès que votre projet figure sur la liste réglementaire des travaux soumis à étude d'impact (décret exécutif n° 07-145). L'EIE conditionne l'autorisation de construire ou d'exploiter."
+      },
+      {
+        "q": "Combien de temps prend une EIE ?",
+        "a": "Selon l'ampleur et la sensibilité du site, de quelques semaines à quelques mois. Nous cadrons le délai dès la consultation initiale."
+      },
+      {
+        "q": "Qui valide le rapport final ?",
+        "a": "Les autorités de wilaya — Direction de l'Environnement (DEW) et Direction de l'Industrie et des Mines (DIM)."
+      }
+    ],
     "cta": {
       "heading": "Votre projet nécessite une EIE ?",
       "description": "Transmettez-nous les éléments techniques de votre projet. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.",
@@ -182,6 +245,20 @@
       "heading": "Étude de Dangers",
       "subheading": "L'étude de dangers identifie et caractérise les risques d'accident majeur d'une installation industrielle, évalue leurs conséquences et définit les mesures de maîtrise. Elle est exigée pour les établissements classés soumis à autorisation."
     },
+    "heroMeta": [
+      {
+        "label": "Concerne",
+        "value": "Établissements classés"
+      },
+      {
+        "label": "Méthodes",
+        "value": "APR · HAZOP"
+      },
+      {
+        "label": "Livrable",
+        "value": "Rapport EDD"
+      }
+    ],
     "why": {
       "heading": "Qui est concerné ?",
       "description": "Tout exploitant d'une installation classée pour la protection de l'environnement soumise à autorisation — stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression — doit produire une étude de dangers avant la mise en exploitation et la réviser à chaque modification substantielle."
@@ -189,16 +266,46 @@
     "methodology": {
       "heading": "Notre méthodologie",
       "steps": [
-        { "number": "01", "title": "Description & environnement", "description": "Caractérisation de l'installation, des produits, des procédés et de la vulnérabilité de l'environnement : populations, milieux sensibles et effets dominos potentiels." },
-        { "number": "02", "title": "Identification des dangers", "description": "Analyse systématique des potentiels de dangers par méthode reconnue (APR, HAZOP), exploitation du retour d'accidentologie et recensement des scénarios redoutés." },
-        { "number": "03", "title": "Analyse des risques & modélisation", "description": "Quantification des scénarios majeurs : effets thermiques, de surpression et toxiques, calcul des zones d'effet et cartographie des distances d'isolement." },
-        { "number": "04", "title": "Maîtrise des risques", "description": "Définition des barrières de prévention et de protection, du plan d'urgence interne et des dispositions d'intervention en cas d'accident." }
+        {
+          "number": "01",
+          "title": "Description & environnement",
+          "description": "Caractérisation de l'installation, des produits, des procédés et de la vulnérabilité de l'environnement : populations, milieux sensibles et effets dominos potentiels."
+        },
+        {
+          "number": "02",
+          "title": "Identification des dangers",
+          "description": "Analyse systématique des potentiels de dangers par méthode reconnue (APR, HAZOP), exploitation du retour d'accidentologie et recensement des scénarios redoutés."
+        },
+        {
+          "number": "03",
+          "title": "Analyse des risques & modélisation",
+          "description": "Quantification des scénarios majeurs : effets thermiques, de surpression et toxiques, calcul des zones d'effet et cartographie des distances d'isolement."
+        },
+        {
+          "number": "04",
+          "title": "Maîtrise des risques",
+          "description": "Définition des barrières de prévention et de protection, du plan d'urgence interne et des dispositions d'intervention en cas d'accident."
+        }
       ]
     },
     "deliverable": {
       "heading": "Livrable",
       "description": "Un rapport d'étude de dangers conforme au cadre réglementaire algérien, intégrant la cartographie des zones d'effet et le plan de maîtrise des risques, prêt pour le dépôt auprès des autorités compétentes."
     },
+    "faq": [
+      {
+        "q": "Mon installation est-elle concernée ?",
+        "a": "Toute installation classée soumise à autorisation : stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression."
+      },
+      {
+        "q": "Que contient l'étude de dangers ?",
+        "a": "Identification des dangers, modélisation des scénarios majeurs (effets thermiques, surpression, toxiques), cartographie des zones d'effet et plan de maîtrise des risques."
+      },
+      {
+        "q": "Faut-il la réviser ?",
+        "a": "Oui — à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre."
+      }
+    ],
     "cta": {
       "heading": "Votre installation requiert une EDD ?",
       "description": "Transmettez-nous les caractéristiques de votre installation et de vos procédés. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.",
@@ -215,6 +322,20 @@
       "heading": "Audit HSE & conformité",
       "subheading": "L'audit HSE dresse l'état de conformité d'un site au regard des exigences d'hygiène, de sécurité et d'environnement. Il met en évidence les écarts réglementaires et hiérarchise les actions correctives à engager."
     },
+    "heroMeta": [
+      {
+        "label": "Périmètre",
+        "value": "Hygiène · Sécurité · Env."
+      },
+      {
+        "label": "Référentiels",
+        "value": "ISO 14001 / 45001"
+      },
+      {
+        "label": "Livrable",
+        "value": "Plan d'action"
+      }
+    ],
     "why": {
       "heading": "Qui est concerné ?",
       "description": "Tout site industriel ou tertiaire souhaitant sécuriser sa conformité réglementaire, préparer une inspection, engager une démarche ISO 14001 / 45001 ou maîtriser ses risques HSE avant une acquisition, une extension ou une certification."
@@ -222,16 +343,46 @@
     "methodology": {
       "heading": "Notre méthodologie",
       "steps": [
-        { "number": "01", "title": "Revue documentaire", "description": "Analyse des autorisations, arrêtés, registres et procédures existantes au regard des obligations réglementaires applicables au site." },
-        { "number": "02", "title": "Visite de terrain", "description": "Inspection des installations, des postes de travail et des dispositifs de sécurité ; entretiens avec les responsables et observation des pratiques réelles." },
-        { "number": "03", "title": "Analyse des écarts", "description": "Confrontation de l'existant aux exigences légales et normatives, qualification de la criticité de chaque écart constaté." },
-        { "number": "04", "title": "Plan d'action priorisé", "description": "Recommandations chiffrées et planifiées, hiérarchisées par niveau de risque et par échéance réglementaire." }
+        {
+          "number": "01",
+          "title": "Revue documentaire",
+          "description": "Analyse des autorisations, arrêtés, registres et procédures existantes au regard des obligations réglementaires applicables au site."
+        },
+        {
+          "number": "02",
+          "title": "Visite de terrain",
+          "description": "Inspection des installations, des postes de travail et des dispositifs de sécurité ; entretiens avec les responsables et observation des pratiques réelles."
+        },
+        {
+          "number": "03",
+          "title": "Analyse des écarts",
+          "description": "Confrontation de l'existant aux exigences légales et normatives, qualification de la criticité de chaque écart constaté."
+        },
+        {
+          "number": "04",
+          "title": "Plan d'action priorisé",
+          "description": "Recommandations chiffrées et planifiées, hiérarchisées par niveau de risque et par échéance réglementaire."
+        }
       ]
     },
     "deliverable": {
       "heading": "Livrable",
       "description": "Un rapport d'audit HSE complet : grille de conformité réglementaire, registre des écarts et plan d'action priorisé, support de pilotage pour la mise en conformité du site."
     },
+    "faq": [
+      {
+        "q": "Quand réaliser un audit HSE ?",
+        "a": "Avant une inspection, une certification ISO, une acquisition ou une extension — ou simplement pour sécuriser durablement votre conformité."
+      },
+      {
+        "q": "Quel est le livrable ?",
+        "a": "Une grille de conformité réglementaire, un registre des écarts et un plan d'action priorisé par niveau de risque."
+      },
+      {
+        "q": "Intervenez-vous sur site ?",
+        "a": "Oui — revue documentaire puis visite de terrain, entretiens et observation des pratiques réelles."
+      }
+    ],
     "cta": {
       "heading": "Besoin d'un audit HSE ?",
       "description": "Décrivez-nous votre site et vos objectifs de conformité. Nous définissons le périmètre de l'audit et vous remettons une offre sous 48h.",
@@ -248,6 +399,20 @@
       "heading": "Plan de Gestion Environnementale",
       "subheading": "Le plan de gestion environnementale traduit les engagements de l'étude d'impact en mesures concrètes : il organise l'atténuation, la surveillance et le suivi des effets d'un projet, de la phase travaux à l'exploitation."
     },
+    "heroMeta": [
+      {
+        "label": "Phase",
+        "value": "Travaux → exploitation"
+      },
+      {
+        "label": "Suit",
+        "value": "Mesures d'atténuation"
+      },
+      {
+        "label": "Livrable",
+        "value": "Plan opérationnel"
+      }
+    ],
     "why": {
       "heading": "Qui est concerné ?",
       "description": "Tout porteur de projet dont l'étude d'impact a prescrit des mesures d'atténuation et de suivi, ainsi que les exploitants tenus de démontrer la bonne mise en œuvre de leurs engagements environnementaux auprès des autorités."
@@ -255,16 +420,46 @@
     "methodology": {
       "heading": "Notre méthodologie",
       "steps": [
-        { "number": "01", "title": "Cadrage des engagements", "description": "Reprise des mesures d'atténuation et de compensation issues de l'étude d'impact et traduction en actions opérationnelles attribuées et planifiées." },
-        { "number": "02", "title": "Programme de surveillance", "description": "Définition des indicateurs, des paramètres à mesurer, des fréquences de contrôle et des seuils d'alerte par composante environnementale." },
-        { "number": "03", "title": "Dispositif de suivi", "description": "Organisation des responsabilités, des procédures de reporting et des modalités de contrôle en phase travaux comme en phase exploitation." },
-        { "number": "04", "title": "Amélioration continue", "description": "Mécanismes de revue, de mise à jour des mesures et de traitement des non-conformités tout au long de la vie du projet." }
+        {
+          "number": "01",
+          "title": "Cadrage des engagements",
+          "description": "Reprise des mesures d'atténuation et de compensation issues de l'étude d'impact et traduction en actions opérationnelles attribuées et planifiées."
+        },
+        {
+          "number": "02",
+          "title": "Programme de surveillance",
+          "description": "Définition des indicateurs, des paramètres à mesurer, des fréquences de contrôle et des seuils d'alerte par composante environnementale."
+        },
+        {
+          "number": "03",
+          "title": "Dispositif de suivi",
+          "description": "Organisation des responsabilités, des procédures de reporting et des modalités de contrôle en phase travaux comme en phase exploitation."
+        },
+        {
+          "number": "04",
+          "title": "Amélioration continue",
+          "description": "Mécanismes de revue, de mise à jour des mesures et de traitement des non-conformités tout au long de la vie du projet."
+        }
       ]
     },
     "deliverable": {
       "heading": "Livrable",
       "description": "Un plan de gestion environnementale opérationnel : matrice des mesures, programme de surveillance et de suivi, indicateurs et modèle de reporting, directement exploitable par les équipes du projet."
     },
+    "faq": [
+      {
+        "q": "À quoi sert un PGE ?",
+        "a": "Il traduit les engagements de l'étude d'impact en mesures concrètes : atténuation, surveillance et suivi sur toute la durée de vie du projet."
+      },
+      {
+        "q": "Qui est concerné ?",
+        "a": "Tout porteur de projet dont l'étude d'impact a prescrit des mesures de suivi, et les exploitants tenus de démontrer leurs engagements."
+      },
+      {
+        "q": "Que contient le livrable ?",
+        "a": "Une matrice des mesures, un programme de surveillance, des indicateurs et un modèle de reporting exploitables par vos équipes."
+      }
+    ],
     "cta": {
       "heading": "Structurer votre suivi environnemental ?",
       "description": "Communiquez-nous les prescriptions de votre étude d'impact. Nous bâtissons un plan de gestion adapté à votre projet et vous remettons une offre sous 48h.",
@@ -288,7 +483,15 @@
     "zones": {
       "heading": "Zones d'intervention",
       "description": "Basé à Bir El Djir, Oran, BTH Expert intervient dans l'ensemble des wilayas de l'ouest algérien.",
-      "wilayas": ["Oran", "Mostaganem", "Tlemcen", "Sidi Bel Abbès", "Relizane", "Mascara", "Aïn Témouchent"]
+      "wilayas": [
+        "Oran",
+        "Mostaganem",
+        "Tlemcen",
+        "Sidi Bel Abbès",
+        "Relizane",
+        "Mascara",
+        "Aïn Témouchent"
+      ]
     },
     "nap": {
       "heading": "Coordonnées",
@@ -327,12 +530,32 @@
         "tagline": "Raffinage, cimenteries, métallurgie et traitements de surface : des procédés à fort potentiel d'impact et de danger.",
         "intro": "Les sites industriels et pétrochimiques concentrent les enjeux environnementaux et de sécurité les plus exigeants : rejets atmosphériques et aqueux, stockage de produits dangereux, risques d'accident majeur. BTH Expert accompagne ces installations de l'étude d'impact à la maîtrise des risques.",
         "enjeux": [
-          { "title": "Installations classées", "description": "Études d'impact et études de dangers pour les établissements soumis à autorisation." },
-          { "title": "Rejets & émissions", "description": "Caractérisation et réduction des rejets atmosphériques, aqueux et des déchets spéciaux." },
-          { "title": "Risque d'accident majeur", "description": "Scénarios, zones d'effet et plans de prévention pour les procédés à risque." }
+          {
+            "title": "Installations classées",
+            "description": "Études d'impact et études de dangers pour les établissements soumis à autorisation."
+          },
+          {
+            "title": "Rejets & émissions",
+            "description": "Caractérisation et réduction des rejets atmosphériques, aqueux et des déchets spéciaux."
+          },
+          {
+            "title": "Risque d'accident majeur",
+            "description": "Scénarios, zones d'effet et plans de prévention pour les procédés à risque."
+          }
         ],
-        "sousSecteurs": ["Raffinage & pétrochimie", "Cimenteries", "Métallurgie", "Traitements de surface", "Chimie & parachimie"],
-        "prestations": ["Étude d'impact environnemental", "Étude de dangers", "Audit HSE", "Plan de gestion environnementale"]
+        "sousSecteurs": [
+          "Raffinage & pétrochimie",
+          "Cimenteries",
+          "Métallurgie",
+          "Traitements de surface",
+          "Chimie & parachimie"
+        ],
+        "prestations": [
+          "Étude d'impact environnemental",
+          "Étude de dangers",
+          "Audit HSE",
+          "Plan de gestion environnementale"
+        ]
       },
       {
         "slug": "energie-hydrocarbures",
@@ -340,12 +563,31 @@
         "tagline": "Exploration, production, transport et stockage d'hydrocarbures, production d'énergie : des infrastructures stratégiques et sensibles.",
         "intro": "Le secteur de l'énergie et des hydrocarbures opère des infrastructures étendues et sensibles, soumises à un cadre réglementaire strict. BTH Expert intervient sur l'ensemble de la chaîne, du champ de production aux installations de transport et de stockage.",
         "enjeux": [
-          { "title": "Sites étendus", "description": "Évaluation des impacts sur de vastes emprises et des milieux variés." },
-          { "title": "Sécurité des installations", "description": "Études de dangers pour le stockage, le transport et les unités de traitement." },
-          { "title": "Transition & efficacité", "description": "Intégration des enjeux énergétiques et des énergies renouvelables dans les projets." }
+          {
+            "title": "Sites étendus",
+            "description": "Évaluation des impacts sur de vastes emprises et des milieux variés."
+          },
+          {
+            "title": "Sécurité des installations",
+            "description": "Études de dangers pour le stockage, le transport et les unités de traitement."
+          },
+          {
+            "title": "Transition & efficacité",
+            "description": "Intégration des enjeux énergétiques et des énergies renouvelables dans les projets."
+          }
         ],
-        "sousSecteurs": ["Amont pétrolier & gazier", "Transport & stockage", "Production électrique", "Énergies renouvelables"],
-        "prestations": ["Étude d'impact environnemental", "Étude de dangers", "Audit HSE", "Plan de gestion environnementale"]
+        "sousSecteurs": [
+          "Amont pétrolier & gazier",
+          "Transport & stockage",
+          "Production électrique",
+          "Énergies renouvelables"
+        ],
+        "prestations": [
+          "Étude d'impact environnemental",
+          "Étude de dangers",
+          "Audit HSE",
+          "Plan de gestion environnementale"
+        ]
       },
       {
         "slug": "infrastructures-btp",
@@ -353,12 +595,30 @@
         "tagline": "Routes, ouvrages d'art, zones d'activité, bâtiments et aménagements : des projets structurants à forte emprise.",
         "intro": "Les projets d'infrastructure et de BTP transforment durablement le territoire. BTH Expert accompagne maîtres d'ouvrage et entreprises pour anticiper les impacts, sécuriser les autorisations et organiser le suivi environnemental des chantiers.",
         "enjeux": [
-          { "title": "Emprise & territoire", "description": "Évaluation des impacts sur les milieux, le paysage et les populations riveraines." },
-          { "title": "Phase chantier", "description": "Plans de gestion et suivi des nuisances en phase travaux." },
-          { "title": "Autorisations", "description": "Constitution des dossiers réglementaires nécessaires à l'obtention des permis." }
+          {
+            "title": "Emprise & territoire",
+            "description": "Évaluation des impacts sur les milieux, le paysage et les populations riveraines."
+          },
+          {
+            "title": "Phase chantier",
+            "description": "Plans de gestion et suivi des nuisances en phase travaux."
+          },
+          {
+            "title": "Autorisations",
+            "description": "Constitution des dossiers réglementaires nécessaires à l'obtention des permis."
+          }
         ],
-        "sousSecteurs": ["Routes & ouvrages d'art", "Zones d'activité & industrielles", "Bâtiment & immobilier", "Aménagement urbain"],
-        "prestations": ["Étude d'impact environnemental", "Plan de gestion environnementale", "Audit HSE"]
+        "sousSecteurs": [
+          "Routes & ouvrages d'art",
+          "Zones d'activité & industrielles",
+          "Bâtiment & immobilier",
+          "Aménagement urbain"
+        ],
+        "prestations": [
+          "Étude d'impact environnemental",
+          "Plan de gestion environnementale",
+          "Audit HSE"
+        ]
       },
       {
         "slug": "agriculture-hydraulique",
@@ -366,34 +626,72 @@
         "tagline": "Périmètres irrigués, barrages, stations d'épuration et projets agro-industriels : la ressource en eau au cœur des enjeux.",
         "intro": "L'agriculture et l'hydraulique mobilisent la ressource en eau et les sols sur de larges étendues. BTH Expert évalue les impacts, optimise la gestion de l'eau et accompagne la mise en conformité des projets agro-industriels et hydrauliques.",
         "enjeux": [
-          { "title": "Ressource en eau", "description": "Préservation de la qualité et de la disponibilité de l'eau pour les milieux et les usages." },
-          { "title": "Sols & milieux", "description": "Évaluation des effets sur les sols, la biodiversité et les écosystèmes sensibles." },
-          { "title": "Épuration & rejets", "description": "Conception et suivi des dispositifs d'épuration et de gestion des rejets." }
+          {
+            "title": "Ressource en eau",
+            "description": "Préservation de la qualité et de la disponibilité de l'eau pour les milieux et les usages."
+          },
+          {
+            "title": "Sols & milieux",
+            "description": "Évaluation des effets sur les sols, la biodiversité et les écosystèmes sensibles."
+          },
+          {
+            "title": "Épuration & rejets",
+            "description": "Conception et suivi des dispositifs d'épuration et de gestion des rejets."
+          }
         ],
-        "sousSecteurs": ["Périmètres irrigués", "Barrages & retenues", "Stations d'épuration", "Agro-industrie"],
-        "prestations": ["Étude d'impact environnemental", "Épuration des eaux", "Plan de gestion environnementale"]
+        "sousSecteurs": [
+          "Périmètres irrigués",
+          "Barrages & retenues",
+          "Stations d'épuration",
+          "Agro-industrie"
+        ],
+        "prestations": [
+          "Étude d'impact environnemental",
+          "Épuration des eaux",
+          "Plan de gestion environnementale"
+        ]
       }
     ]
   },
   "apropos": {
     "meta": {
       "title": "À propos — Bureau d'études environnemental agréé | BTH Expert",
-      "description": "BTH Expert, bureau d'études environnemental agréé à Oran depuis 2009. Histoire, agrément ministériel, partenariat BTH Consult et approche pluridisciplinaire au service de l'industrie algérienne."
+      "description": "BTH Expert, bureau d'études environnemental agréé à Oran. Expertise internationale, agrément ministériel et approche pluridisciplinaire au service de l'industrie algérienne."
     },
     "hero": {
-      "eyebrow": "À propos · Depuis 2009",
+      "eyebrow": "À propos · Bureau agréé · Oran, Algérie",
       "heading": "Un bureau d'études au service de l'industrie algérienne",
-      "subheading": "Depuis 2009, BTH Expert accompagne les porteurs de projets industriels dans la maîtrise de leurs obligations environnementales et réglementaires, de l'étude d'impact à la conformité."
+      "subheading": "BTH Expert réunit une expertise internationale — forgée au sein des grands groupes d'ingénierie mondiaux — et une connaissance fine du cadre réglementaire algérien, pour accompagner les porteurs de projets industriels de l'étude d'impact à la conformité."
     },
     "timeline": {
       "eyebrow": "Notre parcours",
-      "heading": "Quinze ans d'expertise environnementale",
+      "heading": "Une expertise internationale au service de l'Algérie",
       "milestones": [
-        { "year": "2009", "title": "Création de BTH Expert", "description": "Fondation du bureau d'études à Oran, avec l'ambition d'accompagner l'industrie de l'ouest algérien sur ses enjeux environnementaux." },
-        { "year": "2012", "title": "Agrément ministériel", "description": "Reconnaissance de l'expertise par le Ministère de l'Environnement, autorisant la réalisation des études réglementaires." },
-        { "year": "2016", "title": "Élargissement des secteurs", "description": "Extension de l'activité à l'énergie, aux infrastructures et à l'hydraulique, au-delà de l'industrie et de la pétrochimie." },
-        { "year": "2020", "title": "Partenariat BTH Consult", "description": "Alliance stratégique avec BTH Consult pour mobiliser une expertise pluridisciplinaire sur les projets d'envergure." },
-        { "year": "Aujourd'hui", "title": "Plus de 20 réalisations", "description": "Un portefeuille d'études d'impact, d'études de dangers et d'audits HSE menés pour plus de 150 partenaires industriels." }
+        {
+          "year": "Formation",
+          "title": "Maîtrise en génie de l'environnement",
+          "description": "Formation à l'École de technologie supérieure (ÉTS, Montréal) — expertise en évaluation des impacts environnementaux, gestion des risques industriels et standards internationaux."
+        },
+        {
+          "year": "Terrain",
+          "title": "Certification Sonatrach / IAP",
+          "description": "Certification par l'Institut Algérien du Pétrole, ancrant l'expertise dans les réalités de l'industrie énergétique algérienne."
+        },
+        {
+          "year": "International",
+          "title": "Grands groupes d'ingénierie",
+          "description": "Parcours professionnel au sein de groupes d'ingénierie de premier plan — dont AtkinsRéalis — sur des projets environnementaux complexes en Algérie et à l'international."
+        },
+        {
+          "year": "Agrément",
+          "title": "Agrément ministériel",
+          "description": "Reconnaissance par le Ministère de l'Environnement et de la Qualité de la Vie, autorisant la réalisation des études d'impact et des études de dangers en Algérie."
+        },
+        {
+          "year": "2026",
+          "title": "Création de BTH Expert",
+          "description": "Fondation du bureau d'études à Oran, avec l'ambition d'apporter une expertise internationale de premier plan à l'industrie algérienne."
+        }
       ]
     },
     "agrement": {
@@ -408,22 +706,56 @@
       "eyebrow": "Notre approche",
       "heading": "Rigueur réglementaire, ancrage terrain",
       "items": [
-        { "title": "Expertise agréée", "description": "Des études conformes au cadre réglementaire algérien, menées par des spécialistes reconnus." },
-        { "title": "Approche pluridisciplinaire", "description": "Environnement, eau, santé, sécurité et ingénierie réunis autour de chaque projet." },
-        { "title": "Proximité industrielle", "description": "Une connaissance fine des réalités de terrain de l'ouest algérien et de ses filières." }
+        {
+          "title": "Expertise agréée",
+          "description": "Des études conformes au cadre réglementaire algérien, menées par des spécialistes reconnus."
+        },
+        {
+          "title": "Approche pluridisciplinaire",
+          "description": "Environnement, eau, santé, sécurité et ingénierie réunis autour de chaque projet."
+        },
+        {
+          "title": "Proximité industrielle",
+          "description": "Une connaissance fine des réalités de terrain de l'ouest algérien et de ses filières."
+        }
       ]
     },
     "stats": {
       "items": [
-        { "value": "2009", "label": "Année de fondation" },
-        { "value": "20+", "label": "Réalisations" },
-        { "value": "150+", "label": "Partenaires industriels" }
+        {
+          "value": "10+",
+          "label": "Années d'expérience"
+        },
+        {
+          "value": "20+",
+          "label": "Réalisations"
+        },
+        {
+          "value": "150+",
+          "label": "Partenaires industriels"
+        }
       ]
     },
     "cta": {
       "heading": "Travaillons ensemble",
       "description": "Discutons de votre projet environnemental et de vos obligations réglementaires.",
       "button": "Prendre contact"
+    },
+    "expertise": {
+      "eyebrow": "Expertise",
+      "heading": "L'expertise derrière chaque étude",
+      "experts": [
+        {
+          "name": "Amine Lahmer",
+          "role": "Fondateur & Gérant",
+          "description": "Plusieurs années d'expérience terrain au sein de grands groupes d'ingénierie canadiens — notamment GHD et AtkinsRéalis — sur des projets industriels complexes en Algérie et au Canada. Certifié Sonatrach/IAP et agréé par le Ministère de l'Environnement algérien."
+        },
+        {
+          "name": "Hakim Belgouini",
+          "role": "Partenaire — BTH Consult",
+          "description": "Plus de 40 ans d'expérience dans les études environnementales et les projets industriels en Algérie. Un ancrage profond dans les réalités réglementaires de l'ouest et du centre algérien, au service des projets d'envergure régionale et nationale."
+        }
+      ]
     }
   },
   "projets": {
@@ -459,7 +791,10 @@
         "secteurSlug": "industrie-petrochimie",
         "title": "Étude d'impact d'un complexe pétrochimique",
         "excerpt": "EIE et étude de dangers pour une unité pétrochimique de la zone industrielle d'Arzew.",
-        "mission": ["Étude d'impact", "Étude de dangers"],
+        "mission": [
+          "Étude d'impact",
+          "Étude de dangers"
+        ],
         "annee": "2022",
         "contexte": "Implantation d'une nouvelle unité de transformation au sein d'une zone industrielle existante, à proximité de tiers et de milieux sensibles. Le projet, soumis à autorisation, nécessitait une évaluation environnementale et une caractérisation des risques majeurs avant instruction.",
         "demarche": "État initial du site, analyse des impacts sur l'air, l'eau et le milieu humain, modélisation des scénarios d'accident majeur (effets thermiques et de surpression) et définition des mesures d'atténuation et de maîtrise des risques.",
@@ -471,7 +806,10 @@
         "secteurSlug": "industrie-petrochimie",
         "title": "Audit HSE & conformité d'une cimenterie",
         "excerpt": "Diagnostic de conformité réglementaire et plan d'action HSE pour une cimenterie en exploitation.",
-        "mission": ["Audit HSE", "Conformité réglementaire"],
+        "mission": [
+          "Audit HSE",
+          "Conformité réglementaire"
+        ],
         "annee": "2021",
         "contexte": "Un site cimentier en exploitation souhaitait sécuriser sa conformité réglementaire et structurer sa démarche HSE avant un audit des autorités compétentes.",
         "demarche": "Revue documentaire des autorisations et registres, visite de terrain, analyse des écarts au regard des exigences applicables et hiérarchisation des actions correctives.",
@@ -483,7 +821,10 @@
         "secteurSlug": "agriculture-hydraulique",
         "title": "Étude d'impact d'un périmètre irrigué",
         "excerpt": "Évaluation environnementale et gestion de la ressource en eau pour un projet d'irrigation agricole.",
-        "mission": ["Étude d'impact", "Plan de gestion environnementale"],
+        "mission": [
+          "Étude d'impact",
+          "Plan de gestion environnementale"
+        ],
         "annee": "2023",
         "contexte": "Aménagement d'un périmètre irrigué mobilisant la ressource en eau sur une large emprise agricole, avec des enjeux sur les sols, les milieux naturels et les usages riverains.",
         "demarche": "Caractérisation de l'état initial, évaluation des effets sur la ressource en eau et les sols, et définition d'un programme de surveillance et de suivi environnemental.",
@@ -491,13 +832,34 @@
       }
     ]
   },
+  "blog": {
+    "meta": {
+      "title": "Blog — Réglementation environnementale en Algérie | BTH Expert",
+      "description": "Analyses, guides et actualités réglementaires sur l'étude d'impact, l'étude de dangers et la conformité environnementale en Algérie, par BTH Expert."
+    },
+    "hero": {
+      "eyebrow": "Ressources · Réglementation environnementale",
+      "heading": "Le blog BTH Expert",
+      "subheading": "Décryptages réglementaires et guides pratiques sur l'étude d'impact, l'étude de dangers et la conformité environnementale en Algérie, par notre équipe d'experts agréés."
+    },
+    "readMore": "Lire l'article",
+    "backLabel": "Retour au blog",
+    "empty": "Les articles en cette langue arrivent prochainement. Consultez la version française du blog.",
+    "publishedOn": "Publié le",
+    "readingTimeLabel": "min de lecture",
+    "pagination": {
+      "previous": "Page précédente",
+      "next": "Page suivante",
+      "pageLabel": "Page {current} sur {total}"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Agréé Ministère de l'Environnement · Oran, Algérie",
       "headlinePart1": "Expertise",
       "headlineEmphasis": "environnementale",
       "headlinePart2": "& industrielle",
-      "subheading": "Bureau d'études agréé depuis 2009. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.",
+      "subheading": "Bureau d'études agréé. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.",
       "cta": "Parlez-nous de votre projet",
       "ctaSecondary": "Nos services"
     },
@@ -533,10 +895,26 @@
     "stats": {
       "eyebrow": "En chiffres",
       "items": [
-        { "value": "2009", "label": "Année de fondation", "highlight": true },
-        { "value": "15+", "label": "Années d'expérience", "highlight": false },
-        { "value": "200+", "label": "Projets réalisés", "highlight": false },
-        { "value": "12", "label": "Secteurs couverts", "highlight": false }
+        {
+          "value": "10+",
+          "label": "Années d'expérience",
+          "highlight": true
+        },
+        {
+          "value": "20+",
+          "label": "Études réalisées",
+          "highlight": false
+        },
+        {
+          "value": "4",
+          "label": "Familles de services",
+          "highlight": false
+        },
+        {
+          "value": "Agréé",
+          "label": "Ministère de l'Environnement",
+          "highlight": false
+        }
       ]
     },
     "equipe": {
@@ -558,12 +936,54 @@
     "faq": {
       "heading": "Questions fréquentes",
       "items": [
-        { "q": "Quels projets nécessitent une étude d'impact en Algérie ?", "a": "Tout projet figurant sur la liste du décret exécutif 07-144 (installations classées, carrières, projets hydrauliques, etc.) doit faire l'objet d'une EIE avant toute autorisation de construire ou d'exploiter." },
-        { "q": "Quel est le délai moyen pour obtenir une autorisation environnementale ?", "a": "Comptez 2 à 6 mois selon l'ampleur du projet et la wilaya. L'étude elle-même prend de quelques semaines à plusieurs mois ; la phase d'enquête publique (pour les grands projets) allonge le délai." },
-        { "q": "BTH Expert intervient-il hors d'Oran ?", "a": "Oui. Basé à Oran, nous intervenons dans toute l'Algérie, avec une concentration sur l'Ouest algérien : Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane et les wilayas limitrophes." },
-        { "q": "Qu'est-ce qu'un agrément Ministère de l'Environnement ?", "a": "C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé depuis 2009." },
-        { "q": "Combien coûte une étude environnementale ?", "a": "Le coût dépend du type d'étude, de l'ampleur du projet et de sa localisation. Nous établissons un devis personnalisé après une consultation initiale gratuite. Contactez-nous pour en discuter." }
+        {
+          "q": "Quels projets nécessitent une étude d'impact en Algérie ?",
+          "a": "Tout projet figurant sur la liste du décret exécutif 07-145 (installations classées, carrières, projets hydrauliques, etc.) doit faire l'objet d'une EIE avant toute autorisation de construire ou d'exploiter."
+        },
+        {
+          "q": "Quel est le délai moyen pour obtenir une autorisation environnementale ?",
+          "a": "Comptez 2 à 6 mois selon l'ampleur du projet et la wilaya. L'étude elle-même prend de quelques semaines à plusieurs mois ; la phase d'enquête publique (pour les grands projets) allonge le délai."
+        },
+        {
+          "q": "BTH Expert intervient-il hors d'Oran ?",
+          "a": "Oui. Basé à Oran, nous intervenons dans toute l'Algérie, avec une concentration sur l'Ouest algérien : Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane et les wilayas limitrophes."
+        },
+        {
+          "q": "Qu'est-ce qu'un agrément Ministère de l'Environnement ?",
+          "a": "C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé."
+        },
+        {
+          "q": "Combien coûte une étude environnementale ?",
+          "a": "Le coût dépend du type d'étude, de l'ampleur du projet et de sa localisation. Nous établissons un devis personnalisé après une consultation initiale gratuite. Contactez-nous pour en discuter."
+        }
       ]
+    },
+    "about": {
+      "eyebrow": "À propos",
+      "manifesto": "Aucun projet industriel n'obtient son autorisation sans étude environnementale conforme. C'est notre métier, et notre engagement.",
+      "domains": [
+        "Environnement",
+        "Sécurité industrielle",
+        "Hygiène & santé au travail"
+      ],
+      "body1": "BTH Expert est une société agréée de conseil et d'ingénierie environnementale, intervenant dans les domaines de l'environnement, de la sécurité et de l'hygiène en région Ouest algérienne.",
+      "body2": "Études d'impact, audits HSE, plans de gestion environnementale — des livrables rigoureux, prêts à déposer auprès des autorités compétentes.",
+      "cta": "En savoir plus"
+    },
+    "statement": {
+      "headingPart1": "Chaque projet industriel commence par une question",
+      "headingEmphasis": "environnementale",
+      "support": "BTH Expert transforme vos obligations réglementaires en avantage compétitif.",
+      "cta": "Découvrir nos services"
+    },
+    "zones": {
+      "eyebrow": "Zones d'intervention",
+      "heading": "Oran, au cœur de l'Ouest algérien",
+      "address": "40, Lotissement 119\nBir El Djir, Oran",
+      "phone": "+213 (670) 70 81 38",
+      "email": "info@bthexpert.dz",
+      "cta": "Nous contacter",
+      "coverage": "Nous couvrons toutes les wilayas d'Algérie."
     }
   }
 }

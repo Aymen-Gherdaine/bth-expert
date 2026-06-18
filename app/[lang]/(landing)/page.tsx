@@ -17,6 +17,7 @@ import { HeroBackground } from "@/components/motion/HeroBackground";
 import { HeroFilet } from "@/components/motion/HeroFilet";
 import { CtaVideo } from "@/components/motion/CtaVideo";
 import { Faq } from "@/components/sections/Faq";
+import { ScrollPulse } from "@/components/motion/ScrollPulse";
 
 export async function generateMetadata({
   params,
@@ -139,7 +140,7 @@ export default async function HomePage({
             </div>
           </Container>
 
-          <span aria-hidden className="scroll-pulse absolute bottom-6 right-5 lg:bottom-10 lg:right-12 z-10" />
+          <ScrollPulse className="scroll-pulse absolute bottom-6 right-5 lg:bottom-10 lg:right-12 z-10" />
         </section>
       </HeroCurtain>
 
@@ -151,7 +152,7 @@ export default async function HomePage({
       <StatsBand stats={h.stats} />
 
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
-      <AboutSection lang={lang} />
+      <AboutSection lang={lang} content={h.about} />
 
       {/* ── SERVICES — signature pin-scroll: sticky visual, rows scroll past ── */}
       <ServicesPinScroll lang={lang} services={h.services} />
@@ -160,10 +161,10 @@ export default async function HomePage({
       <ProjectsSection lang={lang} />
 
       {/* ── STATEMENT — cream pause + clip-path photo wipe before the dark ── */}
-      <StatementSection lang={lang} />
+      <StatementSection lang={lang} content={h.statement} />
 
       {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
-      <ZonesSection lang={lang} />
+      <ZonesSection lang={lang} content={h.zones} />
 
       {/* ── FAQ — credibility + SEO, natural break before CTA ───────────── */}
       <Faq heading={h.faq.heading} items={h.faq.items} />

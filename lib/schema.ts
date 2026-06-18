@@ -12,6 +12,14 @@ const BTH_ADDRESS = {
   addressCountry: "DZ",
 } as const;
 
+// Centre de la commune de Bir El Djir — précision à affiner avec le pin GPS
+// exact une fois la fiche Google Business Profile créée par le client.
+const BTH_GEO = {
+  "@type": "GeoCoordinates",
+  latitude: 35.72,
+  longitude: -0.555,
+} as const;
+
 // ── LocalBusiness / ProfessionalService ─────────────────────────────────────
 
 export function schemaLocalBusiness() {
@@ -23,8 +31,8 @@ export function schemaLocalBusiness() {
     url: BASE_URL,
     telephone: "+213670708138",
     email: "info@bthexpert.dz",
-    foundingDate: "2009",
     address: BTH_ADDRESS,
+    geo: BTH_GEO,
     areaServed: { "@type": "Country", name: "Algérie" },
     description:
       "Bureau d'études environnemental agréé par le Ministère de l'Environnement et de la Qualité de la Vie. Études d'impact, études de dangers, audits HSE et conformité réglementaire à Oran et dans toute l'Algérie.",
@@ -158,6 +166,38 @@ export function schemaFAQ(items: FAQItem[]) {
         "@type": "Answer",
         text: item.answer,
       },
+    })),
+  };
+}
+
+// ── BreadcrumbList ───────────────────────────────────────────────────────────
+
+const HOME_LABEL: Record<string, string> = {
+  fr: "Accueil",
+  ar: "الرئيسية",
+  en: "Home",
+};
+
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+/** `items` ne doit pas inclure l'accueil — il est ajouté automatiquement en tête. */
+export function schemaBreadcrumb(lang: string, items: BreadcrumbItem[]) {
+  const trail = [
+    { name: HOME_LABEL[lang] ?? HOME_LABEL.fr, url: `${BASE_URL}/${lang}` },
+    ...items,
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
     })),
   };
 }

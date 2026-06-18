@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaLocalBusiness } from "@/lib/schema";
+import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { TerrainHero } from "@/components/sections/TerrainHero";
 import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 
@@ -36,12 +36,19 @@ export default async function SecteursPage({
   const s = dict.secteurs;
 
   const jsonLd = schemaLocalBusiness();
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
       {/* ── Hero — shared editorial light hero ───────────────── */}

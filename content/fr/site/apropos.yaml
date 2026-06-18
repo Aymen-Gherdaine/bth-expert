@@ -1,0 +1,54 @@
+meta:
+  title: À propos — Bureau d'études environnemental agréé | BTH Expert
+  description: BTH Expert, bureau d'études environnemental agréé à Oran. Expertise internationale, agrément ministériel et approche pluridisciplinaire au service de l'industrie algérienne.
+hero:
+  eyebrow: À propos · Bureau agréé · Oran, Algérie
+  heading: Un bureau d'études au service de l'industrie algérienne
+  subheading: BTH Expert réunit une expertise internationale — forgée au sein des grands groupes d'ingénierie mondiaux — et une connaissance fine du cadre réglementaire algérien, pour accompagner les porteurs de projets industriels de l'étude d'impact à la conformité.
+timeline:
+  eyebrow: Notre parcours
+  heading: Une expertise internationale au service de l'Algérie
+  milestones:
+    - year: Formation
+      title: Maîtrise en génie de l'environnement
+      description: Formation à l'École de technologie supérieure (ÉTS, Montréal) — expertise en évaluation des impacts environnementaux, gestion des risques industriels et standards internationaux.
+    - year: Terrain
+      title: Certification Sonatrach / IAP
+      description: Certification par l'Institut Algérien du Pétrole, ancrant l'expertise dans les réalités de l'industrie énergétique algérienne.
+    - year: International
+      title: Grands groupes d'ingénierie
+      description: Parcours professionnel au sein de groupes d'ingénierie de premier plan — dont AtkinsRéalis — sur des projets environnementaux complexes en Algérie et à l'international.
+    - year: Agrément
+      title: Agrément ministériel
+      description: Reconnaissance par le Ministère de l'Environnement et de la Qualité de la Vie, autorisant la réalisation des études d'impact et des études de dangers en Algérie.
+    - year: '2026'
+      title: Création de BTH Expert
+      description: Fondation du bureau d'études à Oran, avec l'ambition d'apporter une expertise internationale de premier plan à l'industrie algérienne.
+agrement:
+  heading: Agrément & conformité
+  description: BTH Expert est agréé par le Ministère de l'Environnement et de la Qualité de la Vie pour la réalisation des études d'impact et des études de dangers. Chaque livrable respecte le canevas réglementaire algérien et les exigences des directions de wilaya (DEW, DIM).
+partner:
+  heading: Partenariat BTH Consult
+  description: Notre modèle associe l'expertise d'un consultant agréé au savoir-faire de BTH Consult. Ce partenariat renforce notre capacité d'intervention et mobilise une équipe pluridisciplinaire — environnement, eau, santé, sécurité et ingénierie — pour les projets d'envergure régionale et nationale.
+values:
+  eyebrow: Notre approche
+  heading: Rigueur réglementaire, ancrage terrain
+  items:
+    - title: Expertise agréée
+      description: Des études conformes au cadre réglementaire algérien, menées par des spécialistes reconnus.
+    - title: Approche pluridisciplinaire
+      description: Environnement, eau, santé, sécurité et ingénierie réunis autour de chaque projet.
+    - title: Proximité industrielle
+      description: Une connaissance fine des réalités de terrain de l'ouest algérien et de ses filières.
+stats:
+  items:
+    - value: 10+
+      label: Années d'expérience
+    - value: 20+
+      label: Réalisations
+    - value: 150+
+      label: Partenaires industriels
+cta:
+  heading: Travaillons ensemble
+  description: Discutons de votre projet environnemental et de vos obligations réglementaires.
+  button: Prendre contact

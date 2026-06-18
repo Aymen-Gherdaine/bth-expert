@@ -40,7 +40,7 @@ export default async function OgImage({
             marginBottom: 28,
           }}
         >
-          Agréé Ministère de l&apos;Environnement · Oran, Algérie · 2009
+          Agréé Ministère de l&apos;Environnement · Oran, Algérie
         </div>
 
         {/* Main title */}

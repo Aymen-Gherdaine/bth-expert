@@ -1,0 +1,92 @@
+hero:
+  eyebrow: Agréé Ministère de l'Environnement · Oran, Algérie
+  headlinePart1: Expertise
+  headlineEmphasis: environnementale
+  headlinePart2: '& industrielle'
+  subheading: Bureau d'études agréé. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.
+  cta: Parlez-nous de votre projet
+  ctaSecondary: Nos services
+services:
+  sectionNumber: '01'
+  eyebrow: Services
+  heading: Des études rigoureuses, des livrables conformes
+  items:
+    - abbr: EIE
+      title: Étude d'Impact sur l'Environnement
+      description: Évaluation complète des impacts environnementaux des projets industriels, miniers et d'infrastructure. Rapport conforme aux exigences du Ministère de l'Environnement.
+    - abbr: EDD
+      title: Étude de Dangers
+      description: Analyse des risques majeurs pour les établissements classés. Scénarios d'accident, zones d'effet, mesures de prévention et plans d'urgence.
+    - abbr: HSE
+      title: Audit HSE
+      description: Diagnostic de conformité hygiène, sécurité et environnement. Identification des écarts réglementaires et plan d'action priorisé.
+    - abbr: PGE
+      title: Plan de Gestion Environnementale
+      description: Définition des mesures d'atténuation et de surveillance environnementale pour toute la durée de vie du projet.
+  itemCta: En savoir plus
+  cta: Voir tous les services
+stats:
+  eyebrow: En chiffres
+  items:
+    - value: 10+
+      label: Années d'expérience
+      highlight: true
+    - value: 20+
+      label: Études réalisées
+      highlight: false
+    - value: '4'
+      label: Familles de services
+      highlight: false
+    - value: Agréé
+      label: Ministère de l'Environnement
+      highlight: false
+equipe:
+  sectionNumber: '02'
+  eyebrow: Équipe
+  heading: Des experts reconnus par le Ministère
+  description: Ingénieurs agréés, maîtrise du cadre réglementaire algérien et des standards ISO/IEC internationaux. BTH Expert intervient en partenariat avec BTH Consult pour les projets d'envergure régionale.
+  cta: Rencontrer l'équipe
+contact:
+  sectionNumber: '03'
+  eyebrow: Contact
+  heading: Un projet en cours ? Parlons-en.
+  description: Décrivez-nous votre projet, vos contraintes réglementaires et votre calendrier. Nous revenons vers vous sous 48h.
+  cta: Demander un devis
+  phone: +213 670 70 81 38
+  email: info@bthexpert.dz
+faq:
+  heading: Questions fréquentes
+  items:
+    - q: Quels projets nécessitent une étude d'impact en Algérie ?
+      a: Tout projet figurant sur la liste du décret exécutif 07-145 (installations classées, carrières, projets hydrauliques, etc.) doit faire l'objet d'une EIE avant toute autorisation de construire ou d'exploiter.
+    - q: Quel est le délai moyen pour obtenir une autorisation environnementale ?
+      a: Comptez 2 à 6 mois selon l'ampleur du projet et la wilaya. L'étude elle-même prend de quelques semaines à plusieurs mois ; la phase d'enquête publique (pour les grands projets) allonge le délai.
+    - q: BTH Expert intervient-il hors d'Oran ?
+      a: 'Oui. Basé à Oran, nous intervenons dans toute l''Algérie, avec une concentration sur l''Ouest algérien : Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane et les wilayas limitrophes.'
+    - q: Qu'est-ce qu'un agrément Ministère de l'Environnement ?
+      a: C'est une accréditation officielle délivrée par le Ministère de l'Environnement et de la Qualité de la Vie, attestant que le bureau d'études est habilité à réaliser des EIE et des études de dangers. BTH Expert est agréé.
+    - q: Combien coûte une étude environnementale ?
+      a: Le coût dépend du type d'étude, de l'ampleur du projet et de sa localisation. Nous établissons un devis personnalisé après une consultation initiale gratuite. Contactez-nous pour en discuter.
+about:
+  eyebrow: À propos
+  manifesto: "Aucun projet industriel n'obtient son autorisation sans étude environnementale conforme. C'est notre métier, et notre engagement."
+  domains:
+    - Environnement
+    - Sécurité industrielle
+    - Hygiène & santé au travail
+  body1: "BTH Expert est une société agréée de conseil et d'ingénierie environnementale, intervenant dans les domaines de l'environnement, de la sécurité et de l'hygiène en région Ouest algérienne."
+  body2: "Études d'impact, audits HSE, plans de gestion environnementale — des livrables rigoureux, prêts à déposer auprès des autorités compétentes."
+  cta: En savoir plus
+statement:
+  headingPart1: Chaque projet industriel commence par une question
+  headingEmphasis: environnementale
+  support: BTH Expert transforme vos obligations réglementaires en avantage compétitif.
+  cta: Découvrir nos services
+zones:
+  eyebrow: Zones d'intervention
+  heading: "Oran, au cœur de l'Ouest algérien"
+  address: "40, Lotissement 119\nBir El Djir, Oran"
+  phone: +213 (670) 70 81 38
+  email: info@bthexpert.dz
+  cta: Nous contacter
+  coverage: Nous couvrons toutes les wilayas d'Algérie.

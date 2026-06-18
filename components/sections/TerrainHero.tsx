@@ -10,18 +10,10 @@ interface TerrainHeroProps {
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
-/**
- * Dark cinematic mini-hero for the interior index pages (services / secteurs /
- * projets / à-propos): the bespoke topographic artwork as a full-bleed
- * backdrop, with the page's real eyebrow + heading + subheading masked-in over
- * it. The cream editorial register stays for the deeper detail pages — this is
- * the section "cover" that opens each index.
- */
 export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-brand-deep">
       <TerrainBackdrop src={src} />
-      {/* extra bottom weight so the headline always reads */}
       <div
         aria-hidden
         className="absolute inset-0 z-0"
@@ -31,7 +23,7 @@ export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroPr
         }}
       />
       <div
-        className={`relative z-10 ${PADX} flex flex-col justify-end min-h-[56vh] lg:min-h-[62vh] pt-20 lg:pt-28 pb-14 lg:pb-20`}
+        className={`relative z-10 ${PADX} flex flex-col justify-end min-h-[80dvh] sm:min-h-[90dvh] lg:min-h-[calc(100dvh_-_6.75rem)] pb-16 sm:pb-16 lg:pb-20`}
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-9 xl:col-span-8">
@@ -51,7 +43,7 @@ export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroPr
               {heading}
             </RevealText>
             <RevealText
-              className="block mt-8 max-w-2xl font-sans text-cream/75 text-[length:var(--text-body)] leading-[1.75]"
+              className="block mt-6 sm:mt-8 max-w-2xl font-sans text-cream/75 text-[length:var(--text-body)] leading-[1.75]"
               delay={0.4}
             >
               {subheading}

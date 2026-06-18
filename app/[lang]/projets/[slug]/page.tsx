@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaArticle } from "@/lib/schema";
+import { schemaArticle, schemaBreadcrumb } from "@/lib/schema";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ProjetNarrative } from "@/components/sections/ProjetNarrative";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
@@ -54,6 +54,10 @@ export default async function ProjetPage({
     description: item.excerpt,
     datePublished: `${item.annee}-01-01`,
   });
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.projets, url: `https://bthexpert.com/${lang}/projets` },
+    { name: item.title, url: `https://bthexpert.com/${lang}/projets/${slug}` },
+  ]);
 
   const beats = [
     { label: d.contexteLabel, body: item.contexte },
@@ -66,6 +70,10 @@ export default async function ProjetPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
       {/* ── Hero — secteur breadcrumb above the shared editorial ServiceHero ─ */}

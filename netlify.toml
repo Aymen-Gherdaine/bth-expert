@@ -5,6 +5,9 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[functions]
+  directory = "netlify/functions"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
@@ -19,6 +22,38 @@
     Strict-Transport-Security  = "max-age=31536000; includeSubDomains; preload"
     Permissions-Policy         = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     Content-Security-Policy    = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self';"
+
+# ── CSP assouplie pour le CMS Keystatic (storage: cloud) ──────────────────────
+# Le CSP global ci-dessus (connect-src 'self') bloque les appels de Keystatic
+# Cloud vers ses propres domaines (auth, sync, websocket). Netlify remplace le
+# header (ne le fusionne pas) sur la règle la plus spécifique, donc le reste du
+# site garde le CSP strict.
+[[headers]]
+  for = "/keystatic"
+  [headers.values]
+    X-Frame-Options            = "DENY"
+    X-Content-Type-Options     = "nosniff"
+    X-XSS-Protection           = "1; mode=block"
+    Referrer-Policy            = "strict-origin-when-cross-origin"
+    Strict-Transport-Security  = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy         = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Content-Security-Policy    = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://api.keystatic.cloud https://api.github.com https://raw.githubusercontent.com wss://live.keystatic.cloud; frame-ancestors 'none'; form-action 'self'; base-uri 'self';"
+
+[[headers]]
+  for = "/keystatic/*"
+  [headers.values]
+    X-Frame-Options            = "DENY"
+    X-Content-Type-Options     = "nosniff"
+    X-XSS-Protection           = "1; mode=block"
+    Referrer-Policy            = "strict-origin-when-cross-origin"
+    Strict-Transport-Security  = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy         = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Content-Security-Policy    = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://api.keystatic.cloud https://api.github.com https://raw.githubusercontent.com wss://live.keystatic.cloud; frame-ancestors 'none'; form-action 'self'; base-uri 'self';"
+
+[[headers]]
+  for = "/api/keystatic/*"
+  [headers.values]
+    Content-Security-Policy    = "default-src 'self'; connect-src 'self' https://api.keystatic.cloud https://api.github.com;"
 
 # ── Cache statique Next.js (_next/static/) ────────────────────────────────────
 [[headers]]

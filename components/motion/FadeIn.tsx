@@ -18,7 +18,7 @@ export function FadeIn({
   children,
   delay = 0,
   duration = 0.75,
-  y = 28,
+  y = 0,
   scale = false,
   className,
 }: FadeInProps) {
@@ -41,7 +41,7 @@ const staggerContainer = {
 } as const;
 
 const staggerItem = {
-  hidden: { opacity: 0, y: 22 },
+  hidden: { opacity: 0, y: 0 },
   visible: {
     opacity: 1,
     y: 0,

@@ -178,7 +178,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               name="projectType"
               required
               defaultValue=""
-              className={`${inputCls} cursor-pointer`}
+              className={`${inputCls} cursor-pointer pe-10`}
             >
               <option value="" disabled>
                 {dict.projectTypePlaceholder}

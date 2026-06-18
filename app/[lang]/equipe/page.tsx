@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
+import { schemaBreadcrumb } from "@/lib/schema";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { EquipeMembers } from "@/components/sections/EquipeMembers";
 import { EquipeCtaBand } from "@/components/sections/EquipeCtaBand";
@@ -44,12 +45,19 @@ export default async function EquipePage({
       worksFor: { "@type": "Organization", name: "BTH Expert", url: "https://bthexpert.com" },
     })),
   };
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.equipe, url: equipeUrl },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
       <ServiceHero

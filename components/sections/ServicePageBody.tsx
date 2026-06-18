@@ -43,8 +43,7 @@ const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 /**
  * Shared premium body for the four service pages (option B): editorial light
  * hero + meta rail → POV contexte → methodology pin-scroll (image-led) → dark
- * livrable punctuation → FAQ → CTA. Each page passes its own dict object plus
- * hardcoded heroMeta/faq props (kept out of the dict to preserve i18n typing).
+ * livrable punctuation → FAQ → CTA.
  */
 export function ServicePageBody({
   lang,

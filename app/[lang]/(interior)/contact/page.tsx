@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaLocalBusiness } from "@/lib/schema";
+import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { ContactProcess } from "@/components/sections/ContactProcess";
 import { RevealText } from "@/components/animations/RevealText";
 import { SectionReveal } from "@/components/motion/SectionReveal";
-import { LogoMark } from "@/components/brand/LogoMark";
 import { socialLinks } from "@/lib/social-links";
 import Image from "next/image";
 
@@ -44,6 +43,9 @@ export default async function ContactPage({
   const dict = await getDictionary(lang);
   const c = dict.contact;
   const jsonLd = schemaLocalBusiness();
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.contact, url: `https://bthexpert.com/${lang}/contact` },
+  ]);
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     c.info.address
   )}`;
@@ -54,6 +56,10 @@ export default async function ContactPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
 
       {/* ── Full-viewport contact: intro (left) + form card (right) ──
           Pure white canvas. The form stays entirely within the first
@@ -63,30 +69,25 @@ export default async function ContactPage({
           <div className="py-12 lg:py-16 grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Left: intro */}
             <div className="lg:col-span-5">
-              {/* Avatar cluster — team photos, brand mark as a small accent badge. */}
-              <div className="flex items-center gap-3 mb-9">
-                <div className="flex -space-x-3">
-                  <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
-                    <Image
-                      src="/amine.jpg"
-                      alt="Amine Lahmer"
-                      fill
-                      sizes="64px"
-                      className="object-cover"
-                    />
-                  </span>
-                  <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
-                    <Image
-                      src="/abdellah.jpg"
-                      alt="Abdellah"
-                      fill
-                      sizes="64px"
-                      className="object-cover"
-                    />
-                  </span>
-                </div>
-                <span className="grid place-items-center size-9 rounded-full bg-gold ring-4 ring-cream-warm">
-                  <LogoMark className="h-4 w-auto text-brand-deep" />
+              {/* Avatar cluster — team photos */}
+              <div className="flex -space-x-3 mb-9">
+                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
+                  <Image
+                    src="/amine.jpg"
+                    alt="Amine Lahmer"
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </span>
+                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
+                  <Image
+                    src="/abdellah.jpg"
+                    alt="Abdellah"
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
                 </span>
               </div>
 

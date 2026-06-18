@@ -15,7 +15,12 @@ export function SmoothScroll() {
     // reach it — manage it explicitly (see the route-change reset below).
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
-    const lenis = new Lenis({ duration: 1.2 });
+    // Reduce layout recalcs: batch callbacks, skip mobile resize triggers
+    ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
+    // Skip expensive per-frame updates when scrolling faster than 3000px/s
+    ScrollTrigger.defaults({ fastScrollEnd: 3000 });
+
+    const lenis = new Lenis({ duration: 1.0 });
     lenis.on("scroll", ScrollTrigger.update);
     // Expose for programmatic scrolls (e.g. the scroll-to-top button)
     (window as unknown as { lenis?: Lenis }).lenis = lenis;

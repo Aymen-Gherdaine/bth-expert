@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaLocalBusiness } from "@/lib/schema";
+import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -9,7 +9,6 @@ import { TerrainHero } from "@/components/sections/TerrainHero";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { RevealText } from "@/components/animations/RevealText";
 import { SectionReveal } from "@/components/motion/SectionReveal";
-import { AboutTimeline } from "@/components/sections/AboutTimeline";
 
 export async function generateMetadata({
   params,
@@ -38,6 +37,9 @@ export default async function AboutPage({
   const dict = await getDictionary(lang);
   const a = dict.apropos;
   const jsonLd = schemaLocalBusiness();
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.apropos, url: `https://bthexpert.com/${lang}/a-propos` },
+  ]);
 
   return (
     <>
@@ -45,20 +47,17 @@ export default async function AboutPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
 
-      {/* ── Hero — dark cinematic terrain mini-hero ───────────── */}
+      {/* ── Hero — full-height dark cinematic hero ────────────── */}
       <TerrainHero
         src="/generated/section-apropos.svg"
         eyebrow={a.hero.eyebrow}
         heading={a.hero.heading}
         subheading={a.hero.subheading}
-      />
-
-      {/* ── Histoire (timeline) ──────────────────────────────── */}
-      <AboutTimeline
-        eyebrow={a.timeline.eyebrow}
-        heading={a.timeline.heading}
-        milestones={a.timeline.milestones}
       />
 
       {/* ── Agrément & conformité ────────────────────────────── */}
@@ -112,31 +111,63 @@ export default async function AboutPage({
         </Container>
       </div>
 
-      {/* ── Notre approche ───────────────────────────────────── */}
+      {/* ── Expertise ───────────────────────────────────────── */}
       <Container>
-        <Section number="01" eyebrow={a.values.eyebrow}>
-          <SectionReveal>
-            <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-12 lg:mb-16 max-w-2xl">
-              {a.values.heading}
+        <Section tight>
+          <FadeIn>
+            <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
+            <p className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.16em] text-gold mb-5">
+              {a.expertise.eyebrow}
+            </p>
+            <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-16">
+              {a.expertise.heading}
             </h2>
-            <div className="grid gap-10 md:grid-cols-3 md:gap-8">
-              {a.values.items.map((item, index) => (
-                <div key={item.title}>
-                  <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest block mb-4">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-[length:var(--text-small)] text-ink-soft leading-[1.7]">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </SectionReveal>
+          </FadeIn>
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
+            {a.expertise.experts.map((expert) => (
+              <FadeIn key={expert.name}>
+                <p className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.16em] text-gold mb-3">
+                  {expert.role}
+                </p>
+                <h3 className="font-display text-[length:var(--text-h3)] font-light tracking-[-0.01em] leading-[1.2] text-ink mb-5">
+                  {expert.name}
+                </h3>
+                <p className="text-[length:var(--text-body)] text-ink-soft leading-[1.8]">
+                  {expert.description}
+                </p>
+              </FadeIn>
+            ))}
+          </div>
         </Section>
       </Container>
+
+      {/* ── Notre approche ───────────────────────────────────── */}
+      <div className="border-t border-line bg-cream-deep">
+        <Container>
+          <Section number="01" eyebrow={a.values.eyebrow}>
+            <SectionReveal>
+              <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-12 lg:mb-16 max-w-2xl">
+                {a.values.heading}
+              </h2>
+              <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+                {a.values.items.map((item, index) => (
+                  <div key={item.title}>
+                    <span className="font-display text-[length:var(--text-caption)] text-gold tracking-widest block mb-4">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-[length:var(--text-h3)] font-medium tracking-[-0.01em] leading-[1.2] text-ink mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-[length:var(--text-small)] text-ink-soft leading-[1.7]">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </SectionReveal>
+          </Section>
+        </Container>
+      </div>
 
       {/* ── Stats band ───────────────────────────────────────── */}
       <div className="border-y border-line bg-cream-deep">

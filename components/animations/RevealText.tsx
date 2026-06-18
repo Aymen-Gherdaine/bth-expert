@@ -13,10 +13,10 @@ interface RevealTextProps {
 }
 
 /**
- * Word-by-word reveal with a true clipping mask (manifesto §2): each word
- * rises from behind an overflow-hidden wrapper — translateY only, no opacity
- * fade. SplitText's `mask` option (GSAP 3.13+) builds the per-word masks.
- * prefers-reduced-motion shows the text as-is.
+ * Word-by-word reveal with a true clipping mask: each word rises from behind
+ * an overflow-hidden wrapper. SplitText `mask` option builds per-word clips.
+ * Safety net: if GSAP is throttled on slow mobile and the animation never
+ * fires, a setTimeout forces yPercent:0 so text is never permanently hidden.
  */
 export function RevealText({
   children,
@@ -33,15 +33,26 @@ export function RevealText({
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       const split = new SplitText(ref.current, { type: "words", mask: "words" });
+
+      // Safety: force visibility if animation is blocked (mobile JS throttling).
+      // Fires 2.5s after the delay — well past any realistic animation duration.
+      const safetyId = window.setTimeout(() => {
+        gsap.set(split.words, { yPercent: 0 });
+      }, (delay + 2.5) * 1000);
+
       gsap.from(split.words, {
         yPercent: 100,
         duration: 1,
         stagger: 0.06,
         delay,
         ease: "expo.out",
+        onComplete: () => window.clearTimeout(safetyId),
       });
 
-      return () => split.revert();
+      return () => {
+        window.clearTimeout(safetyId);
+        split.revert();
+      };
     },
     { scope: ref }
   );

@@ -1,31 +1,10 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaService, schemaFAQ } from "@/lib/schema";
+import { schemaService, schemaFAQ, schemaBreadcrumb } from "@/lib/schema";
 import { ServicePageBody } from "@/components/sections/ServicePageBody";
 
 const PATH = "/services/plan-gestion-environnementale";
-
-const heroMeta = [
-  { label: "Phase", value: "Travaux → exploitation" },
-  { label: "Suit", value: "Mesures d'atténuation" },
-  { label: "Livrable", value: "Plan opérationnel" },
-];
-
-const faq = [
-  {
-    q: "À quoi sert un PGE ?",
-    a: "Il traduit les engagements de l'étude d'impact en mesures concrètes : atténuation, surveillance et suivi sur toute la durée de vie du projet.",
-  },
-  {
-    q: "Qui est concerné ?",
-    a: "Tout porteur de projet dont l'étude d'impact a prescrit des mesures de suivi, et les exploitants tenus de démontrer leurs engagements.",
-  },
-  {
-    q: "Que contient le livrable ?",
-    a: "Une matrice des mesures, un programme de surveillance, des indicateurs et un modèle de reporting exploitables par vos équipes.",
-  },
-];
 
 export async function generateMetadata({
   params,
@@ -59,7 +38,11 @@ export default async function PGEPage({
     description: dict.pge.meta.description,
     serviceType: "Plan de Gestion Environnementale",
   });
-  const jsonLdFaq = schemaFAQ(faq.map((i) => ({ question: i.q, answer: i.a })));
+  const jsonLdFaq = schemaFAQ(dict.pge.faq.map((i) => ({ question: i.q, answer: i.a })));
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
+    { name: dict.pge.hero.heading, url: `https://bthexpert.com/${lang}${PATH}` },
+  ]);
 
   return (
     <>
@@ -71,7 +54,11 @@ export default async function PGEPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
-      <ServicePageBody lang={lang} service={dict.pge} heroMeta={heroMeta} faq={faq} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      <ServicePageBody lang={lang} service={dict.pge} heroMeta={dict.pge.heroMeta} faq={dict.pge.faq} />
     </>
   );
 }

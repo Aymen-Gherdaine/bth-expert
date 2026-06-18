@@ -1,0 +1,47 @@
+slug: hse
+meta:
+  title: Audit HSE & conformité réglementaire — BTH Expert
+  description: Audit hygiène, sécurité et environnement (HSE) et diagnostic de conformité réglementaire pour sites industriels en Algérie. Identification des écarts et plan d'action priorisé. Bureau d'études agréé à Oran.
+hero:
+  eyebrow: HSE · Conformité réglementaire
+  heading: Audit HSE & conformité
+  subheading: L'audit HSE dresse l'état de conformité d'un site au regard des exigences d'hygiène, de sécurité et d'environnement. Il met en évidence les écarts réglementaires et hiérarchise les actions correctives à engager.
+heroMeta:
+  - label: Périmètre
+    value: Hygiène · Sécurité · Env.
+  - label: Référentiels
+    value: ISO 14001 / 45001
+  - label: Livrable
+    value: Plan d'action
+why:
+  heading: Qui est concerné ?
+  description: Tout site industriel ou tertiaire souhaitant sécuriser sa conformité réglementaire, préparer une inspection, engager une démarche ISO 14001 / 45001 ou maîtriser ses risques HSE avant une acquisition, une extension ou une certification.
+methodology:
+  heading: Notre méthodologie
+  steps:
+    - number: '01'
+      title: Revue documentaire
+      description: Analyse des autorisations, arrêtés, registres et procédures existantes au regard des obligations réglementaires applicables au site.
+    - number: '02'
+      title: Visite de terrain
+      description: Inspection des installations, des postes de travail et des dispositifs de sécurité ; entretiens avec les responsables et observation des pratiques réelles.
+    - number: '03'
+      title: Analyse des écarts
+      description: Confrontation de l'existant aux exigences légales et normatives, qualification de la criticité de chaque écart constaté.
+    - number: '04'
+      title: Plan d'action priorisé
+      description: Recommandations chiffrées et planifiées, hiérarchisées par niveau de risque et par échéance réglementaire.
+deliverable:
+  heading: Livrable
+  description: 'Un rapport d''audit HSE complet : grille de conformité réglementaire, registre des écarts et plan d''action priorisé, support de pilotage pour la mise en conformité du site.'
+faq:
+  - q: Quand réaliser un audit HSE ?
+    a: Avant une inspection, une certification ISO, une acquisition ou une extension — ou simplement pour sécuriser durablement votre conformité.
+  - q: Quel est le livrable ?
+    a: Une grille de conformité réglementaire, un registre des écarts et un plan d'action priorisé par niveau de risque.
+  - q: Intervenez-vous sur site ?
+    a: Oui — revue documentaire puis visite de terrain, entretiens et observation des pratiques réelles.
+cta:
+  heading: Besoin d'un audit HSE ?
+  description: Décrivez-nous votre site et vos objectifs de conformité. Nous définissons le périmètre de l'audit et vous remettons une offre sous 48h.
+  button: Demander un devis

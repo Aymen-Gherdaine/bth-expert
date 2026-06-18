@@ -32,7 +32,7 @@ export function HeroCurtain({ children }: { children: ReactNode }) {
           trigger: el,
           start: "top top",
           end: "bottom top",
-          scrub: true,
+          scrub: 0.5,
         },
       }
     );

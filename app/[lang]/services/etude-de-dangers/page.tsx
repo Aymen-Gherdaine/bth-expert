@@ -1,31 +1,10 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
-import { schemaService, schemaFAQ } from "@/lib/schema";
+import { schemaService, schemaFAQ, schemaBreadcrumb } from "@/lib/schema";
 import { ServicePageBody } from "@/components/sections/ServicePageBody";
 
 const PATH = "/services/etude-de-dangers";
-
-const heroMeta = [
-  { label: "Concerne", value: "Établissements classés" },
-  { label: "Méthodes", value: "APR · HAZOP" },
-  { label: "Livrable", value: "Rapport EDD" },
-];
-
-const faq = [
-  {
-    q: "Mon installation est-elle concernée ?",
-    a: "Toute installation classée soumise à autorisation : stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression.",
-  },
-  {
-    q: "Que contient l'étude de dangers ?",
-    a: "Identification des dangers, modélisation des scénarios majeurs (effets thermiques, surpression, toxiques), cartographie des zones d'effet et plan de maîtrise des risques.",
-  },
-  {
-    q: "Faut-il la réviser ?",
-    a: "Oui — à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre.",
-  },
-];
 
 export async function generateMetadata({
   params,
@@ -59,7 +38,11 @@ export default async function EDDPage({
     description: dict.edd.meta.description,
     serviceType: "Étude de Dangers",
   });
-  const jsonLdFaq = schemaFAQ(faq.map((i) => ({ question: i.q, answer: i.a })));
+  const jsonLdFaq = schemaFAQ(dict.edd.faq.map((i) => ({ question: i.q, answer: i.a })));
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+    { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
+    { name: dict.edd.hero.heading, url: `https://bthexpert.com/${lang}${PATH}` },
+  ]);
 
   return (
     <>
@@ -71,7 +54,11 @@ export default async function EDDPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
-      <ServicePageBody lang={lang} service={dict.edd} heroMeta={heroMeta} faq={faq} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      <ServicePageBody lang={lang} service={dict.edd} heroMeta={dict.edd.heroMeta} faq={dict.edd.faq} />
     </>
   );
 }

@@ -7,8 +7,16 @@ import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
+interface StatementContent {
+  headingPart1: string;
+  headingEmphasis: string;
+  support: string;
+  cta: string;
+}
+
 interface StatementSectionProps {
   lang: Locale;
+  content: StatementContent;
 }
 
 /**
@@ -18,7 +26,7 @@ interface StatementSectionProps {
  * a photo that reveals via clip-path wipe + settle-scale, with a light
  * scroll parallax on desktop.
  */
-export function StatementSection({ lang }: StatementSectionProps) {
+export function StatementSection({ lang, content }: StatementSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const filetRef = useRef<HTMLSpanElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -91,7 +99,7 @@ export function StatementSection({ lang }: StatementSectionProps) {
               trigger: photo,
               start: "top bottom",
               end: "bottom top",
-              scrub: true,
+              scrub: 0.5,
             },
           }
         );
@@ -122,16 +130,15 @@ export function StatementSection({ lang }: StatementSectionProps) {
               ref={headingRef}
               className="font-display font-light text-ink tracking-[-0.03em] leading-[1.06] text-[length:var(--text-display)]"
             >
-              Chaque projet industriel commence par une question{" "}
-              <span className="italic">environnementale</span>.
+              {content.headingPart1}{" "}
+              <span className="italic">{content.headingEmphasis}</span>.
             </h2>
 
             <p
               ref={supportRef}
               className="mt-10 lg:mt-12 max-w-xl font-sans text-[length:var(--text-body)] text-ink-soft leading-[1.75]"
             >
-              BTH Expert transforme vos obligations réglementaires en avantage
-              concurrentiel — études conformes, livrables prêts à déposer.
+              {content.support}
             </p>
 
             <div ref={ctaRef} className="mt-10">
@@ -139,7 +146,7 @@ export function StatementSection({ lang }: StatementSectionProps) {
                 href={`/${lang}/services`}
                 className="inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] text-gold tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
               >
-                Découvrir nos services <span aria-hidden>→</span>
+                {content.cta} <span aria-hidden>→</span>
               </Link>
             </div>
           </div>
@@ -153,8 +160,8 @@ export function StatementSection({ lang }: StatementSectionProps) {
               {/* Oversized inner layer: slack for the parallax travel + settle-scale */}
               <div ref={photoInnerRef} className="absolute inset-[-6%]">
                 <Image
-                  src="/hero.webp"
-                  alt="Zone industrielle et portuaire d'Oran — BTH Expert"
+                  src="/cimenterie-algerie.webp"
+                  alt="Complexe industriel en Algérie — études environnementales BTH Expert"
                   fill
                   quality={75}
                   sizes="(min-width: 1024px) 40vw, 100vw"
