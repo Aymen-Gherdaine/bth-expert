@@ -24,11 +24,10 @@ export function SectionReveal({ children, className }: SectionRevealProps) {
     mm.add("(max-width: 1023px)", () => {
       gsap.fromTo(
         el,
-        { opacity: 0, y: 20 },
+        { opacity: 0 },
         {
           opacity: 1,
-          y: 0,
-          duration: 0.9,
+          duration: 0.8,
           ease: "expo.out",
           scrollTrigger: { trigger: el, start: "top 90%", once: true },
         }
@@ -38,11 +37,10 @@ export function SectionReveal({ children, className }: SectionRevealProps) {
     mm.add("(min-width: 1024px)", () => {
       gsap.fromTo(
         el,
-        { opacity: 0, y: 40 },
+        { opacity: 0 },
         {
           opacity: 1,
-          y: 0,
-          duration: 1.0,
+          duration: 0.9,
           ease: "expo.out",
           scrollTrigger: { trigger: el, start: "top 85%", once: true },
         }

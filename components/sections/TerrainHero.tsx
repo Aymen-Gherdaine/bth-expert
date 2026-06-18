@@ -23,7 +23,7 @@ export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroPr
         }}
       />
       <div
-        className={`relative z-10 ${PADX} flex flex-col justify-end min-h-[100dvh] pt-20 lg:pt-28 pb-14 lg:pb-20`}
+        className={`relative z-10 ${PADX} flex flex-col justify-end min-h-[80dvh] sm:min-h-[90dvh] lg:min-h-[100dvh] pt-20 lg:pt-28 pb-16 sm:pb-16 lg:pb-20`}
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-9 xl:col-span-8">
@@ -42,10 +42,8 @@ export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroPr
             >
               {heading}
             </RevealText>
-            {/* Hidden on mobile: viewport ~500px CSS on Android isn't tall enough
-                to show eyebrow + h1 + subheading without overflow. */}
             <RevealText
-              className="hidden sm:block mt-8 max-w-2xl font-sans text-cream/75 text-[length:var(--text-body)] leading-[1.75]"
+              className="block mt-6 sm:mt-8 max-w-2xl font-sans text-cream/75 text-[length:var(--text-body)] leading-[1.75]"
               delay={0.4}
             >
               {subheading}

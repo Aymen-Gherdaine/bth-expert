@@ -44,7 +44,7 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             trigger: el,
             start: "top top",
             end: "bottom top",
-            scrub: true,
+            scrub: 0.5,
           },
         }
       );
@@ -61,8 +61,13 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
         className="absolute left-0 right-0"
         style={{ top: "-10%", bottom: "-10%" }}
       >
-        {/* Ken Burns layer — CSS scale, isolated from the parallax translate above */}
-        <div className="hero-ken-burns absolute inset-0">
+        {/* Ken Burns layer — CSS scale, isolated from the parallax translate above.
+            will-change promotes a compositor layer during the 16s animation only. */}
+        <div
+          className="hero-ken-burns absolute inset-0"
+          style={{ willChange: "transform" }}
+          onAnimationEnd={(e) => { e.currentTarget.style.willChange = "auto"; }}
+        >
           <Image
             src={src}
             alt={alt}
@@ -70,6 +75,8 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             priority={priority}
             quality={75}
             sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAAsAPzmEuVOvKKWisAgB4CcJZwAAUfUY2BvbgADrVcj8m36ktODUbCcngB4AAAA="
             className="object-cover object-[50%_58%]"
           />
         </div>
