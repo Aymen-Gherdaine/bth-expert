@@ -164,7 +164,7 @@
       "description": "Certified consultancy for conducting Environmental Impact Assessments (EIA) in Algeria. Reports compliant with the requirements of the Ministry of Environment. Based in Oran."
     },
     "hero": {
-      "eyebrow": "EIA · Accreditation Ministry of Environment",
+      "eyebrow": "EIA · Accredited by the Ministry of Environment",
       "heading": "Environmental Impact Assessment",
       "subheading": "The EIA is the regulatory document that evaluates the impacts of a project on its natural, human, and socio-economic environment. Its completion is mandatory for all projects subject to environmental impact assessment under executive decree No. 07-145."
     },
@@ -260,7 +260,7 @@
       }
     ],
     "why": {
-      "heading": "Who Is Concerned?",
+      "heading": "Who is concerned?",
       "description": "Any operator of a classified installation for environmental protection subject to authorization — hydrocarbon storage, petrochemical units, hazardous material depots, pressure equipment — must produce a Hazard Study before commissioning and revise it after each substantial modification."
     },
     "methodology": {
