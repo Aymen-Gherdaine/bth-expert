@@ -9,7 +9,7 @@ import { CursorFollower } from "@/components/interaction/CursorFollower";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
   variable: "--font-fraunces",
   display: "swap",
