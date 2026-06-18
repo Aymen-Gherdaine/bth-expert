@@ -65,7 +65,7 @@ export default async function HomePage({
       <HeroCurtain>
         <section className="relative min-h-svh flex items-end overflow-hidden pt-20 pb-10 lg:py-0 lg:pb-24 bg-brand-deep">
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
-          <HeroBackground src="/hero.webp" />
+          <HeroBackground src="/hero-industrie.png" />
 
           {/* Cinematic gradient veil — lets the image read up top, holds the
               type legible below (manifesto §3, --overlay-hero) */}
