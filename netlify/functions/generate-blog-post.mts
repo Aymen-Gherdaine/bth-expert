@@ -108,7 +108,7 @@ const BANNED_PHRASES = [
   "en somme",
 ];
 
-const SHARED_VOICE_GUIDANCE = `Tu écris pour le blog de BTH Expert, bureau d'études environnemental agréé en Algérie, basé à Oran, fondé en 2009. Le blog s'adresse à des porteurs de projets industriels, énergétiques, BTP et agricoles en Algérie qui cherchent à comprendre leurs obligations réglementaires (étude d'impact, étude de dangers, audit HSE, plan de gestion environnementale).
+const SHARED_VOICE_GUIDANCE = `Tu écris pour le blog de BTH Expert, bureau d'études environnemental agréé en Algérie, basé à Oran. Le blog s'adresse à des porteurs de projets industriels, énergétiques, BTP et agricoles en Algérie qui cherchent à comprendre leurs obligations réglementaires (étude d'impact, étude de dangers, audit HSE, plan de gestion environnementale).
 
 Ton : professionnel, précis, pédagogique — jamais commercial ou survendu. N'invente jamais de référence légale (numéro de décret, de loi, délai chiffré) si tu n'es pas certain qu'elle est exacte ; dans le doute, reste général plutôt que de citer un texte précis. Le contenu sera relu par un expert avant publication, mais doit être le plus fiable possible.
 
