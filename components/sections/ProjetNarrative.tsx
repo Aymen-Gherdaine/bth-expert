@@ -81,7 +81,7 @@ export function ProjetNarrative({ beats }: ProjetNarrativeProps) {
               scaleY: 1,
               ease: "none",
               transformOrigin: "top center",
-              scrollTrigger: { trigger: rail, start: "top 70%", end: "bottom 60%", scrub: true },
+              scrollTrigger: { trigger: rail, start: "top 70%", end: "bottom 60%", scrub: 0.5 },
             }
           );
         }

@@ -17,6 +17,7 @@ import { HeroBackground } from "@/components/motion/HeroBackground";
 import { HeroFilet } from "@/components/motion/HeroFilet";
 import { CtaVideo } from "@/components/motion/CtaVideo";
 import { Faq } from "@/components/sections/Faq";
+import { ScrollPulse } from "@/components/motion/ScrollPulse";
 
 export async function generateMetadata({
   params,
@@ -139,7 +140,7 @@ export default async function HomePage({
             </div>
           </Container>
 
-          <span aria-hidden className="scroll-pulse absolute bottom-6 right-5 lg:bottom-10 lg:right-12 z-10" />
+          <ScrollPulse className="scroll-pulse absolute bottom-6 right-5 lg:bottom-10 lg:right-12 z-10" />
         </section>
       </HeroCurtain>
 

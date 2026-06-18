@@ -91,7 +91,7 @@ export function StatementSection({ lang }: StatementSectionProps) {
               trigger: photo,
               start: "top bottom",
               end: "bottom top",
-              scrub: true,
+              scrub: 0.5,
             },
           }
         );

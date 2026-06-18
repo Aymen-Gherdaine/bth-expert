@@ -44,7 +44,7 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             trigger: el,
             start: "top top",
             end: "bottom top",
-            scrub: true,
+            scrub: 0.5,
           },
         }
       );
@@ -76,7 +76,7 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             quality={75}
             sizes="100vw"
             placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAEUlEQVR42mOQ0pPDihjoIAEA5CIP8VIuts4AAAAASUVORK5CYII="
+            blurDataURL="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAAsAPzmEuVOvKKWisAgB4CcJZwAAUfUY2BvbgADrVcj8m36ktODUbCcngB4AAAA="
             className="object-cover object-[50%_58%]"
           />
         </div>
