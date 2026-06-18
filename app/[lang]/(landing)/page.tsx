@@ -152,7 +152,7 @@ export default async function HomePage({
       <StatsBand stats={h.stats} />
 
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
-      <AboutSection lang={lang} />
+      <AboutSection lang={lang} content={h.about} />
 
       {/* ── SERVICES — signature pin-scroll: sticky visual, rows scroll past ── */}
       <ServicesPinScroll lang={lang} services={h.services} />
@@ -161,10 +161,10 @@ export default async function HomePage({
       <ProjectsSection lang={lang} />
 
       {/* ── STATEMENT — cream pause + clip-path photo wipe before the dark ── */}
-      <StatementSection lang={lang} />
+      <StatementSection lang={lang} content={h.statement} />
 
       {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
-      <ZonesSection lang={lang} />
+      <ZonesSection lang={lang} content={h.zones} />
 
       {/* ── FAQ — credibility + SEO, natural break before CTA ───────────── */}
       <Faq heading={h.faq.heading} items={h.faq.items} />

@@ -225,6 +225,98 @@ export default config({
   },
 
   singletons: {
+    home: singleton({
+      label: "Page d'accueil",
+      path: "content/fr/site/home",
+      format: "yaml",
+      schema: {
+        hero: fields.object({
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          headlinePart1: fields.text({ label: "Titre — partie 1" }),
+          headlineEmphasis: fields.text({ label: "Titre — mot en emphase" }),
+          headlinePart2: fields.text({ label: "Titre — partie 2" }),
+          subheading: fields.text({ label: "Sous-titre", multiline: true }),
+          cta: fields.text({ label: "Bouton principal" }),
+          ctaSecondary: fields.text({ label: "Bouton secondaire" }),
+        }),
+        services: fields.object({
+          sectionNumber: fields.text({ label: "Numéro de section" }),
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          heading: fields.text({ label: "Titre" }),
+          items: fields.array(
+            fields.object({
+              abbr: fields.text({ label: "Abréviation" }),
+              title: fields.text({ label: "Titre" }),
+              description: fields.text({ label: "Description", multiline: true }),
+            }),
+            { label: "Services", itemLabel: (p) => p.fields.abbr.value || "Service" }
+          ),
+          itemCta: fields.text({ label: "Lien — En savoir plus" }),
+          cta: fields.text({ label: "Bouton — Voir tous les services" }),
+        }),
+        stats: fields.object({
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          items: fields.array(
+            fields.object({
+              value: fields.text({ label: "Valeur" }),
+              label: fields.text({ label: "Label" }),
+              highlight: fields.checkbox({ label: "Mise en avant" }),
+            }),
+            { label: "Statistiques", itemLabel: (p) => p.fields.label.value || "Statistique" }
+          ),
+        }),
+        equipe: fields.object({
+          sectionNumber: fields.text({ label: "Numéro de section" }),
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          heading: fields.text({ label: "Titre" }),
+          description: fields.text({ label: "Description", multiline: true }),
+          cta: fields.text({ label: "Bouton" }),
+        }),
+        contact: fields.object({
+          sectionNumber: fields.text({ label: "Numéro de section" }),
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          heading: fields.text({ label: "Titre" }),
+          description: fields.text({ label: "Description", multiline: true }),
+          cta: fields.text({ label: "Bouton" }),
+          phone: fields.text({ label: "Téléphone" }),
+          email: fields.text({ label: "Email" }),
+        }),
+        faq: fields.object({
+          heading: fields.text({ label: "Titre" }),
+          items: fields.array(faqItem, {
+            label: "Questions",
+            itemLabel: (p) => p.fields.q.value || "Question",
+          }),
+        }),
+        about: fields.object({
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          manifesto: fields.text({ label: "Manifeste", multiline: true }),
+          domains: fields.array(fields.text({ label: "Domaine" }), {
+            label: "Domaines d'expertise",
+            itemLabel: (p) => p.value,
+          }),
+          body1: fields.text({ label: "Paragraphe 1", multiline: true }),
+          body2: fields.text({ label: "Paragraphe 2", multiline: true }),
+          cta: fields.text({ label: "CTA" }),
+        }, { label: "Section À propos" }),
+        statement: fields.object({
+          headingPart1: fields.text({ label: "Titre — partie principale" }),
+          headingEmphasis: fields.text({ label: "Titre — mot en italique" }),
+          support: fields.text({ label: "Phrase d'appui", multiline: true }),
+          cta: fields.text({ label: "CTA" }),
+        }, { label: "Section Statement" }),
+        zones: fields.object({
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          heading: fields.text({ label: "Titre" }),
+          address: fields.text({ label: "Adresse", multiline: true }),
+          phone: fields.text({ label: "Téléphone" }),
+          email: fields.text({ label: "Email" }),
+          cta: fields.text({ label: "CTA" }),
+          coverage: fields.text({ label: "Texte couverture géographique" }),
+        }, { label: "Section Zones d'intervention" }),
+      },
+    }),
+
     metadata: singleton({
       label: "Métadonnées globales",
       path: "content/fr/site/metadata",
@@ -311,7 +403,7 @@ export default config({
           projectType: fields.text({ label: "Champ — Type de projet" }),
           projectTypePlaceholder: fields.text({ label: "Placeholder — Type de projet" }),
           projectTypeOptions: fields.object({
-            eie: fields.text({ label: "Option — EIE" }),
+            eie: fields.text({ label: "Option — EIA" }),
             edd: fields.text({ label: "Option — EDD" }),
             hse: fields.text({ label: "Option — HSE" }),
             conformite: fields.text({ label: "Option — Conformité" }),
@@ -490,6 +582,7 @@ export default config({
         backLabel: fields.text({ label: "Retour au blog" }),
         empty: fields.text({ label: "Message — aucun article", multiline: true }),
         publishedOn: fields.text({ label: "Publié le" }),
+        readingTimeLabel: fields.text({ label: "Unité de temps de lecture (ex: min de lecture)" }),
         pagination: fields.object(
           {
             previous: fields.text({ label: "Page précédente" }),
@@ -503,70 +596,5 @@ export default config({
       },
     }),
 
-    home: singleton({
-      label: "Page d'accueil",
-      path: "content/fr/site/home",
-      format: "yaml",
-      schema: {
-        hero: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
-          headlinePart1: fields.text({ label: "Titre — partie 1" }),
-          headlineEmphasis: fields.text({ label: "Titre — mot en emphase" }),
-          headlinePart2: fields.text({ label: "Titre — partie 2" }),
-          subheading: fields.text({ label: "Sous-titre", multiline: true }),
-          cta: fields.text({ label: "Bouton principal" }),
-          ctaSecondary: fields.text({ label: "Bouton secondaire" }),
-        }),
-        services: fields.object({
-          sectionNumber: fields.text({ label: "Numéro de section" }),
-          eyebrow: fields.text({ label: "Eyebrow" }),
-          heading: fields.text({ label: "Titre" }),
-          items: fields.array(
-            fields.object({
-              abbr: fields.text({ label: "Abréviation" }),
-              title: fields.text({ label: "Titre" }),
-              description: fields.text({ label: "Description", multiline: true }),
-            }),
-            { label: "Services", itemLabel: (p) => p.fields.abbr.value || "Service" }
-          ),
-          itemCta: fields.text({ label: "Lien — En savoir plus" }),
-          cta: fields.text({ label: "Bouton — Voir tous les services" }),
-        }),
-        stats: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
-          items: fields.array(
-            fields.object({
-              value: fields.text({ label: "Valeur" }),
-              label: fields.text({ label: "Label" }),
-              highlight: fields.checkbox({ label: "Mise en avant" }),
-            }),
-            { label: "Statistiques", itemLabel: (p) => p.fields.label.value || "Statistique" }
-          ),
-        }),
-        equipe: fields.object({
-          sectionNumber: fields.text({ label: "Numéro de section" }),
-          eyebrow: fields.text({ label: "Eyebrow" }),
-          heading: fields.text({ label: "Titre" }),
-          description: fields.text({ label: "Description", multiline: true }),
-          cta: fields.text({ label: "Bouton" }),
-        }),
-        contact: fields.object({
-          sectionNumber: fields.text({ label: "Numéro de section" }),
-          eyebrow: fields.text({ label: "Eyebrow" }),
-          heading: fields.text({ label: "Titre" }),
-          description: fields.text({ label: "Description", multiline: true }),
-          cta: fields.text({ label: "Bouton" }),
-          phone: fields.text({ label: "Téléphone" }),
-          email: fields.text({ label: "Email" }),
-        }),
-        faq: fields.object({
-          heading: fields.text({ label: "Titre" }),
-          items: fields.array(faqItem, {
-            label: "Questions",
-            itemLabel: (p) => p.fields.q.value || "Question",
-          }),
-        }),
-      },
-    }),
   },
 });

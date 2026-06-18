@@ -957,6 +957,29 @@
           "a": "The cost depends on the type of study, the scale of the project, and its location. We provide a personalized quote following a free initial consultation. Contact us to discuss."
         }
       ]
+    },
+    "about": {
+      "eyebrow": "About",
+      "manifesto": "No industrial project obtains its permit without a compliant environmental study. That is our profession, and our commitment.",
+      "domains": ["Environment", "Industrial safety", "Hygiene & occupational health"],
+      "body1": "BTH Expert is an accredited environmental consulting and engineering firm, operating in the fields of environment, safety and hygiene across western Algeria.",
+      "body2": "Impact assessments, HSE audits, environmental management plans — rigorous deliverables, ready for submission to the competent authorities.",
+      "cta": "Learn more"
+    },
+    "statement": {
+      "headingPart1": "Every industrial project begins with an",
+      "headingEmphasis": "environmental question",
+      "support": "BTH Expert turns your regulatory obligations into a competitive advantage.",
+      "cta": "Discover our services"
+    },
+    "zones": {
+      "eyebrow": "Areas of intervention",
+      "heading": "Oran, at the heart of western Algeria",
+      "address": "40, Lotissement 119\nBir El Djir, Oran",
+      "phone": "+213 (670) 70 81 38",
+      "email": "info@bthexpert.dz",
+      "cta": "Contact us",
+      "coverage": "We cover all wilayas across Algeria."
     }
   }
 }

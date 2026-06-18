@@ -846,12 +846,12 @@
     "backLabel": "Retour au blog",
     "empty": "Les articles en cette langue arrivent prochainement. Consultez la version française du blog.",
     "publishedOn": "Publié le",
+    "readingTimeLabel": "min de lecture",
     "pagination": {
       "previous": "Page précédente",
       "next": "Page suivante",
       "pageLabel": "Page {current} sur {total}"
-    },
-    "readingTimeLabel": "min de lecture"
+    }
   },
   "home": {
     "hero": {
@@ -957,6 +957,33 @@
           "a": "Le coût dépend du type d'étude, de l'ampleur du projet et de sa localisation. Nous établissons un devis personnalisé après une consultation initiale gratuite. Contactez-nous pour en discuter."
         }
       ]
+    },
+    "about": {
+      "eyebrow": "À propos",
+      "manifesto": "Aucun projet industriel n'obtient son autorisation sans étude environnementale conforme. C'est notre métier, et notre engagement.",
+      "domains": [
+        "Environnement",
+        "Sécurité industrielle",
+        "Hygiène & santé au travail"
+      ],
+      "body1": "BTH Expert est une société agréée de conseil et d'ingénierie environnementale, intervenant dans les domaines de l'environnement, de la sécurité et de l'hygiène en région Ouest algérienne.",
+      "body2": "Études d'impact, audits HSE, plans de gestion environnementale — des livrables rigoureux, prêts à déposer auprès des autorités compétentes.",
+      "cta": "En savoir plus"
+    },
+    "statement": {
+      "headingPart1": "Chaque projet industriel commence par une question",
+      "headingEmphasis": "environnementale",
+      "support": "BTH Expert transforme vos obligations réglementaires en avantage compétitif.",
+      "cta": "Découvrir nos services"
+    },
+    "zones": {
+      "eyebrow": "Zones d'intervention",
+      "heading": "Oran, au cœur de l'Ouest algérien",
+      "address": "40, Lotissement 119\nBir El Djir, Oran",
+      "phone": "+213 (670) 70 81 38",
+      "email": "info@bthexpert.dz",
+      "cta": "Nous contacter",
+      "coverage": "Nous couvrons toutes les wilayas d'Algérie."
     }
   }
 }
