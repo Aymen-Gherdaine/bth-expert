@@ -66,7 +66,7 @@ export default async function HomePage({
       <HeroCurtain>
         <section className="relative min-h-svh flex items-end overflow-hidden pt-20 pb-10 lg:py-0 lg:pb-24 bg-brand-deep">
           {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
-          <HeroBackground src="/hero.webp" />
+          <HeroBackground src="/hero-industrie.png" />
 
           {/* Cinematic gradient veil — lets the image read up top, holds the
               type legible below (manifesto §3, --overlay-hero) */}
@@ -152,7 +152,7 @@ export default async function HomePage({
       <StatsBand stats={h.stats} />
 
       {/* ── À PROPOS — credential bridge between hero and services ─────── */}
-      <AboutSection lang={lang} />
+      <AboutSection lang={lang} content={h.about} />
 
       {/* ── SERVICES — signature pin-scroll: sticky visual, rows scroll past ── */}
       <ServicesPinScroll lang={lang} services={h.services} />
@@ -161,10 +161,10 @@ export default async function HomePage({
       <ProjectsSection lang={lang} />
 
       {/* ── STATEMENT — cream pause + clip-path photo wipe before the dark ── */}
-      <StatementSection lang={lang} />
+      <StatementSection lang={lang} content={h.statement} />
 
       {/* ── ZONES D'INTERVENTION — Algeria map, Oran glow beacon ──────── */}
-      <ZonesSection lang={lang} />
+      <ZonesSection lang={lang} content={h.zones} />
 
       {/* ── FAQ — credibility + SEO, natural break before CTA ───────────── */}
       <Faq heading={h.faq.heading} items={h.faq.items} />

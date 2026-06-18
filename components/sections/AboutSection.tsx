@@ -6,11 +6,21 @@ import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
-interface AboutSectionProps {
-  lang: Locale;
+interface AboutContent {
+  eyebrow: string;
+  manifesto: string;
+  domains: string[];
+  body1: string;
+  body2: string;
+  cta: string;
 }
 
-export function AboutSection({ lang }: AboutSectionProps) {
+interface AboutSectionProps {
+  lang: Locale;
+  content: AboutContent;
+}
+
+export function AboutSection({ lang, content }: AboutSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const lineRef    = useRef<HTMLDivElement>(null);
 
@@ -179,7 +189,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
           className="block font-sans uppercase text-gold mb-10"
           style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
         >
-          À PROPOS
+          {content.eyebrow}
         </span>
 
         {/* Manifesto — ink words light up over the warm cream */}
@@ -188,20 +198,14 @@ export function AboutSection({ lang }: AboutSectionProps) {
           className="font-display font-light text-ink tracking-[-0.025em] leading-[1.16] max-w-6xl"
           style={{ fontSize: "clamp(2rem, 3.2vw + 0.75rem, 3.9rem)" }}
         >
-          Aucun projet industriel n&apos;obtient son autorisation sans
-          étude environnementale conforme. C&apos;est notre métier,
-          et notre engagement.
+          {content.manifesto}
         </h2>
 
         {/* Domains index + supporting copy — typography only, no imagery */}
         <div className="mt-20 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-16">
 
           <div className="lg:col-span-5 mb-14 lg:mb-0">
-            {[
-              "Environnement",
-              "Sécurité industrielle",
-              "Hygiène & santé au travail",
-            ].map((domain, i) => (
+            {content.domains.map((domain, i) => (
               <div key={domain} data-about-domain className="py-6 lg:py-7">
                 <div
                   data-domain-rule
@@ -235,10 +239,7 @@ export function AboutSection({ lang }: AboutSectionProps) {
                 color: "var(--color-ink-soft)",
               }}
             >
-              BTH Expert est une société agréée de conseil et
-              d&apos;ingénierie environnementale, intervenant dans les
-              domaines de l&apos;environnement, de la sécurité et de
-              l&apos;hygiène en région Ouest algérienne.
+              {content.body1}
             </p>
             <p
               data-about-body
@@ -248,16 +249,14 @@ export function AboutSection({ lang }: AboutSectionProps) {
                 color: "var(--color-ink-soft)",
               }}
             >
-              Études d&apos;impact, audits HSE, plans de gestion
-              environnementale — des livrables rigoureux, prêts à déposer
-              auprès des autorités compétentes.
+              {content.body2}
             </p>
             <Link
               data-about-cta
               href={`/${lang}/contact`}
               className="inline-flex items-center gap-2 text-ink text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              En savoir plus <span aria-hidden>→</span>
+              {content.cta} <span aria-hidden>→</span>
             </Link>
           </div>
 

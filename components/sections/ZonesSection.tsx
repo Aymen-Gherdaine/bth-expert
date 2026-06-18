@@ -6,8 +6,19 @@ import { useGSAP } from "@gsap/react";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
+interface ZonesContent {
+  eyebrow: string;
+  heading: string;
+  address: string;
+  phone: string;
+  email: string;
+  cta: string;
+  coverage: string;
+}
+
 interface ZonesSectionProps {
   lang: Locale;
+  content: ZonesContent;
 }
 
 /**
@@ -40,7 +51,7 @@ const COVERAGE_RAYS = [
   { d: "M295.8 59.2 Q 258 205, 245 350", end: { x: 245, y: 350 } },
 ];
 
-export function ZonesSection({ lang }: ZonesSectionProps) {
+export function ZonesSection({ lang, content }: ZonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
   const lineRef = useRef<HTMLSpanElement>(null);
@@ -267,7 +278,7 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
             ref={eyebrowRef}
             className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.22em] text-gold"
           >
-            — Zones d&apos;intervention
+            — {content.eyebrow}
           </p>
           <span
             ref={lineRef}
@@ -279,16 +290,14 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
             ref={headingRef}
             className="font-display font-light text-cream tracking-[-0.03em] leading-[1.12] pb-2 text-[length:var(--text-display)]"
           >
-            Oran, au cœur de l&apos;Ouest algérien
+            {content.heading}
           </h2>
 
           <address
             ref={addressRef}
-            className="not-italic mt-8 text-[length:var(--text-body)] text-cream/80 leading-[1.7]"
+            className="not-italic mt-8 text-[length:var(--text-body)] text-cream/80 leading-[1.7] whitespace-pre-line"
           >
-            40, Lotissement 119
-            <br />
-            Bir El Djir, Oran
+            {content.address}
           </address>
 
           <div
@@ -296,28 +305,28 @@ export function ZonesSection({ lang }: ZonesSectionProps) {
             className="mt-7 flex flex-col gap-2.5 text-[length:var(--text-small)]"
           >
             <a
-              href="tel:+213670708138"
+              href={`tel:${content.phone.replace(/[\s()]/g, "")}`}
               className="w-fit text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              +213 (670) 70 81 38
+              {content.phone}
             </a>
             <a
-              href="mailto:info@bthexpert.dz"
+              href={`mailto:${content.email}`}
               className="w-fit text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              info@bthexpert.dz
+              {content.email}
             </a>
             <Link
               href={`/${lang}/contact`}
               className="mt-4 inline-flex w-fit items-center gap-2 font-sans font-medium text-gold tracking-tight hover:gap-3 hover:text-cream transition-[gap,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              Nous contacter <span aria-hidden>→</span>
+              {content.cta} <span aria-hidden>→</span>
             </Link>
           </div>
 
           <div ref={wilayasRef} className="mt-9 pt-7 border-t border-cream/10">
             <p className="text-[length:var(--text-small)] text-cream/55 leading-[1.8] max-w-md">
-              Nous couvrons toutes les wilayas d&apos;Algérie.
+              {content.coverage}
             </p>
           </div>
         </div>
