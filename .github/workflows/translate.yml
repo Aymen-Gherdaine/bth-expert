@@ -52,4 +52,16 @@ jobs:
             exit 0
           fi
           git commit -m "chore: traduction auto FR → AR/EN [skip ci]"
-          git push origin HEAD:main
+          # main peut avoir avancé pendant la traduction (qui dure plusieurs
+          # minutes) : on se resynchronise avant de pousser, avec quelques
+          # tentatives, pour ne jamais perdre les traductions sur un push rejeté.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push origin HEAD:main; then
+              echo "Push réussi (tentative $attempt)."
+              exit 0
+            fi
+            echo "Push rejeté, resynchronisation et nouvelle tentative ($attempt)…"
+            sleep 5
+          done
+          echo "::error::Échec du push des traductions après 5 tentatives."
+          exit 1
