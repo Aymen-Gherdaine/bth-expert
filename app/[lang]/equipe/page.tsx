@@ -35,10 +35,10 @@ export default async function EquipePage({
 
   const jsonLd = schemaPerson({
     name: "Amine Lahmer",
-    jobTitle: "Gérant — Expert environnement",
+    jobTitle: "Co-fondateur & Gérant — Expert environnement",
     url: `https://bthexpert.com/${lang}/equipe`,
     description:
-      "Ingénieur en environnement, fondateur et gérant de BTH Expert depuis 2009. Expert EIE et EDD agréé par le Ministère de l'Environnement algérien.",
+      "Ingénieur en environnement, co-fondateur de BTH Expert. Maîtrise en génie de l'environnement (ÉTS Montréal). Expérience internationale (AtkinsRéalis). Expert EIE et EDD agréé par le Ministère de l'Environnement algérien.",
   });
 
   return (

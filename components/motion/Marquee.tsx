@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ITEMS = [
   "Agréé Ministère de l'Environnement",
-  "Fondé en 2009",
+  "Expertise internationale",
   "Oran, Algérie",
   "Études d'impact environnemental",
   "Études de dangers industriels",

@@ -189,8 +189,8 @@ export function AboutSection({ lang }: AboutSectionProps) {
           style={{ fontSize: "clamp(2rem, 3.2vw + 0.75rem, 3.9rem)" }}
         >
           Aucun projet industriel n&apos;obtient son autorisation sans
-          étude environnementale conforme. C&apos;est notre métier depuis
-          2009.
+          étude environnementale conforme. C&apos;est notre métier,
+          et notre engagement.
         </h2>
 
         {/* Domains index + supporting copy — typography only, no imagery */}

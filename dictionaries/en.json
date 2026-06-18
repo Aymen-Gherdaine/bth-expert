@@ -112,8 +112,8 @@
       {
         "name": "Amine Lahmer",
         "role": "Managing Director — Environmental Expert",
-        "bio": "Environmental engineer, Amine Lahmer has led BTH Expert since its founding in 2009. He oversees all studies and ensures deliverables comply with the requirements of the Ministry of Environment and Quality of Life. He specialises in environmental impact assessments and hazard studies for classified industrial establishments.",
-        "credentials": ["Ministry of Environment Certification", "EIA Expert", "Hazard Study Expert"]
+        "bio": "An environmental engineer holding a Master's from École de technologie supérieure (ÉTS, Montréal), Amine Lahmer built his expertise within leading international engineering groups — including AtkinsRéalis — and on complex industrial projects across Algeria and Canada. Certified by Sonatrach/Institut Algérien du Pétrole, he combines deep knowledge of Algerian regulatory frameworks with international best practices in impact assessment, hazard studies and industrial risk management. He co-founded BTH Expert to bring world-class environmental expertise to Algerian industry.",
+        "credentials": ["M.Sc. Environmental Engineering — ÉTS Montréal", "Sonatrach / IAP Certified", "Ministry of Environment Accreditation"]
       }
     ],
     "partner": {
@@ -376,22 +376,22 @@
   "apropos": {
     "meta": {
       "title": "About — Accredited environmental consultancy | BTH Expert",
-      "description": "BTH Expert, an accredited environmental consultancy in Oran since 2009. History, ministerial accreditation, BTH Consult partnership and a multidisciplinary approach serving Algerian industry."
+      "description": "BTH Expert, an accredited environmental consultancy in Oran. International expertise, ministerial accreditation and a multidisciplinary approach serving Algerian industry."
     },
     "hero": {
-      "eyebrow": "About · Since 2009",
+      "eyebrow": "About · Accredited consultancy · Oran, Algeria",
       "heading": "A consultancy serving Algerian industry",
-      "subheading": "Since 2009, BTH Expert has supported industrial project owners in managing their environmental and regulatory obligations, from impact assessment to compliance."
+      "subheading": "BTH Expert brings together international expertise — built within leading global engineering groups — and a deep command of Algerian regulatory frameworks, to support industrial project owners from impact assessment through to compliance."
     },
     "timeline": {
       "eyebrow": "Our journey",
-      "heading": "Fifteen years of environmental expertise",
+      "heading": "International expertise at the service of Algeria",
       "milestones": [
-        { "year": "2009", "title": "BTH Expert founded", "description": "The consultancy is established in Oran, with the ambition of supporting western Algeria's industry on its environmental challenges." },
-        { "year": "2012", "title": "Ministerial accreditation", "description": "Recognition of the firm's expertise by the Ministry of Environment, authorising regulatory studies." },
-        { "year": "2016", "title": "Broader sectors", "description": "Activity expands to energy, infrastructure and hydraulics, beyond industry and petrochemicals." },
-        { "year": "2020", "title": "BTH Consult partnership", "description": "A strategic alliance with BTH Consult to mobilise multidisciplinary expertise on large-scale projects." },
-        { "year": "Today", "title": "Over 20 projects delivered", "description": "A portfolio of impact assessments, hazard studies and HSE audits carried out for more than 150 industrial partners." }
+        { "year": "Academic", "title": "Master's in Environmental Engineering", "description": "Trained at École de technologie supérieure (ÉTS, Montréal) — expertise in environmental impact assessment, industrial risk management and international standards." },
+        { "year": "Field", "title": "Sonatrach / IAP Certification", "description": "Certified by the Institut Algérien du Pétrole, grounding expertise in the realities of Algeria's energy industry." },
+        { "year": "International", "title": "Major engineering groups", "description": "Professional experience within world-leading engineering firms — including AtkinsRéalis — on complex environmental projects across Algeria and Canada." },
+        { "year": "Accreditation", "title": "Ministerial accreditation", "description": "Recognition by the Ministry of Environment and Quality of Life, authorising impact assessments and hazard studies across Algeria." },
+        { "year": "2026", "title": "BTH Expert founded", "description": "The consultancy is established in Oran, with the ambition of bringing world-class international expertise to Algerian industry." }
       ]
     },
     "agrement": {
@@ -413,7 +413,7 @@
     },
     "stats": {
       "items": [
-        { "value": "2009", "label": "Year founded" },
+        { "value": "10+", "label": "Years of experience" },
         { "value": "20+", "label": "Projects delivered" },
         { "value": "150+", "label": "Industrial partners" }
       ]
@@ -495,7 +495,7 @@
       "headlinePart1": "Environmental",
       "headlineEmphasis": "& industrial",
       "headlinePart2": "expertise",
-      "subheading": "Certified consultancy since 2009. Impact assessments, hazard studies, HSE audits — from project inception to regulatory compliance.",
+      "subheading": "Certified consultancy accredited by the Ministry of Environment. Impact assessments, hazard studies, HSE audits — from project inception to regulatory compliance.",
       "cta": "Request a Quote",
       "ctaSecondary": "Our services"
     },
@@ -531,10 +531,10 @@
     "stats": {
       "eyebrow": "By the numbers",
       "items": [
-        { "value": "2009", "label": "Year founded", "highlight": true },
-        { "value": "15+", "label": "Years of experience", "highlight": false },
-        { "value": "200+", "label": "Projects completed", "highlight": false },
-        { "value": "12", "label": "Sectors covered", "highlight": false }
+        { "value": "10+", "label": "Years of experience", "highlight": true },
+        { "value": "20+", "label": "Studies completed", "highlight": false },
+        { "value": "4", "label": "Service families", "highlight": false },
+        { "value": "Certified", "label": "Ministry of Environment", "highlight": false }
       ]
     },
     "equipe": {
