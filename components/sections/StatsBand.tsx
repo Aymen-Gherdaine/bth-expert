@@ -24,9 +24,10 @@ const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 /** Each digit slot is this many em tall — matches the line-height below. */
 const SLOT_H = 1.1;
 
-function parseValue(value: string): { num: string; suffix: string } {
+function parseValue(value: string): { num: string; suffix: string; isNumeric: boolean } {
   const m = value.match(/^(\d+)(.*)$/);
-  return m ? { num: m[1], suffix: m[2] } : { num: value, suffix: "" };
+  if (m) return { num: m[1], suffix: m[2], isNumeric: true };
+  return { num: value, suffix: "", isNumeric: false };
 }
 
 /**
@@ -124,7 +125,7 @@ export function StatsBand({ stats }: StatsBandProps) {
         )}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
           {stats.items.map((s) => {
-            const { num, suffix } = parseValue(s.value);
+            const { num, suffix, isNumeric } = parseValue(s.value);
             const digits = num.split("");
             return (
               <div key={s.label} data-stat>
@@ -136,30 +137,35 @@ export function StatsBand({ stats }: StatsBandProps) {
                   {/* Screen-reader value (the visual slots are aria-hidden) */}
                   <span className="sr-only">{s.value}</span>
 
-                  {/* Odometer slots */}
-                  <span aria-hidden className="inline-flex tabular-nums">
-                    {digits.map((digit, i) => (
-                      <span
-                        key={i}
-                        className="inline-block overflow-hidden"
-                        style={{ height: `${SLOT_H}em`, verticalAlign: "top" }}
-                      >
+                  {isNumeric ? (
+                    /* Odometer slots — only for numeric values */
+                    <span aria-hidden className="inline-flex tabular-nums">
+                      {digits.map((digit, i) => (
                         <span
-                          data-digit-track
-                          data-target={digit}
-                          className="block"
-                          style={{ lineHeight: SLOT_H }}
+                          key={i}
+                          className="inline-block overflow-hidden"
+                          style={{ height: `${SLOT_H}em`, verticalAlign: "top" }}
                         >
-                          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-                            <span key={n} className="block">
-                              {n}
-                            </span>
-                          ))}
+                          <span
+                            data-digit-track
+                            data-target={digit}
+                            className="block"
+                            style={{ lineHeight: SLOT_H }}
+                          >
+                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+                              <span key={n} className="block">
+                                {n}
+                              </span>
+                            ))}
+                          </span>
                         </span>
-                      </span>
-                    ))}
-                    {suffix && <span className="inline-block">{suffix}</span>}
-                  </span>
+                      ))}
+                      {suffix && <span className="inline-block">{suffix}</span>}
+                    </span>
+                  ) : (
+                    /* Plain text — non-numeric values (e.g. "Agréé", "Accredited") */
+                    <span aria-hidden>{s.value}</span>
+                  )}
                 </div>
                 <span
                   data-stat-label
