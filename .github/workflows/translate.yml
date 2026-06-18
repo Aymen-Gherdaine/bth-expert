@@ -5,6 +5,12 @@ on:
     branches: [main]
     paths:
       - "content/fr/**"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Retraduire même les articles déjà traduits"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -34,7 +40,7 @@ jobs:
       - name: Traduire FR → AR + EN
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: npm run translate
+        run: npm run translate ${{ inputs.force && '-- --force' || '' }}
 
       - name: Commit et push si changement
         run: |

@@ -27,11 +27,14 @@ interface MobileMenuProps {
 export function MobileMenu({ items, phone, email, ctaLabel, ctaHref }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const [lastPathname, setLastPathname] = useState(pathname);
 
-  // Close whenever the route changes.
-  useEffect(() => {
+  // Close whenever the route changes (state adjusted during render — the
+  // React-recommended alternative to a setState-in-effect).
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   // Scroll lock (Lenis + native) and Escape-to-close while open.
   useEffect(() => {
