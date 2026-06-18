@@ -1,7 +1,7 @@
 {
   "metadata": {
     "homeTitle": "BTH Expert — Certified Environmental Consultancy | Oran",
-    "homeDescription": "Certified consultancy accredited by the Algerian Ministry of Environment. Environmental impact assessments, hazard studies, HSE audits and regulatory compliance in Oran and across Algeria."
+    "homeDescription": "Certified consultancy accredited by the Algerian Ministry of Environment. Environmental impact assessments, hazard studies, HSE audits and regulatory compliance in Oran and throughout Algeria."
   },
   "nav": {
     "services": "Services",
@@ -11,7 +11,7 @@
     "apropos": "About",
     "blog": "Blog",
     "contact": "Contact",
-    "quote": "Request a quote",
+    "quote": "Request a Quote",
     "skipToContent": "Skip to content"
   },
   "footer": {
@@ -43,7 +43,7 @@
       "intro": "Do you have an industrial project requiring environmental or regulatory support? Contact us for an initial consultation."
     },
     "info": {
-      "heading": "Contact Information",
+      "heading": "Contact Details",
       "emailLabel": "Email",
       "email": "info@bthexpert.dz",
       "phoneLabel": "Phone",
@@ -99,8 +99,8 @@
         },
         {
           "number": "04",
-          "title": "Study kickoff",
-          "description": "Once approved, we launch the study with compliant deliverables."
+          "title": "Study launch",
+          "description": "Once validated, we begin the study with compliant deliverables."
         }
       ]
     }
@@ -108,43 +108,43 @@
   "equipe": {
     "meta": {
       "title": "Team — Certified Environmental Experts | BTH Expert",
-      "description": "Meet the BTH Expert team. Engineers and experts accredited by the Algerian Ministry of Environment. Manager: Amine Lahmer. Based in Oran."
+      "description": "Meet the BTH Expert team. Engineers and experts accredited by the Algerian Ministry of Environment. Managing Director: Amine Lahmer. Based in Oran."
     },
     "hero": {
-      "eyebrow": "Certified Experts · Oran, Algeria",
+      "eyebrow": "Accredited Experts · Oran, Algeria",
       "heading": "Experts & partners",
-      "subheading": "BTH Expert brings together international expertise built within leading Canadian engineering groups, combined with deep knowledge of Algeria's regulatory and industrial environment."
+      "subheading": "BTH Expert brings together international expertise forged within major Canadian engineering firms, combined with a deep grounding in the regulatory and industrial realities of Algeria."
     },
     "members": [
       {
         "name": "Amine Lahmer",
-        "role": "Co-founder & Manager — Environmental Expert",
-        "bio": "An environmental engineer, Amine Lahmer gained several years of field experience within major Canadian engineering groups — notably GHD and AtkinsRéalis — on complex industrial projects in Algeria and Canada. Certified by the Algerian Petroleum Institute (Sonatrach/IAP), he is well-versed in Algerian regulatory frameworks and international standards in impact assessment, hazard studies and industrial risk management. He co-founded BTH Expert with the ambition of bringing world-class, field-tested expertise to Algerian industry.",
+        "role": "Co-founder & Managing Director — Environmental Expert",
+        "bio": "An environmental engineer, Amine Lahmer gained several years of field experience within major Canadian engineering firms — notably GHD and AtkinsRéalis — on complex industrial projects in Algeria and Canada. Certified by the Algerian Petroleum Institute (Sonatrach/IAP), he has mastered Algerian regulatory frameworks and international standards in impact assessment, hazard studies, and industrial risk management. He co-founded BTH Expert with the ambition of bringing to Algerian industry a world-class expertise forged on the international stage.",
         "credentials": [
           "GHD · AtkinsRéalis",
-          "Sonatrach / IAP Certified",
-          "Ministry of Environment Accredited"
+          "Certified Sonatrach / IAP",
+          "Ministry of Environment Accreditation"
         ]
       },
       {
         "name": "Hakim Belgouini",
         "role": "Partner — BTH Consult",
-        "bio": "With over 40 years of experience in environmental studies and industrial projects across Algeria, Hakim Belgouini is a recognised expert in western and central Algeria. As head of BTH Consult, he brings deep knowledge of Algerian regulatory frameworks and an established network with regional authorities and industrial project owners to every engagement.",
+        "bio": "With over 40 years of experience in environmental studies and industrial projects in Algeria, Hakim Belgouini is a recognized authority in the sector across the west and centre of the country. As head of BTH Consult, he brings to each assignment a deep grounding in Algerian regulatory realities and a well-established network with wilaya administrations and industrial project owners.",
         "credentials": [
           "40+ years of experience",
           "BTH Consult",
-          "Western · Central Algeria"
+          "West · Central Algeria"
         ]
       }
     ],
     "partner": {
       "heading": "BTH Consult Partnership",
-      "description": "BTH Expert and BTH Consult operate as a structured partnership for large-scale projects. This alliance combines Amine Lahmer's international engineering expertise with Hakim Belgouini's 40 years of Algerian field practice — providing complete technical and regulatory coverage on every assignment."
+      "description": "BTH Expert and BTH Consult form a structured partnership for large-scale projects. This alliance complementarily unites Amine Lahmer's international expertise with Hakim Belgouini's 40 years of field practice in Algeria — ensuring complete technical and regulatory coverage on every assignment."
     },
     "cta": {
-      "heading": "Let's Work Together",
+      "heading": "Let's work together",
       "description": "Contact our team to discuss your environmental project.",
-      "button": "Get in Touch"
+      "button": "Get in touch"
     }
   },
   "services": {
@@ -155,7 +155,7 @@
     "hero": {
       "eyebrow": "Certified consultancy",
       "heading": "Our environmental services",
-      "subheading": "Four major service categories to support your regulatory obligations, from project review to commissioning."
+      "subheading": "Four major service categories to support your regulatory obligations, from project inception to commissioning."
     }
   },
   "eie": {
@@ -164,9 +164,9 @@
       "description": "Certified consultancy for conducting Environmental Impact Assessments (EIA) in Algeria. Reports compliant with the requirements of the Ministry of Environment. Based in Oran."
     },
     "hero": {
-      "eyebrow": "EIE · Ministry of Environment Accreditation",
+      "eyebrow": "EIE · Accreditation Ministry of Environment",
       "heading": "Environmental Impact Assessment",
-      "subheading": "The EIE is the regulatory document that evaluates the impacts of a project on its natural, human, and socio-economic environment. Its completion is mandatory for all projects subject to impact assessment under executive decree No. 07-145."
+      "subheading": "The EIE is the regulatory document that evaluates the impacts of a project on its natural, human, and socio-economic environment. Its completion is mandatory for all projects subject to environmental impact assessment under executive decree No. 07-145."
     },
     "heroMeta": [
       {
@@ -184,7 +184,7 @@
     ],
     "why": {
       "heading": "Who is concerned?",
-      "description": "Any industrial, mining, agricultural, or infrastructure project owner whose project appears on the list of works subject to EIE is legally required to produce this study before obtaining their construction or operating permit."
+      "description": "Any industrial, mining, agricultural, or infrastructure project owner whose project appears on the list of works subject to EIE is legally required to produce this study before obtaining a construction or operating permit."
     },
     "methodology": {
       "heading": "Our methodology",
@@ -202,12 +202,12 @@
         {
           "number": "03",
           "title": "Mitigation measures",
-          "description": "Definition of suppression, reduction, and compensation measures for significant impacts. Each measure is costed and scheduled."
+          "description": "Definition of measures to suppress, reduce, and compensate for significant impacts. Each measure is costed and scheduled."
         },
         {
           "number": "04",
           "title": "Monitoring program",
-          "description": "Environmental monitoring indicators, inspection frequency, alert thresholds, and reporting procedures to the Ministry of Environment."
+          "description": "Environmental monitoring indicators, control frequency, alert thresholds, and reporting procedures to the Ministry."
         }
       ]
     },
@@ -218,11 +218,11 @@
     "faq": [
       {
         "q": "When is an Environmental Impact Assessment mandatory?",
-        "a": "As soon as your project appears on the regulatory list of works subject to impact assessment (executive decree No. 07-145). The EIE is a prerequisite for obtaining a construction or operating permit."
+        "a": "As soon as your project appears on the regulatory list of works subject to environmental impact assessment (executive decree No. 07-145). The EIE is a prerequisite for obtaining a construction or operating permit."
       },
       {
         "q": "How long does an EIE take?",
-        "a": "Depending on the scale and sensitivity of the site, it can take anywhere from a few weeks to several months. We define the timeline from the initial consultation."
+        "a": "Depending on the scale and sensitivity of the site, it can take from a few weeks to a few months. We define the timeline from the initial consultation."
       },
       {
         "q": "Who validates the final report?",
@@ -231,7 +231,7 @@
     ],
     "cta": {
       "heading": "Does your project require an EIE?",
-      "description": "Send us the technical details of your project. We will assess the scope of the study and provide you with a quote within 48 hours.",
+      "description": "Send us the technical details of your project. We assess the scope of the study and provide you with a quote within 48 hours.",
       "button": "Request a quote"
     }
   },
@@ -243,11 +243,11 @@
     "hero": {
       "eyebrow": "EDD · Classified Establishments",
       "heading": "Hazard Study",
-      "subheading": "The Hazard Study identifies and characterizes major accident risks of an industrial facility, evaluates their consequences and defines control measures. It is required for classified establishments subject to authorization."
+      "subheading": "The Hazard Study identifies and characterizes the major accident risks of an industrial facility, evaluates their consequences, and defines control measures. It is required for classified establishments subject to authorization."
     },
     "heroMeta": [
       {
-        "label": "Concerns",
+        "label": "Applies to",
         "value": "Classified Establishments"
       },
       {
@@ -260,8 +260,8 @@
       }
     ],
     "why": {
-      "heading": "Who is concerned?",
-      "description": "Any operator of a classified installation for environmental protection subject to authorization — hydrocarbon storage, petrochemical units, hazardous product depots, pressure equipment — must produce a Hazard Study before commissioning and revise it upon each substantial modification."
+      "heading": "Who Is Concerned?",
+      "description": "Any operator of a classified installation for environmental protection subject to authorization — hydrocarbon storage, petrochemical units, hazardous material depots, pressure equipment — must produce a Hazard Study before commissioning and revise it after each substantial modification."
     },
     "methodology": {
       "heading": "Our Methodology",
@@ -269,53 +269,53 @@
         {
           "number": "01",
           "title": "Description & Environment",
-          "description": "Characterization of the installation, products, processes and environmental vulnerability: populations, sensitive areas and potential domino effects."
+          "description": "Characterization of the installation, products, processes, and environmental vulnerability: populations, sensitive areas, and potential domino effects."
         },
         {
           "number": "02",
           "title": "Hazard Identification",
-          "description": "Systematic analysis of hazard potential using recognized methods (APR, HAZOP), review of accident history and identification of feared scenarios."
+          "description": "Systematic analysis of hazard potentials using recognized methods (APR, HAZOP), review of accident history, and identification of feared scenarios."
         },
         {
           "number": "03",
           "title": "Risk Analysis & Modelling",
-          "description": "Quantification of major scenarios: thermal, overpressure and toxic effects, calculation of effect zones and mapping of isolation distances."
+          "description": "Quantification of major scenarios: thermal, overpressure, and toxic effects, calculation of effect zones, and mapping of isolation distances."
         },
         {
           "number": "04",
           "title": "Risk Control",
-          "description": "Definition of prevention and protection barriers, the internal emergency plan and intervention arrangements in the event of an accident."
+          "description": "Definition of prevention and protection barriers, the internal emergency plan, and response measures in the event of an accident."
         }
       ]
     },
     "deliverable": {
       "heading": "Deliverable",
-      "description": "A Hazard Study report compliant with the Algerian regulatory framework, integrating the mapping of effect zones and the risk control plan, ready for submission to the competent authorities."
+      "description": "A Hazard Study report compliant with the Algerian regulatory framework, incorporating effect zone mapping and a risk control plan, ready for submission to the competent authorities."
     },
     "faq": [
       {
         "q": "Is my installation concerned?",
-        "a": "Any classified installation subject to authorization: hydrocarbon storage, petrochemical units, hazardous product depots, pressure equipment."
+        "a": "Any classified installation subject to authorization: hydrocarbon storage, petrochemical units, hazardous material depots, pressure equipment."
       },
       {
         "q": "What does the Hazard Study contain?",
-        "a": "Hazard identification, modelling of major scenarios (thermal, overpressure and toxic effects), mapping of effect zones and a risk control plan."
+        "a": "Hazard identification, modelling of major scenarios (thermal, overpressure, and toxic effects), effect zone mapping, and a risk control plan."
       },
       {
         "q": "Does it need to be revised?",
-        "a": "Yes — upon each substantial modification to the installation, processes or products used."
+        "a": "Yes — after each substantial modification to the installation, its processes, or the products used."
       }
     ],
     "cta": {
-      "heading": "Does your installation require an EDD?",
-      "description": "Send us the characteristics of your installation and processes. We assess the scope of the study and provide you with a quote within 48 hours.",
+      "heading": "Does Your Installation Require an EDD?",
+      "description": "Send us the characteristics of your installation and processes. We will assess the scope of the study and provide you with a quote within 48 hours.",
       "button": "Request a Quote"
     }
   },
   "hse": {
     "meta": {
       "title": "HSE Audit & Regulatory Compliance — BTH Expert",
-      "description": "Hygiene, safety and environment (HSE) audit and regulatory compliance assessment for industrial sites in Algeria. Gap identification and prioritized action plan. Certified consultancy in Oran."
+      "description": "Hygiene, safety and environment (HSE) audit and regulatory compliance diagnostic for industrial sites in Algeria. Gap identification and prioritized action plan. Certified consultancy in Oran."
     },
     "hero": {
       "eyebrow": "HSE · Regulatory Compliance",
@@ -338,7 +338,7 @@
     ],
     "why": {
       "heading": "Who is concerned?",
-      "description": "Any industrial or tertiary site wishing to secure its regulatory compliance, prepare for an inspection, initiate an ISO 14001 / 45001 process, or manage its HSE risks before an acquisition, an extension or a certification."
+      "description": "Any industrial or tertiary site wishing to secure its regulatory compliance, prepare for an inspection, initiate an ISO 14001 / 45001 approach, or manage its HSE risks ahead of an acquisition, expansion or certification."
     },
     "methodology": {
       "heading": "Our Methodology",
@@ -346,22 +346,22 @@
         {
           "number": "01",
           "title": "Document Review",
-          "description": "Analysis of existing permits, orders, registers and procedures against the regulatory obligations applicable to the site."
+          "description": "Analysis of existing authorizations, orders, registers and procedures against the regulatory obligations applicable to the site."
         },
         {
           "number": "02",
-          "title": "Field Visit",
+          "title": "Site Visit",
           "description": "Inspection of facilities, workstations and safety devices; interviews with managers and observation of actual practices."
         },
         {
           "number": "03",
           "title": "Gap Analysis",
-          "description": "Comparison of the existing situation against legal and normative requirements, and qualification of the criticality of each identified gap."
+          "description": "Comparison of the existing situation against legal and normative requirements, and assessment of the criticality of each identified gap."
         },
         {
           "number": "04",
           "title": "Prioritized Action Plan",
-          "description": "Costed and scheduled recommendations, prioritized by risk level and regulatory deadline."
+          "description": "Costed and scheduled recommendations, ranked by risk level and regulatory deadline."
         }
       ]
     },
@@ -371,8 +371,8 @@
     },
     "faq": [
       {
-        "q": "When should an HSE Audit be carried out?",
-        "a": "Before an inspection, an ISO certification, an acquisition or an extension — or simply to durably secure your compliance."
+        "q": "When should an HSE Audit be conducted?",
+        "a": "Before an inspection, ISO certification, acquisition or expansion — or simply to durably secure your compliance."
       },
       {
         "q": "What is the deliverable?",
@@ -380,24 +380,24 @@
       },
       {
         "q": "Do you conduct on-site visits?",
-        "a": "Yes — document review followed by a field visit, interviews and observation of actual practices."
+        "a": "Yes — document review followed by a site visit, interviews and observation of actual practices."
       }
     ],
     "cta": {
       "heading": "Need an HSE Audit?",
-      "description": "Describe your site and compliance objectives to us. We define the audit scope and provide you with a quote within 48 hours.",
+      "description": "Describe your site and your compliance objectives. We will define the audit scope and provide you with a proposal within 48 hours.",
       "button": "Request a Quote"
     }
   },
   "pge": {
     "meta": {
       "title": "Environmental Management Plan (PGE) — BTH Expert",
-      "description": "Development of Environmental Management Plans (PGE) for monitoring mitigation measures throughout the entire life cycle of a project. Certified consultancy in Algeria, based in Oran."
+      "description": "Development of Environmental Management Plans (PGE) for monitoring mitigation measures throughout the entire lifecycle of a project. Certified consultancy in Algeria, based in Oran."
     },
     "hero": {
       "eyebrow": "PGE · Environmental monitoring",
       "heading": "Environmental Management Plan",
-      "subheading": "The Environmental Management Plan translates the commitments of the impact assessment into concrete measures: it organises the mitigation, surveillance and monitoring of a project's effects, from the construction phase through to operation."
+      "subheading": "The Environmental Management Plan translates the commitments of the impact assessment into concrete measures: it organises the mitigation, monitoring and follow-up of a project's effects, from the construction phase through to operation."
     },
     "heroMeta": [
       {
@@ -405,7 +405,7 @@
         "value": "Construction → operation"
       },
       {
-        "label": "Covers",
+        "label": "Tracks",
         "value": "Mitigation measures"
       },
       {
@@ -423,7 +423,7 @@
         {
           "number": "01",
           "title": "Commitment scoping",
-          "description": "Review of mitigation and compensation measures arising from the impact assessment and translation into operational actions that are assigned and scheduled."
+          "description": "Review of the mitigation and compensation measures arising from the impact assessment and their translation into assigned and scheduled operational actions."
         },
         {
           "number": "02",
@@ -433,23 +433,23 @@
         {
           "number": "03",
           "title": "Follow-up framework",
-          "description": "Organisation of responsibilities, reporting procedures and control arrangements during both the construction and operation phases."
+          "description": "Organisation of responsibilities, reporting procedures and control arrangements during both the construction phase and the operational phase."
         },
         {
           "number": "04",
           "title": "Continuous improvement",
-          "description": "Review mechanisms, updating of measures and handling of non-conformities throughout the lifetime of the project."
+          "description": "Review mechanisms, measure updates and non-conformity handling throughout the entire life of the project."
         }
       ]
     },
     "deliverable": {
       "heading": "Deliverable",
-      "description": "An operational Environmental Management Plan: measures matrix, monitoring and follow-up programme, indicators and reporting template, ready to be used directly by project teams."
+      "description": "An operational Environmental Management Plan: a measures matrix, a monitoring and follow-up programme, indicators and a reporting template, directly usable by project teams."
     },
     "faq": [
       {
         "q": "What is a PGE used for?",
-        "a": "It translates the commitments of the impact assessment into concrete measures: mitigation, surveillance and monitoring throughout the entire life of the project."
+        "a": "It translates the commitments of the impact assessment into concrete measures: mitigation, monitoring and follow-up throughout the entire lifecycle of the project."
       },
       {
         "q": "Who is concerned?",
@@ -462,7 +462,7 @@
     ],
     "cta": {
       "heading": "Structure your environmental monitoring?",
-      "description": "Share the requirements of your impact assessment with us. We will build a management plan tailored to your project and provide you with a quote within 48 hours.",
+      "description": "Share the prescriptions from your impact assessment with us. We will build a management plan tailored to your project and provide you with a quote within 48 hours.",
       "button": "Request a quote"
     }
   },
@@ -478,7 +478,7 @@
     },
     "services": {
       "heading": "Our Services in Oran",
-      "description": "From the project review phase through to environmental monitoring during operations, BTH Expert delivers studies compliant with the applicable Algerian regulatory framework."
+      "description": "From the project review phase through to environmental monitoring during the operational phase, BTH Expert provides studies that comply with the applicable Algerian regulatory framework."
     },
     "zones": {
       "heading": "Areas of Intervention",
@@ -513,7 +513,7 @@
     "hero": {
       "eyebrow": "Sectors",
       "heading": "Sector-specific expertise",
-      "subheading": "Each industry carries its own environmental and regulatory challenges. BTH Expert adapts its methodology to the technical realities of your sector."
+      "subheading": "Each industry carries its own environmental and regulatory challenges. BTH Expert tailors its methodology to the technical realities of your sector."
     },
     "enjeuxLabel": "Key challenges",
     "sousSecteursLabel": "Areas covered",
@@ -528,7 +528,7 @@
         "slug": "industrie-petrochimie",
         "title": "Industry & Petrochemicals",
         "tagline": "Refining, cement plants, metallurgy, and surface treatments: processes with high impact and hazard potential.",
-        "intro": "Industrial and petrochemical sites concentrate the most demanding environmental and safety challenges: atmospheric and aqueous discharges, storage of hazardous products, and major accident risks. BTH Expert supports these facilities from Environmental Impact Assessment to risk management.",
+        "intro": "Industrial and petrochemical sites concentrate the most demanding environmental and safety challenges: atmospheric and aqueous discharges, hazardous product storage, and major accident risks. BTH Expert supports these facilities from impact assessment to risk management.",
         "enjeux": [
           {
             "title": "Classified installations",
@@ -560,12 +560,12 @@
       {
         "slug": "energie-hydrocarbures",
         "title": "Energy & Hydrocarbons",
-        "tagline": "Exploration, production, transport, and storage of hydrocarbons, and energy production: strategic and sensitive infrastructures.",
-        "intro": "The energy and hydrocarbons sector operates extensive and sensitive infrastructures subject to a strict regulatory framework. BTH Expert intervenes across the entire chain, from production fields to transport and storage facilities.",
+        "tagline": "Exploration, production, transport, and storage of hydrocarbons, and energy production: strategic and sensitive infrastructure.",
+        "intro": "The energy and hydrocarbons sector operates extensive and sensitive infrastructure subject to a strict regulatory framework. BTH Expert intervenes across the entire chain, from production fields to transport and storage facilities.",
         "enjeux": [
           {
             "title": "Extensive sites",
-            "description": "Assessment of impacts over large footprints and varied environments."
+            "description": "Impact assessment across large footprints and varied environments."
           },
           {
             "title": "Installation safety",
@@ -573,13 +573,13 @@
           },
           {
             "title": "Transition & efficiency",
-            "description": "Integration of energy challenges and renewable energies into projects."
+            "description": "Integration of energy challenges and renewable energy into projects."
           }
         ],
         "sousSecteurs": [
           "Upstream oil & gas",
           "Transport & storage",
-          "Electricity generation",
+          "Power generation",
           "Renewable energies"
         ],
         "prestations": [
@@ -592,12 +592,12 @@
       {
         "slug": "infrastructures-btp",
         "title": "Infrastructure & Construction",
-        "tagline": "Roads, civil engineering structures, business zones, buildings, and developments: large-footprint structural projects.",
-        "intro": "Infrastructure and construction projects permanently transform the territory. BTH Expert supports project owners and companies in anticipating impacts, securing authorizations, and organizing environmental monitoring of construction sites.",
+        "tagline": "Roads, civil engineering structures, industrial zones, buildings, and developments: large-footprint structuring projects.",
+        "intro": "Infrastructure and construction projects permanently transform the territory. BTH Expert supports project owners and contractors in anticipating impacts, securing authorizations, and organizing environmental monitoring of construction sites.",
         "enjeux": [
           {
             "title": "Footprint & territory",
-            "description": "Assessment of impacts on environments, landscapes, and neighboring populations."
+            "description": "Assessment of impacts on natural environments, landscapes, and neighboring populations."
           },
           {
             "title": "Construction phase",
@@ -605,12 +605,12 @@
           },
           {
             "title": "Authorizations",
-            "description": "Preparation of regulatory files required to obtain permits."
+            "description": "Compilation of regulatory files required to obtain permits."
           }
         ],
         "sousSecteurs": [
           "Roads & civil engineering structures",
-          "Business & industrial zones",
+          "Industrial & activity zones",
           "Building & real estate",
           "Urban development"
         ],
@@ -624,11 +624,11 @@
         "slug": "agriculture-hydraulique",
         "title": "Agriculture & Hydraulics",
         "tagline": "Irrigated perimeters, dams, wastewater treatment plants, and agro-industrial projects: water resources at the heart of the challenges.",
-        "intro": "Agriculture and hydraulics mobilize water resources and soils over large areas. BTH Expert assesses impacts, optimizes water management, and supports the regulatory compliance of agro-industrial and hydraulic projects.",
+        "intro": "Agriculture and hydraulics mobilize water resources and soils over large areas. BTH Expert assesses impacts, optimizes water management, and supports the compliance of agro-industrial and hydraulic projects.",
         "enjeux": [
           {
             "title": "Water resources",
-            "description": "Preservation of water quality and availability for ecosystems and uses."
+            "description": "Preserving the quality and availability of water for ecosystems and human uses."
           },
           {
             "title": "Soils & environments",
@@ -656,12 +656,12 @@
   "apropos": {
     "meta": {
       "title": "About — Certified Environmental Consultancy | BTH Expert",
-      "description": "BTH Expert, certified environmental consultancy based in Oran. International expertise, ministerial accreditation and a multidisciplinary approach at the service of Algerian industry."
+      "description": "BTH Expert, a certified environmental consultancy based in Oran. International expertise, ministerial accreditation and a multidisciplinary approach at the service of Algerian industry."
     },
     "hero": {
       "eyebrow": "About · Certified Consultancy · Oran, Algeria",
       "heading": "A consultancy at the service of Algerian industry",
-      "subheading": "BTH Expert combines international expertise — built within leading global engineering groups — with an in-depth knowledge of the Algerian regulatory framework, to support industrial project owners from environmental impact assessment to compliance."
+      "subheading": "BTH Expert combines international expertise — forged within leading global engineering groups — with an in-depth knowledge of the Algerian regulatory framework, to support industrial project owners from Environmental Impact Assessment to compliance."
     },
     "timeline": {
       "eyebrow": "Our journey",
@@ -670,7 +670,7 @@
         {
           "year": "Education",
           "title": "Master's degree in Environmental Engineering",
-          "description": "Trained at the École de technologie supérieure (ÉTS, Montreal) — expertise in environmental impact assessment, industrial risk management and international standards."
+          "description": "Trained at the École de technologie supérieure (ÉTS, Montréal) — expertise in environmental impact assessment, industrial risk management and international standards."
         },
         {
           "year": "Field",
@@ -680,12 +680,12 @@
         {
           "year": "International",
           "title": "Major engineering groups",
-          "description": "Professional career within leading engineering groups — including AtkinsRéalis — on complex environmental projects in Algeria and internationally."
+          "description": "Professional experience within leading engineering groups — including AtkinsRéalis — on complex environmental projects in Algeria and internationally."
         },
         {
           "year": "Accreditation",
           "title": "Ministerial accreditation",
-          "description": "Recognition by the Ministry of Environment and Quality of Life, authorising the completion of environmental impact assessments and hazard studies in Algeria."
+          "description": "Recognition by the Ministry of Environment and Quality of Life, authorising the conduct of Environmental Impact Assessments and Hazard Studies in Algeria."
         },
         {
           "year": "2026",
@@ -696,15 +696,15 @@
     },
     "agrement": {
       "heading": "Accreditation & compliance",
-      "description": "BTH Expert is accredited by the Ministry of Environment and Quality of Life to carry out environmental impact assessments and hazard studies. Every deliverable complies with the Algerian regulatory framework and the requirements of the wilaya departments (DEW, DIM)."
+      "description": "BTH Expert is accredited by the Ministry of Environment and Quality of Life to carry out Environmental Impact Assessments and Hazard Studies. Every deliverable complies with the Algerian regulatory framework and the requirements of the wilaya directorates (DEW, DIM)."
     },
     "partner": {
       "heading": "BTH Consult Partnership",
-      "description": "Our model combines the expertise of an accredited consultant with the know-how of BTH Consult. This partnership strengthens our capacity for intervention and mobilises a multidisciplinary team — environment, water, health, safety and engineering — for projects of regional and national scale."
+      "description": "Our model combines the expertise of an accredited consultant with the know-how of BTH Consult. This partnership strengthens our capacity for intervention and mobilises a multidisciplinary team — environment, water, health, safety and engineering — for regional and national-scale projects."
     },
     "values": {
       "eyebrow": "Our approach",
-      "heading": "Regulatory rigour, field-rooted expertise",
+      "heading": "Regulatory rigour, field-grounded expertise",
       "items": [
         {
           "title": "Accredited expertise",
@@ -712,7 +712,7 @@
         },
         {
           "title": "Multidisciplinary approach",
-          "description": "Environment, water, health, safety and engineering united around every project."
+          "description": "Environment, water, health, safety and engineering brought together around every project."
         },
         {
           "title": "Industrial proximity",
@@ -748,12 +748,12 @@
         {
           "name": "Amine Lahmer",
           "role": "Founder & Managing Director",
-          "description": "Several years of field experience within major Canadian engineering groups — notably GHD and AtkinsRéalis — on complex industrial projects in Algeria and Canada. Certified by Sonatrach/IAP and accredited by Algeria's Ministry of Environment."
+          "description": "Several years of field experience within leading Canadian engineering groups — notably GHD and AtkinsRéalis — on complex industrial projects in Algeria and Canada. Certified Sonatrach/IAP and accredited by the Algerian Ministry of Environment."
         },
         {
           "name": "Hakim Belgouini",
           "role": "Partner — BTH Consult",
-          "description": "Over 40 years of experience in environmental studies and industrial projects in Algeria. Deep knowledge of the regulatory landscape in western and central Algeria, serving large-scale regional and national projects."
+          "description": "Over 40 years of experience in environmental studies and industrial projects in Algeria. A deep grounding in the regulatory realities of western and central Algeria, serving regional and national-scale projects."
         }
       ]
     }
@@ -761,7 +761,7 @@
   "projets": {
     "meta": {
       "title": "Projects & Achievements — Environmental Studies | BTH Expert",
-      "description": "Environmental Impact Assessments, Hazard Studies and HSE Audits conducted by BTH Expert for industry, energy and hydraulics in Algeria. Examples of achievements by sector."
+      "description": "Environmental Impact Assessments, Hazard Studies and HSE Audits conducted by BTH Expert for the industry, energy and hydraulics sectors in Algeria. Examples of achievements by sector."
     },
     "hero": {
       "eyebrow": "Achievements",
@@ -774,13 +774,13 @@
       "missionLabel": "Mission",
       "anneeLabel": "Year",
       "contexteLabel": "Context",
-      "demarcheLabel": "Our Intervention",
+      "demarcheLabel": "Our Approach",
       "resultatLabel": "Result",
-      "disclaimer": "Representative example — details to be validated with the client.",
+      "disclaimer": "Representative example — details to be confirmed with the client.",
       "backLabel": "All Projects",
       "cta": {
         "heading": "A similar project?",
-        "description": "Describe your project and its context. We assess your obligations and provide you with a quote within 48 hours.",
+        "description": "Tell us about your project and its context. We assess your obligations and provide you with a quote within 48 hours.",
         "button": "Request a Quote"
       }
     },
@@ -796,8 +796,8 @@
           "Hazard Study"
         ],
         "annee": "2022",
-        "contexte": "Establishment of a new processing unit within an existing industrial zone, in proximity to third parties and sensitive environments. The project, subject to authorization, required an environmental assessment and characterization of major risks prior to review.",
-        "demarche": "Initial site assessment, analysis of impacts on air, water and the human environment, modeling of major accident scenarios (thermal and overpressure effects), and definition of mitigation and risk control measures.",
+        "contexte": "Installation of a new processing unit within an existing industrial zone, in proximity to third parties and sensitive environments. The project, subject to authorization, required an environmental assessment and characterization of major risks prior to review.",
+        "demarche": "Initial site assessment, analysis of impacts on air, water and the human environment, modelling of major accident scenarios (thermal and overpressure effects) and definition of mitigation and risk control measures.",
         "resultat": "A complete regulatory file — EIE and EDD — submitted to the wilaya authorities, accompanied by an Environmental Management Plan and an internal emergency plan."
       },
       {
@@ -812,8 +812,8 @@
         ],
         "annee": "2021",
         "contexte": "An operational cement plant sought to secure its regulatory compliance and structure its HSE approach ahead of an audit by the competent authorities.",
-        "demarche": "Documentary review of permits and records, site visit, gap analysis against applicable requirements, and prioritization of corrective actions.",
-        "resultat": "A compliance grid, a gap register and a prioritized action plan, supporting the site's compliance process over twelve months."
+        "demarche": "Documentary review of authorizations and records, site visit, gap analysis against applicable requirements and prioritization of corrective actions.",
+        "resultat": "A compliance matrix, a gap register and a prioritized action plan, serving as the basis for bringing the site into compliance over twelve months."
       },
       {
         "slug": "perimetre-irrigue-plaine-mina",
@@ -826,8 +826,8 @@
           "Environmental Management Plan"
         ],
         "annee": "2023",
-        "contexte": "Development of an irrigated perimeter mobilizing water resources over a large agricultural area, with issues relating to soils, natural environments and riparian uses.",
-        "demarche": "Characterization of the initial state, assessment of effects on water resources and soils, and definition of an environmental monitoring and follow-up program.",
+        "contexte": "Development of an irrigated perimeter mobilizing water resources across a large agricultural area, with issues related to soils, natural environments and riparian uses.",
+        "demarche": "Characterization of the initial state, assessment of effects on water resources and soils, and definition of an environmental monitoring and surveillance programme.",
         "resultat": "A validated Environmental Impact Assessment and an operational Environmental Management Plan for the construction and operational phases."
       }
     ]
@@ -835,16 +835,16 @@
   "blog": {
     "meta": {
       "title": "Blog — Environmental Regulations in Algeria | BTH Expert",
-      "description": "Analyses, guides and regulatory news on Environmental Impact Assessment, Hazard Study and environmental compliance in Algeria, by BTH Expert."
+      "description": "Analyses, guides and regulatory news on environmental impact assessment, hazard studies and environmental compliance in Algeria, by BTH Expert."
     },
     "hero": {
       "eyebrow": "Resources · Environmental Regulations",
       "heading": "The BTH Expert Blog",
-      "subheading": "Regulatory insights and practical guides on Environmental Impact Assessment, Hazard Study and environmental compliance in Algeria, by our team of accredited experts."
+      "subheading": "Regulatory insights and practical guides on environmental impact assessment, hazard studies and environmental compliance in Algeria, by our team of accredited experts."
     },
     "readMore": "Read the article",
     "backLabel": "Back to Blog",
-    "empty": "Articles in this language are coming soon. Please consult the French version of the Blog.",
+    "empty": "Articles in this language are coming soon. Please consult the French version of the blog.",
     "publishedOn": "Published on",
     "pagination": {
       "previous": "Previous page",
@@ -859,7 +859,7 @@
       "headlineEmphasis": "& industrial",
       "headlinePart2": "expertise",
       "subheading": "Certified consultancy. Environmental impact assessments, hazard studies, HSE audits — we secure the authorization of your industrial projects.",
-      "cta": "Talk to us about your project",
+      "cta": "Tell us about your project",
       "ctaSecondary": "Our services"
     },
     "services": {
@@ -870,17 +870,17 @@
         {
           "abbr": "EIE",
           "title": "Environmental Impact Assessment (EIA)",
-          "description": "Comprehensive assessment of environmental impacts for industrial, mining and infrastructure projects. Report compliant with Ministry of Environment requirements."
+          "description": "Comprehensive assessment of the environmental impacts of industrial, mining, and infrastructure projects. Report compliant with the requirements of the Ministry of Environment."
         },
         {
           "abbr": "EDD",
           "title": "Hazard Study",
-          "description": "Major risk analysis for classified facilities. Accident scenarios, effect zones, prevention measures and emergency plans."
+          "description": "Analysis of major risks for classified establishments. Accident scenarios, effect zones, prevention measures, and emergency plans."
         },
         {
           "abbr": "HSE",
           "title": "HSE Audit",
-          "description": "Health, safety and environment compliance assessment. Identification of regulatory gaps and prioritized action plan."
+          "description": "Health, safety, and environmental compliance assessment. Identification of regulatory gaps and a prioritized action plan."
         },
         {
           "abbr": "PGE",
@@ -920,14 +920,14 @@
       "sectionNumber": "02",
       "eyebrow": "Team",
       "heading": "Experts recognized by the Ministry",
-      "description": "Accredited engineers with mastery of the Algerian regulatory framework and international ISO/IEC standards. BTH Expert works in partnership with BTH Consult for regional-scale projects.",
+      "description": "Accredited engineers with command of the Algerian regulatory framework and international ISO/IEC standards. BTH Expert works in partnership with BTH Consult on regional-scale projects.",
       "cta": "Meet the team"
     },
     "contact": {
       "sectionNumber": "03",
       "eyebrow": "Contact",
-      "heading": "Project underway? Let's talk.",
-      "description": "Tell us about your project, your regulatory constraints and your timeline. We will get back to you within 48 hours.",
+      "heading": "A project underway? Let's talk.",
+      "description": "Tell us about your project, your regulatory constraints, and your timeline. We will get back to you within 48 hours.",
       "cta": "Request a quote",
       "phone": "+213 670 70 81 38",
       "email": "info@bthexpert.dz"
@@ -941,11 +941,11 @@
         },
         {
           "q": "What is the average timeframe to obtain an environmental authorization?",
-          "a": "Allow 2 to 6 months depending on the scale of the project and the wilaya. The study itself takes from a few weeks to several months; the public inquiry phase (for large projects) extends the timeframe."
+          "a": "Allow 2 to 6 months depending on the scale of the project and the wilaya. The study itself takes from a few weeks to several months; the public inquiry phase (for large projects) extends the timeline."
         },
         {
           "q": "Does BTH Expert operate outside of Oran?",
-          "a": "Yes. Based in Oran, we operate throughout Algeria, with a focus on western Algeria: Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane and neighboring wilayas."
+          "a": "Yes. Based in Oran, we operate throughout Algeria, with a focus on western Algeria: Oran, Mostaganem, Tlemcen, Sidi Bel Abbès, Relizane, and neighboring wilayas."
         },
         {
           "q": "What is a Ministry of Environment accreditation?",
@@ -953,7 +953,7 @@
         },
         {
           "q": "How much does an environmental study cost?",
-          "a": "The cost depends on the type of study, the scale of the project and its location. We provide a customized quote after a free initial consultation. Contact us to discuss."
+          "a": "The cost depends on the type of study, the scale of the project, and its location. We provide a personalized quote following a free initial consultation. Contact us to discuss."
         }
       ]
     }
