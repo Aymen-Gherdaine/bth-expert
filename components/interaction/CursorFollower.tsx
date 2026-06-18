@@ -4,27 +4,34 @@ import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 
 /**
- * Decorative cursor ring — lags 12ms behind the mouse to create a rubber-band
- * feel. Scales up over interactive elements (links, buttons). Desktop/fine-pointer
- * only; invisible on touch devices. Purely decorative, pointer-events: none.
+ * Decorative cursor ring — visible only inside dark (.bg-brand-deep) sections.
+ * Gold ring on dark green = premium visual; hidden on light backgrounds.
+ * RAF-throttled: one DOM read per frame max, no elementFromPoint (uses e.target).
  */
 export function CursorFollower() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Only for devices with a precise pointer (mouse, trackpad)
     if (!window.matchMedia("(pointer: fine) and (hover: hover)").matches) return;
 
     const ring = ringRef.current;
     if (!ring) return;
 
-    gsap.to(ring, { opacity: 0.5, duration: 0.5, ease: "expo.out" });
+    let lastX = 0;
+    let lastY = 0;
+    let lastTarget: Element | null = null;
+    let rafPending = false;
 
-    const onMove = (e: MouseEvent) => {
-      const { clientX: x, clientY: y } = e;
+    const processMove = () => {
+      rafPending = false;
+      const target = lastTarget;
+      const x = lastX;
+      const y = lastY;
 
-      // Position lags with rubber-band feel
+      const inDark = !!target?.closest(".bg-brand-deep, [data-cursor-dark]");
+      const isInteractive = inDark && !!target?.closest("a, button, [data-interactive]");
+
       gsap.to(ring, {
         x,
         y,
@@ -35,31 +42,33 @@ export function CursorFollower() {
         overwrite: "auto",
       });
 
-      // Scale up on interactive targets
-      const target = document.elementFromPoint(x, y);
-      const isInteractive = !!target?.closest("a, button, [data-interactive]");
       gsap.to(ring, {
         scale: isInteractive ? 2.4 : 1,
-        opacity: isInteractive ? 0.85 : 0.5,
+        opacity: inDark ? (isInteractive ? 0.85 : 0.65) : 0,
         duration: 0.25,
         ease: "expo.out",
         overwrite: "auto",
       });
     };
 
+    const onMove = (e: MouseEvent) => {
+      lastX = e.clientX;
+      lastY = e.clientY;
+      lastTarget = e.target as Element;
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(processMove);
+    };
+
     const onLeave = () =>
       gsap.to(ring, { opacity: 0, duration: 0.35, ease: "expo.out", overwrite: "auto" });
-    const onEnter = () =>
-      gsap.to(ring, { opacity: 0.5, duration: 0.35, ease: "expo.out", overwrite: "auto" });
 
     window.addEventListener("mousemove", onMove);
     document.addEventListener("mouseleave", onLeave);
-    document.addEventListener("mouseenter", onEnter);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseleave", onLeave);
-      document.removeEventListener("mouseenter", onEnter);
     };
   }, []);
 
@@ -68,7 +77,7 @@ export function CursorFollower() {
       ref={ringRef}
       aria-hidden
       className="fixed top-0 left-0 w-7 h-7 rounded-full border border-gold pointer-events-none z-[110] opacity-0"
-      style={{ boxShadow: "0 0 14px rgba(201, 169, 110, 0.22)" }}
+      style={{ boxShadow: "0 0 14px rgba(201, 169, 110, 0.35)" }}
     />
   );
 }
