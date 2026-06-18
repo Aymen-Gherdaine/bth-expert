@@ -75,6 +75,8 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             priority={priority}
             quality={75}
             sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAEUlEQVR42mOQ0pPDihjoIAEA5CIP8VIuts4AAAAASUVORK5CYII="
             className="object-cover object-[50%_58%]"
           />
         </div>
