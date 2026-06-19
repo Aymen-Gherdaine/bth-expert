@@ -181,17 +181,41 @@ function buildEmail(d: EmailData): string {
   <title>Nouvelle demande — BTH Expert</title>
   <style>
     :root { color-scheme: light only; }
+
+    /* Gmail Android dark mode — injecte [data-ogsc] sur <html> */
+    [data-ogsc] body,
+    [data-ogsc] .email-wrapper { background-color: #f5f0e8 !important; }
+    [data-ogsc] .email-card   { background-color: #ffffff !important; }
+    [data-ogsc] .email-card td,
+    [data-ogsc] td,
+    [data-ogsc] p,
+    [data-ogsc] span           { color: #1a2e1e !important;
+                                  background-color: inherit !important; }
+    [data-ogsc] .bg-cream      { background-color: #faf7f2 !important; }
+    [data-ogsc] .bg-green      { background-color: #1a2e1e !important; }
+    [data-ogsc] .bg-gold       { background-color: #c9a96e !important; }
+    [data-ogsc] .color-muted   { color: #6b7455 !important; }
+    [data-ogsc] .color-faded   { color: #9aa39a !important; }
+    [data-ogsc] .color-gold    { color: #a88a4c !important; }
+    [data-ogsc] .color-cream   { color: #f5f0e8 !important; }
+    [data-ogsc] .border-light  { border-color: #ece5d6 !important; }
+
+    /* Fallback @media pour autres clients */
     @media (prefers-color-scheme: dark) {
-      body,
-      body > table,
-      table[class="wrapper"] { background-color: #f5f0e8 !important; }
-      table { background-color: #ffffff !important; }
-      td { color: #1a2e1e !important; border-color: #ece5d6 !important; }
-      p, span, a { color: inherit !important; }
+      body                     { background-color: #f5f0e8 !important; }
+      .email-card              { background-color: #ffffff !important; }
+      td, p, span              { color: #1a2e1e !important; }
+      .bg-cream                { background-color: #faf7f2 !important; }
+      .bg-green                { background-color: #1a2e1e !important; }
+      .bg-gold                 { background-color: #c9a96e !important; }
+      .color-muted             { color: #6b7455 !important; }
+      .color-faded             { color: #9aa39a !important; }
+      .color-gold              { color: #a88a4c !important; }
+      .color-cream             { color: #f5f0e8 !important; }
     }
   </style>
 </head>
-<body style="margin:0;padding:0;background-color:#f5f0e8;"
+<body class="email-body" style="margin:0;padding:0;background-color:#f5f0e8;"
       bgcolor="#f5f0e8">
 
 <!-- Préheader masqué -->
@@ -199,14 +223,14 @@ function buildEmail(d: EmailData): string {
   Nouvelle demande de contact de ${e(d.name)} · ${e(d.projectLabel)}
 </div>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0"
+<table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0"
        bgcolor="#f5f0e8"
        style="background-color:#f5f0e8;padding:40px 16px;">
   <tr>
     <td align="center">
 
       <!-- Conteneur 600px -->
-      <table width="600" cellpadding="0" cellspacing="0" border="0"
+      <table class="email-card" width="600" cellpadding="0" cellspacing="0" border="0"
              bgcolor="#ffffff"
              style="max-width:600px;width:100%;background-color:#ffffff;
                     border:1px solid #e7ded0;border-radius:8px;overflow:hidden;
@@ -214,7 +238,8 @@ function buildEmail(d: EmailData): string {
 
         <!-- ── LOGO ───────────────────────────────────────── -->
         <tr>
-          <td align="center" style="padding:40px 40px 0;">
+          <td align="center" style="padding:40px 40px 0;background-color:#ffffff;"
+              bgcolor="#ffffff">
             <img src="https://bthexpert.com/bth-expert-logo-email.png"
                  width="156" height="44" alt="BTH Expert"
                  style="display:block;border:0;outline:none;text-decoration:none;
@@ -224,17 +249,19 @@ function buildEmail(d: EmailData): string {
 
         <!-- filet or -->
         <tr>
-          <td align="center" style="padding:26px 40px 0;">
+          <td align="center" style="padding:26px 40px 0;background-color:#ffffff;"
+              bgcolor="#ffffff">
             <table cellpadding="0" cellspacing="0" border="0" width="44">
-              <tr><td style="height:2px;background-color:#c9a96e;font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr><td class="bg-gold" style="height:2px;background-color:#c9a96e;font-size:0;line-height:0;">&nbsp;</td></tr>
             </table>
           </td>
         </tr>
 
         <!-- ── EN-TÊTE ────────────────────────────────────── -->
         <tr>
-          <td align="center" style="padding:24px 40px 0;">
-            <p style="margin:0 0 8px;font-family:${sans};font-size:11px;color:#6b7455;
+          <td align="center" style="padding:24px 40px 0;background-color:#ffffff;"
+              bgcolor="#ffffff">
+            <p class="color-muted" style="margin:0 0 8px;font-family:${sans};font-size:11px;color:#6b7455;
                        text-transform:uppercase;letter-spacing:0.16em;font-weight:600;">
               Formulaire de contact
             </p>
@@ -242,7 +269,7 @@ function buildEmail(d: EmailData): string {
                        font-weight:400;line-height:1.25;">
               Nouvelle demande reçue
             </p>
-            <p style="margin:0;font-family:${sans};font-size:13px;color:#9aa39a;
+            <p class="color-faded" style="margin:0;font-family:${sans};font-size:13px;color:#9aa39a;
                        letter-spacing:0.01em;">
               ${e(d.date)}
             </p>
@@ -251,9 +278,9 @@ function buildEmail(d: EmailData): string {
 
         <!-- ── INFOS ──────────────────────────────────────── -->
         <tr>
-          <td style="padding:32px 40px 0;">
+          <td style="padding:32px 40px 0;background-color:#ffffff;" bgcolor="#ffffff">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
-              ${row("Nom", `<strong style="font-weight:600;">${e(d.name)}</strong>`)}
+              ${row("Nom", `<strong style="font-weight:600;color:#1a2e1e;">${e(d.name)}</strong>`)}
               ${row("Email", emailValue)}
               ${row("Téléphone", `<a href="tel:${e(d.phone)}" style="color:#1a2e1e;text-decoration:none;">${e(d.phone)}</a>`)}
               ${row("Projet", `<span style="color:#1a2e1e;font-weight:600;">${e(d.projectLabel)}</span>`, true)}
@@ -263,16 +290,16 @@ function buildEmail(d: EmailData): string {
 
         <!-- ── MESSAGE ────────────────────────────────────── -->
         <tr>
-          <td style="padding:30px 40px 0;">
-            <p style="margin:0 0 12px;font-family:${sans};font-size:11px;color:#6b7455;
+          <td style="padding:30px 40px 0;background-color:#ffffff;" bgcolor="#ffffff">
+            <p class="color-muted" style="margin:0 0 12px;font-family:${sans};font-size:11px;color:#6b7455;
                        text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">
               Message
             </p>
             <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                   style="background-color:#faf7f2;border:1px solid #ece5d6;border-radius:8px;">
+                   style="border:1px solid #ece5d6;border-radius:8px;">
               <tr>
-                <td width="3" style="background-color:#c9a96e;font-size:0;line-height:0;">&nbsp;</td>
-                <td style="padding:22px 24px;">
+                <td class="bg-gold" width="3" style="background-color:#c9a96e;font-size:0;line-height:0;">&nbsp;</td>
+                <td class="bg-cream" style="padding:22px 24px;background-color:#faf7f2;" bgcolor="#faf7f2">
                   <p style="margin:0;font-family:${serif};font-size:16px;color:#3d4a40;
                              line-height:1.8;white-space:pre-wrap;">${e(d.message)}</p>
                 </td>
@@ -285,26 +312,26 @@ function buildEmail(d: EmailData): string {
 
         <!-- ── FOOTER ─────────────────────────────────────── -->
         <tr>
-          <td style="padding:40px 40px 36px;">
+          <td style="padding:40px 40px 36px;background-color:#ffffff;" bgcolor="#ffffff">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
-              <tr><td style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:24px;">&nbsp;</td></tr>
+              <tr><td class="border-light" style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:24px;">&nbsp;</td></tr>
               <tr>
                 <td align="left">
                   <p style="margin:0 0 5px;font-family:${serif};font-size:14px;
                              color:#1a2e1e;font-weight:400;letter-spacing:0.02em;">
                     BTH Expert
                   </p>
-                  <p style="margin:0 0 18px;font-family:${sans};font-size:11px;color:#9aa39a;
+                  <p class="color-faded" style="margin:0 0 18px;font-family:${sans};font-size:11px;color:#9aa39a;
                              line-height:1.8;">
                     40, Lotissement 119 · Bir El Djir, Oran · Algérie<br>
                     +213 (670) 70 81 38 · contact@bthexpert.com
                   </p>
                 </td>
               </tr>
-              <tr><td style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:18px;">&nbsp;</td></tr>
+              <tr><td class="border-light" style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:18px;">&nbsp;</td></tr>
               <tr>
                 <td align="left">
-                  <a href="https://bthexpert.com"
+                  <a href="https://bthexpert.com" class="color-gold"
                      style="font-family:${sans};font-size:12px;color:#a88a4c;
                             text-decoration:none;font-weight:600;letter-spacing:0.02em;">
                     bthexpert.com
