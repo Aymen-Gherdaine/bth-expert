@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist } from "next/font/google";
+import { Fraunces, Geist, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "../globals.css";
 import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
@@ -19,6 +19,17 @@ const geist = Geist({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-geist",
+  display: "swap",
+});
+
+// Arabe : Fraunces et Geist n'embarquent aucune glyphe arabe. IBM Plex Sans
+// Arabic prend le relais via les variables --font-display / --font-sans
+// redéfinies sous [lang="ar"] dans globals.css. L'unicode-range arabe fait
+// que le navigateur ne télécharge la police que sur les pages /ar.
+const ibmArabic = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-ibm-arabic",
   display: "swap",
 });
 
@@ -73,7 +84,7 @@ export default async function LangLayout({
     <html
       lang={lang}
       dir={dir}
-      className={`${fraunces.variable} ${geist.variable}`}
+      className={`${fraunces.variable} ${geist.variable} ${ibmArabic.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen" suppressHydrationWarning>

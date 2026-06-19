@@ -112,6 +112,34 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
+   Arabic (RTL) typography
+   Fraunces/Geist carry no Arabic glyphs → swap to IBM Plex Sans
+   Arabic. Placed after @theme so it overrides the :root tokens.
+   ═══════════════════════════════════════════════════════════ */
+[lang="ar"] {
+  --font-display: var(--font-ibm-arabic), "Segoe UI", Tahoma, sans-serif;
+  --font-sans:    var(--font-ibm-arabic), "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Letter-spacing breaks Arabic glyph joining → neutralise it everywhere.
+   uppercase is a harmless no-op on Arabic, so eyebrows keep their tokens. */
+[lang="ar"] * {
+  letter-spacing: 0 !important;
+}
+
+/* Weight 300 reads too thin for Arabic display type; bump to regular. */
+[lang="ar"] .font-light {
+  font-weight: 400;
+}
+
+/* Arabic glyphs sit taller (diacritics) — give tight headings air. */
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3 {
+  line-height: 1.35;
+}
+
+/* ═══════════════════════════════════════════════════════════
    Base styles
    ═══════════════════════════════════════════════════════════ */
 @layer base {
