@@ -1,11 +1,22 @@
 /**
- * Fonction de contact — Netlify serverless function.
+ * Notification email — Netlify event-triggered function.
+ *
+ * Déclenchée AUTOMATIQUEMENT par Netlify à chaque nouvelle soumission de
+ * formulaire (événement "submission-created"). Le formulaire passe d'abord
+ * par Netlify Forms (stockage dans le dashboard + filtrage anti-spam Akismet),
+ * puis cette fonction envoie un email premium via Resend.
+ *
+ * Pour éviter le doublon, désactiver la notification email native de Netlify :
+ * Site settings → Forms → Form notifications → supprimer "Email notification".
  *
  * Variable d'environnement requise :
  * - RESEND_API_KEY : clé API Resend (dashboard.resend.com/api-keys)
+ *
+ * Le nom du fichier "submission-created" est imposé par Netlify : c'est le nom
+ * de l'événement qui déclenche la fonction. Ne pas renommer.
  */
 
-import type { Context } from "@netlify/functions";
+import type { Handler } from "@netlify/functions";
 
 const RECIPIENTS = [
   "gherdaineaymen1995@gmail.com",
@@ -21,36 +32,34 @@ const PROJECT_TYPE_LABELS: Record<string, string> = {
   "autre": "Autre / Non précisé",
 };
 
-export default async function handler(req: Request, _context: Context) {
-  if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+export const handler: Handler = async (event) => {
+  let data: Record<string, string> = {};
+  try {
+    const parsed = JSON.parse(event.body ?? "{}");
+    data = parsed?.payload?.data ?? {};
+  } catch {
+    console.error("Payload Netlify illisible");
+    return { statusCode: 400, body: "Bad payload" };
   }
 
-  const text = await req.text();
-  const params = new URLSearchParams(text);
+  const name        = (data.name ?? "").trim();
+  const email       = (data.email ?? "").trim();
+  const phone       = (data.phone ?? "").trim();
+  const projectType = (data.projectType ?? "").trim();
+  const message     = (data.message ?? "").trim();
 
-  // Honeypot anti-spam
-  if (params.get("bot-field")) {
-    return new Response("OK", { status: 200 });
-  }
-
-  const name        = params.get("name")?.trim()        ?? "";
-  const email       = params.get("email")?.trim()       ?? "";
-  const phone       = params.get("phone")?.trim()       ?? "";
-  const projectType = params.get("projectType")?.trim() ?? "";
-  const message     = params.get("message")?.trim()     ?? "";
-
-  if (!name || !phone || !projectType || !message) {
-    return new Response("Champs obligatoires manquants", { status: 400 });
+  if (!name || !phone || !message) {
+    // Soumission incomplète (probablement spam filtré) — on ignore sans erreur.
+    return { statusCode: 200, body: "Skipped" };
   }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error("RESEND_API_KEY non défini");
-    return new Response("Erreur de configuration serveur", { status: 500 });
+    return { statusCode: 500, body: "Config manquante" };
   }
 
-  const projectLabel = PROJECT_TYPE_LABELS[projectType] ?? projectType;
+  const projectLabel = PROJECT_TYPE_LABELS[projectType] ?? projectType ?? "Non précisé";
 
   const date = new Intl.DateTimeFormat("fr-DZ", {
     weekday: "long",
@@ -82,15 +91,15 @@ export default async function handler(req: Request, _context: Context) {
 
     if (!res.ok) {
       console.error("Erreur Resend:", await res.text());
-      return new Response("Échec d'envoi email", { status: 502 });
+      return { statusCode: 502, body: "Échec d'envoi" };
     }
 
-    return new Response("OK", { status: 200 });
+    return { statusCode: 200, body: "OK" };
   } catch (err) {
-    console.error("Erreur fonction contact:", err);
-    return new Response("Erreur interne", { status: 500 });
+    console.error("Erreur fonction submission-created:", err);
+    return { statusCode: 500, body: "Erreur interne" };
   }
-}
+};
 
 // ─── HTML email template ────────────────────────────────────────────────────
 
