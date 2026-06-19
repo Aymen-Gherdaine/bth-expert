@@ -152,13 +152,14 @@ function buildEmail(d: EmailData): string {
 
   const row = (label: string, value: string, last = false) => `
               <tr>
-                <td width="132" valign="top"
-                    style="padding:16px 0;${last ? "" : "border-bottom:1px solid #ece5d6;"}
+                <td width="120" valign="middle"
+                    style="padding:16px 24px 16px 0;white-space:nowrap;
+                           ${last ? "" : "border-bottom:1px solid #ece5d6;"}
                            font-family:${sans};font-size:11px;color:#6b7455;
                            text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">
                   ${label}
                 </td>
-                <td valign="top"
+                <td valign="middle"
                     style="padding:16px 0;${last ? "" : "border-bottom:1px solid #ece5d6;"}
                            font-family:${sans};font-size:15px;color:#1a2e1e;line-height:1.5;">
                   ${value}
