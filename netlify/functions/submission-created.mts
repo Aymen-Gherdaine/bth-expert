@@ -129,229 +129,164 @@ interface EmailData {
 
 function buildEmail(d: EmailData): string {
   const e = escapeHtml;
+  const sans = "'Helvetica Neue',Helvetica,Arial,sans-serif";
+  const serif = "Georgia,'Times New Roman',serif";
+
+  const emailValue = d.email
+    ? `<a href="mailto:${e(d.email)}" style="color:#1a2e1e;text-decoration:none;border-bottom:1px solid #c9a96e;">${e(d.email)}</a>`
+    : `<span style="color:#9aa39a;">Non renseigné</span>`;
+
   const replyBtn = d.email
-    ? `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;">
+    ? `<table cellpadding="0" cellspacing="0" border="0" style="margin-top:34px;">
         <tr>
-          <td align="center">
+          <td style="border-radius:8px;background-color:#1a2e1e;">
             <a href="mailto:${e(d.email)}?subject=Re%3A%20Votre%20demande%20%E2%80%94%20BTH%20Expert"
-               style="display:inline-block;background-color:#1a2e1e;color:#C9A96E;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;letter-spacing:0.06em;">
-              &#8594;&nbsp; Répondre à ${e(d.name)}
+               style="display:inline-block;font-family:${sans};font-size:14px;font-weight:600;
+                      color:#f5f0e8;text-decoration:none;padding:14px 34px;letter-spacing:0.02em;">
+              Répondre à ${e(d.name)}
             </a>
           </td>
         </tr>
       </table>`
     : "";
 
-  const emailRow = d.email
-    ? `<a href="mailto:${e(d.email)}" style="color:#1a2e1e;text-decoration:none;border-bottom:1px solid #C9A96E;">${e(d.email)}</a>`
-    : `<span style="color:#b0bab0;font-style:italic;">Non renseigné</span>`;
+  const row = (label: string, value: string, last = false) => `
+              <tr>
+                <td width="120" valign="middle"
+                    style="padding:16px 24px 16px 0;white-space:nowrap;
+                           ${last ? "" : "border-bottom:1px solid #ece5d6;"}
+                           font-family:${sans};font-size:11px;color:#6b7455;
+                           text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">
+                  ${label}
+                </td>
+                <td valign="middle"
+                    style="padding:16px 0;${last ? "" : "border-bottom:1px solid #ece5d6;"}
+                           font-family:${sans};font-size:15px;color:#1a2e1e;line-height:1.5;">
+                  ${value}
+                </td>
+              </tr>`;
 
   return `<!DOCTYPE html>
 <html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Nouveau message — BTH Expert</title>
+  <title>Nouvelle demande — BTH Expert</title>
 </head>
-<body style="margin:0;padding:0;background-color:#eae6dc;">
+<body style="margin:0;padding:0;background-color:#f5f0e8;">
+
+<!-- Préheader masqué -->
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">
+  Nouvelle demande de contact de ${e(d.name)} · ${e(d.projectLabel)}
+</div>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0"
-       style="background-color:#eae6dc;padding:40px 16px;">
+       style="background-color:#f5f0e8;padding:40px 16px;">
   <tr>
     <td align="center">
 
-      <!-- Conteneur principal 600px -->
+      <!-- Conteneur 600px -->
       <table width="600" cellpadding="0" cellspacing="0" border="0"
-             style="max-width:600px;width:100%;border-radius:14px;overflow:hidden;
-                    box-shadow:0 8px 32px rgba(26,46,30,0.16);">
+             style="max-width:600px;width:100%;background-color:#ffffff;
+                    border:1px solid #e7ded0;border-radius:8px;overflow:hidden;
+                    box-shadow:0 1px 3px rgba(26,46,30,0.05);">
 
-        <!-- ── HEADER ─────────────────────────────────────── -->
+        <!-- ── LOGO ───────────────────────────────────────── -->
         <tr>
-          <td style="background-color:#1a2e1e;padding:32px 40px 26px;">
-            <table width="100%" cellpadding="0" cellspacing="0" border="0">
-              <tr>
-                <td valign="middle">
-                  <p style="margin:0 0 3px;font-family:Georgia,'Times New Roman',serif;
-                             font-size:20px;font-weight:700;color:#C9A96E;
-                             letter-spacing:0.08em;text-transform:uppercase;">
-                    BTH Expert
-                  </p>
-                  <p style="margin:0;font-family:Arial,Helvetica,sans-serif;
-                             font-size:11px;color:rgba(201,169,110,0.55);
-                             letter-spacing:0.12em;text-transform:uppercase;">
-                    Bureau d'études environnemental agréé
-                  </p>
-                </td>
-                <td align="right" valign="middle">
-                  <span style="display:inline-block;background:rgba(201,169,110,0.14);
-                               border:1px solid rgba(201,169,110,0.35);border-radius:20px;
-                               padding:5px 14px;font-family:Arial,Helvetica,sans-serif;
-                               font-size:10px;color:#C9A96E;letter-spacing:0.1em;
-                               text-transform:uppercase;font-weight:700;">
-                    Nouveau message
-                  </span>
-                </td>
-              </tr>
+          <td align="center" style="padding:40px 40px 0;">
+            <img src="https://bthexpert.com/bth-expert-logo-email.png"
+                 width="156" height="44" alt="BTH Expert"
+                 style="display:block;border:0;outline:none;text-decoration:none;
+                        height:44px;width:156px;">
+          </td>
+        </tr>
+
+        <!-- filet or -->
+        <tr>
+          <td align="center" style="padding:26px 40px 0;">
+            <table cellpadding="0" cellspacing="0" border="0" width="44">
+              <tr><td style="height:2px;background-color:#c9a96e;font-size:0;line-height:0;">&nbsp;</td></tr>
             </table>
           </td>
         </tr>
 
-        <!-- barre or -->
+        <!-- ── EN-TÊTE ────────────────────────────────────── -->
         <tr>
-          <td style="background-color:#C9A96E;height:3px;font-size:0;line-height:0;">&nbsp;</td>
+          <td align="center" style="padding:24px 40px 0;">
+            <p style="margin:0 0 8px;font-family:${sans};font-size:11px;color:#6b7455;
+                       text-transform:uppercase;letter-spacing:0.16em;font-weight:600;">
+              Formulaire de contact
+            </p>
+            <p style="margin:0 0 6px;font-family:${serif};font-size:26px;color:#1a2e1e;
+                       font-weight:400;line-height:1.25;">
+              Nouvelle demande reçue
+            </p>
+            <p style="margin:0;font-family:${sans};font-size:13px;color:#9aa39a;
+                       letter-spacing:0.01em;">
+              ${e(d.date)}
+            </p>
+          </td>
         </tr>
 
-        <!-- ── CORPS ──────────────────────────────────────── -->
+        <!-- ── INFOS ──────────────────────────────────────── -->
         <tr>
-          <td style="background-color:#ffffff;padding:36px 40px 32px;">
-
-            <!-- Titre + date -->
-            <p style="margin:0 0 4px;font-family:Georgia,'Times New Roman',serif;
-                       font-size:22px;font-weight:700;color:#1a2e1e;line-height:1.3;">
-              Un client vous a contacté
-            </p>
-            <p style="margin:0 0 30px;font-family:Arial,Helvetica,sans-serif;
-                       font-size:12px;color:#8a9a8a;letter-spacing:0.02em;">
-              ${e(d.date)} · bthexpert.com
-            </p>
-
-            <!-- Carte info ─────────────────────────────── -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                   style="border-radius:10px;overflow:hidden;border:1px solid #e8e2d8;
-                          margin-bottom:26px;">
-
-              <!-- En-tête carte -->
-              <tr>
-                <td colspan="2"
-                    style="background-color:#1a2e1e;padding:11px 20px;">
-                  <p style="margin:0;font-family:Arial,Helvetica,sans-serif;
-                             font-size:10px;font-weight:700;color:#C9A96E;
-                             letter-spacing:0.12em;text-transform:uppercase;">
-                    Informations de contact
-                  </p>
-                </td>
-              </tr>
-
-              <!-- Nom -->
-              <tr style="background-color:#faf8f4;">
-                <td width="120"
-                    style="padding:13px 20px;font-family:Arial,Helvetica,sans-serif;
-                           font-size:11px;color:#7a8a7a;text-transform:uppercase;
-                           letter-spacing:0.07em;font-weight:700;
-                           border-bottom:1px solid #ede9e1;">
-                  Nom
-                </td>
-                <td style="padding:13px 20px;font-family:Arial,Helvetica,sans-serif;
-                           font-size:15px;color:#1a2e1e;font-weight:700;
-                           border-bottom:1px solid #ede9e1;">
-                  ${e(d.name)}
-                </td>
-              </tr>
-
-              <!-- Email -->
-              <tr style="background-color:#ffffff;">
-                <td width="120"
-                    style="padding:13px 20px;font-family:Arial,Helvetica,sans-serif;
-                           font-size:11px;color:#7a8a7a;text-transform:uppercase;
-                           letter-spacing:0.07em;font-weight:700;
-                           border-bottom:1px solid #ede9e1;">
-                  Email
-                </td>
-                <td style="padding:13px 20px;font-family:Arial,Helvetica,sans-serif;
-                           font-size:14px;color:#1a2e1e;
-                           border-bottom:1px solid #ede9e1;">
-                  ${emailRow}
-                </td>
-              </tr>
-
-              <!-- Téléphone -->
-              <tr style="background-color:#faf8f4;">
-                <td width="120"
-                    style="padding:13px 20px;font-family:Arial,Helvetica,sans-serif;
-                           font-size:11px;color:#7a8a7a;text-transform:uppercase;
-                           letter-spacing:0.07em;font-weight:700;
-                           border-bottom:1px solid #ede9e1;">
-                  Téléphone
-                </td>
-                <td style="padding:13px 20px;font-family:Arial,Helvetica,sans-serif;
-                           font-size:15px;color:#1a2e1e;font-weight:700;
-                           border-bottom:1px solid #ede9e1;">
-                  <a href="tel:${e(d.phone)}"
-                     style="color:#1a2e1e;text-decoration:none;">
-                    ${e(d.phone)}
-                  </a>
-                </td>
-              </tr>
-
-              <!-- Projet -->
-              <tr style="background-color:#ffffff;">
-                <td width="120"
-                    style="padding:13px 20px;font-family:Arial,Helvetica,sans-serif;
-                           font-size:11px;color:#7a8a7a;text-transform:uppercase;
-                           letter-spacing:0.07em;font-weight:700;">
-                  Projet
-                </td>
-                <td style="padding:13px 20px;">
-                  <span style="display:inline-block;background-color:#1a2e1e;
-                               color:#C9A96E;font-family:Arial,Helvetica,sans-serif;
-                               font-size:11px;font-weight:700;padding:5px 14px;
-                               border-radius:20px;letter-spacing:0.05em;">
-                    ${e(d.projectLabel)}
-                  </span>
-                </td>
-              </tr>
-
+          <td style="padding:32px 40px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              ${row("Nom", `<strong style="font-weight:600;">${e(d.name)}</strong>`)}
+              ${row("Email", emailValue)}
+              ${row("Téléphone", `<a href="tel:${e(d.phone)}" style="color:#1a2e1e;text-decoration:none;">${e(d.phone)}</a>`)}
+              ${row("Projet", `<span style="color:#1a2e1e;font-weight:600;">${e(d.projectLabel)}</span>`, true)}
             </table>
-            <!-- /carte info -->
+          </td>
+        </tr>
 
-            <!-- Bloc message ─────────────────────────── -->
-            <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;
-                       font-size:10px;font-weight:700;color:#7a8a7a;
-                       text-transform:uppercase;letter-spacing:0.12em;">
+        <!-- ── MESSAGE ────────────────────────────────────── -->
+        <tr>
+          <td style="padding:30px 40px 0;">
+            <p style="margin:0 0 12px;font-family:${sans};font-size:11px;color:#6b7455;
+                       text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">
               Message
             </p>
-            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                   style="background-color:#faf7f2;border:1px solid #ece5d6;border-radius:8px;">
               <tr>
-                <td width="3" style="background-color:#C9A96E;border-radius:3px;">&nbsp;</td>
-                <td style="padding:18px 20px;background-color:#F5F0E8;border-radius:0 8px 8px 0;">
-                  <p style="margin:0;font-family:Georgia,'Times New Roman',serif;
-                             font-size:15px;color:#1a2e1e;line-height:1.85;
-                             white-space:pre-wrap;">
-                    ${e(d.message)}
-                  </p>
+                <td width="3" style="background-color:#c9a96e;font-size:0;line-height:0;">&nbsp;</td>
+                <td style="padding:22px 24px;">
+                  <p style="margin:0;font-family:${serif};font-size:16px;color:#3d4a40;
+                             line-height:1.8;white-space:pre-wrap;">${e(d.message)}</p>
                 </td>
               </tr>
             </table>
 
-            <!-- Bouton répondre -->
             ${replyBtn}
-
           </td>
         </tr>
 
         <!-- ── FOOTER ─────────────────────────────────────── -->
         <tr>
-          <td style="background-color:#f5f1ea;border-top:1px solid #e4dfd4;
-                     padding:22px 40px;">
+          <td style="padding:40px 40px 36px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr><td style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:24px;">&nbsp;</td></tr>
               <tr>
-                <td valign="top">
-                  <p style="margin:0 0 3px;font-family:Georgia,'Times New Roman',serif;
-                             font-size:13px;font-weight:700;color:#1a2e1e;">
+                <td align="left">
+                  <p style="margin:0 0 5px;font-family:${serif};font-size:14px;
+                             color:#1a2e1e;font-weight:400;letter-spacing:0.02em;">
                     BTH Expert
                   </p>
-                  <p style="margin:0;font-family:Arial,Helvetica,sans-serif;
-                             font-size:11px;color:#9aaa9a;line-height:1.7;">
+                  <p style="margin:0 0 18px;font-family:${sans};font-size:11px;color:#9aa39a;
+                             line-height:1.8;">
                     40, Lotissement 119 · Bir El Djir, Oran · Algérie<br>
-                    +213 (670) 70 81 38 · info@bthexpert.dz
+                    +213 (670) 70 81 38 · contact@bthexpert.com
                   </p>
                 </td>
-                <td align="right" valign="top">
+              </tr>
+              <tr><td style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:18px;">&nbsp;</td></tr>
+              <tr>
+                <td align="left">
                   <a href="https://bthexpert.com"
-                     style="font-family:Arial,Helvetica,sans-serif;
-                            font-size:12px;color:#C9A96E;text-decoration:none;
-                            font-weight:700;">
-                    bthexpert.com &#8599;
+                     style="font-family:${sans};font-size:12px;color:#a88a4c;
+                            text-decoration:none;font-weight:600;letter-spacing:0.02em;">
+                    bthexpert.com
                   </a>
                 </td>
               </tr>
