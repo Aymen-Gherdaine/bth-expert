@@ -70,7 +70,7 @@ export function BlogList({ lang, posts, startIndex, empty, readMore }: BlogListP
                   {readMore}
                   <span
                     aria-hidden
-                    className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-1"
+                    className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100"
                   >
                     →
                   </span>
@@ -83,6 +83,12 @@ export function BlogList({ lang, posts, startIndex, empty, readMore }: BlogListP
     </FadeInStagger>
   );
 }
+
+const PAGINATION_LABEL: Record<string, string> = {
+  fr: "Pagination",
+  ar: "ترقيم الصفحات",
+  en: "Pagination",
+};
 
 interface BlogPaginationProps {
   lang: Locale;
@@ -108,7 +114,7 @@ export function BlogPagination({
   return (
     <FadeIn>
       <nav
-        aria-label="Pagination"
+        aria-label={PAGINATION_LABEL[lang] ?? PAGINATION_LABEL.fr}
         className="flex items-center justify-between pt-12 border-t border-line mt-4"
       >
         {page > 1 ? (
@@ -118,7 +124,7 @@ export function BlogPagination({
           >
             <span
               aria-hidden
-              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:-translate-x-1"
+              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:-translate-x-1 rtl:group-hover:translate-x-1 rtl:-scale-x-100"
             >
               ←
             </span>
@@ -140,7 +146,7 @@ export function BlogPagination({
             {nextLabel}
             <span
               aria-hidden
-              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-1"
+              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100"
             >
               →
             </span>

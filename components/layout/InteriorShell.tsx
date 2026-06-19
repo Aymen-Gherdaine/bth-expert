@@ -25,7 +25,7 @@ export default async function InteriorShell({
       <Header lang={lang} />
       <main className="relative z-10 bg-cream-soft">{children}</main>
       <Footer lang={lang} />
-      <ScrollToTop />
+      <ScrollToTop lang={lang} />
     </>
   );
 }

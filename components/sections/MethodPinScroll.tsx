@@ -15,6 +15,8 @@ interface MethodPinScrollProps {
   heading: string;
   steps: Step[];
   image?: string;
+  /** Localised "Méthode" eyebrow shown over the sticky image. */
+  methodLabel: string;
 }
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
@@ -26,7 +28,12 @@ const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
  * rail traces progress. This is the image-led moment of the otherwise light
  * service page. Reduced-motion falls back to a static two-column.
  */
-export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: MethodPinScrollProps) {
+export function MethodPinScroll({
+  heading,
+  steps,
+  image = "/hero.webp",
+  methodLabel,
+}: MethodPinScrollProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -154,20 +161,20 @@ export function MethodPinScroll({ heading, steps, image = "/hero.webp" }: Method
                 <span
                   data-active-num
                   aria-hidden
-                  className="hidden lg:block absolute left-7 bottom-12 font-display font-light text-cream/90 leading-none"
+                  className="hidden lg:block absolute start-7 bottom-12 font-display font-light text-cream/90 leading-none"
                   style={{ fontSize: "8rem", letterSpacing: "-0.03em" }}
                 >
                   {steps[0]?.number ?? "01"}
                 </span>
                 <span
                   aria-hidden
-                  className="absolute left-8 bottom-8 font-sans uppercase tracking-[0.22em] text-gold text-[length:var(--text-caption)]"
+                  className="absolute start-8 bottom-8 font-sans uppercase tracking-[0.22em] text-gold text-[length:var(--text-caption)]"
                 >
-                  Méthode
+                  {methodLabel}
                 </span>
                 <span
                   aria-hidden
-                  className="hidden lg:block absolute right-7 top-8 bottom-8 w-px bg-cream/15 overflow-hidden"
+                  className="hidden lg:block absolute end-7 top-8 bottom-8 w-px bg-cream/15 overflow-hidden"
                 >
                   <span
                     data-progress

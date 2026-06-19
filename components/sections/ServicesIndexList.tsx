@@ -62,7 +62,7 @@ export function ServicesIndexList({ items }: ServicesIndexListProps) {
               {item.href && (
                 <span
                   aria-hidden
-                  className="shrink-0 pt-0.5 font-sans text-lg text-muted transition-[transform,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-1.5 group-hover:text-brand"
+                  className="shrink-0 pt-0.5 font-sans text-lg text-muted transition-[transform,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5 rtl:-scale-x-100 group-hover:text-brand"
                 >
                   →
                 </span>

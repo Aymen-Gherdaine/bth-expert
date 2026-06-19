@@ -128,6 +128,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                 email="contact@bthexpert.com"
                 ctaLabel={dict.nav.quote}
                 ctaHref={`/${lang}/contact`}
+                lang={lang}
               />
 
             </div>

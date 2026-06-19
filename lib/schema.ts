@@ -4,6 +4,56 @@ const BASE_URL = "https://bthexpert.com";
 
 const ORG_ID = `${BASE_URL}/#organization`;
 
+// ── Localised structured-data strings (FR source) ───────────────────────────
+type SchemaLang = "fr" | "ar" | "en";
+const pick = <T>(lang: string, m: Record<SchemaLang, T>): T =>
+  m[lang as SchemaLang] ?? m.fr;
+
+const SCHEMA_COUNTRY: Record<SchemaLang, string> = {
+  fr: "Algérie",
+  ar: "الجزائر",
+  en: "Algeria",
+};
+
+const SCHEMA_LB: Record<
+  SchemaLang,
+  { description: string; knowsAbout: string[]; ministry: string }
+> = {
+  fr: {
+    description:
+      "Bureau d'études environnemental agréé par le Ministère de l'Environnement et de la Qualité de la Vie. Études d'impact, études de dangers, audits HSE et conformité réglementaire à Oran et dans toute l'Algérie.",
+    knowsAbout: [
+      "Étude d'impact environnemental",
+      "Étude de dangers",
+      "Audit environnemental",
+      "Conformité réglementaire HSE",
+    ],
+    ministry: "Ministère de l'Environnement et de la Qualité de la Vie, Algérie",
+  },
+  ar: {
+    description:
+      "مكتب دراسات بيئية معتمد من وزارة البيئة وجودة الحياة. دراسات التأثير على البيئة ودراسات الأخطار وتدقيق HSE والمطابقة التنظيمية في وهران وعبر كامل الجزائر.",
+    knowsAbout: [
+      "دراسة التأثير على البيئة",
+      "دراسة الأخطار",
+      "التدقيق البيئي",
+      "المطابقة التنظيمية HSE",
+    ],
+    ministry: "وزارة البيئة وجودة الحياة، الجزائر",
+  },
+  en: {
+    description:
+      "Certified environmental consultancy approved by the Ministry of Environment and Quality of Life. Environmental impact assessments, hazard studies, HSE audits and regulatory compliance in Oran and across Algeria.",
+    knowsAbout: [
+      "Environmental impact assessment",
+      "Hazard study",
+      "Environmental audit",
+      "HSE regulatory compliance",
+    ],
+    ministry: "Ministry of Environment and Quality of Life, Algeria",
+  },
+};
+
 const BTH_ADDRESS = {
   "@type": "PostalAddress",
   streetAddress: "40, Lotissement 119",
@@ -22,7 +72,8 @@ const BTH_GEO = {
 
 // ── LocalBusiness / ProfessionalService ─────────────────────────────────────
 
-export function schemaLocalBusiness() {
+export function schemaLocalBusiness(lang: string = "fr") {
+  const lb = pick(lang, SCHEMA_LB);
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -36,21 +87,15 @@ export function schemaLocalBusiness() {
     geo: BTH_GEO,
     foundingDate: "2026",
     openingHours: "Mo-Fr 08:00-17:00",
-    areaServed: { "@type": "Country", name: "Algérie" },
-    description:
-      "Bureau d'études environnemental agréé par le Ministère de l'Environnement et de la Qualité de la Vie. Études d'impact, études de dangers, audits HSE et conformité réglementaire à Oran et dans toute l'Algérie.",
-    knowsAbout: [
-      "Étude d'impact environnemental",
-      "Étude de dangers",
-      "Audit environnemental",
-      "Conformité réglementaire HSE",
-    ],
+    areaServed: { "@type": "Country", name: pick(lang, SCHEMA_COUNTRY) },
+    description: lb.description,
+    knowsAbout: lb.knowsAbout,
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "Agrément ministériel",
       recognizedBy: {
         "@type": "GovernmentOrganization",
-        name: "Ministère de l'Environnement et de la Qualité de la Vie, Algérie",
+        name: lb.ministry,
       },
     },
   };
@@ -63,9 +108,10 @@ interface ServiceParams {
   url: string;
   description: string;
   serviceType?: string;
+  lang?: string;
 }
 
-export function schemaService({ name, url, description, serviceType }: ServiceParams) {
+export function schemaService({ name, url, description, serviceType, lang = "fr" }: ServiceParams) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -79,7 +125,7 @@ export function schemaService({ name, url, description, serviceType }: ServicePa
       "@id": ORG_ID,
       name: "BTH Expert",
     },
-    areaServed: { "@type": "Country", name: "Algérie" },
+    areaServed: { "@type": "Country", name: pick(lang, SCHEMA_COUNTRY) },
   };
 }
 

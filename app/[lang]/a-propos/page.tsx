@@ -36,7 +36,7 @@ export default async function AboutPage({
   const lang = validateLocale(rawLang);
   const dict = await getDictionary(lang);
   const a = dict.apropos;
-  const jsonLd = schemaLocalBusiness();
+  const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.apropos, url: `https://bthexpert.com/${lang}/a-propos` },
   ]);

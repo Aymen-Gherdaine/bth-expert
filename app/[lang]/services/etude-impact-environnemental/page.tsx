@@ -33,10 +33,10 @@ export default async function EIEPage({
   const dict = await getDictionary(lang);
 
   const jsonLd = schemaService({
-    name: "Étude d'Impact sur l'Environnement (EIE)",
+    name: dict.eie.hero.heading,
     url: `https://bthexpert.com/${lang}${PATH}`,
     description: dict.eie.meta.description,
-    serviceType: "Étude d'Impact Environnemental",
+    lang,
   });
   const jsonLdFaq = schemaFAQ(dict.eie.faq.map((i) => ({ question: i.q, answer: i.a })));
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [

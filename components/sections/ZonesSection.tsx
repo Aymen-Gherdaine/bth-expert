@@ -51,6 +51,18 @@ const COVERAGE_RAYS = [
   { d: "M295.8 59.2 Q 258 205, 245 350", end: { x: 245, y: 350 } },
 ];
 
+const ORAN_LINK: Record<Locale, string> = {
+  fr: "Notre présence à Oran",
+  ar: "حضورنا في وهران",
+  en: "Our presence in Oran",
+};
+
+const MAP_LABEL: Record<Locale, string> = {
+  fr: "Carte de l'Algérie — BTH Expert intervient depuis Oran dans tout l'Ouest algérien",
+  ar: "خريطة الجزائر — يتدخل BTH Expert انطلاقاً من وهران في كامل غرب الجزائر",
+  en: "Map of Algeria — BTH Expert operates from Oran across western Algeria",
+};
+
 export function ZonesSection({ lang, content }: ZonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
@@ -186,13 +198,13 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
       {/* ── Map — below text on mobile, atmospheric right-side on desktop ── */}
       <div
         aria-hidden
-        className="flex order-2 justify-center mt-10 w-full max-w-[260px] mx-auto pointer-events-none select-none lg:order-none lg:max-w-none lg:mx-0 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-32 xl:right-48 2xl:right-64 lg:w-[38%] xl:w-[36%] lg:items-center lg:justify-end"
+        className="flex order-2 justify-center mt-10 w-full max-w-[260px] mx-auto pointer-events-none select-none lg:order-none lg:max-w-none lg:mx-0 lg:mt-0 lg:absolute lg:inset-y-0 lg:end-32 xl:end-48 2xl:end-64 lg:w-[38%] xl:w-[36%] lg:items-center lg:justify-end"
       >
         <svg
           ref={mapRef}
           viewBox="0 0 760 753"
           role="img"
-          aria-label="Carte de l'Algérie — BTH Expert intervient depuis Oran dans tout l'Ouest algérien"
+          aria-label={MAP_LABEL[lang]}
           className="w-full overflow-visible"
         >
           <defs>
@@ -320,7 +332,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
               href={`/${lang}/contact`}
               className="mt-4 inline-flex w-fit items-center gap-2 font-sans font-medium text-gold tracking-tight hover:gap-3 hover:text-cream transition-[gap,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              {content.cta} <span aria-hidden>→</span>
+              {content.cta} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
             </Link>
           </div>
 
@@ -332,7 +344,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
               href={`/${lang}/oran`}
               className="mt-4 inline-block text-[length:var(--text-small)] text-cream/35 hover:text-cream/60 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              Notre présence à Oran →
+              {ORAN_LINK[lang]} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
             </Link>
           </div>
         </div>

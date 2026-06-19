@@ -22,7 +22,7 @@ export default async function InteriorLayout({
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer lang={lang} />
-      <ScrollToTop />
+      <ScrollToTop lang={lang} />
     </>
   );
 }

@@ -35,7 +35,7 @@ export default async function ServicesPage({
   const s = dict.services;
   const items = dict.home.services.items;
 
-  const jsonLd = schemaLocalBusiness();
+  const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
   ]);

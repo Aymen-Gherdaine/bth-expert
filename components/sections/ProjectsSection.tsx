@@ -17,32 +17,116 @@ interface Project {
   keyword: string;
 }
 
-const PROJECTS: Project[] = [
-  {
-    name: "Étude d'impact environnemental",
-    context: "Zone industrielle",
-    detail: "Conformité décret 07-144",
-    keyword: "CONFORMITÉ",
+interface SectionContent {
+  eyebrow: string;
+  intro: string;
+  heading: string;
+  cta: string;
+  projects: Project[];
+}
+
+// Contenu localisé en dur (section vitrine, hors Keystatic). FR = source.
+const CONTENT: Record<Locale, SectionContent> = {
+  fr: {
+    eyebrow: "Réalisations",
+    intro:
+      "Des études menées pour l'industrie algérienne — dossiers conformes, déposés et défendus jusqu'à l'approbation.",
+    heading: "Des projets qui font référence",
+    cta: "Voir tous les projets",
+    projects: [
+      {
+        name: "Étude d'impact environnemental",
+        context: "Zone industrielle",
+        detail: "Conformité décret 07-144",
+        keyword: "CONFORMITÉ",
+      },
+      {
+        name: "Étude de dangers & POI",
+        context: "Site classé",
+        detail: "Scénarios d'accident · réseau anti-incendie",
+        keyword: "PRÉVENTION",
+      },
+      {
+        name: "Système d'épuration",
+        context: "Eaux usées industrielles",
+        detail: "Conception & mise en œuvre",
+        keyword: "TRAITEMENT",
+      },
+      {
+        name: "Assistance technique — Barrage",
+        context: "Suivi environnemental",
+        detail: "Ingénierie conseil",
+        keyword: "INGÉNIERIE",
+      },
+    ],
   },
-  {
-    name: "Étude de dangers & POI",
-    context: "Site classé",
-    detail: "Scénarios d'accident · réseau anti-incendie",
-    keyword: "PRÉVENTION",
+  ar: {
+    eyebrow: "إنجازات",
+    intro:
+      "دراسات أُنجزت لفائدة الصناعة الجزائرية — ملفات مطابقة، مودعة ومُدافَع عنها حتى المصادقة.",
+    heading: "مشاريع مرجعية",
+    cta: "عرض جميع المشاريع",
+    projects: [
+      {
+        name: "دراسة التأثير على البيئة",
+        context: "منطقة صناعية",
+        detail: "مطابقة المرسوم 07-144",
+        keyword: "مطابقة",
+      },
+      {
+        name: "دراسة الأخطار وخطة الطوارئ الداخلية",
+        context: "منشأة مصنّفة",
+        detail: "سيناريوهات الحوادث · شبكة مكافحة الحرائق",
+        keyword: "وقاية",
+      },
+      {
+        name: "نظام معالجة المياه",
+        context: "مياه صناعية مستعملة",
+        detail: "التصميم والإنجاز",
+        keyword: "معالجة",
+      },
+      {
+        name: "مساعدة تقنية — سدّ",
+        context: "متابعة بيئية",
+        detail: "هندسة استشارية",
+        keyword: "هندسة",
+      },
+    ],
   },
-  {
-    name: "Système d'épuration",
-    context: "Eaux usées industrielles",
-    detail: "Conception & mise en œuvre",
-    keyword: "TRAITEMENT",
+  en: {
+    eyebrow: "Selected work",
+    intro:
+      "Studies delivered for Algerian industry — compliant files, submitted and defended through to approval.",
+    heading: "Projects that set the standard",
+    cta: "View all projects",
+    projects: [
+      {
+        name: "Environmental impact assessment",
+        context: "Industrial zone",
+        detail: "Decree 07-144 compliance",
+        keyword: "COMPLIANCE",
+      },
+      {
+        name: "Hazard study & internal emergency plan",
+        context: "Classified site",
+        detail: "Accident scenarios · fire network",
+        keyword: "PREVENTION",
+      },
+      {
+        name: "Water treatment system",
+        context: "Industrial wastewater",
+        detail: "Design & implementation",
+        keyword: "TREATMENT",
+      },
+      {
+        name: "Technical assistance — Dam",
+        context: "Environmental monitoring",
+        detail: "Consulting engineering",
+        keyword: "ENGINEERING",
+      },
+    ],
   },
-  {
-    name: "Assistance technique — Barrage",
-    context: "Suivi environnemental",
-    detail: "Ingénierie conseil",
-    keyword: "INGÉNIERIE",
-  },
-];
+};
 
 /**
  * Per-row column placement (desktop). The stagger down the list is the
@@ -83,6 +167,7 @@ const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
  */
 export function ProjectsSection({ lang }: ProjectsSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const c = CONTENT[lang];
 
   useGSAP(
     () => {
@@ -143,16 +228,14 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
             className="order-1 lg:order-none lg:col-span-6 lg:row-start-1 inline-flex items-center gap-3 self-start font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]"
           >
             <span aria-hidden className="w-8 h-px bg-gold" />
-            Réalisations
+            {c.eyebrow}
           </span>
 
           <p
             data-reveal
             className="order-3 lg:order-none mt-6 lg:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1 max-w-md font-sans text-muted leading-[1.7] text-[length:var(--text-small)]"
           >
-            Des études menées pour l&apos;industrie algérienne —
-            dossiers conformes, déposés et défendus jusqu&apos;à
-            l&apos;approbation.
+            {c.intro}
           </p>
 
           <h2
@@ -160,13 +243,13 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
             className="order-2 lg:order-none mt-8 lg:mt-14 lg:col-span-8 lg:row-start-2 font-display font-light text-ink tracking-[-0.03em] leading-[1.05] max-w-2xl"
             style={{ fontSize: "var(--text-h2)" }}
           >
-            Des projets qui font référence
+            {c.heading}
           </h2>
         </div>
 
         {/* ── Index — full-width rows, staggered indentation ──────────── */}
         <ol className="mt-16 lg:mt-24 border-b border-line">
-          {PROJECTS.map((project, i) => {
+          {c.projects.map((project, i) => {
             const layout = ROW_LAYOUTS[i % ROW_LAYOUTS.length];
             return (
               <li
@@ -183,13 +266,13 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
                 {/* Gold filet — traces across the row on hover */}
                 <span
                   aria-hidden
-                  className="absolute top-0 left-0 right-0 z-10 h-px bg-gold scale-x-0 origin-left transition-[scale] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
+                  className="absolute top-0 left-0 right-0 z-10 h-px bg-gold scale-x-0 ltr:origin-left rtl:origin-right transition-[scale] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
                 />
 
                 {/* Ghost keyword — movement fills the void, no image */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute right-[3%] top-1/2 -translate-y-1/2 -translate-x-8 hidden lg:block font-display uppercase tracking-[0.06em] leading-none whitespace-nowrap text-brand/[0.07] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
+                  className="pointer-events-none absolute end-[3%] top-1/2 -translate-y-1/2 ltr:-translate-x-8 rtl:translate-x-8 hidden lg:block font-display uppercase tracking-[0.06em] leading-none whitespace-nowrap text-brand/[0.07] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
                   style={{ fontSize: "clamp(2.5rem, 1.5rem + 5vw, 6rem)" }}
                 >
                   {project.keyword}
@@ -207,7 +290,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
 
                 <h3
                   data-row-bit
-                  className={`col-span-10 ${layout.name} font-display font-light text-ink-soft tracking-[-0.02em] leading-[1.12] transition-[translate,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-2 group-hover:text-brand`}
+                  className={`col-span-10 ${layout.name} font-display font-light text-ink-soft tracking-[-0.02em] leading-[1.12] transition-[translate,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-2 rtl:group-hover:-translate-x-2 group-hover:text-brand`}
                   style={{ fontSize: "clamp(1.625rem, 1rem + 2.2vw, 2.75rem)" }}
                 >
                   {project.name}
@@ -231,10 +314,10 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
             href={`/${lang}/projets`}
             className="group inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] text-ink tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
-            Voir tous les projets
+            {c.cta}
             <span
               aria-hidden
-              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-1"
+              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100"
             >
               →
             </span>

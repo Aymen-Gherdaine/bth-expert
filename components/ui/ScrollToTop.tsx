@@ -2,9 +2,16 @@
 
 import { useEffect, useState } from "react";
 import type Lenis from "lenis";
+import type { Locale } from "@/lib/i18n";
 
 const RADIUS = 23;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+const TOP_LABEL: Record<Locale, string> = {
+  fr: "Revenir en haut de la page",
+  ar: "العودة إلى أعلى الصفحة",
+  en: "Back to top",
+};
 
 /**
  * Premium scroll-to-top control.
@@ -12,7 +19,7 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
  * - Thin gold ring tracks scroll progress around the button.
  * - Smooth return via Lenis when present, native smooth scroll otherwise.
  */
-export function ScrollToTop() {
+export function ScrollToTop({ lang }: { lang: Locale }) {
   const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -46,9 +53,9 @@ export function ScrollToTop() {
     <button
       type="button"
       onClick={toTop}
-      aria-label="Revenir en haut de la page"
+      aria-label={TOP_LABEL[lang]}
       data-visible={visible}
-      className="scroll-top group fixed bottom-7 right-6 lg:bottom-9 lg:right-9 z-40 grid h-[52px] w-[52px] place-items-center rounded-full"
+      className="scroll-top group fixed bottom-7 end-6 lg:bottom-9 lg:end-9 z-40 grid h-[52px] w-[52px] place-items-center rounded-full"
     >
       {/* Progress ring */}
       <svg className="absolute inset-0 -rotate-90" viewBox="0 0 52 52" aria-hidden>

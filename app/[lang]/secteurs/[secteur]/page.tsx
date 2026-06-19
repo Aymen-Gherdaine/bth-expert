@@ -51,6 +51,7 @@ export default async function SecteurPage({
     url: `https://bthexpert.com/${lang}/secteurs/${secteur}`,
     description: item.tagline,
     serviceType: item.title,
+    lang,
   });
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },

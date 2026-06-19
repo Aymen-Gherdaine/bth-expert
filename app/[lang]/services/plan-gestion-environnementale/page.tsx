@@ -33,10 +33,10 @@ export default async function PGEPage({
   const dict = await getDictionary(lang);
 
   const jsonLd = schemaService({
-    name: "Plan de Gestion Environnementale (PGE)",
+    name: dict.pge.hero.heading,
     url: `https://bthexpert.com/${lang}${PATH}`,
     description: dict.pge.meta.description,
-    serviceType: "Plan de Gestion Environnementale",
+    lang,
   });
   const jsonLdFaq = schemaFAQ(dict.pge.faq.map((i) => ({ question: i.q, answer: i.a })));
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [

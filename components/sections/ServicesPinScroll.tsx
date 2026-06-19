@@ -28,6 +28,12 @@ interface ServicesPinScrollProps {
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
+const TITLE: Record<Locale, string> = {
+  fr: "Nos expertises",
+  ar: "خبراتنا",
+  en: "Our expertise",
+};
+
 /**
  * Services — signature pin-scroll (manifesto Pattern 1, DOMINANT).
  * The left visual stays fixed (CSS sticky — robust with Lenis, no fragile
@@ -154,7 +160,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
           className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05] max-w-3xl"
           style={{ fontSize: "var(--text-h2)" }}
         >
-          Nos expertises
+          {TITLE[lang]}
         </h2>
         <p
           data-reveal
@@ -184,7 +190,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                 <span
                   data-active-num
                   aria-hidden
-                  className="absolute left-7 bottom-20 font-display font-light text-cream/90 leading-none"
+                  className="absolute start-7 bottom-20 font-display font-light text-cream/90 leading-none"
                   style={{ fontSize: "8rem", letterSpacing: "-0.03em" }}
                 >
                   01
@@ -192,14 +198,14 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                 <span
                   data-active-label
                   aria-hidden
-                  className="absolute left-8 bottom-10 font-sans uppercase tracking-[0.22em] text-gold text-[length:var(--text-caption)]"
+                  className="absolute start-8 bottom-10 font-sans uppercase tracking-[0.22em] text-gold text-[length:var(--text-caption)]"
                 >
                   {services.items[0]?.abbr}
                 </span>
                 {/* Progress rail */}
                 <span
                   aria-hidden
-                  className="absolute right-7 top-8 bottom-8 w-px bg-cream/15 overflow-hidden"
+                  className="absolute end-7 top-8 bottom-8 w-px bg-cream/15 overflow-hidden"
                 >
                   <span
                     data-progress
@@ -237,7 +243,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                   </div>
                   <span
                     aria-hidden
-                    className="shrink-0 pt-1 font-sans text-lg text-muted transition-[transform,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-1.5 group-hover:text-brand"
+                    className="shrink-0 pt-1 font-sans text-lg text-muted transition-[transform,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5 rtl:-scale-x-100 group-hover:text-brand"
                   >
                     →
                   </span>
@@ -256,7 +262,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
             {services.cta}
             <span
               aria-hidden
-              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-1"
+              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100"
             >
               →
             </span>

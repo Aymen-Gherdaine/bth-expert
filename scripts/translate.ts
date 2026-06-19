@@ -76,7 +76,7 @@ Règles strictes :
 - Ne traduis jamais les valeurs qui sont des chemins/URLs (commençant par "/" ou "http"), ni les espaces réservés entre accolades comme "{current}" ou "{total}" — recopie-les tels quels.
 - Applique strictement ce glossaire métier pour rester cohérent avec le reste du site :
 ${glossaryPrompt(glossary, lang)}
-- Pour l'arabe : utilise un registre soutenu, professionnel, adapté à un site institutionnel. Le texte sera affiché en RTL, donc ne change pas la ponctuation latine (ex: "EIE", "HSE") qui doit rester en caractères latins.
+- Pour l'arabe : rédige un arabe professionnel clair et direct (arabe standard moderne), en phrases courtes. Évite le style littéraire, ornemental ou poétique et les tournures alambiquées (pas de « في كنف », « مقروناً بتجذُّر », etc.) — privilégie le vocabulaire courant des affaires. Le texte sera affiché en RTL, donc ne change pas la ponctuation ni les sigles latins (ex: "EIE", "HSE") qui doivent rester en caractères latins.
 - Réponds UNIQUEMENT avec le JSON traduit, sans balises markdown, sans commentaire.`;
 
   const message = await client.messages.create({
@@ -133,6 +133,7 @@ Règles strictes :
 - Conserve la structure Markdown (titres "##", listes, gras) et les liens internes, en remplaçant uniquement le préfixe de langue "/fr/" par "/${lang}/" dans les chemins (ex: "/fr/contact" → "/${lang}/contact"). Ne change rien d'autre dans ces chemins.
 - Applique ce glossaire métier pour rester cohérent avec le reste du site :
 ${glossaryPrompt(glossary, lang)}
+- Si la langue cible est l'arabe : style professionnel clair et direct, phrases courtes, sans emphase littéraire ni tournures ornementales.
 - Réponds UNIQUEMENT avec un JSON de la forme {"title": "...", "description": "...", "tags": ["..."], "faq": [{"q": "...", "a": "..."}], "body": "..."}, sans balises markdown autour du JSON, sans commentaire.`;
 
   const payload = {

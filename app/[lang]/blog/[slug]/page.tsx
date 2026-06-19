@@ -16,6 +16,12 @@ interface BlogFaqItem {
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
+const FAQ_HEADING: Record<string, string> = {
+  fr: "Questions fréquentes",
+  ar: "الأسئلة الشائعة",
+  en: "Frequently asked questions",
+};
+
 function estimateReadTime(html: string): number {
   const text = html.replace(/<[^>]+>/g, " ");
   const words = text.split(/\s+/).filter(Boolean).length;
@@ -143,7 +149,7 @@ export default async function BlogPostPage({
               >
                 <span
                   aria-hidden
-                  className="inline-block transition-transform duration-[var(--duration-base)] group-hover:-translate-x-0.5"
+                  className="inline-block transition-transform duration-[var(--duration-base)] ltr:group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5 rtl:-scale-x-100"
                 >
                   ←
                 </span>
@@ -194,7 +200,9 @@ export default async function BlogPostPage({
 
       <ArticleBody html={post.html} />
 
-      {faq && faq.length > 0 && <Faq heading="Questions fréquentes" items={faq} />}
+      {faq && faq.length > 0 && (
+        <Faq heading={FAQ_HEADING[lang] ?? FAQ_HEADING.fr} items={faq} />
+      )}
 
       {/* ── Back to blog ── */}
       <section className="bg-cream-soft border-t border-line">
@@ -206,7 +214,7 @@ export default async function BlogPostPage({
             >
               <span
                 aria-hidden
-                className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:-translate-x-1"
+                className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:-translate-x-1 rtl:group-hover:translate-x-1 rtl:-scale-x-100"
               >
                 ←
               </span>

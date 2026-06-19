@@ -185,7 +185,7 @@ export default async function ProjetPage({
                 >
                   <span
                     aria-hidden
-                    className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:-translate-x-1"
+                    className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:-translate-x-1 rtl:group-hover:translate-x-1 rtl:-scale-x-100"
                   >
                     ←
                   </span>

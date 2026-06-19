@@ -40,6 +40,18 @@ interface ServicePageBodyProps {
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
+const METHOD_LABEL: Record<Locale, string> = {
+  fr: "Méthode",
+  ar: "المنهجية",
+  en: "Method",
+};
+
+const FAQ_HEADING: Record<Locale, string> = {
+  fr: "Questions fréquentes",
+  ar: "الأسئلة الشائعة",
+  en: "Frequently asked questions",
+};
+
 /**
  * Shared premium body for the four service pages (option B): editorial light
  * hero + meta rail → POV contexte → methodology pin-scroll (image-led) → dark
@@ -50,7 +62,7 @@ export function ServicePageBody({
   service,
   heroMeta,
   faq,
-  faqHeading = "Questions fréquentes",
+  faqHeading,
   heroImage,
 }: ServicePageBodyProps) {
   return (
@@ -95,6 +107,7 @@ export function ServicePageBody({
         heading={service.methodology.heading}
         steps={service.methodology.steps}
         image={heroImage}
+        methodLabel={METHOD_LABEL[lang]}
       />
 
       {/* Livrable — dark punctuation band */}
@@ -117,8 +130,10 @@ export function ServicePageBody({
         </div>
       </section>
 
-      {/* FAQ — only when content is supplied (kept FR-only for now) */}
-      {faq && faq.length > 0 && <Faq heading={faqHeading} items={faq} />}
+      {/* FAQ — only when content is supplied */}
+      {faq && faq.length > 0 && (
+        <Faq heading={faqHeading ?? FAQ_HEADING[lang]} items={faq} />
+      )}
 
       {/* CTA */}
       <section className="bg-cream-soft">
