@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type Lenis from "lenis";
+import type { Locale } from "@/lib/i18n";
 
 interface MenuItem {
   href: string;
@@ -16,7 +17,14 @@ interface MobileMenuProps {
   email: string;
   ctaLabel: string;
   ctaHref: string;
+  lang: Locale;
 }
+
+const A11Y: Record<Locale, { open: string; close: string }> = {
+  fr: { open: "Ouvrir le menu", close: "Fermer le menu" },
+  ar: { open: "فتح القائمة", close: "إغلاق القائمة" },
+  en: { open: "Open menu", close: "Close menu" },
+};
 
 /**
  * Mobile navigation — a hamburger in the header that opens a full-screen
@@ -24,7 +32,8 @@ interface MobileMenuProps {
  * details and a primary CTA. Locks Lenis/scroll while open; closes on
  * link tap, Escape, or the X. Hidden from md+ (desktop keeps the inline nav).
  */
-export function MobileMenu({ items, phone, email, ctaLabel, ctaHref }: MobileMenuProps) {
+export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: MobileMenuProps) {
+  const a11y = A11Y[lang];
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const [lastPathname, setLastPathname] = useState(pathname);
@@ -63,7 +72,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref }: MobileMen
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label="Ouvrir le menu"
+        aria-label={a11y.open}
         aria-expanded={open}
         className="group relative z-[60] grid h-10 w-10 place-items-center -me-2"
       >
@@ -95,7 +104,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref }: MobileMen
           <button
             type="button"
             onClick={() => setOpen(false)}
-            aria-label="Fermer le menu"
+            aria-label={a11y.close}
             className="relative grid h-10 w-10 place-items-center -me-2"
           >
             <span className="absolute h-px w-6 rotate-45 bg-cream" />

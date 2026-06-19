@@ -84,6 +84,12 @@ export function BlogList({ lang, posts, startIndex, empty, readMore }: BlogListP
   );
 }
 
+const PAGINATION_LABEL: Record<string, string> = {
+  fr: "Pagination",
+  ar: "ترقيم الصفحات",
+  en: "Pagination",
+};
+
 interface BlogPaginationProps {
   lang: Locale;
   page: number;
@@ -108,7 +114,7 @@ export function BlogPagination({
   return (
     <FadeIn>
       <nav
-        aria-label="Pagination"
+        aria-label={PAGINATION_LABEL[lang] ?? PAGINATION_LABEL.fr}
         className="flex items-center justify-between pt-12 border-t border-line mt-4"
       >
         {page > 1 ? (

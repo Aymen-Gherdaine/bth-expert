@@ -57,6 +57,12 @@ const ORAN_LINK: Record<Locale, string> = {
   en: "Our presence in Oran",
 };
 
+const MAP_LABEL: Record<Locale, string> = {
+  fr: "Carte de l'Algérie — BTH Expert intervient depuis Oran dans tout l'Ouest algérien",
+  ar: "خريطة الجزائر — يتدخل BTH Expert انطلاقاً من وهران في كامل غرب الجزائر",
+  en: "Map of Algeria — BTH Expert operates from Oran across western Algeria",
+};
+
 export function ZonesSection({ lang, content }: ZonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
@@ -198,7 +204,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
           ref={mapRef}
           viewBox="0 0 760 753"
           role="img"
-          aria-label="Carte de l'Algérie — BTH Expert intervient depuis Oran dans tout l'Ouest algérien"
+          aria-label={MAP_LABEL[lang]}
           className="w-full overflow-visible"
         >
           <defs>
