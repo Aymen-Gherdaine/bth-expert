@@ -101,6 +101,11 @@ export const handler: Handler = async (event) => {
         ...(email ? { reply_to: email } : {}),
         subject: `Nouveau message de ${name} — BTH Expert`,
         html,
+        headers: {
+          "X-Priority": "1",
+          "X-MSMail-Priority": "High",
+          "Importance": "high",
+        },
       }),
     });
 
