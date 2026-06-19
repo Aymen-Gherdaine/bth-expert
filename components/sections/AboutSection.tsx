@@ -66,7 +66,10 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
         split = new SplitText(manifesto, { type: "words" });
         gsap.fromTo(
           split.words,
-          { opacity: 0.16 },
+          // 0.6 (not a near-invisible 0.16) is the resting state so the large
+          // display text clears WCAG AA 3:1 for the Lighthouse contrast audit;
+          // the words still brighten to full as the section is read.
+          { opacity: 0.6 },
           {
             opacity: 1,
             stagger: 0.06,
