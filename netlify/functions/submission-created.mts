@@ -9,8 +9,10 @@
  * Pour éviter le doublon, désactiver la notification email native de Netlify :
  * Site settings → Forms → Form notifications → supprimer "Email notification".
  *
- * Variable d'environnement requise :
- * - RESEND_API_KEY : clé API Resend (dashboard.resend.com/api-keys)
+ * Variables d'environnement :
+ * - RESEND_API_KEY      : clé API Resend (dashboard.resend.com/api-keys) — REQUISE
+ * - CONTACT_RECIPIENTS  : adresses destinataires séparées par des virgules — OPTIONNELLE
+ *                         (ex: "a@x.com, b@y.com"). À défaut, valeur DEFAULT_RECIPIENTS.
  *
  * Le nom du fichier "submission-created" est imposé par Netlify : c'est le nom
  * de l'événement qui déclenche la fonction. Ne pas renommer.
@@ -18,10 +20,23 @@
 
 import type { Handler } from "@netlify/functions";
 
-const RECIPIENTS = [
+// Destinataires par défaut, utilisés si CONTACT_RECIPIENTS n'est pas défini
+// sur Netlify. Pour modifier les destinataires sans toucher au code :
+// Site configuration → Environment variables → CONTACT_RECIPIENTS.
+const DEFAULT_RECIPIENTS = [
   "gherdaineaymen1995@gmail.com",
   "lahmerr.amine@gmail.com",
 ];
+
+function getRecipients(): string[] {
+  const fromEnv = process.env.CONTACT_RECIPIENTS;
+  if (!fromEnv) return DEFAULT_RECIPIENTS;
+  const list = fromEnv
+    .split(",")
+    .map((addr) => addr.trim())
+    .filter(Boolean);
+  return list.length > 0 ? list : DEFAULT_RECIPIENTS;
+}
 
 const PROJECT_TYPE_LABELS: Record<string, string> = {
   "etude-impact": "Étude d'impact environnemental",
@@ -82,7 +97,7 @@ export const handler: Handler = async (event) => {
       },
       body: JSON.stringify({
         from: "BTH Expert <contact@bthexpert.com>",
-        to: RECIPIENTS,
+        to: getRecipients(),
         ...(email ? { reply_to: email } : {}),
         subject: `Nouveau message de ${name} — BTH Expert`,
         html,
