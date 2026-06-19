@@ -268,18 +268,21 @@ function buildEmail(d: EmailData): string {
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
               <tr><td style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:24px;">&nbsp;</td></tr>
               <tr>
-                <td valign="top">
+                <td align="left">
                   <p style="margin:0 0 5px;font-family:${serif};font-size:14px;
                              color:#1a2e1e;font-weight:400;letter-spacing:0.02em;">
                     BTH Expert
                   </p>
-                  <p style="margin:0;font-family:${sans};font-size:11px;color:#9aa39a;
+                  <p style="margin:0 0 18px;font-family:${sans};font-size:11px;color:#9aa39a;
                              line-height:1.8;">
                     40, Lotissement 119 · Bir El Djir, Oran · Algérie<br>
                     +213 (670) 70 81 38 · contact@bthexpert.com
                   </p>
                 </td>
-                <td align="right" valign="bottom">
+              </tr>
+              <tr><td style="border-top:1px solid #ece5d6;font-size:0;line-height:0;padding-bottom:18px;">&nbsp;</td></tr>
+              <tr>
+                <td align="left">
                   <a href="https://bthexpert.com"
                      style="font-family:${sans};font-size:12px;color:#a88a4c;
                             text-decoration:none;font-weight:600;letter-spacing:0.02em;">
