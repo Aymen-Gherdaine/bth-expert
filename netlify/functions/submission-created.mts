@@ -171,9 +171,23 @@ function buildEmail(d: EmailData): string {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
   <title>Nouvelle demande — BTH Expert</title>
+  <style>
+    :root { color-scheme: light only; }
+    @media (prefers-color-scheme: dark) {
+      body,
+      body > table,
+      table[class="wrapper"] { background-color: #f5f0e8 !important; }
+      table { background-color: #ffffff !important; }
+      td { color: #1a2e1e !important; border-color: #ece5d6 !important; }
+      p, span, a { color: inherit !important; }
+    }
+  </style>
 </head>
-<body style="margin:0;padding:0;background-color:#f5f0e8;">
+<body style="margin:0;padding:0;background-color:#f5f0e8;"
+      bgcolor="#f5f0e8">
 
 <!-- Préheader masqué -->
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;">
@@ -181,12 +195,14 @@ function buildEmail(d: EmailData): string {
 </div>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0"
+       bgcolor="#f5f0e8"
        style="background-color:#f5f0e8;padding:40px 16px;">
   <tr>
     <td align="center">
 
       <!-- Conteneur 600px -->
       <table width="600" cellpadding="0" cellspacing="0" border="0"
+             bgcolor="#ffffff"
              style="max-width:600px;width:100%;background-color:#ffffff;
                     border:1px solid #e7ded0;border-radius:8px;overflow:hidden;
                     box-shadow:0 1px 3px rgba(26,46,30,0.05);">
