@@ -68,8 +68,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
     for (const [key, value] of data.entries()) body.append(key, String(value));
 
     try {
-      // POST to the static mirror — the path Netlify serves the form from.
-      const res = await fetch("/__forms.html", {
+      const res = await fetch("/.netlify/functions/contact-form", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
@@ -200,6 +199,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               id="message"
               name="message"
               rows={4}
+              required
               placeholder={dict.messagePlaceholder}
               className={`${inputCls} resize-none`}
             />
