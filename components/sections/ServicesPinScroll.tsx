@@ -150,9 +150,9 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
         {/* ── Header ─────────────────────────────────────────────── */}
         <span
           data-reveal
-          className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-7"
+          className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-7"
         >
-          <span aria-hidden className="w-8 h-px bg-gold" />
+          <span aria-hidden className="w-8 h-px bg-gold-ink" />
           {services.eyebrow}
         </span>
         <h2
@@ -227,7 +227,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                 className="group relative block border-t border-line py-8 lg:py-14"
               >
                 <div className="flex items-start gap-5 lg:gap-7">
-                  <span className="shrink-0 pt-1.5 w-9 font-display text-gold leading-none text-[length:var(--text-small)] tabular-nums">
+                  <span className="shrink-0 pt-1.5 w-9 font-display text-gold-ink leading-none text-[length:var(--text-small)] tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1 min-w-0">

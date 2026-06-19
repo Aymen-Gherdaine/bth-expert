@@ -186,7 +186,7 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
 
         <span
           data-about-eyebrow
-          className="block font-sans uppercase text-gold mb-10"
+          className="block font-sans uppercase text-gold-ink mb-10"
           style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
         >
           {content.eyebrow}
@@ -214,7 +214,7 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
                 />
                 <div data-domain-label className="flex items-baseline gap-5">
                   <span
-                    className="font-display text-gold tabular-nums"
+                    className="font-display text-gold-ink tabular-nums"
                     style={{ fontSize: "var(--text-small)" }}
                   >
                     {String(i + 1).padStart(2, "0")}

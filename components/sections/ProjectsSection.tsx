@@ -225,9 +225,9 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
         >
           <span
             data-reveal
-            className="order-1 lg:order-none lg:col-span-6 lg:row-start-1 inline-flex items-center gap-3 self-start font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]"
+            className="order-1 lg:order-none lg:col-span-6 lg:row-start-1 inline-flex items-center gap-3 self-start font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]"
           >
-            <span aria-hidden className="w-8 h-px bg-gold" />
+            <span aria-hidden className="w-8 h-px bg-gold-ink" />
             {c.eyebrow}
           </span>
 
@@ -280,7 +280,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
 
                 <span
                   data-row-bit
-                  className={`col-span-2 ${layout.num} font-display text-gold leading-none tabular-nums`}
+                  className={`col-span-2 ${layout.num} font-display text-gold-ink leading-none tabular-nums`}
                   style={{ fontSize: "clamp(1.25rem, 1rem + 1vw, 1.875rem)" }}
                 >
                   <span className="inline-block transition-[scale] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-[1.12]">

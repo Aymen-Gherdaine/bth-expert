@@ -24,8 +24,8 @@ export function Faq({ heading, items }: FaqProps) {
   return (
     <section className="bg-cream-soft">
       <div className={`${PADX} py-20 lg:py-28`}>
-        <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-12">
-          <span aria-hidden className="w-8 h-px bg-gold" />
+        <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
+          <span aria-hidden className="w-8 h-px bg-gold-ink" />
           {heading}
         </span>
 
@@ -48,7 +48,7 @@ export function Faq({ heading, items }: FaqProps) {
                   </span>
                   <span
                     aria-hidden
-                    className="shrink-0 font-display text-gold leading-none text-2xl transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                    className="shrink-0 font-display text-gold-ink leading-none text-2xl transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                     style={{ transform: isOpen ? "rotate(45deg)" : "none" }}
                   >
                     +
