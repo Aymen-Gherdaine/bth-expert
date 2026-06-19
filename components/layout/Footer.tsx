@@ -91,7 +91,7 @@ export async function Footer({ lang }: FooterProps) {
           {/* Navigation + Expertises — share one continuous divider, not two broken halves */}
           <div className={`col-span-2 lg:col-span-5 grid grid-cols-2 lg:grid-cols-5 gap-x-8 ${dividerClass}`}>
             <div className="lg:col-span-3">
-              <h4 className={columnHeaderClass}>{dict.footer.navigation}</h4>
+              <h2 className={columnHeaderClass}>{dict.footer.navigation}</h2>
               <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
                 <li>
                   <Link href={`/${lang}/services`} className={linkClass}>
@@ -133,7 +133,7 @@ export async function Footer({ lang }: FooterProps) {
 
             {/* Expertises — the four service pages (aligned to the comp) */}
             <div className="lg:col-span-2">
-              <h4 className={columnHeaderClass}>{exp.heading}</h4>
+              <h2 className={columnHeaderClass}>{exp.heading}</h2>
               <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
                 <li>
                   <Link href={`/${lang}/services/etude-impact-environnemental`} className={linkClass}>
@@ -161,7 +161,7 @@ export async function Footer({ lang }: FooterProps) {
 
           {/* Contact */}
           <div className={`col-span-2 lg:col-span-3 ${dividerClass}`}>
-            <h4 className={columnHeaderClass}>{dict.nav.contact}</h4>
+            <h2 className={columnHeaderClass}>{dict.nav.contact}</h2>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
                 <a href="mailto:contact@bthexpert.com" className={linkClass}>

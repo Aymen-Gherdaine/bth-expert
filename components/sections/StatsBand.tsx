@@ -118,8 +118,8 @@ export function StatsBand({ stats }: StatsBandProps) {
     <section ref={ref} className="bg-cream-warm">
       <div className={`${PADX} py-16 lg:py-24`}>
         {stats.eyebrow && (
-          <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-12">
-            <span aria-hidden className="w-8 h-px bg-gold" />
+          <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
+            <span aria-hidden className="w-8 h-px bg-gold-ink" />
             {stats.eyebrow}
           </span>
         )}
@@ -129,7 +129,7 @@ export function StatsBand({ stats }: StatsBandProps) {
             const digits = num.split("");
             return (
               <div key={s.label} data-stat>
-                <span aria-hidden className="block w-11 h-px bg-gold mb-6" />
+                <span aria-hidden className="block w-11 h-px bg-gold-ink mb-6" />
                 <div
                   className="block font-display font-light text-ink tracking-[-0.03em]"
                   style={{ fontSize: "clamp(3rem, 4.5vw + 0.5rem, 5rem)", lineHeight: 1 }}
