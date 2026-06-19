@@ -200,6 +200,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               id="message"
               name="message"
               rows={4}
+              required
               placeholder={dict.messagePlaceholder}
               className={`${inputCls} resize-none`}
             />
