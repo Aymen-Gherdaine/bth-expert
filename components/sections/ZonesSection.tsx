@@ -186,7 +186,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
       {/* ── Map — below text on mobile, atmospheric right-side on desktop ── */}
       <div
         aria-hidden
-        className="flex order-2 justify-center mt-10 w-full max-w-[260px] mx-auto pointer-events-none select-none lg:order-none lg:max-w-none lg:mx-0 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-32 xl:right-48 2xl:right-64 lg:w-[38%] xl:w-[36%] lg:items-center lg:justify-end"
+        className="flex order-2 justify-center mt-10 w-full max-w-[260px] mx-auto pointer-events-none select-none lg:order-none lg:max-w-none lg:mx-0 lg:mt-0 lg:absolute lg:inset-y-0 lg:end-32 xl:end-48 2xl:end-64 lg:w-[38%] xl:w-[36%] lg:items-center lg:justify-end"
       >
         <svg
           ref={mapRef}

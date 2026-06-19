@@ -105,7 +105,7 @@ export function ServicesSection({ lang, services }: ServicesSectionProps) {
             />
 
             {/* Indicateur de progression — tirets verticaux gold */}
-            <div className="absolute bottom-12 left-10 z-10 flex flex-col gap-3 items-center">
+            <div className="absolute bottom-12 start-10 z-10 flex flex-col gap-3 items-center">
               {services.items.map((_, i) => (
                 <motion.div
                   key={i}
@@ -120,7 +120,7 @@ export function ServicesSection({ lang, services }: ServicesSectionProps) {
             </div>
 
             {/* Légende */}
-            <div className="absolute bottom-12 right-10 z-10">
+            <div className="absolute bottom-12 end-10 z-10">
               <p className="text-[0.65rem] text-cream/20 uppercase tracking-widest text-end leading-loose">
                 Bir El Djir · Oran
                 <br />
@@ -133,7 +133,7 @@ export function ServicesSection({ lang, services }: ServicesSectionProps) {
           <div className="relative h-full overflow-hidden bg-brand">
 
             {/* Filet gold gauche */}
-            <div className="absolute left-0 inset-y-0 w-px bg-gold/20 z-10 pointer-events-none" />
+            <div className="absolute start-0 inset-y-0 w-px bg-gold/20 z-10 pointer-events-none" />
 
             {services.items.map((item, i) => (
               <motion.div
@@ -184,7 +184,7 @@ export function ServicesSection({ lang, services }: ServicesSectionProps) {
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-                      className="inline-block"
+                      className="inline-block rtl:-scale-x-100"
                     >
                       →
                     </motion.span>

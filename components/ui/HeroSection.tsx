@@ -53,7 +53,7 @@ export function HeroSection({ lang, hero }: HeroSectionProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.028 }}
         transition={{ duration: 2.5, delay: 0.8, ease: "easeOut" }}
-        className="pointer-events-none select-none absolute inset-y-0 right-[-5%] flex items-center"
+        className="pointer-events-none select-none absolute inset-y-0 end-[-5%] flex items-center"
       >
         <span
           className="font-display font-black leading-none text-cream"
@@ -112,7 +112,7 @@ export function HeroSection({ lang, hero }: HeroSectionProps) {
               {hero.cta}
             </Button>
             <Button href={`/${lang}/services`} variant="ghost-cream">
-              {hero.ctaSecondary} →
+              {hero.ctaSecondary} <span className="inline-block rtl:-scale-x-100">→</span>
             </Button>
           </motion.div>
         </motion.div>

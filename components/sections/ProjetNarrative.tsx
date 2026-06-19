@@ -98,7 +98,7 @@ export function ProjetNarrative({ beats }: ProjetNarrativeProps) {
           <span
             data-rail
             aria-hidden
-            className="hidden lg:block absolute left-[calc(8.333%-0.5px)] top-2 bottom-2 w-px bg-line"
+            className="hidden lg:block absolute start-[calc(8.333%-0.5px)] top-2 bottom-2 w-px bg-line"
           >
             <span
               data-rail-fill
@@ -124,13 +124,13 @@ export function ProjetNarrative({ beats }: ProjetNarrativeProps) {
                   />
                   <span
                     aria-hidden
-                    className="absolute top-0 left-0 right-0 z-10 h-px bg-gold scale-x-0 origin-left transition-[scale] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
+                    className="absolute top-0 left-0 right-0 z-10 h-px bg-gold scale-x-0 ltr:origin-left rtl:origin-right transition-[scale] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
                   />
 
                   {/* Ghost numeral — movement fills the void, no image */}
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute right-[2%] top-1/2 -translate-y-1/2 -translate-x-6 hidden lg:block font-display font-light leading-none tabular-nums text-brand/[0.06] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
+                    className="pointer-events-none absolute end-[2%] top-1/2 -translate-y-1/2 ltr:-translate-x-6 rtl:translate-x-6 hidden lg:block font-display font-light leading-none tabular-nums text-brand/[0.06] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
                     style={{ fontSize: "clamp(7rem, 5rem + 8vw, 13rem)" }}
                   >
                     {num}

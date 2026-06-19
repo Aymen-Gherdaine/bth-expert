@@ -48,7 +48,7 @@ export function ScrollToTop() {
       onClick={toTop}
       aria-label="Revenir en haut de la page"
       data-visible={visible}
-      className="scroll-top group fixed bottom-7 right-6 lg:bottom-9 lg:right-9 z-40 grid h-[52px] w-[52px] place-items-center rounded-full"
+      className="scroll-top group fixed bottom-7 end-6 lg:bottom-9 lg:end-9 z-40 grid h-[52px] w-[52px] place-items-center rounded-full"
     >
       {/* Progress ring */}
       <svg className="absolute inset-0 -rotate-90" viewBox="0 0 52 52" aria-hidden>

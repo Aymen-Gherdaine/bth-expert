@@ -90,7 +90,7 @@ export default async function LangLayout({
       <body className="min-h-screen" suppressHydrationWarning>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[110] focus:px-4 focus:py-2 focus:bg-brand focus:text-cream focus:rounded-sm focus:text-sm focus:font-sans focus:font-medium"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:start-4 focus:z-[110] focus:px-4 focus:py-2 focus:bg-brand focus:text-cream focus:rounded-sm focus:text-sm focus:font-sans focus:font-medium"
         >
           {dict.nav.skipToContent}
         </a>

@@ -183,13 +183,13 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
                 {/* Gold filet — traces across the row on hover */}
                 <span
                   aria-hidden
-                  className="absolute top-0 left-0 right-0 z-10 h-px bg-gold scale-x-0 origin-left transition-[scale] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
+                  className="absolute top-0 left-0 right-0 z-10 h-px bg-gold scale-x-0 ltr:origin-left rtl:origin-right transition-[scale] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
                 />
 
                 {/* Ghost keyword — movement fills the void, no image */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute right-[3%] top-1/2 -translate-y-1/2 -translate-x-8 hidden lg:block font-display uppercase tracking-[0.06em] leading-none whitespace-nowrap text-brand/[0.07] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
+                  className="pointer-events-none absolute end-[3%] top-1/2 -translate-y-1/2 ltr:-translate-x-8 rtl:translate-x-8 hidden lg:block font-display uppercase tracking-[0.06em] leading-none whitespace-nowrap text-brand/[0.07] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
                   style={{ fontSize: "clamp(2.5rem, 1.5rem + 5vw, 6rem)" }}
                 >
                   {project.keyword}
@@ -207,7 +207,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
 
                 <h3
                   data-row-bit
-                  className={`col-span-10 ${layout.name} font-display font-light text-ink-soft tracking-[-0.02em] leading-[1.12] transition-[translate,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-2 group-hover:text-brand`}
+                  className={`col-span-10 ${layout.name} font-display font-light text-ink-soft tracking-[-0.02em] leading-[1.12] transition-[translate,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-2 rtl:group-hover:-translate-x-2 group-hover:text-brand`}
                   style={{ fontSize: "clamp(1.625rem, 1rem + 2.2vw, 2.75rem)" }}
                 >
                   {project.name}
@@ -234,7 +234,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
             Voir tous les projets
             <span
               aria-hidden
-              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:translate-x-1"
+              className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100"
             >
               →
             </span>

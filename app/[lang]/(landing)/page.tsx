@@ -134,13 +134,13 @@ export default async function HomePage({
                 >
                   <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                   {h.hero.ctaSecondary}
-                  <span aria-hidden className="translate-x-0 group-hover:translate-x-1 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
+                  <span aria-hidden className="inline-block ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
                 </Link>
               </div>
             </div>
           </Container>
 
-          <ScrollPulse className="scroll-pulse absolute bottom-6 right-5 lg:bottom-10 lg:right-12 z-10" />
+          <ScrollPulse className="scroll-pulse absolute bottom-6 end-5 lg:bottom-10 lg:end-12 z-10" />
         </section>
       </HeroCurtain>
 
