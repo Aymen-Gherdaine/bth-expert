@@ -51,6 +51,12 @@ const COVERAGE_RAYS = [
   { d: "M295.8 59.2 Q 258 205, 245 350", end: { x: 245, y: 350 } },
 ];
 
+const ORAN_LINK: Record<Locale, string> = {
+  fr: "Notre présence à Oran",
+  ar: "حضورنا في وهران",
+  en: "Our presence in Oran",
+};
+
 export function ZonesSection({ lang, content }: ZonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
@@ -320,7 +326,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
               href={`/${lang}/contact`}
               className="mt-4 inline-flex w-fit items-center gap-2 font-sans font-medium text-gold tracking-tight hover:gap-3 hover:text-cream transition-[gap,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              {content.cta} <span aria-hidden>→</span>
+              {content.cta} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
             </Link>
           </div>
 
@@ -332,7 +338,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
               href={`/${lang}/oran`}
               className="mt-4 inline-block text-[length:var(--text-small)] text-cream/35 hover:text-cream/60 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
-              Notre présence à Oran →
+              {ORAN_LINK[lang]} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
             </Link>
           </div>
         </div>

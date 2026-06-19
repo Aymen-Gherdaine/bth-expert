@@ -17,8 +17,37 @@ const columnHeaderClass = "text-xs uppercase tracking-widest text-gold mb-4";
 const dividerClass =
   "pt-4 border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))]";
 
+// The four service pages — labelled per locale (not stored in Keystatic).
+const EXPERTISES: Record<
+  Locale,
+  { heading: string; eie: string; edd: string; hse: string; pge: string }
+> = {
+  fr: {
+    heading: "Expertises",
+    eie: "Étude d'impact",
+    edd: "Étude de dangers",
+    hse: "Audit HSE",
+    pge: "Plan de gestion",
+  },
+  ar: {
+    heading: "خبراتنا",
+    eie: "دراسة التأثير",
+    edd: "دراسة الأخطار",
+    hse: "تدقيق HSE",
+    pge: "مخطط التسيير",
+  },
+  en: {
+    heading: "Expertise",
+    eie: "Impact assessment",
+    edd: "Hazard study",
+    hse: "HSE audit",
+    pge: "Management plan",
+  },
+};
+
 export async function Footer({ lang }: FooterProps) {
   const dict = await getDictionary(lang);
+  const exp = EXPERTISES[lang];
   const year = new Date().getFullYear();
 
   return (
@@ -104,26 +133,26 @@ export async function Footer({ lang }: FooterProps) {
 
             {/* Expertises — the four service pages (aligned to the comp) */}
             <div className="lg:col-span-2">
-              <h4 className={columnHeaderClass}>Expertises</h4>
+              <h4 className={columnHeaderClass}>{exp.heading}</h4>
               <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
                 <li>
                   <Link href={`/${lang}/services/etude-impact-environnemental`} className={linkClass}>
-                    Étude d&apos;impact
+                    {exp.eie}
                   </Link>
                 </li>
                 <li>
                   <Link href={`/${lang}/services/etude-de-dangers`} className={linkClass}>
-                    Étude de dangers
+                    {exp.edd}
                   </Link>
                 </li>
                 <li>
                   <Link href={`/${lang}/services/audit-hse`} className={linkClass}>
-                    Audit HSE
+                    {exp.hse}
                   </Link>
                 </li>
                 <li>
                   <Link href={`/${lang}/services/plan-gestion-environnementale`} className={linkClass}>
-                    Plan de gestion
+                    {exp.pge}
                   </Link>
                 </li>
               </ul>
