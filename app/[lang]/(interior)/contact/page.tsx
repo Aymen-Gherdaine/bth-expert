@@ -42,7 +42,7 @@ export default async function ContactPage({
   const lang = validateLocale(rawLang);
   const dict = await getDictionary(lang);
   const c = dict.contact;
-  const jsonLd = schemaLocalBusiness();
+  const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.contact, url: `https://bthexpert.com/${lang}/contact` },
   ]);

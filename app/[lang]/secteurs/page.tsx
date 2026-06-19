@@ -35,7 +35,7 @@ export default async function SecteursPage({
   const dict = await getDictionary(lang);
   const s = dict.secteurs;
 
-  const jsonLd = schemaLocalBusiness();
+  const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },
   ]);

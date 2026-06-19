@@ -34,7 +34,7 @@ export default async function ProjetsPage({
   const dict = await getDictionary(lang);
   const p = dict.projets;
 
-  const jsonLd = schemaLocalBusiness();
+  const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.projets, url: `https://bthexpert.com/${lang}/projets` },
   ]);

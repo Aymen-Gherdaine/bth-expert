@@ -33,10 +33,10 @@ export default async function EDDPage({
   const dict = await getDictionary(lang);
 
   const jsonLd = schemaService({
-    name: "Étude de Dangers (EDD)",
+    name: dict.edd.hero.heading,
     url: `https://bthexpert.com/${lang}${PATH}`,
     description: dict.edd.meta.description,
-    serviceType: "Étude de Dangers",
+    lang,
   });
   const jsonLdFaq = schemaFAQ(dict.edd.faq.map((i) => ({ question: i.q, answer: i.a })));
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [

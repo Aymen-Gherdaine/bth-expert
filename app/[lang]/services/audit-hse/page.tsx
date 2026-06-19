@@ -33,10 +33,10 @@ export default async function HSEPage({
   const dict = await getDictionary(lang);
 
   const jsonLd = schemaService({
-    name: "Audit HSE & conformité réglementaire",
+    name: dict.hse.hero.heading,
     url: `https://bthexpert.com/${lang}${PATH}`,
     description: dict.hse.meta.description,
-    serviceType: "Audit HSE",
+    lang,
   });
   const jsonLdFaq = schemaFAQ(dict.hse.faq.map((i) => ({ question: i.q, answer: i.a })));
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [

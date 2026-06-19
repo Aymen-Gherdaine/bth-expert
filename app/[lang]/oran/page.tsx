@@ -35,7 +35,7 @@ export default async function OranPage({
   const dict = await getDictionary(lang);
   const o = dict.oran;
 
-  const jsonLd = schemaLocalBusiness();
+  const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: ORAN_LABEL[lang] ?? ORAN_LABEL.fr, url: `https://bthexpert.com/${lang}/oran` },
   ]);

@@ -46,7 +46,7 @@ export default async function HomePage({
   const dict = await getDictionary(lang);
   const h = dict.home;
 
-  const jsonLd = schemaLocalBusiness();
+  const jsonLd = schemaLocalBusiness(lang);
   const jsonLdFaq = schemaFAQ(h.faq.items.map((i) => ({ question: i.q, answer: i.a })));
 
   return (
