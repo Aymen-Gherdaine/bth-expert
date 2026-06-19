@@ -32,7 +32,12 @@ export function RevealText({
       if (!ref.current) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      const split = new SplitText(ref.current, { type: "words", mask: "words" });
+      // `aria: "none"` stops SplitText from writing an aria-label onto the
+      // host element. On the eyebrow/subheading (plain <div>, generic role)
+      // that label is a *prohibited* ARIA attribute (axe aria-prohibited-attr);
+      // the split words keep the real text nodes, so screen readers still read
+      // the full phrase.
+      const split = new SplitText(ref.current, { type: "words", mask: "words", aria: "none" });
 
       // Safety: force visibility if animation is blocked (mobile JS throttling).
       // Fires 2.5s after the delay — well past any realistic animation duration.
