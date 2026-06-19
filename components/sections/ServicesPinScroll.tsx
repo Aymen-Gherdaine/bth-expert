@@ -28,6 +28,12 @@ interface ServicesPinScrollProps {
 
 const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
+const TITLE: Record<Locale, string> = {
+  fr: "Nos expertises",
+  ar: "خبراتنا",
+  en: "Our expertise",
+};
+
 /**
  * Services — signature pin-scroll (manifesto Pattern 1, DOMINANT).
  * The left visual stays fixed (CSS sticky — robust with Lenis, no fragile
@@ -154,7 +160,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
           className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05] max-w-3xl"
           style={{ fontSize: "var(--text-h2)" }}
         >
-          Nos expertises
+          {TITLE[lang]}
         </h2>
         <p
           data-reveal
