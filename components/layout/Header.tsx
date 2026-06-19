@@ -81,7 +81,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
           ].join(" ")}
         >
           <Container className="h-full">
-            <div className="flex items-center justify-between h-full">
+            <div className="flex items-center justify-between h-full" dir="ltr">
 
               <BrandLink
                 href={`/${lang}`}
