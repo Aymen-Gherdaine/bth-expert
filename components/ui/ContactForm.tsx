@@ -68,7 +68,9 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
     for (const [key, value] of data.entries()) body.append(key, String(value));
 
     try {
-      const res = await fetch("/.netlify/functions/contact-form", {
+      // POST to the static mirror — Netlify Forms stocke la soumission (dashboard +
+      // anti-spam) puis déclenche la fonction submission-created qui envoie l'email Resend.
+      const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
