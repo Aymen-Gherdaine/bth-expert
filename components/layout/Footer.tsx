@@ -70,6 +70,11 @@ export async function Footer({ lang }: FooterProps) {
                   </Link>
                 </li>
                 <li>
+                  <Link href={`/${lang}/secteurs`} className={linkClass}>
+                    {dict.nav.secteurs}
+                  </Link>
+                </li>
+                <li>
                   <Link href={`/${lang}/projets`} className={linkClass}>
                     {dict.nav.projets}
                   </Link>
@@ -77,6 +82,16 @@ export async function Footer({ lang }: FooterProps) {
                 <li>
                   <Link href={`/${lang}/equipe`} className={linkClass}>
                     {dict.nav.equipe}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/a-propos`} className={linkClass}>
+                    {dict.nav.apropos}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/blog`} className={linkClass}>
+                    {dict.nav.blog}
                   </Link>
                 </li>
                 <li>

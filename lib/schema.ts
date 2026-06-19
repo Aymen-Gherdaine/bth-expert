@@ -29,10 +29,13 @@ export function schemaLocalBusiness() {
     "@id": ORG_ID,
     name: "BTH Expert",
     url: BASE_URL,
+    logo: { "@type": "ImageObject", url: `${BASE_URL}/bth-expert-logo-light-transparent.svg` },
     telephone: "+213670708138",
     email: "info@bthexpert.dz",
     address: BTH_ADDRESS,
     geo: BTH_GEO,
+    foundingDate: "2026",
+    openingHours: "Mo-Fr 08:00-17:00",
     areaServed: { "@type": "Country", name: "Algérie" },
     description:
       "Bureau d'études environnemental agréé par le Ministère de l'Environnement et de la Qualité de la Vie. Études d'impact, études de dangers, audits HSE et conformité réglementaire à Oran et dans toute l'Algérie.",

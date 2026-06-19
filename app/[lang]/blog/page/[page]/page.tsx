@@ -27,13 +27,13 @@ export async function generateMetadata({
 }: {
   params: Promise<{ lang: string; page: string }>;
 }): Promise<Metadata> {
-  const { lang: rawLang } = await params;
+  const { lang: rawLang, page: rawPage } = await params;
   const lang = validateLocale(rawLang);
   const dict = await getDictionary(lang);
 
   return buildMetadata({
     lang,
-    path: "/blog",
+    path: `/blog/page/${rawPage}`,
     title: dict.blog.meta.title,
     description: dict.blog.meta.description,
   });

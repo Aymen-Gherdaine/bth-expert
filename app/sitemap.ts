@@ -30,12 +30,14 @@ function url(lang: string, path: string): string {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
 
+  const buildDate = new Date().toISOString();
   for (const { path, priority, freq } of STATIC_ROUTES) {
     for (const lang of locales) {
       entries.push({
         url: url(lang, path),
         priority,
         changeFrequency: freq,
+        lastModified: buildDate,
       });
     }
   }
