@@ -164,8 +164,8 @@ export async function Footer({ lang }: FooterProps) {
             <h4 className={columnHeaderClass}>{dict.nav.contact}</h4>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
-                <a href="mailto:info@bthexpert.dz" className={linkClass}>
-                  info@bthexpert.dz
+                <a href="mailto:contact@bthexpert.com" className={linkClass}>
+                  contact@bthexpert.com
                 </a>
               </li>
               <li>
