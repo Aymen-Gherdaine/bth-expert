@@ -31,7 +31,7 @@ export function schemaLocalBusiness() {
     url: BASE_URL,
     logo: { "@type": "ImageObject", url: `${BASE_URL}/bth-expert-logo-light-transparent.svg` },
     telephone: "+213670708138",
-    email: "info@bthexpert.dz",
+    email: "contact@bthexpert.com",
     address: BTH_ADDRESS,
     geo: BTH_GEO,
     foundingDate: "2026",

@@ -9,7 +9,7 @@ hero:
 info:
   heading: Coordonnées
   emailLabel: Email
-  email: info@bthexpert.dz
+  email: contact@bthexpert.com
   phoneLabel: Téléphone
   phone: +213 670 70 81 38
   addressLabel: Adresse
@@ -38,7 +38,7 @@ form:
   submitting: Envoi en cours...
   successTitle: Message envoyé.
   successMessage: Merci, nous vous répondrons sous 24 heures.
-  errorMessage: Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.dz.
+  errorMessage: Une erreur est survenue. Veuillez réessayer ou nous écrire directement à contact@bthexpert.com.
 process:
   eyebrow: Notre processus
   heading: À quoi s'attendre

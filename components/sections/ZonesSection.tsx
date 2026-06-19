@@ -328,6 +328,12 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
             <p className="text-[length:var(--text-small)] text-cream/55 leading-[1.8] max-w-md">
               {content.coverage}
             </p>
+            <Link
+              href={`/${lang}/oran`}
+              className="mt-4 inline-block text-[length:var(--text-small)] text-cream/35 hover:text-cream/60 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            >
+              Notre présence à Oran →
+            </Link>
           </div>
         </div>
       </div>

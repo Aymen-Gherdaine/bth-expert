@@ -45,7 +45,7 @@
     "info": {
       "heading": "Contact Details",
       "emailLabel": "Email",
-      "email": "info@bthexpert.dz",
+      "email": "contact@bthexpert.com",
       "phoneLabel": "Phone",
       "phone": "+213 670 70 81 38",
       "addressLabel": "Address",
@@ -76,7 +76,7 @@
       "submitting": "Sending...",
       "successTitle": "Message sent.",
       "successMessage": "Thank you, we will get back to you within 24 hours.",
-      "errorMessage": "An error occurred. Please try again or write to us directly at info@bthexpert.dz."
+      "errorMessage": "An error occurred. Please try again or write to us directly at contact@bthexpert.com."
     },
     "process": {
       "eyebrow": "Our process",
@@ -497,7 +497,7 @@
       "heading": "Contact Details",
       "address": "40, Lotissement 119, Bir El Djir, Oran",
       "phone": "+213 670 70 81 38",
-      "email": "info@bthexpert.dz"
+      "email": "contact@bthexpert.com"
     },
     "cta": {
       "heading": "Your Project in Oran",
@@ -931,7 +931,7 @@
       "description": "Tell us about your project, your regulatory constraints, and your timeline. We will get back to you within 48 hours.",
       "cta": "Request a quote",
       "phone": "+213 670 70 81 38",
-      "email": "info@bthexpert.dz"
+      "email": "contact@bthexpert.com"
     },
     "faq": {
       "heading": "Frequently asked questions",
@@ -981,7 +981,7 @@
       "heading": "Oran, at the heart of western Algeria",
       "address": "40, Lotissement 119\nBir El Djir, Oran",
       "phone": "+213 (670) 70 81 38",
-      "email": "info@bthexpert.dz",
+      "email": "contact@bthexpert.com",
       "cta": "Contact us",
       "coverage": "We cover all wilayas of Algeria."
     }
