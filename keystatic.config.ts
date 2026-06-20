@@ -525,6 +525,18 @@ export default config({
           heading: fields.text({ label: "Titre" }),
           description: fields.text({ label: "Description", multiline: true }),
         }),
+        expertise: fields.object({
+          eyebrow: fields.text({ label: "Eyebrow" }),
+          heading: fields.text({ label: "Titre" }),
+          experts: fields.array(
+            fields.object({
+              name: fields.text({ label: "Nom" }),
+              role: fields.text({ label: "Rôle" }),
+              description: fields.text({ label: "Description", multiline: true }),
+            }),
+            { label: "Experts", itemLabel: (p) => p.fields.name.value || "Expert" }
+          ),
+        }),
         values: fields.object({
           eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),

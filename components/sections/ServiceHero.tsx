@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 
@@ -13,8 +14,6 @@ interface ServiceHeroProps {
   meta?: MetaItem[];
 }
 
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
-
 /**
  * Editorial light service hero (option B): monumental ink headline with a
  * gold filet + eyebrow, and a right-hand meta rail that differentiates each
@@ -24,7 +23,7 @@ const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 export function ServiceHero({ eyebrow, heading, subheading, meta }: ServiceHeroProps) {
   return (
     <section className="bg-cream-soft">
-      <div className={`${PADX} pt-20 lg:pt-28 pb-16 lg:pb-24`}>
+      <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-16 lg:pb-24`}>
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className="lg:col-span-8">
             <span aria-hidden className="block w-14 h-px bg-gold mb-10" />

@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
@@ -25,8 +26,6 @@ interface ServicesPinScrollProps {
   lang: Locale;
   services: ServiceContent;
 }
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 const TITLE: Record<Locale, string> = {
   fr: "Nos expertises",
@@ -146,7 +145,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
 
   return (
     <section ref={sectionRef} className="bg-cream relative z-10">
-      <div className={`${PADX} pt-20 lg:pt-28 pb-24 lg:pb-32`}>
+      <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-24 lg:pb-32`}>
         {/* ── Header ─────────────────────────────────────────────── */}
         <span
           data-reveal

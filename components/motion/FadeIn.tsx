@@ -1,9 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "@/lib/gsap";
 
-const ease = [0.16, 1, 0.3, 1] as const;
-const viewport = { once: true, margin: "-6% 0px" } as const;
+// Révélations au scroll en GSAP (le moteur dominant du site) — remplace
+// framer-motion pour éviter de charger un second runtime d'animation.
+// L'API publique (FadeIn / FadeInStagger / FadeInItem) est inchangée.
+const EASE = "expo.out";
+const START = "top 94%";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -22,32 +27,33 @@ export function FadeIn({
   scale = false,
   className,
 }: FadeInProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const el = ref.current;
+      if (!el) return;
+
+      gsap.from(el, {
+        opacity: 0,
+        y,
+        scale: scale ? 0.97 : 1,
+        duration,
+        delay,
+        ease: EASE,
+        scrollTrigger: { trigger: el, start: START, once: true },
+      });
+    },
+    { scope: ref }
+  );
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y, scale: scale ? 0.97 : 1 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={viewport}
-      transition={{ duration, delay, ease }}
-      className={className}
-    >
+    <div ref={ref} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
-
-const staggerContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.09 } },
-} as const;
-
-const staggerItem = {
-  hidden: { opacity: 0, y: 0 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, ease },
-  },
-} as const;
 
 interface StaggerProps {
   children: React.ReactNode;
@@ -55,16 +61,32 @@ interface StaggerProps {
 }
 
 export function FadeInStagger({ children, className }: StaggerProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const el = ref.current;
+      if (!el) return;
+
+      const items = el.querySelectorAll<HTMLElement>("[data-fade-item]");
+      if (!items.length) return;
+
+      gsap.from(items, {
+        opacity: 0,
+        duration: 0.65,
+        ease: EASE,
+        stagger: 0.09,
+        scrollTrigger: { trigger: el, start: START, once: true },
+      });
+    },
+    { scope: ref }
+  );
+
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewport}
-      variants={staggerContainer}
-      className={className}
-    >
+    <div ref={ref} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -76,8 +98,8 @@ export function FadeInItem({
   className?: string;
 }) {
   return (
-    <motion.div variants={staggerItem} className={className}>
+    <div data-fade-item className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }

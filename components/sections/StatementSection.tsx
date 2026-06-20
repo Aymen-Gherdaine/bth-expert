@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -115,7 +116,7 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
 
   return (
     <section ref={sectionRef} className="bg-cream-warm overflow-hidden">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-28 lg:py-40">
+      <div className={`${SECTION_PX} py-28 lg:py-40`}>
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16 lg:items-center">
           {/* ── Statement ── */}
           <div className="lg:col-span-6">

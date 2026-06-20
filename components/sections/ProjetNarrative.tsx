@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
@@ -12,8 +13,6 @@ interface Beat {
 interface ProjetNarrativeProps {
   beats: Beat[];
 }
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 /**
  * Case-study narrative as a three-beat editorial sequence (contexte →
@@ -92,7 +91,7 @@ export function ProjetNarrative({ beats }: ProjetNarrativeProps) {
 
   return (
     <section ref={sectionRef} className="bg-cream-soft">
-      <div className={`${PADX} pt-16 lg:pt-24 pb-20 lg:pb-28`}>
+      <div className={`${SECTION_PX} pt-16 lg:pt-24 pb-20 lg:pb-28`}>
         {/* Gold rail spine — traces the full sequence on scroll (desktop) */}
         <div className="relative lg:grid lg:grid-cols-12 lg:gap-x-8">
           <span

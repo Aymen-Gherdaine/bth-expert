@@ -106,27 +106,7 @@ async function main() {
           prestations: entry.prestations,
         })),
     },
-    apropos: {
-      ...apropos,
-      expertise: {
-        eyebrow: "Expertise",
-        heading: "L'expertise derrière chaque étude",
-        experts: [
-          {
-            name: "Amine Lahmer",
-            role: "Fondateur & Gérant",
-            description:
-              "Plusieurs années d'expérience terrain au sein de grands groupes d'ingénierie canadiens — notamment GHD et AtkinsRéalis — sur des projets industriels complexes en Algérie et au Canada. Certifié Sonatrach/IAP et agréé par le Ministère de l'Environnement algérien.",
-          },
-          {
-            name: "Hakim Belgouini",
-            role: "Partenaire — BTH Consult",
-            description:
-              "Plus de 40 ans d'expérience dans les études environnementales et les projets industriels en Algérie. Un ancrage profond dans les réalités réglementaires de l'ouest et du centre algérien, au service des projets d'envergure régionale et nationale.",
-          },
-        ],
-      },
-    },
+    apropos,
     projets: {
       meta: projetsPage.meta,
       hero: projetsPage.hero,

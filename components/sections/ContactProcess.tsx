@@ -2,11 +2,10 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
 import { Container } from "@/components/layout/Container";
 import type { Dictionary } from "@/lib/i18n";
 
-void ScrollTrigger;
 
 type ProcessDict = Dictionary["contact"]["process"];
 

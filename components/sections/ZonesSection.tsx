@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
@@ -284,7 +285,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
       </div>
 
       {/* ── Contact — integrated directly on the dark surface ── */}
-      <div className="relative z-10 order-1 lg:order-none w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+      <div className={`relative z-10 order-1 lg:order-none w-full ${SECTION_PX}`}>
         <div className="lg:w-[48%] lg:max-w-[34rem]">
           <p
             ref={eyebrowRef}

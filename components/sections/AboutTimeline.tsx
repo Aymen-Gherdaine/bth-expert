@@ -2,10 +2,9 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
 import { Container } from "@/components/layout/Container";
 
-void ScrollTrigger;
 
 interface Milestone {
   year: string;

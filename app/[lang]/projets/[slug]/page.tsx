@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -9,8 +10,6 @@ import { ProjetNarrative } from "@/components/sections/ProjetNarrative";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
 import fr from "@/dictionaries/fr.json";
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export function generateStaticParams() {
   return fr.projets.items.map((p) => ({ slug: p.slug }));
@@ -78,7 +77,7 @@ export default async function ProjetPage({
 
       {/* ── Hero — secteur breadcrumb above the shared editorial ServiceHero ─ */}
       <div className="bg-cream-soft">
-        <div className={`${PADX} pt-16 lg:pt-24`}>
+        <div className={`${SECTION_PX} pt-16 lg:pt-24`}>
           <Link
             href={`/${lang}/secteurs/${item.secteurSlug}`}
             className="group inline-flex items-center gap-2 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
@@ -95,7 +94,7 @@ export default async function ProjetPage({
 
       {/* ── Meta strip — secteur / mission chips / année, enlivened ───── */}
       <section className="bg-cream-soft">
-        <div className={`${PADX} pb-4 lg:pb-8`}>
+        <div className={`${SECTION_PX} pb-4 lg:pb-8`}>
           <div className="border-t border-line pt-10 lg:pt-12">
             <FadeInStagger className="grid gap-10 sm:grid-cols-3">
               <FadeInItem>
@@ -147,7 +146,7 @@ export default async function ProjetPage({
 
       {/* ── Disclaimer ───────────────────────────────────────── */}
       <section className="bg-cream-soft">
-        <div className={`${PADX} pb-20 lg:pb-28`}>
+        <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
           <FadeIn>
             <p className="font-sans text-[length:var(--text-caption)] text-muted italic">
               {d.disclaimer}
@@ -159,7 +158,7 @@ export default async function ProjetPage({
       {/* ── CTA — dark punctuation band over the project's artwork ── */}
       <section className="relative isolate overflow-hidden bg-brand-deep">
         <TerrainBackdrop src={`/generated/projet-${slug}.svg`} />
-        <div className={`relative z-10 ${PADX} py-24 lg:py-32`}>
+        <div className={`relative z-10 ${SECTION_PX} py-24 lg:py-32`}>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <FadeIn className="lg:col-span-8">
               <span aria-hidden className="block w-14 h-px bg-gold mb-8" />

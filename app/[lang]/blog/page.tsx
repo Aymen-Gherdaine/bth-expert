@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
@@ -6,8 +7,6 @@ import { listContentByDate } from "@/lib/content";
 import { paginate } from "@/lib/blog";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { BlogList, BlogPagination } from "@/components/sections/BlogList";
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export async function generateMetadata({
   params,
@@ -52,7 +51,7 @@ export default async function BlogPage({
       <ServiceHero eyebrow={b.hero.eyebrow} heading={b.hero.heading} subheading={b.hero.subheading} />
 
       <section className="bg-cream-soft">
-        <div className={`${PADX} pb-24 lg:pb-32`}>
+        <div className={`${SECTION_PX} pb-24 lg:pb-32`}>
           <BlogList lang={lang} posts={posts} startIndex={0} empty={b.empty} readMore={b.readMore} />
           <BlogPagination
             lang={lang}

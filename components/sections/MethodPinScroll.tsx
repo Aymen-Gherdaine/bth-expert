@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
@@ -18,8 +19,6 @@ interface MethodPinScrollProps {
   /** Localised "Méthode" eyebrow shown over the sticky image. */
   methodLabel: string;
 }
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 /**
  * Methodology as the signature pin-scroll (manifesto Pattern 1): a sticky
@@ -125,7 +124,7 @@ export function MethodPinScroll({
 
   return (
     <section ref={sectionRef} className="bg-cream relative z-10">
-      <div className={`${PADX} py-20 lg:py-28`}>
+      <div className={`${SECTION_PX} py-20 lg:py-28`}>
         <span
           data-reveal
           className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-7"

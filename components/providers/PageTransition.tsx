@@ -1,26 +1,36 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef } from "react";
 import { usePathname } from "next/navigation";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "@/lib/gsap";
 
-const ease = [0.16, 1, 0.3, 1] as const;
-
+// Transition d'entrée à chaque changement de route, en GSAP (remplace
+// framer-motion / AnimatePresence). Le contenu glisse depuis le bord de
+// lecture — miroir en RTL (arabe).
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  // Slide in from the reading-start edge — mirrored for RTL (Arabic).
-  const rtl = pathname.startsWith("/ar");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const el = ref.current;
+      if (!el) return;
+
+      const rtl = pathname.startsWith("/ar");
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: rtl ? -24 : 24 },
+        { opacity: 1, x: 0, duration: 0.38, ease: "expo.out" }
+      );
+    },
+    { dependencies: [pathname], scope: ref }
+  );
+
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, x: rtl ? -24 : 24 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: rtl ? 16 : -16, y: 6 }}
-        transition={{ duration: 0.38, ease }}
-        style={{ minHeight: "inherit" }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div ref={ref} style={{ minHeight: "inherit" }}>
+      {children}
+    </div>
   );
 }

@@ -1,11 +1,10 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { TerrainHero } from "@/components/sections/TerrainHero";
 import { ServicesIndexList } from "@/components/sections/ServicesIndexList";
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export async function generateMetadata({
   params,
@@ -76,7 +75,7 @@ export default async function ServicesPage({
 
       {/* ── Service index — animated editorial register ────────── */}
       <section className="bg-cream-soft">
-        <div className={`${PADX} pb-24 lg:pb-32`}>
+        <div className={`${SECTION_PX} pb-24 lg:pb-32`}>
           <ServicesIndexList items={indexItems} />
         </div>
       </section>

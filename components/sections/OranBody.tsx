@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 
 interface OranBodyProps {
@@ -20,7 +21,7 @@ const linkCls =
 export function OranBody({ services, zones, nap }: OranBodyProps) {
   return (
     <section className="bg-cream-soft">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+      <div className={`${SECTION_PX}`}>
         {/* ── Services ── */}
         <div className="border-t border-line py-16 lg:py-24 lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className="lg:col-span-5 mb-8 lg:mb-0">
@@ -86,7 +87,7 @@ export function OranBody({ services, zones, nap }: OranBodyProps) {
 
       {/* ── NAP — coordinates on a warm band ── */}
       <div className="border-t border-line bg-cream-deep">
-        <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-16 lg:py-24">
+        <div className={`${SECTION_PX} py-16 lg:py-24`}>
           <FadeIn>
             <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
             <h2

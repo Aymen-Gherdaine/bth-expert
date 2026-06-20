@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import Image from "next/image";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 
@@ -35,7 +36,7 @@ function photoFor(name: string): string | null {
 export function EquipeMembers({ members, partner }: EquipeMembersProps) {
   return (
     <section className="bg-cream-soft">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+      <div className={`${SECTION_PX}`}>
         {members.map((member, index) => {
           const photo = photoFor(member.name);
           const reversed = index % 2 === 1;

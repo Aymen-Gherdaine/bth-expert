@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -13,8 +14,6 @@ interface BlogFaqItem {
   q: string;
   a: string;
 }
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 const FAQ_HEADING: Record<string, string> = {
   fr: "Questions fréquentes",
@@ -138,7 +137,7 @@ export default async function BlogPostPage({
 
       {/* ── Article header — editorial, Medium/Anthropic style ── */}
       <section className="bg-cream-soft border-b border-line">
-        <div className={`${PADX} pt-20 lg:pt-28 pb-14 lg:pb-20`}>
+        <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-14 lg:pb-20`}>
           <div className="max-w-[var(--container-prose)] mx-auto">
 
             {/* Back link + category */}
@@ -206,7 +205,7 @@ export default async function BlogPostPage({
 
       {/* ── Back to blog ── */}
       <section className="bg-cream-soft border-t border-line">
-        <div className={`${PADX} py-14 lg:py-18`}>
+        <div className={`${SECTION_PX} py-14 lg:py-18`}>
           <FadeIn>
             <Link
               href={`/${lang}/blog`}

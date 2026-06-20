@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
@@ -19,7 +20,7 @@ export function OranCtaBand({ lang, cta, art }: OranCtaBandProps) {
   return (
     <section className="relative isolate overflow-hidden bg-brand-deep">
       {art ? <TerrainBackdrop src={art} /> : null}
-      <div className="relative z-10 px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-24 lg:py-32">
+      <div className={`relative z-10 ${SECTION_PX} py-24 lg:py-32`}>
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-end">
           <div className="lg:col-span-8">
             <FadeIn>

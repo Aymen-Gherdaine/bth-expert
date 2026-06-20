@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import Link from "next/link";
 import { ServiceHero } from "./ServiceHero";
 import { MethodPinScroll } from "./MethodPinScroll";
@@ -38,8 +39,6 @@ interface ServicePageBodyProps {
   heroImage?: string;
 }
 
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
-
 const METHOD_LABEL: Record<Locale, string> = {
   fr: "Méthode",
   ar: "المنهجية",
@@ -76,7 +75,7 @@ export function ServicePageBody({
 
       {/* Contexte — editorial asymmetric block (from `why`) */}
       <section className="bg-cream-soft">
-        <div className={`${PADX} pb-20 lg:pb-28`}>
+        <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
           <div className="border-t border-line pt-16 lg:pt-20 lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
             <div className="lg:col-span-4 mb-8 lg:mb-0">
               <FadeIn>
@@ -112,7 +111,7 @@ export function ServicePageBody({
 
       {/* Livrable — dark punctuation band */}
       <section className="bg-brand-deep">
-        <div className={`${PADX} py-24 lg:py-32`}>
+        <div className={`${SECTION_PX} py-24 lg:py-32`}>
           <FadeIn>
             <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
             <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
@@ -137,7 +136,7 @@ export function ServicePageBody({
 
       {/* CTA */}
       <section className="bg-cream-soft">
-        <div className={`${PADX} pb-24 lg:pb-32`}>
+        <div className={`${SECTION_PX} pb-24 lg:pb-32`}>
           <div className="border-t border-line pt-16 lg:pt-20 lg:grid lg:grid-cols-12 lg:gap-16">
             <FadeIn className="lg:col-span-7">
               <h2
