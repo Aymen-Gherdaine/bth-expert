@@ -4,7 +4,6 @@ import "../globals.css";
 import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { MotionProvider } from "@/components/providers/MotionProvider";
 import { CursorFollower } from "@/components/interaction/CursorFollower";
 
 const fraunces = Fraunces({
@@ -96,7 +95,7 @@ export default async function LangLayout({
         </a>
         <CursorFollower />
         <SmoothScroll />
-        <MotionProvider>{children}</MotionProvider>
+        {children}
       </body>
     </html>
   );
