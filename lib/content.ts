@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -36,8 +37,12 @@ async function markdownToHtml(markdown: string): Promise<string> {
 /**
  * Lit un fichier markdown depuis content/{lang}/{collection}/{slug}.md.
  * Retourne null si le fichier n'existe pas.
+ *
+ * Mémoïsé via `cache()` : une même page appelle souvent getContent pour le
+ * même slug (generateMetadata + corps de page + listing), on évite ainsi de
+ * relire et re-parser le fichier plusieurs fois par rendu.
  */
-export async function getContent(
+export const getContent = cache(async function getContent(
   lang: Locale,
   collection: string,
   slug: string
@@ -59,7 +64,7 @@ export async function getContent(
     html,
     slug,
   };
-}
+});
 
 /**
  * Liste tous les fichiers d'une collection pour une langue donnée.

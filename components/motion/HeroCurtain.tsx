@@ -2,9 +2,7 @@
 
 import { useRef, type ReactNode } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
-
-void ScrollTrigger;
+import { gsap } from "@/lib/gsap";
 
 /**
  * Cover pattern: the hero stays pinned and perfectly still (sticky, z-0)

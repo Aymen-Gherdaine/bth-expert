@@ -3,9 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
-
-void ScrollTrigger;
+import { gsap } from "@/lib/gsap";
 
 interface HeroBackgroundProps {
   src: string;

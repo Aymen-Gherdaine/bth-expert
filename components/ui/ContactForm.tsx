@@ -2,10 +2,9 @@
 
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
 import type { Dictionary } from "@/lib/i18n";
 
-void ScrollTrigger;
 
 type ContactFormDict = Dictionary["contact"]["form"];
 
