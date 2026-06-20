@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
@@ -18,8 +19,6 @@ interface StatsContent {
 interface StatsBandProps {
   stats: StatsContent;
 }
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 /** Each digit slot is this many em tall — matches the line-height below. */
 const SLOT_H = 1.1;
@@ -116,7 +115,7 @@ export function StatsBand({ stats }: StatsBandProps) {
 
   return (
     <section ref={ref} className="bg-cream-warm">
-      <div className={`${PADX} py-16 lg:py-24`}>
+      <div className={`${SECTION_PX} py-16 lg:py-24`}>
         {stats.eyebrow && (
           <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
             <span aria-hidden className="w-8 h-px bg-gold-ink" />

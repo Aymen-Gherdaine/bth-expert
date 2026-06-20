@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
 
@@ -7,8 +8,6 @@ interface TerrainHeroProps {
   heading: string;
   subheading: string;
 }
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroProps) {
   return (
@@ -23,7 +22,7 @@ export function TerrainHero({ src, eyebrow, heading, subheading }: TerrainHeroPr
         }}
       />
       <div
-        className={`relative z-10 ${PADX} flex flex-col justify-end min-h-[80dvh] sm:min-h-[90dvh] lg:min-h-[calc(100dvh_-_6.75rem)] pb-16 sm:pb-16 lg:pb-20`}
+        className={`relative z-10 ${SECTION_PX} flex flex-col justify-end min-h-[80dvh] sm:min-h-[90dvh] lg:min-h-[calc(100dvh_-_6.75rem)] pb-16 sm:pb-16 lg:pb-20`}
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-9 xl:col-span-8">

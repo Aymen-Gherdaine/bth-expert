@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
@@ -156,8 +157,6 @@ const ROW_LAYOUTS = [
   },
 ];
 
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
-
 /**
  * Réalisations — editorial asymmetric index, zero imagery (Pentagram/Klim
  * pattern). Premium comes from Fraunces at scale, staggered indentation
@@ -217,7 +216,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
 
   return (
     <section ref={sectionRef} className="bg-cream-soft">
-      <div className={`${PADX} pt-24 lg:pt-36 pb-16 lg:pb-24`}>
+      <div className={`${SECTION_PX} pt-24 lg:pt-36 pb-16 lg:pb-24`}>
         {/* ── Header — title left, intro offset right and higher ─────── */}
         <div
           data-projects-header

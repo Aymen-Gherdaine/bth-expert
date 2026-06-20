@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/motion/FadeIn";
 
@@ -8,7 +9,7 @@ interface ArticleBodyProps {
 export function ArticleBody({ html }: ArticleBodyProps) {
   return (
     <section className="bg-cream-soft">
-      <div className="px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-14 lg:py-20">
+      <div className={`${SECTION_PX} py-14 lg:py-20`}>
         <Container variant="prose" className="px-0">
           <FadeIn>
             <div

@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useState } from "react";
 
 interface FaqItem {
@@ -12,8 +13,6 @@ interface FaqProps {
   items: FaqItem[];
 }
 
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
-
 /**
  * Accordion FAQ. Smooth height via the grid-rows 0fr→1fr trick (no measured
  * heights), gold "+" rotates to "×". Logical properties for RTL.
@@ -23,7 +22,7 @@ export function Faq({ heading, items }: FaqProps) {
 
   return (
     <section className="bg-cream-soft">
-      <div className={`${PADX} py-20 lg:py-28`}>
+      <div className={`${SECTION_PX} py-20 lg:py-28`}>
         <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
           <span aria-hidden className="w-8 h-px bg-gold-ink" />
           {heading}

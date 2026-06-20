@@ -1,3 +1,4 @@
+import { SECTION_PX } from "@/components/layout/Container";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,8 +9,6 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
 import fr from "@/dictionaries/fr.json";
-
-const PADX = "px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export function generateStaticParams() {
   return fr.secteurs.list.map((s) => ({ secteur: s.slug }));
@@ -81,7 +80,7 @@ export default async function SecteurPage({
 
       {/* ── Enjeux clés — numbered editorial rhythm ──────────── */}
       <section className="bg-cream-soft">
-        <div className={`${PADX} pb-20 lg:pb-28`}>
+        <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
           <div className="border-t border-line pt-16 lg:pt-20">
             <FadeIn>
               <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
@@ -127,7 +126,7 @@ export default async function SecteurPage({
       {/* ── Punctuation — dark band over the sector's bespoke artwork ── */}
       <section className="relative isolate overflow-hidden bg-brand-deep">
         <TerrainBackdrop src={`/generated/sector-${secteur}.svg`} />
-        <div className={`relative z-10 ${PADX} py-24 lg:py-32`}>
+        <div className={`relative z-10 ${SECTION_PX} py-24 lg:py-32`}>
           <FadeIn>
             <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
             <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
@@ -147,7 +146,7 @@ export default async function SecteurPage({
 
       {/* ── Domaines couverts + prestations — chip blocks ────── */}
       <section className="bg-cream-deep">
-        <div className={`${PADX} py-20 lg:py-28`}>
+        <div className={`${SECTION_PX} py-20 lg:py-28`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24">
             <FadeIn className="mb-14 lg:mb-0">
               <h2
@@ -185,7 +184,7 @@ export default async function SecteurPage({
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="bg-cream-soft">
-        <div className={`${PADX} py-20 lg:py-28`}>
+        <div className={`${SECTION_PX} py-20 lg:py-28`}>
           <div className="border-t border-line pt-16 lg:pt-20 lg:grid lg:grid-cols-12 lg:gap-16">
             <FadeIn className="lg:col-span-7">
               <h2

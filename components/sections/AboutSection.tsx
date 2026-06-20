@@ -1,5 +1,6 @@
 "use client";
 
+import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
@@ -178,7 +179,7 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
       ref={sectionRef}
       className="bg-cream-soft overflow-hidden"
     >
-      <div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-28 lg:py-40">
+      <div className={`w-full ${SECTION_PX} py-28 lg:py-40`}>
 
         {/* Gold traced line */}
         <div
