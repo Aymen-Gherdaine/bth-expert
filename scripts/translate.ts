@@ -15,6 +15,8 @@
  */
 import fs from "fs";
 import path from "path";
+import crypto from "crypto";
+import { pathToFileURL } from "url";
 import matter from "gray-matter";
 import Anthropic from "@anthropic-ai/sdk";
 
@@ -23,6 +25,9 @@ const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
 
 type Lang = "ar" | "en";
 const LANG_NAMES: Record<Lang, string> = { ar: "arabe", en: "anglais" };
+
+const HASHES_FILE = path.join(ROOT, "dictionaries", ".translation-hashes.json");
+type HashStore = Partial<Record<Lang, Record<string, string>>>;
 
 interface GlossaryEntry {
   fr: string;
@@ -60,6 +65,49 @@ function extractJson(text: string): string {
   return fenced ? fenced[1].trim() : trimmed;
 }
 
+/** Empreinte stable d'une section de fr.json (détection de changement source). */
+export function hashSection(section: unknown): string {
+  return crypto.createHash("sha256").update(JSON.stringify(section)).digest("hex");
+}
+
+function loadHashes(): HashStore {
+  if (!fs.existsSync(HASHES_FILE)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(HASHES_FILE, "utf-8")) as HashStore;
+  } catch {
+    return {};
+  }
+}
+
+function saveHashes(hashes: HashStore): void {
+  fs.writeFileSync(HASHES_FILE, JSON.stringify(hashes, null, 2) + "\n");
+}
+
+interface SectionPlan {
+  key: string;
+  hash: string;
+  translate: boolean;
+}
+
+/**
+ * Décide, section par section, ce qui doit être (re)traduit : une section est
+ * ignorée si sa source fr.json est inchangée (même hash) ET qu'une traduction
+ * existe déjà. `force` retraduit tout. C'est ce qui élimine la retraduction
+ * systématique des 17 sections à chaque exécution.
+ */
+export function planDictionaryTranslation(
+  fr: Record<string, unknown>,
+  existing: Record<string, unknown>,
+  oldHashes: Record<string, string>,
+  force: boolean
+): SectionPlan[] {
+  return Object.keys(fr).map((key) => {
+    const hash = hashSection(fr[key]);
+    const unchanged = !force && oldHashes[key] === hash && existing[key] !== undefined;
+    return { key, hash, translate: !unchanged };
+  });
+}
+
 /**
  * Traduit un objet JSON (valeurs uniquement, structure et clés identiques).
  */
@@ -93,19 +141,48 @@ ${glossaryPrompt(glossary, lang)}
   return JSON.parse(extractJson(textBlock.text));
 }
 
-async function translateDictionary(client: Anthropic, lang: Lang, glossary: GlossaryEntry[]) {
+async function translateDictionary(
+  client: Anthropic,
+  lang: Lang,
+  glossary: GlossaryEntry[],
+  force: boolean,
+  hashes: HashStore
+) {
   const frPath = path.join(ROOT, "dictionaries", "fr.json");
-  const fr = JSON.parse(fs.readFileSync(frPath, "utf-8"));
-
-  const translated: Record<string, unknown> = {};
-  for (const key of Object.keys(fr)) {
-    console.log(`[translate:${lang}] section "${key}"...`);
-    translated[key] = await translateJsonSection(client, fr[key], lang, glossary);
-  }
+  const fr = JSON.parse(fs.readFileSync(frPath, "utf-8")) as Record<string, unknown>;
 
   const outPath = path.join(ROOT, "dictionaries", `${lang}.json`);
+  const existing: Record<string, unknown> = fs.existsSync(outPath)
+    ? JSON.parse(fs.readFileSync(outPath, "utf-8"))
+    : {};
+
+  const plan = planDictionaryTranslation(fr, existing, hashes[lang] ?? {}, force);
+
+  const translated: Record<string, unknown> = {};
+  const newHashes: Record<string, string> = {};
+  let translatedCount = 0;
+  let skippedCount = 0;
+
+  for (const { key, hash, translate } of plan) {
+    if (!translate) {
+      translated[key] = existing[key];
+      newHashes[key] = hash;
+      skippedCount++;
+      continue;
+    }
+    console.log(`[translate:${lang}] section "${key}"...`);
+    translated[key] = await translateJsonSection(client, fr[key], lang, glossary);
+    newHashes[key] = hash;
+    translatedCount++;
+  }
+
+  // Recompose la table de hash (purge au passage les sections supprimées).
+  hashes[lang] = newHashes;
+
   fs.writeFileSync(outPath, JSON.stringify(translated, null, 2) + "\n");
-  console.log(`[translate:${lang}] écrit ${outPath}`);
+  console.log(
+    `[translate:${lang}] écrit ${outPath} (${translatedCount} traduit(s), ${skippedCount} inchangé(s))`
+  );
 }
 
 interface BlogFrontmatter {
@@ -247,14 +324,20 @@ async function main() {
   const { langs, force } = parseArgs();
   const glossary = loadGlossary();
   const client = getClient();
+  const hashes = loadHashes();
 
   for (const lang of langs) {
-    await translateDictionary(client, lang, glossary);
+    await translateDictionary(client, lang, glossary, force, hashes);
     await translateBlogPosts(client, lang, glossary, force);
   }
+
+  saveHashes(hashes);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+// N'exécute main() que lancé directement (pas à l'import, ex. depuis un test).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
