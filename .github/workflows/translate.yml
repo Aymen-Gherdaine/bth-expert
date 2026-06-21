@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "bth-expert-bot"
           git config user.email "bot@bthexpert.dz"
-          git add dictionaries/ar.json dictionaries/en.json content/ar content/en
+          git add dictionaries/ar.json dictionaries/en.json dictionaries/.translation-hashes.json content/ar content/en
           if git diff --cached --quiet; then
             echo "Aucun changement de traduction."
             exit 0
