@@ -35,6 +35,13 @@ function getRecipients(): string[] {
   return list.length > 0 ? list : DEFAULT_RECIPIENTS;
 }
 
+// Logo embarque en piece jointe inline (CID) plutot que reference par URL :
+// les clients mail (Gmail, Outlook, Apple Mail) bloquent les images distantes
+// par defaut, ce qui affichait un cadre vide. Resend telecharge LOGO_URL au
+// moment de l'envoi et l'integre au message.
+const LOGO_URL = "https://bthexpert.com/bth-expert-logo-email.png";
+const LOGO_CID = "bth-logo";
+
 const PROJECT_TYPE_LABELS: Record<string, string> = {
   "etude-impact": "Étude d'impact environnemental",
   "etude-dangers": "Étude de dangers",
@@ -98,6 +105,13 @@ export const handler: Handler = async (event) => {
         ...(email ? { reply_to: email } : {}),
         subject: `Nouveau message de ${name} — BTH Expert`,
         html,
+        attachments: [
+          {
+            path: LOGO_URL,
+            filename: "bth-expert-logo-email.png",
+            content_id: LOGO_CID,
+          },
+        ],
         headers: {
           "X-Priority": "1",
           "X-MSMail-Priority": "High",
@@ -237,7 +251,7 @@ function buildEmail(d: EmailData): string {
         <tr>
           <td align="center" style="padding:40px 40px 0;background-color:#ffffff;"
               bgcolor="#ffffff">
-            <img src="https://bthexpert.com/bth-expert-logo-email.png"
+            <img src="cid:${LOGO_CID}"
                  width="156" height="44" alt="BTH Expert"
                  style="display:block;border:0;outline:none;text-decoration:none;
                         height:44px;width:156px;">
