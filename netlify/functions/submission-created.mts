@@ -23,10 +23,7 @@ import type { Handler } from "@netlify/functions";
 // Destinataires par défaut, utilisés si CONTACT_RECIPIENTS n'est pas défini
 // sur Netlify. Pour modifier les destinataires sans toucher au code :
 // Site configuration → Environment variables → CONTACT_RECIPIENTS.
-const DEFAULT_RECIPIENTS = [
-  "gherdaineaymen1995@gmail.com",
-  "lahmerr.amine@gmail.com",
-];
+const DEFAULT_RECIPIENTS = ["info@bthexpert.com"];
 
 function getRecipients(): string[] {
   const fromEnv = process.env.CONTACT_RECIPIENTS;
@@ -96,7 +93,7 @@ export const handler: Handler = async (event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "BTH Expert <contact@bthexpert.com>",
+        from: "BTH Expert <info@bthexpert.com>",
         to: getRecipients(),
         ...(email ? { reply_to: email } : {}),
         subject: `Nouveau message de ${name} — BTH Expert`,
@@ -324,7 +321,7 @@ function buildEmail(d: EmailData): string {
                   <p class="color-faded" style="margin:0 0 18px;font-family:${sans};font-size:11px;color:#9aa39a;
                              line-height:1.8;">
                     40, Lotissement 119 · Bir El Djir, Oran · Algérie<br>
-                    +213 (670) 70 81 38 · contact@bthexpert.com
+                    +213 (670) 70 81 38 · info@bthexpert.com
                   </p>
                 </td>
               </tr>
