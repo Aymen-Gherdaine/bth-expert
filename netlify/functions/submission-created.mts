@@ -321,7 +321,7 @@ function buildEmail(d: EmailData): string {
                   <p class="color-faded" style="margin:0 0 18px;font-family:${sans};font-size:11px;color:#9aa39a;
                              line-height:1.8;">
                     40, Lotissement 119 · Bir El Djir, Oran · Algérie<br>
-                    +213 (670) 70 81 38 · contact@bthexpert.com
+                    +213 (670) 70 81 38 · info@bthexpert.com
                   </p>
                 </td>
               </tr>
