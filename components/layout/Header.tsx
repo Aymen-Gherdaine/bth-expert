@@ -59,10 +59,10 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                   +213 (670) 70 81 38
                 </a>
                 <a
-                  href="mailto:contact@bthexpert.com"
+                  href="mailto:info@bthexpert.com"
                   className="hidden sm:inline hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
-                  contact@bthexpert.com
+                  info@bthexpert.com
                 </a>
               </div>
               <LangSwitcher currentLocale={lang} isDark={overlay} />
@@ -125,7 +125,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                   { href: `/${lang}/contact`, label: dict.nav.contact },
                 ]}
                 phone="+213 (670) 70 81 38"
-                email="contact@bthexpert.com"
+                email="info@bthexpert.com"
                 ctaLabel={dict.nav.quote}
                 ctaHref={`/${lang}/contact`}
                 lang={lang}
