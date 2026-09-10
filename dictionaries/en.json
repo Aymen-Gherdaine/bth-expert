@@ -43,7 +43,7 @@
       "intro": "Do you have an industrial project requiring environmental or regulatory support? Contact us for an initial consultation."
     },
     "info": {
-      "heading": "Contact Details",
+      "heading": "Contact Information",
       "emailLabel": "Email",
       "email": "info@bthexpert.com",
       "phoneLabel": "Phone",
@@ -69,7 +69,7 @@
         "autre": "Other"
       },
       "message": "Message (optional)",
-      "privacyNote": "Your data is used solely to respond to your enquiry.",
+      "privacyNote": "Your data is used solely to respond to you.",
       "whatsapp": "Chat on WhatsApp",
       "responseTime": "Response within 24 hours guaranteed",
       "submit": "Send my request",
@@ -90,7 +90,7 @@
         {
           "number": "02",
           "title": "Initial consultation",
-          "description": "An expert assesses your needs and the applicable regulatory framework free of charge."
+          "description": "An expert assesses your needs and the applicable regulatory framework, free of charge."
         },
         {
           "number": "03",
@@ -468,17 +468,17 @@
   },
   "oran": {
     "meta": {
-      "title": "Certified Environmental Consultancy in Oran — BTH Expert",
-      "description": "BTH Expert, certified environmental consultancy based in Oran (Bir El Djir). Environmental impact assessments, hazard studies and HSE audits for industrial projects in Oran and western Algeria."
+      "title": "Environmental Consultancy in Oran — BTH Expert",
+      "description": "BTH Expert, certified environmental consultancy based in Oran (Bir El Djir). Impact assessments, hazard studies and HSE audits for industrial projects in Oran and western Algeria."
     },
     "hero": {
       "eyebrow": "Bir El Djir, Oran · Algeria",
-      "heading": "Certified Environmental Consultancy in Oran",
-      "subheading": "Accredited by the Ministry of Environment, BTH Expert supports industrial, mining and infrastructure project developers in the wilaya of Oran and across western Algeria."
+      "heading": "Environmental Consultancy in Oran",
+      "subheading": "Accredited by the Ministry of Environment, BTH Expert supports industrial, mining and infrastructure project owners in the wilaya of Oran and across western Algeria."
     },
     "services": {
       "heading": "Our Services in Oran",
-      "description": "From the project review phase through to environmental monitoring during operations, BTH Expert provides studies that comply with the applicable Algerian regulatory framework."
+      "description": "From the project review phase through to environmental monitoring during operations, BTH Expert provides studies compliant with the applicable Algerian regulatory framework."
     },
     "zones": {
       "heading": "Areas of Intervention",
@@ -501,7 +501,7 @@
     },
     "cta": {
       "heading": "Your Project in Oran",
-      "description": "Send us the details of your project. We will assess your regulatory obligations and provide you with a tailored proposal.",
+      "description": "Send us the details of your project. We will assess your regulatory obligations and provide you with a tailored offer.",
       "button": "Request a Quote"
     }
   },
@@ -876,12 +876,12 @@
         {
           "abbr": "EDD",
           "title": "Hazard Study",
-          "description": "Major risk analysis for classified establishments. Accident scenarios, effect zones, prevention measures, and emergency plans."
+          "description": "Major risk analysis for classified establishments. Accident scenarios, impact zones, prevention measures, and emergency plans."
         },
         {
           "abbr": "HSE",
           "title": "HSE Audit",
-          "description": "Health, safety, and environment compliance diagnostic. Identification of regulatory gaps and a prioritized action plan."
+          "description": "Health, safety, and environment compliance assessment. Identification of regulatory gaps and a prioritized action plan."
         },
         {
           "abbr": "PGE",
@@ -907,7 +907,7 @@
         },
         {
           "value": "4",
-          "label": "Service families",
+          "label": "Service categories",
           "highlight": false
         },
         {
@@ -921,13 +921,13 @@
       "sectionNumber": "02",
       "eyebrow": "Team",
       "heading": "Experts recognized by the Ministry",
-      "description": "Accredited engineers, mastery of the Algerian regulatory framework and international ISO/IEC standards. BTH Expert works in partnership with BTH Consult for large-scale regional projects.",
+      "description": "Accredited engineers with a thorough command of the Algerian regulatory framework and international ISO/IEC standards. BTH Expert works in partnership with BTH Consult for large-scale regional projects.",
       "cta": "Meet the team"
     },
     "contact": {
       "sectionNumber": "03",
       "eyebrow": "Contact",
-      "heading": "A project underway? Let's talk.",
+      "heading": "Project underway? Let's talk.",
       "description": "Tell us about your project, your regulatory constraints, and your timeline. We will get back to you within 48 hours.",
       "cta": "Request a quote",
       "phone": "+213 670 70 81 38",
@@ -942,7 +942,7 @@
         },
         {
           "q": "What is the average timeframe to obtain an environmental authorization?",
-          "a": "Allow 2 to 6 months depending on the scale of the project and the wilaya. The study itself takes from a few weeks to several months; the public inquiry phase (for large projects) extends the timeframe."
+          "a": "Allow 2 to 6 months depending on the scale of the project and the wilaya. The study itself takes from a few weeks to several months; the public inquiry phase (for large projects) extends the timeline."
         },
         {
           "q": "Does BTH Expert operate outside of Oran?",
@@ -960,24 +960,24 @@
     },
     "about": {
       "eyebrow": "About",
-      "manifesto": "No industrial project obtains its authorization without a compliant environmental study. That is our profession, and our commitment.",
+      "manifesto": "No industrial project obtains its authorization without a compliant environmental study. That is our business, and our commitment.",
       "domains": [
         "Environment",
         "Industrial safety",
         "Occupational health & hygiene"
       ],
-      "body1": "BTH Expert is an accredited environmental consulting and engineering firm, operating in the fields of environment, safety, and hygiene in the western Algeria region.",
+      "body1": "BTH Expert is an accredited environmental consulting and engineering firm, operating in the fields of environment, safety, and hygiene in western Algeria.",
       "body2": "Environmental impact assessments, HSE audits, environmental management plans — rigorous deliverables, ready to be submitted to the competent authorities.",
       "cta": "Learn more"
     },
     "statement": {
-      "headingPart1": "Every industrial project begins with an",
+      "headingPart1": "Every industrial project starts with an",
       "headingEmphasis": "environmental",
-      "support": "BTH Expert transforms your regulatory obligations into a competitive advantage.",
+      "support": "BTH Expert turns your regulatory obligations into a competitive advantage.",
       "cta": "Discover our services"
     },
     "zones": {
-      "eyebrow": "Areas of operation",
+      "eyebrow": "Coverage areas",
       "heading": "Oran, at the heart of western Algeria",
       "address": "40, Lotissement 119\nBir El Djir, Oran",
       "phone": "+213 (670) 70 81 38",
