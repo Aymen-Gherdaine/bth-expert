@@ -13,7 +13,7 @@ Ces données doivent être **identiques partout** : site, Schema.org, Google Bus
 ```
 Nom:        BTH Expert
 Partenaire: BTH Consult (cité comme partenaire)
-Email:      info@bthexpert.dz
+Email:      info@bthexpert.com
 Téléphone:  +213 (670) 70 81 38
 Adresse:    40, Lotissement 119, Bir El Djir, Oran, Algérie
 Fondé:      2009
@@ -97,7 +97,7 @@ Decap CMS / Agent IA → écrit markdown dans content/
 **Formulaire de contact :**
 ```
 Utilisateur → formulaire → Netlify Function
-   → validation + anti-spam → email vers contact@bthexpert.com
+   → validation + anti-spam → email vers info@bthexpert.com
 ```
 
 **Agent IA blog (mensuel) :**

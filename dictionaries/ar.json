@@ -45,7 +45,7 @@
     "info": {
       "heading": "معلومات الاتصال",
       "emailLabel": "البريد الإلكتروني",
-      "email": "contact@bthexpert.com",
+      "email": "info@bthexpert.com",
       "phoneLabel": "الهاتف",
       "phone": "+213 670 70 81 38",
       "addressLabel": "العنوان",
@@ -76,7 +76,7 @@
       "submitting": "جارٍ الإرسال...",
       "successTitle": "تم إرسال الرسالة.",
       "successMessage": "شكراً لك، سنرد عليك خلال 24 ساعة.",
-      "errorMessage": "حدث خطأ. يرجى المحاولة مرة أخرى أو مراسلتنا مباشرة على contact@bthexpert.com."
+      "errorMessage": "حدث خطأ. يرجى المحاولة مرة أخرى أو مراسلتنا مباشرة على info@bthexpert.com."
     },
     "process": {
       "eyebrow": "منهجيتنا",
@@ -497,7 +497,7 @@
       "heading": "بيانات الاتصال",
       "address": "40، تجزئة 119، بئر الجير، وهران",
       "phone": "+213 670 70 81 38",
-      "email": "contact@bthexpert.com"
+      "email": "info@bthexpert.com"
     },
     "cta": {
       "heading": "مشروعكم في وهران",
@@ -931,7 +931,7 @@
       "description": "صِف لنا مشروعك وقيودك التنظيمية وجدولك الزمني. سنعود إليك في غضون 48 ساعة.",
       "cta": "طلب عرض أسعار",
       "phone": "+213 670 70 81 38",
-      "email": "contact@bthexpert.com"
+      "email": "info@bthexpert.com"
     },
     "faq": {
       "heading": "الأسئلة الشائعة",
@@ -981,7 +981,7 @@
       "heading": "وهران، في قلب غرب الجزائر",
       "address": "40، مجزأة 119\nبئر الجير، وهران",
       "phone": "+213 (670) 70 81 38",
-      "email": "contact@bthexpert.com",
+      "email": "info@bthexpert.com",
       "cta": "اتصل بنا",
       "coverage": "نغطي جميع ولايات الجزائر."
     }
