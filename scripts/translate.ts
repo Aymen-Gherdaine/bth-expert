@@ -19,9 +19,24 @@ import crypto from "crypto";
 import { pathToFileURL } from "url";
 import matter from "gray-matter";
 import Anthropic from "@anthropic-ai/sdk";
+import {
+  collectStringLeaves,
+  diffPlaceholders,
+  diffStructure,
+  hasSameStructure,
+  rebuildWithTranslations,
+  type JsonValue,
+} from "./lib/i18n-tree";
 
 const ROOT = process.cwd();
-const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
+/**
+ * Modèle par défaut. Doit supporter les sorties structurées
+ * (`output_config.format`), sur lesquelles repose la garantie de structure —
+ * claude-sonnet-4-6 ne les supporte pas.
+ */
+const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-5";
+/** Marge confortable : l'arabe consomme nettement plus de tokens que le français. */
+const MAX_TOKENS = 16000;
 
 type Lang = "ar" | "en";
 const LANG_NAMES: Record<Lang, string> = { ar: "arabe", en: "anglais" };
@@ -59,10 +74,40 @@ function getClient(): Anthropic {
   return new Anthropic({ apiKey });
 }
 
-function extractJson(text: string): string {
-  const trimmed = text.trim();
-  const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/);
-  return fenced ? fenced[1].trim() : trimmed;
+/**
+ * Envoie une requête contrainte par un schéma JSON et retourne la réponse
+ * désérialisée. `output_config.format` garantit que la réponse est un JSON
+ * valide conforme au schéma — plus de balises markdown à éplucher ni de clé
+ * inventée par le modèle.
+ */
+async function requestJson(
+  client: Anthropic,
+  system: string,
+  payload: unknown,
+  schema: Record<string, unknown>
+): Promise<unknown> {
+  const message = await client.messages.create({
+    model: ANTHROPIC_MODEL,
+    max_tokens: MAX_TOKENS,
+    system,
+    messages: [{ role: "user", content: JSON.stringify(payload, null, 2) }],
+    output_config: { format: { type: "json_schema", schema } },
+  });
+
+  if (message.stop_reason === "max_tokens") {
+    throw new Error(
+      `Réponse tronquée à ${MAX_TOKENS} tokens : découper la section ou augmenter MAX_TOKENS.`
+    );
+  }
+  if (message.stop_reason === "refusal") {
+    throw new Error(`Requête refusée par le modèle : ${message.stop_details?.explanation ?? ""}`);
+  }
+
+  const textBlock = message.content.find((b) => b.type === "text");
+  if (!textBlock || textBlock.type !== "text") {
+    throw new Error("Réponse Anthropic sans contenu texte");
+  }
+  return JSON.parse(textBlock.text);
 }
 
 /** Empreinte stable d'une section de fr.json (détection de changement source). */
@@ -91,54 +136,81 @@ interface SectionPlan {
 
 /**
  * Décide, section par section, ce qui doit être (re)traduit : une section est
- * ignorée si sa source fr.json est inchangée (même hash) ET qu'une traduction
- * existe déjà. `force` retraduit tout. C'est ce qui élimine la retraduction
- * systématique des 17 sections à chaque exécution.
+ * ignorée si sa source fr.json est inchangée (même hash), qu'une traduction
+ * existe déjà ET que cette traduction a la même forme que la source. C'est ce
+ * qui élimine la retraduction systématique des 17 sections à chaque exécution.
+ *
+ * Le contrôle de forme sert d'auto-réparation : une section traduite
+ * autrefois avec une clé dérivée reste sinon figée dans le cache de hash,
+ * puisque sa source française, elle, n'a pas bougé.
  */
 export function planDictionaryTranslation(
-  fr: Record<string, unknown>,
-  existing: Record<string, unknown>,
+  fr: Record<string, JsonValue>,
+  existing: Record<string, JsonValue>,
   oldHashes: Record<string, string>,
   force: boolean
 ): SectionPlan[] {
   return Object.keys(fr).map((key) => {
     const hash = hashSection(fr[key]);
-    const unchanged = !force && oldHashes[key] === hash && existing[key] !== undefined;
+    const unchanged =
+      !force &&
+      oldHashes[key] === hash &&
+      existing[key] !== undefined &&
+      hasSameStructure(fr[key], existing[key]);
     return { key, hash, translate: !unchanged };
   });
 }
 
 /**
- * Traduit un objet JSON (valeurs uniquement, structure et clés identiques).
+ * Traduit une section du dictionnaire.
+ *
+ * Le modèle ne voit jamais l'arborescence : on lui envoie une table plate
+ * `chemin → texte français` et un schéma qui n'autorise exactement que ces
+ * chemins en sortie. L'objet final est ensuite reconstruit à partir de la
+ * source française, donc sa forme est correcte par construction.
  */
 async function translateJsonSection(
   client: Anthropic,
-  section: unknown,
+  section: JsonValue,
   lang: Lang,
   glossary: GlossaryEntry[]
-): Promise<unknown> {
+): Promise<JsonValue> {
+  const leaves = collectStringLeaves(section);
+  if (leaves.length === 0) return rebuildWithTranslations(section, {}).value;
+
   const system = `Tu traduis du contenu d'un site web pour BTH Expert (bureau d'études environnemental agréé en Algérie) du français vers le ${LANG_NAMES[lang]}.
 
+On te donne un objet plat : chaque clé est un chemin technique, chaque valeur est le texte français à traduire.
+
 Règles strictes :
-- Conserve exactement la même structure JSON (mêmes clés, même nombre d'éléments dans les tableaux). Ne traduis JAMAIS les clés, seulement les valeurs de type chaîne.
-- Ne traduis jamais les valeurs qui sont des chemins/URLs (commençant par "/" ou "http"), ni les espaces réservés entre accolades comme "{current}" ou "{total}" — recopie-les tels quels.
+- Renvoie exactement les mêmes clés, avec pour chaque clé la traduction de la valeur. Les clés sont des identifiants techniques : ne les traduis pas, ne les renomme pas, n'en ajoute ni n'en supprime.
+- Recopie tels quels les espaces réservés entre accolades comme "{current}" ou "{total}", ainsi que les chemins et URLs (commençant par "/" ou "http").
 - Applique strictement ce glossaire métier pour rester cohérent avec le reste du site :
 ${glossaryPrompt(glossary, lang)}
-- Pour l'arabe : rédige un arabe professionnel clair et direct (arabe standard moderne), en phrases courtes. Évite le style littéraire, ornemental ou poétique et les tournures alambiquées (pas de « في كنف », « مقروناً بتجذُّر », etc.) — privilégie le vocabulaire courant des affaires. Le texte sera affiché en RTL, donc ne change pas la ponctuation ni les sigles latins (ex: "EIE", "HSE") qui doivent rester en caractères latins.
-- Réponds UNIQUEMENT avec le JSON traduit, sans balises markdown, sans commentaire.`;
+- Pour l'arabe : rédige un arabe professionnel clair et direct (arabe standard moderne), en phrases courtes. Évite le style littéraire, ornemental ou poétique et les tournures alambiquées (pas de « في كنف », « مقروناً بتجذُّر », etc.) — privilégie le vocabulaire courant des affaires. Le texte sera affiché en RTL, donc ne change pas la ponctuation ni les sigles latins (ex: "EIE", "HSE") qui doivent rester en caractères latins.`;
 
-  const message = await client.messages.create({
-    model: ANTHROPIC_MODEL,
-    max_tokens: 8192,
-    system,
-    messages: [{ role: "user", content: JSON.stringify(section, null, 2) }],
-  });
+  const schema = {
+    type: "object",
+    properties: Object.fromEntries(leaves.map((leaf) => [leaf.path, { type: "string" }])),
+    required: leaves.map((leaf) => leaf.path),
+    additionalProperties: false,
+  };
+  const payload = Object.fromEntries(leaves.map((leaf) => [leaf.path, leaf.value]));
 
-  const textBlock = message.content.find((b) => b.type === "text");
-  if (!textBlock || textBlock.type !== "text") {
-    throw new Error("Réponse Anthropic sans contenu texte");
+  const translations = (await requestJson(client, system, payload, schema)) as Record<
+    string,
+    unknown
+  >;
+
+  const { value, missing } = rebuildWithTranslations(section, translations);
+  if (missing.length > 0) {
+    throw new Error(
+      `Traduction ${lang} incomplète — ${missing.length} chaîne(s) manquante(s) : ${missing
+        .slice(0, 5)
+        .join(", ")}`
+    );
   }
-  return JSON.parse(extractJson(textBlock.text));
+  return value;
 }
 
 async function translateDictionary(
@@ -149,16 +221,16 @@ async function translateDictionary(
   hashes: HashStore
 ) {
   const frPath = path.join(ROOT, "dictionaries", "fr.json");
-  const fr = JSON.parse(fs.readFileSync(frPath, "utf-8")) as Record<string, unknown>;
+  const fr = JSON.parse(fs.readFileSync(frPath, "utf-8")) as Record<string, JsonValue>;
 
   const outPath = path.join(ROOT, "dictionaries", `${lang}.json`);
-  const existing: Record<string, unknown> = fs.existsSync(outPath)
+  const existing: Record<string, JsonValue> = fs.existsSync(outPath)
     ? JSON.parse(fs.readFileSync(outPath, "utf-8"))
     : {};
 
   const plan = planDictionaryTranslation(fr, existing, hashes[lang] ?? {}, force);
 
-  const translated: Record<string, unknown> = {};
+  const translated: Record<string, JsonValue> = {};
   const newHashes: Record<string, string> = {};
   let translatedCount = 0;
   let skippedCount = 0;
@@ -174,6 +246,20 @@ async function translateDictionary(
     translated[key] = await translateJsonSection(client, fr[key], lang, glossary);
     newHashes[key] = hash;
     translatedCount++;
+  }
+
+  // Dernier filet avant écriture : le dictionnaire complet — sections
+  // retraduites comme sections reprises du cache — doit avoir la forme de
+  // fr.json. On préfère échouer que publier un dictionnaire qui cassera le
+  // build (ou, pire, une page en production).
+  const structureIssues = diffStructure(fr, translated);
+  const placeholderIssues =
+    structureIssues.length === 0 ? diffPlaceholders(fr, translated) : [];
+  if (structureIssues.length > 0 || placeholderIssues.length > 0) {
+    const details = [...structureIssues, ...placeholderIssues].slice(0, 10).join("\n  - ");
+    throw new Error(
+      `Dictionnaire ${lang} non conforme à fr.json — rien n'a été écrit :\n  - ${details}`
+    );
   }
 
   // Recompose la table de hash (purge au passage les sections supprimées).
@@ -211,7 +297,7 @@ Règles strictes :
 - Applique ce glossaire métier pour rester cohérent avec le reste du site :
 ${glossaryPrompt(glossary, lang)}
 - Si la langue cible est l'arabe : style professionnel clair et direct, phrases courtes, sans emphase littéraire ni tournures ornementales.
-- Réponds UNIQUEMENT avec un JSON de la forme {"title": "...", "description": "...", "tags": ["..."], "faq": [{"q": "...", "a": "..."}], "body": "..."}, sans balises markdown autour du JSON, sans commentaire.`;
+- Renvoie autant de tags et autant d'entrées de FAQ que la source, dans le même ordre.`;
 
   const payload = {
     title: frontmatter.title,
@@ -221,24 +307,47 @@ ${glossaryPrompt(glossary, lang)}
     body,
   };
 
-  const message = await client.messages.create({
-    model: ANTHROPIC_MODEL,
-    max_tokens: 8192,
-    system,
-    messages: [{ role: "user", content: JSON.stringify(payload, null, 2) }],
-  });
+  const schema = {
+    type: "object",
+    properties: {
+      title: { type: "string" },
+      description: { type: "string" },
+      tags: { type: "array", items: { type: "string" } },
+      faq: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: { q: { type: "string" }, a: { type: "string" } },
+          required: ["q", "a"],
+          additionalProperties: false,
+        },
+      },
+      body: { type: "string" },
+    },
+    required: ["title", "description", "tags", "faq", "body"],
+    additionalProperties: false,
+  };
 
-  const textBlock = message.content.find((b) => b.type === "text");
-  if (!textBlock || textBlock.type !== "text") {
-    throw new Error("Réponse Anthropic sans contenu texte");
-  }
-  const result = JSON.parse(extractJson(textBlock.text)) as {
+  const result = (await requestJson(client, system, payload, schema)) as {
     title: string;
     description: string;
     tags: string[];
     faq: { q: string; a: string }[];
     body: string;
   };
+
+  // Le schéma garantit les types, pas le cardinal des tableaux : un tag ou une
+  // question de FAQ perdus se verraient en production, pas au build.
+  if (result.tags.length !== payload.tags.length) {
+    throw new Error(
+      `Traduction ${lang} : ${payload.tags.length} tag(s) attendu(s), ${result.tags.length} reçu(s)`
+    );
+  }
+  if (result.faq.length !== payload.faq.length) {
+    throw new Error(
+      `Traduction ${lang} : ${payload.faq.length} entrée(s) de FAQ attendue(s), ${result.faq.length} reçue(s)`
+    );
+  }
 
   return {
     frontmatter: {
