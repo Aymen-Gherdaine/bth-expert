@@ -8,7 +8,6 @@ import { ContactProcess } from "@/components/sections/ContactProcess";
 import { RevealText } from "@/components/animations/RevealText";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 import { socialLinks } from "@/lib/social-links";
-import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -69,25 +68,18 @@ export default async function ContactPage({
           <div className="py-12 lg:py-16 grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Left: intro */}
             <div className="lg:col-span-5">
-              {/* Avatar cluster — team photos */}
-              <div className="flex -space-x-3 mb-9">
-                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
-                  <Image
-                    src="/amine.jpg"
-                    alt="Amine Lahmer"
-                    fill
-                    sizes="64px"
-                    className="object-cover"
-                  />
+              {/* Monogram cluster — decorative stand-in for the team.
+                  Purely ornamental, so it stays out of the a11y tree. */}
+              <div aria-hidden className="flex -space-x-3 mb-9">
+                <span className="grid size-16 place-items-center rounded-full ring-4 ring-cream-warm bg-brand">
+                  <span className="font-display font-light leading-none text-[1.375rem] tracking-[0.06em] text-cream">
+                    AL
+                  </span>
                 </span>
-                <span className="relative size-16 rounded-full ring-4 ring-cream-warm overflow-hidden">
-                  <Image
-                    src="/abdellah.jpg"
-                    alt="Abdellah"
-                    fill
-                    sizes="64px"
-                    className="object-cover"
-                  />
+                <span className="grid size-16 place-items-center rounded-full ring-4 ring-cream-warm bg-[color-mix(in_srgb,var(--color-gold)_22%,var(--color-cream))]">
+                  <span className="font-display font-light leading-none text-[1.375rem] tracking-[0.06em] text-gold-ink">
+                    AB
+                  </span>
                 </span>
               </div>
 
