@@ -42,6 +42,11 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: npm run translate ${{ inputs.force && '-- --force' || '' }}
 
+      # Filet indépendant du script de traduction : aucune dérive de structure
+      # ne doit atteindre main, où elle casse le build de tout le monde.
+      - name: Vérifier la structure des dictionnaires
+        run: npm run i18n:check
+
       - name: Commit et push si changement
         run: |
           git config user.name "bth-expert-bot"
