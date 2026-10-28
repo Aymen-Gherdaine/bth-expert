@@ -22,6 +22,11 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     // Ne s'applique pas aux assets statiques, API routes, admin Keystatic, etc.
-    "/((?!_next|api|keystatic|.*\\..*).*)",
+    // ni aux URLs déjà préfixées par une locale : le proxy n'y fait rien, mais
+    // il tourne en runtime Node, donc chaque requête matchée (documents ET
+    // prefetchs RSC) passait par une fonction avant d'être servie.
+    // Littéral statique imposé par Next : garder en phase avec `locales`
+    // (lib/i18n-config.ts).
+    "/((?!_next|api|keystatic|(?:fr|ar|en)(?:/|$)|.*\\..*).*)",
   ],
 };
