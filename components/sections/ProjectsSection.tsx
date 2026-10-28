@@ -4,6 +4,7 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
+import { useNearViewport } from "@/components/motion/useNearViewport";
 import { gsap } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
@@ -166,10 +167,12 @@ const ROW_LAYOUTS = [
  */
 export function ProjectsSection({ lang }: ProjectsSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const near = useNearViewport(sectionRef);
   const c = CONTENT[lang];
 
   useGSAP(
     () => {
+      if (!near) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       const section = sectionRef.current;
@@ -211,7 +214,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
           .from(bits, { y: 22, opacity: 0, duration: 0.7, stagger: 0.09 }, 0.3);
       });
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [near] }
   );
 
   return (
