@@ -1,7 +1,7 @@
 "use client";
 
 import { SECTION_PX } from "@/components/layout/Container";
-import { useRef } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
@@ -23,6 +23,27 @@ interface StatsBandProps {
 /** Each digit slot is this many em tall — matches the line-height below. */
 const SLOT_H = 1.1;
 
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange: () => void) {
+  const mq = window.matchMedia(REDUCED_MOTION_QUERY);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+
+/**
+ * True only on the client when motion is allowed. The server snapshot is
+ * false, so the prerendered HTML carries the final value ("10+") — the text
+ * crawlers index — and the 0–9 odometer stacks are mounted client-side only.
+ */
+function useCanAnimate(): boolean {
+  return useSyncExternalStore(
+    subscribeReducedMotion,
+    () => !window.matchMedia(REDUCED_MOTION_QUERY).matches,
+    () => false
+  );
+}
+
 function parseValue(value: string): { num: string; suffix: string; isNumeric: boolean } {
   const m = value.match(/^(\d+)(.*)$/);
   if (m) return { num: m[1], suffix: m[2], isNumeric: true };
@@ -33,27 +54,20 @@ function parseValue(value: string): { num: string; suffix: string; isNumeric: bo
  * Credibility band — ink numerals, gold hairlines, odometer scroll on scroll-in.
  * Each digit slot contains a vertical stack of 0–9 and scrolls to its target
  * value: units settle first, tens next, hundreds last — natural counter feel.
- * Reduced-motion: slots jump directly to their final position (no animation).
+ * Progressive enhancement: the server HTML renders the final digits only;
+ * the stacks + animation are added on the client. Reduced-motion and no-JS
+ * keep the static final value.
  */
 export function StatsBand({ stats }: StatsBandProps) {
   const ref = useRef<HTMLElement>(null);
+  const canAnimate = useCanAnimate();
 
   useGSAP(
     () => {
       const section = ref.current;
-      if (!section) return;
+      if (!section || !canAnimate) return;
 
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const cells = gsap.utils.toArray<HTMLElement>(section.querySelectorAll("[data-stat]"));
-
-      // ── Reduced-motion: snap slots to final positions immediately ──────
-      if (reduced) {
-        section.querySelectorAll<HTMLElement>("[data-digit-track]").forEach((track) => {
-          const target = parseInt(track.dataset.target ?? "0");
-          gsap.set(track, { y: `${-(target * SLOT_H)}em` });
-        });
-        return;
-      }
 
       // ── Cell entrance: fade + rise ─────────────────────────────────────
       gsap.from(cells, {
@@ -110,7 +124,7 @@ export function StatsBand({ stats }: StatsBandProps) {
         },
       });
     },
-    { scope: ref }
+    { scope: ref, dependencies: [canAnimate], revertOnUpdate: true }
   );
 
   return (
@@ -133,12 +147,11 @@ export function StatsBand({ stats }: StatsBandProps) {
                   className="block font-display font-light text-ink tracking-[-0.03em]"
                   style={{ fontSize: "clamp(3rem, 4.5vw + 0.5rem, 5rem)", lineHeight: 1 }}
                 >
-                  {/* Screen-reader value (the visual slots are aria-hidden) */}
-                  <span className="sr-only">{s.value}</span>
-
                   {isNumeric ? (
-                    /* Odometer slots — only for numeric values */
-                    <span aria-hidden className="inline-flex tabular-nums">
+                    /* Odometer slots — only for numeric values. role="img" makes
+                       aria-label valid here and keeps screen readers on the real
+                       value instead of the individual digit spans. */
+                    <span role="img" aria-label={s.value} className="inline-flex tabular-nums">
                       {digits.map((digit, i) => (
                         <span
                           key={i}
@@ -151,11 +164,13 @@ export function StatsBand({ stats }: StatsBandProps) {
                             className="block"
                             style={{ lineHeight: SLOT_H }}
                           >
-                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-                              <span key={n} className="block">
-                                {n}
-                              </span>
-                            ))}
+                            {canAnimate
+                              ? [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+                                  <span key={n} className="block">
+                                    {n}
+                                  </span>
+                                ))
+                              : digit}
                           </span>
                         </span>
                       ))}
@@ -163,7 +178,7 @@ export function StatsBand({ stats }: StatsBandProps) {
                     </span>
                   ) : (
                     /* Plain text — non-numeric values (e.g. "Agréé", "Accredited") */
-                    <span aria-hidden>{s.value}</span>
+                    <span>{s.value}</span>
                   )}
                 </div>
                 <span
