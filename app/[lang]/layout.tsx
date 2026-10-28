@@ -24,12 +24,17 @@ const geist = Geist({
 // Arabe : Fraunces et Geist n'embarquent aucune glyphe arabe. IBM Plex Sans
 // Arabic prend le relais via les variables --font-display / --font-sans
 // redéfinies sous [lang="ar"] dans globals.css. L'unicode-range arabe fait
-// que le navigateur ne télécharge la police que sur les pages /ar.
+// que le navigateur ne télécharge la police que sur les pages /ar — à
+// condition de ne PAS la précharger : un <link rel="preload"> ignore
+// l'unicode-range et forçait les 5 fichiers (~176 KB) sur chaque page FR/EN,
+// en concurrence avec le CSS et l'image LCP. Sur /ar, elle est découverte
+// via le CSS (display: swap), coût limité à cette locale.
 const ibmArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-ibm-arabic",
   display: "swap",
+  preload: false,
 });
 
 export function generateStaticParams() {
