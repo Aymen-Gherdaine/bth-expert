@@ -5,6 +5,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
+import { useNearViewport } from "@/components/motion/useNearViewport";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
@@ -29,6 +30,7 @@ interface StatementSectionProps {
  */
 export function StatementSection({ lang, content }: StatementSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const near = useNearViewport(sectionRef);
   const filetRef = useRef<HTMLSpanElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const supportRef = useRef<HTMLParagraphElement>(null);
@@ -38,6 +40,7 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
 
   useGSAP(
     () => {
+      if (!near) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       const heading = headingRef.current;
       const photo = photoRef.current;
@@ -111,7 +114,7 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
         mm.revert();
       };
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [near] }
   );
 
   return (

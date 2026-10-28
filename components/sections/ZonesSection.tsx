@@ -4,6 +4,7 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
+import { useNearViewport } from "@/components/motion/useNearViewport";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
@@ -66,6 +67,7 @@ const MAP_LABEL: Record<Locale, string> = {
 
 export function ZonesSection({ lang, content }: ZonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const near = useNearViewport(sectionRef);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
   const lineRef = useRef<HTMLSpanElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -81,6 +83,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
 
   useGSAP(
     () => {
+      if (!near) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       const heading = headingRef.current;
       const connector = connectorRef.current;
@@ -188,7 +191,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
 
       return () => split.revert();
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [near] }
   );
 
   return (

@@ -4,6 +4,7 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
+import { useNearViewport } from "@/components/motion/useNearViewport";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
@@ -53,9 +54,11 @@ const SERVICE_SLUGS: Record<string, string> = {
  */
 export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const near = useNearViewport(sectionRef);
 
   useGSAP(
     () => {
+      if (!near) return;
       const section = sectionRef.current;
       if (!section) return;
 
@@ -150,7 +153,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
         }
       });
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [near] }
   );
 
   return (

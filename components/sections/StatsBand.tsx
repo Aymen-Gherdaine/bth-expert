@@ -3,6 +3,7 @@
 import { SECTION_PX } from "@/components/layout/Container";
 import { useRef, useSyncExternalStore } from "react";
 import { useGSAP } from "@gsap/react";
+import { useNearViewport } from "@/components/motion/useNearViewport";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 interface StatItem {
@@ -61,11 +62,12 @@ function parseValue(value: string): { num: string; suffix: string; isNumeric: bo
 export function StatsBand({ stats }: StatsBandProps) {
   const ref = useRef<HTMLElement>(null);
   const canAnimate = useCanAnimate();
+  const near = useNearViewport(ref);
 
   useGSAP(
     () => {
       const section = ref.current;
-      if (!section || !canAnimate) return;
+      if (!section || !canAnimate || !near) return;
 
       const cells = gsap.utils.toArray<HTMLElement>(section.querySelectorAll("[data-stat]"));
 
@@ -124,7 +126,7 @@ export function StatsBand({ stats }: StatsBandProps) {
         },
       });
     },
-    { scope: ref, dependencies: [canAnimate], revertOnUpdate: true }
+    { scope: ref, dependencies: [canAnimate, near], revertOnUpdate: true }
   );
 
   return (

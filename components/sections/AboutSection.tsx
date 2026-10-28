@@ -4,6 +4,7 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { useRef } from "react";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
+import { useNearViewport } from "@/components/motion/useNearViewport";
 import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
@@ -23,10 +24,12 @@ interface AboutSectionProps {
 
 export function AboutSection({ lang, content }: AboutSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const near = useNearViewport(sectionRef);
   const lineRef    = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
+      if (!near) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       const section = sectionRef.current;
@@ -169,7 +172,7 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
         mm.revert();
       };
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [near] }
   );
 
   return (
