@@ -33,6 +33,16 @@ const TITLE: Record<Locale, string> = {
   en: "Our expertise",
 };
 
+// Each row deep-links to its dedicated page (internal linking toward the
+// money pages) rather than the /services hub. Keyed by the dictionary abbr,
+// identical across locales; unknown abbrs fall back to the hub.
+const SERVICE_SLUGS: Record<string, string> = {
+  EIE: "etude-impact-environnemental",
+  EDD: "etude-de-dangers",
+  HSE: "audit-hse",
+  PGE: "plan-gestion-environnementale",
+};
+
 /**
  * Services — signature pin-scroll (manifesto Pattern 1, DOMINANT).
  * The left visual stays fixed (CSS sticky — robust with Lenis, no fragile
@@ -221,7 +231,11 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
             {services.items.map((item, i) => (
               <Link
                 key={item.abbr}
-                href={`/${lang}/services`}
+                href={
+                  SERVICE_SLUGS[item.abbr]
+                    ? `/${lang}/services/${SERVICE_SLUGS[item.abbr]}`
+                    : `/${lang}/services`
+                }
                 data-row
                 className="group relative block border-t border-line py-8 lg:py-14"
               >

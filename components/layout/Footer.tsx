@@ -4,6 +4,7 @@ import { Container } from "./Container";
 import { LangSwitcher } from "./LangSwitcher";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { socialLinks } from "@/lib/social-links";
+import { socialProfiles } from "@/lib/site-config";
 
 interface FooterProps {
   lang: Locale;
@@ -49,6 +50,10 @@ export async function Footer({ lang }: FooterProps) {
   const dict = await getDictionary(lang);
   const exp = EXPERTISES[lang];
   const year = new Date().getFullYear();
+  const socials = socialLinks.flatMap((social) => {
+    const profile = socialProfiles.find((p) => p.network === social.label);
+    return profile ? [{ ...social, href: profile.url }] : [];
+  });
 
   return (
     // GISI-style reveal: footer sticks to the viewport bottom behind the
@@ -72,20 +77,22 @@ export async function Footer({ lang }: FooterProps) {
             <p className="text-[var(--color-on-brand-muted)] text-sm leading-relaxed max-w-sm mb-6">
               {dict.metadata.homeDescription}
             </p>
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="flex items-center justify-center size-9 rounded-full bg-cream/10 text-cream hover:bg-gold hover:text-brand-deep transition-colors duration-300 ease-[var(--ease-out-expo)]"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="size-4">
-                    <path d={social.path} />
-                  </svg>
-                </a>
-              ))}
-            </div>
+            {socials.length > 0 && (
+              <div className="flex gap-3">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="flex items-center justify-center size-9 rounded-full bg-cream/10 text-cream hover:bg-gold hover:text-brand-deep transition-colors duration-300 ease-[var(--ease-out-expo)]"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="size-4">
+                      <path d={social.path} />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Navigation + Expertises — share one continuous divider, not two broken halves */}
