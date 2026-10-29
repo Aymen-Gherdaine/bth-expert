@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import fr from "@/dictionaries/fr.json";
+import { siteContact } from "@/lib/site-config";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
@@ -165,7 +166,7 @@ export default async function ContactPage({
 
                 <div className="mb-6">
                   <a
-                    href="https://wa.me/213670708138?text=Bonjour%20BTH%20Expert%2C%20je%20souhaite%20discuter%20d%27un%20projet."
+                    href={`https://wa.me/${siteContact.whatsappNumber}?text=Bonjour%20BTH%20Expert%2C%20je%20souhaite%20discuter%20d%27un%20projet.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-5 py-3 rounded-sm bg-[#25D366] text-white font-sans font-medium text-[0.9375rem] hover:opacity-90 transition-opacity duration-[var(--duration-base)]"

@@ -4,7 +4,7 @@ import { Container } from "./Container";
 import { LangSwitcher } from "./LangSwitcher";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { socialLinks } from "@/lib/social-links";
-import { socialProfiles } from "@/lib/site-config";
+import { socialProfiles, siteContact } from "@/lib/site-config";
 
 interface FooterProps {
   lang: Locale;
@@ -171,19 +171,19 @@ export async function Footer({ lang }: FooterProps) {
             <h2 className={columnHeaderClass}>{dict.nav.contact}</h2>
             <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
-                <a href="mailto:info@bthexpert.com" className={linkClass}>
-                  info@bthexpert.com
+                <a href={`mailto:${siteContact.email}`} className={linkClass}>
+                  {siteContact.email}
                 </a>
               </li>
               <li>
-                <a href="tel:+213670708138" dir="ltr" className={linkClass}>
-                  +213 670 70 81 38
+                <a href={`tel:${siteContact.phoneE164}`} dir="ltr" className={linkClass}>
+                  {siteContact.phoneDisplay}
                 </a>
               </li>
               <li className="text-[var(--color-on-brand-faint)] text-xs leading-relaxed pt-2">
-                40, Lotissement 119<br />
-                Bir El Djir, Oran<br />
-                Algérie
+                {siteContact.address.street}<br />
+                {siteContact.address.locality}, {siteContact.address.city}<br />
+                {siteContact.address.country}
               </li>
             </ul>
           </div>

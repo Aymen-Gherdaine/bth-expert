@@ -6,6 +6,7 @@ import { Nav } from "./Nav";
 import { LangSwitcher } from "./LangSwitcher";
 import { HeaderScrollState } from "./HeaderScrollState";
 import { MobileMenu } from "./MobileMenu";
+import { siteContact } from "@/lib/site-config";
 
 interface HeaderProps {
   lang: Locale;
@@ -53,17 +54,17 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                 style={{ fontSize: "0.75rem", letterSpacing: "0.04em" }}
               >
                 <a
-                  href="tel:+213670708138"
+                  href={`tel:${siteContact.phoneE164}`}
                   dir="ltr"
                   className="hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
-                  +213 (670) 70 81 38
+                  {siteContact.phoneDisplay}
                 </a>
                 <a
-                  href="mailto:info@bthexpert.com"
+                  href={`mailto:${siteContact.email}`}
                   className="hidden sm:inline hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
-                  info@bthexpert.com
+                  {siteContact.email}
                 </a>
               </div>
               <LangSwitcher currentLocale={lang} isDark={overlay} />
@@ -125,8 +126,8 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                   { href: `/${lang}/blog`, label: dict.nav.blog },
                   { href: `/${lang}/contact`, label: dict.nav.contact },
                 ]}
-                phone="+213 (670) 70 81 38"
-                email="info@bthexpert.com"
+                phone={siteContact.phoneDisplay}
+                email={siteContact.email}
                 ctaLabel={dict.nav.quote}
                 ctaHref={`/${lang}/contact`}
                 lang={lang}
