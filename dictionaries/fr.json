@@ -58,7 +58,7 @@
       "namePlaceholder": "Votre nom complet",
       "emailPlaceholder": "Votre adresse e-mail",
       "phonePlaceholder": "+213 6XX XX XX XX",
-      "messagePlaceholder": "Décrivez votre projet en quelques mots — nous vous rappelons pour en discuter",
+      "messagePlaceholder": "Décrivez votre projet en quelques mots. Nous vous rappelons pour en discuter.",
       "projectType": "Type de projet",
       "projectTypePlaceholder": "Sélectionnez un type",
       "projectTypeOptions": {
@@ -113,13 +113,13 @@
     "hero": {
       "eyebrow": "Experts agréés · Oran, Algérie",
       "heading": "Experts & partenaires",
-      "subheading": "BTH Expert mobilise une expertise internationale forgée au sein des grands groupes d'ingénierie canadiens, combinée à un ancrage profond dans les réalités réglementaires et industrielles de l'Algérie."
+      "subheading": "Une expérience acquise dans les grands groupes d'ingénierie canadiens, mise au service des réalités réglementaires et industrielles de l'Algérie."
     },
     "members": [
       {
         "name": "Amine Lahmer",
-        "role": "Co-fondateur & Gérant — Expert environnement",
-        "bio": "Ingénieur en environnement, Amine Lahmer a acquis plusieurs années d'expérience terrain au sein de grands groupes d'ingénierie canadiens — notamment GHD et AtkinsRéalis — sur des projets industriels complexes en Algérie et au Canada. Certifié par l'Institut Algérien du Pétrole (Sonatrach/IAP), il maîtrise les référentiels réglementaires algériens et les standards internationaux en matière d'études d'impact, d'études de dangers et de gestion des risques industriels. Il co-fonde BTH Expert avec l'ambition d'apporter à l'industrie algérienne une expertise de premier plan forgée sur le terrain international.",
+        "role": "Co-fondateur & Gérant, expert environnement",
+        "bio": "Ingénieur en environnement, Amine Lahmer a acquis plusieurs années d'expérience terrain au sein de grands groupes d'ingénierie canadiens, notamment GHD et AtkinsRéalis, sur des projets industriels complexes en Algérie et au Canada. Certifié par l'Institut Algérien du Pétrole (Sonatrach/IAP), il maîtrise les référentiels réglementaires algériens et les standards internationaux en matière d'études d'impact, d'études de dangers et de gestion des risques industriels. Il co-fonde BTH Expert avec l'ambition d'apporter à l'industrie algérienne une expertise de premier plan forgée sur le terrain international.",
         "credentials": [
           "GHD · AtkinsRéalis",
           "Certifié Sonatrach / IAP",
@@ -128,7 +128,7 @@
       },
       {
         "name": "Hakim Belgouini",
-        "role": "Partenaire — BTH Consult",
+        "role": "Partenaire, BTH Consult",
         "bio": "Fort de plus de 40 ans d'expérience dans les études environnementales et les projets industriels en Algérie, Hakim Belgouini est un référent reconnu du secteur dans l'ouest et le centre du pays. À la tête de BTH Consult, il apporte à chaque mission un ancrage profond dans les réalités réglementaires algériennes et un réseau éprouvé auprès des administrations de wilaya et des maîtres d'ouvrage industriels.",
         "credentials": [
           "40+ ans d'expérience",
@@ -139,7 +139,7 @@
     ],
     "partner": {
       "heading": "Partenariat BTH Consult",
-      "description": "BTH Expert et BTH Consult forment un partenariat structuré pour les projets d'envergure. Cette alliance réunit complémentairement l'expertise internationale d'Amine Lahmer et les 40 années de pratique terrain de Hakim Belgouini en Algérie — garantissant une couverture technique et réglementaire complète sur chaque mission."
+      "description": "BTH Expert et BTH Consult forment un partenariat structuré pour les projets d'envergure. Elle réunit l'expertise internationale d'Amine Lahmer et les 40 années de pratique terrain de Hakim Belgouini en Algérie, pour une couverture technique et réglementaire complète sur chaque mission."
     },
     "cta": {
       "heading": "Travaillons ensemble",
@@ -226,7 +226,7 @@
       },
       {
         "q": "Qui valide le rapport final ?",
-        "a": "Les autorités de wilaya — Direction de l'Environnement (DEW) et Direction de l'Industrie et des Mines (DIM)."
+        "a": "Les autorités de wilaya : la Direction de l'Environnement (DEW) et la Direction de l'Industrie et des Mines (DIM)."
       }
     ],
     "cta": {
@@ -261,7 +261,7 @@
     ],
     "why": {
       "heading": "Qui est concerné ?",
-      "description": "Tout exploitant d'une installation classée pour la protection de l'environnement soumise à autorisation — stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression — doit produire une étude de dangers avant la mise en exploitation et la réviser à chaque modification substantielle."
+      "description": "Tout exploitant d'une installation classée pour la protection de l'environnement soumise à autorisation (stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression) doit produire une étude de dangers avant la mise en exploitation et la réviser à chaque modification substantielle."
     },
     "methodology": {
       "heading": "Notre méthodologie",
@@ -303,7 +303,7 @@
       },
       {
         "q": "Faut-il la réviser ?",
-        "a": "Oui — à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre."
+        "a": "Oui, à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre."
       }
     ],
     "cta": {
@@ -372,7 +372,7 @@
     "faq": [
       {
         "q": "Quand réaliser un audit HSE ?",
-        "a": "Avant une inspection, une certification ISO, une acquisition ou une extension — ou simplement pour sécuriser durablement votre conformité."
+        "a": "Avant une inspection, une certification ISO, une acquisition ou une extension, ou simplement pour sécuriser durablement votre conformité."
       },
       {
         "q": "Quel est le livrable ?",
@@ -380,7 +380,7 @@
       },
       {
         "q": "Intervenez-vous sur site ?",
-        "a": "Oui — revue documentaire puis visite de terrain, entretiens et observation des pratiques réelles."
+        "a": "Oui. Revue documentaire puis visite de terrain, entretiens et observation des pratiques réelles."
       }
     ],
     "cta": {
@@ -661,7 +661,7 @@
     "hero": {
       "eyebrow": "À propos · Bureau agréé · Oran, Algérie",
       "heading": "Un bureau d'études au service de l'industrie algérienne",
-      "subheading": "BTH Expert réunit une expertise internationale — forgée au sein des grands groupes d'ingénierie mondiaux — et une connaissance fine du cadre réglementaire algérien, pour accompagner les porteurs de projets industriels de l'étude d'impact à la conformité."
+      "subheading": "BTH Expert réunit une expertise internationale, acquise dans de grands groupes d'ingénierie, et une connaissance précise du cadre réglementaire algérien. Nous accompagnons les porteurs de projets industriels de l'étude d'impact jusqu'à l'autorisation."
     },
     "timeline": {
       "eyebrow": "Notre parcours",
@@ -670,7 +670,7 @@
         {
           "year": "Formation",
           "title": "Maîtrise en génie de l'environnement",
-          "description": "Formation à l'École de technologie supérieure (ÉTS, Montréal) — expertise en évaluation des impacts environnementaux, gestion des risques industriels et standards internationaux."
+          "description": "Formation à l'École de technologie supérieure (ÉTS, Montréal). Évaluation des impacts environnementaux, gestion des risques industriels et standards internationaux."
         },
         {
           "year": "Terrain",
@@ -680,7 +680,7 @@
         {
           "year": "International",
           "title": "Grands groupes d'ingénierie",
-          "description": "Parcours professionnel au sein de groupes d'ingénierie de premier plan — dont AtkinsRéalis — sur des projets environnementaux complexes en Algérie et à l'international."
+          "description": "Parcours professionnel au sein de groupes d'ingénierie de premier plan, dont AtkinsRéalis, sur des projets environnementaux complexes en Algérie et à l'international."
         },
         {
           "year": "Agrément",
@@ -700,7 +700,7 @@
     },
     "partner": {
       "heading": "Partenariat BTH Consult",
-      "description": "Notre modèle associe l'expertise d'un consultant agréé au savoir-faire de BTH Consult. Ce partenariat renforce notre capacité d'intervention et mobilise une équipe pluridisciplinaire — environnement, eau, santé, sécurité et ingénierie — pour les projets d'envergure régionale et nationale."
+      "description": "Notre modèle associe l'expertise d'un consultant agréé au savoir-faire de BTH Consult. Ce partenariat renforce notre capacité d'intervention et mobilise une équipe pluridisciplinaire (environnement, eau, santé, sécurité et ingénierie) pour les projets d'envergure régionale et nationale."
     },
     "expertise": {
       "eyebrow": "Expertise",
@@ -709,11 +709,11 @@
         {
           "name": "Amine Lahmer",
           "role": "Fondateur & Gérant",
-          "description": "Plusieurs années d'expérience terrain au sein de grands groupes d'ingénierie canadiens — notamment GHD et AtkinsRéalis — sur des projets industriels complexes en Algérie et au Canada. Certifié Sonatrach/IAP et agréé par le Ministère de l'Environnement algérien."
+          "description": "Plusieurs années d'expérience terrain au sein de grands groupes d'ingénierie canadiens, notamment GHD et AtkinsRéalis, sur des projets industriels complexes en Algérie et au Canada. Certifié Sonatrach/IAP et agréé par le Ministère de l'Environnement algérien."
         },
         {
           "name": "Hakim Belgouini",
-          "role": "Partenaire — BTH Consult",
+          "role": "Partenaire, BTH Consult",
           "description": "Plus de 40 ans d'expérience dans les études environnementales et les projets industriels en Algérie. Un ancrage profond dans les réalités réglementaires de l'ouest et du centre algérien, au service des projets d'envergure régionale et nationale."
         }
       ]
@@ -798,7 +798,7 @@
         "annee": "2022",
         "contexte": "Implantation d'une nouvelle unité de transformation au sein d'une zone industrielle existante, à proximité de tiers et de milieux sensibles. Le projet, soumis à autorisation, nécessitait une évaluation environnementale et une caractérisation des risques majeurs avant instruction.",
         "demarche": "État initial du site, analyse des impacts sur l'air, l'eau et le milieu humain, modélisation des scénarios d'accident majeur (effets thermiques et de surpression) et définition des mesures d'atténuation et de maîtrise des risques.",
-        "resultat": "Un dossier réglementaire complet — EIE et EDD — déposé auprès des autorités de wilaya, assorti d'un plan de gestion environnementale et d'un plan d'urgence interne."
+        "resultat": "Un dossier réglementaire complet, EIE et EDD, déposé auprès des autorités de wilaya, assorti d'un plan de gestion environnementale et d'un plan d'urgence interne."
       },
       {
         "slug": "cimenterie-ouest-algerien",
@@ -859,14 +859,14 @@
       "headlinePart1": "Expertise",
       "headlineEmphasis": "environnementale",
       "headlinePart2": "& industrielle",
-      "subheading": "Bureau d'études agréé. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.",
+      "subheading": "Bureau d'études agréé par le Ministère de l'Environnement. Nous réalisons les études d'impact, les études de dangers et les audits HSE qui conditionnent l'autorisation de vos installations.",
       "cta": "Parlez-nous de votre projet",
       "ctaSecondary": "Nos services"
     },
     "services": {
       "sectionNumber": "01",
       "eyebrow": "Services",
-      "heading": "Des études rigoureuses, des livrables conformes",
+      "heading": "Quatre études. Un objectif, l'autorisation de votre site.",
       "items": [
         {
           "abbr": "EIE",
@@ -967,13 +967,13 @@
         "Hygiène & santé au travail"
       ],
       "body1": "BTH Expert est une société agréée de conseil et d'ingénierie environnementale, intervenant dans les domaines de l'environnement, de la sécurité et de l'hygiène en région Ouest algérienne.",
-      "body2": "Études d'impact, audits HSE, plans de gestion environnementale — des livrables rigoureux, prêts à déposer auprès des autorités compétentes.",
+      "body2": "Études d'impact, audits HSE, plans de gestion environnementale. Chaque rapport suit le canevas réglementaire et part prêt à déposer à la Direction de l'Environnement de wilaya.",
       "cta": "En savoir plus"
     },
     "statement": {
       "headingPart1": "Chaque projet industriel commence par une question",
       "headingEmphasis": "environnementale",
-      "support": "BTH Expert transforme vos obligations réglementaires en avantage compétitif.",
+      "support": "Un dossier complet dès le premier dépôt évite les demandes de compléments qui coûtent des mois. C'est le travail que nous livrons.",
       "cta": "Découvrir nos services"
     },
     "zones": {

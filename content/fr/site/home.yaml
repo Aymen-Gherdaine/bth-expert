@@ -3,13 +3,13 @@ hero:
   headlinePart1: Expertise
   headlineEmphasis: environnementale
   headlinePart2: '& industrielle'
-  subheading: Bureau d'études agréé. Études d'impact, études de dangers, audits HSE — nous sécurisons l'autorisation de vos projets industriels.
+  subheading: Bureau d'études agréé par le Ministère de l'Environnement. Nous réalisons les études d'impact, les études de dangers et les audits HSE qui conditionnent l'autorisation de vos installations.
   cta: Parlez-nous de votre projet
   ctaSecondary: Nos services
 services:
   sectionNumber: '01'
   eyebrow: Services
-  heading: Des études rigoureuses, des livrables conformes
+  heading: Quatre études. Un objectif, l'autorisation de votre site.
   items:
     - abbr: EIE
       title: Étude d'Impact sur l'Environnement
@@ -75,12 +75,12 @@ about:
     - Sécurité industrielle
     - Hygiène & santé au travail
   body1: "BTH Expert est une société agréée de conseil et d'ingénierie environnementale, intervenant dans les domaines de l'environnement, de la sécurité et de l'hygiène en région Ouest algérienne."
-  body2: "Études d'impact, audits HSE, plans de gestion environnementale — des livrables rigoureux, prêts à déposer auprès des autorités compétentes."
+  body2: "Études d'impact, audits HSE, plans de gestion environnementale. Chaque rapport suit le canevas réglementaire et part prêt à déposer à la Direction de l'Environnement de wilaya."
   cta: En savoir plus
 statement:
   headingPart1: Chaque projet industriel commence par une question
   headingEmphasis: environnementale
-  support: BTH Expert transforme vos obligations réglementaires en avantage compétitif.
+  support: Un dossier complet dès le premier dépôt évite les demandes de compléments qui coûtent des mois. C'est le travail que nous livrons.
   cta: Découvrir nos services
 zones:
   eyebrow: Zones d'intervention

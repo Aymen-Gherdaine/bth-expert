@@ -15,7 +15,7 @@ heroMeta:
     value: Rapport EDD
 why:
   heading: Qui est concerné ?
-  description: Tout exploitant d'une installation classée pour la protection de l'environnement soumise à autorisation — stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression — doit produire une étude de dangers avant la mise en exploitation et la réviser à chaque modification substantielle.
+  description: Tout exploitant d'une installation classée pour la protection de l'environnement soumise à autorisation (stockage d'hydrocarbures, unités pétrochimiques, dépôts de produits dangereux, équipements sous pression) doit produire une étude de dangers avant la mise en exploitation et la réviser à chaque modification substantielle.
 methodology:
   heading: Notre méthodologie
   steps:
@@ -40,7 +40,7 @@ faq:
   - q: Que contient l'étude de dangers ?
     a: Identification des dangers, modélisation des scénarios majeurs (effets thermiques, surpression, toxiques), cartographie des zones d'effet et plan de maîtrise des risques.
   - q: Faut-il la réviser ?
-    a: Oui — à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre.
+    a: Oui, à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre.
 cta:
   heading: Votre installation requiert une EDD ?
   description: Transmettez-nous les caractéristiques de votre installation et de vos procédés. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.
