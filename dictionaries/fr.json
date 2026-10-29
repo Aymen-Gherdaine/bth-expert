@@ -518,6 +518,13 @@
     "enjeuxLabel": "Enjeux clés",
     "sousSecteursLabel": "Domaines couverts",
     "prestationsLabel": "Prestations associées",
+    "textesLabel": "Textes applicables",
+    "textesIntro": "Les textes qui encadrent ce secteur, et ce qu'ils déclenchent concrètement. Chaque référence renvoie à sa fiche vérifiée sur le Journal officiel.",
+    "parcoursLabel": "Études exigées, dans l'ordre",
+    "parcoursIntro": "Le parcours type d'un projet de ce secteur, de la lecture de la nomenclature à l'exploitation. Les délais cités sont ceux des textes.",
+    "projetsLabel": "Étude de cas dans ce secteur",
+    "readFiche": "Lire la fiche",
+    "readProjet": "Lire l'étude de cas",
     "cta": {
       "heading": "Un projet dans votre secteur ?",
       "description": "Décrivez-nous votre projet et son contexte industriel. Nous évaluons vos obligations réglementaires et vous remettons une offre sous 48h.",
@@ -555,6 +562,73 @@
           "Étude de dangers",
           "Audit HSE",
           "Plan de gestion environnementale"
+        ],
+        "nomenclatureNote": "Raffinage, pétrochimie, cimenteries, métallurgie et traitements de surface relèvent des rubriques « substances » (1100 à 1800 : très toxiques, toxiques, inflammables, comburantes, corrosives) et des familles « matériaux, minerais et métaux » (2500) et « chimie, caoutchouc » (2600) de la nomenclature. Au-delà des seuils de quantité ou de capacité, le régime passe de l'autorisation du wali à l'autorisation ministérielle, avec étude d'impact et étude de danger exigées, et un rayon d'affichage de l'enquête publique qui atteint plusieurs kilomètres.",
+        "textes": [
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "C'est la nomenclature qui classe votre site : elle fixe, rubrique par rubrique, l'autorité compétente, le rayon d'affichage et les études exigées. Un complexe industriel relève souvent de plusieurs rubriques ; la plus contraignante fait la catégorie."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "Établissement classé de 1re ou 2e catégorie dans la plupart des cas : étude d'impact et étude de danger approuvées avant la demande, accord préalable de création sous quinze jours avant tout travaux, visite de conformité, autorisation par arrêté conjoint des ministres ou du wali."
+          },
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "Contenu de l'étude d'impact (article 6), dépôt auprès du wali en quatorze exemplaires, enquête publique de quinze jours sauf en zone industrielle, approbation par le ministre chargé de l'environnement."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "Étude de vulnérabilité avant mise en place (article 75) et plan interne d'intervention (article 76) ; plan particulier d'intervention lorsque l'étude de danger conclut que les effets peuvent dépasser les limites du site (décret 25-63)."
+          },
+          {
+            "fiche": "decret-23-324-agrement-bureaux-etudes",
+            "note": "Les études doivent être signées par un bureau agréé ; la copie de la décision d'agrément fait partie de l'étude d'impact depuis 2018."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Classer chaque installation",
+            "description": "Rapprocher procédés, stockages et capacités des rubriques de la nomenclature ; en déduire la catégorie de l'établissement, l'autorité compétente et le rayon d'affichage. Livrable : note de classement.",
+            "service": null
+          },
+          {
+            "title": "Étude d'impact sur l'environnement",
+            "description": "État initial avec relevés, impacts des rejets atmosphériques et aqueux et des déchets spéciaux, mesures chiffrées, plan de gestion de l'environnement. Approbation par le ministre chargé de l'environnement après enquête publique.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Étude d'Impact sur l'Environnement"
+            }
+          },
+          {
+            "title": "Étude de danger",
+            "description": "Scénarios d'accident majeur, zones d'effet thermique, de surpression et toxique, mesures de maîtrise. Dépôt en huit exemplaires, examen par la commission interministérielle ou de wilaya, approbation signée par les ministres ou le wali.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Étude de Dangers"
+            }
+          },
+          {
+            "title": "Demande d'autorisation d'exploitation",
+            "description": "Dossier déposé auprès du wali avec les deux études approuvées ; accord préalable de création sous quinze jours ; travaux ; visite de conformité ; autorisation sous trois mois avec ses prescriptions.",
+            "service": null
+          },
+          {
+            "title": "Plan de gestion et plan interne d'intervention",
+            "description": "Mise en œuvre du programme de surveillance de l'étude d'impact et du plan interne d'intervention approuvé par la commission de wilaya, avec au moins deux exercices par an.",
+            "service": {
+              "slug": "plan-gestion-environnementale",
+              "label": "Plan de Gestion Environnementale"
+            }
+          },
+          {
+            "title": "Audit HSE et mises à jour",
+            "description": "Audit de conformité périodique ; toute extension, changement de procédé ou de produit impose une nouvelle demande et une étude de danger actualisée.",
+            "service": {
+              "slug": "audit-hse",
+              "label": "Audit HSE & conformité"
+            }
+          }
         ]
       },
       {
@@ -587,6 +661,70 @@
           "Étude de dangers",
           "Audit HSE",
           "Plan de gestion environnementale"
+        ],
+        "nomenclatureNote": "Les dépôts et stockages d'hydrocarbures et de gaz relèvent des rubriques « inflammables » (1500, dont les gaz inflammables en 1510) et « combustibles » (1600) de la nomenclature, avec étude d'impact et étude de danger dès les premiers seuils. Les projets d'exploration ou d'extraction de pétrole, de gaz ou de minéraux, les pipelines d'hydrocarbures, les parcs éoliens (mâts de plus de 50 m et plus de 20 MW) et les centrales solaires de plus de 20 MW figurent, eux, en annexe I du décret 07-145 ; les lignes électriques de plus de 30 kV en annexe II.",
+        "textes": [
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "Les activités relevant du domaine des hydrocarbures suivent un régime particulier : leurs études d'impact demeurent régies par le décret exécutif 08-312 du 5 octobre 2008 (article 11 du décret 18-255). Les projets d'énergie renouvelable et de réseaux suivent le régime commun des annexes révisées en 2019."
+          },
+          {
+            "fiche": "decret-23-324-agrement-bureaux-etudes",
+            "note": "Pour les hydrocarbures, l'agrément environnemental ne suffit pas : le bureau d'études doit aussi être pré-qualifié par l'Autorité de régulation des hydrocarbures (décret exécutif 24-278 du 13 août 2024)."
+          },
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "Stockage, distribution et traitement d'hydrocarbures et de gaz : rubriques inflammables et combustibles, autorisation ministérielle ou du wali selon les quantités, étude de danger exigée."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "Le plan interne d'intervention est expressément exigé des exploitants d'installations industrielles et de lignes de transport d'hydrocarbures par canalisation (article 76) ; les canalisations et installations d'hydrocarbures font l'objet d'un plan particulier d'intervention (article 4 du décret 25-63)."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "Régime d'autorisation d'exploitation, accord préalable, visite de conformité et contrôle de la commission de wilaya pour les établissements classés du secteur."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Identifier le régime applicable",
+            "description": "Activité du domaine des hydrocarbures (régime 08-312 et pré-qualification ARH) ou projet d'énergie et de réseaux (régime commun) ; classement des stockages et installations dans la nomenclature.",
+            "service": null
+          },
+          {
+            "title": "Étude d'impact sur l'environnement",
+            "description": "Emprises étendues, milieux variés, phases de construction et d'exploitation ; pour les pipelines et les sites d'extraction, étude d'impact complète au titre de l'annexe I.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Étude d'Impact sur l'Environnement"
+            }
+          },
+          {
+            "title": "Étude de danger",
+            "description": "Incendie, explosion, dispersion de gaz : scénarios, zones d'effet et mesures de maîtrise pour les stockages, unités de traitement et canalisations ; approbation par la commission compétente.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Étude de Dangers"
+            }
+          },
+          {
+            "title": "Plans d'intervention",
+            "description": "Plan interne d'intervention obligatoire pour les installations et canalisations d'hydrocarbures, plan particulier d'intervention arrêté par le wali, approbation par la commission de wilaya sous trois mois, exercices réguliers.",
+            "service": null
+          },
+          {
+            "title": "Autorisation d'exploitation",
+            "description": "Accord préalable de création, travaux, visite de conformité, arrêté d'autorisation avec ses prescriptions techniques.",
+            "service": null
+          },
+          {
+            "title": "Suivi et audit HSE",
+            "description": "Programme de surveillance, audits de conformité, actualisation des études et des plans après tout accident, exercice ou modification de l'installation.",
+            "service": {
+              "slug": "audit-hse",
+              "label": "Audit HSE & conformité"
+            }
+          }
         ]
       },
       {
@@ -618,6 +756,70 @@
           "Étude d'impact environnemental",
           "Plan de gestion environnementale",
           "Audit HSE"
+        ],
+        "nomenclatureNote": "Les grands ouvrages ne sont pas dans la nomenclature mais dans les annexes du décret 07-145 révisées en 2019 : autoroutes, aéroports, ports, barrages, entrepôts et centres de distribution de 20 000 m² et plus relèvent de l'étude d'impact ; zones d'activités et zones industrielles, parkings de plus de 100 voitures, lotissements urbains de plus de 10 ha, lignes électriques de plus de 30 kV relèvent de la notice. Les installations de chantier (centrales à béton, postes d'enrobage, carrières et traitement des minéraux, rubriques 2500) sont, elles, des installations classées.",
+        "textes": [
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "C'est l'annexe I ou II qui décide entre étude et notice d'impact pour un ouvrage ; les projets situés en zones industrielles, zones d'activités ou portuaires déjà soumises à enquête publique en sont dispensés (article 9)."
+          },
+          {
+            "fiche": "loi-03-10-protection-environnement",
+            "note": "Article 15 : tout projet de développement, d'infrastructure ou d'aménagement susceptible d'affecter l'environnement est soumis au préalable à une étude ou à une notice d'impact ; article 22 : réalisée par un bureau agréé."
+          },
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "Carrières, traitement des minéraux, centrales à béton et postes d'enrobage sont des installations classées : régime et études selon la rubrique, autorisation avant exploitation."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "Pour les installations de chantier classées : accord préalable de création avant les travaux, déclaration soixante jours avant la mise en exploitation pour la 4e catégorie, nouvelle demande en cas de transfert."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "Les plans de prévention des risques et les périmètres de sécurité autour des installations à risque conditionnent l'implantation des ouvrages ; toute installation industrielle est soumise à une étude de vulnérabilité (article 75)."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Étude ou notice d'impact ?",
+            "description": "Lire les annexes I et II du décret 07-145 (version 2019) avec les seuils de surface, de capacité et de puissance ; classer séparément les installations de chantier dans la nomenclature.",
+            "service": null
+          },
+          {
+            "title": "Étude ou notice d'impact",
+            "description": "Emprise, milieux traversés, paysage, populations riveraines, phases chantier et exploitation, effets cumulatifs ; mesures chiffrées et plan de gestion de l'environnement.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Étude d'Impact sur l'Environnement"
+            }
+          },
+          {
+            "title": "Enquête publique et approbation",
+            "description": "Quinze jours d'affichage et de registre sous la conduite d'un commissaire enquêteur, mémoire en réponse sous dix jours, approbation par le ministre (étude) ou le wali (notice). Aucun travail avant l'approbation.",
+            "service": null
+          },
+          {
+            "title": "Autorisation des installations de chantier",
+            "description": "Centrales à béton, enrobage, carrières : accord préalable, visite de conformité, autorisation ou déclaration selon la catégorie.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Étude de Dangers"
+            }
+          },
+          {
+            "title": "Plan de gestion de l'environnement en phase travaux",
+            "description": "Suivi des nuisances (poussières, bruit, eaux de chantier, déchets), indicateurs et reporting prévus par l'étude d'impact.",
+            "service": {
+              "slug": "plan-gestion-environnementale",
+              "label": "Plan de Gestion Environnementale"
+            }
+          },
+          {
+            "title": "Remise en état et clôture",
+            "description": "Démantèlement des installations de chantier, remise en état des lieux prévue dans l'étude d'impact, déclaration d'arrêt définitif pour les installations classées.",
+            "service": null
+          }
         ]
       },
       {
@@ -649,6 +851,73 @@
           "Étude d'impact environnemental",
           "Épuration des eaux",
           "Plan de gestion environnementale"
+        ],
+        "nomenclatureNote": "Les élevages (rubrique 2110), abattoirs (2210) et unités agroalimentaires (2200), les stations de dessalement (2724) et les installations de traitement des eaux et des déchets (2700) sont des installations classées. Les barrages relèvent de l'étude d'impact au titre de l'annexe I du décret 07-145 ; les adductions d'eau pour plus de 10 000 habitants, les retenues collinaires et les travaux hydrauliques de plus de 500 m² relèvent de la notice (annexe II).",
+        "textes": [
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "Barrages en annexe I ; adductions d'eau, retenues collinaires, endiguements et enrochements en annexe II ; contenu de l'étude centré sur la ressource en eau, les sols et la biodiversité, avec plan de gestion de l'environnement."
+          },
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "Élevages, abattoirs, agroalimentaire, dessalement et traitement des eaux sont classés : régime, rayon d'affichage et études exigées rubrique par rubrique."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "Pour les unités classées : étude ou notice d'impact et, selon la rubrique, étude de danger ou rapport sur les produits dangereux, puis accord préalable et autorisation d'exploitation ; rapport obligatoire sur les eaux résiduaires et les émanations (article 8)."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "Les ouvrages de mobilisation des ressources en eaux superficielles dont l'étude de risque conclut que les effets peuvent dépasser l'ouvrage font l'objet d'un plan particulier d'intervention (article 4 du décret 25-63)."
+          },
+          {
+            "fiche": "loi-03-10-protection-environnement",
+            "note": "Principes de l'article 3 (non-dégradation des ressources naturelles, prévention à la source) et obligation d'étude ou de notice de l'article 15 pour les aménagements hydro-agricoles."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Identifier le texte applicable",
+            "description": "Ouvrage hydraulique (annexes du décret 07-145) ou unité classée (nomenclature) : le point de départ n'est pas le même, et certains projets cumulent les deux.",
+            "service": null
+          },
+          {
+            "title": "Étude ou notice d'impact",
+            "description": "Bilan de la ressource en eau, qualité des sols, biodiversité et écosystèmes sensibles, rejets et effluents ; mesures chiffrées et plan de gestion de l'environnement.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Étude d'Impact sur l'Environnement"
+            }
+          },
+          {
+            "title": "Étude de danger ou rapport sur les produits dangereux",
+            "description": "Exigée lorsque la rubrique le prévoit (stockage de produits chimiques, dessalement, ammoniac frigorifique) ; à défaut, rapport sur les produits dangereux détenus.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Étude de Dangers"
+            }
+          },
+          {
+            "title": "Enquête publique et approbation",
+            "description": "Dépôt auprès du wali, enquête de quinze jours, avis des services, approbation par le ministre ou le wali ; accord préalable de création pour les unités classées.",
+            "service": null
+          },
+          {
+            "title": "Plan de gestion de l'environnement et surveillance de l'eau",
+            "description": "Indicateurs de qualité et de prélèvement, suivi des dispositifs d'épuration et des rejets, reporting aux services de l'environnement.",
+            "service": {
+              "slug": "plan-gestion-environnementale",
+              "label": "Plan de Gestion Environnementale"
+            }
+          },
+          {
+            "title": "Plan particulier d'intervention et audits",
+            "description": "Pour les ouvrages hydrauliques à risque, plan particulier d'intervention approuvé par la commission de wilaya ; audits de conformité pour les unités agro-industrielles.",
+            "service": {
+              "slug": "audit-hse",
+              "label": "Audit HSE & conformité"
+            }
+          }
         ]
       }
     ]

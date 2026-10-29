@@ -555,6 +555,73 @@
           "Hazard Study",
           "HSE Audit",
           "Environmental Management Plan"
+        ],
+        "nomenclatureNote": "Refining, petrochemicals, cement works, metallurgy and surface treatment fall under the 'substances' headings (1100 to 1800: very toxic, toxic, flammable, oxidising, corrosive) and the 'materials, ores and metals' (2500) and 'chemicals, rubber' (2600) families of the nomenclature. Above the quantity or capacity thresholds, the regime moves from wali authorisation to ministerial authorisation, with an impact assessment and a hazard study required, and a public-inquiry posting radius of several kilometres.",
+        "textes": [
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "The nomenclature classifies your site: heading by heading it sets the competent authority, the posting radius and the required studies. An industrial complex often falls under several headings; the most demanding one sets the category."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "A 1st or 2nd category classified establishment in most cases: impact assessment and hazard study approved before the application, prior agreement for creation within fifteen days before any works, compliance visit, authorisation by joint ministerial order or by the wali."
+          },
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "Content of the impact assessment (Article 6), filing with the wali in fourteen copies, fifteen-day public inquiry except in industrial zones, approval by the minister in charge of the environment."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "Vulnerability study before set-up (Article 75) and internal intervention plan (Article 76); specific intervention plan when the hazard study concludes that effects may extend beyond the site (Decree 25-63)."
+          },
+          {
+            "fiche": "decret-23-324-agrement-bureaux-etudes",
+            "note": "The studies must be signed by an accredited consultancy; a copy of the accreditation decision has been part of the impact assessment since 2018."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Classify each installation",
+            "description": "Match processes, storage and capacities against the nomenclature headings; derive the establishment's category, the competent authority and the posting radius. Deliverable: classification note.",
+            "service": null
+          },
+          {
+            "title": "Environmental impact assessment",
+            "description": "Baseline with surveys, impacts of air and water discharges and special waste, costed measures, environmental management plan. Approval by the minister in charge of the environment after the public inquiry.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Environmental Impact Assessment"
+            }
+          },
+          {
+            "title": "Hazard study",
+            "description": "Major-accident scenarios, thermal, overpressure and toxic effect zones, control measures. Filed in eight copies, examined by the interministerial or wilaya commission, approval signed by the ministers or the wali.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Hazard Study"
+            }
+          },
+          {
+            "title": "Application for an operating permit",
+            "description": "File submitted to the wali with both approved studies; prior agreement for creation within fifteen days; works; compliance visit; permit within three months with its prescriptions.",
+            "service": null
+          },
+          {
+            "title": "Management plan and internal intervention plan",
+            "description": "Implementation of the monitoring programme of the impact assessment and of the internal intervention plan approved by the wilaya commission, with at least two exercises a year.",
+            "service": {
+              "slug": "plan-gestion-environnementale",
+              "label": "Environmental Management Plan"
+            }
+          },
+          {
+            "title": "HSE audit and updates",
+            "description": "Periodic compliance audit; any extension, change of process or product requires a new application and an updated hazard study.",
+            "service": {
+              "slug": "audit-hse",
+              "label": "HSE Audit & Compliance"
+            }
+          }
         ]
       },
       {
@@ -587,6 +654,70 @@
           "Hazard Study",
           "HSE Audit",
           "Environmental Management Plan"
+        ],
+        "nomenclatureNote": "Hydrocarbon and gas depots and storage fall under the 'flammable' (1500, including flammable gases in 1510) and 'combustible' (1600) headings of the nomenclature, with an impact assessment and a hazard study from the first thresholds. Oil, gas or mineral exploration or extraction projects, hydrocarbon pipelines, wind farms (masts above 50 m and above 20 MW) and solar plants above 20 MW appear in Annex I of Decree 07-145; power lines above 30 kV in Annex II.",
+        "textes": [
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "Activities in the hydrocarbons domain follow a specific regime: their impact assessments remain governed by Executive Decree 08-312 of 5 October 2008 (Article 11 of Decree 18-255). Renewable energy and grid projects follow the common regime of the annexes revised in 2019."
+          },
+          {
+            "fiche": "decret-23-324-agrement-bureaux-etudes",
+            "note": "For hydrocarbons, environmental accreditation is not enough: the consultancy must also be pre-qualified by the Hydrocarbons Regulatory Authority (Executive Decree 24-278 of 13 August 2024)."
+          },
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "Storage, distribution and processing of hydrocarbons and gas: flammable and combustible headings, ministerial or wali authorisation depending on quantities, hazard study required."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "The internal intervention plan is expressly required of operators of industrial installations and hydrocarbon pipelines (Article 76); pipelines and hydrocarbon installations are covered by a specific intervention plan (Article 4 of Decree 25-63)."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "Operating-permit regime, prior agreement, compliance visit and control by the wilaya commission for the sector's classified establishments."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Identify the applicable regime",
+            "description": "Hydrocarbons-domain activity (Decree 08-312 regime and ARH pre-qualification) or energy and grid project (common regime); classification of storage and installations in the nomenclature.",
+            "service": null
+          },
+          {
+            "title": "Environmental impact assessment",
+            "description": "Large footprints, varied environments, construction and operation phases; for pipelines and extraction sites, a full impact assessment under Annex I.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Environmental Impact Assessment"
+            }
+          },
+          {
+            "title": "Hazard study",
+            "description": "Fire, explosion, gas dispersion: scenarios, effect zones and control measures for storage, processing units and pipelines; approval by the competent commission.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Hazard Study"
+            }
+          },
+          {
+            "title": "Intervention plans",
+            "description": "Mandatory internal intervention plan for hydrocarbon installations and pipelines, specific intervention plan set by order of the wali, approval by the wilaya commission within three months, regular exercises.",
+            "service": null
+          },
+          {
+            "title": "Operating permit",
+            "description": "Prior agreement for creation, works, compliance visit, authorisation order with its technical prescriptions.",
+            "service": null
+          },
+          {
+            "title": "Monitoring and HSE audit",
+            "description": "Monitoring programme, compliance audits, update of studies and plans after any accident, exercise or modification of the installation.",
+            "service": {
+              "slug": "audit-hse",
+              "label": "HSE Audit & Compliance"
+            }
+          }
         ]
       },
       {
@@ -618,6 +749,70 @@
           "Environmental Impact Assessment",
           "Environmental Management Plan",
           "HSE Audit"
+        ],
+        "nomenclatureNote": "Major works are not in the nomenclature but in the annexes of Decree 07-145 revised in 2019: motorways, airports, ports, dams, warehouses and distribution centres of 20,000 m² and more require an impact assessment; business parks and industrial zones, car parks of more than 100 vehicles, urban subdivisions above 10 ha and power lines above 30 kV require a notice. Site installations (concrete plants, asphalt plants, quarries and mineral processing, headings 2500) are classified installations.",
+        "textes": [
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "Annex I or II decides between an assessment and a notice for a structure; projects located in industrial zones, business parks or port zones already subject to a public inquiry are exempt (Article 9)."
+          },
+          {
+            "fiche": "loi-03-10-protection-environnement",
+            "note": "Article 15: any development, infrastructure or planning project likely to affect the environment is subject beforehand to an assessment or a notice; Article 22: carried out by an accredited consultancy."
+          },
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "Quarries, mineral processing, concrete plants and asphalt plants are classified installations: regime and studies according to the heading, authorisation before operation."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "For classified site installations: prior agreement for creation before works, declaration sixty days before operation for the 4th category, new application in case of transfer."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "Risk-prevention plans and safety perimeters around hazardous installations condition the siting of structures; every industrial installation is subject to a vulnerability study (Article 75)."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Assessment or notice?",
+            "description": "Read Annexes I and II of Decree 07-145 (2019 version) with the surface, capacity and power thresholds; classify site installations separately in the nomenclature.",
+            "service": null
+          },
+          {
+            "title": "Impact assessment or notice",
+            "description": "Footprint, environments crossed, landscape, neighbouring populations, construction and operation phases, cumulative effects; costed measures and environmental management plan.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Environmental Impact Assessment"
+            }
+          },
+          {
+            "title": "Public inquiry and approval",
+            "description": "Fifteen days of posting and register led by an inquiry commissioner, written reply within ten days, approval by the minister (assessment) or the wali (notice). No work before approval.",
+            "service": null
+          },
+          {
+            "title": "Authorisation of site installations",
+            "description": "Concrete plants, asphalt, quarries: prior agreement, compliance visit, authorisation or declaration depending on the category.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Hazard Study"
+            }
+          },
+          {
+            "title": "Environmental management plan during works",
+            "description": "Monitoring of nuisances (dust, noise, site water, waste), indicators and reporting provided for in the impact assessment.",
+            "service": {
+              "slug": "plan-gestion-environnementale",
+              "label": "Environmental Management Plan"
+            }
+          },
+          {
+            "title": "Restoration and closure",
+            "description": "Dismantling of site installations, restoration of the site as provided in the impact assessment, declaration of definitive shutdown for classified installations.",
+            "service": null
+          }
         ]
       },
       {
@@ -649,9 +844,83 @@
           "Environmental Impact Assessment",
           "Water treatment",
           "Environmental Management Plan"
+        ],
+        "nomenclatureNote": "Livestock farms (heading 2110), slaughterhouses (2210) and agri-food units (2200), desalination plants (2724) and water and waste treatment installations (2700) are classified installations. Dams require an impact assessment under Annex I of Decree 07-145; water supply for more than 10,000 inhabitants, hill reservoirs and hydraulic works of more than 500 m² require a notice (Annex II).",
+        "textes": [
+          {
+            "fiche": "decret-07-145-etude-impact",
+            "note": "Dams in Annex I; water supply, hill reservoirs, embankments and rock armouring in Annex II; study content focused on water resources, soils and biodiversity, with an environmental management plan."
+          },
+          {
+            "fiche": "decret-07-144-nomenclature-installations-classees",
+            "note": "Livestock, slaughterhouses, agri-food, desalination and water treatment are classified: regime, posting radius and required studies heading by heading."
+          },
+          {
+            "fiche": "decret-06-198-etablissements-classes",
+            "note": "For classified units: impact assessment or notice and, depending on the heading, hazard study or report on hazardous products, then prior agreement and operating permit; mandatory report on wastewater and emissions (Article 8)."
+          },
+          {
+            "fiche": "loi-24-04-risques-de-catastrophes",
+            "note": "Surface-water mobilisation works whose risk study concludes that effects may extend beyond the structure are covered by a specific intervention plan (Article 4 of Decree 25-63)."
+          },
+          {
+            "fiche": "loi-03-10-protection-environnement",
+            "note": "Principles of Article 3 (non-degradation of natural resources, prevention at source) and the assessment or notice obligation of Article 15 for hydro-agricultural developments."
+          }
+        ],
+        "parcours": [
+          {
+            "title": "Identify the applicable text",
+            "description": "Hydraulic structure (annexes of Decree 07-145) or classified unit (nomenclature): the starting point differs, and some projects combine both.",
+            "service": null
+          },
+          {
+            "title": "Impact assessment or notice",
+            "description": "Water-resource balance, soil quality, biodiversity and sensitive ecosystems, discharges and effluents; costed measures and environmental management plan.",
+            "service": {
+              "slug": "etude-impact-environnemental",
+              "label": "Environmental Impact Assessment"
+            }
+          },
+          {
+            "title": "Hazard study or report on hazardous products",
+            "description": "Required where the heading provides for it (chemical storage, desalination, refrigeration ammonia); otherwise a report on the hazardous products held.",
+            "service": {
+              "slug": "etude-de-dangers",
+              "label": "Hazard Study"
+            }
+          },
+          {
+            "title": "Public inquiry and approval",
+            "description": "Filing with the wali, fifteen-day inquiry, opinions of the services, approval by the minister or the wali; prior agreement for creation for classified units.",
+            "service": null
+          },
+          {
+            "title": "Environmental management plan and water monitoring",
+            "description": "Quality and abstraction indicators, monitoring of treatment systems and discharges, reporting to the environment services.",
+            "service": {
+              "slug": "plan-gestion-environnementale",
+              "label": "Environmental Management Plan"
+            }
+          },
+          {
+            "title": "Specific intervention plan and audits",
+            "description": "For hazardous hydraulic structures, specific intervention plan approved by the wilaya commission; compliance audits for agri-industrial units.",
+            "service": {
+              "slug": "audit-hse",
+              "label": "HSE Audit & Compliance"
+            }
+          }
         ]
       }
-    ]
+    ],
+    "textesLabel": "Applicable texts",
+    "textesIntro": "The texts that frame this sector, and what they trigger in practice. Each reference links to its sheet checked against the Official Journal.",
+    "parcoursLabel": "Required studies, in order",
+    "parcoursIntro": "The typical path of a project in this sector, from reading the nomenclature to operation. The deadlines quoted are those of the texts.",
+    "projetsLabel": "Case study in this sector",
+    "readFiche": "Read the sheet",
+    "readProjet": "Read the case study"
   },
   "apropos": {
     "meta": {

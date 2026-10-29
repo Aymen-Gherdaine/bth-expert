@@ -8,6 +8,13 @@ hero:
 enjeuxLabel: Enjeux clés
 sousSecteursLabel: Domaines couverts
 prestationsLabel: Prestations associées
+textesLabel: Textes applicables
+textesIntro: Les textes qui encadrent ce secteur, et ce qu'ils déclenchent concrètement. Chaque référence renvoie à sa fiche vérifiée sur le Journal officiel.
+parcoursLabel: Études exigées, dans l'ordre
+parcoursIntro: Le parcours type d'un projet de ce secteur, de la lecture de la nomenclature à l'exploitation. Les délais cités sont ceux des textes.
+projetsLabel: Étude de cas dans ce secteur
+readFiche: Lire la fiche
+readProjet: Lire l'étude de cas
 cta:
   heading: Un projet dans votre secteur ?
   description: Décrivez-nous votre projet et son contexte industriel. Nous évaluons vos obligations réglementaires et vous remettons une offre sous 48h.

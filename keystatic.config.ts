@@ -181,6 +181,39 @@ export default config({
           label: "Prestations associées",
           itemLabel: (p) => p.value,
         }),
+        nomenclatureNote: fields.text({
+          label: "Nomenclature : rubriques typiques du secteur",
+          description: "Un paragraphe : quelles familles de rubriques du décret 07-144 concernent ce secteur et ce qu'elles déclenchent.",
+          multiline: true,
+        }),
+        textes: fields.array(
+          fields.object({
+            fiche: fields.text({
+              label: "Identifiant de la fiche Ressources",
+              description: "Le slug de la fiche dans la collection « Ressources » (ex. decret-07-145-etude-impact).",
+            }),
+            note: fields.text({ label: "Ce que ce texte change pour ce secteur", multiline: true }),
+          }),
+          { label: "Textes applicables à ce secteur", itemLabel: (p) => p.fields.fiche.value || "Texte" }
+        ),
+        parcours: fields.array(
+          fields.object({
+            title: fields.text({ label: "Étape" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            service: fields.select({
+              label: "Prestation liée",
+              options: [
+                { label: "Aucune", value: "" },
+                { label: "Étude d'impact (EIE)", value: "eie" },
+                { label: "Étude de dangers (EDD)", value: "edd" },
+                { label: "Audit HSE", value: "hse" },
+                { label: "Plan de gestion environnementale (PGE)", value: "pge" },
+              ],
+              defaultValue: "",
+            }),
+          }),
+          { label: "Études exigées, dans l'ordre", itemLabel: (p) => p.fields.title.value || "Étape" }
+        ),
       },
     }),
 
@@ -567,6 +600,13 @@ export default config({
         enjeuxLabel: fields.text({ label: "Label — Enjeux clés" }),
         sousSecteursLabel: fields.text({ label: "Label — Domaines couverts" }),
         prestationsLabel: fields.text({ label: "Label — Prestations associées" }),
+        textesLabel: fields.text({ label: "Label — Textes applicables" }),
+        textesIntro: fields.text({ label: "Intro — Textes applicables", multiline: true }),
+        parcoursLabel: fields.text({ label: "Label — Études exigées, dans l'ordre" }),
+        parcoursIntro: fields.text({ label: "Intro — Études exigées", multiline: true }),
+        projetsLabel: fields.text({ label: "Label — Études de cas du secteur" }),
+        readFiche: fields.text({ label: "Lire la fiche" }),
+        readProjet: fields.text({ label: "Lire l'étude de cas" }),
         cta: cta(),
       },
     }),

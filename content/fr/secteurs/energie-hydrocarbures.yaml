@@ -20,3 +20,34 @@ prestations:
   - Étude de dangers
   - Audit HSE
   - Plan de gestion environnementale
+nomenclatureNote: Les dépôts et stockages d'hydrocarbures et de gaz relèvent des rubriques « inflammables » (1500, dont les gaz inflammables en 1510) et « combustibles » (1600) de la nomenclature, avec étude d'impact et étude de danger dès les premiers seuils. Les projets d'exploration ou d'extraction de pétrole, de gaz ou de minéraux, les pipelines d'hydrocarbures, les parcs éoliens (mâts de plus de 50 m et plus de 20 MW) et les centrales solaires de plus de 20 MW figurent, eux, en annexe I du décret 07-145 ; les lignes électriques de plus de 30 kV en annexe II.
+textes:
+- fiche: decret-07-145-etude-impact
+  note: 'Les activités relevant du domaine des hydrocarbures suivent un régime particulier : leurs études d''impact demeurent régies par le décret exécutif 08-312 du 5 octobre 2008 (article 11 du décret 18-255). Les projets d''énergie renouvelable et de réseaux suivent le régime commun des annexes révisées en 2019.'
+- fiche: decret-23-324-agrement-bureaux-etudes
+  note: 'Pour les hydrocarbures, l''agrément environnemental ne suffit pas : le bureau d''études doit aussi être pré-qualifié par l''Autorité de régulation des hydrocarbures (décret exécutif 24-278 du 13 août 2024).'
+- fiche: decret-07-144-nomenclature-installations-classees
+  note: 'Stockage, distribution et traitement d''hydrocarbures et de gaz : rubriques inflammables et combustibles, autorisation ministérielle ou du wali selon les quantités, étude de danger exigée.'
+- fiche: loi-24-04-risques-de-catastrophes
+  note: Le plan interne d'intervention est expressément exigé des exploitants d'installations industrielles et de lignes de transport d'hydrocarbures par canalisation (article 76) ; les canalisations et installations d'hydrocarbures font l'objet d'un plan particulier d'intervention (article 4 du décret 25-63).
+- fiche: decret-06-198-etablissements-classes
+  note: Régime d'autorisation d'exploitation, accord préalable, visite de conformité et contrôle de la commission de wilaya pour les établissements classés du secteur.
+parcours:
+- title: Identifier le régime applicable
+  description: Activité du domaine des hydrocarbures (régime 08-312 et pré-qualification ARH) ou projet d'énergie et de réseaux (régime commun) ; classement des stockages et installations dans la nomenclature.
+  service: ''
+- title: Étude d'impact sur l'environnement
+  description: Emprises étendues, milieux variés, phases de construction et d'exploitation ; pour les pipelines et les sites d'extraction, étude d'impact complète au titre de l'annexe I.
+  service: eie
+- title: Étude de danger
+  description: 'Incendie, explosion, dispersion de gaz : scénarios, zones d''effet et mesures de maîtrise pour les stockages, unités de traitement et canalisations ; approbation par la commission compétente.'
+  service: edd
+- title: Plans d'intervention
+  description: Plan interne d'intervention obligatoire pour les installations et canalisations d'hydrocarbures, plan particulier d'intervention arrêté par le wali, approbation par la commission de wilaya sous trois mois, exercices réguliers.
+  service: ''
+- title: Autorisation d'exploitation
+  description: Accord préalable de création, travaux, visite de conformité, arrêté d'autorisation avec ses prescriptions techniques.
+  service: ''
+- title: Suivi et audit HSE
+  description: Programme de surveillance, audits de conformité, actualisation des études et des plans après tout accident, exercice ou modification de l'installation.
+  service: hse

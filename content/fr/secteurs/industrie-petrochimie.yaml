@@ -21,3 +21,34 @@ prestations:
   - Étude de dangers
   - Audit HSE
   - Plan de gestion environnementale
+nomenclatureNote: 'Raffinage, pétrochimie, cimenteries, métallurgie et traitements de surface relèvent des rubriques « substances » (1100 à 1800 : très toxiques, toxiques, inflammables, comburantes, corrosives) et des familles « matériaux, minerais et métaux » (2500) et « chimie, caoutchouc » (2600) de la nomenclature. Au-delà des seuils de quantité ou de capacité, le régime passe de l''autorisation du wali à l''autorisation ministérielle, avec étude d''impact et étude de danger exigées, et un rayon d''affichage de l''enquête publique qui atteint plusieurs kilomètres.'
+textes:
+- fiche: decret-07-144-nomenclature-installations-classees
+  note: 'C''est la nomenclature qui classe votre site : elle fixe, rubrique par rubrique, l''autorité compétente, le rayon d''affichage et les études exigées. Un complexe industriel relève souvent de plusieurs rubriques ; la plus contraignante fait la catégorie.'
+- fiche: decret-06-198-etablissements-classes
+  note: 'Établissement classé de 1re ou 2e catégorie dans la plupart des cas : étude d''impact et étude de danger approuvées avant la demande, accord préalable de création sous quinze jours avant tout travaux, visite de conformité, autorisation par arrêté conjoint des ministres ou du wali.'
+- fiche: decret-07-145-etude-impact
+  note: Contenu de l'étude d'impact (article 6), dépôt auprès du wali en quatorze exemplaires, enquête publique de quinze jours sauf en zone industrielle, approbation par le ministre chargé de l'environnement.
+- fiche: loi-24-04-risques-de-catastrophes
+  note: Étude de vulnérabilité avant mise en place (article 75) et plan interne d'intervention (article 76) ; plan particulier d'intervention lorsque l'étude de danger conclut que les effets peuvent dépasser les limites du site (décret 25-63).
+- fiche: decret-23-324-agrement-bureaux-etudes
+  note: Les études doivent être signées par un bureau agréé ; la copie de la décision d'agrément fait partie de l'étude d'impact depuis 2018.
+parcours:
+- title: Classer chaque installation
+  description: 'Rapprocher procédés, stockages et capacités des rubriques de la nomenclature ; en déduire la catégorie de l''établissement, l''autorité compétente et le rayon d''affichage. Livrable : note de classement.'
+  service: ''
+- title: Étude d'impact sur l'environnement
+  description: État initial avec relevés, impacts des rejets atmosphériques et aqueux et des déchets spéciaux, mesures chiffrées, plan de gestion de l'environnement. Approbation par le ministre chargé de l'environnement après enquête publique.
+  service: eie
+- title: Étude de danger
+  description: Scénarios d'accident majeur, zones d'effet thermique, de surpression et toxique, mesures de maîtrise. Dépôt en huit exemplaires, examen par la commission interministérielle ou de wilaya, approbation signée par les ministres ou le wali.
+  service: edd
+- title: Demande d'autorisation d'exploitation
+  description: Dossier déposé auprès du wali avec les deux études approuvées ; accord préalable de création sous quinze jours ; travaux ; visite de conformité ; autorisation sous trois mois avec ses prescriptions.
+  service: ''
+- title: Plan de gestion et plan interne d'intervention
+  description: Mise en œuvre du programme de surveillance de l'étude d'impact et du plan interne d'intervention approuvé par la commission de wilaya, avec au moins deux exercices par an.
+  service: pge
+- title: Audit HSE et mises à jour
+  description: Audit de conformité périodique ; toute extension, changement de procédé ou de produit impose une nouvelle demande et une étude de danger actualisée.
+  service: hse

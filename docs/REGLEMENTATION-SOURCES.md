@@ -49,6 +49,20 @@ Les versions AR et EN des fiches ont été écrites à partir du FR vérifié.
 | Page EDD, étude de cas Arzew | « Plan d'urgence interne » | Plan interne d'intervention |
 | Mentions légales, confidentialité | Loi 18-07 seule | Loi 18-07 modifiée et complétée par la loi 25-11 ; références JO ajoutées |
 
+## Pages secteurs (collection « Secteurs », champs `nomenclatureNote`, `textes`, `parcours`)
+
+Les quatre pages secteurs citent des seuils et des rubriques ; chacun a été relu
+sur le texte : annexes I et II du décret 19-241 (autoroutes, aéroports, ports,
+barrages, entrepôts ≥ 20 000 m², pipelines, exploration/extraction, éolien
+mâts > 50 m et > 20 MW, solaire > 20 MW ; zones d'activités, parkings > 100
+voitures, lignes > 30 kV, adductions > 10 000 habitants, retenues collinaires,
+lotissements > 10 ha, travaux hydrauliques > 500 m²), rubriques 07-144 (1100 à
+1800, 1510, 1600, 2110, 2200, 2210, 2500, 2600, 2700, 2724 ; rayons d'affichage
+de 1 à 6 km), décret 25-63 (art. 4, délai de 3 mois, art. 24 : deux exercices
+par an), loi 24-04 (art. 75-76), décret 18-255 (art. 11 : hydrocarbures régis
+par 08-312). Le champ `textes.fiche` doit pointer vers une fiche existante :
+`npm run content:sync` échoue sinon.
+
 ## Points qui restent de la responsabilité du client
 
 1. **Numéro et date de l'agrément BTH Expert** (`legalRegistration.agrement` dans `lib/site-config.ts`) : la fiche 23-324 et la FAQ affirment que BTH Expert est agréé.

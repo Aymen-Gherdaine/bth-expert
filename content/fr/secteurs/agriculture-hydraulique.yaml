@@ -19,3 +19,34 @@ prestations:
   - Étude d'impact environnemental
   - Épuration des eaux
   - Plan de gestion environnementale
+nomenclatureNote: Les élevages (rubrique 2110), abattoirs (2210) et unités agroalimentaires (2200), les stations de dessalement (2724) et les installations de traitement des eaux et des déchets (2700) sont des installations classées. Les barrages relèvent de l'étude d'impact au titre de l'annexe I du décret 07-145 ; les adductions d'eau pour plus de 10 000 habitants, les retenues collinaires et les travaux hydrauliques de plus de 500 m² relèvent de la notice (annexe II).
+textes:
+- fiche: decret-07-145-etude-impact
+  note: Barrages en annexe I ; adductions d'eau, retenues collinaires, endiguements et enrochements en annexe II ; contenu de l'étude centré sur la ressource en eau, les sols et la biodiversité, avec plan de gestion de l'environnement.
+- fiche: decret-07-144-nomenclature-installations-classees
+  note: 'Élevages, abattoirs, agroalimentaire, dessalement et traitement des eaux sont classés : régime, rayon d''affichage et études exigées rubrique par rubrique.'
+- fiche: decret-06-198-etablissements-classes
+  note: 'Pour les unités classées : étude ou notice d''impact et, selon la rubrique, étude de danger ou rapport sur les produits dangereux, puis accord préalable et autorisation d''exploitation ; rapport obligatoire sur les eaux résiduaires et les émanations (article 8).'
+- fiche: loi-24-04-risques-de-catastrophes
+  note: Les ouvrages de mobilisation des ressources en eaux superficielles dont l'étude de risque conclut que les effets peuvent dépasser l'ouvrage font l'objet d'un plan particulier d'intervention (article 4 du décret 25-63).
+- fiche: loi-03-10-protection-environnement
+  note: Principes de l'article 3 (non-dégradation des ressources naturelles, prévention à la source) et obligation d'étude ou de notice de l'article 15 pour les aménagements hydro-agricoles.
+parcours:
+- title: Identifier le texte applicable
+  description: 'Ouvrage hydraulique (annexes du décret 07-145) ou unité classée (nomenclature) : le point de départ n''est pas le même, et certains projets cumulent les deux.'
+  service: ''
+- title: Étude ou notice d'impact
+  description: Bilan de la ressource en eau, qualité des sols, biodiversité et écosystèmes sensibles, rejets et effluents ; mesures chiffrées et plan de gestion de l'environnement.
+  service: eie
+- title: Étude de danger ou rapport sur les produits dangereux
+  description: Exigée lorsque la rubrique le prévoit (stockage de produits chimiques, dessalement, ammoniac frigorifique) ; à défaut, rapport sur les produits dangereux détenus.
+  service: edd
+- title: Enquête publique et approbation
+  description: Dépôt auprès du wali, enquête de quinze jours, avis des services, approbation par le ministre ou le wali ; accord préalable de création pour les unités classées.
+  service: ''
+- title: Plan de gestion de l'environnement et surveillance de l'eau
+  description: Indicateurs de qualité et de prélèvement, suivi des dispositifs d'épuration et des rejets, reporting aux services de l'environnement.
+  service: pge
+- title: Plan particulier d'intervention et audits
+  description: Pour les ouvrages hydrauliques à risque, plan particulier d'intervention approuvé par la commission de wilaya ; audits de conformité pour les unités agro-industrielles.
+  service: hse

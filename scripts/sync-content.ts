@@ -104,6 +104,13 @@ async function main() {
       enjeuxLabel: secteursPage.enjeuxLabel,
       sousSecteursLabel: secteursPage.sousSecteursLabel,
       prestationsLabel: secteursPage.prestationsLabel,
+      textesLabel: secteursPage.textesLabel,
+      textesIntro: secteursPage.textesIntro,
+      parcoursLabel: secteursPage.parcoursLabel,
+      parcoursIntro: secteursPage.parcoursIntro,
+      projetsLabel: secteursPage.projetsLabel,
+      readFiche: secteursPage.readFiche,
+      readProjet: secteursPage.readProjet,
       cta: secteursPage.cta,
       list: [...secteursEntries]
         .sort((a, b) => (a.entry.order ?? 0) - (b.entry.order ?? 0))
@@ -115,6 +122,25 @@ async function main() {
           enjeux: entry.enjeux,
           sousSecteurs: entry.sousSecteurs,
           prestations: entry.prestations,
+          nomenclatureNote: entry.nomenclatureNote,
+          // Chaque texte doit pointer vers une fiche existante : on échoue ici,
+          // au sync, plutôt que de publier un lien mort.
+          textes: entry.textes.map((t) => {
+            if (!ressourcesEntries.some((r) => r.slug === t.fiche)) {
+              throw new Error(
+                `[sync-content] secteur « ${entry.slug} » : la fiche « ${t.fiche} » n'existe pas dans content/fr/ressources/`
+              );
+            }
+            return t;
+          }),
+          // "" (aucune) → null, sinon route + libellé de la page service.
+          parcours: entry.parcours.map((step) => ({
+            title: step.title,
+            description: step.description,
+            service: step.service
+              ? { slug: SERVICE_ROUTES[step.service], label: serviceContent(step.service).hero.heading }
+              : null,
+          })),
         })),
     },
     apropos,
