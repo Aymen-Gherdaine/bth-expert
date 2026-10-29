@@ -56,6 +56,7 @@ export default async function ProjetsPage({
         eyebrow={p.hero.eyebrow}
         heading={p.hero.heading}
         subheading={p.hero.subheading}
+        index={p.items.map((item) => item.title)}
       />
 
       {/* ── Filterable project grid (unchanged: hover-lift cards + stagger) ─ */}
