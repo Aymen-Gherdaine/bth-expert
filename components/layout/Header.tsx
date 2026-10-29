@@ -7,6 +7,7 @@ import { LangSwitcher } from "./LangSwitcher";
 import { HeaderScrollState } from "./HeaderScrollState";
 import { MobileMenu } from "./MobileMenu";
 import { siteContact } from "@/lib/site-config";
+import { getRessourcesLabels } from "@/lib/ressources";
 
 interface HeaderProps {
   lang: Locale;
@@ -123,7 +124,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                   { href: `/${lang}/services`, label: dict.nav.services },
                   { href: `/${lang}/secteurs`, label: dict.nav.secteurs },
                   { href: `/${lang}/projets`, label: dict.nav.projets },
-                  { href: `/${lang}/blog`, label: dict.nav.blog },
+                  { href: `/${lang}/ressources`, label: getRessourcesLabels(lang).nav },
                   { href: `/${lang}/contact`, label: dict.nav.contact },
                 ]}
                 phone={siteContact.phoneDisplay}

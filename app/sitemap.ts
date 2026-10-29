@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n-config";
 import { listContentByDate } from "@/lib/content";
 import fr from "@/dictionaries/fr.json";
+import { ficheSlugs } from "@/lib/ressources";
 
 const BASE_URL = "https://bthexpert.com";
 
@@ -21,6 +22,7 @@ const STATIC_ROUTES = [
   { path: "/oran/",                                     priority: 0.9, freq: "monthly" },
   { path: "/a-propos/",                                 priority: 0.6, freq: "yearly"  },
   { path: "/contact/",                                  priority: 0.8, freq: "yearly"  },
+  { path: "/ressources/",                               priority: 0.8, freq: "monthly" },
   { path: "/mentions-legales/",                         priority: 0.2, freq: "yearly"  },
   { path: "/confidentialite/",                          priority: 0.2, freq: "yearly"  },
 ] as const;
@@ -40,6 +42,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority,
         changeFrequency: freq,
         lastModified: buildDate,
+      });
+    }
+  }
+
+  for (const slug of ficheSlugs) {
+    for (const lang of locales) {
+      entries.push({
+        url: url(lang, `/ressources/${slug}/`),
+        priority: 0.8,
+        changeFrequency: "monthly",
       });
     }
   }

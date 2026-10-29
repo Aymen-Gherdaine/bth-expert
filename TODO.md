@@ -121,7 +121,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [ ] **5.13** — [CLIENT] Forme juridique, capital, RC, NIF, NIS, AI et référence d'agrément → à renseigner dans `legalRegistration` (`lib/site-config.ts`) ; les lignes n'apparaissent sur les mentions légales que si la valeur est connue. Hébergeur à mettre à jour si le site quitte Netlify.
 - [ ] **5.14** — [CLIENT] Photos réelles (équipe, bureau, terrain, dossiers reliés) → remplacer les initiales sur /equipe et les SVG topographiques des bandes sombres
 - [ ] **5.15** — [CLIENT] URLs LinkedIn / Instagram / Facebook → `socialProfiles` dans `lib/site-config.ts`
-- [ ] **5.16** — Centre de ressources : fiches par texte réglementaire (07-145, 06-198…) en plus du blog, avec un guide de procédure par wilaya
+- [x] **5.16** — Centre de ressources `/ressources` : 5 fiches par texte (03-10, 07-145, 06-198, 07-144, 04-20) + guide de procédure en 6 étapes, FR/AR/EN dans `lib/ressources.ts`, JSON-LD Article + FAQPage, sitemap, « Ressources » remplace « Blog » dans la nav (le blog reste accessible depuis Ressources et le footer). ⚠️ Relecture juridique des 6 fiches avant merge (5.20).
 - [ ] **5.17** — Pages secteurs : textes applicables + étude comparable par secteur (aujourd'hui 3 enjeux + puces)
 - [ ] **5.18** — Poids JS home (~840 KB non compressé) : GSAP + SplitText + Lenis sont chargés sur chaque page ; envisager un chargement différé de SplitText et du pin-scroll sous la ligne de flottaison
 

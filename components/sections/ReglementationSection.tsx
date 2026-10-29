@@ -3,6 +3,16 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { reglementation } from "@/lib/reglementation";
 import type { Locale } from "@/lib/i18n-config";
+import { SLUGS, getRessourcesLabels } from "@/lib/ressources";
+
+/** Which resource sheet explains each text (same refs in every locale). */
+const FICHE_BY_REF: Record<string, string> = {
+  "03-10": SLUGS.loi0310,
+  "07-145": SLUGS.d07145,
+  "06-198": SLUGS.d06198,
+  "07-144": SLUGS.d07144,
+  "04-20": SLUGS.loi0420,
+};
 
 interface ReglementationSectionProps {
   lang: Locale;
@@ -18,6 +28,7 @@ interface ReglementationSectionProps {
  */
 export function ReglementationSection({ lang }: ReglementationSectionProps) {
   const c = reglementation[lang];
+  const r = getRessourcesLabels(lang);
 
   return (
     <section className="bg-cream-warm">
@@ -75,9 +86,23 @@ export function ReglementationSection({ lang }: ReglementationSectionProps) {
                     <p className="mt-3 font-sans text-ink-soft leading-[1.7] text-[length:var(--text-small)]">
                       {entry.consequence}
                     </p>
+                    <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-2">
+                    <Link
+                      href={`/${lang}/ressources/${FICHE_BY_REF[entry.ref]}`}
+                      className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                    >
+                      <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                      {r.readFiche}
+                      <span
+                        aria-hidden
+                        className="inline-block ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                      >
+                        →
+                      </span>
+                    </Link>
                     <Link
                       href={`/${lang}/services/${entry.service}`}
-                      className="group mt-4 inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                      className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-ink-soft text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                     >
                       <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                       {entry.serviceLabel}
@@ -88,6 +113,7 @@ export function ReglementationSection({ lang }: ReglementationSectionProps) {
                         →
                       </span>
                     </Link>
+                    </div>
                   </div>
                 </article>
               </FadeInItem>

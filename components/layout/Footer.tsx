@@ -6,6 +6,7 @@ import { getDictionary, type Locale } from "@/lib/i18n";
 import { socialLinks } from "@/lib/social-links";
 import { socialProfiles, siteContact } from "@/lib/site-config";
 import { legalPages } from "@/lib/legal-content";
+import { getRessourcesLabels } from "@/lib/ressources";
 
 interface FooterProps {
   lang: Locale;
@@ -124,6 +125,11 @@ export async function Footer({ lang }: FooterProps) {
                 <li>
                   <Link href={`/${lang}/a-propos`} className={linkClass}>
                     {dict.nav.apropos}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/ressources`} className={linkClass}>
+                    {getRessourcesLabels(lang).nav}
                   </Link>
                 </li>
                 <li>
