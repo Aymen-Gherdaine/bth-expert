@@ -731,8 +731,8 @@
           "label": "Completed projects"
         },
         {
-          "value": "150+",
-          "label": "Industrial partners"
+          "value": "Accredited",
+          "label": "Ministry of Environment"
         }
       ]
     },
@@ -766,7 +766,7 @@
     "hero": {
       "eyebrow": "Achievements",
       "heading": "Studies that secure projects",
-      "subheading": "An overview of our environmental and regulatory interventions, from petrochemical complexes to irrigated perimeters. Over 20 achievements for 150 industrial partners."
+      "subheading": "An overview of our environmental and regulatory interventions, from petrochemical complexes to irrigated perimeters."
     },
     "filterAll": "All sectors",
     "detail": {

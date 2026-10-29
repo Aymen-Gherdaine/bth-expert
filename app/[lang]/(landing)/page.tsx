@@ -162,7 +162,7 @@ export default async function HomePage({
       <ServicesPinScroll lang={lang} services={h.services} />
 
       {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
-      <ProjectsSection lang={lang} />
+      <ProjectsSection lang={lang} projects={dict.projets.items} />
 
       {/* ── STATEMENT — cream pause + clip-path photo wipe before the dark ── */}
       <StatementSection lang={lang} content={h.statement} />

@@ -144,17 +144,6 @@ export default async function ProjetPage({
       {/* ── Narrative — contexte → intervention → résultat, 3-beat sequence ─ */}
       <ProjetNarrative beats={beats} />
 
-      {/* ── Disclaimer ───────────────────────────────────────── */}
-      <section className="bg-cream-soft">
-        <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
-          <FadeIn>
-            <p className="font-sans text-[length:var(--text-caption)] text-muted italic">
-              {d.disclaimer}
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* ── CTA — dark punctuation band over the project's artwork ── */}
       <section className="relative isolate overflow-hidden bg-brand-deep">
         <TerrainBackdrop src={`/generated/projet-${slug}.svg`} />
