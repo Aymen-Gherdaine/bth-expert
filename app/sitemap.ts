@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n-config";
 import { listContentByDate } from "@/lib/content";
 import fr from "@/dictionaries/fr.json";
-import { ficheSlugs } from "@/lib/ressources";
 
 const BASE_URL = "https://bthexpert.com";
 
@@ -46,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  for (const slug of ficheSlugs) {
+  for (const { slug } of fr.ressources.items) {
     for (const lang of locales) {
       entries.push({
         url: url(lang, `/ressources/${slug}/`),

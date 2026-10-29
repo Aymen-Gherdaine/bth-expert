@@ -3,12 +3,12 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { BlogList } from "@/components/sections/BlogList";
 import type { ContentPage } from "@/lib/content";
-import type { Fiche, RessourcesLabels } from "@/lib/ressources";
+import type { Fiche, RessourcesDict } from "@/lib/ressources";
 import type { Locale } from "@/lib/i18n-config";
 
 interface RessourcesIndexProps {
   lang: Locale;
-  labels: RessourcesLabels;
+  labels: RessourcesDict;
   textes: Fiche[];
   guide: Fiche | null;
   posts: ContentPage[];

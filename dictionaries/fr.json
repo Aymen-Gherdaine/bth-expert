@@ -985,5 +985,717 @@
       "cta": "Nous contacter",
       "coverage": "Nous couvrons toutes les wilayas d'Algérie."
     }
+  },
+  "ressources": {
+    "nav": "Ressources",
+    "meta": {
+      "title": "Ressources — Réglementation environnementale algérienne | BTH Expert",
+      "description": "Fiches pratiques par texte (loi 03-10, décrets 07-145, 06-198, 07-144, loi 24-04, décret 23-324) et guide de procédure d'autorisation d'une installation classée en Algérie, par un bureau d'études agréé."
+    },
+    "hero": {
+      "eyebrow": "Ressources · Réglementation algérienne",
+      "heading": "Comprendre le cadre réglementaire de votre projet",
+      "subheading": "Une fiche par texte et un guide de procédure, écrits par un bureau d'études agréé pour les porteurs de projets. Pas un résumé de loi : ce que chaque texte change concrètement pour votre dossier."
+    },
+    "textesHeading": "Textes de référence",
+    "textesIntro": "Les textes qui structurent l'autorisation d'une installation en Algérie, lus du point de vue de l'exploitant, avec leurs modifications les plus récentes.",
+    "guideHeading": "Guide de procédure",
+    "articlesHeading": "Derniers articles",
+    "articlesLink": "Tous les articles du blog",
+    "readFiche": "Lire la fiche",
+    "readGuide": "Lire le guide",
+    "faqHeading": "Questions fréquentes",
+    "servicesHeading": "Prestations concernées",
+    "relatedHeading": "Textes liés",
+    "backLabel": "Toutes les ressources",
+    "updatedLabel": "Dernière relecture",
+    "note": "Lecture indicative destinée aux porteurs de projets. Seules les versions publiées au Journal officiel de la République algérienne font foi ; chaque projet fait l'objet d'une analyse spécifique dans le cadre d'une mission.",
+    "cta": {
+      "heading": "Votre projet relève de ce texte ?",
+      "description": "Décrivez-nous l'installation et son site. Nous vérifions le classement, les études exigées et le calendrier, et vous remettons une offre sous 48h.",
+      "button": "Demander un devis"
+    },
+    "homeSection": {
+      "eyebrow": "Cadre réglementaire",
+      "heading": "Les textes qui déclenchent votre étude",
+      "intro": "Six textes structurent l'autorisation d'une installation en Algérie. Savoir lequel s'applique à votre projet, c'est déjà savoir quelle étude déposer, auprès de qui, et dans quel délai.",
+      "note": "Lecture indicative. Seules les versions publiées au Journal officiel font foi."
+    },
+    "items": [
+      {
+        "slug": "loi-03-10-protection-environnement",
+        "kind": "texte",
+        "ref": "03-10",
+        "typeLabel": "Loi",
+        "date": "19 juillet 2003",
+        "title": "Protection de l'environnement dans le cadre du développement durable",
+        "officialTitle": "Loi n° 03-10 du 19 juillet 2003 relative à la protection de l'environnement dans le cadre du développement durable (JO n° 43 du 20 juillet 2003), modifiée et complétée",
+        "summary": "La loi-cadre de l'environnement en Algérie. Elle pose les principes directeurs, crée l'obligation d'étude ou de notice d'impact pour tout projet susceptible d'affecter l'environnement, et organise le régime des établissements classés.",
+        "homeLine": "Le texte fondateur : tout projet susceptible d'affecter l'environnement est soumis à une étude ou à une notice d'impact préalable, et les établissements classés à autorisation ou déclaration.",
+        "meta": [
+          {
+            "label": "Nature",
+            "value": "Loi-cadre"
+          },
+          {
+            "label": "Publication",
+            "value": "JO n° 43 du 20 juillet 2003"
+          },
+          {
+            "label": "Textes d'application",
+            "value": "06-198 · 07-144 · 07-145"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Ce que la loi impose",
+            "paragraphs": [],
+            "list": [
+              "Tout projet d'aménagement, d'infrastructure ou d'usine susceptible, par sa dimension ou ses incidences, d'affecter l'environnement est soumis à une étude d'impact ou à une notice d'impact préalable (article 15).",
+              "Les établissements classés (usines, ateliers, chantiers, carrières, mines et toute installation présentant des dangers pour la santé, la sécurité, l'agriculture, les écosystèmes ou la commodité du voisinage) sont soumis à autorisation ou à déclaration selon l'importance des dangers (articles 18 et 19).",
+              "Les installations dont l'implantation ne nécessite ni étude ni notice d'impact relèvent d'une déclaration auprès du président de l'assemblée populaire communale.",
+              "Les principes de prévention et de correction à la source, de précaution, du pollueur-payeur, d'information et de participation du public guident toute décision.",
+              "Des sanctions administratives et pénales s'appliquent à l'exploitation sans autorisation ou en violation des prescriptions."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Qui est concerné",
+            "paragraphs": [],
+            "list": [
+              "les industriels, quelle que soit la taille de l'unité, dès lors que l'activité est classée ;",
+              "les maîtres d'ouvrage d'infrastructures : routes, zones d'activité, ouvrages hydrauliques ;",
+              "les exploitants de carrières et de projets miniers ;",
+              "les projets agricoles et hydrauliques d'ampleur (périmètres irrigués, barrages, stations) ;",
+              "les collectivités pour leurs équipements (décharges, stations d'épuration)."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Ce que cela change pour votre projet",
+            "paragraphs": [
+              "L'autorisation de construire ou d'exploiter ne peut être délivrée avant l'approbation de l'étude d'impact. Engager l'étude dès la conception du projet, et non au moment du dépôt, évite le blocage le plus fréquent : un calendrier de chantier qui attend une approbation.",
+              "La loi 03-10 ne se lit pas seule. Les listes de projets, le contenu des études et les procédures sont fixés par ses décrets d'application, en particulier les décrets 07-145 (études d'impact, modifié en 2018 et 2019) et 06-198 (établissements classés, modifié en 2022)."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "La loi 03-10 s'applique-t-elle à une installation existante ?",
+            "a": "Oui. Une installation existante reste soumise aux prescriptions de protection, et toute extension ou modification substantielle appelle les études exigées pour la nouvelle configuration. Depuis 2022, un établissement existant soumis à autorisation doit aussi faire approuver un audit environnemental et une étude de dangers."
+          },
+          {
+            "q": "Qui approuve l'étude d'impact ?",
+            "a": "La décision d'approbation ou de rejet est notifiée au promoteur par le wali territorialement compétent. Selon la nature du projet, elle relève du ministère chargé de l'environnement ou du wali, dans les conditions du décret exécutif 07-145 modifié."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Étude d'Impact sur l'Environnement"
+          },
+          {
+            "slug": "etude-de-dangers",
+            "label": "Étude de Dangers"
+          }
+        ],
+        "related": [
+          "decret-07-145-etude-impact",
+          "decret-06-198-etablissements-classes",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Loi 03-10 : protection de l'environnement en Algérie, ce qu'elle impose à votre projet",
+        "metaDescription": "Fiche pratique sur la loi n° 03-10 du 19 juillet 2003 : principes, obligation d'étude d'impact (art. 15), régime des établissements classés (art. 18-19), qui est concerné et ce que cela change pour l'autorisation de votre projet."
+      },
+      {
+        "slug": "decret-07-145-etude-impact",
+        "kind": "texte",
+        "ref": "07-145",
+        "typeLabel": "Décret exécutif",
+        "date": "19 mai 2007",
+        "title": "Études et notices d'impact sur l'environnement",
+        "officialTitle": "Décret exécutif n° 07-145 du 19 mai 2007 déterminant le champ d'application, le contenu et les modalités d'approbation des études et des notices d'impact sur l'environnement, modifié et complété par les décrets exécutifs n° 18-255 du 9 octobre 2018 et n° 19-241 du 8 septembre 2019",
+        "summary": "Le texte qui dit si votre projet relève d'une étude d'impact complète ou d'une notice d'impact, ce que le rapport doit contenir, et comment la wilaya l'instruit, avec des délais précis, jusqu'à la décision.",
+        "homeLine": "Fixe la liste des projets soumis à étude ou à notice d'impact, le contenu du rapport et son instruction par la wilaya : examen sous un mois, enquête publique de quinze jours, décision dans les quatre mois.",
+        "meta": [
+          {
+            "label": "Dépôt",
+            "value": "Wali · 14 exemplaires + 2 numériques"
+          },
+          {
+            "label": "Enquête publique",
+            "value": "15 jours maximum"
+          },
+          {
+            "label": "Décision",
+            "value": "4 mois maximum après l'enquête"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Étude ou notice ?",
+            "paragraphs": [
+              "Le décret range les projets en deux listes annexées : ceux soumis à une étude d'impact complète (annexe I), et ceux soumis à une notice d'impact, de contenu allégé (annexe II). Ces listes ont été révisées par le décret 19-241 de 2019. Le classement dépend de la nature de l'activité et de son ampleur : capacité, surface, puissance ou quantités mises en œuvre."
+            ],
+            "list": [
+              "Étude d'impact, à titre d'exemple : raffineries et unités pétrochimiques, cimenteries, grandes unités chimiques et métallurgiques, barrages, grandes infrastructures de transport, projets miniers.",
+              "Notice d'impact, à titre d'exemple : unités de taille réduite, aménagements limités, activités à incidence localisée."
+            ],
+            "after": "Le classement exact se vérifie rubrique par rubrique dans les annexes en vigueur. C'est la première tâche d'une mission."
+          },
+          {
+            "heading": "Contenu du rapport",
+            "paragraphs": [],
+            "list": [
+              "présentation du projet et justification du choix du site ;",
+              "description de l'état initial du site et de son environnement naturel et humain ;",
+              "analyse des impacts prévisibles, directs et indirects, temporaires et permanents, en phase chantier et en phase exploitation ;",
+              "mesures envisagées pour supprimer, réduire ou compenser ces impacts, avec leur estimation financière ;",
+              "plan de gestion environnementale et programme de surveillance ;",
+              "résumé non technique destiné à l'information du public."
+            ],
+            "after": "L'étude est établie par un bureau d'études agréé par le ministère chargé de l'environnement (décret exécutif 23-324 du 6 septembre 2023)."
+          },
+          {
+            "heading": "Procédure et délais réglementaires",
+            "paragraphs": [],
+            "list": [
+              "dépôt auprès du wali territorialement compétent, en quatorze exemplaires papier et deux exemplaires numériques ;",
+              "examen du contenu par les services de l'environnement de la wilaya dans un délai d'un mois ;",
+              "compléments éventuels à fournir par le promoteur dans un délai de deux mois, faute de quoi l'étude est rejetée, sauf demande de prorogation motivée ;",
+              "enquête publique ouverte par arrêté du wali, sous la conduite d'un commissaire enquêteur, d'une durée maximale de quinze jours à compter de l'affichage ;",
+              "mémoire en réponse du promoteur aux observations recueillies, dans un délai de dix jours ;",
+              "examen en vue de la décision dans un délai maximal de quatre mois à compter de la clôture de l'enquête publique ;",
+              "notification de la décision d'approbation ou de rejet par le wali ; en cas de rejet motivé, recours administratif auprès du ministre chargé de l'environnement."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Délais à prévoir en pratique",
+            "paragraphs": [
+              "Sur le papier, la chaîne complète tient en moins de six mois : un mois d'examen, quinze jours d'enquête, dix jours de mémoire, quatre mois maximum d'instruction. En pratique, comptez de deux à six mois selon la wilaya et la qualité du dossier, hors durée de réalisation de l'étude elle-même. Les demandes de compléments sont la première cause de dérive, et elles se préviennent au moment de la rédaction."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Peut-on démarrer les travaux pendant l'instruction ?",
+            "a": "Non. L'approbation de l'étude ou de la notice d'impact est un préalable à l'autorisation de construire ou d'exploiter."
+          },
+          {
+            "q": "Qui peut réaliser l'étude d'impact ?",
+            "a": "Un bureau d'études agréé par le ministère chargé de l'environnement, dans les conditions du décret exécutif 23-324. BTH Expert dispose de cet agrément."
+          },
+          {
+            "q": "L'étude est-elle rendue publique ?",
+            "a": "Oui, dans le cadre de l'enquête publique. Le résumé non technique sert précisément à rendre le dossier lisible par le public et les riverains."
+          },
+          {
+            "q": "Les projets d'hydrocarbures suivent-ils la même procédure ?",
+            "a": "Non. Les activités du secteur des hydrocarbures relèvent d'un régime particulier : l'étude est introduite auprès de l'Autorité de régulation des hydrocarbures, et le bureau d'études doit en outre être pré-qualifié par cette autorité."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Étude d'Impact sur l'Environnement"
+          },
+          {
+            "slug": "plan-gestion-environnementale",
+            "label": "Plan de Gestion Environnementale"
+          }
+        ],
+        "related": [
+          "loi-03-10-protection-environnement",
+          "decret-07-144-nomenclature-installations-classees",
+          "decret-23-324-agrement-bureaux-etudes",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Décret 07-145 modifié : étude d'impact ou notice, contenu, procédure et délais",
+        "metaDescription": "Fiche pratique sur le décret exécutif 07-145 (modifié par les décrets 18-255 et 19-241) : projets soumis à étude ou notice d'impact, contenu du rapport, dépôt en wilaya, enquête publique de 15 jours, décision sous 4 mois, recours."
+      },
+      {
+        "slug": "decret-06-198-etablissements-classes",
+        "kind": "texte",
+        "ref": "06-198",
+        "typeLabel": "Décret exécutif",
+        "date": "31 mai 2006",
+        "title": "Établissements classés pour la protection de l'environnement",
+        "officialTitle": "Décret exécutif n° 06-198 du 31 mai 2006 définissant la réglementation applicable aux établissements classés pour la protection de l'environnement, modifié et complété par le décret exécutif n° 22-167 du 19 avril 2022",
+        "summary": "Le régime d'autorisation des établissements classés : quelle autorité délivre l'autorisation d'exploitation selon la catégorie, quel dossier déposer, et l'étude de dangers qui conditionne l'ouverture.",
+        "homeLine": "Conditionne l'autorisation d'exploitation d'un établissement classé à une étude d'impact approuvée et à une étude de dangers approuvée, selon quatre catégories et trois autorités.",
+        "meta": [
+          {
+            "label": "Catégories",
+            "value": "1re à 4e"
+          },
+          {
+            "label": "Autorités",
+            "value": "Ministre · Wali ou wali délégué · Président d'APC"
+          },
+          {
+            "label": "Pièce clé",
+            "value": "Étude de dangers approuvée"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Quatre catégories, trois autorités",
+            "paragraphs": [],
+            "list": [
+              "1re catégorie : établissements comportant au moins une installation soumise à autorisation du ministre chargé de l'environnement ;",
+              "2e catégorie : autorisation du wali ou du wali délégué territorialement compétent (rédaction issue du décret 22-167) ;",
+              "3e catégorie : autorisation du président de l'assemblée populaire communale ;",
+              "4e catégorie : déclaration auprès du président de l'assemblée populaire communale."
+            ],
+            "after": "La catégorie découle du régime attaché à chaque rubrique de la nomenclature du décret 07-144."
+          },
+          {
+            "heading": "Le dossier d'autorisation d'exploitation",
+            "paragraphs": [],
+            "list": [
+              "la demande d'autorisation précisant l'identité de l'exploitant, la nature et le volume des activités ;",
+              "l'étude ou la notice d'impact approuvée ;",
+              "l'étude de dangers, accompagnée de sa décision d'approbation ;",
+              "les pièces techniques décrivant les procédés, les produits mis en œuvre et les plans de l'installation."
+            ],
+            "after": "Le décret organise aussi un accord préalable, délivré par le ministère chargé de l'environnement ou par les services de la wilaya selon la catégorie, avant l'autorisation d'exploitation. Pour un établissement existant soumis à autorisation, la demande est précédée de l'approbation d'un audit environnemental et de l'étude de dangers (décret 22-167)."
+          },
+          {
+            "heading": "L'étude de dangers",
+            "paragraphs": [
+              "Elle précise les risques directs ou indirects par lesquels l'activité met en danger les personnes, les biens et l'environnement : identification des scénarios d'accident majeur, évaluation de leur probabilité et de leurs conséquences (zones d'effet thermique, de surpression, de dispersion toxique), mesures techniques et organisationnelles de prévention, de protection et d'intervention. Elle est révisée à chaque modification substantielle de l'installation, des procédés ou des produits."
+            ],
+            "list": [
+              "établie par un bureau d'études agréé et déposée auprès du wali en huit exemplaires ;",
+              "transmise par le wali dans les cinq jours à la commission interministérielle (1re catégorie) ou à la commission de wilaya (2e catégorie) ;",
+              "compléments pouvant être demandés dans les quarante-cinq jours de la saisine ;",
+              "décision d'approbation signée conjointement par les ministres chargés de l'intérieur et de l'environnement (1re catégorie) ou par le wali (2e catégorie)."
+            ],
+            "after": "Ces modalités d'examen et d'approbation sont fixées par l'arrêté interministériel du 14 septembre 2014."
+          },
+          {
+            "heading": "Instruction et contrôle",
+            "paragraphs": [
+              "Le dossier est instruit par une commission qui peut procéder à une visite du site. L'autorisation d'exploitation fixe les prescriptions à respecter. Des contrôles ultérieurs peuvent entraîner une mise en demeure, une suspension ou une fermeture en cas de non-conformité."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Un atelier existant doit-il demander une autorisation ?",
+            "a": "Oui, si son activité figure dans la nomenclature au-dessus des seuils. Depuis 2022, la demande d'un établissement existant est précédée de l'approbation d'un audit environnemental et d'une étude de dangers."
+          },
+          {
+            "q": "Quelle différence entre étude d'impact et étude de dangers ?",
+            "a": "L'étude d'impact traite des effets de l'installation sur l'environnement en fonctionnement normal. L'étude de dangers traite des accidents possibles et de leur maîtrise. Les deux sont exigées, approuvées, pour un établissement classé soumis à autorisation."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-de-dangers",
+            "label": "Étude de Dangers"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "Audit HSE & conformité"
+          }
+        ],
+        "related": [
+          "decret-07-144-nomenclature-installations-classees",
+          "loi-24-04-risques-de-catastrophes",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Décret 06-198 modifié : autorisation des établissements classés et étude de dangers",
+        "metaDescription": "Fiche pratique sur le décret exécutif 06-198 (modifié par le décret 22-167) : catégories d'établissements classés, autorité compétente, dossier d'autorisation, étude de dangers (commissions, délais, approbation), instruction et contrôle."
+      },
+      {
+        "slug": "decret-07-144-nomenclature-installations-classees",
+        "kind": "texte",
+        "ref": "07-144",
+        "typeLabel": "Décret exécutif",
+        "date": "19 mai 2007",
+        "title": "Nomenclature des installations classées",
+        "officialTitle": "Décret exécutif n° 07-144 du 19 mai 2007 fixant la nomenclature des installations classées pour la protection de l'environnement (JO n° 34 du 22 mai 2007)",
+        "summary": "La liste des activités classées : à chaque rubrique correspondent des seuils (capacité, puissance, quantité stockée), le régime applicable, donc l'autorité compétente et les études à produire, et le rayon d'affichage de l'enquête publique.",
+        "homeLine": "Attribue une rubrique à chaque activité, fixe les seuils qui déterminent le régime et l'autorité compétente, et le rayon d'affichage de l'enquête publique.",
+        "meta": [
+          {
+            "label": "Objet",
+            "value": "Rubriques, seuils, rayon d'affichage"
+          },
+          {
+            "label": "Détermine",
+            "value": "Régime · Autorité · Études"
+          },
+          {
+            "label": "Texte lié",
+            "value": "Décret 06-198"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Comment lire la nomenclature",
+            "paragraphs": [
+              "Chaque activité est désignée par une rubrique à quatre chiffres : le premier désigne la substance ou l'activité, le deuxième la catégorie de danger ou la branche d'activité, les deux derniers le type d'activité. Les seuils indiqués (quantités stockées, capacité de production, puissance installée) déterminent le régime applicable, donc la catégorie de l'établissement au sens du décret 06-198. Un même site peut relever de plusieurs rubriques : c'est la plus contraignante qui fixe le régime.",
+              "La nomenclature fixe aussi, pour chaque rubrique, le rayon minimal d'affichage de l'avis d'ouverture de l'enquête publique, afin d'informer la population située dans le périmètre d'implantation."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Familles d'activités concernées",
+            "paragraphs": [],
+            "list": [
+              "stockage et distribution d'hydrocarbures, de gaz et de produits chimiques ;",
+              "industries chimiques, pétrochimiques et pharmaceutiques ;",
+              "cimenteries, métallurgie, fonderies, traitements de surface ;",
+              "carrières et traitement des minéraux ;",
+              "agroalimentaire, abattoirs, élevages intensifs ;",
+              "installations de traitement des eaux et de gestion des déchets."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Ce que cela change pour votre projet",
+            "paragraphs": [
+              "Le classement conditionne tout le reste : l'autorité qui délivre l'autorisation, la procédure, la nécessité d'une étude d'impact complète ou d'une notice, et l'exigence d'une étude de dangers. Une erreur de classement en amont se paie au moment du dépôt, par un rejet ou une demande de compléments."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Comment connaître la catégorie de mon installation ?",
+            "a": "En rapprochant chaque activité du site des rubriques de la nomenclature et de leurs seuils. C'est la première étape d'une mission, formalisée dans une note de classement."
+          },
+          {
+            "q": "Une augmentation de capacité change-t-elle la catégorie ?",
+            "a": "Elle le peut. Le franchissement d'un seuil fait passer la rubrique dans un régime plus contraignant et appelle une nouvelle autorisation, avec les études correspondantes."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-de-dangers",
+            "label": "Étude de Dangers"
+          },
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Étude d'Impact sur l'Environnement"
+          }
+        ],
+        "related": [
+          "decret-06-198-etablissements-classes",
+          "decret-07-145-etude-impact",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Décret 07-144 : nomenclature des installations classées, rubriques, seuils et rayon d'affichage",
+        "metaDescription": "Fiche pratique sur le décret exécutif 07-144 du 19 mai 2007 : comment lire la nomenclature des installations classées (rubriques à quatre chiffres, seuils, régime, rayon d'affichage), familles d'activités, conséquences pour l'autorisation."
+      },
+      {
+        "slug": "loi-24-04-risques-de-catastrophes",
+        "kind": "texte",
+        "ref": "24-04",
+        "typeLabel": "Loi",
+        "date": "26 février 2024",
+        "title": "Prévention, intervention et réduction des risques de catastrophes",
+        "officialTitle": "Loi n° 24-04 du 26 février 2024 portant les règles de prévention, d'intervention et de réduction des risques de catastrophes dans le cadre du développement durable (JO n° 16 du 6 mars 2024), qui abroge la loi n° 04-20 du 25 décembre 2004",
+        "summary": "La loi qui remplace depuis 2024 l'ancienne loi 04-20 sur les risques majeurs. Elle organise la prévention des risques de catastrophes, dont les risques industriels, et impose aux exploitants d'installations dangereuses des plans d'intervention, précisés par le décret 25-63 de 2025.",
+        "homeLine": "Remplace la loi 04-20 depuis 2024 : impose aux exploitants d'installations à risque la maîtrise des scénarios d'accident et des plans internes et particuliers d'intervention (décret 25-63 de 2025).",
+        "meta": [
+          {
+            "label": "Nature",
+            "value": "Loi-cadre"
+          },
+          {
+            "label": "Abroge",
+            "value": "Loi 04-20 du 25 décembre 2004"
+          },
+          {
+            "label": "Texte d'application",
+            "value": "Décret 25-63 du 28 janvier 2025"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Ce qui change par rapport à la loi 04-20",
+            "paragraphs": [
+              "La loi 24-04 reprend et élargit le dispositif de 2004 : elle traite de la prévention, de l'intervention et de la réduction des risques de catastrophes, qu'ils soient naturels, technologiques ou sanitaires. Pour un exploitant industriel, l'essentiel est inchangé dans son principe et précisé dans ses modalités : analyser les risques de son installation, les réduire à la source et organiser la réponse en cas d'accident.",
+              "Les textes antérieurs qui citent encore la loi 04-20 (études de dangers, plans d'intervention établis avant 2024) doivent être lus à la lumière du nouveau cadre."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Les plans d'intervention",
+            "paragraphs": [
+              "Le décret exécutif 25-63 du 28 janvier 2025 (JO n° 7 du 5 février 2025), pris en application des articles 73 et 76 de la loi, fixe les conditions d'élaboration, de mise en œuvre et de gestion de deux plans :"
+            ],
+            "list": [
+              "le plan interne d'intervention (PII), établi par l'exploitant : mesures de prévention, d'organisation et de coordination des secours en cas d'accident ayant des effets sur l'installation ;",
+              "le plan particulier d'intervention (PPI), établi par les pouvoirs publics pour les établissements classés dont l'étude de dangers conclut que les effets des risques peuvent dépasser les limites de l'installation."
+            ],
+            "after": "Le décret prévoit des exercices de simulation et le déclenchement du plan particulier lorsque les moyens du plan interne se révèlent insuffisants."
+          },
+          {
+            "heading": "Obligations de l'exploitant",
+            "paragraphs": [],
+            "list": [
+              "identifier et analyser les risques que présente l'installation ;",
+              "mettre en œuvre les mesures de prévention et de réduction à la source ;",
+              "établir et tenir à jour un plan interne d'intervention, et s'exercer à sa mise en œuvre ;",
+              "informer les autorités et s'inscrire dans les plans d'organisation des secours."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Lien avec l'étude de dangers",
+            "paragraphs": [
+              "Pour un site industriel, l'étude de dangers est l'outil qui matérialise ces obligations : scénarios d'accident, zones d'effet, mesures de maîtrise des risques. Elle constitue la base technique du plan interne d'intervention et détermine si un plan particulier d'intervention est nécessaire."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Plan interne d'intervention et étude de dangers, est-ce la même chose ?",
+            "a": "Non. L'étude de dangers analyse les risques ; le plan interne d'intervention organise la réponse de l'exploitant en cas d'accident. Le second s'appuie sur la première."
+          },
+          {
+            "q": "Un plan interne établi sous l'ancien décret 09-335 reste-t-il valable ?",
+            "a": "Le décret 25-63 encadre désormais les plans internes et particuliers d'intervention. Un plan existant doit être confronté à ses exigences et mis à jour si nécessaire ; nous mesurons l'écart au cas par cas."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-de-dangers",
+            "label": "Étude de Dangers"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "Audit HSE & conformité"
+          }
+        ],
+        "related": [
+          "decret-06-198-etablissements-classes",
+          "loi-03-10-protection-environnement",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Loi 24-04 : risques de catastrophes, obligations des exploitants industriels et plans d'intervention",
+        "metaDescription": "Fiche pratique sur la loi n° 24-04 du 26 février 2024, qui abroge la loi 04-20 : prévention des risques de catastrophes, obligations des exploitants d'installations dangereuses, plans interne et particulier d'intervention (décret 25-63), lien avec l'étude de dangers."
+      },
+      {
+        "slug": "decret-23-324-agrement-bureaux-etudes",
+        "kind": "texte",
+        "ref": "23-324",
+        "typeLabel": "Décret exécutif",
+        "date": "6 septembre 2023",
+        "title": "Agrément des bureaux d'études en environnement",
+        "officialTitle": "Décret exécutif n° 23-324 du 6 septembre 2023 fixant les conditions et les modalités d'exercice de l'activité des bureaux d'études dans le domaine de l'environnement (JO n° 61 du 17 septembre 2023)",
+        "summary": "Le texte qui dit qui a le droit de réaliser vos études d'impact, de dangers et d'audit : un bureau agréé par arrêté du ministre chargé de l'environnement, pour cinq ans renouvelables. Une étude signée par un bureau non agréé est irrecevable.",
+        "homeLine": "Réserve la réalisation des études d'impact, de dangers et des audits aux bureaux agréés par arrêté du ministre chargé de l'environnement, pour cinq ans renouvelables.",
+        "meta": [
+          {
+            "label": "Agrément",
+            "value": "Arrêté du ministre chargé de l'environnement"
+          },
+          {
+            "label": "Validité",
+            "value": "5 ans renouvelables"
+          },
+          {
+            "label": "Secteur hydrocarbures",
+            "value": "Pré-qualification ARH en plus"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Ce que le décret exige",
+            "paragraphs": [],
+            "list": [
+              "l'activité de bureau d'études en environnement est soumise à un agrément délivré par arrêté du ministre chargé de l'environnement, après avis d'une commission ministérielle ;",
+              "le bureau doit être de nationalité algérienne ou de droit algérien, son responsable titulaire d'un diplôme universitaire dans l'une des spécialités de l'annexe du décret, avec une expérience professionnelle d'au moins trois ans dans le domaine ;",
+              "l'agrément est accordé pour cinq ans renouvelables ; la demande de renouvellement se dépose au moins quarante-cinq jours avant l'expiration ;",
+              "tout changement dans la situation du bureau donne lieu à un arrêté modificatif ; les bureaux existants disposaient de douze mois à compter de la publication pour se conformer."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Pourquoi cela vous concerne",
+            "paragraphs": [
+              "Les décrets 07-145 et 06-198 et l'arrêté interministériel du 14 septembre 2014 exigent que l'étude d'impact et l'étude de dangers soient établies par un bureau agréé. Une étude signée par un bureau sans agrément valide, ou dont l'agrément ne couvre pas le type d'étude, est rejetée à la recevabilité. Avant toute commande, demandez l'arrêté d'agrément et vérifiez sa date de validité.",
+              "Pour les activités du secteur des hydrocarbures, l'agrément environnemental ne suffit pas : le bureau doit en outre être pré-qualifié par l'Autorité de régulation des hydrocarbures."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "BTH Expert est-il agréé ?",
+            "a": "Oui. BTH Expert est agréé par le ministère chargé de l'environnement pour la réalisation des études d'impact et des études de dangers. L'arrêté d'agrément est communiqué sur demande."
+          },
+          {
+            "q": "Un bureau étranger peut-il réaliser une étude d'impact en Algérie ?",
+            "a": "L'agrément est réservé aux personnes physiques de nationalité algérienne et aux personnes morales de droit algérien. Un bureau étranger intervient, le cas échéant, en appui d'un bureau algérien agréé."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Étude d'Impact sur l'Environnement"
+          },
+          {
+            "slug": "etude-de-dangers",
+            "label": "Étude de Dangers"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "Audit HSE & conformité"
+          },
+          {
+            "slug": "plan-gestion-environnementale",
+            "label": "Plan de Gestion Environnementale"
+          }
+        ],
+        "related": [
+          "decret-07-145-etude-impact",
+          "decret-06-198-etablissements-classes"
+        ],
+        "metaTitle": "Décret 23-324 : agrément des bureaux d'études en environnement en Algérie",
+        "metaDescription": "Fiche pratique sur le décret exécutif 23-324 du 6 septembre 2023 : conditions d'agrément des bureaux d'études en environnement, validité de cinq ans, renouvellement, pré-qualification hydrocarbures, et pourquoi vérifier l'agrément avant de commander une étude."
+      },
+      {
+        "slug": "procedure-autorisation-installation-classee",
+        "kind": "guide",
+        "ref": "Guide",
+        "typeLabel": "Procédure",
+        "date": "",
+        "title": "Obtenir l'autorisation d'une installation classée, étape par étape",
+        "officialTitle": "Guide de procédure : de la nomenclature à l'autorisation d'exploitation",
+        "summary": "De la lecture de la nomenclature à l'arrêté d'autorisation, les six étapes du parcours réglementaire d'un projet industriel en Algérie, avec les délais fixés par les textes et ce qui fait gagner ou perdre des mois.",
+        "homeLine": "",
+        "meta": [
+          {
+            "label": "Étapes",
+            "value": "6"
+          },
+          {
+            "label": "Textes",
+            "value": "07-144 · 07-145 · 06-198 · 23-324"
+          },
+          {
+            "label": "Délais réglementaires",
+            "value": "Décision sous 4 mois après l'enquête"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Classer l'installation",
+            "paragraphs": [
+              "Rapprocher chaque activité du site des rubriques de la nomenclature (décret 07-144) et de leurs seuils. Le résultat fixe le régime, donc l'autorité compétente : ministre, wali ou wali délégué, président d'APC. Livrable : une note de classement."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Déterminer les études exigées",
+            "paragraphs": [
+              "Selon les annexes du décret 07-145 (révisées en 2019), le projet relève d'une étude d'impact complète ou d'une notice d'impact. S'il s'agit d'un établissement classé soumis à autorisation, le décret 06-198 ajoute l'étude de dangers, approuvée selon l'arrêté interministériel du 14 septembre 2014. Les deux études doivent être établies par un bureau agréé (décret 23-324)."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Réaliser les études",
+            "paragraphs": [
+              "État initial du site avec relevés sur place, analyse des impacts, mesures chiffrées, plan de gestion environnementale et programme de surveillance pour l'étude d'impact. Scénarios d'accident, zones d'effet et mesures de maîtrise pour l'étude de dangers. Un résumé non technique accompagne le dossier. Comptez de quelques semaines à plusieurs mois selon l'ampleur du projet."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Déposer le dossier",
+            "paragraphs": [
+              "L'étude ou la notice d'impact se dépose auprès du wali (Direction de l'environnement de wilaya) en quatorze exemplaires papier et deux numériques ; l'étude de dangers en huit exemplaires. Les services de l'environnement examinent le contenu dans un délai d'un mois et peuvent demander des compléments, à fournir sous deux mois. Un dossier incomplet est renvoyé avant même d'être instruit."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Suivre l'instruction",
+            "paragraphs": [
+              "Enquête publique ouverte par arrêté du wali, sous la conduite d'un commissaire enquêteur, quinze jours au maximum à compter de l'affichage ; mémoire en réponse du promoteur sous dix jours. Pour l'étude de dangers, examen par la commission interministérielle ou la commission de wilaya, avec compléments éventuels sous quarante-cinq jours. C'est à ce stade qu'arrivent les demandes de compléments : répondre vite et précisément évite de perdre le créneau de décision."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Obtenir la décision et exploiter",
+            "paragraphs": [
+              "Décision sur l'étude d'impact dans un délai maximal de quatre mois après la clôture de l'enquête, notifiée par le wali ; décision sur l'étude de dangers signée par les ministres (1re catégorie) ou le wali (2e catégorie) ; puis autorisation d'exploitation assortie de prescriptions. L'obligation ne s'arrête pas là : plan de gestion environnementale et surveillance, plan interne d'intervention (décret 25-63), audits de conformité, et mise à jour des études à chaque modification substantielle."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Ce qui fait perdre du temps",
+            "paragraphs": [],
+            "list": [
+              "un classement erroné, qui envoie le dossier à la mauvaise autorité ;",
+              "un état initial bibliographique, sans relevés sur site ;",
+              "des mesures d'atténuation non chiffrées ni planifiées ;",
+              "un résumé non technique absent ou illisible ;",
+              "un dossier déposé incomplet, ou un bureau dont l'agrément n'est pas valide."
+            ],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Combien de temps dure la procédure complète ?",
+            "a": "Les textes fixent un mois d'examen, quinze jours d'enquête publique, dix jours de mémoire et quatre mois maximum pour la décision, soit moins de six mois après un dossier recevable, auxquels s'ajoute la durée de réalisation des études. Un dossier complet dès le premier dépôt est le principal levier de réduction du délai."
+          },
+          {
+            "q": "Faut-il obligatoirement passer par un bureau agréé ?",
+            "a": "Oui pour l'étude d'impact et l'étude de dangers : seuls les bureaux d'études agréés par le ministère chargé de l'environnement (décret 23-324) sont habilités à les réaliser."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Étude d'Impact sur l'Environnement"
+          },
+          {
+            "slug": "etude-de-dangers",
+            "label": "Étude de Dangers"
+          },
+          {
+            "slug": "plan-gestion-environnementale",
+            "label": "Plan de Gestion Environnementale"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "Audit HSE & conformité"
+          }
+        ],
+        "related": [
+          "decret-07-144-nomenclature-installations-classees",
+          "decret-07-145-etude-impact",
+          "decret-06-198-etablissements-classes",
+          "decret-23-324-agrement-bureaux-etudes"
+        ],
+        "metaTitle": "Autorisation d'une installation classée en Algérie : la procédure étape par étape",
+        "metaDescription": "Guide pratique : classement selon la nomenclature, études exigées, dépôt du dossier à la wilaya, enquête publique de 15 jours, décision sous 4 mois, obligations en exploitation. Délais réglementaires et erreurs qui coûtent des mois."
+      }
+    ]
   }
 }

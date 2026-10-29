@@ -1,0 +1,58 @@
+slug: loi-24-04-risques-de-catastrophes
+order: 5
+kind: texte
+ref: 24-04
+typeLabel: Loi
+date: 26 février 2024
+title: Prévention, intervention et réduction des risques de catastrophes
+officialTitle: Loi n° 24-04 du 26 février 2024 portant les règles de prévention, d'intervention et de réduction des risques de catastrophes dans le cadre du développement durable (JO n° 16 du 6 mars 2024), qui abroge la loi n° 04-20 du 25 décembre 2004
+summary: La loi qui remplace depuis 2024 l'ancienne loi 04-20 sur les risques majeurs. Elle organise la prévention des risques de catastrophes, dont les risques industriels, et impose aux exploitants d'installations dangereuses des plans d'intervention, précisés par le décret 25-63 de 2025.
+homeLine: 'Remplace la loi 04-20 depuis 2024 : impose aux exploitants d''installations à risque la maîtrise des scénarios d''accident et des plans internes et particuliers d''intervention (décret 25-63 de 2025).'
+meta:
+- label: Nature
+  value: Loi-cadre
+- label: Abroge
+  value: Loi 04-20 du 25 décembre 2004
+- label: Texte d'application
+  value: Décret 25-63 du 28 janvier 2025
+sections:
+- heading: Ce qui change par rapport à la loi 04-20
+  paragraphs:
+  - 'La loi 24-04 reprend et élargit le dispositif de 2004 : elle traite de la prévention, de l''intervention et de la réduction des risques de catastrophes, qu''ils soient naturels, technologiques ou sanitaires. Pour un exploitant industriel, l''essentiel est inchangé dans son principe et précisé dans ses modalités : analyser les risques de son installation, les réduire à la source et organiser la réponse en cas d''accident.'
+  - Les textes antérieurs qui citent encore la loi 04-20 (études de dangers, plans d'intervention établis avant 2024) doivent être lus à la lumière du nouveau cadre.
+  list: []
+  after: ''
+- heading: Les plans d'intervention
+  paragraphs:
+  - 'Le décret exécutif 25-63 du 28 janvier 2025 (JO n° 7 du 5 février 2025), pris en application des articles 73 et 76 de la loi, fixe les conditions d''élaboration, de mise en œuvre et de gestion de deux plans :'
+  list:
+  - 'le plan interne d''intervention (PII), établi par l''exploitant : mesures de prévention, d''organisation et de coordination des secours en cas d''accident ayant des effets sur l''installation ;'
+  - le plan particulier d'intervention (PPI), établi par les pouvoirs publics pour les établissements classés dont l'étude de dangers conclut que les effets des risques peuvent dépasser les limites de l'installation.
+  after: Le décret prévoit des exercices de simulation et le déclenchement du plan particulier lorsque les moyens du plan interne se révèlent insuffisants.
+- heading: Obligations de l'exploitant
+  paragraphs: []
+  list:
+  - identifier et analyser les risques que présente l'installation ;
+  - mettre en œuvre les mesures de prévention et de réduction à la source ;
+  - établir et tenir à jour un plan interne d'intervention, et s'exercer à sa mise en œuvre ;
+  - informer les autorités et s'inscrire dans les plans d'organisation des secours.
+  after: ''
+- heading: Lien avec l'étude de dangers
+  paragraphs:
+  - 'Pour un site industriel, l''étude de dangers est l''outil qui matérialise ces obligations : scénarios d''accident, zones d''effet, mesures de maîtrise des risques. Elle constitue la base technique du plan interne d''intervention et détermine si un plan particulier d''intervention est nécessaire.'
+  list: []
+  after: ''
+faq:
+- q: Plan interne d'intervention et étude de dangers, est-ce la même chose ?
+  a: Non. L'étude de dangers analyse les risques ; le plan interne d'intervention organise la réponse de l'exploitant en cas d'accident. Le second s'appuie sur la première.
+- q: Un plan interne établi sous l'ancien décret 09-335 reste-t-il valable ?
+  a: Le décret 25-63 encadre désormais les plans internes et particuliers d'intervention. Un plan existant doit être confronté à ses exigences et mis à jour si nécessaire ; nous mesurons l'écart au cas par cas.
+services:
+- edd
+- hse
+related:
+- decret-06-198-etablissements-classes
+- loi-03-10-protection-environnement
+- procedure-autorisation-installation-classee
+metaTitle: 'Loi 24-04 : risques de catastrophes, obligations des exploitants industriels et plans d''intervention'
+metaDescription: 'Fiche pratique sur la loi n° 24-04 du 26 février 2024, qui abroge la loi 04-20 : prévention des risques de catastrophes, obligations des exploitants d''installations dangereuses, plans interne et particulier d''intervention (décret 25-63), lien avec l''étude de dangers.'

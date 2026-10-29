@@ -1,0 +1,62 @@
+slug: decret-06-198-etablissements-classes
+order: 3
+kind: texte
+ref: 06-198
+typeLabel: Décret exécutif
+date: 31 mai 2006
+title: Établissements classés pour la protection de l'environnement
+officialTitle: Décret exécutif n° 06-198 du 31 mai 2006 définissant la réglementation applicable aux établissements classés pour la protection de l'environnement, modifié et complété par le décret exécutif n° 22-167 du 19 avril 2022
+summary: 'Le régime d''autorisation des établissements classés : quelle autorité délivre l''autorisation d''exploitation selon la catégorie, quel dossier déposer, et l''étude de dangers qui conditionne l''ouverture.'
+homeLine: Conditionne l'autorisation d'exploitation d'un établissement classé à une étude d'impact approuvée et à une étude de dangers approuvée, selon quatre catégories et trois autorités.
+meta:
+- label: Catégories
+  value: 1re à 4e
+- label: Autorités
+  value: Ministre · Wali ou wali délégué · Président d'APC
+- label: Pièce clé
+  value: Étude de dangers approuvée
+sections:
+- heading: Quatre catégories, trois autorités
+  paragraphs: []
+  list:
+  - '1re catégorie : établissements comportant au moins une installation soumise à autorisation du ministre chargé de l''environnement ;'
+  - '2e catégorie : autorisation du wali ou du wali délégué territorialement compétent (rédaction issue du décret 22-167) ;'
+  - '3e catégorie : autorisation du président de l''assemblée populaire communale ;'
+  - '4e catégorie : déclaration auprès du président de l''assemblée populaire communale.'
+  after: La catégorie découle du régime attaché à chaque rubrique de la nomenclature du décret 07-144.
+- heading: Le dossier d'autorisation d'exploitation
+  paragraphs: []
+  list:
+  - la demande d'autorisation précisant l'identité de l'exploitant, la nature et le volume des activités ;
+  - l'étude ou la notice d'impact approuvée ;
+  - l'étude de dangers, accompagnée de sa décision d'approbation ;
+  - les pièces techniques décrivant les procédés, les produits mis en œuvre et les plans de l'installation.
+  after: Le décret organise aussi un accord préalable, délivré par le ministère chargé de l'environnement ou par les services de la wilaya selon la catégorie, avant l'autorisation d'exploitation. Pour un établissement existant soumis à autorisation, la demande est précédée de l'approbation d'un audit environnemental et de l'étude de dangers (décret 22-167).
+- heading: L'étude de dangers
+  paragraphs:
+  - 'Elle précise les risques directs ou indirects par lesquels l''activité met en danger les personnes, les biens et l''environnement : identification des scénarios d''accident majeur, évaluation de leur probabilité et de leurs conséquences (zones d''effet thermique, de surpression, de dispersion toxique), mesures techniques et organisationnelles de prévention, de protection et d''intervention. Elle est révisée à chaque modification substantielle de l''installation, des procédés ou des produits.'
+  list:
+  - établie par un bureau d'études agréé et déposée auprès du wali en huit exemplaires ;
+  - transmise par le wali dans les cinq jours à la commission interministérielle (1re catégorie) ou à la commission de wilaya (2e catégorie) ;
+  - compléments pouvant être demandés dans les quarante-cinq jours de la saisine ;
+  - décision d'approbation signée conjointement par les ministres chargés de l'intérieur et de l'environnement (1re catégorie) ou par le wali (2e catégorie).
+  after: Ces modalités d'examen et d'approbation sont fixées par l'arrêté interministériel du 14 septembre 2014.
+- heading: Instruction et contrôle
+  paragraphs:
+  - Le dossier est instruit par une commission qui peut procéder à une visite du site. L'autorisation d'exploitation fixe les prescriptions à respecter. Des contrôles ultérieurs peuvent entraîner une mise en demeure, une suspension ou une fermeture en cas de non-conformité.
+  list: []
+  after: ''
+faq:
+- q: Un atelier existant doit-il demander une autorisation ?
+  a: Oui, si son activité figure dans la nomenclature au-dessus des seuils. Depuis 2022, la demande d'un établissement existant est précédée de l'approbation d'un audit environnemental et d'une étude de dangers.
+- q: Quelle différence entre étude d'impact et étude de dangers ?
+  a: L'étude d'impact traite des effets de l'installation sur l'environnement en fonctionnement normal. L'étude de dangers traite des accidents possibles et de leur maîtrise. Les deux sont exigées, approuvées, pour un établissement classé soumis à autorisation.
+services:
+- edd
+- hse
+related:
+- decret-07-144-nomenclature-installations-classees
+- loi-24-04-risques-de-catastrophes
+- procedure-autorisation-installation-classee
+metaTitle: 'Décret 06-198 modifié : autorisation des établissements classés et étude de dangers'
+metaDescription: 'Fiche pratique sur le décret exécutif 06-198 (modifié par le décret 22-167) : catégories d''établissements classés, autorité compétente, dossier d''autorisation, étude de dangers (commissions, délais, approbation), instruction et contrôle.'

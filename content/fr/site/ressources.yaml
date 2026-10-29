@@ -1,0 +1,30 @@
+nav: Ressources
+meta:
+  title: Ressources — Réglementation environnementale algérienne | BTH Expert
+  description: Fiches pratiques par texte (loi 03-10, décrets 07-145, 06-198, 07-144, loi 24-04, décret 23-324) et guide de procédure d'autorisation d'une installation classée en Algérie, par un bureau d'études agréé.
+hero:
+  eyebrow: Ressources · Réglementation algérienne
+  heading: Comprendre le cadre réglementaire de votre projet
+  subheading: 'Une fiche par texte et un guide de procédure, écrits par un bureau d''études agréé pour les porteurs de projets. Pas un résumé de loi : ce que chaque texte change concrètement pour votre dossier.'
+textesHeading: Textes de référence
+textesIntro: Les textes qui structurent l'autorisation d'une installation en Algérie, lus du point de vue de l'exploitant, avec leurs modifications les plus récentes.
+guideHeading: Guide de procédure
+articlesHeading: Derniers articles
+articlesLink: Tous les articles du blog
+readFiche: Lire la fiche
+readGuide: Lire le guide
+faqHeading: Questions fréquentes
+servicesHeading: Prestations concernées
+relatedHeading: Textes liés
+backLabel: Toutes les ressources
+updatedLabel: Dernière relecture
+note: Lecture indicative destinée aux porteurs de projets. Seules les versions publiées au Journal officiel de la République algérienne font foi ; chaque projet fait l'objet d'une analyse spécifique dans le cadre d'une mission.
+cta:
+  heading: Votre projet relève de ce texte ?
+  description: Décrivez-nous l'installation et son site. Nous vérifions le classement, les études exigées et le calendrier, et vous remettons une offre sous 48h.
+  button: Demander un devis
+homeSection:
+  eyebrow: Cadre réglementaire
+  heading: Les textes qui déclenchent votre étude
+  intro: Six textes structurent l'autorisation d'une installation en Algérie. Savoir lequel s'applique à votre projet, c'est déjà savoir quelle étude déposer, auprès de qui, et dans quel délai.
+  note: Lecture indicative. Seules les versions publiées au Journal officiel font foi.

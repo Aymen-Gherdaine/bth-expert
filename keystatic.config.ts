@@ -207,6 +207,79 @@ export default config({
       },
     }),
 
+    ressources: collection({
+      label: "Ressources — Fiches réglementaires",
+      path: "content/fr/ressources/*",
+      slugField: "slug",
+      format: "yaml",
+      schema: {
+        slug: fields.slug({ name: { label: "Identifiant (URL)" } }),
+        order: fields.integer({ label: "Ordre d'affichage", defaultValue: 1 }),
+        kind: fields.select({
+          label: "Type",
+          description: "Une fiche par texte réglementaire, ou le guide de procédure (un seul).",
+          options: [
+            { label: "Texte réglementaire", value: "texte" },
+            { label: "Guide de procédure", value: "guide" },
+          ],
+          defaultValue: "texte",
+        }),
+        ref: fields.text({ label: "Référence courte (ex. 07-145, ou « Guide »)", validation: { isRequired: true } }),
+        typeLabel: fields.text({ label: "Nature (Loi, Décret exécutif, Arrêté, Procédure…)" }),
+        date: fields.text({ label: "Date du texte (ex. 19 mai 2007) — vide pour le guide" }),
+        title: fields.text({ label: "Titre court", validation: { isRequired: true } }),
+        officialTitle: fields.text({ label: "Intitulé officiel complet (avec JO et modifications)", multiline: true }),
+        summary: fields.text({ label: "Résumé (2 phrases)", multiline: true }),
+        homeLine: fields.text({
+          label: "Phrase pour la section « Cadre réglementaire » de l'accueil",
+          description: "Une phrase. Vide = la fiche n'apparaît pas sur l'accueil.",
+          multiline: true,
+        }),
+        meta: fields.array(heroMetaItem, {
+          label: "Repères clés (colonne de droite du hero)",
+          itemLabel: (p) => p.fields.label.value || "Repère",
+        }),
+        sections: fields.array(
+          fields.object({
+            heading: fields.text({ label: "Titre de la section" }),
+            paragraphs: fields.array(fields.text({ label: "Paragraphe", multiline: true }), {
+              label: "Paragraphes",
+              itemLabel: (p) => p.value.slice(0, 60) || "Paragraphe",
+            }),
+            list: fields.array(fields.text({ label: "Élément", multiline: true }), {
+              label: "Liste à puces",
+              itemLabel: (p) => p.value.slice(0, 60) || "Élément",
+            }),
+            after: fields.text({ label: "Paragraphe de conclusion (optionnel)", multiline: true }),
+          }),
+          { label: "Sections", itemLabel: (p) => p.fields.heading.value || "Section" }
+        ),
+        faq: fields.array(faqItem, {
+          label: "Questions fréquentes",
+          itemLabel: (p) => p.fields.q.value || "Question",
+        }),
+        services: fields.array(
+          fields.select({
+            label: "Prestation",
+            options: [
+              { label: "Étude d'impact (EIE)", value: "eie" },
+              { label: "Étude de dangers (EDD)", value: "edd" },
+              { label: "Audit HSE", value: "hse" },
+              { label: "Plan de gestion environnementale (PGE)", value: "pge" },
+            ],
+            defaultValue: "eie",
+          }),
+          { label: "Prestations concernées", itemLabel: (p) => p.value }
+        ),
+        related: fields.array(fields.text({ label: "Identifiant de la fiche liée" }), {
+          label: "Fiches liées (identifiants)",
+          itemLabel: (p) => p.value,
+        }),
+        metaTitle: fields.text({ label: "Balise <title>" }),
+        metaDescription: fields.text({ label: "Meta description", multiline: true }),
+      },
+    }),
+
     equipeMembres: collection({
       label: "Équipe — Membres",
       path: "content/fr/equipe/*",
@@ -580,6 +653,40 @@ export default config({
           backLabel: fields.text({ label: "Lien retour" }),
           cta: cta(),
         }),
+      },
+    }),
+
+    ressourcesPage: singleton({
+      label: "Page Ressources (index + libellés)",
+      path: "content/fr/site/ressources",
+      format: "yaml",
+      schema: {
+        nav: fields.text({ label: "Libellé dans la navigation" }),
+        meta: meta(),
+        hero: heroSimple,
+        textesHeading: fields.text({ label: "Titre — textes de référence" }),
+        textesIntro: fields.text({ label: "Intro — textes de référence", multiline: true }),
+        guideHeading: fields.text({ label: "Titre — guide" }),
+        articlesHeading: fields.text({ label: "Titre — derniers articles" }),
+        articlesLink: fields.text({ label: "Lien — tous les articles" }),
+        readFiche: fields.text({ label: "Lire la fiche" }),
+        readGuide: fields.text({ label: "Lire le guide" }),
+        faqHeading: fields.text({ label: "Titre — questions fréquentes" }),
+        servicesHeading: fields.text({ label: "Titre — prestations concernées" }),
+        relatedHeading: fields.text({ label: "Titre — textes liés" }),
+        backLabel: fields.text({ label: "Retour — toutes les ressources" }),
+        updatedLabel: fields.text({ label: "Dernière relecture" }),
+        note: fields.text({ label: "Avertissement (lecture indicative)", multiline: true }),
+        cta: cta(),
+        homeSection: fields.object(
+          {
+            eyebrow: fields.text({ label: "Eyebrow" }),
+            heading: fields.text({ label: "Titre" }),
+            intro: fields.text({ label: "Intro", multiline: true }),
+            note: fields.text({ label: "Note", multiline: true }),
+          },
+          { label: "Section « Cadre réglementaire » de l'accueil" }
+        ),
       },
     }),
 

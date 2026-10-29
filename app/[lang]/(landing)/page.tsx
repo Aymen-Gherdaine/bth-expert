@@ -163,7 +163,7 @@ export default async function HomePage({
       <ServicesPinScroll lang={lang} services={h.services} />
 
       {/* ── CADRE RÉGLEMENTAIRE — the texts behind the studies, set as a ledger ── */}
-      <ReglementationSection lang={lang} />
+      <ReglementationSection lang={lang} ressources={dict.ressources} />
 
       {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
       <ProjectsSection lang={lang} projects={dict.projets.items} />

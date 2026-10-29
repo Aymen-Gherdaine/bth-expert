@@ -11,7 +11,8 @@ import { frenchPunctuationDeep } from "./typography";
  *
  * Texts cited (Journal officiel de la République algérienne) :
  * - Loi n° 18-07 du 10 juin 2018 relative à la protection des personnes
- *   physiques dans le traitement des données à caractère personnel.
+ *   physiques dans le traitement des données à caractère personnel, modifiée
+ *   et complétée par la loi n° 25-11 du 24 juillet 2025.
  * - Ordonnance n° 03-05 du 19 juillet 2003 relative aux droits d'auteur et
  *   aux droits voisins.
  * - Loi n° 03-10 du 19 juillet 2003 relative à la protection de
@@ -155,7 +156,7 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "Données personnelles",
         paragraphs: [
-          "Le traitement des données à caractère personnel collectées sur le Site est régi par la loi n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel. Les finalités, destinataires, durées de conservation et vos droits sont détaillés dans notre politique de confidentialité, accessible depuis chaque page du Site.",
+          "Le traitement des données à caractère personnel collectées sur le Site est régi par la loi n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel, modifiée et complétée par la loi n° 25-11 du 24 juillet 2025. Les finalités, destinataires, durées de conservation et vos droits sont détaillés dans notre politique de confidentialité, accessible depuis chaque page du Site.",
         ],
       },
       {
@@ -222,7 +223,7 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "البيانات الشخصية",
         paragraphs: [
-          "تخضع معالجة البيانات ذات الطابع الشخصي المجمَّعة عبر الموقع للقانون رقم 18-07 المؤرخ في 10 يونيو 2018 المتعلق بحماية الأشخاص الطبيعيين في مجال معالجة المعطيات ذات الطابع الشخصي. الأغراض والمستلمون ومدد الحفظ وحقوقكم مفصّلة في سياسة الخصوصية المتاحة من كل صفحة في الموقع.",
+          "تخضع معالجة البيانات ذات الطابع الشخصي المجمَّعة عبر الموقع للقانون رقم 18-07 المؤرخ في 10 يونيو 2018 المتعلق بحماية الأشخاص الطبيعيين في مجال معالجة المعطيات ذات الطابع الشخصي، المعدل والمتمم بالقانون رقم 25-11 المؤرخ في 24 يوليو 2025. الأغراض والمستلمون ومدد الحفظ وحقوقكم مفصّلة في سياسة الخصوصية المتاحة من كل صفحة في الموقع.",
         ],
       },
       {
@@ -289,7 +290,7 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "Personal data",
         paragraphs: [
-          "The processing of personal data collected on the Site is governed by Algerian Law No. 18-07 of 10 June 2018 on the protection of natural persons in the processing of personal data. Purposes, recipients, retention periods and your rights are set out in our privacy policy, accessible from every page of the Site.",
+          "The processing of personal data collected on the Site is governed by Algerian Law No. 18-07 of 10 June 2018 on the protection of natural persons in the processing of personal data, as amended and supplemented by Law No. 25-11 of 24 July 2025. Purposes, recipients, retention periods and your rights are set out in our privacy policy, accessible from every page of the Site.",
         ],
       },
       {
@@ -325,7 +326,7 @@ const PRIVACY: Record<Locale, LegalPage> = {
       {
         heading: "Notre engagement",
         paragraphs: [
-          `${legalName} traite les données à caractère personnel des visiteurs de son site conformément à la loi n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel. La présente politique décrit, en termes clairs, quelles données nous collectons, pourquoi, qui y accède, combien de temps nous les conservons et comment vous pouvez exercer vos droits.`,
+          `${legalName} traite les données à caractère personnel des visiteurs de son site conformément à la loi n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel, modifiée et complétée par la loi n° 25-11 du 24 juillet 2025. La présente politique décrit, en termes clairs, quelles données nous collectons, pourquoi, qui y accède, combien de temps nous les conservons et comment vous pouvez exercer vos droits.`,
         ],
       },
       {
@@ -435,7 +436,7 @@ const PRIVACY: Record<Locale, LegalPage> = {
       {
         heading: "التزامنا",
         paragraphs: [
-          `تعالج ${legalName} البيانات ذات الطابع الشخصي لزوار موقعها طبقاً للقانون رقم 18-07 المؤرخ في 10 يونيو 2018 المتعلق بحماية الأشخاص الطبيعيين في مجال معالجة المعطيات ذات الطابع الشخصي. تبيّن هذه السياسة، بعبارات واضحة، البيانات التي نجمعها، ولماذا، ومن يطّلع عليها، ومدة حفظها، وكيف تمارسون حقوقكم.`,
+          `تعالج ${legalName} البيانات ذات الطابع الشخصي لزوار موقعها طبقاً للقانون رقم 18-07 المؤرخ في 10 يونيو 2018 المتعلق بحماية الأشخاص الطبيعيين في مجال معالجة المعطيات ذات الطابع الشخصي، المعدل والمتمم بالقانون رقم 25-11 المؤرخ في 24 يوليو 2025. تبيّن هذه السياسة، بعبارات واضحة، البيانات التي نجمعها، ولماذا، ومن يطّلع عليها، ومدة حفظها، وكيف تمارسون حقوقكم.`,
         ],
       },
       {
@@ -541,7 +542,7 @@ const PRIVACY: Record<Locale, LegalPage> = {
       {
         heading: "Our commitment",
         paragraphs: [
-          `${legalName} processes the personal data of its website visitors in accordance with Algerian Law No. 18-07 of 10 June 2018 on the protection of natural persons in the processing of personal data. This policy explains, in plain terms, what data we collect, why, who has access to it, how long we keep it and how you can exercise your rights.`,
+          `${legalName} processes the personal data of its website visitors in accordance with Algerian Law No. 18-07 of 10 June 2018 on the protection of natural persons in the processing of personal data, as amended and supplemented by Law No. 25-11 of 24 July 2025. This policy explains, in plain terms, what data we collect, why, who has access to it, how long we keep it and how you can exercise your rights.`,
         ],
       },
       {

@@ -1,0 +1,74 @@
+slug: procedure-autorisation-installation-classee
+order: 7
+kind: guide
+ref: Guide
+typeLabel: Procédure
+date: ''
+title: Obtenir l'autorisation d'une installation classée, étape par étape
+officialTitle: 'Guide de procédure : de la nomenclature à l''autorisation d''exploitation'
+summary: De la lecture de la nomenclature à l'arrêté d'autorisation, les six étapes du parcours réglementaire d'un projet industriel en Algérie, avec les délais fixés par les textes et ce qui fait gagner ou perdre des mois.
+homeLine: ''
+meta:
+- label: Étapes
+  value: '6'
+- label: Textes
+  value: 07-144 · 07-145 · 06-198 · 23-324
+- label: Délais réglementaires
+  value: Décision sous 4 mois après l'enquête
+sections:
+- heading: Classer l'installation
+  paragraphs:
+  - 'Rapprocher chaque activité du site des rubriques de la nomenclature (décret 07-144) et de leurs seuils. Le résultat fixe le régime, donc l''autorité compétente : ministre, wali ou wali délégué, président d''APC. Livrable : une note de classement.'
+  list: []
+  after: ''
+- heading: Déterminer les études exigées
+  paragraphs:
+  - Selon les annexes du décret 07-145 (révisées en 2019), le projet relève d'une étude d'impact complète ou d'une notice d'impact. S'il s'agit d'un établissement classé soumis à autorisation, le décret 06-198 ajoute l'étude de dangers, approuvée selon l'arrêté interministériel du 14 septembre 2014. Les deux études doivent être établies par un bureau agréé (décret 23-324).
+  list: []
+  after: ''
+- heading: Réaliser les études
+  paragraphs:
+  - État initial du site avec relevés sur place, analyse des impacts, mesures chiffrées, plan de gestion environnementale et programme de surveillance pour l'étude d'impact. Scénarios d'accident, zones d'effet et mesures de maîtrise pour l'étude de dangers. Un résumé non technique accompagne le dossier. Comptez de quelques semaines à plusieurs mois selon l'ampleur du projet.
+  list: []
+  after: ''
+- heading: Déposer le dossier
+  paragraphs:
+  - L'étude ou la notice d'impact se dépose auprès du wali (Direction de l'environnement de wilaya) en quatorze exemplaires papier et deux numériques ; l'étude de dangers en huit exemplaires. Les services de l'environnement examinent le contenu dans un délai d'un mois et peuvent demander des compléments, à fournir sous deux mois. Un dossier incomplet est renvoyé avant même d'être instruit.
+  list: []
+  after: ''
+- heading: Suivre l'instruction
+  paragraphs:
+  - 'Enquête publique ouverte par arrêté du wali, sous la conduite d''un commissaire enquêteur, quinze jours au maximum à compter de l''affichage ; mémoire en réponse du promoteur sous dix jours. Pour l''étude de dangers, examen par la commission interministérielle ou la commission de wilaya, avec compléments éventuels sous quarante-cinq jours. C''est à ce stade qu''arrivent les demandes de compléments : répondre vite et précisément évite de perdre le créneau de décision.'
+  list: []
+  after: ''
+- heading: Obtenir la décision et exploiter
+  paragraphs:
+  - 'Décision sur l''étude d''impact dans un délai maximal de quatre mois après la clôture de l''enquête, notifiée par le wali ; décision sur l''étude de dangers signée par les ministres (1re catégorie) ou le wali (2e catégorie) ; puis autorisation d''exploitation assortie de prescriptions. L''obligation ne s''arrête pas là : plan de gestion environnementale et surveillance, plan interne d''intervention (décret 25-63), audits de conformité, et mise à jour des études à chaque modification substantielle.'
+  list: []
+  after: ''
+- heading: Ce qui fait perdre du temps
+  paragraphs: []
+  list:
+  - un classement erroné, qui envoie le dossier à la mauvaise autorité ;
+  - un état initial bibliographique, sans relevés sur site ;
+  - des mesures d'atténuation non chiffrées ni planifiées ;
+  - un résumé non technique absent ou illisible ;
+  - un dossier déposé incomplet, ou un bureau dont l'agrément n'est pas valide.
+  after: ''
+faq:
+- q: Combien de temps dure la procédure complète ?
+  a: Les textes fixent un mois d'examen, quinze jours d'enquête publique, dix jours de mémoire et quatre mois maximum pour la décision, soit moins de six mois après un dossier recevable, auxquels s'ajoute la durée de réalisation des études. Un dossier complet dès le premier dépôt est le principal levier de réduction du délai.
+- q: Faut-il obligatoirement passer par un bureau agréé ?
+  a: 'Oui pour l''étude d''impact et l''étude de dangers : seuls les bureaux d''études agréés par le ministère chargé de l''environnement (décret 23-324) sont habilités à les réaliser.'
+services:
+- eie
+- edd
+- pge
+- hse
+related:
+- decret-07-144-nomenclature-installations-classees
+- decret-07-145-etude-impact
+- decret-06-198-etablissements-classes
+- decret-23-324-agrement-bureaux-etudes
+metaTitle: 'Autorisation d''une installation classée en Algérie : la procédure étape par étape'
+metaDescription: 'Guide pratique : classement selon la nomenclature, études exigées, dépôt du dossier à la wilaya, enquête publique de 15 jours, décision sous 4 mois, obligations en exploitation. Délais réglementaires et erreurs qui coûtent des mois.'

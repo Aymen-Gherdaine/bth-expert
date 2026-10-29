@@ -985,5 +985,717 @@
       "cta": "Contact us",
       "coverage": "We cover all wilayas of Algeria."
     }
+  },
+  "ressources": {
+    "nav": "Resources",
+    "meta": {
+      "title": "Resources — Algerian environmental regulations | BTH Expert",
+      "description": "Practical sheets per text (Law 03-10, Decrees 07-145, 06-198, 07-144, Law 24-04, Decree 23-324) and a step-by-step guide to authorising a classified installation in Algeria, by an accredited consultancy."
+    },
+    "hero": {
+      "eyebrow": "Resources · Algerian regulations",
+      "heading": "Understand the regulatory framework of your project",
+      "subheading": "One sheet per text and a step-by-step procedure guide, written by an accredited consultancy for project owners. Not a summary of the law: what each text actually changes for your file."
+    },
+    "textesHeading": "Reference texts",
+    "textesIntro": "The texts that structure the authorisation of a facility in Algeria, read from the operator's point of view, with their most recent amendments.",
+    "guideHeading": "Procedure guide",
+    "articlesHeading": "Latest articles",
+    "articlesLink": "All blog articles",
+    "readFiche": "Read the sheet",
+    "readGuide": "Read the guide",
+    "faqHeading": "Frequently asked questions",
+    "servicesHeading": "Related services",
+    "relatedHeading": "Related texts",
+    "backLabel": "All resources",
+    "updatedLabel": "Last reviewed",
+    "note": "Indicative reading intended for project owners. Only the versions published in the Official Journal of Algeria are authoritative; every project is assessed specifically within an engagement.",
+    "cta": {
+      "heading": "Does your project fall under this text?",
+      "description": "Describe the facility and its site. We check the classification, the required studies and the timeline, and send you an offer within 48 hours.",
+      "button": "Request a quote"
+    },
+    "homeSection": {
+      "eyebrow": "Regulatory framework",
+      "heading": "The texts that trigger your study",
+      "intro": "Six texts structure the authorisation of a facility in Algeria. Knowing which one applies to your project already tells you which study to file, with whom, and within what timeframe.",
+      "note": "Indicative reading. Only the versions published in the Official Journal are authoritative."
+    },
+    "items": [
+      {
+        "slug": "loi-03-10-protection-environnement",
+        "kind": "texte",
+        "ref": "03-10",
+        "typeLabel": "Law",
+        "date": "19 July 2003",
+        "title": "Protection of the environment within the framework of sustainable development",
+        "officialTitle": "Law No. 03-10 of 19 July 2003 on the protection of the environment within the framework of sustainable development (Official Journal No. 43 of 20 July 2003), as amended",
+        "summary": "Algeria's framework environmental law. It sets the guiding principles, creates the obligation of an impact assessment or impact notice for any project likely to affect the environment, and organises the classified-establishments regime.",
+        "homeLine": "The founding text: any project likely to affect the environment requires a prior impact assessment or impact notice, and classified establishments require authorisation or declaration.",
+        "meta": [
+          {
+            "label": "Nature",
+            "value": "Framework law"
+          },
+          {
+            "label": "Publication",
+            "value": "OJ No. 43 of 20 July 2003"
+          },
+          {
+            "label": "Implementing texts",
+            "value": "06-198 · 07-144 · 07-145"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "What the law requires",
+            "paragraphs": [],
+            "list": [
+              "Any development, infrastructure or plant project likely, by its size or effects, to affect the environment is subject to a prior impact assessment or impact notice (Article 15).",
+              "Classified establishments (plants, workshops, worksites, quarries, mines and any installation presenting dangers to health, safety, agriculture, ecosystems or neighbourhood amenity) are subject to authorisation or declaration depending on the seriousness of the dangers (Articles 18 and 19).",
+              "Installations whose siting requires neither an assessment nor a notice fall under a declaration to the president of the municipal assembly.",
+              "The principles of prevention and correction at source, precaution, polluter pays, public information and participation guide every decision.",
+              "Administrative and criminal penalties apply to operating without authorisation or in breach of the prescriptions."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Who is concerned",
+            "paragraphs": [],
+            "list": [
+              "manufacturers, whatever the size of the unit, as soon as the activity is classified;",
+              "infrastructure owners: roads, business parks, hydraulic works;",
+              "quarry operators and mining projects;",
+              "large agricultural and hydraulic projects (irrigated perimeters, dams, treatment plants);",
+              "local authorities for their facilities (landfills, wastewater plants)."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "What it changes for your project",
+            "paragraphs": [
+              "The building or operating permit cannot be issued before the impact assessment is approved. Starting the study at the design stage, not at filing time, avoids the most common blockage: a construction schedule waiting for an approval.",
+              "Law 03-10 is not read alone. Project lists, study contents and procedures are set by its implementing decrees, in particular Decrees 07-145 (impact assessments, amended in 2018 and 2019) and 06-198 (classified establishments, amended in 2022)."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Does Law 03-10 apply to an existing installation?",
+            "a": "Yes. An existing installation remains subject to the protection prescriptions, and any extension or substantial modification calls for the studies required for the new configuration. Since 2022, an existing establishment subject to authorisation must also have an environmental audit and a hazard study approved."
+          },
+          {
+            "q": "Who approves the impact assessment?",
+            "a": "The approval or rejection decision is notified to the project owner by the territorially competent wali. Depending on the nature of the project, it rests with the ministry in charge of the environment or with the wali, under the terms of Executive Decree 07-145 as amended."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Environmental Impact Assessment"
+          },
+          {
+            "slug": "etude-de-dangers",
+            "label": "Hazard Study"
+          }
+        ],
+        "related": [
+          "decret-07-145-etude-impact",
+          "decret-06-198-etablissements-classes",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Law 03-10: environmental protection in Algeria and what it requires of your project",
+        "metaDescription": "Practical sheet on Law No. 03-10 of 19 July 2003: principles, impact assessment obligation (Art. 15), classified-establishments regime (Arts. 18-19), who is concerned and what it changes for your project's authorisation."
+      },
+      {
+        "slug": "decret-07-145-etude-impact",
+        "kind": "texte",
+        "ref": "07-145",
+        "typeLabel": "Executive decree",
+        "date": "19 May 2007",
+        "title": "Environmental impact assessments and notices",
+        "officialTitle": "Executive Decree No. 07-145 of 19 May 2007 determining the scope, content and approval procedure of environmental impact assessments and notices, as amended by Executive Decrees No. 18-255 of 9 October 2018 and No. 19-241 of 8 September 2019",
+        "summary": "The text that says whether your project requires a full impact assessment or an impact notice, what the report must contain, and how the wilaya reviews it, with precise deadlines, through to the decision.",
+        "homeLine": "Sets the list of projects subject to an assessment or a notice, the content of the report and its review by the wilaya: one month of examination, a fifteen-day public inquiry, a decision within four months.",
+        "meta": [
+          {
+            "label": "Filing",
+            "value": "Wali · 14 copies + 2 digital"
+          },
+          {
+            "label": "Public inquiry",
+            "value": "15 days maximum"
+          },
+          {
+            "label": "Decision",
+            "value": "4 months maximum after the inquiry"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Assessment or notice?",
+            "paragraphs": [
+              "The decree sorts projects into two annexed lists: those subject to a full impact assessment (Annex I), and those subject to a lighter impact notice (Annex II). These lists were revised by Decree 19-241 of 2019. The classification depends on the nature of the activity and its scale: capacity, surface, power or quantities handled."
+            ],
+            "list": [
+              "Impact assessment, for example: refineries and petrochemical units, cement plants, large chemical and metallurgical units, dams, major transport infrastructure, mining projects.",
+              "Impact notice, for example: small units, limited developments, activities with localised effects."
+            ],
+            "after": "The exact classification is checked heading by heading in the annexes in force. It is the first task of an engagement."
+          },
+          {
+            "heading": "Content of the report",
+            "paragraphs": [],
+            "list": [
+              "presentation of the project and justification of the chosen site;",
+              "description of the site's baseline and its natural and human environment;",
+              "analysis of foreseeable impacts, direct and indirect, temporary and permanent, during construction and operation;",
+              "measures planned to eliminate, reduce or offset these impacts, with their cost estimate;",
+              "environmental management plan and monitoring programme;",
+              "non-technical summary for public information."
+            ],
+            "after": "The assessment is prepared by a consultancy accredited by the ministry in charge of the environment (Executive Decree 23-324 of 6 September 2023)."
+          },
+          {
+            "heading": "Procedure and regulatory deadlines",
+            "paragraphs": [],
+            "list": [
+              "filing with the territorially competent wali, in fourteen paper copies and two digital copies;",
+              "examination of the content by the wilaya environment services within one month;",
+              "any additional information to be provided by the project owner within two months, failing which the assessment is rejected, unless a reasoned extension is requested;",
+              "public inquiry opened by order of the wali, led by an inquiry commissioner, lasting at most fifteen days from posting;",
+              "the project owner's written reply to the observations collected, within ten days;",
+              "examination for decision within a maximum of four months from the close of the public inquiry;",
+              "notification of the approval or rejection decision by the wali; in case of reasoned rejection, administrative appeal to the minister in charge of the environment."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Timeframes to plan for in practice",
+            "paragraphs": [
+              "On paper, the whole chain fits in under six months: one month of examination, fifteen days of inquiry, ten days for the reply, four months maximum of review. In practice, allow two to six months depending on the wilaya and the quality of the file, excluding the time needed to produce the study itself. Requests for additional documents are the first cause of slippage, and they are prevented at the writing stage."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Can works start during the review?",
+            "a": "No. Approval of the impact assessment or notice is a prerequisite for the building or operating permit."
+          },
+          {
+            "q": "Who can carry out the impact assessment?",
+            "a": "A consultancy accredited by the ministry in charge of the environment, under the terms of Executive Decree 23-324. BTH Expert holds this accreditation."
+          },
+          {
+            "q": "Is the study made public?",
+            "a": "Yes, as part of the public inquiry. The non-technical summary exists precisely to make the file readable by the public and local residents."
+          },
+          {
+            "q": "Do hydrocarbon projects follow the same procedure?",
+            "a": "No. Hydrocarbon-sector activities fall under a specific regime: the study is submitted to the Hydrocarbons Regulatory Authority, and the consultancy must also be pre-qualified by that authority."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Environmental Impact Assessment"
+          },
+          {
+            "slug": "plan-gestion-environnementale",
+            "label": "Environmental Management Plan"
+          }
+        ],
+        "related": [
+          "loi-03-10-protection-environnement",
+          "decret-07-144-nomenclature-installations-classees",
+          "decret-23-324-agrement-bureaux-etudes",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Decree 07-145 as amended: impact assessment or notice, content, procedure and deadlines",
+        "metaDescription": "Practical sheet on Executive Decree 07-145 (amended by Decrees 18-255 and 19-241): projects subject to an assessment or notice, report content, filing with the wilaya, 15-day public inquiry, decision within 4 months, appeal."
+      },
+      {
+        "slug": "decret-06-198-etablissements-classes",
+        "kind": "texte",
+        "ref": "06-198",
+        "typeLabel": "Executive decree",
+        "date": "31 May 2006",
+        "title": "Classified establishments for environmental protection",
+        "officialTitle": "Executive Decree No. 06-198 of 31 May 2006 defining the regulations applicable to classified establishments for environmental protection, as amended by Executive Decree No. 22-167 of 19 April 2022",
+        "summary": "The authorisation regime for classified establishments: which authority issues the operating permit depending on the category, which file to submit, and the hazard study that conditions the opening.",
+        "homeLine": "Makes the operating permit of a classified establishment conditional on an approved impact assessment and an approved hazard study, across four categories and three authorities.",
+        "meta": [
+          {
+            "label": "Categories",
+            "value": "1st to 4th"
+          },
+          {
+            "label": "Authorities",
+            "value": "Minister · Wali or delegated wali · Municipal president"
+          },
+          {
+            "label": "Key document",
+            "value": "Approved hazard study"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Four categories, three authorities",
+            "paragraphs": [],
+            "list": [
+              "1st category: establishments with at least one installation subject to authorisation by the minister in charge of the environment;",
+              "2nd category: authorisation by the territorially competent wali or delegated wali (wording from Decree 22-167);",
+              "3rd category: authorisation by the president of the municipal assembly;",
+              "4th category: declaration to the president of the municipal assembly."
+            ],
+            "after": "The category follows from the regime attached to each heading of the nomenclature of Decree 07-144."
+          },
+          {
+            "heading": "The operating-permit file",
+            "paragraphs": [],
+            "list": [
+              "the application stating the operator's identity and the nature and volume of activities;",
+              "the approved impact assessment or notice;",
+              "the hazard study, with its approval decision;",
+              "technical documents describing processes, products handled and installation drawings."
+            ],
+            "after": "The decree also organises a prior agreement, issued by the ministry in charge of the environment or by the wilaya services depending on the category, before the operating permit. For an existing establishment subject to authorisation, the application is preceded by the approval of an environmental audit and of the hazard study (Decree 22-167)."
+          },
+          {
+            "heading": "The hazard study",
+            "paragraphs": [
+              "It specifies the direct or indirect risks through which the activity endangers people, property and the environment: identification of major-accident scenarios, assessment of their likelihood and consequences (thermal, overpressure and toxic-dispersion effect zones), technical and organisational measures of prevention, protection and intervention. It is revised after each substantial modification of the installation, processes or products."
+            ],
+            "list": [
+              "prepared by an accredited consultancy and filed with the wali in eight copies;",
+              "forwarded by the wali within five days to the interministerial commission (1st category) or the wilaya commission (2nd category);",
+              "additional information may be requested within forty-five days of referral;",
+              "approval decision signed jointly by the ministers in charge of the interior and the environment (1st category) or by the wali (2nd category)."
+            ],
+            "after": "These examination and approval rules are set by the interministerial order of 14 September 2014."
+          },
+          {
+            "heading": "Review and control",
+            "paragraphs": [
+              "The file is reviewed by a commission that may visit the site. The operating permit sets the prescriptions to comply with. Later inspections may lead to a formal notice, suspension or closure in case of non-compliance."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Does an existing workshop need to apply for authorisation?",
+            "a": "Yes, if its activity appears in the nomenclature above the thresholds. Since 2022, an existing establishment's application is preceded by the approval of an environmental audit and a hazard study."
+          },
+          {
+            "q": "What is the difference between an impact assessment and a hazard study?",
+            "a": "The impact assessment covers the installation's effects on the environment in normal operation. The hazard study covers possible accidents and their control. Both are required, and approved, for a classified establishment subject to authorisation."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-de-dangers",
+            "label": "Hazard Study"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "HSE Audit & Compliance"
+          }
+        ],
+        "related": [
+          "decret-07-144-nomenclature-installations-classees",
+          "loi-24-04-risques-de-catastrophes",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Decree 06-198 as amended: authorisation of classified establishments and hazard study",
+        "metaDescription": "Practical sheet on Executive Decree 06-198 (amended by Decree 22-167): categories of classified establishments, competent authority, authorisation file, hazard study (commissions, deadlines, approval), review and control."
+      },
+      {
+        "slug": "decret-07-144-nomenclature-installations-classees",
+        "kind": "texte",
+        "ref": "07-144",
+        "typeLabel": "Executive decree",
+        "date": "19 May 2007",
+        "title": "Nomenclature of classified installations",
+        "officialTitle": "Executive Decree No. 07-144 of 19 May 2007 setting the nomenclature of classified installations for environmental protection (Official Journal No. 34 of 22 May 2007)",
+        "summary": "The list of classified activities: each heading carries thresholds (capacity, power, stored quantity), the applicable regime, hence the competent authority and the studies to produce, and the posting radius of the public inquiry.",
+        "homeLine": "Assigns a heading to each activity, sets the thresholds that determine the regime and the competent authority, and the posting radius of the public inquiry.",
+        "meta": [
+          {
+            "label": "Subject",
+            "value": "Headings, thresholds, posting radius"
+          },
+          {
+            "label": "Determines",
+            "value": "Regime · Authority · Studies"
+          },
+          {
+            "label": "Related text",
+            "value": "Decree 06-198"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "How to read the nomenclature",
+            "paragraphs": [
+              "Each activity is designated by a four-digit heading: the first digit designates the substance or activity, the second the hazard category or branch of activity, the last two the type of activity. The thresholds given (stored quantities, production capacity, installed power) determine the applicable regime, hence the establishment's category under Decree 06-198. A single site may fall under several headings: the most demanding one sets the regime.",
+              "The nomenclature also sets, for each heading, the minimum posting radius of the notice opening the public inquiry, so as to inform the population within the siting perimeter."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Families of activities concerned",
+            "paragraphs": [],
+            "list": [
+              "storage and distribution of hydrocarbons, gas and chemicals;",
+              "chemical, petrochemical and pharmaceutical industries;",
+              "cement plants, metallurgy, foundries, surface treatment;",
+              "quarries and mineral processing;",
+              "agri-food, slaughterhouses, intensive livestock;",
+              "water treatment and waste management installations."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "What it changes for your project",
+            "paragraphs": [
+              "The classification conditions everything else: the authority issuing the permit, the procedure, the need for a full impact assessment or a notice, and the hazard-study requirement. A classification error upstream is paid for at filing, through a rejection or a request for additional documents."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "How do I find my installation's category?",
+            "a": "By matching each activity on the site against the nomenclature headings and their thresholds. It is the first step of an engagement, formalised in a classification note."
+          },
+          {
+            "q": "Does a capacity increase change the category?",
+            "a": "It can. Crossing a threshold moves the heading into a more demanding regime and calls for a new authorisation, with the corresponding studies."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-de-dangers",
+            "label": "Hazard Study"
+          },
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Environmental Impact Assessment"
+          }
+        ],
+        "related": [
+          "decret-06-198-etablissements-classes",
+          "decret-07-145-etude-impact",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Decree 07-144: nomenclature of classified installations, headings, thresholds and posting radius",
+        "metaDescription": "Practical sheet on Executive Decree 07-144 of 19 May 2007: how to read the nomenclature of classified installations (four-digit headings, thresholds, regime, posting radius), families of activities, consequences for authorisation."
+      },
+      {
+        "slug": "loi-24-04-risques-de-catastrophes",
+        "kind": "texte",
+        "ref": "24-04",
+        "typeLabel": "Law",
+        "date": "26 February 2024",
+        "title": "Prevention, response and reduction of disaster risks",
+        "officialTitle": "Law No. 24-04 of 26 February 2024 laying down the rules for the prevention, response and reduction of disaster risks within the framework of sustainable development (Official Journal No. 16 of 6 March 2024), repealing Law No. 04-20 of 25 December 2004",
+        "summary": "The law that has replaced the former Law 04-20 on major risks since 2024. It organises the prevention of disaster risks, including industrial risks, and requires operators of hazardous installations to maintain intervention plans, detailed by Decree 25-63 of 2025.",
+        "homeLine": "Replaces Law 04-20 since 2024: requires operators of hazardous installations to control accident scenarios and maintain internal and specific intervention plans (Decree 25-63 of 2025).",
+        "meta": [
+          {
+            "label": "Nature",
+            "value": "Framework law"
+          },
+          {
+            "label": "Repeals",
+            "value": "Law 04-20 of 25 December 2004"
+          },
+          {
+            "label": "Implementing text",
+            "value": "Decree 25-63 of 28 January 2025"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "What changes compared with Law 04-20",
+            "paragraphs": [
+              "Law 24-04 takes over and broadens the 2004 framework: it covers the prevention, response and reduction of disaster risks, whether natural, technological or health-related. For an industrial operator, the essentials are unchanged in principle and clarified in their detail: analyse the installation's risks, reduce them at source and organise the response in the event of an accident.",
+              "Earlier texts that still cite Law 04-20 (hazard studies, intervention plans drawn up before 2024) must be read in the light of the new framework."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Intervention plans",
+            "paragraphs": [
+              "Executive Decree 25-63 of 28 January 2025 (Official Journal No. 7 of 5 February 2025), issued under Articles 73 and 76 of the law, sets the conditions for drawing up, implementing and managing two plans:"
+            ],
+            "list": [
+              "the internal intervention plan (PII), drawn up by the operator: prevention, organisation and coordination measures for emergency response in the event of an accident affecting the installation;",
+              "the specific intervention plan (PPI), drawn up by the public authorities for classified establishments whose hazard study concludes that the effects of the risks may extend beyond the installation's boundaries."
+            ],
+            "after": "The decree provides for simulation exercises and for triggering the specific plan when the internal plan's resources prove insufficient."
+          },
+          {
+            "heading": "Operator obligations",
+            "paragraphs": [],
+            "list": [
+              "identify and analyse the risks presented by the installation;",
+              "implement prevention and reduction-at-source measures;",
+              "draw up and keep an internal intervention plan up to date, and practise its implementation;",
+              "inform the authorities and take part in emergency-response plans."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Link with the hazard study",
+            "paragraphs": [
+              "For an industrial site, the hazard study is the tool that gives substance to these obligations: accident scenarios, effect zones, risk-control measures. It is the technical basis of the internal intervention plan and determines whether a specific intervention plan is needed."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Are the internal intervention plan and the hazard study the same thing?",
+            "a": "No. The hazard study analyses the risks; the internal intervention plan organises the operator's response in the event of an accident. The latter builds on the former."
+          },
+          {
+            "q": "Is an internal plan drawn up under the former Decree 09-335 still valid?",
+            "a": "Decree 25-63 now governs internal and specific intervention plans. An existing plan must be checked against its requirements and updated where necessary; we measure the gap case by case."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-de-dangers",
+            "label": "Hazard Study"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "HSE Audit & Compliance"
+          }
+        ],
+        "related": [
+          "decret-06-198-etablissements-classes",
+          "loi-03-10-protection-environnement",
+          "procedure-autorisation-installation-classee"
+        ],
+        "metaTitle": "Law 24-04: disaster risks, obligations of industrial operators and intervention plans",
+        "metaDescription": "Practical sheet on Law No. 24-04 of 26 February 2024, which repeals Law 04-20: prevention of disaster risks, obligations of operators of hazardous installations, internal and specific intervention plans (Decree 25-63), link with the hazard study."
+      },
+      {
+        "slug": "decret-23-324-agrement-bureaux-etudes",
+        "kind": "texte",
+        "ref": "23-324",
+        "typeLabel": "Executive decree",
+        "date": "6 September 2023",
+        "title": "Accreditation of environmental consultancies",
+        "officialTitle": "Executive Decree No. 23-324 of 6 September 2023 setting the conditions and procedures for practising as an environmental consultancy (Official Journal No. 61 of 17 September 2023)",
+        "summary": "The text that says who is entitled to carry out your impact assessments, hazard studies and audits: a consultancy accredited by order of the minister in charge of the environment, for five renewable years. A study signed by a non-accredited consultancy is inadmissible.",
+        "homeLine": "Reserves impact assessments, hazard studies and audits to consultancies accredited by order of the minister in charge of the environment, for five renewable years.",
+        "meta": [
+          {
+            "label": "Accreditation",
+            "value": "Order of the minister in charge of the environment"
+          },
+          {
+            "label": "Validity",
+            "value": "5 years, renewable"
+          },
+          {
+            "label": "Hydrocarbons sector",
+            "value": "ARH pre-qualification in addition"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "What the decree requires",
+            "paragraphs": [],
+            "list": [
+              "the activity of environmental consultancy is subject to an accreditation issued by order of the minister in charge of the environment, after the opinion of a ministerial commission;",
+              "the consultancy must be of Algerian nationality or incorporated under Algerian law, its manager holding a university degree in one of the specialities listed in the decree's annex, with at least three years of professional experience in the field;",
+              "accreditation is granted for five renewable years; the renewal application is filed at least forty-five days before expiry;",
+              "any change in the consultancy's situation gives rise to an amending order; existing consultancies had twelve months from publication to comply."
+            ],
+            "after": ""
+          },
+          {
+            "heading": "Why it concerns you",
+            "paragraphs": [
+              "Decrees 07-145 and 06-198 and the interministerial order of 14 September 2014 require the impact assessment and the hazard study to be prepared by an accredited consultancy. A study signed by a consultancy without valid accreditation, or whose accreditation does not cover the type of study, is rejected at the admissibility stage. Before placing any order, ask for the accreditation order and check its validity date.",
+              "For hydrocarbon-sector activities, environmental accreditation is not enough: the consultancy must also be pre-qualified by the Hydrocarbons Regulatory Authority."
+            ],
+            "list": [],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "Is BTH Expert accredited?",
+            "a": "Yes. BTH Expert is accredited by the ministry in charge of the environment to carry out impact assessments and hazard studies. The accreditation order is provided on request."
+          },
+          {
+            "q": "Can a foreign consultancy carry out an impact assessment in Algeria?",
+            "a": "Accreditation is reserved for natural persons of Algerian nationality and legal persons under Algerian law. A foreign consultancy may, where relevant, support an accredited Algerian consultancy."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Environmental Impact Assessment"
+          },
+          {
+            "slug": "etude-de-dangers",
+            "label": "Hazard Study"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "HSE Audit & Compliance"
+          },
+          {
+            "slug": "plan-gestion-environnementale",
+            "label": "Environmental Management Plan"
+          }
+        ],
+        "related": [
+          "decret-07-145-etude-impact",
+          "decret-06-198-etablissements-classes"
+        ],
+        "metaTitle": "Decree 23-324: accreditation of environmental consultancies in Algeria",
+        "metaDescription": "Practical sheet on Executive Decree 23-324 of 6 September 2023: accreditation conditions for environmental consultancies, five-year validity, renewal, hydrocarbons pre-qualification, and why to check accreditation before ordering a study."
+      },
+      {
+        "slug": "procedure-autorisation-installation-classee",
+        "kind": "guide",
+        "ref": "Guide",
+        "typeLabel": "Procedure",
+        "date": "",
+        "title": "Obtaining authorisation for a classified installation, step by step",
+        "officialTitle": "Procedure guide: from the nomenclature to the operating permit",
+        "summary": "From reading the nomenclature to the authorisation order, the six steps of an industrial project's regulatory path in Algeria, with the deadlines set by the texts and what gains or loses months.",
+        "homeLine": "",
+        "meta": [
+          {
+            "label": "Steps",
+            "value": "6"
+          },
+          {
+            "label": "Texts",
+            "value": "07-144 · 07-145 · 06-198 · 23-324"
+          },
+          {
+            "label": "Regulatory deadlines",
+            "value": "Decision within 4 months after the inquiry"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Classify the installation",
+            "paragraphs": [
+              "Match each activity on the site against the nomenclature headings (Decree 07-144) and their thresholds. The result sets the regime, hence the competent authority: minister, wali or delegated wali, municipal president. Deliverable: a classification note."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Determine the required studies",
+            "paragraphs": [
+              "Under the annexes of Decree 07-145 (revised in 2019), the project requires either a full impact assessment or an impact notice. If it is a classified establishment subject to authorisation, Decree 06-198 adds the hazard study, approved under the interministerial order of 14 September 2014. Both studies must be prepared by an accredited consultancy (Decree 23-324)."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Carry out the studies",
+            "paragraphs": [
+              "Site baseline with on-site measurements, impact analysis, costed measures, environmental management plan and monitoring programme for the impact assessment. Accident scenarios, effect zones and control measures for the hazard study. A non-technical summary accompanies the file. Allow a few weeks to several months depending on the project's scale."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "File the application",
+            "paragraphs": [
+              "The impact assessment or notice is filed with the wali (wilaya Department of the Environment) in fourteen paper copies and two digital copies; the hazard study in eight copies. The environment services examine the content within one month and may request additional information, to be provided within two months. An incomplete file is returned before it is even reviewed."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Follow the review",
+            "paragraphs": [
+              "Public inquiry opened by order of the wali, led by an inquiry commissioner, at most fifteen days from posting; the project owner's written reply within ten days. For the hazard study, examination by the interministerial or wilaya commission, with any additional information within forty-five days. This is when requests for additional documents arrive: answering quickly and precisely avoids losing the decision slot."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "Obtain the decision and operate",
+            "paragraphs": [
+              "Decision on the impact assessment within a maximum of four months after the close of the inquiry, notified by the wali; decision on the hazard study signed by the ministers (1st category) or the wali (2nd category); then an operating permit with prescriptions. The obligation does not stop there: environmental management plan and monitoring, internal intervention plan (Decree 25-63), compliance audits, and updating of the studies after each substantial modification."
+            ],
+            "list": [],
+            "after": ""
+          },
+          {
+            "heading": "What loses time",
+            "paragraphs": [],
+            "list": [
+              "a wrong classification, sending the file to the wrong authority;",
+              "a desk-based baseline, with no on-site measurements;",
+              "mitigation measures that are neither costed nor scheduled;",
+              "a missing or unreadable non-technical summary;",
+              "an incomplete file, or a consultancy whose accreditation is not valid."
+            ],
+            "after": ""
+          }
+        ],
+        "faq": [
+          {
+            "q": "How long does the full procedure take?",
+            "a": "The texts set one month of examination, a fifteen-day public inquiry, ten days for the reply and four months maximum for the decision, i.e. under six months after an admissible file, plus the time needed to produce the studies. A complete file at first filing is the main lever for shortening the delay."
+          },
+          {
+            "q": "Is an accredited consultancy mandatory?",
+            "a": "Yes for the impact assessment and the hazard study: only consultancies accredited by the ministry in charge of the environment (Decree 23-324) are entitled to carry them out."
+          }
+        ],
+        "services": [
+          {
+            "slug": "etude-impact-environnemental",
+            "label": "Environmental Impact Assessment"
+          },
+          {
+            "slug": "etude-de-dangers",
+            "label": "Hazard Study"
+          },
+          {
+            "slug": "plan-gestion-environnementale",
+            "label": "Environmental Management Plan"
+          },
+          {
+            "slug": "audit-hse",
+            "label": "HSE Audit & Compliance"
+          }
+        ],
+        "related": [
+          "decret-07-144-nomenclature-installations-classees",
+          "decret-07-145-etude-impact",
+          "decret-06-198-etablissements-classes",
+          "decret-23-324-agrement-bureaux-etudes"
+        ],
+        "metaTitle": "Authorising a classified installation in Algeria: the procedure step by step",
+        "metaDescription": "Practical guide: classification under the nomenclature, required studies, filing with the wilaya, 15-day public inquiry, decision within 4 months, obligations during operation. Regulatory deadlines and the mistakes that cost months."
+      }
+    ]
   }
 }

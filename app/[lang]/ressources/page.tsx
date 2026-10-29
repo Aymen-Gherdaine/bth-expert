@@ -3,7 +3,7 @@ import { getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaBreadcrumb } from "@/lib/schema";
 import { listContentByDate } from "@/lib/content";
-import { getRessourcesLabels, listFiches } from "@/lib/ressources";
+import { listFiches } from "@/lib/ressources";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { RessourcesIndex } from "@/components/sections/RessourcesIndex";
 
@@ -14,12 +14,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = validateLocale(rawLang);
-  const l = getRessourcesLabels(lang);
+  const dict = await getDictionary(lang);
   return buildMetadata({
     lang,
     path: "/ressources",
-    title: l.hero.heading,
-    description: l.hero.subheading,
+    title: dict.ressources.meta.title,
+    description: dict.ressources.meta.description,
   });
 }
 
@@ -31,14 +31,14 @@ export default async function RessourcesPage({
   const { lang: rawLang } = await params;
   const lang = validateLocale(rawLang);
   const dict = await getDictionary(lang);
-  const l = getRessourcesLabels(lang);
-  const fiches = listFiches(lang);
+  const r = dict.ressources;
+  const fiches = listFiches(r);
   const textes = fiches.filter((f) => f.kind === "texte");
   const guide = fiches.find((f) => f.kind === "guide") ?? null;
   const posts = (await listContentByDate(lang, "blog")).slice(0, 3);
 
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
-    { name: l.nav, url: `https://bthexpert.com/${lang}/ressources` },
+    { name: r.nav, url: `https://bthexpert.com/${lang}/ressources` },
   ]);
 
   return (
@@ -48,14 +48,14 @@ export default async function RessourcesPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
       <ServiceHero
-        eyebrow={l.hero.eyebrow}
-        heading={l.hero.heading}
-        subheading={l.hero.subheading}
+        eyebrow={r.hero.eyebrow}
+        heading={r.hero.heading}
+        subheading={r.hero.subheading}
         meta={textes.map((f) => ({ label: f.typeLabel, value: f.ref }))}
       />
       <RessourcesIndex
         lang={lang}
-        labels={l}
+        labels={r}
         textes={textes}
         guide={guide}
         posts={posts}

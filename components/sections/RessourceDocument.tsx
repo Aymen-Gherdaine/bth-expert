@@ -3,13 +3,13 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { Faq } from "@/components/sections/Faq";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
-import type { Fiche, RessourcesLabels } from "@/lib/ressources";
+import type { Fiche, RessourcesDict } from "@/lib/ressources";
 import type { Locale } from "@/lib/i18n-config";
 
 interface RessourceDocumentProps {
   lang: Locale;
   fiche: Fiche;
-  labels: RessourcesLabels;
+  labels: RessourcesDict;
   related: Fiche[];
   updatedAt: string;
 }
@@ -81,12 +81,12 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
                     </h2>
                   </div>
                   <div className="lg:col-span-7 lg:col-start-6 space-y-5">
-                    {section.paragraphs?.map((text) => (
+                    {section.paragraphs.map((text) => (
                       <p key={text} className={paragraphCls}>
                         {text}
                       </p>
                     ))}
-                    {section.list && (
+                    {section.list.length > 0 && (
                       <ul className="space-y-3 ps-5 list-disc marker:text-gold-ink">
                         {section.list.map((item) => (
                           <li key={item} className={paragraphCls}>

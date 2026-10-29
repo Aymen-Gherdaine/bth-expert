@@ -121,17 +121,20 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [ ] **5.13** — [CLIENT] Forme juridique, capital, RC, NIF, NIS, AI et référence d'agrément → à renseigner dans `legalRegistration` (`lib/site-config.ts`) ; les lignes n'apparaissent sur les mentions légales que si la valeur est connue. Hébergeur à mettre à jour si le site quitte Netlify.
 - [ ] **5.14** — [CLIENT] Photos réelles (équipe, bureau, terrain, dossiers reliés) → remplacer les initiales sur /equipe et les SVG topographiques des bandes sombres
 - [ ] **5.15** — [CLIENT] URLs LinkedIn / Instagram / Facebook → `socialProfiles` dans `lib/site-config.ts`
-- [x] **5.16** — Centre de ressources `/ressources` : 5 fiches par texte (03-10, 07-145, 06-198, 07-144, 04-20) + guide de procédure en 6 étapes, FR/AR/EN dans `lib/ressources.ts`, JSON-LD Article + FAQPage, sitemap, « Ressources » remplace « Blog » dans la nav (le blog reste accessible depuis Ressources et le footer). ⚠️ Relecture juridique des 6 fiches avant merge (5.20).
+- [x] **5.16** — Centre de ressources `/ressources` : 6 fiches par texte (03-10, 07-145 modifié 2018/2019, 06-198 modifié 2022, 07-144, **24-04 qui remplace 04-20**, 23-324 agrément) + guide de procédure en 6 étapes avec les délais réglementaires. Contenu **dans Keystatic** (collection « Ressources » + singleton « Page Ressources »), synchronisé dans `fr.json`, AR/EN semés à la main dans les dictionnaires en attendant le pipeline. JSON-LD Article + FAQPage, sitemap, « Ressources » remplace « Blog » dans la nav. Vérification contre les sources : `docs/REGLEMENTATION-SOURCES.md`.
+- [ ] **5.16b** — [CLIENT] Relecture juridique des 7 fiches par Amine contre le JORADP : 8 points listés dans `docs/REGLEMENTATION-SOURCES.md` (art. 17 du 07-145 modifié, accord préalable du 06-198, abrogation 09-335 / 15-71 par le 25-63, etc.). **Bloquant avant merge.**
 - [ ] **5.17** — Pages secteurs : textes applicables + étude comparable par secteur (aujourd'hui 3 enjeux + puces)
 - [ ] **5.18** — Poids JS home (~840 KB non compressé) : GSAP + SplitText + Lenis sont chargés sur chaque page ; envisager un chargement différé de SplitText et du pin-scroll sous la ligne de flottaison
 
-- [ ] **5.19** — [CONFIG] Vérifier que l'action `translate.yml` tourne réellement : crédits/tokens de `ANTHROPIC_API_KEY` (secret GitHub Actions), dernier run dans l'onglet Actions. Les dictionnaires AR/EN ont été alignés à la main sur le FR du 2026-10-29 ; si l'action régénère, relire l'arabe (hero, stats, contact, légal n'est pas concerné : `lib/legal-content.ts` et `lib/reglementation.ts` sont hors pipeline).
+- [ ] **5.19** — [CONFIG] Vérifier que l'action `translate.yml` tourne réellement (elle doit aussi traduire la nouvelle clé `ressources` du dictionnaire ; les versions AR/EN actuelles ont été écrites à la main et seront écrasées au premier run) : crédits/tokens de `ANTHROPIC_API_KEY` (secret GitHub Actions), dernier run dans l'onglet Actions. Les dictionnaires AR/EN ont été alignés à la main sur le FR du 2026-10-29 ; si l'action régénère, relire l'arabe (hero, stats, contact, légal n'est pas concerné : `lib/legal-content.ts` et `lib/reglementation.ts` sont hors pipeline).
 - [ ] **5.20** — Revue complète avant merge de `ccr-bac5c324-z7k16j` sur `main` (rien ne part en prod sans validation) :
   - [ ] relecture FR / AR / EN des pages Mentions légales et Confidentialité (textes juridiques, noms des lois, ANPDP)
   - [ ] test du formulaire de contact en preview Netlify : case de consentement, message vide, email reçu via Resend
   - [ ] vérification visuelle desktop + mobile des 3 langues (hero, stats, section réglementaire, footer)
   - [ ] `npm run build` 0 erreur / 0 warning, sitemap contenant `/mentions-legales/` et `/confidentialite/`
   - [ ] validation client des textes des études de cas (5.11)
+  - [ ] relecture des 7 fiches Ressources contre le JORADP (5.16b) et de l'arabe
+  - [ ] test de l'édition d'une fiche depuis `/keystatic` (collection Ressources) sur la preview Netlify
 
 - [ ] **5.21** — [CLIENT/CONFIG] Localisation des données (loi 18-07) : aujourd'hui l'hébergement (Netlify) et l'acheminement des emails du formulaire (Resend) passent par des serveurs hors Algérie. Les pages légales ne le mentionnent pas à la demande du client ; à régler avant le lancement, soit par un hébergeur et un relais email établis en Algérie, soit par l'autorisation de transfert prévue par la loi. Mettre ensuite à jour `lib/legal-content.ts` (sections Hébergement et Destinataires).
 

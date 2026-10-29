@@ -1,0 +1,53 @@
+slug: decret-07-144-nomenclature-installations-classees
+order: 4
+kind: texte
+ref: 07-144
+typeLabel: Décret exécutif
+date: 19 mai 2007
+title: Nomenclature des installations classées
+officialTitle: Décret exécutif n° 07-144 du 19 mai 2007 fixant la nomenclature des installations classées pour la protection de l'environnement (JO n° 34 du 22 mai 2007)
+summary: 'La liste des activités classées : à chaque rubrique correspondent des seuils (capacité, puissance, quantité stockée), le régime applicable, donc l''autorité compétente et les études à produire, et le rayon d''affichage de l''enquête publique.'
+homeLine: Attribue une rubrique à chaque activité, fixe les seuils qui déterminent le régime et l'autorité compétente, et le rayon d'affichage de l'enquête publique.
+meta:
+- label: Objet
+  value: Rubriques, seuils, rayon d'affichage
+- label: Détermine
+  value: Régime · Autorité · Études
+- label: Texte lié
+  value: Décret 06-198
+sections:
+- heading: Comment lire la nomenclature
+  paragraphs:
+  - 'Chaque activité est désignée par une rubrique à quatre chiffres : le premier désigne la substance ou l''activité, le deuxième la catégorie de danger ou la branche d''activité, les deux derniers le type d''activité. Les seuils indiqués (quantités stockées, capacité de production, puissance installée) déterminent le régime applicable, donc la catégorie de l''établissement au sens du décret 06-198. Un même site peut relever de plusieurs rubriques : c''est la plus contraignante qui fixe le régime.'
+  - La nomenclature fixe aussi, pour chaque rubrique, le rayon minimal d'affichage de l'avis d'ouverture de l'enquête publique, afin d'informer la population située dans le périmètre d'implantation.
+  list: []
+  after: ''
+- heading: Familles d'activités concernées
+  paragraphs: []
+  list:
+  - stockage et distribution d'hydrocarbures, de gaz et de produits chimiques ;
+  - industries chimiques, pétrochimiques et pharmaceutiques ;
+  - cimenteries, métallurgie, fonderies, traitements de surface ;
+  - carrières et traitement des minéraux ;
+  - agroalimentaire, abattoirs, élevages intensifs ;
+  - installations de traitement des eaux et de gestion des déchets.
+  after: ''
+- heading: Ce que cela change pour votre projet
+  paragraphs:
+  - 'Le classement conditionne tout le reste : l''autorité qui délivre l''autorisation, la procédure, la nécessité d''une étude d''impact complète ou d''une notice, et l''exigence d''une étude de dangers. Une erreur de classement en amont se paie au moment du dépôt, par un rejet ou une demande de compléments.'
+  list: []
+  after: ''
+faq:
+- q: Comment connaître la catégorie de mon installation ?
+  a: En rapprochant chaque activité du site des rubriques de la nomenclature et de leurs seuils. C'est la première étape d'une mission, formalisée dans une note de classement.
+- q: Une augmentation de capacité change-t-elle la catégorie ?
+  a: Elle le peut. Le franchissement d'un seuil fait passer la rubrique dans un régime plus contraignant et appelle une nouvelle autorisation, avec les études correspondantes.
+services:
+- edd
+- eie
+related:
+- decret-06-198-etablissements-classes
+- decret-07-145-etude-impact
+- procedure-autorisation-installation-classee
+metaTitle: 'Décret 07-144 : nomenclature des installations classées, rubriques, seuils et rayon d''affichage'
+metaDescription: 'Fiche pratique sur le décret exécutif 07-144 du 19 mai 2007 : comment lire la nomenclature des installations classées (rubriques à quatre chiffres, seuils, régime, rayon d''affichage), familles d''activités, conséquences pour l''autorisation.'

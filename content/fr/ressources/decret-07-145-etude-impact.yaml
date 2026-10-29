@@ -1,0 +1,70 @@
+slug: decret-07-145-etude-impact
+order: 2
+kind: texte
+ref: 07-145
+typeLabel: Décret exécutif
+date: 19 mai 2007
+title: Études et notices d'impact sur l'environnement
+officialTitle: Décret exécutif n° 07-145 du 19 mai 2007 déterminant le champ d'application, le contenu et les modalités d'approbation des études et des notices d'impact sur l'environnement, modifié et complété par les décrets exécutifs n° 18-255 du 9 octobre 2018 et n° 19-241 du 8 septembre 2019
+summary: Le texte qui dit si votre projet relève d'une étude d'impact complète ou d'une notice d'impact, ce que le rapport doit contenir, et comment la wilaya l'instruit, avec des délais précis, jusqu'à la décision.
+homeLine: 'Fixe la liste des projets soumis à étude ou à notice d''impact, le contenu du rapport et son instruction par la wilaya : examen sous un mois, enquête publique de quinze jours, décision dans les quatre mois.'
+meta:
+- label: Dépôt
+  value: Wali · 14 exemplaires + 2 numériques
+- label: Enquête publique
+  value: 15 jours maximum
+- label: Décision
+  value: 4 mois maximum après l'enquête
+sections:
+- heading: Étude ou notice ?
+  paragraphs:
+  - 'Le décret range les projets en deux listes annexées : ceux soumis à une étude d''impact complète (annexe I), et ceux soumis à une notice d''impact, de contenu allégé (annexe II). Ces listes ont été révisées par le décret 19-241 de 2019. Le classement dépend de la nature de l''activité et de son ampleur : capacité, surface, puissance ou quantités mises en œuvre.'
+  list:
+  - 'Étude d''impact, à titre d''exemple : raffineries et unités pétrochimiques, cimenteries, grandes unités chimiques et métallurgiques, barrages, grandes infrastructures de transport, projets miniers.'
+  - 'Notice d''impact, à titre d''exemple : unités de taille réduite, aménagements limités, activités à incidence localisée.'
+  after: Le classement exact se vérifie rubrique par rubrique dans les annexes en vigueur. C'est la première tâche d'une mission.
+- heading: Contenu du rapport
+  paragraphs: []
+  list:
+  - présentation du projet et justification du choix du site ;
+  - description de l'état initial du site et de son environnement naturel et humain ;
+  - analyse des impacts prévisibles, directs et indirects, temporaires et permanents, en phase chantier et en phase exploitation ;
+  - mesures envisagées pour supprimer, réduire ou compenser ces impacts, avec leur estimation financière ;
+  - plan de gestion environnementale et programme de surveillance ;
+  - résumé non technique destiné à l'information du public.
+  after: L'étude est établie par un bureau d'études agréé par le ministère chargé de l'environnement (décret exécutif 23-324 du 6 septembre 2023).
+- heading: Procédure et délais réglementaires
+  paragraphs: []
+  list:
+  - dépôt auprès du wali territorialement compétent, en quatorze exemplaires papier et deux exemplaires numériques ;
+  - examen du contenu par les services de l'environnement de la wilaya dans un délai d'un mois ;
+  - compléments éventuels à fournir par le promoteur dans un délai de deux mois, faute de quoi l'étude est rejetée, sauf demande de prorogation motivée ;
+  - enquête publique ouverte par arrêté du wali, sous la conduite d'un commissaire enquêteur, d'une durée maximale de quinze jours à compter de l'affichage ;
+  - mémoire en réponse du promoteur aux observations recueillies, dans un délai de dix jours ;
+  - examen en vue de la décision dans un délai maximal de quatre mois à compter de la clôture de l'enquête publique ;
+  - notification de la décision d'approbation ou de rejet par le wali ; en cas de rejet motivé, recours administratif auprès du ministre chargé de l'environnement.
+  after: ''
+- heading: Délais à prévoir en pratique
+  paragraphs:
+  - 'Sur le papier, la chaîne complète tient en moins de six mois : un mois d''examen, quinze jours d''enquête, dix jours de mémoire, quatre mois maximum d''instruction. En pratique, comptez de deux à six mois selon la wilaya et la qualité du dossier, hors durée de réalisation de l''étude elle-même. Les demandes de compléments sont la première cause de dérive, et elles se préviennent au moment de la rédaction.'
+  list: []
+  after: ''
+faq:
+- q: Peut-on démarrer les travaux pendant l'instruction ?
+  a: Non. L'approbation de l'étude ou de la notice d'impact est un préalable à l'autorisation de construire ou d'exploiter.
+- q: Qui peut réaliser l'étude d'impact ?
+  a: Un bureau d'études agréé par le ministère chargé de l'environnement, dans les conditions du décret exécutif 23-324. BTH Expert dispose de cet agrément.
+- q: L'étude est-elle rendue publique ?
+  a: Oui, dans le cadre de l'enquête publique. Le résumé non technique sert précisément à rendre le dossier lisible par le public et les riverains.
+- q: Les projets d'hydrocarbures suivent-ils la même procédure ?
+  a: 'Non. Les activités du secteur des hydrocarbures relèvent d''un régime particulier : l''étude est introduite auprès de l''Autorité de régulation des hydrocarbures, et le bureau d''études doit en outre être pré-qualifié par cette autorité.'
+services:
+- eie
+- pge
+related:
+- loi-03-10-protection-environnement
+- decret-07-144-nomenclature-installations-classees
+- decret-23-324-agrement-bureaux-etudes
+- procedure-autorisation-installation-classee
+metaTitle: 'Décret 07-145 modifié : étude d''impact ou notice, contenu, procédure et délais'
+metaDescription: 'Fiche pratique sur le décret exécutif 07-145 (modifié par les décrets 18-255 et 19-241) : projets soumis à étude ou notice d''impact, contenu du rapport, dépôt en wilaya, enquête publique de 15 jours, décision sous 4 mois, recours.'

@@ -1,0 +1,47 @@
+slug: decret-23-324-agrement-bureaux-etudes
+order: 6
+kind: texte
+ref: 23-324
+typeLabel: Décret exécutif
+date: 6 septembre 2023
+title: Agrément des bureaux d'études en environnement
+officialTitle: Décret exécutif n° 23-324 du 6 septembre 2023 fixant les conditions et les modalités d'exercice de l'activité des bureaux d'études dans le domaine de l'environnement (JO n° 61 du 17 septembre 2023)
+summary: 'Le texte qui dit qui a le droit de réaliser vos études d''impact, de dangers et d''audit : un bureau agréé par arrêté du ministre chargé de l''environnement, pour cinq ans renouvelables. Une étude signée par un bureau non agréé est irrecevable.'
+homeLine: Réserve la réalisation des études d'impact, de dangers et des audits aux bureaux agréés par arrêté du ministre chargé de l'environnement, pour cinq ans renouvelables.
+meta:
+- label: Agrément
+  value: Arrêté du ministre chargé de l'environnement
+- label: Validité
+  value: 5 ans renouvelables
+- label: Secteur hydrocarbures
+  value: Pré-qualification ARH en plus
+sections:
+- heading: Ce que le décret exige
+  paragraphs: []
+  list:
+  - l'activité de bureau d'études en environnement est soumise à un agrément délivré par arrêté du ministre chargé de l'environnement, après avis d'une commission ministérielle ;
+  - le bureau doit être de nationalité algérienne ou de droit algérien, son responsable titulaire d'un diplôme universitaire dans l'une des spécialités de l'annexe du décret, avec une expérience professionnelle d'au moins trois ans dans le domaine ;
+  - l'agrément est accordé pour cinq ans renouvelables ; la demande de renouvellement se dépose au moins quarante-cinq jours avant l'expiration ;
+  - tout changement dans la situation du bureau donne lieu à un arrêté modificatif ; les bureaux existants disposaient de douze mois à compter de la publication pour se conformer.
+  after: ''
+- heading: Pourquoi cela vous concerne
+  paragraphs:
+  - Les décrets 07-145 et 06-198 et l'arrêté interministériel du 14 septembre 2014 exigent que l'étude d'impact et l'étude de dangers soient établies par un bureau agréé. Une étude signée par un bureau sans agrément valide, ou dont l'agrément ne couvre pas le type d'étude, est rejetée à la recevabilité. Avant toute commande, demandez l'arrêté d'agrément et vérifiez sa date de validité.
+  - 'Pour les activités du secteur des hydrocarbures, l''agrément environnemental ne suffit pas : le bureau doit en outre être pré-qualifié par l''Autorité de régulation des hydrocarbures.'
+  list: []
+  after: ''
+faq:
+- q: BTH Expert est-il agréé ?
+  a: Oui. BTH Expert est agréé par le ministère chargé de l'environnement pour la réalisation des études d'impact et des études de dangers. L'arrêté d'agrément est communiqué sur demande.
+- q: Un bureau étranger peut-il réaliser une étude d'impact en Algérie ?
+  a: L'agrément est réservé aux personnes physiques de nationalité algérienne et aux personnes morales de droit algérien. Un bureau étranger intervient, le cas échéant, en appui d'un bureau algérien agréé.
+services:
+- eie
+- edd
+- hse
+- pge
+related:
+- decret-07-145-etude-impact
+- decret-06-198-etablissements-classes
+metaTitle: 'Décret 23-324 : agrément des bureaux d''études en environnement en Algérie'
+metaDescription: 'Fiche pratique sur le décret exécutif 23-324 du 6 septembre 2023 : conditions d''agrément des bureaux d''études en environnement, validité de cinq ans, renouvellement, pré-qualification hydrocarbures, et pourquoi vérifier l''agrément avant de commander une étude.'

@@ -1,0 +1,56 @@
+slug: loi-03-10-protection-environnement
+order: 1
+kind: texte
+ref: 03-10
+typeLabel: Loi
+date: 19 juillet 2003
+title: Protection de l'environnement dans le cadre du développement durable
+officialTitle: Loi n° 03-10 du 19 juillet 2003 relative à la protection de l'environnement dans le cadre du développement durable (JO n° 43 du 20 juillet 2003), modifiée et complétée
+summary: La loi-cadre de l'environnement en Algérie. Elle pose les principes directeurs, crée l'obligation d'étude ou de notice d'impact pour tout projet susceptible d'affecter l'environnement, et organise le régime des établissements classés.
+homeLine: 'Le texte fondateur : tout projet susceptible d''affecter l''environnement est soumis à une étude ou à une notice d''impact préalable, et les établissements classés à autorisation ou déclaration.'
+meta:
+- label: Nature
+  value: Loi-cadre
+- label: Publication
+  value: JO n° 43 du 20 juillet 2003
+- label: Textes d'application
+  value: 06-198 · 07-144 · 07-145
+sections:
+- heading: Ce que la loi impose
+  paragraphs: []
+  list:
+  - Tout projet d'aménagement, d'infrastructure ou d'usine susceptible, par sa dimension ou ses incidences, d'affecter l'environnement est soumis à une étude d'impact ou à une notice d'impact préalable (article 15).
+  - Les établissements classés (usines, ateliers, chantiers, carrières, mines et toute installation présentant des dangers pour la santé, la sécurité, l'agriculture, les écosystèmes ou la commodité du voisinage) sont soumis à autorisation ou à déclaration selon l'importance des dangers (articles 18 et 19).
+  - Les installations dont l'implantation ne nécessite ni étude ni notice d'impact relèvent d'une déclaration auprès du président de l'assemblée populaire communale.
+  - Les principes de prévention et de correction à la source, de précaution, du pollueur-payeur, d'information et de participation du public guident toute décision.
+  - Des sanctions administratives et pénales s'appliquent à l'exploitation sans autorisation ou en violation des prescriptions.
+  after: ''
+- heading: Qui est concerné
+  paragraphs: []
+  list:
+  - les industriels, quelle que soit la taille de l'unité, dès lors que l'activité est classée ;
+  - 'les maîtres d''ouvrage d''infrastructures : routes, zones d''activité, ouvrages hydrauliques ;'
+  - les exploitants de carrières et de projets miniers ;
+  - les projets agricoles et hydrauliques d'ampleur (périmètres irrigués, barrages, stations) ;
+  - les collectivités pour leurs équipements (décharges, stations d'épuration).
+  after: ''
+- heading: Ce que cela change pour votre projet
+  paragraphs:
+  - 'L''autorisation de construire ou d''exploiter ne peut être délivrée avant l''approbation de l''étude d''impact. Engager l''étude dès la conception du projet, et non au moment du dépôt, évite le blocage le plus fréquent : un calendrier de chantier qui attend une approbation.'
+  - La loi 03-10 ne se lit pas seule. Les listes de projets, le contenu des études et les procédures sont fixés par ses décrets d'application, en particulier les décrets 07-145 (études d'impact, modifié en 2018 et 2019) et 06-198 (établissements classés, modifié en 2022).
+  list: []
+  after: ''
+faq:
+- q: La loi 03-10 s'applique-t-elle à une installation existante ?
+  a: Oui. Une installation existante reste soumise aux prescriptions de protection, et toute extension ou modification substantielle appelle les études exigées pour la nouvelle configuration. Depuis 2022, un établissement existant soumis à autorisation doit aussi faire approuver un audit environnemental et une étude de dangers.
+- q: Qui approuve l'étude d'impact ?
+  a: La décision d'approbation ou de rejet est notifiée au promoteur par le wali territorialement compétent. Selon la nature du projet, elle relève du ministère chargé de l'environnement ou du wali, dans les conditions du décret exécutif 07-145 modifié.
+services:
+- eie
+- edd
+related:
+- decret-07-145-etude-impact
+- decret-06-198-etablissements-classes
+- procedure-autorisation-installation-classee
+metaTitle: 'Loi 03-10 : protection de l''environnement en Algérie, ce qu''elle impose à votre projet'
+metaDescription: 'Fiche pratique sur la loi n° 03-10 du 19 juillet 2003 : principes, obligation d''étude d''impact (art. 15), régime des établissements classés (art. 18-19), qui est concerné et ce que cela change pour l''autorisation de votre projet.'
