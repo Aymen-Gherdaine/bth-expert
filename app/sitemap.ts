@@ -21,6 +21,8 @@ const STATIC_ROUTES = [
   { path: "/oran/",                                     priority: 0.9, freq: "monthly" },
   { path: "/a-propos/",                                 priority: 0.6, freq: "yearly"  },
   { path: "/contact/",                                  priority: 0.8, freq: "yearly"  },
+  { path: "/mentions-legales/",                         priority: 0.2, freq: "yearly"  },
+  { path: "/confidentialite/",                          priority: 0.2, freq: "yearly"  },
 ] as const;
 
 function url(lang: string, path: string): string {

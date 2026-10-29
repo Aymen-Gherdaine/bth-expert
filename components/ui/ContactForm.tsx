@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
@@ -11,6 +12,8 @@ type ContactFormDict = Dictionary["contact"]["form"];
 interface ContactFormProps {
   dict: ContactFormDict;
   lang: string;
+  /** Privacy policy link, resolved server-side so the legal texts stay out of the client bundle. */
+  privacy: { href: string; label: string };
 }
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -29,7 +32,7 @@ function Required() {
   );
 }
 
-export function ContactForm({ dict, lang }: ContactFormProps) {
+export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [state, setState] = useState<FormState>("idle");
@@ -211,7 +214,13 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
           )}
 
           <p className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
-            {dict.privacyNote}
+            {dict.privacyNote}{" "}
+            <Link
+              href={privacy.href}
+              className="underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
+            >
+              {privacy.label}
+            </Link>
           </p>
 
           <div data-form-field>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import fr from "@/dictionaries/fr.json";
 import { siteContact } from "@/lib/site-config";
+import { legalPages } from "@/lib/legal-content";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
@@ -202,7 +203,14 @@ export default async function ContactPage({
 
             {/* Right: form card */}
             <div className="lg:col-span-6 lg:col-start-7">
-              <ContactForm dict={c.form} lang={lang} />
+              <ContactForm
+                dict={c.form}
+                lang={lang}
+                privacy={{
+                  href: `/${lang}/${legalPages.privacy[lang].slug}`,
+                  label: legalPages.privacy[lang].navLabel,
+                }}
+              />
             </div>
           </div>
         </Container>

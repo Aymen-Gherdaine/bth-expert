@@ -5,6 +5,7 @@ import { LangSwitcher } from "./LangSwitcher";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { socialLinks } from "@/lib/social-links";
 import { socialProfiles, siteContact } from "@/lib/site-config";
+import { legalPages } from "@/lib/legal-content";
 
 interface FooterProps {
   lang: Locale;
@@ -191,7 +192,15 @@ export async function Footer({ lang }: FooterProps) {
 
         {/* Bottom strip */}
         <div className="border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))] py-5 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-[var(--color-on-brand-faint)]">
-          <span>© {year} BTH Expert. {dict.footer.rights}.</span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span>© {year} BTH Expert. {dict.footer.rights}.</span>
+            <Link href={`/${lang}/${legalPages.mentions[lang].slug}`} className={linkClass}>
+              {legalPages.mentions[lang].navLabel}
+            </Link>
+            <Link href={`/${lang}/${legalPages.privacy[lang].slug}`} className={linkClass}>
+              {legalPages.privacy[lang].navLabel}
+            </Link>
+          </div>
           <LangSwitcher currentLocale={lang} isDark />
         </div>
       </Container>
