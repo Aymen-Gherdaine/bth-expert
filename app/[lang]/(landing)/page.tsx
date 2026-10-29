@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesPinScroll } from "@/components/sections/ServicesPinScroll";
+import { ReglementationSection } from "@/components/sections/ReglementationSection";
 import { StatsBand } from "@/components/sections/StatsBand";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -160,6 +161,9 @@ export default async function HomePage({
 
       {/* ── SERVICES — signature pin-scroll: sticky visual, rows scroll past ── */}
       <ServicesPinScroll lang={lang} services={h.services} />
+
+      {/* ── CADRE RÉGLEMENTAIRE — the texts behind the studies, set as a ledger ── */}
+      <ReglementationSection lang={lang} />
 
       {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
       <ProjectsSection lang={lang} projects={dict.projets.items} />
