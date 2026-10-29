@@ -213,8 +213,8 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
             </p>
           )}
 
-          {/* Consent — loi 18-07 : le transit par des prestataires hors Algérie
-              exige un consentement exprès, donc une case non pré-cochée. */}
+          {/* Consent — loi 18-07 : le traitement repose sur un consentement
+              exprès, donc une case obligatoire et non pré-cochée. */}
           <div data-form-field>
             <label htmlFor="consent" className="flex items-start gap-3 cursor-pointer min-h-11">
               <input

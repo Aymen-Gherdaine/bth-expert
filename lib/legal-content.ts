@@ -49,7 +49,6 @@ const postalEn = `${address.street}, ${address.locality}, ${address.city}, Alger
 const postalAr = `${address.street}، ${address.locality}، ${address.city}، الجزائر`;
 
 const HOST_NAME = "Netlify, Inc.";
-const HOST_ADDRESS = "512 2nd Street, Suite 200, San Francisco, CA 94107";
 const HOST_SITE = "www.netlify.com";
 
 /** Registration lines, only for values the client has provided. */
@@ -127,7 +126,7 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "Hébergement",
         paragraphs: [
-          `Le Site est hébergé par ${HOST_NAME}, ${HOST_ADDRESS}, États-Unis (${HOST_SITE}). Les pages sont diffusées depuis un réseau de serveurs international. Les données techniques de connexion que cet hébergeur enregistre sont décrites dans notre politique de confidentialité.`,
+          `Le Site est hébergé par ${HOST_NAME} (${HOST_SITE}). Les données techniques de connexion que cet hébergeur enregistre sont décrites dans notre politique de confidentialité.`,
         ],
       },
       {
@@ -194,7 +193,7 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "الاستضافة",
         paragraphs: [
-          `يُستضاف الموقع لدى ${HOST_NAME}‏، ${HOST_ADDRESS}، الولايات المتحدة الأمريكية (${HOST_SITE}). تُبثّ الصفحات عبر شبكة خوادم دولية. البيانات التقنية للاتصال التي يسجّلها هذا المضيف موصوفة في سياسة الخصوصية الخاصة بنا.`,
+          `يُستضاف الموقع لدى ${HOST_NAME}‏ (${HOST_SITE}). البيانات التقنية للاتصال التي يسجّلها هذا المضيف موصوفة في سياسة الخصوصية الخاصة بنا.`,
         ],
       },
       {
@@ -261,7 +260,7 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "Hosting",
         paragraphs: [
-          `The Site is hosted by ${HOST_NAME}, ${HOST_ADDRESS}, United States (${HOST_SITE}). Pages are served from an international network of servers. The technical connection data recorded by this host is described in our privacy policy.`,
+          `The Site is hosted by ${HOST_NAME} (${HOST_SITE}). The technical connection data recorded by this host is described in our privacy policy.`,
         ],
       },
       {
@@ -365,18 +364,11 @@ const PRIVACY: Record<Locale, LegalPage> = {
           `Vos messages sont lus uniquement par l'équipe de ${legalName}. Pour les acheminer, nous faisons appel à deux prestataires techniques agissant sur nos instructions et tenus à la confidentialité :`,
         ],
         list: [
-          `${HOST_NAME} (hébergement du Site et réception des formulaires), ${HOST_ADDRESS}, États-Unis ;`,
-          "Resend, Inc. (acheminement de la notification par courriel vers notre messagerie), États-Unis.",
+          `${HOST_NAME} (hébergement du Site et réception des formulaires) ;`,
+          "Resend, Inc. (acheminement de la notification par courriel vers notre messagerie).",
         ],
         after:
           "Ces prestataires n'utilisent pas vos données pour leur propre compte. Aucune autre communication à des tiers n'est effectuée, sauf obligation légale ou demande d'une autorité habilitée.",
-      },
-      {
-        heading: "Transfert hors d'Algérie",
-        paragraphs: [
-          "Les prestataires mentionnés ci-dessus sont établis hors du territoire algérien. L'envoi de votre formulaire implique donc un transit de vos données par leurs serveurs, limité à l'acheminement du message jusqu'à nous. Conformément à la loi n° 18-07, ce transfert est subordonné à votre consentement exprès : c'est l'objet de la case à cocher avant l'envoi.",
-          `Si vous préférez éviter ce transit, vous pouvez nous joindre directement par téléphone au ${phoneDisplay} ou par WhatsApp. Votre demande sera traitée de la même manière.`,
-        ],
       },
       {
         heading: "Durée de conservation",
@@ -480,18 +472,11 @@ const PRIVACY: Record<Locale, LegalPage> = {
           `يقرأ رسائلكم فريق ${legalName} وحده. ولتوجيهها نستعين بمزوّدَين تقنيَين يعملان وفق تعليماتنا ويلتزمان بالسرية :`,
         ],
         list: [
-          `${HOST_NAME}‏ (استضافة الموقع واستقبال النماذج)، ${HOST_ADDRESS}، الولايات المتحدة الأمريكية ؛`,
-          "Resend, Inc.‏ (توجيه الإشعار بالبريد الإلكتروني إلى صندوق بريدنا)، الولايات المتحدة الأمريكية.",
+          `${HOST_NAME}‏ (استضافة الموقع واستقبال النماذج) ؛`,
+          "Resend, Inc.‏ (توجيه الإشعار بالبريد الإلكتروني إلى صندوق بريدنا).",
         ],
         after:
           "لا يستعمل هذان المزوّدان بياناتكم لحسابهما الخاص. ولا يتم أي تبليغ آخر للغير إلا بموجب التزام قانوني أو طلب من سلطة مخوّلة.",
-      },
-      {
-        heading: "النقل خارج الجزائر",
-        paragraphs: [
-          "المزوّدان المذكوران أعلاه مقيمان خارج التراب الجزائري. يترتب على إرسال النموذج إذن مرور بياناتكم عبر خوادمهما، في حدود توجيه الرسالة إلينا. طبقاً للقانون رقم 18-07، يخضع هذا النقل لموافقتكم الصريحة : وهذا هو موضوع الخانة الواجب تأشيرها قبل الإرسال.",
-          `إن فضّلتم تجنّب هذا المرور، يمكنكم الاتصال بنا مباشرة هاتفياً على ${phoneDisplay} أو عبر واتساب. وسيُعالج طلبكم بالطريقة نفسها.`,
-        ],
       },
       {
         heading: "مدة الحفظ",
@@ -593,18 +578,11 @@ const PRIVACY: Record<Locale, LegalPage> = {
           `Your messages are read only by the ${legalName} team. To deliver them, we rely on two technical providers acting on our instructions and bound by confidentiality:`,
         ],
         list: [
-          `${HOST_NAME} (Site hosting and form reception), ${HOST_ADDRESS}, United States;`,
-          "Resend, Inc. (delivery of the email notification to our mailbox), United States.",
+          `${HOST_NAME} (Site hosting and form reception);`,
+          "Resend, Inc. (delivery of the email notification to our mailbox).",
         ],
         after:
           "These providers do not use your data for their own purposes. No other disclosure to third parties is made, except where required by law or requested by a competent authority.",
-      },
-      {
-        heading: "Transfer outside Algeria",
-        paragraphs: [
-          "The providers listed above are established outside Algerian territory. Sending the form therefore means your data transits through their servers, limited to routing the message to us. Under Law No. 18-07, this transfer requires your express consent: that is the purpose of the checkbox before sending.",
-          `If you prefer to avoid this transit, you can reach us directly by phone at ${phoneDisplay} or on WhatsApp. Your request will be handled in the same way.`,
-        ],
       },
       {
         heading: "Retention period",
@@ -660,9 +638,9 @@ const PRIVACY: Record<Locale, LegalPage> = {
 
 /** Consent wording shown next to the contact-form checkbox (Law No. 18-07). */
 export const CONSENT_LABEL: Record<Locale, string> = {
-  fr: "J'accepte que mes données soient utilisées pour répondre à ma demande et qu'elles transitent par nos prestataires techniques établis hors d'Algérie, dans les conditions décrites dans la politique de confidentialité.",
-  ar: "أوافق على استعمال بياناتي للرد على طلبي وعلى مرورها عبر مزوّدينا التقنيين المقيمين خارج الجزائر، وفق الشروط المبيّنة في سياسة الخصوصية.",
-  en: "I agree that my data may be used to answer my request and may transit through our technical providers established outside Algeria, under the conditions described in the privacy policy.",
+  fr: "J'accepte que mes données soient utilisées pour répondre à ma demande, dans les conditions décrites dans la politique de confidentialité.",
+  ar: "أوافق على استعمال بياناتي للرد على طلبي، وفق الشروط المبيّنة في سياسة الخصوصية.",
+  en: "I agree that my data may be used to answer my request, under the conditions described in the privacy policy.",
 };
 
 export const legalPages = {

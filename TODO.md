@@ -133,6 +133,8 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
   - [ ] `npm run build` 0 erreur / 0 warning, sitemap contenant `/mentions-legales/` et `/confidentialite/`
   - [ ] validation client des textes des études de cas (5.11)
 
+- [ ] **5.21** — [CLIENT/CONFIG] Localisation des données (loi 18-07) : aujourd'hui l'hébergement (Netlify) et l'acheminement des emails du formulaire (Resend) passent par des serveurs hors Algérie. Les pages légales ne le mentionnent pas à la demande du client ; à régler avant le lancement, soit par un hébergeur et un relais email établis en Algérie, soit par l'autorisation de transfert prévue par la loi. Mettre ensuite à jour `lib/legal-content.ts` (sections Hébergement et Destinataires).
+
 **Sortie Phase 5 :** site cohérent, conforme (légal, a11y, typo), avec une section que seul un bureau d'études algérien peut avoir.
 
 ---
