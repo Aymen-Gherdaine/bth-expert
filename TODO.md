@@ -101,6 +101,34 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 
 ---
 
+## 🟢 Phase 5 — Audit design : corrections & différenciation (sans photos)
+
+> Issu de l'audit design du 2026-10-29. Objectif : sortir de l'esthétique « site généré 2025 »
+> sans refonte visible, en attendant les photos réelles (pas de bureau pour le moment).
+
+- [x] **5.1** — AR : italique synthétique (faux « / » dans le hero), odomètre et téléphones inversés par le bidi
+- [x] **5.2** — Contact : message réellement facultatif (client + fonction Netlify), délai 48h partout, monogrammes dérivés des noms FR, stat longue (« Accredited ») sans débordement sur /en mobile
+- [x] **5.3** — NAP : source unique `lib/site-config.ts` (`siteContact`), format téléphone unifié `+213 (670) 70 81 38`
+- [x] **5.4** — Projets : la home lit les vraies études de cas Keystatic ; mention « à valider avec le client » retirée de l'affichage ; « 150 partenaires » remplacé par l'agrément
+- [x] **5.5** — Pages Mentions légales + Confidentialité (FR/AR/EN) dans `lib/legal-content.ts`, liens footer + formulaire, sitemap
+- [x] **5.6** — Zones tactiles 44 px (liens texte, footer mobile, barre utilitaire, sélecteur de langue, menu)
+- [x] **5.7** — Typographie FR : espaces insécables devant ? ! : ; et dans les guillemets (`lib/typography.ts`, appliqué au dictionnaire FR et au markdown)
+- [x] **5.8** — Copy : réécriture des phrases à cadence « IA » (tirets cadratins, triades, slogans) en FR source + AR/EN
+- [x] **5.9** — Heros des pages index à hauteur de contenu + index numéroté de la page (`TerrainHero`)
+- [x] **5.10** — Home : section « Cadre réglementaire » (loi 03-10, décrets 07-145 / 06-198 / 07-144, loi 04-20) dans `lib/reglementation.ts`
+- [ ] **5.11** — [CLIENT] Valider les 3 études de cas (`content/fr/projets/`) : la mention « exemple représentatif » n'est plus affichée, le contenu doit donc être exact. Ajouter des chiffres (surface, délai d'instruction, wilaya) dès que possible.
+- [ ] **5.12** — [CLIENT] Numéro et date d'agrément ministériel → à afficher dans la bande chiffres et sur /a-propos
+- [ ] **5.13** — [CLIENT] RC / NIF / RIB → à ajouter dans `lib/legal-content.ts` (section Éditeur) ; hébergeur à confirmer si le site quitte Netlify
+- [ ] **5.14** — [CLIENT] Photos réelles (équipe, bureau, terrain, dossiers reliés) → remplacer les initiales sur /equipe et les SVG topographiques des bandes sombres
+- [ ] **5.15** — [CLIENT] URLs LinkedIn / Instagram / Facebook → `socialProfiles` dans `lib/site-config.ts`
+- [ ] **5.16** — Centre de ressources : fiches par texte réglementaire (07-145, 06-198…) en plus du blog, avec un guide de procédure par wilaya
+- [ ] **5.17** — Pages secteurs : textes applicables + étude comparable par secteur (aujourd'hui 3 enjeux + puces)
+- [ ] **5.18** — Poids JS home (~840 KB non compressé) : GSAP + SplitText + Lenis sont chargés sur chaque page ; envisager un chargement différé de SplitText et du pin-scroll sous la ligne de flottaison
+
+**Sortie Phase 5 :** site cohérent, conforme (légal, a11y, typo), avec une section que seul un bureau d'études algérien peut avoir.
+
+---
+
 ## Légende
 
 - 🟢 Phase en cours / proche
