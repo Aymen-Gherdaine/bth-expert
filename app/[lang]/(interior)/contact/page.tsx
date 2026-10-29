@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
 import fr from "@/dictionaries/fr.json";
 import { siteContact } from "@/lib/site-config";
-import { legalPages } from "@/lib/legal-content";
+import { legalPages, getConsentLabel } from "@/lib/legal-content";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
@@ -209,6 +209,7 @@ export default async function ContactPage({
                 privacy={{
                   href: `/${lang}/${legalPages.privacy[lang].slug}`,
                   label: legalPages.privacy[lang].navLabel,
+                  consentLabel: getConsentLabel(lang),
                 }}
               />
             </div>

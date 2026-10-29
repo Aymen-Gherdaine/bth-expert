@@ -12,8 +12,8 @@ type ContactFormDict = Dictionary["contact"]["form"];
 interface ContactFormProps {
   dict: ContactFormDict;
   lang: string;
-  /** Privacy policy link, resolved server-side so the legal texts stay out of the client bundle. */
-  privacy: { href: string; label: string };
+  /** Privacy policy link + consent wording (loi 18-07), resolved server-side so the legal texts stay out of the client bundle. */
+  privacy: { href: string; label: string; consentLabel: string };
 }
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -212,6 +212,25 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
               {dict.errorMessage}
             </p>
           )}
+
+          {/* Consent — loi 18-07 : le transit par des prestataires hors Algérie
+              exige un consentement exprès, donc une case non pré-cochée. */}
+          <div data-form-field>
+            <label htmlFor="consent" className="flex items-start gap-3 cursor-pointer min-h-11">
+              <input
+                id="consent"
+                name="consent"
+                type="checkbox"
+                value="oui"
+                required
+                className="mt-1 size-4 shrink-0 accent-[var(--color-brand)] cursor-pointer"
+              />
+              <span className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
+                {privacy.consentLabel}
+                <Required />
+              </span>
+            </label>
+          </div>
 
           <p className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
             {dict.privacyNote}{" "}

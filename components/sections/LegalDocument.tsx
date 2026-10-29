@@ -11,6 +11,9 @@ interface LegalDocumentProps {
 
 const DATE_LOCALE: Record<Locale, string> = { fr: "fr-DZ", ar: "ar-DZ", en: "en-GB" };
 
+const paragraphCls =
+  "font-sans text-ink-soft leading-[1.75] whitespace-pre-line text-[length:var(--text-body)]";
+
 /**
  * Legal text, set like a contract page: short title block, dated, then
  * numbered articles in a prose measure. Server-rendered — the text is the
@@ -74,13 +77,20 @@ export function LegalDocument({ page, updatedAt, lang }: LegalDocumentProps) {
                   </div>
                   <div className="sm:col-span-8 space-y-5">
                     {section.paragraphs.map((text) => (
-                      <p
-                        key={text}
-                        className="font-sans text-ink-soft leading-[1.75] whitespace-pre-line text-[length:var(--text-body)]"
-                      >
+                      <p key={text} className={paragraphCls}>
                         {text}
                       </p>
                     ))}
+                    {section.list && (
+                      <ul className="space-y-2.5 ps-5 list-disc marker:text-gold-ink">
+                        {section.list.map((item) => (
+                          <li key={item} className={paragraphCls}>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {section.after && <p className={paragraphCls}>{section.after}</p>}
                   </div>
                 </article>
               </FadeInItem>

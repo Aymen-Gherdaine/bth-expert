@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { schemaBreadcrumb } from "@/lib/schema";
-import { legalPages, LEGAL_UPDATED_AT } from "@/lib/legal-content";
+import { getLegalPage, LEGAL_UPDATED_AT } from "@/lib/legal-content";
 import { LegalDocument } from "@/components/sections/LegalDocument";
 
 export async function generateMetadata({
@@ -12,7 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = validateLocale(rawLang);
-  const page = legalPages.privacy[lang];
+  const page = getLegalPage("privacy", lang);
   return buildMetadata({
     lang,
     path: `/${page.slug}`,
@@ -28,7 +28,7 @@ export default async function ConfidentialitePage({
 }) {
   const { lang: rawLang } = await params;
   const lang = validateLocale(rawLang);
-  const page = legalPages.privacy[lang];
+  const page = getLegalPage("privacy", lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: page.heading, url: `https://bthexpert.com/${lang}/${page.slug}` },
   ]);

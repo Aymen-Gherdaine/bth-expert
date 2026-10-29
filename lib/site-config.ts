@@ -39,3 +39,28 @@ export const siteContact = {
     country: "Algérie",
   },
 } as const;
+
+/**
+ * Company registration identifiers printed on the legal notice.
+ *
+ * Every field is optional on purpose: a line is rendered only when the value
+ * is known, so the public page never shows a placeholder. Fill them in from
+ * the extrait de registre de commerce and the carte NIF once the client
+ * provides them (TODO 5.13).
+ */
+export const legalRegistration: {
+  /** e.g. "EURL", "SARL" */
+  legalForm?: string;
+  /** e.g. "100 000 DA" */
+  capital?: string;
+  /** Registre de commerce, e.g. "31/00-1234567 B 26" */
+  rc?: string;
+  /** Numéro d'identification fiscale (15 chiffres) */
+  nif?: string;
+  /** Numéro d'identification statistique */
+  nis?: string;
+  /** Article d'imposition */
+  ai?: string;
+  /** Référence de l'agrément ministériel (numéro et date) */
+  agrement?: string;
+} = {};

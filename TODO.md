@@ -118,12 +118,20 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [x] **5.10** — Home : section « Cadre réglementaire » (loi 03-10, décrets 07-145 / 06-198 / 07-144, loi 04-20) dans `lib/reglementation.ts`
 - [ ] **5.11** — [CLIENT] Valider les 3 études de cas (`content/fr/projets/`) : la mention « exemple représentatif » n'est plus affichée, le contenu doit donc être exact. Ajouter des chiffres (surface, délai d'instruction, wilaya) dès que possible.
 - [ ] **5.12** — [CLIENT] Numéro et date d'agrément ministériel → à afficher dans la bande chiffres et sur /a-propos
-- [ ] **5.13** — [CLIENT] RC / NIF / RIB → à ajouter dans `lib/legal-content.ts` (section Éditeur) ; hébergeur à confirmer si le site quitte Netlify
+- [ ] **5.13** — [CLIENT] Forme juridique, capital, RC, NIF, NIS, AI et référence d'agrément → à renseigner dans `legalRegistration` (`lib/site-config.ts`) ; les lignes n'apparaissent sur les mentions légales que si la valeur est connue. Hébergeur à mettre à jour si le site quitte Netlify.
 - [ ] **5.14** — [CLIENT] Photos réelles (équipe, bureau, terrain, dossiers reliés) → remplacer les initiales sur /equipe et les SVG topographiques des bandes sombres
 - [ ] **5.15** — [CLIENT] URLs LinkedIn / Instagram / Facebook → `socialProfiles` dans `lib/site-config.ts`
 - [ ] **5.16** — Centre de ressources : fiches par texte réglementaire (07-145, 06-198…) en plus du blog, avec un guide de procédure par wilaya
 - [ ] **5.17** — Pages secteurs : textes applicables + étude comparable par secteur (aujourd'hui 3 enjeux + puces)
 - [ ] **5.18** — Poids JS home (~840 KB non compressé) : GSAP + SplitText + Lenis sont chargés sur chaque page ; envisager un chargement différé de SplitText et du pin-scroll sous la ligne de flottaison
+
+- [ ] **5.19** — [CONFIG] Vérifier que l'action `translate.yml` tourne réellement : crédits/tokens de `ANTHROPIC_API_KEY` (secret GitHub Actions), dernier run dans l'onglet Actions. Les dictionnaires AR/EN ont été alignés à la main sur le FR du 2026-10-29 ; si l'action régénère, relire l'arabe (hero, stats, contact, légal n'est pas concerné : `lib/legal-content.ts` et `lib/reglementation.ts` sont hors pipeline).
+- [ ] **5.20** — Revue complète avant merge de `ccr-bac5c324-z7k16j` sur `main` (rien ne part en prod sans validation) :
+  - [ ] relecture FR / AR / EN des pages Mentions légales et Confidentialité (textes juridiques, noms des lois, ANPDP)
+  - [ ] test du formulaire de contact en preview Netlify : case de consentement, message vide, email reçu via Resend
+  - [ ] vérification visuelle desktop + mobile des 3 langues (hero, stats, section réglementaire, footer)
+  - [ ] `npm run build` 0 erreur / 0 warning, sitemap contenant `/mentions-legales/` et `/confidentialite/`
+  - [ ] validation client des textes des études de cas (5.11)
 
 **Sortie Phase 5 :** site cohérent, conforme (légal, a11y, typo), avec une section que seul un bureau d'études algérien peut avoir.
 
