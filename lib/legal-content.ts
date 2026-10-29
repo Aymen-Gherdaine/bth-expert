@@ -133,14 +133,14 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "Activité réglementée",
         paragraphs: [
-          `${legalName} exerce une activité de bureau d'études soumise à agrément. Ses prestations (études d'impact sur l'environnement, études de dangers, audits hygiène-sécurité-environnement, plans de gestion environnementale) s'inscrivent dans le cadre de la loi n° 03-10 du 19 juillet 2003 relative à la protection de l'environnement dans le cadre du développement durable et de ses textes d'application, notamment les décrets exécutifs n° 06-198 du 31 mai 2006, n° 07-144 et n° 07-145 du 19 mai 2007.`,
+          `${legalName} exerce une activité de bureau d'études soumise à agrément. Ses prestations (études d'impact sur l'environnement, études de dangers, audits hygiène-sécurité-environnement, plans de gestion environnementale) s'inscrivent dans le cadre de la loi n° 03-10 du 19 juillet 2003 relative à la protection de l'environnement dans le cadre du développement durable (JO n° 43 du 20 juillet 2003) et de ses textes d'application, notamment les décrets exécutifs n° 06-198 du 31 mai 2006 modifié, n° 07-144 et n° 07-145 du 19 mai 2007 modifié, et le décret exécutif n° 23-324 du 6 septembre 2023 relatif à l'agrément des bureaux d'études.`,
           "Les références réglementaires reproduites sur le Site le sont à titre d'information générale. Seules les versions publiées au Journal officiel de la République algérienne démocratique et populaire font foi.",
         ],
       },
       {
         heading: "Propriété intellectuelle",
         paragraphs: [
-          `L'ensemble des éléments composant le Site (textes, illustrations, cartes, logo, charte graphique, structure et code) est protégé par l'ordonnance n° 03-05 du 19 juillet 2003 relative aux droits d'auteur et aux droits voisins. Ces éléments sont la propriété exclusive de ${legalName} ou font l'objet d'une autorisation d'utilisation.`,
+          `L'ensemble des éléments composant le Site (textes, illustrations, cartes, logo, charte graphique, structure et code) est protégé par l'ordonnance n° 03-05 du 19 juillet 2003 relative aux droits d'auteur et aux droits voisins (JO n° 44 du 23 juillet 2003). Ces éléments sont la propriété exclusive de ${legalName} ou font l'objet d'une autorisation d'utilisation.`,
           `Toute reproduction, représentation, adaptation ou diffusion, totale ou partielle, par quelque procédé que ce soit, sans l'autorisation écrite préalable de ${legalName}, est interdite et constitue une contrefaçon. La citation courte à des fins d'information, avec mention de la source et lien vers le Site, est autorisée.`,
           "La dénomination « BTH Expert » et son logo sont des signes distinctifs de l'éditeur. Leur usage sans autorisation est prohibé.",
         ],
@@ -156,7 +156,7 @@ const MENTIONS: Record<Locale, LegalPage> = {
       {
         heading: "Données personnelles",
         paragraphs: [
-          "Le traitement des données à caractère personnel collectées sur le Site est régi par la loi n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel, modifiée et complétée par la loi n° 25-11 du 24 juillet 2025. Les finalités, destinataires, durées de conservation et vos droits sont détaillés dans notre politique de confidentialité, accessible depuis chaque page du Site.",
+          "Le traitement des données à caractère personnel collectées sur le Site est régi par la loi n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel (JO n° 34 du 10 juin 2018), modifiée et complétée par la loi n° 25-11 du 24 juillet 2025 (JO n° 48 du 24 juillet 2025). Les finalités, destinataires, durées de conservation et vos droits sont détaillés dans notre politique de confidentialité, accessible depuis chaque page du Site.",
         ],
       },
       {

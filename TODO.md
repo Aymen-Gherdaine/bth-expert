@@ -122,7 +122,8 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [ ] **5.14** — [CLIENT] Photos réelles (équipe, bureau, terrain, dossiers reliés) → remplacer les initiales sur /equipe et les SVG topographiques des bandes sombres
 - [ ] **5.15** — [CLIENT] URLs LinkedIn / Instagram / Facebook → `socialProfiles` dans `lib/site-config.ts`
 - [x] **5.16** — Centre de ressources `/ressources` : 6 fiches par texte (03-10, 07-145 modifié 2018/2019, 06-198 modifié 2022, 07-144, **24-04 qui remplace 04-20**, 23-324 agrément) + guide de procédure en 6 étapes avec les délais réglementaires. Contenu **dans Keystatic** (collection « Ressources » + singleton « Page Ressources »), synchronisé dans `fr.json`, AR/EN semés à la main dans les dictionnaires en attendant le pipeline. JSON-LD Article + FAQPage, sitemap, « Ressources » remplace « Blog » dans la nav. Vérification contre les sources : `docs/REGLEMENTATION-SOURCES.md`.
-- [ ] **5.16b** — [CLIENT] Relecture juridique des 7 fiches par Amine contre le JORADP : 8 points listés dans `docs/REGLEMENTATION-SOURCES.md` (art. 17 du 07-145 modifié, accord préalable du 06-198, abrogation 09-335 / 15-71 par le 25-63, etc.). **Bloquant avant merge.**
+- [x] **5.16b** — Vérification de chaque texte cité sur le site sur les PDF du Journal officiel (joradp.dz) : fiches, guide, FAQ accueil, page EIE, page À propos, trois articles de blog (FR/AR/EN), mentions légales. Corrections listées dans `docs/REGLEMENTATION-SOURCES.md` (loi 04-20 abrogée, délais du 07-145 depuis 2018, approbation ministre/wali, accord préalable 15 jours, etc.).
+- [ ] **5.16c** — [CLIENT] Relecture finale par Amine des 7 fiches et des 3 articles (lecture métier, pas juridique : les citations sont vérifiées), plus les 4 points de `docs/REGLEMENTATION-SOURCES.md` § « Points qui restent de la responsabilité du client ».
 - [ ] **5.17** — Pages secteurs : textes applicables + étude comparable par secteur (aujourd'hui 3 enjeux + puces)
 - [ ] **5.18** — Poids JS home (~840 KB non compressé) : GSAP + SplitText + Lenis sont chargés sur chaque page ; envisager un chargement différé de SplitText et du pin-scroll sous la ligne de flottaison
 
@@ -133,7 +134,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
   - [ ] vérification visuelle desktop + mobile des 3 langues (hero, stats, section réglementaire, footer)
   - [ ] `npm run build` 0 erreur / 0 warning, sitemap contenant `/mentions-legales/` et `/confidentialite/`
   - [ ] validation client des textes des études de cas (5.11)
-  - [ ] relecture des 7 fiches Ressources contre le JORADP (5.16b) et de l'arabe
+  - [ ] relecture métier des 7 fiches Ressources (5.16c) et de l'arabe
   - [ ] test de l'édition d'une fiche depuis `/keystatic` (collection Ressources) sur la preview Netlify
 
 - [ ] **5.21** — [CLIENT/CONFIG] Localisation des données (loi 18-07) : aujourd'hui l'hébergement (Netlify) et l'acheminement des emails du formulaire (Resend) passent par des serveurs hors Algérie. Les pages légales ne le mentionnent pas à la demande du client ; à régler avant le lancement, soit par un hébergeur et un relais email établis en Algérie, soit par l'autorisation de transfert prévue par la loi. Mettre ensuite à jour `lib/legal-content.ts` (sections Hébergement et Destinataires).

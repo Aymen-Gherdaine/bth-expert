@@ -1,6 +1,6 @@
 ---
 title: "Hazard Study: what Algerian regulations require of classified establishments"
-description: "Hazard Study (EDD) in Algeria: authorization regime, executive decree No. 06-198, APR/HAZOP methods, effect zones and internal emergency plan. The guide for classified installations."
+description: "Hazard Study (EDD) in Algeria: authorization regime, executive decree No. 06-198, APR/HAZOP methods, effect zones and internal intervention plan. The guide for classified installations."
 date: "2025-10-21"
 author: "BTH Expert"
 tags: ["EDD","classified establishments","HSE","Algeria"]
@@ -36,7 +36,7 @@ An admissible EDD file follows four structuring steps:
 1. **Description of the installation and its environment** — characterization of products, processes, and surrounding vulnerability: neighboring populations, sensitive environments, potential domino effects with adjacent installations.
 2. **Hazard identification** — systematic analysis using recognized methods such as APR (Preliminary Risk Analysis) and HAZOP (Hazard and Operability Study), enriched by accident history feedback from the sector.
 3. **Risk analysis and modeling** — quantification of the major scenarios selected: thermal, overpressure, and toxic effects, with calculation of effect zones and mapping of isolation distances.
-4. **Risk control** — definition of prevention and protection barriers, development of the internal emergency plan (POI) and intervention provisions.
+4. **Risk control** — definition of prevention and protection barriers, organisation of site safety and emergency resources, the basis of the internal intervention plan required by Law 24-04 and Executive Decree 25-63 of 28 January 2025.
 
 ## What the administration expects from the report
 
@@ -48,4 +48,4 @@ A poorly calibrated EDD — underestimation of effect zones, incomplete scenario
 
 The challenge is therefore to entrust the study to a team that masters both risk analysis methods (APR, HAZOP) and the specific Algerian regulatory context for establishments classified under the authorization regime.
 
-BTH Expert carries out Hazard Studies for classified industrial installations in Algeria — hydrocarbon storage, petrochemical units, hazardous product depots — from the initial diagnosis through to the submission of the report and internal emergency plan. [Contact our team](/en/contact) to assess the applicable regime for your installation.
+BTH Expert carries out Hazard Studies for classified industrial installations in Algeria — hydrocarbon storage, petrochemical units, hazardous product depots — from the initial diagnosis through to the submission of the report and internal intervention plan. [Contact our team](/en/contact) to assess the applicable regime for your installation.

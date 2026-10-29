@@ -5,48 +5,54 @@ ref: 24-04
 typeLabel: Loi
 date: 26 février 2024
 title: Prévention, intervention et réduction des risques de catastrophes
-officialTitle: Loi n° 24-04 du 26 février 2024 portant les règles de prévention, d'intervention et de réduction des risques de catastrophes dans le cadre du développement durable (JO n° 16 du 6 mars 2024), qui abroge la loi n° 04-20 du 25 décembre 2004
-summary: La loi qui remplace depuis 2024 l'ancienne loi 04-20 sur les risques majeurs. Elle organise la prévention des risques de catastrophes, dont les risques industriels, et impose aux exploitants d'installations dangereuses des plans d'intervention, précisés par le décret 25-63 de 2025.
-homeLine: 'Remplace la loi 04-20 depuis 2024 : impose aux exploitants d''installations à risque la maîtrise des scénarios d''accident et des plans internes et particuliers d''intervention (décret 25-63 de 2025).'
+officialTitle: 'Loi n° 24-04 du 26 février 2024 portant les règles de prévention, d''intervention et de réduction des risques de catastrophes dans le cadre du développement durable (JO n° 16 du 6 mars 2024), qui abroge la loi n° 04-20 du 25 décembre 2004 ; texte d''application : décret exécutif n° 25-63 du 28 janvier 2025 (JO n° 7 du 5 février 2025)'
+summary: La loi qui remplace depuis 2024 l'ancienne loi 04-20 sur les risques majeurs. Pour un exploitant industriel, elle impose une étude de vulnérabilité avant mise en place (article 75) et un plan interne d'intervention (article 76), précisés par le décret 25-63 de 2025, qui abroge les anciens décrets sur les plans d'intervention.
+homeLine: 'Remplace la loi 04-20 depuis 2024 : toute installation industrielle est soumise à une étude de vulnérabilité (art. 75) et à un plan interne d''intervention (art. 76), encadrés par le décret 25-63 de 2025.'
 meta:
 - label: Nature
   value: Loi-cadre
 - label: Abroge
-  value: Loi 04-20 du 25 décembre 2004
+  value: Loi 04-20 du 25 décembre 2004 (art. 91)
 - label: Texte d'application
   value: Décret 25-63 du 28 janvier 2025
 sections:
-- heading: Ce qui change par rapport à la loi 04-20
-  paragraphs:
-  - 'La loi 24-04 reprend et élargit le dispositif de 2004 : elle traite de la prévention, de l''intervention et de la réduction des risques de catastrophes, qu''ils soient naturels, technologiques ou sanitaires. Pour un exploitant industriel, l''essentiel est inchangé dans son principe et précisé dans ses modalités : analyser les risques de son installation, les réduire à la source et organiser la réponse en cas d''accident.'
-  - Les textes antérieurs qui citent encore la loi 04-20 (études de dangers, plans d'intervention établis avant 2024) doivent être lus à la lumière du nouveau cadre.
-  list: []
-  after: ''
-- heading: Les plans d'intervention
-  paragraphs:
-  - 'Le décret exécutif 25-63 du 28 janvier 2025 (JO n° 7 du 5 février 2025), pris en application des articles 73 et 76 de la loi, fixe les conditions d''élaboration, de mise en œuvre et de gestion de deux plans :'
-  list:
-  - 'le plan interne d''intervention (PII), établi par l''exploitant : mesures de prévention, d''organisation et de coordination des secours en cas d''accident ayant des effets sur l''installation ;'
-  - le plan particulier d'intervention (PPI), établi par les pouvoirs publics pour les établissements classés dont l'étude de dangers conclut que les effets des risques peuvent dépasser les limites de l'installation.
-  after: Le décret prévoit des exercices de simulation et le déclenchement du plan particulier lorsque les moyens du plan interne se révèlent insuffisants.
-- heading: Obligations de l'exploitant
+- heading: Les risques couverts (article 3)
   paragraphs: []
   list:
-  - identifier et analyser les risques que présente l'installation ;
-  - mettre en œuvre les mesures de prévention et de réduction à la source ;
-  - établir et tenir à jour un plan interne d'intervention, et s'exercer à sa mise en œuvre ;
-  - informer les autorités et s'inscrire dans les plans d'organisation des secours.
+  - risques sismiques, géologiques, d'inondations, climatiques extrêmes, d'incendies de forêt ;
+  - risques industriels et énergétiques ;
+  - risques spatiaux, radiologiques et nucléaires ;
+  - risques affectant la santé humaine, animale et végétale ; risques de pollution atmosphérique, marine et hydrique ;
+  - risques des regroupements humains importants, de désertification, de sécheresse, d'érosion du littoral et d'élévation du niveau de la mer.
   after: ''
-- heading: Lien avec l'étude de dangers
+- heading: Obligations de l'exploitant industriel (articles 73 à 76)
+  paragraphs: []
+  list:
+  - 'article 75 : toute installation industrielle doit, avant sa mise en place et son exploitation, être soumise à une étude de vulnérabilité aux risques de catastrophes ;'
+  - 'article 76 : les exploitants d''installations industrielles et de lignes de transport d''hydrocarbures par canalisation doivent élaborer un plan interne d''intervention définissant les mesures de prévention, les systèmes d''alarme et d''alerte, les études techniques, les moyens mobilisés et les procédures à mettre en œuvre en cas de catastrophe ;'
+  - 'articles 73 et 74 : des plans particuliers d''intervention, établis par voie réglementaire, protègent les installations industrielles et les structures ; ils analysent les risques, prévoient les dispositifs d''alerte et informent les citoyens.'
+  after: ''
+- heading: 'Le décret 25-63 : plans particulier et interne d''intervention'
   paragraphs:
-  - 'Pour un site industriel, l''étude de dangers est l''outil qui matérialise ces obligations : scénarios d''accident, zones d''effet, mesures de maîtrise des risques. Elle constitue la base technique du plan interne d''intervention et détermine si un plan particulier d''intervention est nécessaire.'
+  - Pris en application des articles 73 et 76, il fixe les conditions d'élaboration, de mise en œuvre et de gestion des deux plans et abroge les décrets 15-71 (plans particuliers) et 09-335 (plans internes) (article 29).
+  list:
+  - 'plan particulier d''intervention : pour les établissements classés dont l''étude de danger conclut que les effets des risques peuvent dépasser les limites de l''installation, les ouvrages hydrauliques, les canalisations d''hydrocarbures et de gaz et les installations d''hydrocarbures ; la liste est fixée par arrêté du wali (articles 2 à 6) ;'
+  - 'plan interne d''intervention : pour les installations industrielles et canalisations qui, par danger d''incendie, d''explosion ou d''émanation toxique, peuvent créer des risques pour les travailleurs, la population, les biens et l''environnement (articles 7 et 8) ;'
+  - les plans sont élaborés à la charge de l'exploitant, sur la base d'une étude de vulnérabilité (plan particulier) ou d'une étude de danger (plan interne), par des bureaux d'études agréés par l'État, selon un canevas fixé par arrêté conjoint (articles 10 à 12) ;
+  - approbation par une commission de wilaya présidée par le wali, qui statue dans les trois mois, faute de quoi le projet est réputé recevable (articles 14 et 15) ;
+  - 'exercices de simulation : programme annuel pour le plan particulier, au moins deux exercices par an pour le plan interne (article 24) ; actualisation après tout accident, exercice ou modification de l''installation (article 26) ;'
+  - les installations en fonctionnement avaient un an pour se conformer ; une installation nouvelle ne peut exploiter qu'après approbation de ses plans (article 28).
+  after: ''
+- heading: Lien avec l'étude de danger
+  paragraphs:
+  - Pour un site industriel, l'étude de danger du décret 06-198 est la base technique du plan interne d'intervention et détermine si un plan particulier d'intervention est nécessaire. Une étude de danger bien dimensionnée fait donc gagner la procédure suivante.
   list: []
   after: ''
 faq:
-- q: Plan interne d'intervention et étude de dangers, est-ce la même chose ?
-  a: Non. L'étude de dangers analyse les risques ; le plan interne d'intervention organise la réponse de l'exploitant en cas d'accident. Le second s'appuie sur la première.
+- q: Plan interne d'intervention et étude de danger, est-ce la même chose ?
+  a: Non. L'étude de danger analyse les risques et leurs conséquences ; le plan interne d'intervention fixe la planification et la gestion des interventions et des secours à l'intérieur de l'installation en cas d'accident (article 7 du décret 25-63). Le second s'appuie sur la première.
 - q: Un plan interne établi sous l'ancien décret 09-335 reste-t-il valable ?
-  a: Le décret 25-63 encadre désormais les plans internes et particuliers d'intervention. Un plan existant doit être confronté à ses exigences et mis à jour si nécessaire ; nous mesurons l'écart au cas par cas.
+  a: Le décret 25-63 abroge le décret 09-335 et imposait aux installations en fonctionnement de se conformer à ses dispositions dans un délai d'un an (articles 28 et 29). Un plan existant doit donc être revu selon le nouveau canevas et approuvé par la commission de wilaya.
 services:
 - edd
 - hse
@@ -54,5 +60,5 @@ related:
 - decret-06-198-etablissements-classes
 - loi-03-10-protection-environnement
 - procedure-autorisation-installation-classee
-metaTitle: 'Loi 24-04 : risques de catastrophes, obligations des exploitants industriels et plans d''intervention'
-metaDescription: 'Fiche pratique sur la loi n° 24-04 du 26 février 2024, qui abroge la loi 04-20 : prévention des risques de catastrophes, obligations des exploitants d''installations dangereuses, plans interne et particulier d''intervention (décret 25-63), lien avec l''étude de dangers.'
+metaTitle: 'Loi 24-04 et décret 25-63 : risques de catastrophes, étude de vulnérabilité et plans d''intervention'
+metaDescription: 'Fiche vérifiée sur le Journal officiel : loi 24-04 du 26 février 2024 (abroge la loi 04-20), risques couverts, étude de vulnérabilité (art. 75), plan interne d''intervention (art. 76), décret 25-63 de 2025 (plans particulier et interne, commission, exercices).'

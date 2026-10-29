@@ -30,7 +30,7 @@ methodology:
       description: 'Quantification des scénarios majeurs : effets thermiques, de surpression et toxiques, calcul des zones d''effet et cartographie des distances d''isolement.'
     - number: '04'
       title: Maîtrise des risques
-      description: Définition des barrières de prévention et de protection, du plan d'urgence interne et des dispositions d'intervention en cas d'accident.
+      description: Définition des barrières de prévention et de protection, et des éléments du plan interne d'intervention exigé par le décret exécutif 25-63 du 28 janvier 2025.
 deliverable:
   heading: Livrable
   description: Un rapport d'étude de dangers conforme au cadre réglementaire algérien, intégrant la cartographie des zones d'effet et le plan de maîtrise des risques, prêt pour le dépôt auprès des autorités compétentes.

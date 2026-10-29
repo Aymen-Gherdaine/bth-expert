@@ -6,35 +6,39 @@ typeLabel: Décret exécutif
 date: 6 septembre 2023
 title: Agrément des bureaux d'études en environnement
 officialTitle: Décret exécutif n° 23-324 du 6 septembre 2023 fixant les conditions et les modalités d'exercice de l'activité des bureaux d'études dans le domaine de l'environnement (JO n° 61 du 17 septembre 2023)
-summary: 'Le texte qui dit qui a le droit de réaliser vos études d''impact, de dangers et d''audit : un bureau agréé par arrêté du ministre chargé de l''environnement, pour cinq ans renouvelables. Une étude signée par un bureau non agréé est irrecevable.'
-homeLine: Réserve la réalisation des études d'impact, de dangers et des audits aux bureaux agréés par arrêté du ministre chargé de l'environnement, pour cinq ans renouvelables.
+summary: 'Le texte qui dit qui a le droit de réaliser vos études d''impact, de danger et d''audit environnemental : un bureau agréé par arrêté du ministre chargé de l''environnement, pour cinq ans renouvelables, classé en catégories selon son effectif et son expérience. Une étude signée par un bureau non agréé est irrecevable.'
+homeLine: Réserve les études d'impact, de danger et les audits environnementaux aux bureaux agréés par arrêté du ministre chargé de l'environnement, pour cinq ans renouvelables.
 meta:
 - label: Agrément
-  value: Arrêté du ministre chargé de l'environnement
+  value: Arrêté du ministre chargé de l'environnement (art. 4)
 - label: Validité
-  value: 5 ans renouvelables
-- label: Secteur hydrocarbures
-  value: Pré-qualification ARH en plus
+  value: 5 ans renouvelables (art. 18)
+- label: Catégories
+  value: A à E selon effectif et expérience (art. 22)
 sections:
 - heading: Ce que le décret exige
   paragraphs: []
   list:
-  - l'activité de bureau d'études en environnement est soumise à un agrément délivré par arrêté du ministre chargé de l'environnement, après avis d'une commission ministérielle ;
-  - le bureau doit être de nationalité algérienne ou de droit algérien, son responsable titulaire d'un diplôme universitaire dans l'une des spécialités de l'annexe du décret, avec une expérience professionnelle d'au moins trois ans dans le domaine ;
-  - l'agrément est accordé pour cinq ans renouvelables ; la demande de renouvellement se dépose au moins quarante-cinq jours avant l'expiration ;
-  - tout changement dans la situation du bureau donne lieu à un arrêté modificatif ; les bureaux existants disposaient de douze mois à compter de la publication pour se conformer.
+  - l'activité est réglementée, inscrite au registre du commerce, et soumise à un agrément délivré par arrêté du ministre chargé de l'environnement après avis d'une commission (articles 2, 4 et 11) ;
+  - 'personne physique : nationalité algérienne, diplôme universitaire dans les spécialités de l''annexe 1, au moins trois ans d''expérience dans le domaine de l''environnement ; personne morale : droit algérien, gérant diplômé, au moins deux salariés diplômés, trois ans d''expérience pour le gérant et le personnel (article 6) ;'
+  - un local adapté et des moyens matériels et logiciels appropriés (article 7) ;
+  - 'pour se spécialiser dans les études d''impact, les études de danger et l''audit environnemental : une formation suivie auprès du conservatoire national des formations à l''environnement (article 8) ;'
+  - instruction du dossier par la commission sous quarante-cinq jours, notification sous quinze jours ; en cas de rejet, recours sous un mois, tranché sous vingt jours (articles 13 à 17) ;
+  - agrément accordé pour cinq ans renouvelables, personnel et incessible ; demande de renouvellement au moins quarante-cinq jours avant l'expiration (articles 18 à 20) ;
+  - classement des bureaux en catégories A à E selon le nombre de personnes qualifiées et leurs années d'expérience (article 22) ;
+  - contrôle périodique du ministère ; retrait temporaire (six mois au plus) ou définitif de l'agrément en cas de manquement (articles 24 à 27) ; les bureaux existants avaient douze mois pour se conformer (article 31).
   after: ''
 - heading: Pourquoi cela vous concerne
   paragraphs:
-  - Les décrets 07-145 et 06-198 et l'arrêté interministériel du 14 septembre 2014 exigent que l'étude d'impact et l'étude de dangers soient établies par un bureau agréé. Une étude signée par un bureau sans agrément valide, ou dont l'agrément ne couvre pas le type d'étude, est rejetée à la recevabilité. Avant toute commande, demandez l'arrêté d'agrément et vérifiez sa date de validité.
-  - 'Pour les activités du secteur des hydrocarbures, l''agrément environnemental ne suffit pas : le bureau doit en outre être pré-qualifié par l''Autorité de régulation des hydrocarbures.'
+  - Le décret 07-145 (article 4) et le décret 06-198 (article 13) exigent que l'étude d'impact et l'étude de danger soient établies par un bureau agréé, et depuis 2018 la copie de la décision d'agrément est une pièce obligatoire de l'étude d'impact. Une étude signée par un bureau sans agrément valide, ou dont l'agrément ne couvre pas le type d'étude, est rejetée. Avant toute commande, demandez l'arrêté d'agrément, vérifiez sa date d'expiration et sa catégorie.
+  - 'Pour les activités du secteur des hydrocarbures, l''agrément environnemental ne suffit pas : le bureau doit en outre être pré-qualifié par l''Autorité de régulation des hydrocarbures (décret exécutif 24-278 du 13 août 2024, JO n° 58 du 22 août 2024).'
   list: []
   after: ''
 faq:
 - q: BTH Expert est-il agréé ?
-  a: Oui. BTH Expert est agréé par le ministère chargé de l'environnement pour la réalisation des études d'impact et des études de dangers. L'arrêté d'agrément est communiqué sur demande.
+  a: Oui. BTH Expert est agréé par le ministère chargé de l'environnement pour la réalisation des études d'impact et des études de danger. L'arrêté d'agrément est communiqué sur demande.
 - q: Un bureau étranger peut-il réaliser une étude d'impact en Algérie ?
-  a: L'agrément est réservé aux personnes physiques de nationalité algérienne et aux personnes morales de droit algérien. Un bureau étranger intervient, le cas échéant, en appui d'un bureau algérien agréé.
+  a: L'agrément est réservé aux personnes physiques de nationalité algérienne et aux personnes morales de droit algérien (articles 3 et 6). Un bureau étranger intervient, le cas échéant, en appui d'un bureau algérien agréé qui signe l'étude.
 services:
 - eie
 - edd
@@ -44,4 +48,4 @@ related:
 - decret-07-145-etude-impact
 - decret-06-198-etablissements-classes
 metaTitle: 'Décret 23-324 : agrément des bureaux d''études en environnement en Algérie'
-metaDescription: 'Fiche pratique sur le décret exécutif 23-324 du 6 septembre 2023 : conditions d''agrément des bureaux d''études en environnement, validité de cinq ans, renouvellement, pré-qualification hydrocarbures, et pourquoi vérifier l''agrément avant de commander une étude.'
+metaDescription: 'Fiche vérifiée sur le JO n° 61 du 17 septembre 2023 : conditions d''agrément des bureaux d''études en environnement, formation au conservatoire national, validité de cinq ans, catégories A à E, retrait, pré-qualification hydrocarbures. Pourquoi vérifier l''agrément avant de commander une étude.'
