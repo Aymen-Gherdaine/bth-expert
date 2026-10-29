@@ -54,6 +54,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
               >
                 <a
                   href="tel:+213670708138"
+                  dir="ltr"
                   className="hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
                   +213 (670) 70 81 38

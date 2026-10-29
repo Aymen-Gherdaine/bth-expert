@@ -121,6 +121,7 @@ export default async function ContactPage({
                     <dd>
                       <a
                         href={`tel:${c.info.phone.replace(/\s/g, "")}`}
+                        dir="ltr"
                         className={valueLinkCls}
                       >
                         {c.info.phone}

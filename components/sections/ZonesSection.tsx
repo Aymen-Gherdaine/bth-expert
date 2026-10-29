@@ -322,6 +322,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
           >
             <a
               href={`tel:${content.phone.replace(/[\s()]/g, "")}`}
+              dir="ltr"
               className="w-fit text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {content.phone}

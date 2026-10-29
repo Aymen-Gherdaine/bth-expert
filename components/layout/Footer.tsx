@@ -176,7 +176,7 @@ export async function Footer({ lang }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="tel:+213670708138" className={linkClass}>
+                <a href="tel:+213670708138" dir="ltr" className={linkClass}>
                   +213 670 70 81 38
                 </a>
               </li>

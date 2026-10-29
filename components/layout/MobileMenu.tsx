@@ -151,7 +151,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
             {ctaLabel}
           </Link>
           <div className="flex flex-col gap-1.5 text-cream/70 text-sm">
-            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`}>{phone}</a>
+            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} dir="ltr" className="w-fit">{phone}</a>
             <a href={`mailto:${email}`}>{email}</a>
           </div>
         </div>

@@ -138,6 +138,15 @@
   font-weight: 400;
 }
 
+/* IBM Plex Sans Arabic ships no italic: the browser synthesises an oblique
+   whose slanted alef reads as a stray "/" (seen on the hero). Carry the
+   emphasis with weight instead of slant. */
+[lang="ar"] .italic,
+[lang="ar"] em {
+  font-style: normal;
+  font-weight: 500;
+}
+
 /* Arabic glyphs sit taller (diacritics) — give tight headings air. */
 [lang="ar"] h1,
 [lang="ar"] h2,

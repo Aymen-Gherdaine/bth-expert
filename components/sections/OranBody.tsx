@@ -104,6 +104,7 @@ export function OranBody({ services, zones, nap }: OranBodyProps) {
             <FadeInItem>
               <a
                 href={`tel:${nap.phone.replace(/\s/g, "")}`}
+                dir="ltr"
                 className={linkCls}
               >
                 {nap.phone}
