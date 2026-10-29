@@ -217,7 +217,7 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
             {dict.privacyNote}{" "}
             <Link
               href={privacy.href}
-              className="underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
+              className="inline-flex items-center min-h-11 -my-3 underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
             >
               {privacy.label}
             </Link>
