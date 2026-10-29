@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkHtml from "remark-html";
 import type { Locale } from "./i18n-config";
+import { frenchPunctuationDeep, frenchPunctuationHtml } from "./typography";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -57,10 +58,15 @@ export const getContent = cache(async function getContent(
   // listing ou sitemap) — seule l'UI Keystatic y donne accès.
   if (data.status === "draft") return null;
 
-  const html = await markdownToHtml(content);
+  const rendered = await markdownToHtml(content);
+  const isFr = lang === "fr";
+  const html = isFr ? frenchPunctuationHtml(rendered) : rendered;
+  const frontmatter = isFr
+    ? frenchPunctuationDeep(data as ContentFrontmatter)
+    : (data as ContentFrontmatter);
 
   return {
-    frontmatter: data as ContentFrontmatter,
+    frontmatter,
     html,
     slug,
   };

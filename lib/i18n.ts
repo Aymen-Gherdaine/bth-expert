@@ -2,6 +2,7 @@ import "server-only";
 import { notFound } from "next/navigation";
 import type frDict from "@/dictionaries/fr.json";
 import { locales, type Locale } from "./i18n-config";
+import { frenchPunctuationDeep } from "./typography";
 
 // Ré-exporte tout depuis i18n-config pour que les Server Components
 // gardent un seul point d'import : @/lib/i18n
@@ -18,8 +19,16 @@ export function validateLocale(lang: string): Locale {
 
 export type Dictionary = typeof frDict;
 
+// FR gets its unbreakable punctuation spaces here, once per build, so that
+// authors can keep typing plain spaces in Keystatic (see lib/typography.ts).
+let frTypeset: Dictionary | null = null;
+
 const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
-  fr: () => import("@/dictionaries/fr.json").then((m) => m.default),
+  fr: () =>
+    import("@/dictionaries/fr.json").then((m) => {
+      frTypeset ??= frenchPunctuationDeep(m.default);
+      return frTypeset;
+    }),
   ar: () => import("@/dictionaries/ar.json").then((m) => m.default),
   en: () => import("@/dictionaries/en.json").then((m) => m.default),
 };
