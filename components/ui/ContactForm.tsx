@@ -194,13 +194,11 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
           <div data-form-field>
             <label htmlFor="message" className={labelCls}>
               {dict.message}
-              <Required />
             </label>
             <textarea
               id="message"
               name="message"
               rows={4}
-              required
               placeholder={dict.messagePlaceholder}
               className={`${inputCls} resize-none`}
             />

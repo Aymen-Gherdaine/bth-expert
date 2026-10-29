@@ -71,11 +71,11 @@
       "message": "Message (facultatif)",
       "privacyNote": "Vos données sont utilisées uniquement pour vous répondre.",
       "whatsapp": "Discuter sur WhatsApp",
-      "responseTime": "Réponse sous 24h garantie",
+      "responseTime": "Réponse sous 48h",
       "submit": "Envoyer ma demande",
       "submitting": "Envoi en cours...",
       "successTitle": "Message envoyé.",
-      "successMessage": "Merci, nous vous répondrons sous 24 heures.",
+      "successMessage": "Merci, nous vous répondrons sous 48 heures.",
       "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.com."
     },
     "process": {

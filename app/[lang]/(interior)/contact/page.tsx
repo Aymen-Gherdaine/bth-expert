@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
+import fr from "@/dictionaries/fr.json";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
@@ -41,6 +42,15 @@ export default async function ContactPage({
   const lang = validateLocale(rawLang);
   const dict = await getDictionary(lang);
   const c = dict.contact;
+  // "Amine Lahmer" → "AL". Always from the FR names: a Latin monogram is a
+  // brand mark, it must not change with the UI language.
+  const monograms = fr.equipe.members.slice(0, 2).map((m) =>
+    m.name
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((w) => w[0]?.toUpperCase() ?? "")
+      .join("")
+  );
   const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.contact, url: `https://bthexpert.com/${lang}/contact` },
@@ -68,19 +78,28 @@ export default async function ContactPage({
           <div className="py-12 lg:py-16 grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Left: intro */}
             <div className="lg:col-span-5">
-              {/* Monogram cluster — decorative stand-in for the team.
+              {/* Monogram cluster — the two experts' initials, read from the
+                  team content so they can never drift from the Équipe page.
                   Purely ornamental, so it stays out of the a11y tree. */}
               <div aria-hidden className="flex -space-x-3 mb-9">
-                <span className="grid size-16 place-items-center rounded-full ring-4 ring-cream-warm bg-brand">
-                  <span className="font-display font-light leading-none text-[1.375rem] tracking-[0.06em] text-cream">
-                    AL
+                {monograms.map((initials, i) => (
+                  <span
+                    key={initials}
+                    className={`grid size-16 place-items-center rounded-full ring-4 ring-cream-warm ${
+                      i === 0
+                        ? "bg-brand"
+                        : "bg-[color-mix(in_srgb,var(--color-gold)_22%,var(--color-cream))]"
+                    }`}
+                  >
+                    <span
+                      className={`font-display font-light leading-none text-[1.375rem] tracking-[0.06em] ${
+                        i === 0 ? "text-cream" : "text-gold-ink"
+                      }`}
+                    >
+                      {initials}
+                    </span>
                   </span>
-                </span>
-                <span className="grid size-16 place-items-center rounded-full ring-4 ring-cream-warm bg-[color-mix(in_srgb,var(--color-gold)_22%,var(--color-cream))]">
-                  <span className="font-display font-light leading-none text-[1.375rem] tracking-[0.06em] text-gold-ink">
-                    AB
-                  </span>
-                </span>
+                ))}
               </div>
 
               <span

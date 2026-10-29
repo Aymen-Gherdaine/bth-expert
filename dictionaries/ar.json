@@ -71,11 +71,11 @@
       "message": "الرسالة (اختياري)",
       "privacyNote": "تُستخدم بياناتك فقط للرد على طلبك.",
       "whatsapp": "تواصل عبر WhatsApp",
-      "responseTime": "رد مضمون خلال 24 ساعة",
+      "responseTime": "رد خلال 48 ساعة",
       "submit": "إرسال الطلب",
       "submitting": "جارٍ الإرسال...",
       "successTitle": "تم إرسال رسالتك.",
-      "successMessage": "شكراً لك، سنرد عليك خلال 24 ساعة.",
+      "successMessage": "شكراً لك، سنرد عليك خلال 48 ساعة.",
       "errorMessage": "حدث خطأ. يرجى المحاولة مجدداً أو مراسلتنا مباشرة على info@bthexpert.com."
     },
     "process": {
