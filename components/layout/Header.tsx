@@ -56,13 +56,13 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                 <a
                   href={`tel:${siteContact.phoneE164}`}
                   dir="ltr"
-                  className="hover:text-gold transition-colors duration-[var(--duration-fast)]"
+                  className="inline-flex items-center min-h-11 hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
                   {siteContact.phoneDisplay}
                 </a>
                 <a
                   href={`mailto:${siteContact.email}`}
-                  className="hidden sm:inline hover:text-gold transition-colors duration-[var(--duration-fast)]"
+                  className="hidden sm:inline-flex items-center min-h-11 hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
                   {siteContact.email}
                 </a>

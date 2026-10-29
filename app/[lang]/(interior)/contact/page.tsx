@@ -33,7 +33,7 @@ const captionCls =
   "block text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-1.5";
 
 const valueLinkCls =
-  "text-[length:var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "inline-flex items-center min-h-11 py-1 -my-1 text-[length:var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 export default async function ContactPage({
   params,

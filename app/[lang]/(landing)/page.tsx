@@ -134,7 +134,7 @@ export default async function HomePage({
                 </Link>
                 <Link
                   href={`/${lang}/services`}
-                  className="group inline-flex items-center gap-2.5 text-cream/75 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="group inline-flex items-center gap-2.5 min-h-11 py-2 -my-2 text-cream/75 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                   {h.hero.ctaSecondary}

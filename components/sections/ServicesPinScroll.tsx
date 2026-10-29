@@ -273,7 +273,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
         <div className="mt-12 lg:mt-16">
           <Link
             href={`/${lang}/services`}
-            className="group inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] text-ink tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-ink tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             {services.cta}
             <span

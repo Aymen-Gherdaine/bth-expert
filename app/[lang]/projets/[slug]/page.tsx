@@ -80,7 +80,7 @@ export default async function ProjetPage({
         <div className={`${SECTION_PX} pt-16 lg:pt-24`}>
           <Link
             href={`/${lang}/secteurs/${item.secteurSlug}`}
-            className="group inline-flex items-center gap-2 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             <span
               aria-hidden
@@ -169,7 +169,7 @@ export default async function ProjetPage({
                 </Link>
                 <Link
                   href={`/${lang}/projets`}
-                  className="group inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   <span
                     aria-hidden

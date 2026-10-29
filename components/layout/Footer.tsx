@@ -12,7 +12,7 @@ interface FooterProps {
 }
 
 const linkClass =
-  "hover:text-[var(--color-gold)] transition-colors duration-300 ease-[var(--ease-out-expo)]";
+  "inline-flex items-center min-h-11 lg:min-h-0 hover:text-[var(--color-gold)] transition-colors duration-300 ease-[var(--ease-out-expo)]";
 
 const columnHeaderClass = "text-xs uppercase tracking-widest text-gold mb-4";
 
@@ -100,7 +100,7 @@ export async function Footer({ lang }: FooterProps) {
           <div className={`col-span-2 lg:col-span-5 grid grid-cols-2 lg:grid-cols-5 gap-x-8 ${dividerClass}`}>
             <div className="lg:col-span-3">
               <h2 className={columnHeaderClass}>{dict.footer.navigation}</h2>
-              <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+              <ul className="space-y-0 lg:space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
                 <li>
                   <Link href={`/${lang}/services`} className={linkClass}>
                     {dict.nav.services}
@@ -142,7 +142,7 @@ export async function Footer({ lang }: FooterProps) {
             {/* Expertises — the four service pages (aligned to the comp) */}
             <div className="lg:col-span-2">
               <h2 className={columnHeaderClass}>{exp.heading}</h2>
-              <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+              <ul className="space-y-0 lg:space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
                 <li>
                   <Link href={`/${lang}/services/etude-impact-environnemental`} className={linkClass}>
                     {exp.eie}
@@ -170,7 +170,7 @@ export async function Footer({ lang }: FooterProps) {
           {/* Contact */}
           <div className={`col-span-2 lg:col-span-3 ${dividerClass}`}>
             <h2 className={columnHeaderClass}>{dict.nav.contact}</h2>
-            <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+            <ul className="space-y-0 lg:space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
                 <a href={`mailto:${siteContact.email}`} className={linkClass}>
                   {siteContact.email}
