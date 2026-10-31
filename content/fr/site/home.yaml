@@ -34,8 +34,8 @@ stats:
     - value: 20+
       label: Études réalisées
       highlight: false
-    - value: '4'
-      label: Familles de services
+    - value: '48'
+      label: heures pour recevoir une offre
       highlight: false
     - value: Agréé
       label: Ministère de l'Environnement
