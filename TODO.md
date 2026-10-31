@@ -77,7 +77,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
   - Régénère entièrement `dictionaries/{ar,en}.json` depuis `dictionaries/fr.json`, et traduit les articles de blog **publiés** (`status` ≠ `draft`) vers `content/{ar,en}/blog/`. N'écrase pas un article déjà traduit sauf `--force`.
 - [x] **3.6** — GitHub Action `.github/workflows/translate.yml` : déclenchée sur push `content/fr/**` (branche `main`), commit auto des fichiers traduits.
   - ⚠️ [CLIENT/CONFIG] Ajouter le secret `ANTHROPIC_API_KEY` dans Settings → Secrets → Actions du repo GitHub (en plus de la variable d'env du même nom sur Netlify, utilisée par l'agent blog).
-- [ ] **3.7** — Test traduction complète sur 1 article + 1 page service
+- [x] **3.7** — Vérifié le 31 oct. : l'action `translate.yml` a traduit les 3 articles (`content/ar/blog`, `content/en/blog`) et les sections du dictionnaire (pages services comprises) lors de ses runs réussis de juin à septembre 2026. Les versions actuelles AR/EN ont ensuite été relues à la main et scellées (voir 5.19).
 - [ ] **3.8** — Génération + publication du premier article validé
 
 **Sortie Phase 3 :** site trilingue avec contenu auto-traduit, blog automatisé.
@@ -98,6 +98,48 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [ ] **4.8** — Mise en place tableau de suivi (impressions, positions, clics) mensuel
 
 **Sortie Phase 4 :** site en production, indexé, mesuré.
+
+---
+
+## 🟢 Phase 5 — Audit design : corrections & différenciation (sans photos)
+
+> Issu de l'audit design du 2026-10-29. Objectif : sortir de l'esthétique « site généré 2025 »
+> sans refonte visible, en attendant les photos réelles (pas de bureau pour le moment).
+
+- [x] **5.1** — AR : italique synthétique (faux « / » dans le hero), odomètre et téléphones inversés par le bidi
+- [x] **5.2** — Contact : message réellement facultatif (client + fonction Netlify), délai 48h partout, monogrammes dérivés des noms FR, stat longue (« Accredited ») sans débordement sur /en mobile
+- [x] **5.3** — NAP : source unique `lib/site-config.ts` (`siteContact`), format téléphone unifié `+213 (670) 70 81 38`
+- [x] **5.4** — Projets : la home lit les vraies études de cas Keystatic ; mention « à valider avec le client » retirée de l'affichage ; « 150 partenaires » remplacé par l'agrément
+- [x] **5.5** — Pages Mentions légales + Confidentialité (FR/AR/EN) dans `lib/legal-content.ts`, liens footer + formulaire, sitemap
+- [x] **5.6** — Zones tactiles 44 px (liens texte, footer mobile, barre utilitaire, sélecteur de langue, menu)
+- [x] **5.7** — Typographie FR : espaces insécables devant ? ! : ; et dans les guillemets (`lib/typography.ts`, appliqué au dictionnaire FR et au markdown)
+- [x] **5.8** — Copy : réécriture des phrases à cadence « IA » (tirets cadratins, triades, slogans) en FR source + AR/EN
+- [x] **5.9** — Heros des pages index à hauteur de contenu + index numéroté de la page (`TerrainHero`)
+- [x] **5.10** — Home : section « Cadre réglementaire » (loi 03-10, décrets 07-145 / 06-198 / 07-144, loi 04-20) dans `lib/reglementation.ts`
+- [ ] **5.11** — [CLIENT] Valider les 3 études de cas (`content/fr/projets/`) : la mention « exemple représentatif » n'est plus affichée, le contenu doit donc être exact. Ajouter des chiffres (surface, délai d'instruction, wilaya) dès que possible.
+- [ ] **5.12** — [CLIENT] Numéro et date d'agrément ministériel → à afficher dans la bande chiffres et sur /a-propos
+- [ ] **5.13** — [CLIENT] Forme juridique, capital, RC, NIF, NIS, AI et référence d'agrément → à renseigner dans `legalRegistration` (`lib/site-config.ts`) ; les lignes n'apparaissent sur les mentions légales que si la valeur est connue. Hébergeur à mettre à jour si le site quitte Netlify.
+- [ ] **5.14** — [CLIENT] Photos réelles (équipe, bureau, terrain, dossiers reliés) → remplacer les initiales sur /equipe et les SVG topographiques des bandes sombres
+- [ ] **5.15** — [CLIENT] URLs LinkedIn / Instagram / Facebook → `socialProfiles` dans `lib/site-config.ts`
+- [x] **5.16** — Centre de ressources `/ressources` : 6 fiches par texte (03-10, 07-145 modifié 2018/2019, 06-198 modifié 2022, 07-144, **24-04 qui remplace 04-20**, 23-324 agrément) + guide de procédure en 6 étapes avec les délais réglementaires. Contenu **dans Keystatic** (collection « Ressources » + singleton « Page Ressources »), synchronisé dans `fr.json`, AR/EN semés à la main dans les dictionnaires en attendant le pipeline. JSON-LD Article + FAQPage, sitemap, « Ressources » remplace « Blog » dans la nav. Vérification contre les sources : `docs/REGLEMENTATION-SOURCES.md`.
+- [x] **5.16b** — Vérification de chaque texte cité sur le site sur les PDF du Journal officiel (joradp.dz) : fiches, guide, FAQ accueil, page EIE, page À propos, trois articles de blog (FR/AR/EN), mentions légales. Corrections listées dans `docs/REGLEMENTATION-SOURCES.md` (loi 04-20 abrogée, délais du 07-145 depuis 2018, approbation ministre/wali, accord préalable 15 jours, etc.).
+- [ ] **5.16c** — [CLIENT] Relecture finale par Amine des 7 fiches et des 3 articles (lecture métier, pas juridique : les citations sont vérifiées), plus les 4 points de `docs/REGLEMENTATION-SOURCES.md` § « Points qui restent de la responsabilité du client ».
+- [x] **5.17** — Pages secteurs : trois blocs ajoutés sous les enjeux, tous éditables dans Keystatic (collection « Secteurs » : `nomenclatureNote`, `textes[fiche, note]`, `parcours[title, description, service]`) : « Textes applicables » (lien vers la fiche Ressources + lecture propre au secteur), « Études exigées, dans l'ordre » (6 étapes avec lien service), « Étude de cas dans ce secteur » (projets filtrés sur `secteurSlug`, masqué si aucun). Seuils et rubriques relus sur le JO (`docs/REGLEMENTATION-SOURCES.md` § Pages secteurs). AR/EN semés à la main (même réserve que 5.19). Un `textes.fiche` inconnu fait échouer `npm run content:sync`.
+- [x] **5.18** — Poids JS mesuré sur le build (31 oct.) : 822 KB bruts / 256 KB gzip sur la home, 786 KB / 246 KB sur une page intérieure, 13 à 14 chunks. Répartition : React + runtime Next ≈ 470 KB bruts (3 chunks, incompressibles côté projet), GSAP + ScrollTrigger + SplitText 118 KB bruts / 46 KB gzip (un seul chunk partagé, mis en cache entre les pages), Lenis 30 KB, reste = composants. Essai de chargement différé de SplitText (`import()` dans les 3 sections sous la ligne de flottaison) : **abandonné**. SplitText est aussi utilisé par `RevealText` dans tous les heros (ServiceHero, TerrainHero, home, contact), donc nécessaire au premier rendu ; Turbopack l'a dupliqué dans 11 chunks de page (~16 KB chacun) au lieu d'un chunk partagé, ce qui est pire en navigation. Gain possible restant : réécrire le masque de mots des heros sans SplitText (≈ 9 KB gzip, soit 3,5 % du JS) au prix d'une régression visuelle possible sur l'animation signature ; pas prioritaire.
+
+- [x] **5.19** — Action `translate.yml` vérifiée sur GitHub : 9 runs, le dernier (10 sept. 2026, push sur main) a réussi, la clé `ANTHROPIC_API_KEY` fonctionne donc. Risque réel corrigé : le script ne retraduit que les sections dont le hash FR a changé, et les hashes dataient du 29 oct. 11h10 ; au premier push sur main, `ressources`, `secteurs`, `home`, `eie`, `edd`, `apropos`, `projets`… auraient été réécrits par la machine, effaçant l'arabe et l'anglais relus à la main. Ajout de `npm run translate -- --seal` (sans API) qui enregistre les hashes FR courants pour les sections déjà traduites ; lancé le 31 oct. (18 sections scellées pour AR et EN). **Règle** : après toute relecture manuelle de `ar.json` / `en.json`, relancer `--seal` avant de pousser. Les articles de blog ne sont retraduits qu'avec `--force`. Modèle de traduction : `claude-sonnet-4-6` (variable `ANTHROPIC_MODEL`).
+- [ ] **5.20** — Revue complète avant merge de `ccr-bac5c324-z7k16j` sur `main` (rien ne part en prod sans validation) :
+  - [ ] relecture FR / AR / EN des pages Mentions légales et Confidentialité (textes juridiques, noms des lois, ANPDP)
+  - [ ] test du formulaire de contact en preview Netlify : case de consentement, message vide, email reçu via Resend
+  - [x] vérification automatisée (31 oct., Playwright, 99 URL × 390 px et 1440 px) : 0 débordement horizontal, 0 erreur console, 0 lien interne cassé, title/description/canonical/hreflang/JSON-LD présents partout, lang/dir corrects. Corrigé au passage : sitemap sans barre oblique finale (les URL « /x/ » redirigent en 308 vers « /x »), meta titles des fiches Ressources ramenés sous 60 caractères, zones tactiles du logo et du sélecteur de langue à 44 px. Relecture visuelle faite le 31 oct. sur captures (home AR desktop + mobile, EIE EN, fiche AR mobile, contact AR mobile, mentions légales AR, projet EN, ressources FR) : corrigé le point final orphelin sous le titre de la section « question environnementale » en arabe, l'adresse latine mélangée par le bidi dans les mentions légales AR (désormais en arabe via `siteContact.addressAr`), le secteur répété deux fois dans le hero des études de cas. Reste la relecture par Amine
+  - [x] `npm run build` 0 erreur / 0 warning, sitemap contenant `/mentions-legales` et `/confidentialite` (31 oct.)
+  - [ ] validation client des textes des études de cas (5.11)
+  - [ ] relecture métier des 7 fiches Ressources (5.16c) et de l'arabe
+  - [ ] test de l'édition d'une fiche depuis `/keystatic` (collection Ressources) sur la preview Netlify
+
+- [ ] **5.21** — [CLIENT/CONFIG] Localisation des données (loi 18-07) : aujourd'hui l'hébergement (Netlify) et l'acheminement des emails du formulaire (Resend) passent par des serveurs hors Algérie. Les pages légales ne le mentionnent pas à la demande du client ; à régler avant le lancement, soit par un hébergeur et un relais email établis en Algérie, soit par l'autorisation de transfert prévue par la loi. Mettre ensuite à jour `lib/legal-content.ts` (sections Hébergement et Destinataires).
+
+**Sortie Phase 5 :** site cohérent, conforme (légal, a11y, typo), avec une section que seul un bureau d'études algérien peut avoir.
 
 ---
 

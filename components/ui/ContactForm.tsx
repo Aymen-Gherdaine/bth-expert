@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
@@ -11,6 +12,8 @@ type ContactFormDict = Dictionary["contact"]["form"];
 interface ContactFormProps {
   dict: ContactFormDict;
   lang: string;
+  /** Privacy policy link + consent wording (loi 18-07), resolved server-side so the legal texts stay out of the client bundle. */
+  privacy: { href: string; label: string; consentLabel: string };
 }
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -29,7 +32,7 @@ function Required() {
   );
 }
 
-export function ContactForm({ dict, lang }: ContactFormProps) {
+export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [state, setState] = useState<FormState>("idle");
@@ -194,13 +197,11 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
           <div data-form-field>
             <label htmlFor="message" className={labelCls}>
               {dict.message}
-              <Required />
             </label>
             <textarea
               id="message"
               name="message"
               rows={4}
-              required
               placeholder={dict.messagePlaceholder}
               className={`${inputCls} resize-none`}
             />
@@ -212,8 +213,33 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
             </p>
           )}
 
+          {/* Consent — loi 18-07 : le traitement repose sur un consentement
+              exprès, donc une case obligatoire et non pré-cochée. */}
+          <div data-form-field>
+            <label htmlFor="consent" className="flex items-start gap-3 cursor-pointer min-h-11">
+              <input
+                id="consent"
+                name="consent"
+                type="checkbox"
+                value="oui"
+                required
+                className="mt-1 size-4 shrink-0 accent-[var(--color-brand)] cursor-pointer"
+              />
+              <span className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
+                {privacy.consentLabel}
+                <Required />
+              </span>
+            </label>
+          </div>
+
           <p className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
-            {dict.privacyNote}
+            {dict.privacyNote}{" "}
+            <Link
+              href={privacy.href}
+              className="inline-flex items-center min-h-11 -my-3 underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
+            >
+              {privacy.label}
+            </Link>
           </p>
 
           <div data-form-field>

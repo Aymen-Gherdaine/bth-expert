@@ -8,15 +8,19 @@ import { useNearViewport } from "@/components/motion/useNearViewport";
 import { gsap } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
-interface ProjectsSectionProps {
-  lang: Locale;
+/** One case study, as produced by `scripts/sync-content.ts` from Keystatic. */
+export interface ProjectsSectionItem {
+  slug: string;
+  title: string;
+  secteur: string;
+  annee: string;
+  mission: readonly string[];
 }
 
-interface Project {
-  name: string;
-  context: string;
-  detail: string;
-  keyword: string;
+interface ProjectsSectionProps {
+  lang: Locale;
+  /** The real case studies (content/fr/projets), same source as /projets. */
+  projects: readonly ProjectsSectionItem[];
 }
 
 interface SectionContent {
@@ -24,109 +28,30 @@ interface SectionContent {
   intro: string;
   heading: string;
   cta: string;
-  projects: Project[];
 }
 
-// Contenu localisé en dur (section vitrine, hors Keystatic). FR = source.
+// Section chrome only (hors Keystatic). Les projets eux-mêmes viennent du
+// contenu : la home et /projets ne peuvent plus lister deux choses différentes.
 const CONTENT: Record<Locale, SectionContent> = {
   fr: {
     eyebrow: "Réalisations",
     intro:
-      "Des études menées pour l'industrie algérienne — dossiers conformes, déposés et défendus jusqu'à l'approbation.",
-    heading: "Des projets qui font référence",
+      "Trois dossiers instruits en wilaya, de l'état initial du site jusqu'au dépôt du rapport.",
+    heading: "Des études déposées, pas des promesses",
     cta: "Voir tous les projets",
-    projects: [
-      {
-        name: "Étude d'impact environnemental",
-        context: "Zone industrielle",
-        detail: "Conformité décret 07-144",
-        keyword: "CONFORMITÉ",
-      },
-      {
-        name: "Étude de dangers & POI",
-        context: "Site classé",
-        detail: "Scénarios d'accident · réseau anti-incendie",
-        keyword: "PRÉVENTION",
-      },
-      {
-        name: "Système d'épuration",
-        context: "Eaux usées industrielles",
-        detail: "Conception & mise en œuvre",
-        keyword: "TRAITEMENT",
-      },
-      {
-        name: "Assistance technique — Barrage",
-        context: "Suivi environnemental",
-        detail: "Ingénierie conseil",
-        keyword: "INGÉNIERIE",
-      },
-    ],
   },
   ar: {
     eyebrow: "إنجازات",
-    intro:
-      "دراسات أُنجزت لفائدة الصناعة الجزائرية — ملفات مطابقة، مودعة ومُدافَع عنها حتى المصادقة.",
-    heading: "مشاريع مرجعية",
+    intro: "ثلاثة ملفات عولجت على مستوى الولاية، من الحالة الأولية للموقع إلى إيداع التقرير.",
+    heading: "دراسات مودعة، لا وعود",
     cta: "عرض جميع المشاريع",
-    projects: [
-      {
-        name: "دراسة التأثير على البيئة",
-        context: "منطقة صناعية",
-        detail: "مطابقة المرسوم 07-144",
-        keyword: "مطابقة",
-      },
-      {
-        name: "دراسة الأخطار وخطة الطوارئ الداخلية",
-        context: "منشأة مصنّفة",
-        detail: "سيناريوهات الحوادث · شبكة مكافحة الحرائق",
-        keyword: "وقاية",
-      },
-      {
-        name: "نظام معالجة المياه",
-        context: "مياه صناعية مستعملة",
-        detail: "التصميم والإنجاز",
-        keyword: "معالجة",
-      },
-      {
-        name: "مساعدة تقنية — سدّ",
-        context: "متابعة بيئية",
-        detail: "هندسة استشارية",
-        keyword: "هندسة",
-      },
-    ],
   },
   en: {
     eyebrow: "Selected work",
     intro:
-      "Studies delivered for Algerian industry — compliant files, submitted and defended through to approval.",
-    heading: "Projects that set the standard",
+      "Three files processed at wilaya level, from the site baseline to the report filing.",
+    heading: "Studies filed, not promises",
     cta: "View all projects",
-    projects: [
-      {
-        name: "Environmental impact assessment",
-        context: "Industrial zone",
-        detail: "Decree 07-144 compliance",
-        keyword: "COMPLIANCE",
-      },
-      {
-        name: "Hazard study & internal emergency plan",
-        context: "Classified site",
-        detail: "Accident scenarios · fire network",
-        keyword: "PREVENTION",
-      },
-      {
-        name: "Water treatment system",
-        context: "Industrial wastewater",
-        detail: "Design & implementation",
-        keyword: "TREATMENT",
-      },
-      {
-        name: "Technical assistance — Dam",
-        context: "Environmental monitoring",
-        detail: "Consulting engineering",
-        keyword: "ENGINEERING",
-      },
-    ],
   },
 };
 
@@ -165,7 +90,7 @@ const ROW_LAYOUTS = [
  * row, the number swells and a giant ghost keyword fades into the void
  * where a photo would normally sit.
  */
-export function ProjectsSection({ lang }: ProjectsSectionProps) {
+export function ProjectsSection({ lang, projects }: ProjectsSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const near = useNearViewport(sectionRef);
   const c = CONTENT[lang];
@@ -251,14 +176,20 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
 
         {/* ── Index — full-width rows, staggered indentation ──────────── */}
         <ol className="mt-16 lg:mt-24 border-b border-line">
-          {c.projects.map((project, i) => {
+          {projects.map((project, i) => {
             const layout = ROW_LAYOUTS[i % ROW_LAYOUTS.length];
             return (
               <li
-                key={project.name}
+                key={project.slug}
                 data-project-row
                 className="group relative grid grid-cols-12 gap-x-4 lg:gap-x-8 items-start lg:items-baseline py-10 lg:py-14"
               >
+                {/* Whole row is the link; the grid children stay in flow */}
+                <Link
+                  href={`/${lang}/projets/${project.slug}`}
+                  aria-label={project.title}
+                  className="absolute inset-0 z-20 rounded-sm"
+                />
                 {/* Top border — traces in on scroll */}
                 <span
                   data-row-border
@@ -271,13 +202,13 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
                   className="absolute top-0 left-0 right-0 z-10 h-px bg-gold scale-x-0 ltr:origin-left rtl:origin-right transition-[scale] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100"
                 />
 
-                {/* Ghost keyword — movement fills the void, no image */}
+                {/* Ghost year — movement fills the void, no image */}
                 <span
                   aria-hidden
                   className="pointer-events-none absolute end-[3%] top-1/2 -translate-y-1/2 ltr:-translate-x-8 rtl:translate-x-8 hidden lg:block font-display uppercase tracking-[0.06em] leading-none whitespace-nowrap text-brand/[0.07] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
                   style={{ fontSize: "clamp(2.5rem, 1.5rem + 5vw, 6rem)" }}
                 >
-                  {project.keyword}
+                  {project.annee}
                 </span>
 
                 <span
@@ -295,15 +226,15 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
                   className={`col-span-10 ${layout.name} font-display font-light text-ink-soft tracking-[-0.02em] leading-[1.12] transition-[translate,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-2 rtl:group-hover:-translate-x-2 group-hover:text-brand`}
                   style={{ fontSize: "clamp(1.625rem, 1rem + 2.2vw, 2.75rem)" }}
                 >
-                  {project.name}
+                  {project.title}
                 </h3>
 
                 <div
                   data-row-bit
                   className={`relative z-10 col-span-10 col-start-3 mt-4 lg:mt-0 ${layout.meta} font-sans text-[length:var(--text-small)]`}
                 >
-                  <p className="text-ink-soft">{project.context}</p>
-                  <p className="mt-1 text-muted">{project.detail}</p>
+                  <p className="text-ink-soft">{project.secteur}</p>
+                  <p className="mt-1 text-muted">{project.mission.join(" · ")}</p>
                 </div>
               </li>
             );
@@ -314,7 +245,7 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
         <div className="mt-12 lg:mt-16">
           <Link
             href={`/${lang}/projets`}
-            className="group inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] text-ink tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-ink tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             {c.cta}
             <span

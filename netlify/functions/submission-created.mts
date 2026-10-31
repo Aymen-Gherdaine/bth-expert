@@ -65,9 +65,11 @@ export const handler: Handler = async (event) => {
   const email       = (data.email ?? "").trim();
   const phone       = (data.phone ?? "").trim();
   const projectType = (data.projectType ?? "").trim();
-  const message     = (data.message ?? "").trim();
+  // Le message est facultatif côté formulaire (on rappelle le prospect) :
+  // un envoi sans texte reste une vraie demande à transmettre.
+  const message     = (data.message ?? "").trim() || "(Pas de message : le prospect demande à être rappelé.)";
 
-  if (!name || !phone || !message) {
+  if (!name || !phone) {
     // Soumission incomplète (probablement spam filtré) — on ignore sans erreur.
     return { statusCode: 200, body: "Skipped" };
   }

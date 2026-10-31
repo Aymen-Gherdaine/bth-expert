@@ -6,6 +6,7 @@ import { Nav } from "./Nav";
 import { LangSwitcher } from "./LangSwitcher";
 import { HeaderScrollState } from "./HeaderScrollState";
 import { MobileMenu } from "./MobileMenu";
+import { siteContact } from "@/lib/site-config";
 
 interface HeaderProps {
   lang: Locale;
@@ -53,16 +54,17 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                 style={{ fontSize: "0.75rem", letterSpacing: "0.04em" }}
               >
                 <a
-                  href="tel:+213670708138"
-                  className="hover:text-gold transition-colors duration-[var(--duration-fast)]"
+                  href={`tel:${siteContact.phoneE164}`}
+                  dir="ltr"
+                  className="inline-flex items-center min-h-11 hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
-                  +213 (670) 70 81 38
+                  {siteContact.phoneDisplay}
                 </a>
                 <a
-                  href="mailto:info@bthexpert.com"
-                  className="hidden sm:inline hover:text-gold transition-colors duration-[var(--duration-fast)]"
+                  href={`mailto:${siteContact.email}`}
+                  className="hidden sm:inline-flex items-center min-h-11 hover:text-gold transition-colors duration-[var(--duration-fast)]"
                 >
-                  info@bthexpert.com
+                  {siteContact.email}
                 </a>
               </div>
               <LangSwitcher currentLocale={lang} isDark={overlay} />
@@ -85,7 +87,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
 
               <BrandLink
                 href={`/${lang}`}
-                className="header-item header-logo flex items-center gap-3"
+                className="header-item header-logo flex items-center gap-3 min-h-11 py-1 -my-1"
                 style={{ "--enter-delay": "0ms" } as React.CSSProperties}
               >
                 <div className="relative h-9 lg:h-11">
@@ -121,11 +123,11 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
                   { href: `/${lang}/services`, label: dict.nav.services },
                   { href: `/${lang}/secteurs`, label: dict.nav.secteurs },
                   { href: `/${lang}/projets`, label: dict.nav.projets },
-                  { href: `/${lang}/blog`, label: dict.nav.blog },
+                  { href: `/${lang}/ressources`, label: dict.ressources.nav },
                   { href: `/${lang}/contact`, label: dict.nav.contact },
                 ]}
-                phone="+213 (670) 70 81 38"
-                email="info@bthexpert.com"
+                phone={siteContact.phoneDisplay}
+                email={siteContact.email}
                 ctaLabel={dict.nav.quote}
                 ctaHref={`/${lang}/contact`}
                 lang={lang}

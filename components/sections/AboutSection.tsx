@@ -261,7 +261,7 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
             <Link
               data-about-cta
               href={`/${lang}/contact`}
-              className="inline-flex items-center gap-2 text-ink text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="inline-flex items-center gap-2 min-h-11 py-2 -my-2 text-ink text-[length:var(--text-small)] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {content.cta} <span aria-hidden>→</span>
             </Link>

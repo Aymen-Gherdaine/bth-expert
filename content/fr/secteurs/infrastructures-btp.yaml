@@ -19,3 +19,34 @@ prestations:
   - Étude d'impact environnemental
   - Plan de gestion environnementale
   - Audit HSE
+nomenclatureNote: 'Les grands ouvrages ne sont pas dans la nomenclature mais dans les annexes du décret 07-145 révisées en 2019 : autoroutes, aéroports, ports, barrages, entrepôts et centres de distribution de 20 000 m² et plus relèvent de l''étude d''impact ; zones d''activités et zones industrielles, parkings de plus de 100 voitures, lotissements urbains de plus de 10 ha, lignes électriques de plus de 30 kV relèvent de la notice. Les installations de chantier (centrales à béton, postes d''enrobage, carrières et traitement des minéraux, rubriques 2500) sont, elles, des installations classées.'
+textes:
+- fiche: decret-07-145-etude-impact
+  note: C'est l'annexe I ou II qui décide entre étude et notice d'impact pour un ouvrage ; les projets situés en zones industrielles, zones d'activités ou portuaires déjà soumises à enquête publique en sont dispensés (article 9).
+- fiche: loi-03-10-protection-environnement
+  note: 'Article 15 : tout projet de développement, d''infrastructure ou d''aménagement susceptible d''affecter l''environnement est soumis au préalable à une étude ou à une notice d''impact ; article 22 : réalisée par un bureau agréé.'
+- fiche: decret-07-144-nomenclature-installations-classees
+  note: 'Carrières, traitement des minéraux, centrales à béton et postes d''enrobage sont des installations classées : régime et études selon la rubrique, autorisation avant exploitation.'
+- fiche: decret-06-198-etablissements-classes
+  note: 'Pour les installations de chantier classées : accord préalable de création avant les travaux, déclaration soixante jours avant la mise en exploitation pour la 4e catégorie, nouvelle demande en cas de transfert.'
+- fiche: loi-24-04-risques-de-catastrophes
+  note: Les plans de prévention des risques et les périmètres de sécurité autour des installations à risque conditionnent l'implantation des ouvrages ; toute installation industrielle est soumise à une étude de vulnérabilité (article 75).
+parcours:
+- title: Étude ou notice d'impact ?
+  description: Lire les annexes I et II du décret 07-145 (version 2019) avec les seuils de surface, de capacité et de puissance ; classer séparément les installations de chantier dans la nomenclature.
+  service: ''
+- title: Étude ou notice d'impact
+  description: Emprise, milieux traversés, paysage, populations riveraines, phases chantier et exploitation, effets cumulatifs ; mesures chiffrées et plan de gestion de l'environnement.
+  service: eie
+- title: Enquête publique et approbation
+  description: Quinze jours d'affichage et de registre sous la conduite d'un commissaire enquêteur, mémoire en réponse sous dix jours, approbation par le ministre (étude) ou le wali (notice). Aucun travail avant l'approbation.
+  service: ''
+- title: Autorisation des installations de chantier
+  description: 'Centrales à béton, enrobage, carrières : accord préalable, visite de conformité, autorisation ou déclaration selon la catégorie.'
+  service: edd
+- title: Plan de gestion de l'environnement en phase travaux
+  description: Suivi des nuisances (poussières, bruit, eaux de chantier, déchets), indicateurs et reporting prévus par l'étude d'impact.
+  service: pge
+- title: Remise en état et clôture
+  description: Démantèlement des installations de chantier, remise en état des lieux prévue dans l'étude d'impact, déclaration d'arrêt définitif pour les installations classées.
+  service: ''

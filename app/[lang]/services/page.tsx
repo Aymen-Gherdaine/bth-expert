@@ -71,6 +71,7 @@ export default async function ServicesPage({
         eyebrow={s.hero.eyebrow}
         heading={s.hero.heading}
         subheading={s.hero.subheading}
+        index={items.map((item) => item.title)}
       />
 
       {/* ── Service index — animated editorial register ────────── */}

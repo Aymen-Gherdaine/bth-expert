@@ -10,7 +10,7 @@ interface OranBodyProps {
 }
 
 const linkCls =
-  "hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "inline-flex items-center min-h-11 py-1 -my-1 hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 /**
  * Editorial body for the Oran page: a contexte/services split, a zones block
@@ -104,6 +104,7 @@ export function OranBody({ services, zones, nap }: OranBodyProps) {
             <FadeInItem>
               <a
                 href={`tel:${nap.phone.replace(/\s/g, "")}`}
+                dir="ltr"
                 className={linkCls}
               >
                 {nap.phone}

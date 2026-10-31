@@ -80,7 +80,7 @@ export default async function ProjetPage({
         <div className={`${SECTION_PX} pt-16 lg:pt-24`}>
           <Link
             href={`/${lang}/secteurs/${item.secteurSlug}`}
-            className="group inline-flex items-center gap-2 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             <span
               aria-hidden
@@ -90,7 +90,8 @@ export default async function ProjetPage({
           </Link>
         </div>
       </div>
-      <ServiceHero eyebrow={item.secteur} heading={item.title} subheading={item.excerpt} />
+      {/* The sector is already the breadcrumb above: the eyebrow says what this page is. */}
+      <ServiceHero eyebrow={dict.projets.hero.eyebrow} heading={item.title} subheading={item.excerpt} />
 
       {/* ── Meta strip — secteur / mission chips / année, enlivened ───── */}
       <section className="bg-cream-soft">
@@ -144,17 +145,6 @@ export default async function ProjetPage({
       {/* ── Narrative — contexte → intervention → résultat, 3-beat sequence ─ */}
       <ProjetNarrative beats={beats} />
 
-      {/* ── Disclaimer ───────────────────────────────────────── */}
-      <section className="bg-cream-soft">
-        <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
-          <FadeIn>
-            <p className="font-sans text-[length:var(--text-caption)] text-muted italic">
-              {d.disclaimer}
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* ── CTA — dark punctuation band over the project's artwork ── */}
       <section className="relative isolate overflow-hidden bg-brand-deep">
         <TerrainBackdrop src={`/generated/projet-${slug}.svg`} />
@@ -180,7 +170,7 @@ export default async function ProjetPage({
                 </Link>
                 <Link
                   href={`/${lang}/projets`}
-                  className="group inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   <span
                     aria-hidden

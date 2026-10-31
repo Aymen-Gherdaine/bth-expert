@@ -56,6 +56,7 @@ export default async function SecteursPage({
         eyebrow={s.hero.eyebrow}
         heading={s.hero.heading}
         subheading={s.hero.subheading}
+        index={s.list.map((item) => item.title)}
       />
 
       {/* ── Sector index — animated editorial rhythm ─────────── */}

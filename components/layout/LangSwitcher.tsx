@@ -19,7 +19,7 @@ export function LangSwitcher({ currentLocale, isDark = false }: LangSwitcherProp
         <span key={locale} className="flex items-center">
           {i > 0 && (
             <span
-              className={`lang-switcher-sep mx-2 transition-colors duration-500 ${
+              className={`lang-switcher-sep mx-0.5 transition-colors duration-500 ${
                 isDark ? "text-cream/20" : "text-line"
               }`}
             >
@@ -28,7 +28,7 @@ export function LangSwitcher({ currentLocale, isDark = false }: LangSwitcherProp
           )}
           <Link
             href={`/${locale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`}
-            className={`lang-switcher-locale uppercase tracking-wider transition-colors duration-500 ${
+            className={`lang-switcher-locale inline-flex items-center justify-center min-h-11 min-w-11 px-1 uppercase tracking-wider transition-colors duration-500 ${
               locale === currentLocale
                 ? isDark
                   ? "text-cream font-medium"

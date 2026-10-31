@@ -1,0 +1,55 @@
+slug: decret-07-144-nomenclature-installations-classees
+order: 4
+kind: texte
+ref: 07-144
+typeLabel: Décret exécutif
+date: 19 mai 2007
+title: Nomenclature des installations classées
+officialTitle: Décret exécutif n° 07-144 du 19 mai 2007 fixant la nomenclature des installations classées pour la protection de l'environnement (JO n° 34 du 22 mai 2007)
+summary: 'La liste des activités classées : pour chaque rubrique, le régime d''autorisation ou de déclaration, le rayon d''affichage de l''enquête publique et les documents exigés (étude d''impact, étude de danger, notice d''impact, rapport sur les produits dangereux).'
+homeLine: Attribue une rubrique à chaque activité et fixe, pour chacune, le régime (autorisation ministérielle, du wali, de l'APC ou déclaration), le rayon d'affichage de l'enquête publique et les études exigées.
+meta:
+- label: Objet
+  value: Rubriques, régime, rayon d'affichage, études
+- label: Régimes
+  value: AM · AW · APAPC · D
+- label: Texte lié
+  value: Décret 06-198
+sections:
+- heading: Ce que contient la nomenclature (article 2)
+  paragraphs: []
+  list:
+  - 'un numéro de rubrique à quatre chiffres : le premier désigne la substance ou l''activité, le deuxième la catégorie de danger (très toxique, toxique, inflammable, comburante, explosible, corrosive, combustible) ou la branche d''activité, les deux derniers le type d''activité ;'
+  - la désignation de l'activité et, le plus souvent, des seuils de quantité, de capacité ou de puissance ;
+  - 'le régime applicable, conformément au décret 06-198 : AM (autorisation ministérielle), AW (autorisation du wali), APAPC (autorisation du président de l''APC) ou D (déclaration) ;'
+  - 'le rayon d''affichage, en kilomètres : rayon minimal d''affichage de l''avis d''ouverture de l''enquête publique, pour informer la population du périmètre d''implantation ;'
+  - 'les documents à joindre à la demande d''autorisation : étude d''impact, étude de danger, notice d''impact et rapport sur les produits dangereux, selon la rubrique.'
+  after: 'Exemple lu dans la nomenclature : rubrique 1110, fabrication industrielle de substances très toxiques, autorisation ministérielle à partir de 20 tonnes et autorisation du wali en dessous, rayon d''affichage de 3 km, étude d''impact et étude de danger exigées dans les deux cas.'
+- heading: Familles d'activités couvertes
+  paragraphs: []
+  list:
+  - 'substances : très toxiques, toxiques, comburantes, explosibles, inflammables, combustibles, corrosives (rubriques 1100 à 1800) ;'
+  - élevage et activités agricoles, agroalimentaire, textiles, cuirs et peaux ;
+  - bois, papier, carton, imprimerie ; matériaux, minerais et métaux ; chimie et caoutchouc ;
+  - déchets et traitement des eaux, dont les stations de dessalement ; aquaculture et pêche ;
+  - 'activités diverses : ateliers de charge d''accumulateurs, application de peintures et vernis, etc. (rubriques 2100 à 2900).'
+  after: ''
+- heading: Ce que cela change pour votre projet
+  paragraphs:
+  - 'Le classement conditionne tout le reste : l''autorité qui délivre l''autorisation, la procédure, la nécessité d''une étude d''impact ou d''une notice, l''exigence d''une étude de danger et l''étendue de l''enquête publique. Un même site relève souvent de plusieurs rubriques ; la plus contraignante fixe la catégorie de l''établissement. Une erreur de classement en amont se paie au moment du dépôt, par un rejet ou une demande de compléments.'
+  list: []
+  after: ''
+faq:
+- q: Comment connaître la catégorie de mon installation ?
+  a: En rapprochant chaque activité du site des rubriques de la nomenclature et de leurs seuils, puis en lisant le régime indiqué (AM, AW, APAPC, D). C'est la première étape d'une mission, formalisée dans une note de classement.
+- q: Une augmentation de capacité change-t-elle la catégorie ?
+  a: 'Elle le peut : au-delà d''un seuil, la rubrique passe par exemple de l''autorisation du wali à l''autorisation ministérielle. Toute extension impose de toute façon une nouvelle demande d''autorisation (article 38 du décret 06-198).'
+services:
+- edd
+- eie
+related:
+- decret-06-198-etablissements-classes
+- decret-07-145-etude-impact
+- procedure-autorisation-installation-classee
+metaTitle: "Décret 07-144 : nomenclature des installations classées"
+metaDescription: 'Fiche vérifiée sur le JO n° 34 du 22 mai 2007 : structure des rubriques à quatre chiffres, régimes AM, AW, APAPC et D, rayon d''affichage de l''enquête publique, études exigées par rubrique, familles d''activités, conséquences pour l''autorisation.'

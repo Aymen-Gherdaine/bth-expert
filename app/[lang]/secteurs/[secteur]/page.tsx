@@ -8,6 +8,7 @@ import { schemaService, schemaBreadcrumb } from "@/lib/schema";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
+import { SecteurDossier } from "@/components/sections/SecteurDossier";
 import fr from "@/dictionaries/fr.json";
 
 export function generateStaticParams() {
@@ -44,6 +45,7 @@ export default async function SecteurPage({
   const s = dict.secteurs;
   const item = s.list.find((x) => x.slug === secteur);
   if (!item) notFound();
+  const projets = dict.projets.items.filter((p) => p.secteurSlug === secteur);
 
   const jsonLd = schemaService({
     name: item.title,
@@ -144,8 +146,11 @@ export default async function SecteurPage({
         </div>
       </section>
 
+      {/* ── Dossier : textes applicables, parcours, études de cas ── */}
+      <SecteurDossier lang={lang} labels={s} secteur={item} ressources={dict.ressources} projets={projets} />
+
       {/* ── Domaines couverts + prestations — chip blocks ────── */}
-      <section className="bg-cream-deep">
+      <section className="bg-cream-soft">
         <div className={`${SECTION_PX} py-20 lg:py-28`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24">
             <FadeIn className="mb-14 lg:mb-0">

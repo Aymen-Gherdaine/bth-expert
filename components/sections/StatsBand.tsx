@@ -142,8 +142,11 @@ export function StatsBand({ stats }: StatsBandProps) {
           {stats.items.map((s) => {
             const { num, suffix, isNumeric } = parseValue(s.value);
             const digits = num.split("");
+            // A long word ("Accredited") at display size cannot fit a half
+            // column on phones: give it the full row there.
+            const wide = !isNumeric && s.value.length > 6;
             return (
-              <div key={s.label} data-stat>
+              <div key={s.label} data-stat className={wide ? "col-span-2 lg:col-span-1" : undefined}>
                 <span aria-hidden className="block w-11 h-px bg-gold-ink mb-6" />
                 <div
                   className="block font-display font-light text-ink tracking-[-0.03em]"
@@ -153,7 +156,7 @@ export function StatsBand({ stats }: StatsBandProps) {
                     /* Odometer slots — only for numeric values. role="img" makes
                        aria-label valid here and keeps screen readers on the real
                        value instead of the individual digit spans. */
-                    <span role="img" aria-label={s.value} className="inline-flex tabular-nums">
+                    <span role="img" aria-label={s.value} dir="ltr" className="inline-flex tabular-nums">
                       {digits.map((digit, i) => (
                         <span
                           key={i}

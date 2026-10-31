@@ -8,7 +8,7 @@ Site vitrine premium pour **BTH Expert**, bureau d'études environnemental agré
 - Framer Motion pour les animations
 - Keystatic CMS (git-based, content/ en markdown)
 - Déploiement Netlify
-- Polices : Cormorant Garamond (titres) + DM Sans (corps)
+- Polices : Fraunces (titres) + Geist (corps) ; IBM Plex Sans Arabic en AR (pas d'italique en arabe)
 - Couleurs : `#1a2e1e` (vert), `#C9A96E` (or), `#F5F0E8` (crème)
 
 ## Règles de travail non négociables
@@ -36,7 +36,7 @@ Site vitrine premium pour **BTH Expert**, bureau d'études environnemental agré
 - Sitemap dynamique `app/sitemap.ts` (3 langues).
 - `next/image` partout, jamais `<img>`.
 
-## Données de référence (NAP — identique partout)
+## Données de référence (NAP — identique partout, source : `lib/site-config.ts` → `siteContact`)
 
 ```
 Email:     info@bthexpert.com

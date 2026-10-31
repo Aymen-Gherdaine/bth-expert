@@ -9,18 +9,21 @@ const BASE_URL = "https://bthexpert.com";
 // pour ne jamais désynchroniser le sitemap des vraies pages du site).
 const STATIC_ROUTES = [
   { path: "/",                                          priority: 1.0, freq: "weekly"  },
-  { path: "/services",                                  priority: 0.9, freq: "monthly" },
-  { path: "/services/etude-impact-environnemental",     priority: 0.9, freq: "monthly" },
-  { path: "/services/etude-de-dangers",                 priority: 0.8, freq: "monthly" },
-  { path: "/services/audit-hse",                        priority: 0.8, freq: "monthly" },
-  { path: "/services/plan-gestion-environnementale",    priority: 0.8, freq: "monthly" },
-  { path: "/secteurs",                                  priority: 0.7, freq: "monthly" },
-  { path: "/equipe",                                    priority: 0.8, freq: "monthly" },
-  { path: "/projets",                                   priority: 0.7, freq: "monthly" },
-  { path: "/blog",                                      priority: 0.6, freq: "weekly"  },
-  { path: "/oran",                                      priority: 0.9, freq: "monthly" },
-  { path: "/a-propos",                                  priority: 0.6, freq: "yearly"  },
-  { path: "/contact",                                   priority: 0.8, freq: "yearly"  },
+  { path: "/services",                                 priority: 0.9, freq: "monthly" },
+  { path: "/services/etude-impact-environnemental",    priority: 0.9, freq: "monthly" },
+  { path: "/services/etude-de-dangers",                priority: 0.8, freq: "monthly" },
+  { path: "/services/audit-hse",                       priority: 0.8, freq: "monthly" },
+  { path: "/services/plan-gestion-environnementale",   priority: 0.8, freq: "monthly" },
+  { path: "/secteurs",                                 priority: 0.7, freq: "monthly" },
+  { path: "/equipe",                                   priority: 0.8, freq: "monthly" },
+  { path: "/projets",                                  priority: 0.7, freq: "monthly" },
+  { path: "/blog",                                     priority: 0.6, freq: "weekly"  },
+  { path: "/oran",                                     priority: 0.9, freq: "monthly" },
+  { path: "/a-propos",                                 priority: 0.6, freq: "yearly"  },
+  { path: "/contact",                                  priority: 0.8, freq: "yearly"  },
+  { path: "/ressources",                               priority: 0.8, freq: "monthly" },
+  { path: "/mentions-legales",                         priority: 0.2, freq: "yearly"  },
+  { path: "/confidentialite",                          priority: 0.2, freq: "yearly"  },
 ] as const;
 
 // Sans slash final : c'est la forme canonique servie par Next (les URLs en
@@ -41,6 +44,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority,
         changeFrequency: freq,
         lastModified: buildDate,
+      });
+    }
+  }
+
+  for (const { slug } of fr.ressources.items) {
+    for (const lang of locales) {
+      entries.push({
+        url: url(lang, `/ressources/${slug}`),
+        priority: 0.8,
+        changeFrequency: "monthly",
       });
     }
   }

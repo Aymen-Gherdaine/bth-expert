@@ -14,7 +14,8 @@ export function Nav({ lang, dict, className, style }: NavProps) {
     { href: `/${lang}/services`, label: dict.nav.services },
     { href: `/${lang}/secteurs`, label: dict.nav.secteurs },
     { href: `/${lang}/projets`, label: dict.nav.projets },
-    { href: `/${lang}/blog`, label: dict.nav.blog },
+    // Ressources absorbe le blog : fiches réglementaires + guide + articles.
+    { href: `/${lang}/ressources`, label: dict.ressources.nav },
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];
 

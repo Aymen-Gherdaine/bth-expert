@@ -59,7 +59,7 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
 
   const filterCls = (isActive: boolean) =>
     [
-      "relative font-sans uppercase tracking-widest pb-1 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]",
+      "relative inline-flex items-center min-h-11 font-sans uppercase tracking-widest pb-1 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]",
       "text-[length:var(--text-caption)]",
       isActive ? "text-ink" : "text-muted hover:text-ink",
       isActive

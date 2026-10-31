@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { getDictionary, validateLocale } from "@/lib/i18n";
+import fr from "@/dictionaries/fr.json";
+import { siteContact } from "@/lib/site-config";
+import { legalPages, getConsentLabel } from "@/lib/legal-content";
 import { buildMetadata } from "@/lib/seo";
 import { schemaLocalBusiness, schemaBreadcrumb } from "@/lib/schema";
 import { Container } from "@/components/layout/Container";
@@ -30,7 +33,7 @@ const captionCls =
   "block text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-1.5";
 
 const valueLinkCls =
-  "text-[length:var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "inline-flex items-center min-h-11 py-1 -my-1 text-[length:var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 export default async function ContactPage({
   params,
@@ -41,6 +44,15 @@ export default async function ContactPage({
   const lang = validateLocale(rawLang);
   const dict = await getDictionary(lang);
   const c = dict.contact;
+  // "Amine Lahmer" → "AL". Always from the FR names: a Latin monogram is a
+  // brand mark, it must not change with the UI language.
+  const monograms = fr.equipe.members.slice(0, 2).map((m) =>
+    m.name
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((w) => w[0]?.toUpperCase() ?? "")
+      .join("")
+  );
   const jsonLd = schemaLocalBusiness(lang);
   const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.contact, url: `https://bthexpert.com/${lang}/contact` },
@@ -68,19 +80,28 @@ export default async function ContactPage({
           <div className="py-12 lg:py-16 grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Left: intro */}
             <div className="lg:col-span-5">
-              {/* Monogram cluster — decorative stand-in for the team.
+              {/* Monogram cluster — the two experts' initials, read from the
+                  team content so they can never drift from the Équipe page.
                   Purely ornamental, so it stays out of the a11y tree. */}
               <div aria-hidden className="flex -space-x-3 mb-9">
-                <span className="grid size-16 place-items-center rounded-full ring-4 ring-cream-warm bg-brand">
-                  <span className="font-display font-light leading-none text-[1.375rem] tracking-[0.06em] text-cream">
-                    AL
+                {monograms.map((initials, i) => (
+                  <span
+                    key={initials}
+                    className={`grid size-16 place-items-center rounded-full ring-4 ring-cream-warm ${
+                      i === 0
+                        ? "bg-brand"
+                        : "bg-[color-mix(in_srgb,var(--color-gold)_22%,var(--color-cream))]"
+                    }`}
+                  >
+                    <span
+                      className={`font-display font-light leading-none text-[1.375rem] tracking-[0.06em] ${
+                        i === 0 ? "text-cream" : "text-gold-ink"
+                      }`}
+                    >
+                      {initials}
+                    </span>
                   </span>
-                </span>
-                <span className="grid size-16 place-items-center rounded-full ring-4 ring-cream-warm bg-[color-mix(in_srgb,var(--color-gold)_22%,var(--color-cream))]">
-                  <span className="font-display font-light leading-none text-[1.375rem] tracking-[0.06em] text-gold-ink">
-                    AB
-                  </span>
-                </span>
+                ))}
               </div>
 
               <span
@@ -121,6 +142,7 @@ export default async function ContactPage({
                     <dd>
                       <a
                         href={`tel:${c.info.phone.replace(/\s/g, "")}`}
+                        dir="ltr"
                         className={valueLinkCls}
                       >
                         {c.info.phone}
@@ -145,7 +167,7 @@ export default async function ContactPage({
 
                 <div className="mb-6">
                   <a
-                    href="https://wa.me/213670708138?text=Bonjour%20BTH%20Expert%2C%20je%20souhaite%20discuter%20d%27un%20projet."
+                    href={`https://wa.me/${siteContact.whatsappNumber}?text=Bonjour%20BTH%20Expert%2C%20je%20souhaite%20discuter%20d%27un%20projet.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-5 py-3 rounded-sm bg-[#25D366] text-white font-sans font-medium text-[0.9375rem] hover:opacity-90 transition-opacity duration-[var(--duration-base)]"
@@ -181,7 +203,15 @@ export default async function ContactPage({
 
             {/* Right: form card */}
             <div className="lg:col-span-6 lg:col-start-7">
-              <ContactForm dict={c.form} lang={lang} />
+              <ContactForm
+                dict={c.form}
+                lang={lang}
+                privacy={{
+                  href: `/${lang}/${legalPages.privacy[lang].slug}`,
+                  label: legalPages.privacy[lang].navLabel,
+                  consentLabel: getConsentLabel(lang),
+                }}
+              />
             </div>
           </div>
         </Container>

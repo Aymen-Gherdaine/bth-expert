@@ -4,14 +4,15 @@ import { Container } from "./Container";
 import { LangSwitcher } from "./LangSwitcher";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { socialLinks } from "@/lib/social-links";
-import { socialProfiles } from "@/lib/site-config";
+import { socialProfiles, siteContact } from "@/lib/site-config";
+import { legalPages } from "@/lib/legal-content";
 
 interface FooterProps {
   lang: Locale;
 }
 
 const linkClass =
-  "hover:text-[var(--color-gold)] transition-colors duration-300 ease-[var(--ease-out-expo)]";
+  "inline-flex items-center min-h-11 lg:min-h-0 hover:text-[var(--color-gold)] transition-colors duration-300 ease-[var(--ease-out-expo)]";
 
 const columnHeaderClass = "text-xs uppercase tracking-widest text-gold mb-4";
 
@@ -99,7 +100,7 @@ export async function Footer({ lang }: FooterProps) {
           <div className={`col-span-2 lg:col-span-5 grid grid-cols-2 lg:grid-cols-5 gap-x-8 ${dividerClass}`}>
             <div className="lg:col-span-3">
               <h2 className={columnHeaderClass}>{dict.footer.navigation}</h2>
-              <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+              <ul className="space-y-0 lg:space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
                 <li>
                   <Link href={`/${lang}/services`} className={linkClass}>
                     {dict.nav.services}
@@ -126,6 +127,11 @@ export async function Footer({ lang }: FooterProps) {
                   </Link>
                 </li>
                 <li>
+                  <Link href={`/${lang}/ressources`} className={linkClass}>
+                    {dict.ressources.nav}
+                  </Link>
+                </li>
+                <li>
                   <Link href={`/${lang}/blog`} className={linkClass}>
                     {dict.nav.blog}
                   </Link>
@@ -141,7 +147,7 @@ export async function Footer({ lang }: FooterProps) {
             {/* Expertises — the four service pages (aligned to the comp) */}
             <div className="lg:col-span-2">
               <h2 className={columnHeaderClass}>{exp.heading}</h2>
-              <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+              <ul className="space-y-0 lg:space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
                 <li>
                   <Link href={`/${lang}/services/etude-impact-environnemental`} className={linkClass}>
                     {exp.eie}
@@ -169,21 +175,21 @@ export async function Footer({ lang }: FooterProps) {
           {/* Contact */}
           <div className={`col-span-2 lg:col-span-3 ${dividerClass}`}>
             <h2 className={columnHeaderClass}>{dict.nav.contact}</h2>
-            <ul className="space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
+            <ul className="space-y-0 lg:space-y-2.5 text-sm text-[var(--color-on-brand-muted)]">
               <li>
-                <a href="mailto:info@bthexpert.com" className={linkClass}>
-                  info@bthexpert.com
+                <a href={`mailto:${siteContact.email}`} className={linkClass}>
+                  {siteContact.email}
                 </a>
               </li>
               <li>
-                <a href="tel:+213670708138" className={linkClass}>
-                  +213 670 70 81 38
+                <a href={`tel:${siteContact.phoneE164}`} dir="ltr" className={linkClass}>
+                  {siteContact.phoneDisplay}
                 </a>
               </li>
               <li className="text-[var(--color-on-brand-faint)] text-xs leading-relaxed pt-2">
-                40, Lotissement 119<br />
-                Bir El Djir, Oran<br />
-                Algérie
+                {siteContact.address.street}<br />
+                {siteContact.address.locality}, {siteContact.address.city}<br />
+                {siteContact.address.country}
               </li>
             </ul>
           </div>
@@ -191,7 +197,15 @@ export async function Footer({ lang }: FooterProps) {
 
         {/* Bottom strip */}
         <div className="border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))] py-5 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between text-xs text-[var(--color-on-brand-faint)]">
-          <span>© {year} BTH Expert. {dict.footer.rights}.</span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span>© {year} BTH Expert. {dict.footer.rights}.</span>
+            <Link href={`/${lang}/${legalPages.mentions[lang].slug}`} className={linkClass}>
+              {legalPages.mentions[lang].navLabel}
+            </Link>
+            <Link href={`/${lang}/${legalPages.privacy[lang].slug}`} className={linkClass}>
+              {legalPages.privacy[lang].navLabel}
+            </Link>
+          </div>
           <LangSwitcher currentLocale={lang} isDark />
         </div>
       </Container>

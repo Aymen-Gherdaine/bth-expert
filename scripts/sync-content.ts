@@ -3,6 +3,14 @@ import path from "path";
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../keystatic.config";
 
+/** Route publique de chaque service, à partir de son code Keystatic. */
+const SERVICE_ROUTES: Record<"eie" | "edd" | "hse" | "pge", string> = {
+  eie: "etude-impact-environnemental",
+  edd: "etude-de-dangers",
+  hse: "audit-hse",
+  pge: "plan-gestion-environnementale",
+};
+
 async function main() {
   const reader = createReader(process.cwd(), keystaticConfig);
 
@@ -20,6 +28,7 @@ async function main() {
     projetsPage,
     blogPage,
     home,
+    ressourcesPage,
   ] = await Promise.all([
     reader.singletons.metadata.readOrThrow(),
     reader.singletons.nav.readOrThrow(),
@@ -34,14 +43,16 @@ async function main() {
     reader.singletons.projetsPage.readOrThrow(),
     reader.singletons.blogPage.readOrThrow(),
     reader.singletons.home.readOrThrow(),
+    reader.singletons.ressourcesPage.readOrThrow(),
   ]);
 
-  const [servicesEntries, secteursEntries, projetsEntries, equipeMembresEntries] =
+  const [servicesEntries, secteursEntries, projetsEntries, equipeMembresEntries, ressourcesEntries] =
     await Promise.all([
       reader.collections.services.all(),
       reader.collections.secteurs.all(),
       reader.collections.projets.all(),
       reader.collections.equipeMembres.all(),
+      reader.collections.ressources.all(),
     ]);
 
   const servicesBySlug: Record<string, (typeof servicesEntries)[number]["entry"]> = {};
@@ -93,6 +104,13 @@ async function main() {
       enjeuxLabel: secteursPage.enjeuxLabel,
       sousSecteursLabel: secteursPage.sousSecteursLabel,
       prestationsLabel: secteursPage.prestationsLabel,
+      textesLabel: secteursPage.textesLabel,
+      textesIntro: secteursPage.textesIntro,
+      parcoursLabel: secteursPage.parcoursLabel,
+      parcoursIntro: secteursPage.parcoursIntro,
+      projetsLabel: secteursPage.projetsLabel,
+      readFiche: secteursPage.readFiche,
+      readProjet: secteursPage.readProjet,
       cta: secteursPage.cta,
       list: [...secteursEntries]
         .sort((a, b) => (a.entry.order ?? 0) - (b.entry.order ?? 0))
@@ -104,6 +122,25 @@ async function main() {
           enjeux: entry.enjeux,
           sousSecteurs: entry.sousSecteurs,
           prestations: entry.prestations,
+          nomenclatureNote: entry.nomenclatureNote,
+          // Chaque texte doit pointer vers une fiche existante : on échoue ici,
+          // au sync, plutôt que de publier un lien mort.
+          textes: entry.textes.map((t) => {
+            if (!ressourcesEntries.some((r) => r.slug === t.fiche)) {
+              throw new Error(
+                `[sync-content] secteur « ${entry.slug} » : la fiche « ${t.fiche} » n'existe pas dans content/fr/ressources/`
+              );
+            }
+            return t;
+          }),
+          // "" (aucune) → null, sinon route + libellé de la page service.
+          parcours: entry.parcours.map((step) => ({
+            title: step.title,
+            description: step.description,
+            service: step.service
+              ? { slug: SERVICE_ROUTES[step.service], label: serviceContent(step.service).hero.heading }
+              : null,
+          })),
         })),
     },
     apropos,
@@ -129,6 +166,33 @@ async function main() {
     },
     blog: { ...blogPage, readingTimeLabel: "min de lecture" },
     home,
+    ressources: {
+      ...ressourcesPage,
+      items: [...ressourcesEntries]
+        .sort((a, b) => (a.entry.order ?? 0) - (b.entry.order ?? 0))
+        .map(({ slug, entry }) => ({
+          slug,
+          kind: entry.kind,
+          ref: entry.ref,
+          typeLabel: entry.typeLabel,
+          date: entry.date,
+          title: entry.title,
+          officialTitle: entry.officialTitle,
+          summary: entry.summary,
+          homeLine: entry.homeLine,
+          meta: entry.meta,
+          sections: entry.sections,
+          faq: entry.faq,
+          // Codes Keystatic (eie/edd/hse/pge) → route + libellé de la page service.
+          services: entry.services.map((code) => ({
+            slug: SERVICE_ROUTES[code],
+            label: serviceContent(code).hero.heading,
+          })),
+          related: entry.related,
+          metaTitle: entry.metaTitle,
+          metaDescription: entry.metaDescription,
+        })),
+    },
   };
 
   const outPath = path.join(process.cwd(), "dictionaries", "fr.json");

@@ -58,6 +58,7 @@ export default async function AboutPage({
         eyebrow={a.hero.eyebrow}
         heading={a.hero.heading}
         subheading={a.hero.subheading}
+        index={a.timeline.milestones.map((m) => m.title)}
       />
 
       {/* ── Agrément & conformité ────────────────────────────── */}

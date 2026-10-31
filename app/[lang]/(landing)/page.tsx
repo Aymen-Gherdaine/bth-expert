@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { ServicesPinScroll } from "@/components/sections/ServicesPinScroll";
+import { ReglementationSection } from "@/components/sections/ReglementationSection";
 import { StatsBand } from "@/components/sections/StatsBand";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -134,7 +135,7 @@ export default async function HomePage({
                 </Link>
                 <Link
                   href={`/${lang}/services`}
-                  className="group inline-flex items-center gap-2.5 text-cream/75 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="group inline-flex items-center gap-2.5 min-h-11 py-2 -my-2 text-cream/75 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                   {h.hero.ctaSecondary}
@@ -161,8 +162,11 @@ export default async function HomePage({
       {/* ── SERVICES — signature pin-scroll: sticky visual, rows scroll past ── */}
       <ServicesPinScroll lang={lang} services={h.services} />
 
+      {/* ── CADRE RÉGLEMENTAIRE — the texts behind the studies, set as a ledger ── */}
+      <ReglementationSection lang={lang} ressources={dict.ressources} />
+
       {/* ── RÉALISATIONS — editorial typographic index, proof before contact ── */}
-      <ProjectsSection lang={lang} />
+      <ProjectsSection lang={lang} projects={dict.projets.items} />
 
       {/* ── STATEMENT — cream pause + clip-path photo wipe before the dark ── */}
       <StatementSection lang={lang} content={h.statement} />

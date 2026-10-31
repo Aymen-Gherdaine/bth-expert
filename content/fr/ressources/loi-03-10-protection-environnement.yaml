@@ -1,0 +1,62 @@
+slug: loi-03-10-protection-environnement
+order: 1
+kind: texte
+ref: 03-10
+typeLabel: Loi
+date: 19 juillet 2003
+title: Protection de l'environnement dans le cadre du développement durable
+officialTitle: Loi n° 03-10 du 19 juillet 2003 relative à la protection de l'environnement dans le cadre du développement durable, publiée au Journal officiel n° 43 du 20 juillet 2003, modifiée et complétée
+summary: La loi-cadre de l'environnement en Algérie. Elle fixe les principes (article 3), soumet les projets à étude ou notice d'impact (articles 15 et 16), définit les établissements classés et leurs régimes d'autorisation (articles 18 à 25) et réserve les études aux bureaux agréés (article 22).
+homeLine: 'Le texte fondateur : tout projet susceptible d''affecter l''environnement est soumis à une étude ou à une notice d''impact (art. 15), et les établissements classés à autorisation ou déclaration (art. 19).'
+meta:
+- label: Nature
+  value: Loi-cadre
+- label: Publication
+  value: JO n° 43 du 20 juillet 2003
+- label: Textes d'application
+  value: 06-198 · 07-144 · 07-145
+sections:
+- heading: Ce que la loi impose
+  paragraphs: []
+  list:
+  - 'Article 15 : les projets de développement, infrastructures, installations fixes, usines et travaux d''aménagement qui, par leurs incidences directes ou indirectes sur l''environnement, sont soumis au préalable, selon le cas, à une étude d''impact ou à une notice d''impact.'
+  - 'Article 16 : le contenu minimal de l''étude d''impact (exposé de l''activité, état initial du site, impact potentiel sur l''environnement et la santé avec les solutions de remplacement, effets sur le patrimoine culturel et socio-économiques, mesures d''atténuation) ; les listes des projets soumis à étude ou à notice sont fixées par voie réglementaire.'
+  - 'Articles 18 et 19 : les usines, ateliers, chantiers, carrières, mines et toute installation présentant des dangers pour la santé, la sécurité, l''agriculture, les écosystèmes ou la commodité du voisinage sont des installations classées, soumises à autorisation du ministre chargé de l''environnement, du wali ou du président de l''assemblée populaire communale ; celles qui ne nécessitent ni étude ni notice d''impact relèvent d''une déclaration auprès du président de l''APC.'
+  - 'Article 21 : l''autorisation est précédée d''une étude ou notice d''impact, d''une enquête publique et d''une étude des dangers et incidences du projet, et n''est accordée qu''après réalisation de ces mesures.'
+  - 'Article 22 : l''étude ou la notice d''impact est réalisée, aux frais du promoteur, par des bureaux d''études, d''expertise ou de consultation agréés par le ministère chargé de l''environnement.'
+  - 'Article 25 : lorsqu''une installation, même hors nomenclature, présente des dangers graves, le wali met l''exploitant en demeure ; faute d''exécution, le fonctionnement est suspendu.'
+  after: ''
+- heading: Les principes de l'article 3
+  paragraphs:
+  - 'La loi énonce les principes qui guident toute décision : préservation de la diversité biologique, non-dégradation des ressources naturelles, substitution, intégration, action préventive et correction par priorité à la source, précaution, pollueur-payeur, information et participation du public. Un dossier d''étude d''impact bien construit s''y réfère explicitement.'
+  list: []
+  after: ''
+- heading: Qui est concerné
+  paragraphs: []
+  list:
+  - les industriels, quelle que soit la taille de l'unité, dès lors que l'activité est classée ;
+  - 'les maîtres d''ouvrage d''infrastructures : routes, zones d''activité, ouvrages hydrauliques ;'
+  - les exploitants de carrières et de projets miniers ;
+  - les projets agricoles et hydrauliques d'ampleur (périmètres irrigués, barrages, stations) ;
+  - les collectivités pour leurs équipements (décharges, stations d'épuration).
+  after: ''
+- heading: Ce que cela change pour votre projet
+  paragraphs:
+  - 'L''autorisation de construire ou d''exploiter ne peut être délivrée avant l''approbation de l''étude d''impact. Engager l''étude dès la conception du projet, et non au moment du dépôt, évite le blocage le plus fréquent : un calendrier de chantier qui attend une approbation.'
+  - 'La loi 03-10 ne se lit pas seule. Les listes de projets, le contenu des études et les procédures sont fixés par ses décrets d''application : 07-145 pour les études d''impact (modifié en 2018 et 2019), 06-198 pour les établissements classés (modifié en 2022) et 07-144 pour la nomenclature.'
+  list: []
+  after: ''
+faq:
+- q: La loi 03-10 s'applique-t-elle à une installation existante ?
+  a: Oui. L'article 24 renvoie à la voie réglementaire pour les installations existantes, et le décret 06-198, modifié en 2022, impose à tout établissement existant sans autorisation de régulariser sa situation après approbation d'un audit environnemental et d'une étude de dangers.
+- q: Qui approuve l'étude d'impact ?
+  a: 'Le décret 07-145 (article 18) le précise : l''étude d''impact est approuvée par le ministre chargé de l''environnement, la notice d''impact par le wali territorialement compétent. La décision est notifiée au promoteur par le wali.'
+services:
+- eie
+- edd
+related:
+- decret-07-145-etude-impact
+- decret-06-198-etablissements-classes
+- procedure-autorisation-installation-classee
+metaTitle: "Loi 03-10 : protection de l'environnement en Algérie"
+metaDescription: 'Fiche vérifiée sur le JO n° 43 du 20 juillet 2003 : principes (art. 3), étude ou notice d''impact (art. 15-16), établissements classés et autorisation (art. 18-21), bureaux agréés (art. 22). Ce que la loi 03-10 change pour votre projet.'

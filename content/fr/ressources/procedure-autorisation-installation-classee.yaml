@@ -1,0 +1,74 @@
+slug: procedure-autorisation-installation-classee
+order: 7
+kind: guide
+ref: Guide
+typeLabel: Procédure
+date: ''
+title: Obtenir l'autorisation d'une installation classée, étape par étape
+officialTitle: 'Guide de procédure : de la nomenclature à l''autorisation d''exploitation, d''après les décrets 07-144, 07-145, 06-198, 23-324 et 25-63 et l''arrêté interministériel du 14 septembre 2014'
+summary: De la lecture de la nomenclature à l'arrêté d'autorisation d'exploitation, les six étapes du parcours réglementaire d'un projet industriel en Algérie, avec les délais fixés par les textes et ce qui fait gagner ou perdre des mois.
+homeLine: ''
+meta:
+- label: Étapes
+  value: '6'
+- label: Textes
+  value: 07-144 · 07-145 · 06-198 · 23-324 · 25-63
+- label: Délais encadrés
+  value: Enquête 15 j · Accord préalable 15 j · Autorisation 3 mois
+sections:
+- heading: Classer l'installation
+  paragraphs:
+  - 'Rapprocher chaque activité du site des rubriques de la nomenclature (décret 07-144) et de leurs seuils. La nomenclature donne, pour chaque rubrique, le régime (autorisation ministérielle, du wali, de l''APC ou déclaration), le rayon d''affichage et les études exigées ; la catégorie de l''établissement en découle (article 3 du décret 06-198). Livrable : une note de classement.'
+  list: []
+  after: ''
+- heading: Déterminer les études exigées
+  paragraphs:
+  - Étude d'impact ou notice d'impact selon la nomenclature et les annexes du décret 07-145 révisées en 2019 ; étude de danger lorsque la nomenclature l'exige, ou rapport sur les produits dangereux à défaut (article 9 du décret 06-198) ; étude de vulnérabilité et plan interne d'intervention au titre de la loi 24-04 et du décret 25-63. Les études d'impact et de danger doivent être établies par un bureau agréé (décret 23-324), dont la décision d'agrément est jointe à l'étude d'impact.
+  list: []
+  after: ''
+- heading: Réaliser les études
+  paragraphs:
+  - 'Pour l''étude d''impact : alternatives, zone d''étude selon le rayon d''affichage, état initial avec relevés sur place et plans au 1/2 500 et au 1/200, impacts directs, indirects et cumulatifs, mesures chiffrées, plan de gestion de l''environnement avec planning, rapport descriptif pour le public (article 6 du décret 07-145). Pour l''étude de danger : les sept éléments de l''article 14 du décret 06-198, des facteurs de risques aux moyens de secours. Comptez de quelques semaines à plusieurs mois selon l''ampleur du projet.'
+  list: []
+  after: ''
+- heading: Déposer et faire approuver les études
+  paragraphs:
+  - L'étude ou la notice d'impact se dépose auprès du wali en quatorze exemplaires papier et deux numériques ; examen sous un mois, compléments sous deux mois ; enquête publique de quinze jours au plus, sauf projets en zones industrielles, zones d'activités, portuaires ou sous douane ; avis des services techniques sous un mois ; mémoire en réponse sous dix jours ; approbation par le ministre (étude) ou le wali (notice). L'étude de danger se dépose en huit exemplaires ; le wali la transmet sous cinq jours à la commission interministérielle ou de wilaya ; compléments demandés sous quarante-cinq jours et fournis sous quinze jours ; décision signée par les ministres de l'intérieur et de l'environnement (1re catégorie) ou par le wali (2e catégorie).
+  list: []
+  after: ''
+- heading: Obtenir l'accord préalable, puis construire
+  paragraphs:
+  - La demande d'autorisation d'exploitation, accompagnée des études approuvées, est déposée auprès du wali. La commission de wilaya l'examine et la décision d'accord préalable de création est délivrée dans les quinze jours suivant le dépôt, par le ministre chargé de l'environnement (1re catégorie) ou par le wali ou le wali délégué (2e et 3e catégories). Aucun travail ne peut commencer avant cet accord (articles 6, 16 à 18 du décret 06-198). C'est aussi à ce stade que les plans d'intervention sont soumis à la commission de wilaya, qui statue sous trois mois (décret 25-63).
+  list: []
+  after: ''
+- heading: Obtenir l'autorisation d'exploitation et exploiter
+  paragraphs:
+  - 'À la fin des travaux, la commission visite le site et dresse un procès-verbal de conformité ; l''autorisation d''exploitation est délivrée dans les trois mois suivant la demande du promoteur, par arrêté conjoint des ministres (1re catégorie), du wali ou du wali délégué (2e) ou du président de l''APC (3e), avec ses prescriptions techniques. L''obligation ne s''arrête pas là : plan de gestion de l''environnement et surveillance, exercices du plan interne d''intervention au moins deux fois par an, audits de conformité, et nouvelle demande à chaque modification, extension ou transfert (articles 19 à 23 et 38 du décret 06-198).'
+  list: []
+  after: ''
+- heading: Ce qui fait perdre du temps
+  paragraphs: []
+  list:
+  - un classement erroné, qui envoie le dossier à la mauvaise autorité ou omet une étude exigée par la nomenclature ;
+  - un état initial bibliographique, sans relevés sur site ni plans aux échelles exigées ;
+  - des mesures d'atténuation non chiffrées ni planifiées dans le plan de gestion de l'environnement ;
+  - un rapport descriptif pour le public absent ou illisible ;
+  - un dossier déposé incomplet, ou un bureau dont l'agrément n'est pas valide ou ne couvre pas le type d'étude.
+  after: ''
+faq:
+- q: Combien de temps dure la procédure complète ?
+  a: Les textes encadrent chaque étape (un mois d'examen, quinze jours d'enquête publique, un mois d'avis, dix jours de mémoire, quinze jours pour l'accord préalable, trois mois pour l'autorisation après la fin des travaux) mais ne fixent plus de délai global depuis 2018. En pratique, comptez de deux à six mois d'instruction après un dossier recevable, auxquels s'ajoute la durée de réalisation des études. Un dossier complet dès le premier dépôt est le principal levier de réduction du délai.
+- q: Faut-il obligatoirement passer par un bureau agréé ?
+  a: 'Oui pour l''étude d''impact (article 4 du décret 07-145) et l''étude de danger (article 13 du décret 06-198) : seuls les bureaux d''études agréés par le ministre chargé de l''environnement dans les conditions du décret 23-324 sont habilités à les réaliser.'
+services:
+- eie
+- edd
+- pge
+- hse
+related:
+- decret-07-144-nomenclature-installations-classees
+- decret-07-145-etude-impact
+- decret-06-198-etablissements-classes
+- decret-23-324-agrement-bureaux-etudes
+metaTitle: "Autoriser une installation classée : la procédure"
+metaDescription: 'Guide vérifié sur le Journal officiel : classement selon la nomenclature, études exigées, dépôt et enquête publique de 15 jours, approbation des études, accord préalable sous 15 jours, visite de conformité, autorisation d''exploitation sous 3 mois, obligations en exploitation.'

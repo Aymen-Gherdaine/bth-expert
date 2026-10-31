@@ -1,4 +1,5 @@
 import "server-only";
+import { siteContact } from "./site-config";
 
 const BASE_URL = "https://bthexpert.com";
 
@@ -81,8 +82,8 @@ export function schemaLocalBusiness(lang: string = "fr") {
     name: "BTH Expert",
     url: BASE_URL,
     logo: { "@type": "ImageObject", url: `${BASE_URL}/bth-expert-logo-light-transparent.svg` },
-    telephone: "+213670708138",
-    email: "info@bthexpert.com",
+    telephone: siteContact.phoneE164,
+    email: siteContact.email,
     address: BTH_ADDRESS,
     geo: BTH_GEO,
     foundingDate: "2026",

@@ -19,7 +19,7 @@ Deux dossiers identiques sur le papier, déposés à quelques semaines d'écart 
 
 ## 1. L'agrément ministériel, condition non négociable
 
-En Algérie, seuls les bureaux d'études agréés par le Ministère de l'Environnement et de la Qualité de la Vie sont habilités à produire des rapports d'[EIE](/fr/services/etude-impact-environnemental) et d'[EDD](/fr/services/etude-de-dangers) recevables par l'administration. Avant toute discussion technique ou commerciale, vérifiez que l'agrément du bureau est valide et couvre bien le type d'étude dont votre projet a besoin — un agrément pour l'EIE ne couvre pas automatiquement l'EDD.
+En Algérie, seuls les bureaux d'études agréés par arrêté du ministre chargé de l'environnement, dans les conditions du décret exécutif n° 23-324 du 6 septembre 2023 (agrément de cinq ans renouvelables, formation au conservatoire national des formations à l'environnement pour les études d'impact et de dangers), sont habilités à produire des rapports d'[EIE](/fr/services/etude-impact-environnemental) et d'[EDD](/fr/services/etude-de-dangers) recevables par l'administration. Depuis 2018, la copie de la décision d'agrément fait même partie du contenu obligatoire de l'étude d'impact. Avant toute discussion technique ou commerciale, vérifiez que l'agrément du bureau est valide et couvre bien le type d'étude dont votre projet a besoin — un agrément pour l'EIE ne couvre pas automatiquement l'EDD.
 
 ## 2. Une connaissance fine du cadre réglementaire applicable à votre secteur
 
