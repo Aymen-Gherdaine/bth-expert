@@ -131,8 +131,8 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
 - [ ] **5.20** — Revue complète avant merge de `ccr-bac5c324-z7k16j` sur `main` (rien ne part en prod sans validation) :
   - [ ] relecture FR / AR / EN des pages Mentions légales et Confidentialité (textes juridiques, noms des lois, ANPDP)
   - [ ] test du formulaire de contact en preview Netlify : case de consentement, message vide, email reçu via Resend
-  - [ ] vérification visuelle desktop + mobile des 3 langues (hero, stats, section réglementaire, footer)
-  - [ ] `npm run build` 0 erreur / 0 warning, sitemap contenant `/mentions-legales/` et `/confidentialite/`
+  - [x] vérification automatisée (31 oct., Playwright, 99 URL × 390 px et 1440 px) : 0 débordement horizontal, 0 erreur console, 0 lien interne cassé, title/description/canonical/hreflang/JSON-LD présents partout, lang/dir corrects. Corrigé au passage : sitemap sans barre oblique finale (les URL « /x/ » redirigent en 308 vers « /x »), meta titles des fiches Ressources ramenés sous 60 caractères, zones tactiles du logo et du sélecteur de langue à 44 px. Reste la relecture visuelle humaine des 3 langues (hero, stats, section réglementaire, footer)
+  - [x] `npm run build` 0 erreur / 0 warning, sitemap contenant `/mentions-legales` et `/confidentialite` (31 oct.)
   - [ ] validation client des textes des études de cas (5.11)
   - [ ] relecture métier des 7 fiches Ressources (5.16c) et de l'arabe
   - [ ] test de l'édition d'une fiche depuis `/keystatic` (collection Ressources) sur la preview Netlify

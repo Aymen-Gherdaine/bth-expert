@@ -87,7 +87,7 @@ export async function Header({ lang, overlay = false }: HeaderProps) {
 
               <BrandLink
                 href={`/${lang}`}
-                className="header-item header-logo flex items-center gap-3"
+                className="header-item header-logo flex items-center gap-3 min-h-11 py-1 -my-1"
                 style={{ "--enter-delay": "0ms" } as React.CSSProperties}
               >
                 <div className="relative h-9 lg:h-11">
