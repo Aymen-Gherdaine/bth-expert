@@ -5,8 +5,6 @@ import fr from "@/dictionaries/fr.json";
 
 const BASE_URL = "https://bthexpert.com";
 
-// Sans barre oblique finale : le site sert « /fr/contact » et redirige
-// « /fr/contact/ » en 308 ; le sitemap doit lister l'URL canonique.
 // Routes statiques (hors secteurs/projets, générés depuis fr.json ci-dessous
 // pour ne jamais désynchroniser le sitemap des vraies pages du site).
 const STATIC_ROUTES = [
@@ -28,6 +26,9 @@ const STATIC_ROUTES = [
   { path: "/confidentialite",                          priority: 0.2, freq: "yearly"  },
 ] as const;
 
+// Sans slash final : c'est la forme canonique servie par Next (les URLs en
+// « / » répondent 308 vers la version sans slash). Un sitemap qui liste des
+// URLs redirigées est signalé par la Search Console (« page avec redirection »).
 function url(lang: string, path: string): string {
   return `${BASE_URL}/${lang}${path === "/" ? "" : path}`;
 }
