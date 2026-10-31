@@ -16,6 +16,6 @@ detail:
   disclaimer: Exemple représentatif — détails à valider avec le client.
   backLabel: Tous les projets
   cta:
-    heading: Un projet similaire ?
-    description: Décrivez-nous votre projet et son contexte. Nous évaluons vos obligations et vous remettons une offre sous 48h.
-    button: Demander un devis
+    heading: 'Un dossier comparable ?'
+    description: 'Dites-nous en quoi votre projet ressemble à celui-ci, et en quoi il diffère. Nous vous disons ce qui se transpose et ce qui change.'
+    button: 'Comparer avec mon projet'

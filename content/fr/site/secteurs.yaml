@@ -16,6 +16,6 @@ projetsLabel: Étude de cas dans ce secteur
 readFiche: Lire la fiche
 readProjet: Lire l'étude de cas
 cta:
-  heading: Un projet dans votre secteur ?
-  description: Décrivez-nous votre projet et son contexte industriel. Nous évaluons vos obligations réglementaires et vous remettons une offre sous 48h.
-  button: Demander un devis
+  heading: 'Dans quelles rubriques tombent vos installations ?'
+  description: 'Envoyez-nous la liste de vos installations, procédés et capacités de stockage. Nous vous renvoyons une note de classement : rubriques, régime, études exigées.'
+  button: 'Obtenir une note de classement'

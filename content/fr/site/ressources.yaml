@@ -20,9 +20,9 @@ backLabel: Toutes les ressources
 updatedLabel: Dernière relecture
 note: Lecture indicative destinée aux porteurs de projets, établie à partir des textes publiés au Journal officiel de la République algérienne, seuls à faire foi. Chaque projet fait l'objet d'une analyse spécifique dans le cadre d'une mission.
 cta:
-  heading: Votre projet relève de ce texte ?
-  description: Décrivez-nous l'installation et son site. Nous vérifions le classement, les études exigées et le calendrier, et vous remettons une offre sous 48h.
-  button: Demander un devis
+  heading: 'Ce texte s''applique-t-il à votre projet ?'
+  description: 'Décrivez l''installation et son site en quelques lignes. Nous répondons avec l''article qui s''applique, le délai qui en découle et ce qu''il faut préparer.'
+  button: 'Poser la question'
 homeSection:
   eyebrow: Cadre réglementaire
   heading: Les textes qui déclenchent votre étude

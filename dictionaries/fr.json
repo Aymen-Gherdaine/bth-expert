@@ -142,9 +142,9 @@
       "description": "BTH Expert et BTH Consult forment un partenariat structuré pour les projets d'envergure. Elle réunit l'expertise internationale d'Amine Lahmer et les 40 années de pratique terrain de Hakim Belgouini en Algérie, pour une couverture technique et réglementaire complète sur chaque mission."
     },
     "cta": {
-      "heading": "Travaillons ensemble",
-      "description": "Contactez notre équipe pour discuter de votre projet environnemental.",
-      "button": "Prendre contact"
+      "heading": "Qui traitera votre dossier ?",
+      "description": "Chaque étude est signée par l'ingénieur qui l'a menée, et vous l'avez au téléphone pendant toute l'instruction.",
+      "button": "Rencontrer l'équipe"
     }
   },
   "services": {
@@ -230,9 +230,9 @@
       }
     ],
     "cta": {
-      "heading": "Votre projet nécessite une EIE ?",
-      "description": "Transmettez-nous les éléments techniques de votre projet. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.",
-      "button": "Demander un devis"
+      "heading": "Étude ou notice ? Vérifions ensemble.",
+      "description": "Envoyez le descriptif du projet et son emplacement. Nous vous indiquons si c'est une étude ou une notice d'impact, et ce que le dossier doit contenir.",
+      "button": "Vérifier mon cas"
     }
   },
   "edd": {
@@ -307,9 +307,9 @@
       }
     ],
     "cta": {
-      "heading": "Votre installation requiert une EDD ?",
-      "description": "Transmettez-nous les caractéristiques de votre installation et de vos procédés. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.",
-      "button": "Demander un devis"
+      "heading": "Quels scénarios pour votre site ?",
+      "description": "Listez vos produits, quantités et procédés. Nous identifions les scénarios d'accident à étudier et la commission qui les examinera.",
+      "button": "Identifier mes scénarios"
     }
   },
   "hse": {
@@ -384,9 +384,9 @@
       }
     ],
     "cta": {
-      "heading": "Besoin d'un audit HSE ?",
-      "description": "Décrivez-nous votre site et vos objectifs de conformité. Nous définissons le périmètre de l'audit et vous remettons une offre sous 48h.",
-      "button": "Demander un devis"
+      "heading": "Où en est votre site, en vrai ?",
+      "description": "Un audit commence par une visite et finit par un plan d'action classé par priorité. Dites-nous la taille du site et le secteur : nous cadrons le périmètre.",
+      "button": "Cadrer un audit"
     }
   },
   "pge": {
@@ -461,9 +461,9 @@
       }
     ],
     "cta": {
-      "heading": "Structurer votre suivi environnemental ?",
-      "description": "Communiquez-nous les prescriptions de votre étude d'impact. Nous bâtissons un plan de gestion adapté à votre projet et vous remettons une offre sous 48h.",
-      "button": "Demander un devis"
+      "heading": "Vos prescriptions attendent un plan.",
+      "description": "Transmettez les prescriptions de votre étude d'impact ou de votre arrêté. Nous les traduisons en indicateurs, responsables et calendrier de reporting.",
+      "button": "Construire mon plan"
     }
   },
   "oran": {
@@ -500,9 +500,9 @@
       "email": "info@bthexpert.com"
     },
     "cta": {
-      "heading": "Votre projet à Oran",
-      "description": "Transmettez-nous les caractéristiques de votre projet. Nous évaluons vos obligations réglementaires et vous proposons une offre adaptée.",
-      "button": "Demander un devis"
+      "heading": "Un projet dans l'Ouest algérien ?",
+      "description": "Nous connaissons les services de l'environnement des wilayas de l'Ouest et leurs pratiques d'instruction. Une rencontre à Oran, sur site ou dans nos bureaux, suffit pour cadrer le dossier.",
+      "button": "Convenir d'un rendez-vous"
     }
   },
   "secteurs": {
@@ -526,9 +526,9 @@
     "readFiche": "Lire la fiche",
     "readProjet": "Lire l'étude de cas",
     "cta": {
-      "heading": "Un projet dans votre secteur ?",
-      "description": "Décrivez-nous votre projet et son contexte industriel. Nous évaluons vos obligations réglementaires et vous remettons une offre sous 48h.",
-      "button": "Demander un devis"
+      "heading": "Dans quelles rubriques tombent vos installations ?",
+      "description": "Envoyez-nous la liste de vos installations, procédés et capacités de stockage. Nous vous renvoyons une note de classement : rubriques, régime, études exigées.",
+      "button": "Obtenir une note de classement"
     },
     "list": [
       {
@@ -1022,9 +1022,9 @@
       ]
     },
     "cta": {
-      "heading": "Travaillons ensemble",
-      "description": "Discutons de votre projet environnemental et de vos obligations réglementaires.",
-      "button": "Prendre contact"
+      "heading": "Parlez à un ingénieur, pas à un commercial.",
+      "description": "Amine Lahmer prend lui-même le premier échange : il vous dit ce qui est exigé, ce qui ne l'est pas, et combien de temps prend chaque étape.",
+      "button": "Écrire à Amine Lahmer"
     }
   },
   "projets": {
@@ -1048,9 +1048,9 @@
       "disclaimer": "Exemple représentatif — détails à valider avec le client.",
       "backLabel": "Tous les projets",
       "cta": {
-        "heading": "Un projet similaire ?",
-        "description": "Décrivez-nous votre projet et son contexte. Nous évaluons vos obligations et vous remettons une offre sous 48h.",
-        "button": "Demander un devis"
+        "heading": "Un dossier comparable ?",
+        "description": "Dites-nous en quoi votre projet ressemble à celui-ci, et en quoi il diffère. Nous vous disons ce qui se transpose et ce qui change.",
+        "button": "Comparer avec mon projet"
       }
     },
     "items": [
@@ -1197,8 +1197,8 @@
       "sectionNumber": "03",
       "eyebrow": "Contact",
       "heading": "Un projet en cours ? Parlons-en.",
-      "description": "Décrivez-nous votre projet, vos contraintes réglementaires et votre calendrier. Nous revenons vers vous sous 48h.",
-      "cta": "Demander un devis",
+      "description": "Un mail avec le descriptif de l'installation suffit pour commencer. Vous recevez sous 48 heures la liste des études à prévoir et une offre.",
+      "cta": "Décrire mon projet",
       "phone": "+213 (670) 70 81 38",
       "email": "info@bthexpert.com"
     },
@@ -1280,9 +1280,9 @@
     "updatedLabel": "Dernière relecture",
     "note": "Lecture indicative destinée aux porteurs de projets, établie à partir des textes publiés au Journal officiel de la République algérienne, seuls à faire foi. Chaque projet fait l'objet d'une analyse spécifique dans le cadre d'une mission.",
     "cta": {
-      "heading": "Votre projet relève de ce texte ?",
-      "description": "Décrivez-nous l'installation et son site. Nous vérifions le classement, les études exigées et le calendrier, et vous remettons une offre sous 48h.",
-      "button": "Demander un devis"
+      "heading": "Ce texte s'applique-t-il à votre projet ?",
+      "description": "Décrivez l'installation et son site en quelques lignes. Nous répondons avec l'article qui s'applique, le délai qui en découle et ce qu'il faut préparer.",
+      "button": "Poser la question"
     },
     "homeSection": {
       "eyebrow": "Cadre réglementaire",

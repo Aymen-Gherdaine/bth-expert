@@ -42,6 +42,6 @@ faq:
   - q: Que contient le livrable ?
     a: Une matrice des mesures, un programme de surveillance, des indicateurs et un modèle de reporting exploitables par vos équipes.
 cta:
-  heading: Structurer votre suivi environnemental ?
-  description: Communiquez-nous les prescriptions de votre étude d'impact. Nous bâtissons un plan de gestion adapté à votre projet et vous remettons une offre sous 48h.
-  button: Demander un devis
+  heading: 'Vos prescriptions attendent un plan.'
+  description: 'Transmettez les prescriptions de votre étude d''impact ou de votre arrêté. Nous les traduisons en indicateurs, responsables et calendrier de reporting.'
+  button: 'Construire mon plan'

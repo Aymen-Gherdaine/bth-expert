@@ -42,6 +42,6 @@ faq:
   - q: Intervenez-vous sur site ?
     a: Oui. Revue documentaire puis visite de terrain, entretiens et observation des pratiques réelles.
 cta:
-  heading: Besoin d'un audit HSE ?
-  description: Décrivez-nous votre site et vos objectifs de conformité. Nous définissons le périmètre de l'audit et vous remettons une offre sous 48h.
-  button: Demander un devis
+  heading: 'Où en est votre site, en vrai ?'
+  description: 'Un audit commence par une visite et finit par un plan d''action classé par priorité. Dites-nous la taille du site et le secteur : nous cadrons le périmètre.'
+  button: 'Cadrer un audit'

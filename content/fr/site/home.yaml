@@ -49,9 +49,9 @@ equipe:
 contact:
   sectionNumber: '03'
   eyebrow: Contact
-  heading: Un projet en cours ? Parlons-en.
-  description: Décrivez-nous votre projet, vos contraintes réglementaires et votre calendrier. Nous revenons vers vous sous 48h.
-  cta: Demander un devis
+  heading: 'Un projet en cours ? Parlons-en.'
+  description: 'Un mail avec le descriptif de l''installation suffit pour commencer. Vous recevez sous 48 heures la liste des études à prévoir et une offre.'
+  cta: 'Décrire mon projet'
   phone: +213 (670) 70 81 38
   email: info@bthexpert.com
 faq:

@@ -142,9 +142,9 @@
       "description": "BTH Expert and BTH Consult form a structured partnership for large-scale projects. It brings together the international expertise of Amine Lahmer and the 40 years of field practice of Hakim Belgouini in Algeria, for complete technical and regulatory coverage on every assignment."
     },
     "cta": {
-      "heading": "Let's work together",
-      "description": "Contact our team to discuss your environmental project.",
-      "button": "Get in touch"
+      "heading": "Who will handle your file?",
+      "description": "Every study is signed by the engineer who carried it out, and you have them on the phone throughout the review.",
+      "button": "Meet the team"
     }
   },
   "services": {
@@ -230,9 +230,9 @@
       }
     ],
     "cta": {
-      "heading": "Does your project require an EIE?",
-      "description": "Send us the technical details of your project. We assess the scope of the study and provide you with a quote within 48 hours.",
-      "button": "Request a quote"
+      "heading": "Assessment or notice? Let's check together.",
+      "description": "Send the project description and its location. We tell you whether it is an impact assessment or a notice, and what the file must contain.",
+      "button": "Check my case"
     }
   },
   "edd": {
@@ -307,9 +307,9 @@
       }
     ],
     "cta": {
-      "heading": "Does your installation require an EDD?",
-      "description": "Send us the characteristics of your installation and processes. We will assess the scope of the study and provide you with a quote within 48 hours.",
-      "button": "Request a Quote"
+      "heading": "Which scenarios for your site?",
+      "description": "List your products, quantities and processes. We identify the accident scenarios to study and the commission that will examine them.",
+      "button": "Identify my scenarios"
     }
   },
   "hse": {
@@ -384,9 +384,9 @@
       }
     ],
     "cta": {
-      "heading": "Need an HSE Audit?",
-      "description": "Tell us about your site and your compliance objectives. We define the audit scope and provide you with a proposal within 48 hours.",
-      "button": "Request a Quote"
+      "heading": "Where does your site really stand?",
+      "description": "An audit starts with a visit and ends with an action plan ranked by priority. Tell us the size of the site and the sector: we frame the scope.",
+      "button": "Frame an audit"
     }
   },
   "pge": {
@@ -461,9 +461,9 @@
       }
     ],
     "cta": {
-      "heading": "Structure your environmental monitoring?",
-      "description": "Share the requirements of your impact assessment with us. We will build a management plan tailored to your project and provide you with a quote within 48 hours.",
-      "button": "Request a quote"
+      "heading": "Your prescriptions are waiting for a plan.",
+      "description": "Send the prescriptions of your impact assessment or your order. We turn them into indicators, owners and a reporting calendar.",
+      "button": "Build my plan"
     }
   },
   "oran": {
@@ -500,9 +500,9 @@
       "email": "info@bthexpert.com"
     },
     "cta": {
-      "heading": "Your Project in Oran",
-      "description": "Send us the details of your project. We will assess your regulatory obligations and provide you with a tailored offer.",
-      "button": "Request a Quote"
+      "heading": "A project in western Algeria?",
+      "description": "We know the environment departments of the western wilayas and how they process files. One meeting in Oran, on site or in our offices, is enough to frame the file.",
+      "button": "Arrange a meeting"
     }
   },
   "secteurs": {
@@ -519,9 +519,9 @@
     "sousSecteursLabel": "Areas covered",
     "prestationsLabel": "Associated services",
     "cta": {
-      "heading": "A project in your sector?",
-      "description": "Tell us about your project and its industrial context. We assess your regulatory obligations and provide a quote within 48 hours.",
-      "button": "Request a quote"
+      "heading": "Which headings do your installations fall under?",
+      "description": "Send us the list of your installations, processes and storage capacities. We return a classification note: headings, regime, required studies.",
+      "button": "Get a classification note"
     },
     "list": [
       {
@@ -1006,9 +1006,9 @@
       ]
     },
     "cta": {
-      "heading": "Let's work together",
-      "description": "Let's discuss your environmental project and regulatory obligations.",
-      "button": "Get in touch"
+      "heading": "Talk to an engineer, not a salesperson.",
+      "description": "Amine Lahmer takes the first conversation himself: he tells you what is required, what is not, and how long each step takes.",
+      "button": "Write to Amine Lahmer"
     },
     "expertise": {
       "eyebrow": "Expertise",
@@ -1048,9 +1048,9 @@
       "disclaimer": "Representative example — details to be confirmed with the client.",
       "backLabel": "All projects",
       "cta": {
-        "heading": "A similar project?",
-        "description": "Describe your project and its context. We assess your obligations and provide you with a quote within 48 hours.",
-        "button": "Request a quote"
+        "heading": "A comparable file?",
+        "description": "Tell us how your project resembles this one, and how it differs. We tell you what carries over and what changes.",
+        "button": "Compare with my project"
       }
     },
     "items": [
@@ -1197,8 +1197,8 @@
       "sectionNumber": "03",
       "eyebrow": "Contact",
       "heading": "Project underway? Let's talk.",
-      "description": "Tell us about your project, your regulatory constraints, and your timeline. We will get back to you within 48 hours.",
-      "cta": "Request a quote",
+      "description": "An email describing the facility is enough to start. Within 48 hours you receive the list of studies to plan and an offer.",
+      "cta": "Describe my project",
       "phone": "+213 (670) 70 81 38",
       "email": "info@bthexpert.com"
     },
@@ -1280,9 +1280,9 @@
     "updatedLabel": "Last reviewed",
     "note": "Indicative reading intended for project owners, drawn from the texts published in the Official Journal of Algeria, which alone are authoritative. Every project is assessed specifically within an engagement.",
     "cta": {
-      "heading": "Does your project fall under this text?",
-      "description": "Describe the facility and its site. We check the classification, the required studies and the timeline, and send you an offer within 48 hours.",
-      "button": "Request a quote"
+      "heading": "Does this text apply to your project?",
+      "description": "Describe the facility and its site in a few lines. We reply with the article that applies, the resulting deadline and what to prepare.",
+      "button": "Ask the question"
     },
     "homeSection": {
       "eyebrow": "Regulatory framework",
