@@ -90,7 +90,8 @@ export default async function ProjetPage({
           </Link>
         </div>
       </div>
-      <ServiceHero eyebrow={item.secteur} heading={item.title} subheading={item.excerpt} />
+      {/* The sector is already the breadcrumb above: the eyebrow says what this page is. */}
+      <ServiceHero eyebrow={dict.projets.hero.eyebrow} heading={item.title} subheading={item.excerpt} />
 
       {/* ── Meta strip — secteur / mission chips / année, enlivened ───── */}
       <section className="bg-cream-soft">

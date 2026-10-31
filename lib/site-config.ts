@@ -38,6 +38,17 @@ export const siteContact = {
     city: "Oran",
     country: "Algérie",
   },
+  /**
+   * Same address in Arabic, for Arabic running text (legal pages). The Latin
+   * form stays in the footer and structured data so the NAP is identical
+   * everywhere Google compares it.
+   */
+  addressAr: {
+    street: "40، تجزئة 119",
+    locality: "بئر الجير",
+    city: "وهران",
+    country: "الجزائر",
+  },
 } as const;
 
 /**

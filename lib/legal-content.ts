@@ -44,10 +44,10 @@ export interface LegalPage {
 /** ISO date of the last substantive change, printed on both pages. */
 export const LEGAL_UPDATED_AT = "2026-10-29";
 
-const { address, legalName, email, phoneDisplay } = siteContact;
+const { address, addressAr, legalName, email, phoneDisplay } = siteContact;
 const postal = `${address.street}, ${address.locality}, ${address.city}, ${address.country}`;
 const postalEn = `${address.street}, ${address.locality}, ${address.city}, Algeria`;
-const postalAr = `${address.street}، ${address.locality}، ${address.city}، الجزائر`;
+const postalAr = `${addressAr.street}، ${addressAr.locality}، ${addressAr.city}، ${addressAr.country}`;
 
 const HOST_NAME = "Netlify, Inc.";
 const HOST_SITE = "www.netlify.com";

@@ -135,7 +135,10 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
               className="font-display font-light text-ink tracking-[-0.03em] leading-[1.06] text-[length:var(--text-display)]"
             >
               {content.headingPart1}{" "}
-              <span className="italic">{content.headingEmphasis}</span>.
+              {/* The period lives inside the span: SplitText splits on
+                  whitespace, so a bare "." after the element became its own
+                  token and, in Arabic, its own line. */}
+              <span className="italic">{content.headingEmphasis}.</span>
             </h2>
 
             <p
