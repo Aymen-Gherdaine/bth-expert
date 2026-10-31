@@ -10,8 +10,11 @@
  *   npm run translate                 # AR + EN, dict + blog (n'écrase pas les articles déjà traduits)
  *   npm run translate -- --lang=ar    # une seule langue
  *   npm run translate -- --force      # retraduit aussi les articles de blog déjà traduits
+ *   npm run translate -- --seal       # sans API : enregistre les hashes FR actuels pour les
+ *                                     # sections déjà traduites, après une relecture AR/EN à la
+ *                                     # main, pour que le prochain run ne les écrase pas
  *
- * Nécessite ANTHROPIC_API_KEY (variable d'environnement).
+ * Nécessite ANTHROPIC_API_KEY (variable d'environnement), sauf --seal.
  */
 import fs from "fs";
 import path from "path";
@@ -40,7 +43,8 @@ function parseArgs() {
   const langArg = args.find((a) => a.startsWith("--lang="))?.split("=")[1];
   const langs: Lang[] = langArg === "ar" || langArg === "en" ? [langArg] : ["ar", "en"];
   const force = args.includes("--force");
-  return { langs, force };
+  const seal = args.includes("--seal");
+  return { langs, force, seal };
 }
 
 function loadGlossary(): GlossaryEntry[] {
@@ -320,11 +324,47 @@ async function translateBlogPosts(
   }
 }
 
+/**
+ * Scelle l'état courant : pour chaque section de fr.json qui a déjà une
+ * traduction, on enregistre le hash FR actuel. Le prochain run considérera
+ * ces sections comme à jour et ne retraduira que ce qui change ensuite.
+ * À lancer après avoir relu ou corrigé ar.json / en.json à la main, sinon la
+ * relecture est perdue au premier push sur main.
+ */
+function sealTranslations(langs: Lang[], hashes: HashStore): void {
+  const fr = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "dictionaries", "fr.json"), "utf-8")
+  ) as Record<string, unknown>;
+  for (const lang of langs) {
+    const outPath = path.join(ROOT, "dictionaries", `${lang}.json`);
+    if (!fs.existsSync(outPath)) continue;
+    const existing = JSON.parse(fs.readFileSync(outPath, "utf-8")) as Record<string, unknown>;
+    const sealed: Record<string, string> = {};
+    const missing: string[] = [];
+    for (const key of Object.keys(fr)) {
+      if (existing[key] === undefined) missing.push(key);
+      else sealed[key] = hashSection(fr[key]);
+    }
+    hashes[lang] = sealed;
+    console.log(
+      `[translate:${lang}] ${Object.keys(sealed).length} section(s) scellée(s)` +
+        (missing.length ? ` ; sans traduction (seront traduites au prochain run) : ${missing.join(", ")}` : "")
+    );
+  }
+}
+
 async function main() {
-  const { langs, force } = parseArgs();
+  const { langs, force, seal } = parseArgs();
+  const hashes = loadHashes();
+
+  if (seal) {
+    sealTranslations(langs, hashes);
+    saveHashes(hashes);
+    return;
+  }
+
   const glossary = loadGlossary();
   const client = getClient();
-  const hashes = loadHashes();
 
   for (const lang of langs) {
     await translateDictionary(client, lang, glossary, force, hashes);
