@@ -75,6 +75,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
                     <span className={`${arrowCls} mt-5`}>
                       <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                       {labels.readFiche}
+                      <span aria-hidden className="inline-block rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1">→</span>
                     </span>
                   </div>
                 </Link>

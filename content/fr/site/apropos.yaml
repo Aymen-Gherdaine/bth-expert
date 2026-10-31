@@ -59,6 +59,6 @@ stats:
     - value: Agréé
       label: Partenaires industriels
 cta:
-  heading: 'Parlez à un ingénieur, pas à un commercial.'
-  description: 'Amine Lahmer prend lui-même le premier échange : il vous dit ce qui est exigé, ce qui ne l''est pas, et combien de temps prend chaque étape.'
-  button: 'Écrire à Amine Lahmer'
+  heading: Travaillons ensemble
+  description: Discutons de votre projet environnemental et de vos obligations réglementaires.
+  button: Prendre contact

@@ -13,6 +13,7 @@ interface StatItem {
 }
 
 interface StatsContent {
+  eyebrow?: string;
   items: StatItem[];
 }
 
@@ -131,6 +132,12 @@ export function StatsBand({ stats }: StatsBandProps) {
   return (
     <section ref={ref} className="bg-cream-warm">
       <div className={`${SECTION_PX} py-16 lg:py-24`}>
+        {stats.eyebrow && (
+          <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
+            <span aria-hidden className="w-8 h-px bg-gold-ink" />
+            {stats.eyebrow}
+          </span>
+        )}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
           {stats.items.map((s) => {
             const { num, suffix, isNumeric } = parseValue(s.value);

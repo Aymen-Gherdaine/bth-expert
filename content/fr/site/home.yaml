@@ -26,6 +26,7 @@ services:
   itemCta: En savoir plus
   cta: Voir tous les services
 stats:
+  eyebrow: En chiffres
   items:
     - value: 10+
       label: Années d'expérience
@@ -33,8 +34,8 @@ stats:
     - value: 20+
       label: Études réalisées
       highlight: false
-    - value: '48'
-      label: heures pour recevoir une offre
+    - value: '4'
+      label: Familles de services
       highlight: false
     - value: Agréé
       label: Ministère de l'Environnement
@@ -48,9 +49,9 @@ equipe:
 contact:
   sectionNumber: '03'
   eyebrow: Contact
-  heading: 'Un projet en cours ? Parlons-en.'
-  description: 'Un mail avec le descriptif de l''installation suffit pour commencer. Vous recevez sous 48 heures la liste des études à prévoir et une offre.'
-  cta: 'Décrire mon projet'
+  heading: Un projet en cours ? Parlons-en.
+  description: Décrivez-nous votre projet, vos contraintes réglementaires et votre calendrier. Nous revenons vers vous sous 48h.
+  cta: Demander un devis
   phone: +213 (670) 70 81 38
   email: info@bthexpert.com
 faq:

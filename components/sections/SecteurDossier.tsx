@@ -4,7 +4,6 @@ import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { getFiche, type RessourcesDict } from "@/lib/ressources";
 import type { Dictionary } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n-config";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 
 type SecteursDict = Dictionary["secteurs"];
 type Secteur = SecteursDict["list"][number];
@@ -17,12 +16,14 @@ interface SecteurDossierProps {
   ressources: RessourcesDict;
   /** Études de cas du secteur (déjà filtrées sur `secteurSlug`). */
   projets: Projet[];
-  /** Running number of the first block, continuing the page's own count. */
-  firstIndex: number;
 }
 
+const eyebrowCls =
+  "inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]";
 const arrowCls =
   "inline-flex items-center gap-2 min-h-11 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight group-hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+const arrowGlyph =
+  "inline-block rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1";
 
 /**
  * The sector dossier: three blocks a prospect actually needs before calling
@@ -37,15 +38,10 @@ const arrowCls =
  *     with a link to the matching service page when one applies.
  *  3. Études de cas — the projects tagged with this sector; hidden when none.
  */
-export function SecteurDossier({ lang, labels, secteur, ressources, projets, firstIndex }: SecteurDossierProps) {
+export function SecteurDossier({ lang, labels, secteur, ressources, projets }: SecteurDossierProps) {
   const textes = secteur.textes
     .map((t) => ({ note: t.note, fiche: getFiche(ressources, t.fiche) }))
     .filter((t): t is { note: string; fiche: NonNullable<typeof t.fiche> } => t.fiche !== null);
-
-  // Blocks are numbered in the order they render; a hidden block does not
-  // leave a gap in the count.
-  let running = firstIndex;
-  const nextIndex = () => String(running++).padStart(2, "0");
 
   return (
     <>
@@ -56,7 +52,10 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets, fir
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
               <div className="lg:col-span-4">
                 <FadeIn className="lg:sticky lg:top-32">
-                  <SectionLabel index={nextIndex()}>{labels.textesLabel}</SectionLabel>
+                  <span className={eyebrowCls}>
+                    <span aria-hidden className="w-8 h-px bg-gold-ink" />
+                    {labels.textesLabel}
+                  </span>
                   <p className="mt-8 max-w-md font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]">
                     {labels.textesIntro}
                   </p>
@@ -103,6 +102,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets, fir
                         <span className={`${arrowCls} mt-4`}>
                           <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                           {labels.readFiche}
+                          <span aria-hidden className={arrowGlyph}>→</span>
                         </span>
                       </div>
                     </Link>
@@ -119,9 +119,10 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets, fir
         <section className="bg-cream-soft">
           <div className={`${SECTION_PX} py-20 lg:py-28`}>
             <FadeIn className="lg:grid lg:grid-cols-12 lg:gap-12 mb-12 lg:mb-16">
-              <SectionLabel index={nextIndex()} className="lg:col-span-4 self-start">
+              <span className={`${eyebrowCls} lg:col-span-4 self-start`}>
+                <span aria-hidden className="w-8 h-px bg-gold-ink" />
                 {labels.parcoursLabel}
-              </SectionLabel>
+              </span>
               <p className="mt-6 lg:mt-0 lg:col-span-6 lg:col-start-6 font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]">
                 {labels.parcoursIntro}
               </p>
@@ -154,6 +155,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets, fir
                       >
                         <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                         {step.service.label}
+                        <span aria-hidden className={arrowGlyph}>→</span>
                       </Link>
                     )}
                   </article>
@@ -169,7 +171,10 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets, fir
         <section className="bg-cream-deep">
           <div className={`${SECTION_PX} py-20 lg:py-28`}>
             <FadeIn className="mb-10 lg:mb-14">
-              <SectionLabel index={nextIndex()}>{labels.projetsLabel}</SectionLabel>
+              <span className={eyebrowCls}>
+                <span aria-hidden className="w-8 h-px bg-gold-ink" />
+                {labels.projetsLabel}
+              </span>
             </FadeIn>
             <FadeInStagger className="border-t border-line">
               {projets.map((p) => (
@@ -199,6 +204,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets, fir
                       <span className={`${arrowCls} mt-4`}>
                         <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                         {labels.readProjet}
+                        <span aria-hidden className={arrowGlyph}>→</span>
                       </span>
                     </div>
                   </Link>

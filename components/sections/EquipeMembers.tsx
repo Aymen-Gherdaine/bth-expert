@@ -99,13 +99,10 @@ export function EquipeMembers({ members, partner }: EquipeMembersProps) {
                   </p>
                 </FadeIn>
 
-                {/* Credentials as a caption list, each marked by a gold point:
-                    the mark survives line wraps, unlike a separator between items. */}
-                <FadeInStagger className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8">
+                <FadeInStagger className="flex flex-wrap gap-x-3 gap-y-2.5 mb-8">
                   {member.credentials.map((cred) => (
-                    <FadeInItem key={cred} className="flex items-center gap-2.5">
-                      <span aria-hidden className="size-1.5 rounded-full bg-gold shrink-0" />
-                      <span className="font-sans uppercase tracking-[0.14em] text-gold-ink text-[length:var(--text-caption)]">
+                    <FadeInItem key={cred}>
+                      <span className="inline-block rounded-full border border-line ps-3 pe-3.5 py-1.5 font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)]">
                         {cred}
                       </span>
                     </FadeInItem>

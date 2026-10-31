@@ -9,7 +9,6 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
 import { SecteurDossier } from "@/components/sections/SecteurDossier";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import fr from "@/dictionaries/fr.json";
 
 export function generateStaticParams() {
@@ -60,11 +59,8 @@ export default async function SecteurPage({
     { name: item.title, url: `https://bthexpert.com/${lang}/secteurs/${secteur}` },
   ]);
 
-  // A typographic list, not pills: one hairline per item, a small gold index.
-  const listCls = "border-t border-line";
-  const rowCls =
-    "flex items-baseline gap-5 border-b border-line py-4 font-sans text-ink text-[length:var(--text-body)]";
-  const indexCls = "font-display text-gold-ink tabular-nums text-[length:var(--text-small)]";
+  const chipCls =
+    "inline-flex items-center rounded-full border border-line px-4 py-2 text-[length:var(--text-small)] text-ink-soft transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] hover:border-gold hover:text-ink";
 
   return (
     <>
@@ -89,7 +85,10 @@ export default async function SecteurPage({
         <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
           <div className="border-t border-line pt-16 lg:pt-20">
             <FadeIn>
-              <SectionLabel index="01">{s.enjeuxLabel}</SectionLabel>
+              <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
+                <span aria-hidden className="w-8 h-px bg-gold" />
+                {s.enjeuxLabel}
+              </span>
             </FadeIn>
 
             <FadeInStagger className="mt-10 lg:mt-14 border-t border-line">
@@ -130,9 +129,11 @@ export default async function SecteurPage({
       <section className="relative isolate overflow-hidden bg-brand-deep">
         <TerrainBackdrop src={`/generated/sector-${secteur}.svg`} />
         <div className={`relative z-10 ${SECTION_PX} py-24 lg:py-32`}>
-          {/* The filet alone: the page eyebrow already sits in the hero. */}
           <FadeIn>
-            <span aria-hidden className="block w-14 h-px bg-gold" />
+            <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
+            <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
+              {s.hero.eyebrow}
+            </span>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p
@@ -146,7 +147,7 @@ export default async function SecteurPage({
       </section>
 
       {/* ── Dossier : textes applicables, parcours, études de cas ── */}
-      <SecteurDossier lang={lang} labels={s} secteur={item} ressources={dict.ressources} projets={projets} firstIndex={2} />
+      <SecteurDossier lang={lang} labels={s} secteur={item} ressources={dict.ressources} projets={projets} />
 
       {/* ── Domaines couverts + prestations — chip blocks ────── */}
       <section className="bg-cream-soft">
@@ -159,14 +160,13 @@ export default async function SecteurPage({
               >
                 {s.sousSecteursLabel}
               </h2>
-              <ol className={listCls}>
-                {item.sousSecteurs.map((sub, i) => (
-                  <li key={sub} className={rowCls}>
-                    <span aria-hidden className={indexCls}>{String(i + 1).padStart(2, "0")}</span>
+              <ul className="flex flex-wrap gap-3">
+                {item.sousSecteurs.map((sub) => (
+                  <li key={sub} className={chipCls}>
                     {sub}
                   </li>
                 ))}
-              </ol>
+              </ul>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2
@@ -175,14 +175,13 @@ export default async function SecteurPage({
               >
                 {s.prestationsLabel}
               </h2>
-              <ol className={listCls}>
-                {item.prestations.map((p, i) => (
-                  <li key={p} className={rowCls}>
-                    <span aria-hidden className={indexCls}>{String(i + 1).padStart(2, "0")}</span>
+              <ul className="flex flex-wrap gap-3">
+                {item.prestations.map((p) => (
+                  <li key={p} className={chipCls}>
                     {p}
                   </li>
                 ))}
-              </ol>
+              </ul>
             </FadeIn>
           </div>
         </div>

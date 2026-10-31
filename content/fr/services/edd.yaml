@@ -42,6 +42,6 @@ faq:
   - q: Faut-il la réviser ?
     a: Oui, à chaque modification substantielle de l'installation, des procédés ou des produits mis en œuvre.
 cta:
-  heading: 'Quels scénarios pour votre site ?'
-  description: 'Listez vos produits, quantités et procédés. Nous identifions les scénarios d''accident à étudier et la commission qui les examinera.'
-  button: 'Identifier mes scénarios'
+  heading: Votre installation requiert une EDD ?
+  description: Transmettez-nous les caractéristiques de votre installation et de vos procédés. Nous évaluons l'étendue de l'étude et vous remettons une offre sous 48h.
+  button: Demander un devis

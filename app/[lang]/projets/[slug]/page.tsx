@@ -114,11 +114,15 @@ export default async function ProjetPage({
                 <dt className="font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3">
                   {d.missionLabel}
                 </dt>
-                <dd
-                  className="font-display font-light text-ink tracking-[-0.01em] leading-[1.3]"
-                  style={{ fontSize: "var(--text-h3)" }}
-                >
-                  {item.mission.join(" · ")}
+                <dd className="flex flex-wrap gap-2">
+                  {item.mission.map((m) => (
+                    <span
+                      key={m}
+                      className="inline-flex items-center rounded-full border border-line px-4 py-1.5 font-sans text-[length:var(--text-small)] text-ink-soft transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] hover:border-gold hover:text-ink"
+                    >
+                      {m}
+                    </span>
+                  ))}
                 </dd>
               </FadeInItem>
 

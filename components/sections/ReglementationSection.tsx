@@ -86,11 +86,13 @@ export function ReglementationSection({ lang, ressources }: ReglementationSectio
                       <Link href={`/${lang}/ressources/${entry.slug}`} className={`${linkCls} text-brand`}>
                         <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                         {ressources.readFiche}
+                        <span aria-hidden className="inline-block ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
                       </Link>
                       {entry.services[0] && (
                         <Link href={`/${lang}/services/${entry.services[0].slug}`} className={`${linkCls} text-ink-soft`}>
                           <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                           {entry.services[0].label}
+                          <span aria-hidden className="inline-block ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
                         </Link>
                       )}
                     </div>
