@@ -9,6 +9,7 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
 import { SecteurDossier } from "@/components/sections/SecteurDossier";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import fr from "@/dictionaries/fr.json";
 
 export function generateStaticParams() {
@@ -88,10 +89,7 @@ export default async function SecteurPage({
         <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
           <div className="border-t border-line pt-16 lg:pt-20">
             <FadeIn>
-              <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
-                <span aria-hidden className="w-8 h-px bg-gold" />
-                {s.enjeuxLabel}
-              </span>
+              <SectionLabel index="01">{s.enjeuxLabel}</SectionLabel>
             </FadeIn>
 
             <FadeInStagger className="mt-10 lg:mt-14 border-t border-line">
@@ -132,11 +130,9 @@ export default async function SecteurPage({
       <section className="relative isolate overflow-hidden bg-brand-deep">
         <TerrainBackdrop src={`/generated/sector-${secteur}.svg`} />
         <div className={`relative z-10 ${SECTION_PX} py-24 lg:py-32`}>
+          {/* The filet alone: the page eyebrow already sits in the hero. */}
           <FadeIn>
-            <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
-            <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
-              {s.hero.eyebrow}
-            </span>
+            <span aria-hidden className="block w-14 h-px bg-gold" />
           </FadeIn>
           <FadeIn delay={0.1}>
             <p
@@ -150,7 +146,7 @@ export default async function SecteurPage({
       </section>
 
       {/* ── Dossier : textes applicables, parcours, études de cas ── */}
-      <SecteurDossier lang={lang} labels={s} secteur={item} ressources={dict.ressources} projets={projets} />
+      <SecteurDossier lang={lang} labels={s} secteur={item} ressources={dict.ressources} projets={projets} firstIndex={2} />
 
       {/* ── Domaines couverts + prestations — chip blocks ────── */}
       <section className="bg-cream-soft">

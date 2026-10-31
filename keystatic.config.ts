@@ -361,7 +361,6 @@ export default config({
           cta: fields.text({ label: "Bouton — Voir tous les services" }),
         }),
         stats: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           items: fields.array(
             fields.object({
               value: fields.text({ label: "Valeur" }),

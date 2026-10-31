@@ -1,5 +1,6 @@
 import { SECTION_PX } from "@/components/layout/Container";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 
 interface FaqItem {
   q: string;
@@ -24,10 +25,7 @@ export function Faq({ heading, items }: FaqProps) {
     <section className="bg-cream-soft">
       <div className={`${SECTION_PX} py-20 lg:py-28`}>
         <FadeIn>
-          <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]">
-            <span aria-hidden className="w-8 h-px bg-gold-ink" />
-            {heading}
-          </span>
+          <SectionLabel>{heading}</SectionLabel>
         </FadeIn>
 
         <FadeInStagger className="mt-10 lg:mt-14 border-t border-line">

@@ -26,7 +26,6 @@ services:
   itemCta: En savoir plus
   cta: Voir tous les services
 stats:
-  eyebrow: En chiffres
   items:
     - value: 10+
       label: Années d'expérience
