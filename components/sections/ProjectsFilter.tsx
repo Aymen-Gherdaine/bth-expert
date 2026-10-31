@@ -115,16 +115,9 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
             <p className="text-[length:var(--text-small)] text-ink-soft leading-[1.7] mb-5">
               {item.excerpt}
             </p>
-            <div className="flex flex-wrap gap-2">
-              {item.mission.map((m) => (
-                <span
-                  key={m}
-                  className="inline-flex items-center rounded-full border border-line px-3 py-1 text-[length:var(--text-caption)] text-muted"
-                >
-                  {m}
-                </span>
-              ))}
-            </div>
+            <p className="font-sans uppercase tracking-[0.14em] text-gold-ink text-[length:var(--text-caption)]">
+              {item.mission.join(" · ")}
+            </p>
           </Link>
         ))}
       </div>

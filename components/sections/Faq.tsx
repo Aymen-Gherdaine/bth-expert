@@ -1,7 +1,5 @@
-"use client";
-
 import { SECTION_PX } from "@/components/layout/Container";
-import { useState } from "react";
+import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 
 interface FaqItem {
   q: string;
@@ -14,59 +12,49 @@ interface FaqProps {
 }
 
 /**
- * Accordion FAQ. Smooth height via the grid-rows 0fr→1fr trick (no measured
- * heights), gold "+" rotates to "×". Logical properties for RTL.
+ * Questions set open, in a column: the question in display type on the left,
+ * the answer in text on the right, one hairline per pair.
+ *
+ * No accordion on purpose. Every answer is visible to the reader and to the
+ * crawler (the FAQPage JSON-LD says the same thing the page shows), nothing
+ * is hidden behind a plus sign, and the section needs no client JavaScript.
  */
 export function Faq({ heading, items }: FaqProps) {
-  const [open, setOpen] = useState<number | null>(0);
-
   return (
     <section className="bg-cream-soft">
       <div className={`${SECTION_PX} py-20 lg:py-28`}>
-        <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
-          <span aria-hidden className="w-8 h-px bg-gold-ink" />
-          {heading}
-        </span>
+        <FadeIn>
+          <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]">
+            <span aria-hidden className="w-8 h-px bg-gold-ink" />
+            {heading}
+          </span>
+        </FadeIn>
 
-        <div className="max-w-3xl border-t border-line">
-          {items.map((item, i) => {
-            const isOpen = open === i;
-            return (
-              <div key={i} className="border-b border-line">
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-6 py-6 text-start"
-                >
+        <FadeInStagger className="mt-10 lg:mt-14 border-t border-line">
+          {items.map((item, index) => (
+            <FadeInItem key={item.q}>
+              <div className="border-b border-line py-8 lg:py-10 lg:grid lg:grid-cols-12 lg:gap-12">
+                <div className="lg:col-span-5 flex items-baseline gap-4">
                   <span
+                    aria-hidden
+                    className="font-display text-gold-ink tabular-nums text-[length:var(--text-small)]"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3
                     className="font-display font-light text-ink tracking-[-0.01em] leading-[1.3]"
                     style={{ fontSize: "var(--text-h3)" }}
                   >
                     {item.q}
-                  </span>
-                  <span
-                    aria-hidden
-                    className="shrink-0 font-display text-gold-ink leading-none text-2xl transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
-                    style={{ transform: isOpen ? "rotate(45deg)" : "none" }}
-                  >
-                    +
-                  </span>
-                </button>
-                <div
-                  className="grid transition-[grid-template-rows] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
-                  style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
-                >
-                  <div className="overflow-hidden">
-                    <p className="pb-7 max-w-2xl font-sans text-muted leading-[1.7] text-[length:var(--text-body)]">
-                      {item.a}
-                    </p>
-                  </div>
+                  </h3>
                 </div>
+                <p className="mt-4 lg:mt-0 lg:col-span-7 max-w-2xl font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]">
+                  {item.a}
+                </p>
               </div>
-            );
-          })}
-        </div>
+            </FadeInItem>
+          ))}
+        </FadeInStagger>
       </div>
     </section>
   );

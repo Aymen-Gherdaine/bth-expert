@@ -59,8 +59,11 @@ export default async function SecteurPage({
     { name: item.title, url: `https://bthexpert.com/${lang}/secteurs/${secteur}` },
   ]);
 
-  const chipCls =
-    "inline-flex items-center rounded-full border border-line px-4 py-2 text-[length:var(--text-small)] text-ink-soft transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] hover:border-gold hover:text-ink";
+  // A typographic list, not pills: one hairline per item, a small gold index.
+  const listCls = "border-t border-line";
+  const rowCls =
+    "flex items-baseline gap-5 border-b border-line py-4 font-sans text-ink text-[length:var(--text-body)]";
+  const indexCls = "font-display text-gold-ink tabular-nums text-[length:var(--text-small)]";
 
   return (
     <>
@@ -160,13 +163,14 @@ export default async function SecteurPage({
               >
                 {s.sousSecteursLabel}
               </h2>
-              <ul className="flex flex-wrap gap-3">
-                {item.sousSecteurs.map((sub) => (
-                  <li key={sub} className={chipCls}>
+              <ol className={listCls}>
+                {item.sousSecteurs.map((sub, i) => (
+                  <li key={sub} className={rowCls}>
+                    <span aria-hidden className={indexCls}>{String(i + 1).padStart(2, "0")}</span>
                     {sub}
                   </li>
                 ))}
-              </ul>
+              </ol>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2
@@ -175,13 +179,14 @@ export default async function SecteurPage({
               >
                 {s.prestationsLabel}
               </h2>
-              <ul className="flex flex-wrap gap-3">
-                {item.prestations.map((p) => (
-                  <li key={p} className={chipCls}>
+              <ol className={listCls}>
+                {item.prestations.map((p, i) => (
+                  <li key={p} className={rowCls}>
+                    <span aria-hidden className={indexCls}>{String(i + 1).padStart(2, "0")}</span>
                     {p}
                   </li>
                 ))}
-              </ul>
+              </ol>
             </FadeIn>
           </div>
         </div>

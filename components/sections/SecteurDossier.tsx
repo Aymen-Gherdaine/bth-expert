@@ -22,8 +22,6 @@ const eyebrowCls =
   "inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]";
 const arrowCls =
   "inline-flex items-center gap-2 min-h-11 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight group-hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
-const arrowGlyph =
-  "inline-block rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1";
 
 /**
  * The sector dossier: three blocks a prospect actually needs before calling
@@ -102,7 +100,6 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                         <span className={`${arrowCls} mt-4`}>
                           <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                           {labels.readFiche}
-                          <span aria-hidden className={arrowGlyph}>→</span>
                         </span>
                       </div>
                     </Link>
@@ -155,7 +152,6 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                       >
                         <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                         {step.service.label}
-                        <span aria-hidden className={arrowGlyph}>→</span>
                       </Link>
                     )}
                   </article>
@@ -204,7 +200,6 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                       <span className={`${arrowCls} mt-4`}>
                         <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                         {labels.readProjet}
-                        <span aria-hidden className={arrowGlyph}>→</span>
                       </span>
                     </div>
                   </Link>
