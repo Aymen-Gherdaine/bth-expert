@@ -16,7 +16,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
 import { HeroBackground } from "@/components/motion/HeroBackground";
 import { HeroFilet } from "@/components/motion/HeroFilet";
-import { CtaVideo } from "@/components/motion/CtaVideo";
+import { TerrainBackdrop } from "@/components/sections/Terrain";
 import { Faq } from "@/components/sections/Faq";
 import { ScrollPulse } from "@/components/motion/ScrollPulse";
 
@@ -177,20 +177,11 @@ export default async function HomePage({
       {/* ── FAQ — credibility + SEO, natural break before CTA ───────────── */}
       <Faq heading={h.faq.heading} items={h.faq.items} />
 
-      {/* ── CTA CONTACT — full-bleed image section, breaks the green wall ── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-deep">
-        {/* Background video — deferred load, poster first, fades in once playing */}
-        <CtaVideo src="/video_cta.mp4" poster="/video_cta-poster.webp" />
-        {/* Green-black overlay for text contrast over the moving image */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgb(10 22 13 / 0.5) 0%, rgb(4 10 6 / 0.78) 100%)",
-          }}
-        />
-        <Container className="relative z-10">
+      {/* ── CTA CONTACT — dark band on the site's own artwork, same register
+             as the sector and project bands (no stock footage) ───────── */}
+      <section className="relative isolate overflow-hidden bg-brand-deep">
+        <TerrainBackdrop src="/generated/section-contact.svg" />
+        <Container className="relative z-10 py-28 lg:py-40">
           <FadeIn>
             <div className="max-w-3xl">
               <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-6">

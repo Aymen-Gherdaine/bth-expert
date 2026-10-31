@@ -136,6 +136,7 @@ const SLUGS = [
   "section-oran",
   "section-apropos",
   "section-equipe",
+  "section-contact",
 ];
 
 const outDir = join(dirname(fileURLToPath(import.meta.url)), "..", "public", "generated");
