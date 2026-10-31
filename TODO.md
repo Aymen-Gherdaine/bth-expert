@@ -77,7 +77,7 @@ Cocher au fur et à mesure. Voir `docs/ARCHITECTURE.md` pour le pourquoi de chaq
   - Régénère entièrement `dictionaries/{ar,en}.json` depuis `dictionaries/fr.json`, et traduit les articles de blog **publiés** (`status` ≠ `draft`) vers `content/{ar,en}/blog/`. N'écrase pas un article déjà traduit sauf `--force`.
 - [x] **3.6** — GitHub Action `.github/workflows/translate.yml` : déclenchée sur push `content/fr/**` (branche `main`), commit auto des fichiers traduits.
   - ⚠️ [CLIENT/CONFIG] Ajouter le secret `ANTHROPIC_API_KEY` dans Settings → Secrets → Actions du repo GitHub (en plus de la variable d'env du même nom sur Netlify, utilisée par l'agent blog).
-- [ ] **3.7** — Test traduction complète sur 1 article + 1 page service
+- [x] **3.7** — Vérifié le 31 oct. : l'action `translate.yml` a traduit les 3 articles (`content/ar/blog`, `content/en/blog`) et les sections du dictionnaire (pages services comprises) lors de ses runs réussis de juin à septembre 2026. Les versions actuelles AR/EN ont ensuite été relues à la main et scellées (voir 5.19).
 - [ ] **3.8** — Génération + publication du premier article validé
 
 **Sortie Phase 3 :** site trilingue avec contenu auto-traduit, blog automatisé.
