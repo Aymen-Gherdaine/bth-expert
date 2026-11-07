@@ -13,7 +13,6 @@ interface StatItem {
 }
 
 interface StatsContent {
-  eyebrow?: string;
   items: StatItem[];
 }
 

@@ -23,7 +23,7 @@ interface Step {
 }
 
 interface ServiceContent {
-  hero: { eyebrow: string; heading: string; subheading: string };
+  hero: { heading: string; subheading: string };
   why: { heading: string; description: string };
   methodology: { heading: string; steps: Step[] };
   deliverable: { heading: string; description: string };

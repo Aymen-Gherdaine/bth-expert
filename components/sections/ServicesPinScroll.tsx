@@ -16,7 +16,6 @@ interface ServiceItem {
 
 interface ServiceContent {
   sectionNumber: string;
-  eyebrow: string;
   heading: string;
   items: ServiceItem[];
   itemCta: string;

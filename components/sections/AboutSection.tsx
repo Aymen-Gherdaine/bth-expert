@@ -9,7 +9,6 @@ import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
 interface AboutContent {
-  eyebrow: string;
   manifesto: string;
   domains: string[];
   body1: string;

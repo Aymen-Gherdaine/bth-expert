@@ -9,7 +9,6 @@ import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
 interface ZonesContent {
-  eyebrow: string;
   heading: string;
   address: string;
   phone: string;

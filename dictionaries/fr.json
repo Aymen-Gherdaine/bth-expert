@@ -37,7 +37,6 @@
       "description": "Contactez BTH Expert pour une étude d'impact, une étude de dangers ou un audit HSE. Réponse sous 48h. Basé à Oran, intervient dans toute l'Algérie."
     },
     "hero": {
-      "eyebrow": "Contact",
       "headingStart": "Parlons de votre",
       "headingEmphasis": "projet",
       "intro": "Vous avez un projet industriel nécessitant un accompagnement environnemental ou réglementaire ? Contactez-nous pour une consultation initiale."
@@ -79,7 +78,6 @@
       "errorMessage": "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.com."
     },
     "process": {
-      "eyebrow": "Notre processus",
       "heading": "À quoi s'attendre",
       "steps": [
         {
@@ -111,7 +109,6 @@
       "description": "Rencontrez l'équipe de BTH Expert. Ingénieurs et experts agréés par le Ministère de l'Environnement algérien. Gérant : Amine Lahmer. Basé à Oran."
     },
     "hero": {
-      "eyebrow": "Experts agréés · Oran, Algérie",
       "heading": "Experts & partenaires",
       "subheading": "Une expérience acquise dans les grands groupes d'ingénierie canadiens, mise au service des réalités réglementaires et industrielles de l'Algérie."
     },
@@ -153,7 +150,6 @@
       "description": "Études d'impact sur l'environnement, études de dangers, audits HSE et plans de gestion environnementale. BTH Expert, bureau d'études agréé à Oran."
     },
     "hero": {
-      "eyebrow": "Bureau d'études agréé",
       "heading": "Nos services environnementaux",
       "subheading": "Quatre grandes familles de prestations pour accompagner vos obligations réglementaires, de l'instruction du projet à la mise en exploitation."
     }
@@ -164,7 +160,6 @@
       "description": "Bureau d'études agréé pour la réalisation des études d'impact environnemental (EIE) en Algérie. Rapports conformes aux exigences du Ministère de l'Environnement. Basé à Oran."
     },
     "hero": {
-      "eyebrow": "EIE · Agrément Ministère de l'Environnement",
       "heading": "Étude d'Impact sur l'Environnement",
       "subheading": "L'EIE est le document réglementaire qui évalue les impacts d'un projet sur son environnement naturel, humain et socio-économique. Elle est obligatoire pour les installations classées dont la nomenclature l'exige et pour les projets listés par le décret exécutif n° 07-145, modifié en 2018 et 2019."
     },
@@ -241,7 +236,6 @@
       "description": "Bureau d'études agréé pour la réalisation des études de dangers (EDD) en Algérie : analyse des risques majeurs, scénarios d'accident, zones d'effet et plans de prévention. Basé à Oran."
     },
     "hero": {
-      "eyebrow": "EDD · Établissements classés",
       "heading": "Étude de Dangers",
       "subheading": "L'étude de dangers identifie et caractérise les risques d'accident majeur d'une installation industrielle, évalue leurs conséquences et définit les mesures de maîtrise. Elle est exigée pour les établissements classés soumis à autorisation."
     },
@@ -318,7 +312,6 @@
       "description": "Audit hygiène, sécurité et environnement (HSE) et diagnostic de conformité réglementaire pour sites industriels en Algérie. Identification des écarts et plan d'action priorisé. Bureau d'études agréé à Oran."
     },
     "hero": {
-      "eyebrow": "HSE · Conformité réglementaire",
       "heading": "Audit HSE & conformité",
       "subheading": "L'audit HSE dresse l'état de conformité d'un site au regard des exigences d'hygiène, de sécurité et d'environnement. Il met en évidence les écarts réglementaires et hiérarchise les actions correctives à engager."
     },
@@ -395,7 +388,6 @@
       "description": "Élaboration de plans de gestion environnementale (PGE) pour le suivi des mesures d'atténuation sur toute la durée de vie d'un projet. Bureau d'études agréé en Algérie, basé à Oran."
     },
     "hero": {
-      "eyebrow": "PGE · Suivi environnemental",
       "heading": "Plan de Gestion Environnementale",
       "subheading": "Le plan de gestion environnementale traduit les engagements de l'étude d'impact en mesures concrètes : il organise l'atténuation, la surveillance et le suivi des effets d'un projet, de la phase travaux à l'exploitation."
     },
@@ -472,7 +464,6 @@
       "description": "BTH Expert, bureau d'études environnemental agréé basé à Oran (Bir El Djir). Études d'impact, études de dangers et audits HSE pour les projets industriels à Oran et dans l'ouest algérien."
     },
     "hero": {
-      "eyebrow": "Bir El Djir, Oran · Algérie",
       "heading": "Bureau d'études environnemental à Oran",
       "subheading": "Agréé par le Ministère de l'Environnement, BTH Expert accompagne les porteurs de projets industriels, miniers et d'infrastructure dans la wilaya d'Oran et l'ensemble de l'Algérie occidentale."
     },
@@ -511,7 +502,6 @@
       "description": "BTH Expert accompagne l'industrie & pétrochimie, l'énergie & hydrocarbures, les infrastructures & BTP et l'agriculture & hydraulique. Études d'impact, études de dangers et audits HSE en Algérie."
     },
     "hero": {
-      "eyebrow": "Secteurs",
       "heading": "Une expertise par secteur",
       "subheading": "Chaque industrie porte ses propres enjeux environnementaux et réglementaires. BTH Expert adapte sa méthodologie aux réalités techniques de votre secteur d'activité."
     },
@@ -928,12 +918,10 @@
       "description": "BTH Expert, bureau d'études environnemental agréé à Oran. Expertise internationale, agrément ministériel et approche pluridisciplinaire au service de l'industrie algérienne."
     },
     "hero": {
-      "eyebrow": "À propos · Bureau agréé · Oran, Algérie",
       "heading": "Un bureau d'études au service de l'industrie algérienne",
       "subheading": "BTH Expert réunit une expertise internationale, acquise dans de grands groupes d'ingénierie, et une connaissance précise du cadre réglementaire algérien. Nous accompagnons les porteurs de projets industriels de l'étude d'impact jusqu'à l'autorisation."
     },
     "timeline": {
-      "eyebrow": "Notre parcours",
       "heading": "Une expertise internationale au service de l'Algérie",
       "milestones": [
         {
@@ -972,7 +960,6 @@
       "description": "Notre modèle associe l'expertise d'un consultant agréé au savoir-faire de BTH Consult. Ce partenariat renforce notre capacité d'intervention et mobilise une équipe pluridisciplinaire (environnement, eau, santé, sécurité et ingénierie) pour les projets d'envergure régionale et nationale."
     },
     "expertise": {
-      "eyebrow": "Expertise",
       "heading": "L'expertise derrière chaque étude",
       "experts": [
         {
@@ -988,7 +975,6 @@
       ]
     },
     "values": {
-      "eyebrow": "Notre approche",
       "heading": "Rigueur réglementaire, ancrage terrain",
       "items": [
         {
@@ -1033,7 +1019,6 @@
       "description": "Études d'impact, études de dangers et audits HSE menés par BTH Expert pour l'industrie, l'énergie et l'hydraulique en Algérie. Exemples de réalisations par secteur."
     },
     "hero": {
-      "eyebrow": "Réalisations",
       "heading": "Des études qui sécurisent les projets",
       "subheading": "Un aperçu de nos interventions environnementales et réglementaires, du complexe pétrochimique au périmètre irrigué."
     },
@@ -1107,7 +1092,6 @@
       "description": "Analyses, guides et actualités réglementaires sur l'étude d'impact, l'étude de dangers et la conformité environnementale en Algérie, par BTH Expert."
     },
     "hero": {
-      "eyebrow": "Ressources · Réglementation environnementale",
       "heading": "Le blog BTH Expert",
       "subheading": "Décryptages réglementaires et guides pratiques sur l'étude d'impact, l'étude de dangers et la conformité environnementale en Algérie, par notre équipe d'experts agréés."
     },
@@ -1124,7 +1108,6 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Agréé Ministère de l'Environnement · Oran, Algérie",
       "headlinePart1": "Expertise",
       "headlineEmphasis": "environnementale",
       "headlinePart2": "& industrielle",
@@ -1134,7 +1117,6 @@
     },
     "services": {
       "sectionNumber": "01",
-      "eyebrow": "Services",
       "heading": "Quatre études. Un objectif, l'autorisation de votre site.",
       "items": [
         {
@@ -1162,7 +1144,6 @@
       "cta": "Voir tous les services"
     },
     "stats": {
-      "eyebrow": "En chiffres",
       "items": [
         {
           "value": "10+",
@@ -1188,14 +1169,12 @@
     },
     "equipe": {
       "sectionNumber": "02",
-      "eyebrow": "Équipe",
       "heading": "Des experts reconnus par le Ministère",
       "description": "Ingénieurs agréés, maîtrise du cadre réglementaire algérien et des standards ISO/IEC internationaux. BTH Expert intervient en partenariat avec BTH Consult pour les projets d'envergure régionale.",
       "cta": "Rencontrer l'équipe"
     },
     "contact": {
       "sectionNumber": "03",
-      "eyebrow": "Contact",
       "heading": "Un projet en cours ? Parlons-en.",
       "description": "Décrivez-nous votre projet, vos contraintes réglementaires et votre calendrier. Nous revenons vers vous sous 48h.",
       "cta": "Demander un devis",
@@ -1228,7 +1207,6 @@
       ]
     },
     "about": {
-      "eyebrow": "À propos",
       "manifesto": "Aucun projet industriel n'obtient son autorisation sans étude environnementale conforme. C'est notre métier, et notre engagement.",
       "domains": [
         "Environnement",
@@ -1246,7 +1224,6 @@
       "cta": "Découvrir nos services"
     },
     "zones": {
-      "eyebrow": "Zones d'intervention",
       "heading": "Oran, au cœur de l'Ouest algérien",
       "address": "40, Lotissement 119\nBir El Djir, Oran",
       "phone": "+213 (670) 70 81 38",
@@ -1262,7 +1239,6 @@
       "description": "Fiches pratiques vérifiées sur le Journal officiel : loi 03-10, décrets 07-145, 06-198, 07-144, loi 24-04, décret 23-324, et guide de procédure d'autorisation d'une installation classée en Algérie, par un bureau d'études agréé."
     },
     "hero": {
-      "eyebrow": "Ressources · Réglementation algérienne",
       "heading": "Comprendre le cadre réglementaire de votre projet",
       "subheading": "Une fiche par texte et un guide de procédure, écrits par un bureau d'études agréé pour les porteurs de projets, à partir des textes publiés au Journal officiel. Pas un résumé de loi : ce que chaque texte change concrètement pour votre dossier."
     },
@@ -1285,7 +1261,6 @@
       "button": "Demander un devis"
     },
     "homeSection": {
-      "eyebrow": "Cadre réglementaire",
       "heading": "Les textes qui déclenchent votre étude",
       "intro": "Six textes structurent l'autorisation d'une installation en Algérie. Savoir lequel s'applique à votre projet, c'est déjà savoir quelle étude déposer, auprès de qui, et dans quel délai.",
       "note": "Lecture indicative. Seules les versions publiées au Journal officiel font foi."
