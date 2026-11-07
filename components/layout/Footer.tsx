@@ -14,7 +14,7 @@ interface FooterProps {
 const linkClass =
   "inline-flex items-center min-h-11 lg:min-h-0 hover:text-[var(--color-gold)] transition-colors duration-300 ease-[var(--ease-out-expo)]";
 
-const columnHeaderClass = "text-xs uppercase tracking-widest text-gold mb-4";
+const columnHeaderClass = "text-sm text-gold mb-4";
 
 const dividerClass =
   "pt-4 border-t border-[color-mix(in_srgb,var(--color-cream)_15%,var(--color-brand-deep))]";

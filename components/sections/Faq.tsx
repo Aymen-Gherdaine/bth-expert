@@ -15,7 +15,8 @@ interface FaqProps {
 
 /**
  * Accordion FAQ. Smooth height via the grid-rows 0fr→1fr trick (no measured
- * heights), gold "+" rotates to "×". Logical properties for RTL.
+ * heights), gold "+" rotates to "×". Logical properties for RTL. The
+ * heading is a real h2: no eyebrow, no hairline.
  */
 export function Faq({ heading, items }: FaqProps) {
   const [open, setOpen] = useState<number | null>(0);
@@ -23,10 +24,7 @@ export function Faq({ heading, items }: FaqProps) {
   return (
     <section className="bg-cream-soft">
       <div className={`${SECTION_PX} py-20 lg:py-28`}>
-        <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
-          <span aria-hidden className="w-8 h-px bg-gold-ink" />
-          {heading}
-        </span>
+        <h2 className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15] text-[length:var(--text-h2)] mb-12">{heading}</h2>
 
         <div className="max-w-3xl border-t border-line">
           {items.map((item, i) => {

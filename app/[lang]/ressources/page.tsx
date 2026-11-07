@@ -48,7 +48,6 @@ export default async function RessourcesPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
       <ServiceHero
-        eyebrow={r.hero.eyebrow}
         heading={r.hero.heading}
         subheading={r.hero.subheading}
         meta={textes.map((f) => ({ label: f.typeLabel, value: f.ref }))}

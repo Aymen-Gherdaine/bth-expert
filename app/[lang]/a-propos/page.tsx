@@ -55,7 +55,6 @@ export default async function AboutPage({
       {/* ── Hero — full-height dark cinematic hero ────────────── */}
       <TerrainHero
         src="/generated/section-apropos.svg"
-        eyebrow={a.hero.eyebrow}
         heading={a.hero.heading}
         subheading={a.hero.subheading}
         index={a.timeline.milestones.map((m) => m.title)}
@@ -67,7 +66,6 @@ export default async function AboutPage({
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4 mb-8 lg:mb-0">
               <FadeIn>
-                <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
                 <RevealText
                   as="h2"
                   className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink"
@@ -94,7 +92,6 @@ export default async function AboutPage({
             <div className="lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4 mb-8 lg:mb-0">
                 <FadeIn>
-                  <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
                   <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink">
                     {a.partner.heading}
                   </h2>
@@ -116,10 +113,6 @@ export default async function AboutPage({
       <Container>
         <Section tight>
           <FadeIn>
-            <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
-            <p className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.16em] text-gold mb-5">
-              {a.expertise.eyebrow}
-            </p>
             <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-16">
               {a.expertise.heading}
             </h2>
@@ -127,7 +120,7 @@ export default async function AboutPage({
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
             {a.expertise.experts.map((expert) => (
               <FadeIn key={expert.name}>
-                <p className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.16em] text-gold mb-3">
+                <p className="font-sans text-[length:var(--text-caption)] text-gold-ink mb-3">
                   {expert.role}
                 </p>
                 <h3 className="font-display text-[length:var(--text-h3)] font-light tracking-[-0.01em] leading-[1.2] text-ink mb-5">
@@ -145,7 +138,7 @@ export default async function AboutPage({
       {/* ── Notre approche ───────────────────────────────────── */}
       <div className="border-t border-line bg-cream-deep">
         <Container>
-          <Section number="01" eyebrow={a.values.eyebrow}>
+          <Section>
             <SectionReveal>
               <h2 className="font-display text-[length:var(--text-h2)] font-medium tracking-[-0.02em] leading-[1.15] text-ink mb-12 lg:mb-16 max-w-2xl">
                 {a.values.heading}
@@ -179,7 +172,7 @@ export default async function AboutPage({
                 <p className="font-display text-gold tracking-[-0.02em] leading-none mb-3 text-[clamp(2.5rem,4vw,3.5rem)]">
                   {stat.value}
                 </p>
-                <p className="text-[length:var(--text-small)] uppercase tracking-widest text-muted">
+                <p className="text-[length:var(--text-small)] text-muted">
                   {stat.label}
                 </p>
               </div>

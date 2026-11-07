@@ -64,7 +64,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
 
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      // ── Header — eyebrow → title → intro on entry ──────────────────
+      // ── Header — title → intro on entry ────────────────────────────
       const head = section.querySelectorAll<HTMLElement>("[data-reveal]");
       if (head.length && !reduce) {
         gsap.from(head, {
@@ -160,13 +160,6 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
     <section ref={sectionRef} className="bg-cream relative z-10">
       <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-24 lg:pb-32`}>
         {/* ── Header ─────────────────────────────────────────────── */}
-        <span
-          data-reveal
-          className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-7"
-        >
-          <span aria-hidden className="w-8 h-px bg-gold-ink" />
-          {services.eyebrow}
-        </span>
         <h2
           data-reveal
           className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05] max-w-3xl"
@@ -210,7 +203,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                 <span
                   data-active-label
                   aria-hidden
-                  className="absolute start-8 bottom-10 font-sans uppercase tracking-[0.22em] text-gold text-[length:var(--text-caption)]"
+                  className="absolute start-8 bottom-10 font-sans text-gold text-[length:var(--text-caption)]"
                 >
                   {services.items[0]?.abbr}
                 </span>

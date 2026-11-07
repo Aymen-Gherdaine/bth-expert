@@ -17,7 +17,7 @@ interface ServicesIndexListProps {
 /**
  * Services index — editorial typographic register (manifesto Pattern 2).
  * Each expertise is a full-width row: a monumental index numeral, the abbr
- * eyebrow in gold, the title that warms to brand on hover, the description,
+ * abbreviation in gold, the title that warms to brand on hover, the description,
  * and a travelling arrow. Thin `line` filets separate the rows; scroll-reveal
  * comes from the shared FadeInStagger so it composes into the server page and
  * inherits the prefers-reduced-motion handling. No new assets, no new copy.
@@ -43,7 +43,7 @@ export function ServicesIndexList({ items }: ServicesIndexListProps) {
 
             {/* Abbr + title */}
             <div className="lg:col-span-5 mb-4 lg:mb-0">
-              <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-3">
+              <span className="block font-sans text-gold-ink text-[length:var(--text-caption)] mb-3">
                 {item.abbr}
               </span>
               <h2

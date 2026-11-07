@@ -86,7 +86,6 @@ export function EquipeMembers({ members, partner }: EquipeMembersProps) {
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span aria-hidden className="h-px w-12 bg-gold" />
                   </div>
                   <h2
                     className="font-display font-light text-ink tracking-[-0.02em] leading-[1.1] mb-2"
@@ -102,7 +101,7 @@ export function EquipeMembers({ members, partner }: EquipeMembersProps) {
                 <FadeInStagger className="flex flex-wrap gap-x-3 gap-y-2.5 mb-8">
                   {member.credentials.map((cred) => (
                     <FadeInItem key={cred}>
-                      <span className="inline-block rounded-full border border-line ps-3 pe-3.5 py-1.5 font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)]">
+                      <span className="inline-block rounded-full border border-line ps-3 pe-3.5 py-1.5 font-sans text-muted text-[length:var(--text-caption)]">
                         {cred}
                       </span>
                     </FadeInItem>
@@ -123,7 +122,6 @@ export function EquipeMembers({ members, partner }: EquipeMembersProps) {
         <div className="border-t border-line py-16 lg:py-24 lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className="lg:col-span-4 mb-6 lg:mb-0">
             <FadeIn>
-              <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
               <h2
                 className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15]"
                 style={{ fontSize: "var(--text-h2)" }}

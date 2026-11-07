@@ -52,7 +52,6 @@ export default async function OranPage({
       />
 
       <ServiceHero
-        eyebrow={o.hero.eyebrow}
         heading={o.hero.heading}
         subheading={o.hero.subheading}
       />

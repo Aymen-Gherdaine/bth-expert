@@ -30,13 +30,11 @@ export default async function OgImage({
           fontFamily: "Georgia, serif",
         }}
       >
-        {/* Gold eyebrow */}
+        {/* Accreditation line */}
         <div
           style={{
             color: "#c9a96e",
-            fontSize: 13,
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
+            fontSize: 22,
             marginBottom: 28,
           }}
         >

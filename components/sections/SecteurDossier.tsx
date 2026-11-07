@@ -18,8 +18,8 @@ interface SecteurDossierProps {
   projets: Projet[];
 }
 
-const eyebrowCls =
-  "inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]";
+const headingCls =
+  "font-display font-light text-ink tracking-[-0.02em] leading-[1.15] text-[length:var(--text-h2)]";
 const arrowCls =
   "inline-flex items-center gap-2 min-h-11 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight group-hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 const arrowGlyph =
@@ -52,10 +52,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
               <div className="lg:col-span-4">
                 <FadeIn className="lg:sticky lg:top-32">
-                  <span className={eyebrowCls}>
-                    <span aria-hidden className="w-8 h-px bg-gold-ink" />
-                    {labels.textesLabel}
-                  </span>
+                  <h2 className={headingCls}>{labels.textesLabel}</h2>
                   <p className="mt-8 max-w-md font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]">
                     {labels.textesIntro}
                   </p>
@@ -83,7 +80,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                           {fiche.ref}
                         </p>
                         <p
-                          className="mt-3 font-sans uppercase tracking-[0.14em] text-gold-ink"
+                          className="mt-3 font-sans text-muted text-[length:var(--text-caption)]"
                           style={{ fontSize: "var(--text-caption)" }}
                         >
                           {fiche.typeLabel}
@@ -119,10 +116,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
         <section className="bg-cream-soft">
           <div className={`${SECTION_PX} py-20 lg:py-28`}>
             <FadeIn className="lg:grid lg:grid-cols-12 lg:gap-12 mb-12 lg:mb-16">
-              <span className={`${eyebrowCls} lg:col-span-4 self-start`}>
-                <span aria-hidden className="w-8 h-px bg-gold-ink" />
-                {labels.parcoursLabel}
-              </span>
+              <h2 className={`${headingCls} lg:col-span-4 self-start`}>{labels.parcoursLabel}</h2>
               <p className="mt-6 lg:mt-0 lg:col-span-6 lg:col-start-6 font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]">
                 {labels.parcoursIntro}
               </p>
@@ -171,10 +165,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
         <section className="bg-cream-deep">
           <div className={`${SECTION_PX} py-20 lg:py-28`}>
             <FadeIn className="mb-10 lg:mb-14">
-              <span className={eyebrowCls}>
-                <span aria-hidden className="w-8 h-px bg-gold-ink" />
-                {labels.projetsLabel}
-              </span>
+              <h2 className={headingCls}>{labels.projetsLabel}</h2>
             </FadeIn>
             <FadeInStagger className="border-t border-line">
               {projets.map((p) => (
@@ -187,7 +178,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                       <span className="font-mono font-light text-ink tabular-nums tracking-[-0.02em]" style={{ fontSize: "var(--text-h3)" }} dir="ltr">
                         {p.annee}
                       </span>
-                      <span className="block font-sans uppercase tracking-[0.14em] text-gold-ink lg:mt-3" style={{ fontSize: "var(--text-caption)" }}>
+                      <span className="block font-sans text-muted text-[length:var(--text-caption)] lg:mt-3">
                         {p.mission.join(" · ")}
                       </span>
                     </div>

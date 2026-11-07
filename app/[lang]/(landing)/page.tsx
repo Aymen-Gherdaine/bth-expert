@@ -15,7 +15,6 @@ import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
 import { HeroBackground } from "@/components/motion/HeroBackground";
-import { HeroFilet } from "@/components/motion/HeroFilet";
 import { CtaVideo } from "@/components/motion/CtaVideo";
 import { Faq } from "@/components/sections/Faq";
 import { ScrollPulse } from "@/components/motion/ScrollPulse";
@@ -87,14 +86,6 @@ export default async function HomePage({
 
           <Container className="relative z-10">
             <div className="max-w-4xl">
-              <HeroFilet className="block w-14 h-px bg-gold mb-7 origin-left" />
-              <RevealText
-                className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
-                delay={0.1}
-              >
-                {h.hero.eyebrow}
-              </RevealText>
-
               <RevealText
                 as="h1"
                 className="font-display font-light text-cream leading-[1.1] sm:leading-[1.04] tracking-[-0.03em]"
@@ -180,9 +171,6 @@ export default async function HomePage({
         <Container className="relative z-10">
           <FadeIn>
             <div className="max-w-3xl">
-              <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-6">
-                {h.contact.eyebrow}
-              </p>
               <h2
                 className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-8"
                 style={{ fontSize: "clamp(2.25rem, 4vw + 0.5rem, 4.5rem)" }}

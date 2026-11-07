@@ -48,7 +48,7 @@ export default async function BlogPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      <ServiceHero eyebrow={b.hero.eyebrow} heading={b.hero.heading} subheading={b.hero.subheading} />
+      <ServiceHero heading={b.hero.heading} subheading={b.hero.subheading} />
 
       <section className="bg-cream-soft">
         <div className={`${SECTION_PX} pb-24 lg:pb-32`}>

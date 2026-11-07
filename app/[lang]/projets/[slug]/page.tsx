@@ -80,18 +80,13 @@ export default async function ProjetPage({
         <div className={`${SECTION_PX} pt-16 lg:pt-24`}>
           <Link
             href={`/${lang}/secteurs/${item.secteurSlug}`}
-            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="inline-flex items-center min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
-            <span
-              aria-hidden
-              className="w-6 h-px bg-gold transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-9"
-            />
             {item.secteur}
           </Link>
         </div>
       </div>
-      {/* The sector is already the breadcrumb above: the eyebrow says what this page is. */}
-      <ServiceHero eyebrow={dict.projets.hero.eyebrow} heading={item.title} subheading={item.excerpt} />
+      <ServiceHero heading={item.title} subheading={item.excerpt} />
 
       {/* ── Meta strip — secteur / mission chips / année, enlivened ───── */}
       <section className="bg-cream-soft">
@@ -99,7 +94,7 @@ export default async function ProjetPage({
           <div className="border-t border-line pt-10 lg:pt-12">
             <FadeInStagger className="grid gap-10 sm:grid-cols-3">
               <FadeInItem>
-                <dt className="font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3">
+                <dt className="font-sans text-muted text-[length:var(--text-caption)] mb-3">
                   {d.secteurLabel}
                 </dt>
                 <dd
@@ -111,7 +106,7 @@ export default async function ProjetPage({
               </FadeInItem>
 
               <FadeInItem>
-                <dt className="font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3">
+                <dt className="font-sans text-muted text-[length:var(--text-caption)] mb-3">
                   {d.missionLabel}
                 </dt>
                 <dd className="flex flex-wrap gap-2">
@@ -127,7 +122,7 @@ export default async function ProjetPage({
               </FadeInItem>
 
               <FadeInItem>
-                <dt className="font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3">
+                <dt className="font-sans text-muted text-[length:var(--text-caption)] mb-3">
                   {d.anneeLabel}
                 </dt>
                 <dd
@@ -151,7 +146,6 @@ export default async function ProjetPage({
         <div className={`relative z-10 ${SECTION_PX} py-24 lg:py-32`}>
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
             <FadeIn className="lg:col-span-8">
-              <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
               <h2
                 className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-6"
                 style={{ fontSize: "clamp(2.25rem, 3.4vw + 1rem, 4.5rem)" }}
@@ -170,7 +164,7 @@ export default async function ProjetPage({
                 </Link>
                 <Link
                   href={`/${lang}/projets`}
-                  className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   <span
                     aria-hidden

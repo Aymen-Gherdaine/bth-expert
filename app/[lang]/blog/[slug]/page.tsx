@@ -144,7 +144,7 @@ export default async function BlogPostPage({
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-10">
               <Link
                 href={`/${lang}/blog`}
-                className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-caption)] uppercase tracking-[0.15em] text-muted hover:text-brand transition-colors duration-[var(--duration-base)]"
+                className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)]"
               >
                 <span
                   aria-hidden
@@ -154,10 +154,6 @@ export default async function BlogPostPage({
                 </span>
                 {b.backLabel}
               </Link>
-              <span aria-hidden className="w-px h-3 bg-line" />
-              <span className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.18em] text-gold">
-                {b.hero.eyebrow}
-              </span>
             </div>
 
             {/* Title */}
@@ -209,7 +205,7 @@ export default async function BlogPostPage({
           <FadeIn>
             <Link
               href={`/${lang}/blog`}
-              className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               <span
                 aria-hidden

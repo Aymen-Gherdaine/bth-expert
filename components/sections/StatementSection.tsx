@@ -31,7 +31,6 @@ interface StatementSectionProps {
 export function StatementSection({ lang, content }: StatementSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const near = useNearViewport(sectionRef);
-  const filetRef = useRef<HTMLSpanElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const supportRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -55,17 +54,7 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
         scrollTrigger: { trigger: sectionRef.current, start: "top 68%", once: true },
       });
 
-      tl.from(filetRef.current, {
-        scaleX: 0,
-        transformOrigin: "left center",
-        duration: 1,
-        ease: "expo.out",
-      })
-        .from(
-          split.lines,
-          { yPercent: 110, duration: 1, stagger: 0.12, ease: "expo.out" },
-          "-=0.6"
-        )
+      tl.from(split.lines, { yPercent: 110, duration: 1, stagger: 0.12, ease: "expo.out" })
         // Photo: clip-path wipe from the left + inner image settles from 1.15
         .fromTo(
           photo,
@@ -123,13 +112,6 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16 lg:items-center">
           {/* ── Statement ── */}
           <div className="lg:col-span-6">
-            {/* Gold filet — the single gold accent, traces in */}
-            <span
-              ref={filetRef}
-              aria-hidden
-              className="block w-20 h-px bg-gold-ink mb-12 lg:mb-14"
-            />
-
             <h2
               ref={headingRef}
               className="font-display font-light text-ink tracking-[-0.03em] leading-[1.06] text-[length:var(--text-display)]"

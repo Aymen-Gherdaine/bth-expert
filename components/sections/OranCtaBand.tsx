@@ -24,7 +24,6 @@ export function OranCtaBand({ lang, cta, art }: OranCtaBandProps) {
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-end">
           <div className="lg:col-span-8">
             <FadeIn>
-              <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
               <h2
                 className="font-display font-light text-cream tracking-[-0.02em] leading-[1.1] max-w-3xl"
                 style={{ fontSize: "var(--text-h1)" }}

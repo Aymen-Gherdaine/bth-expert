@@ -31,10 +31,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
       <section className="bg-cream-soft">
         <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
           <FadeIn className="lg:grid lg:grid-cols-12 lg:gap-12 mb-12 lg:mb-16">
-            <span className="lg:col-span-4 inline-flex items-center gap-3 self-start font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]">
-              <span aria-hidden className="w-8 h-px bg-gold-ink" />
-              {labels.textesHeading}
-            </span>
+            <h2 className="lg:col-span-4 self-start font-display font-light text-ink tracking-[-0.02em] leading-[1.15] text-[length:var(--text-h2)]">{labels.textesHeading}</h2>
             <p className="mt-6 lg:mt-0 lg:col-span-6 lg:col-start-6 font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]">
               {labels.textesIntro}
             </p>
@@ -56,7 +53,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
                       {f.ref}
                     </p>
                     <p
-                      className="mt-3 font-sans uppercase tracking-[0.14em] text-gold-ink"
+                      className="mt-3 font-sans text-muted text-[length:var(--text-caption)]"
                       style={{ fontSize: "var(--text-caption)" }}
                     >
                       {f.typeLabel} · {f.date}
@@ -91,10 +88,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
           <div className={`${SECTION_PX} py-20 lg:py-28`}>
             <FadeIn className="lg:grid lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
-                <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
-                  <span aria-hidden className="w-8 h-px bg-gold" />
-                  {labels.guideHeading}
-                </span>
+                <h2 className="font-display font-light text-cream tracking-[-0.02em] leading-[1.15] text-[length:var(--text-h2)]">{labels.guideHeading}</h2>
                 <ol className="mt-8 border-t border-cream/15">
                   {guide.sections.slice(0, 6).map((s, i) => (
                     <li key={s.heading} className="flex items-baseline gap-4 py-3 border-b border-cream/15">
@@ -132,10 +126,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
       <section className="bg-cream-soft">
         <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-24 lg:pb-32`}>
           <FadeIn className="flex flex-wrap items-baseline justify-between gap-6 mb-10 lg:mb-14">
-            <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]">
-              <span aria-hidden className="w-8 h-px bg-gold-ink" />
-              {labels.articlesHeading}
-            </span>
+            <h2 className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15] text-[length:var(--text-h2)]">{labels.articlesHeading}</h2>
             <Link
               href={`/${lang}/blog`}
               className="group inline-flex items-center gap-2 min-h-11 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"

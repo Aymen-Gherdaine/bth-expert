@@ -68,8 +68,6 @@ const MAP_LABEL: Record<Locale, string> = {
 export function ZonesSection({ lang, content }: ZonesSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const near = useNearViewport(sectionRef);
-  const eyebrowRef = useRef<HTMLParagraphElement>(null);
-  const lineRef = useRef<HTMLSpanElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const addressRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
@@ -109,9 +107,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
           defaults: { ease: "expo.out" },
           scrollTrigger: { trigger: sectionRef.current, start: "top 82%", once: true },
         })
-        .from(eyebrowRef.current, { opacity: 0, y: 14, duration: 0.7 }, 0)
-        .from(lineRef.current, { scaleX: 0, transformOrigin: "left center", duration: 0.8 }, 0.15)
-        .from(split.lines, { opacity: 0, y: 28, duration: 0.95, stagger: 0.1 }, 0.2)
+        .from(split.lines, { opacity: 0, y: 28, duration: 0.95, stagger: 0.1 }, 0)
         .from(addressRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.55)
         .from(linksRef.current, { opacity: 0, y: 16, duration: 0.7 }, 0.7)
         .from(wilayasRef.current, { opacity: 0, y: 14, duration: 0.7 }, 0.85);
@@ -290,18 +286,6 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
       {/* ── Contact — integrated directly on the dark surface ── */}
       <div className={`relative z-10 order-1 lg:order-none w-full ${SECTION_PX}`}>
         <div className="lg:w-[48%] lg:max-w-[34rem]">
-          <p
-            ref={eyebrowRef}
-            className="font-sans text-[length:var(--text-caption)] uppercase tracking-[0.22em] text-gold"
-          >
-            — {content.eyebrow}
-          </p>
-          <span
-            ref={lineRef}
-            aria-hidden
-            className="mt-5 mb-7 block h-px w-12 origin-left bg-gold/60"
-          />
-
           <h2
             ref={headingRef}
             className="font-display font-light text-cream tracking-[-0.03em] leading-[1.12] pb-2 text-[length:var(--text-display)]"

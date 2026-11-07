@@ -52,18 +52,6 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
         );
       }
 
-      // ── Eyebrow ────────────────────────────────────────────────────
-      const eyebrow = section.querySelector<HTMLElement>("[data-about-eyebrow]");
-      if (eyebrow) {
-        gsap.from(eyebrow, {
-          y: 16,
-          opacity: 0,
-          duration: 0.7,
-          ease: "expo.out",
-          scrollTrigger: { trigger: eyebrow, start: "top 85%", once: true },
-        });
-      }
-
       // ── Manifesto — words ink in one by one as the user scrolls ────
       const manifesto = section.querySelector<HTMLElement>("[data-about-manifesto]");
       if (manifesto) {
@@ -190,14 +178,6 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
           className="h-px mb-14 lg:mb-16"
           style={{ backgroundColor: "var(--color-gold)", opacity: 0.5 }}
         />
-
-        <span
-          data-about-eyebrow
-          className="block font-sans uppercase text-gold-ink mb-10"
-          style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
-        >
-          {content.eyebrow}
-        </span>
 
         {/* Manifesto — ink words light up over the warm cream */}
         <h2

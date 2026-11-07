@@ -33,11 +33,9 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
     month: "long",
     year: "numeric",
   });
-  const eyebrow = fiche.date ? `${fiche.typeLabel} · ${fiche.date}` : fiche.typeLabel;
-
   return (
     <>
-      <ServiceHero eyebrow={eyebrow} heading={fiche.title} subheading={fiche.summary} meta={fiche.meta} />
+      <ServiceHero heading={fiche.title} subheading={fiche.summary} meta={fiche.meta} />
 
       {/* ── Official title strip ───────────────────────────────────── */}
       <section className="bg-cream-warm">
@@ -106,10 +104,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
           <div className="mt-16 lg:mt-24 grid gap-12 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-5">
               <FadeIn>
-                <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]">
-                  <span aria-hidden className="w-8 h-px bg-gold-ink" />
-                  {labels.servicesHeading}
-                </span>
+                <h2 className="font-display font-light text-ink tracking-[-0.02em] leading-[1.2] text-[length:var(--text-h3)]">{labels.servicesHeading}</h2>
                 <ul className="mt-6 border-t border-line">
                   {fiche.services.map((svc) => (
                     <li key={svc.slug} className="border-b border-line">
@@ -135,10 +130,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
             {related.length > 0 && (
               <div className="lg:col-span-6 lg:col-start-7">
                 <FadeIn>
-                  <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]">
-                    <span aria-hidden className="w-8 h-px bg-gold-ink" />
-                    {labels.relatedHeading}
-                  </span>
+                  <h2 className="font-display font-light text-ink tracking-[-0.02em] leading-[1.2] text-[length:var(--text-h3)]">{labels.relatedHeading}</h2>
                   <ul className="mt-6 border-t border-line">
                     {related.map((r) => (
                       <li key={r.slug} className="border-b border-line">

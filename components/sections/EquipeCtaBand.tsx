@@ -12,7 +12,7 @@ interface EquipeCtaBandProps {
 }
 
 /**
- * Dark punctuation band closing the team page — gold filet + eyebrow-scale
+ * Dark punctuation band closing the team page — display-scale
  * gold caption, monumental cream heading, supporting line and a gold pill
  * link to contact. Mirrors the livrable band of ServicePageBody so the team
  * page lands with the same editorial weight. Copy is dictionary-driven.
@@ -25,7 +25,6 @@ export function EquipeCtaBand({ lang, cta, art }: EquipeCtaBandProps) {
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-end">
           <div className="lg:col-span-8">
             <FadeIn>
-              <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
               <h2
                 className="font-display font-light text-cream tracking-[-0.02em] leading-[1.1] max-w-3xl"
                 style={{ fontSize: "var(--text-h1)" }}

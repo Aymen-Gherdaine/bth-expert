@@ -8,31 +8,23 @@ interface MetaItem {
 }
 
 interface ServiceHeroProps {
-  eyebrow: string;
   heading: string;
   subheading: string;
   meta?: MetaItem[];
 }
 
 /**
- * Editorial light service hero (option B): monumental ink headline with a
- * gold filet + eyebrow, and a right-hand meta rail that differentiates each
+ * Editorial light service hero (option B): monumental ink headline and a
+ * right-hand meta rail that differentiates each
  * service (cadre, livrable, dépôt…). The dark cinematic hero stays exclusive
  * to the landing; service pages open warm and structured, image lives below.
  */
-export function ServiceHero({ eyebrow, heading, subheading, meta }: ServiceHeroProps) {
+export function ServiceHero({ heading, subheading, meta }: ServiceHeroProps) {
   return (
     <section className="bg-cream-soft">
       <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-16 lg:pb-24`}>
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className="lg:col-span-8">
-            <span aria-hidden className="block w-14 h-px bg-gold mb-10" />
-            <RevealText
-              className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-7"
-              delay={0.05}
-            >
-              {eyebrow}
-            </RevealText>
             <RevealText
               as="h1"
               className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"
@@ -54,7 +46,7 @@ export function ServiceHero({ eyebrow, heading, subheading, meta }: ServiceHeroP
               {meta.map((m) => (
                 <FadeInItem key={m.label}>
                   <div
-                    className="font-sans uppercase tracking-[0.14em] text-muted mb-2"
+                    className="font-sans text-muted text-[length:var(--text-caption)] mb-2"
                     style={{ fontSize: "var(--text-caption)" }}
                   >
                     {m.label}

@@ -52,7 +52,7 @@ function parseValue(value: string): { num: string; suffix: string; isNumeric: bo
 }
 
 /**
- * Credibility band — ink numerals, gold hairlines, odometer scroll on scroll-in.
+ * Credibility band — ink numerals, plain labels, odometer scroll on scroll-in.
  * Each digit slot contains a vertical stack of 0–9 and scrolls to its target
  * value: units settle first, tens next, hundreds last — natural counter feel.
  * Progressive enhancement: the server HTML renders the final digits only;
@@ -132,12 +132,6 @@ export function StatsBand({ stats }: StatsBandProps) {
   return (
     <section ref={ref} className="bg-cream-warm">
       <div className={`${SECTION_PX} py-16 lg:py-24`}>
-        {stats.eyebrow && (
-          <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-12">
-            <span aria-hidden className="w-8 h-px bg-gold-ink" />
-            {stats.eyebrow}
-          </span>
-        )}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
           {stats.items.map((s) => {
             const { num, suffix, isNumeric } = parseValue(s.value);
@@ -147,7 +141,6 @@ export function StatsBand({ stats }: StatsBandProps) {
             const wide = !isNumeric && s.value.length > 6;
             return (
               <div key={s.label} data-stat className={wide ? "col-span-2 lg:col-span-1" : undefined}>
-                <span aria-hidden className="block w-11 h-px bg-gold-ink mb-6" />
                 <div
                   className="block font-display font-light text-ink tracking-[-0.03em]"
                   style={{ fontSize: "clamp(3rem, 4.5vw + 0.5rem, 5rem)", lineHeight: 1 }}
@@ -188,8 +181,8 @@ export function StatsBand({ stats }: StatsBandProps) {
                 </div>
                 <span
                   data-stat-label
-                  className="mt-4 block font-sans uppercase text-muted"
-                  style={{ fontSize: "var(--text-caption)", letterSpacing: "0.16em" }}
+                  className="mt-4 block font-sans text-muted"
+                  style={{ fontSize: "var(--text-small)" }}
                 >
                   {s.label}
                 </span>

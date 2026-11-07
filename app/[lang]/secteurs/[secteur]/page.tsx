@@ -75,7 +75,6 @@ export default async function SecteurPage({
 
       {/* ── Hero — shared editorial light hero ───────────────── */}
       <ServiceHero
-        eyebrow={s.hero.eyebrow}
         heading={item.title}
         subheading={item.intro}
       />
@@ -85,10 +84,7 @@ export default async function SecteurPage({
         <div className={`${SECTION_PX} pb-20 lg:pb-28`}>
           <div className="border-t border-line pt-16 lg:pt-20">
             <FadeIn>
-              <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
-                <span aria-hidden className="w-8 h-px bg-gold" />
-                {s.enjeuxLabel}
-              </span>
+              <h2 className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15] text-[length:var(--text-h2)]">{s.enjeuxLabel}</h2>
             </FadeIn>
 
             <FadeInStagger className="mt-10 lg:mt-14 border-t border-line">
@@ -130,14 +126,8 @@ export default async function SecteurPage({
         <TerrainBackdrop src={`/generated/sector-${secteur}.svg`} />
         <div className={`relative z-10 ${SECTION_PX} py-24 lg:py-32`}>
           <FadeIn>
-            <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
-            <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
-              {s.hero.eyebrow}
-            </span>
-          </FadeIn>
-          <FadeIn delay={0.1}>
             <p
-              className="mt-8 font-display font-light text-cream tracking-[-0.02em] leading-[1.3] max-w-4xl"
+              className="font-display font-light text-cream tracking-[-0.02em] leading-[1.3] max-w-4xl"
               style={{ fontSize: "var(--text-h2)" }}
             >
               {item.tagline}

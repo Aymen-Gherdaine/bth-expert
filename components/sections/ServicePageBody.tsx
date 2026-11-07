@@ -67,7 +67,6 @@ export function ServicePageBody({
   return (
     <>
       <ServiceHero
-        eyebrow={service.hero.eyebrow}
         heading={service.hero.heading}
         subheading={service.hero.subheading}
         meta={heroMeta}
@@ -113,10 +112,9 @@ export function ServicePageBody({
       <section className="bg-brand-deep">
         <div className={`${SECTION_PX} py-24 lg:py-32`}>
           <FadeIn>
-            <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
-            <span className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)]">
+            <h2 className="font-display font-light text-cream tracking-[-0.02em] leading-[1.2] text-[length:var(--text-h3)]">
               {service.deliverable.heading}
-            </span>
+            </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p

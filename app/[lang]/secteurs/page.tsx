@@ -53,7 +53,6 @@ export default async function SecteursPage({
       {/* ── Hero — shared editorial light hero ───────────────── */}
       <TerrainHero
         src="/generated/section-secteurs.svg"
-        eyebrow={s.hero.eyebrow}
         heading={s.hero.heading}
         subheading={s.hero.subheading}
         index={s.list.map((item) => item.title)}

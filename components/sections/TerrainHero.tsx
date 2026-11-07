@@ -5,7 +5,6 @@ import { TerrainBackdrop } from "@/components/sections/Terrain";
 
 interface TerrainHeroProps {
   src: string;
-  eyebrow: string;
   heading: string;
   subheading: string;
   /**
@@ -21,7 +20,7 @@ interface TerrainHeroProps {
  * (title block + index rail), not a viewport-high void with the title pushed
  * to the bottom: the topographic artwork reads as texture behind text.
  */
-export function TerrainHero({ src, eyebrow, heading, subheading, index }: TerrainHeroProps) {
+export function TerrainHero({ src, heading, subheading, index }: TerrainHeroProps) {
   const hasIndex = index !== undefined && index.length > 0;
 
   return (
@@ -38,13 +37,6 @@ export function TerrainHero({ src, eyebrow, heading, subheading, index }: Terrai
       <div className={`relative z-10 ${SECTION_PX} pt-20 sm:pt-24 lg:pt-32 pb-14 sm:pb-16 lg:pb-20`}>
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className={hasIndex ? "lg:col-span-7 xl:col-span-7" : "lg:col-span-9 xl:col-span-8"}>
-            <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
-            <RevealText
-              className="block font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-7"
-              delay={0.05}
-            >
-              {eyebrow}
-            </RevealText>
             <RevealText
               as="h1"
               className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05]"

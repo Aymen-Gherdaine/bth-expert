@@ -50,7 +50,7 @@ export function BlogList({ lang, posts, startIndex, empty, readMore }: BlogListP
               <div className="lg:col-span-7 mb-4 lg:mb-0">
                 <time
                   dateTime={post.frontmatter.date}
-                  className="block font-sans uppercase tracking-[0.14em] text-muted text-[length:var(--text-caption)] mb-3"
+                  className="block font-sans text-muted text-[length:var(--text-caption)] mb-3"
                 >
                   {formatDate(lang, post.frontmatter.date)}
                 </time>
@@ -66,7 +66,7 @@ export function BlogList({ lang, posts, startIndex, empty, readMore }: BlogListP
               </div>
 
               <div className="lg:col-span-3 flex items-center lg:justify-end">
-                <span className="inline-flex items-center gap-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-gold">
+                <span className="inline-flex items-center gap-2 font-sans font-medium text-[length:var(--text-small)] text-brand">
                   {readMore}
                   <span
                     aria-hidden
@@ -120,7 +120,7 @@ export function BlogPagination({
         {page > 1 ? (
           <Link
             href={hrefForPage(page - 1)}
-            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             <span
               aria-hidden
@@ -134,14 +134,14 @@ export function BlogPagination({
           <span />
         )}
 
-        <span className="font-sans text-[length:var(--text-small)] tracking-widest text-muted">
+        <span className="font-sans text-[length:var(--text-small)] text-muted">
           {pageLabel.replace("{current}", String(page)).replace("{total}", String(totalPages))}
         </span>
 
         {page < totalPages ? (
           <Link
             href={hrefForPage(page + 1)}
-            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] uppercase tracking-widest text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             {nextLabel}
             <span

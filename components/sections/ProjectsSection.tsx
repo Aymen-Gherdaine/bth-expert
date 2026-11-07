@@ -24,7 +24,6 @@ interface ProjectsSectionProps {
 }
 
 interface SectionContent {
-  eyebrow: string;
   intro: string;
   heading: string;
   cta: string;
@@ -34,20 +33,17 @@ interface SectionContent {
 // contenu : la home et /projets ne peuvent plus lister deux choses différentes.
 const CONTENT: Record<Locale, SectionContent> = {
   fr: {
-    eyebrow: "Réalisations",
     intro:
       "Trois dossiers instruits en wilaya, de l'état initial du site jusqu'au dépôt du rapport.",
     heading: "Des études déposées, pas des promesses",
     cta: "Voir tous les projets",
   },
   ar: {
-    eyebrow: "إنجازات",
     intro: "ثلاثة ملفات عولجت على مستوى الولاية، من الحالة الأولية للموقع إلى إيداع التقرير.",
     heading: "دراسات مودعة، لا وعود",
     cta: "عرض جميع المشاريع",
   },
   en: {
-    eyebrow: "Selected work",
     intro:
       "Three files processed at wilaya level, from the site baseline to the report filing.",
     heading: "Studies filed, not promises",
@@ -103,7 +99,7 @@ export function ProjectsSection({ lang, projects }: ProjectsSectionProps) {
       const section = sectionRef.current;
       if (!section) return;
 
-      // ── Header — eyebrow → title → intro, staggered on entry ────────
+      // ── Header — title → intro, staggered on entry ──────────────────
       const header = section.querySelector<HTMLElement>("[data-projects-header]");
       if (header) {
         const items = header.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -150,24 +146,16 @@ export function ProjectsSection({ lang, projects }: ProjectsSectionProps) {
           data-projects-header
           className="grid grid-cols-1 lg:grid-cols-12 lg:gap-x-8"
         >
-          <span
-            data-reveal
-            className="order-1 lg:order-none lg:col-span-6 lg:row-start-1 inline-flex items-center gap-3 self-start font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]"
-          >
-            <span aria-hidden className="w-8 h-px bg-gold-ink" />
-            {c.eyebrow}
-          </span>
-
           <p
             data-reveal
-            className="order-3 lg:order-none mt-6 lg:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1 max-w-md font-sans text-muted leading-[1.7] text-[length:var(--text-small)]"
+            className="order-2 lg:order-none mt-6 lg:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:self-end max-w-md font-sans text-muted leading-[1.7] text-[length:var(--text-small)]"
           >
             {c.intro}
           </p>
 
           <h2
             data-reveal
-            className="order-2 lg:order-none mt-8 lg:mt-14 lg:col-span-8 lg:row-start-2 font-display font-light text-ink tracking-[-0.03em] leading-[1.05] max-w-2xl"
+            className="order-1 lg:order-none lg:col-span-8 lg:row-start-1 font-display font-light text-ink tracking-[-0.03em] leading-[1.05] max-w-2xl"
             style={{ fontSize: "var(--text-h2)" }}
           >
             {c.heading}
