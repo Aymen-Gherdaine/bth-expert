@@ -129,7 +129,7 @@ export function ProjetNarrative({ beats }: ProjetNarrativeProps) {
                   {/* Ghost numeral — movement fills the void, no image */}
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute end-[2%] top-1/2 -translate-y-1/2 ltr:-translate-x-6 rtl:translate-x-6 hidden lg:block font-display font-light leading-none tabular-nums text-brand/[0.06] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
+                    className="pointer-events-none absolute end-[2%] top-1/2 -translate-y-1/2 ltr:-translate-x-6 rtl:translate-x-6 hidden lg:block font-mono font-light leading-none tabular-nums text-brand/[0.06] opacity-0 transition-[opacity,translate] duration-500 ease-[var(--ease-out-expo)] group-hover:opacity-100 group-hover:translate-x-0"
                     style={{ fontSize: "clamp(7rem, 5rem + 8vw, 13rem)" }}
                   >
                     {num}
@@ -138,7 +138,7 @@ export function ProjetNarrative({ beats }: ProjetNarrativeProps) {
                   {/* Index numeral */}
                   <span
                     data-beat-bit
-                    className="col-span-2 lg:col-span-1 font-display font-light text-gold leading-none tabular-nums"
+                    className="col-span-2 lg:col-span-1 font-mono font-light text-gold leading-none tabular-nums"
                     style={{ fontSize: "clamp(1.5rem, 1rem + 1.4vw, 2.25rem)" }}
                   >
                     <span className="inline-block transition-[scale] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-[1.08]">

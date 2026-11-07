@@ -115,7 +115,7 @@ export default async function ContactPage({
                 className="font-display font-medium tracking-[-0.02em] leading-[1.02] text-[clamp(2.5rem,2.5vw+1.5rem,3.5rem)] text-ink mb-6"
               >
                 {c.hero.headingStart}{" "}
-                <em className="italic font-light text-gold">
+                <em className="not-italic text-gold">
                   {c.hero.headingEmphasis}
                 </em>
               </RevealText>

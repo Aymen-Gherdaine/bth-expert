@@ -69,7 +69,7 @@ export function TerrainHero({ src, eyebrow, heading, subheading, index }: Terrai
                     <FadeInItem>
                       <div className="flex items-baseline gap-5 py-3.5 lg:py-4">
                         <span
-                          className="font-display text-gold tabular-nums shrink-0"
+                          className="font-mono text-gold tabular-nums shrink-0"
                           style={{ fontSize: "var(--text-small)" }}
                         >
                           {String(i + 1).padStart(2, "0")}

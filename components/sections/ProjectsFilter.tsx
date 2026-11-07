@@ -105,7 +105,7 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
               <span className="text-[length:var(--text-caption)] uppercase tracking-widest text-gold">
                 {item.secteur}
               </span>
-              <span className="text-[length:var(--text-caption)] text-muted tabular-nums">
+              <span className="text-[length:var(--text-caption)] text-muted font-mono tabular-nums">
                 {item.annee}
               </span>
             </div>

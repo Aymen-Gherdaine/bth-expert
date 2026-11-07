@@ -69,7 +69,7 @@ export function OranBody({ services, zones, nap }: OranBodyProps) {
                   <div className="group flex items-baseline gap-4 border-b border-line py-4">
                     <span
                       aria-hidden
-                      className="font-display text-gold leading-none tabular-nums"
+                      className="font-mono text-gold leading-none tabular-nums"
                       style={{ fontSize: "var(--text-small)" }}
                     >
                       {String(index + 1).padStart(2, "0")}

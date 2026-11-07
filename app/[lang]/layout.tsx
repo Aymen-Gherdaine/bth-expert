@@ -1,28 +1,32 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "../globals.css";
 import { locales, isRtl, getDictionary, validateLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { CursorFollower } from "@/components/interaction/CursorFollower";
 
-const fraunces = Fraunces({
+// Une seule superfamille pour les trois langues : IBM Plex Sans porte les
+// titres (graisse 300) et le corps (400/500), Plex Mono les références
+// réglementaires (« 06-198 », années, numéros d'ordre), Plex Sans Arabic
+// prend le relais en AR. Pas d'italique chargé : l'emphase se fait par la
+// graisse, ce qui reste cohérent avec l'arabe qui n'a pas d'italique.
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-plex-sans",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-fraunces",
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
-const geist = Geist({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-geist",
-  display: "swap",
-});
-
-// Arabe : Fraunces et Geist n'embarquent aucune glyphe arabe. IBM Plex Sans
-// Arabic prend le relais via les variables --font-display / --font-sans
+// Arabe : Plex Sans et Plex Mono n'embarquent aucune glyphe arabe. IBM Plex
+// Sans Arabic prend le relais via les variables --font-display / --font-sans
 // redéfinies sous [lang="ar"] dans globals.css. L'unicode-range arabe fait
 // que le navigateur ne télécharge la police que sur les pages /ar — à
 // condition de ne PAS la précharger : un <link rel="preload"> ignore
@@ -88,7 +92,7 @@ export default async function LangLayout({
     <html
       lang={lang}
       dir={dir}
-      className={`${fraunces.variable} ${geist.variable} ${ibmArabic.variable}`}
+      className={`${plexSans.variable} ${plexMono.variable} ${ibmArabic.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen" suppressHydrationWarning>

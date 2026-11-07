@@ -34,7 +34,7 @@ export function ServicesIndexList({ items }: ServicesIndexListProps) {
             <div className="lg:col-span-2 mb-6 lg:mb-0">
               <span
                 aria-hidden
-                className="font-display font-light text-muted/55 leading-none tabular-nums transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-gold"
+                className="font-mono font-light text-muted/55 leading-none tabular-nums transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-gold"
                 style={{ fontSize: "clamp(2.5rem, 4vw, 3.75rem)" }}
               >
                 {numeral}

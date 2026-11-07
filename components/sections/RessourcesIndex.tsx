@@ -49,7 +49,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
                 >
                   <div className="lg:col-span-3">
                     <p
-                      className="font-display font-light text-ink tracking-[-0.03em] leading-none tabular-nums transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-brand"
+                      className="font-mono font-light text-ink tracking-[-0.03em] leading-none tabular-nums transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-brand"
                       style={{ fontSize: "clamp(2.5rem, 3vw + 1rem, 4rem)" }}
                       dir="ltr"
                     >
@@ -98,7 +98,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
                 <ol className="mt-8 border-t border-cream/15">
                   {guide.sections.slice(0, 6).map((s, i) => (
                     <li key={s.heading} className="flex items-baseline gap-4 py-3 border-b border-cream/15">
-                      <span className="font-display text-gold tabular-nums" style={{ fontSize: "var(--text-small)" }}>
+                      <span className="font-mono text-gold tabular-nums" style={{ fontSize: "var(--text-small)" }}>
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="font-sans text-cream/85 text-[length:var(--text-small)]">{s.heading}</span>

@@ -23,7 +23,7 @@ interface StatementSectionProps {
 
 /**
  * Statement environnemental — white editorial pause before the dark map.
- * Left-aligned Fraunces statement with the signature italic on
+ * Left-aligned display statement with the emphasis carried by weight on
  * "environnementale", line-by-line scroll reveal. The right side carries
  * a photo that reveals via clip-path wipe + settle-scale, with a light
  * scroll parallax on desktop.
@@ -138,7 +138,7 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
               {/* The period lives inside the span: SplitText splits on
                   whitespace, so a bare "." after the element became its own
                   token and, in Arabic, its own line. */}
-              <span className="italic">{content.headingEmphasis}.</span>
+              <span className="font-semibold">{content.headingEmphasis}.</span>
             </h2>
 
             <p

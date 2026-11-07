@@ -20,19 +20,6 @@ import { CtaVideo } from "@/components/motion/CtaVideo";
 import { Faq } from "@/components/sections/Faq";
 import { ScrollPulse } from "@/components/motion/ScrollPulse";
 
-// Si la 2ᵉ partie du titre commence par « & », on l'italicise (détail
-// typographique du hero). Sinon on rend le texte tel quel.
-function renderHeadlinePart2(text: string) {
-  const [lead, ...rest] = text.split(" ");
-  if (lead !== "&") return text;
-  return (
-    <>
-      <span className="italic font-light">{"&"}</span>
-      {rest.length ? ` ${rest.join(" ")}` : ""}
-    </>
-  );
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -115,8 +102,8 @@ export default async function HomePage({
                 delay={0.25}
               >
                 {h.hero.headlinePart1}{" "}
-                <span className="italic font-normal">{h.hero.headlineEmphasis}</span>{" "}
-                {renderHeadlinePart2(h.hero.headlinePart2)}
+                <span className="font-semibold">{h.hero.headlineEmphasis}</span>{" "}
+                {h.hero.headlinePart2}
               </RevealText>
 
               <RevealText

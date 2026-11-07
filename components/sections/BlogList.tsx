@@ -40,7 +40,7 @@ export function BlogList({ lang, posts, startIndex, empty, readMore }: BlogListP
               <div className="lg:col-span-2 mb-5 lg:mb-0">
                 <span
                   aria-hidden
-                  className="font-display font-light text-line tabular-nums leading-none tracking-[-0.02em] transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-gold"
+                  className="font-mono font-light text-line tabular-nums leading-none tracking-[-0.02em] transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-gold"
                   style={{ fontSize: "clamp(2.75rem, 4vw + 1rem, 4.5rem)" }}
                 >
                   {String(startIndex + index + 1).padStart(2, "0")}

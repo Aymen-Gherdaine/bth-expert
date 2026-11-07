@@ -42,9 +42,11 @@
   --overlay-hero:      linear-gradient(180deg, rgb(15 28 18 / 0.35) 0%, rgb(15 28 18 / 0.65) 100%);
   --overlay-hero-side: linear-gradient(90deg, rgb(15 28 18 / 0.7) 0%, transparent 70%);
 
-  /* ── Fonts (locked: Fraunces + Geist) ── */
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-sans:    var(--font-geist), system-ui, sans-serif;
+  /* ── Fonts (IBM Plex superfamily: Sans for display + body, Mono for
+     regulatory references, Sans Arabic swapped in under [lang="ar"]) ── */
+  --font-display: var(--font-plex-sans), system-ui, sans-serif;
+  --font-sans:    var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono:    var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 
   /* ── Type scale (fluid) ── */
   --text-hero:    clamp(2.3rem, 6vw - 0.25rem, 6.5rem);
@@ -119,7 +121,7 @@
 
 /* ═══════════════════════════════════════════════════════════
    Arabic (RTL) typography
-   Fraunces/Geist carry no Arabic glyphs → swap to IBM Plex Sans
+   Plex Sans/Mono carry no Arabic glyphs → swap to IBM Plex Sans
    Arabic. Placed after @theme so it overrides the :root tokens.
    ═══════════════════════════════════════════════════════════ */
 [lang="ar"] {

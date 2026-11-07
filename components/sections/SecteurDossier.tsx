@@ -76,7 +76,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                     >
                       <div className="sm:col-span-3">
                         <p
-                          className="font-display font-light text-ink tracking-[-0.03em] leading-none tabular-nums transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-brand"
+                          className="font-mono font-light text-ink tracking-[-0.03em] leading-none tabular-nums transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-brand"
                           style={{ fontSize: "clamp(2rem, 2.2vw + 1rem, 3rem)" }}
                           dir="ltr"
                         >
@@ -134,7 +134,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                   <article className="flex w-full flex-col bg-cream-soft p-7 lg:p-9">
                     <span
                       aria-hidden
-                      className="font-display font-light text-gold-ink tabular-nums leading-none tracking-[-0.02em]"
+                      className="font-mono font-light text-gold-ink tabular-nums leading-none tracking-[-0.02em]"
                       style={{ fontSize: "clamp(2rem, 2.5vw + 1rem, 3rem)" }}
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -184,7 +184,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                     className="group grid gap-x-8 gap-y-3 py-8 lg:py-10 border-b border-line lg:grid-cols-12"
                   >
                     <div className="lg:col-span-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 lg:block">
-                      <span className="font-display font-light text-ink tabular-nums tracking-[-0.02em]" style={{ fontSize: "var(--text-h3)" }} dir="ltr">
+                      <span className="font-mono font-light text-ink tabular-nums tracking-[-0.02em]" style={{ fontSize: "var(--text-h3)" }} dir="ltr">
                         {p.annee}
                       </span>
                       <span className="block font-sans uppercase tracking-[0.14em] text-gold-ink lg:mt-3" style={{ fontSize: "var(--text-caption)" }}>

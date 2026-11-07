@@ -190,7 +190,7 @@ export function MethodPinScroll({
             {steps.map((step) => (
               <div key={step.number} data-step className="border-t border-line py-8 lg:py-14">
                 <div className="flex items-start gap-5 lg:gap-7">
-                  <span className="shrink-0 pt-1.5 w-9 font-display text-gold leading-none text-[length:var(--text-small)] tabular-nums">
+                  <span className="shrink-0 pt-1.5 w-9 font-mono text-gold leading-none text-[length:var(--text-small)] tabular-nums">
                     {step.number}
                   </span>
                   <div className="flex-1 min-w-0">

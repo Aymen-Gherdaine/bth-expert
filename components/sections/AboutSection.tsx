@@ -221,7 +221,7 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
                 />
                 <div data-domain-label className="flex items-baseline gap-5">
                   <span
-                    className="font-display text-gold-ink tabular-nums"
+                    className="font-mono text-gold-ink tabular-nums"
                     style={{ fontSize: "var(--text-small)" }}
                   >
                     {String(i + 1).padStart(2, "0")}

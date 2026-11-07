@@ -123,7 +123,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
               style={{ transitionDelay: open ? `${120 + i * 70}ms` : "0ms" }}
             >
               <span
-                className="font-sans text-gold tabular-nums"
+                className="font-mono text-gold tabular-nums"
                 style={{ fontSize: "0.8125rem" }}
               >
                 {String(i + 1).padStart(2, "0")}

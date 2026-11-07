@@ -131,7 +131,7 @@ export default async function ProjetPage({
                   {d.anneeLabel}
                 </dt>
                 <dd
-                  className="font-display font-light text-ink tracking-[-0.01em] leading-[1.2] tabular-nums"
+                  className="font-mono font-light text-ink tracking-[-0.01em] leading-[1.2] tabular-nums"
                   style={{ fontSize: "var(--text-h3)" }}
                 >
                   {item.annee}

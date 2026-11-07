@@ -98,7 +98,7 @@ export default async function SecteurPage({
                     <div className="lg:col-span-2 mb-4 lg:mb-0">
                       <span
                         aria-hidden
-                        className="font-display font-light text-gold/80 tabular-nums leading-none tracking-[-0.02em]"
+                        className="font-mono font-light text-gold/80 tabular-nums leading-none tracking-[-0.02em]"
                         style={{ fontSize: "clamp(2.25rem, 3vw + 1rem, 3.5rem)" }}
                       >
                         {String(index + 1).padStart(2, "0")}

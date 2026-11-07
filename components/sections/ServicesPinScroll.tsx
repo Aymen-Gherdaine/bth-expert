@@ -243,7 +243,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                 className="group relative block border-t border-line py-8 lg:py-14"
               >
                 <div className="flex items-start gap-5 lg:gap-7">
-                  <span className="shrink-0 pt-1.5 w-9 font-display text-gold-ink leading-none text-[length:var(--text-small)] tabular-nums">
+                  <span className="shrink-0 pt-1.5 w-9 font-mono text-gold-ink leading-none text-[length:var(--text-small)] tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1 min-w-0">

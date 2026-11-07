@@ -306,8 +306,8 @@ Couleurs:
   --white:  #FFFFFF
 
 Typographie:
-  Display:  Fraunces (variable, Google Fonts, opsz axis)
-  Body:     Geist (Google Fonts, weights 400/500)
+  Display:  IBM Plex Sans (Google Fonts, weights 300/400/500/600)
+  Body:     IBM Plex Sans (same family) · Mono: IBM Plex Mono (references, numerals)
   Voir docs/DESIGN-MANIFESTO.md section 3 pour le système complet.
 ```
 

@@ -156,7 +156,7 @@ export function StatsBand({ stats }: StatsBandProps) {
                     /* Odometer slots — only for numeric values. role="img" makes
                        aria-label valid here and keeps screen readers on the real
                        value instead of the individual digit spans. */
-                    <span role="img" aria-label={s.value} dir="ltr" className="inline-flex tabular-nums">
+                    <span role="img" aria-label={s.value} dir="ltr" className="inline-flex font-mono tabular-nums">
                       {digits.map((digit, i) => (
                         <span
                           key={i}

@@ -85,7 +85,7 @@ const ROW_LAYOUTS = [
 
 /**
  * Réalisations — editorial asymmetric index, zero imagery (Pentagram/Klim
- * pattern). Premium comes from Fraunces at scale, staggered indentation
+ * pattern). Premium comes from display type at scale, staggered indentation
  * and motion: on hover the name shifts to brand, a gold filet traces the
  * row, the number swells and a giant ghost keyword fades into the void
  * where a photo would normally sit.
@@ -213,7 +213,7 @@ export function ProjectsSection({ lang, projects }: ProjectsSectionProps) {
 
                 <span
                   data-row-bit
-                  className={`col-span-2 ${layout.num} font-display text-gold-ink leading-none tabular-nums`}
+                  className={`col-span-2 ${layout.num} font-mono text-gold-ink leading-none tabular-nums`}
                   style={{ fontSize: "clamp(1.25rem, 1rem + 1vw, 1.875rem)" }}
                 >
                   <span className="inline-block transition-[scale] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-[1.12]">

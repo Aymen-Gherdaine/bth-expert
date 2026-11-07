@@ -45,7 +45,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
           <FadeIn className="lg:grid lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-2">
               <span
-                className="font-display font-light text-ink tracking-[-0.03em] leading-none tabular-nums"
+                className="font-mono font-light text-ink tracking-[-0.03em] leading-none tabular-nums"
                 style={{ fontSize: "clamp(2rem, 2.4vw + 0.75rem, 3.25rem)" }}
                 dir="ltr"
               >
@@ -68,7 +68,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
                 <article className="grid gap-4 py-10 lg:py-14 border-b border-line lg:grid-cols-12 lg:gap-12">
                   <div className="lg:col-span-4 flex items-baseline gap-5">
                     <span
-                      className="font-display text-gold-ink tabular-nums shrink-0"
+                      className="font-mono text-gold-ink tabular-nums shrink-0"
                       style={{ fontSize: "var(--text-small)" }}
                     >
                       {String(i + 1).padStart(2, "0")}
@@ -147,7 +147,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
                           className="group flex items-baseline gap-5 py-4 min-h-11 hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                         >
                           <span
-                            className="font-display text-gold-ink tabular-nums shrink-0 w-16"
+                            className="font-mono text-gold-ink tabular-nums shrink-0 w-16"
                             style={{ fontSize: "var(--text-small)" }}
                             dir="ltr"
                           >

@@ -59,7 +59,7 @@ export function ReglementationSection({ lang, ressources }: ReglementationSectio
                 <article className="grid gap-x-8 gap-y-4 py-8 lg:py-10 border-b border-line sm:grid-cols-12">
                   <div className="sm:col-span-3">
                     <p
-                      className="font-display font-light text-ink tracking-[-0.03em] leading-none tabular-nums"
+                      className="font-mono font-light text-ink tracking-[-0.03em] leading-none tabular-nums"
                       style={{ fontSize: "clamp(2.25rem, 2.6vw + 1rem, 3.5rem)" }}
                       dir="ltr"
                     >
