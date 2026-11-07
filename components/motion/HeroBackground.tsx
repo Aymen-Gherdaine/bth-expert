@@ -75,7 +75,10 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             sizes="100vw"
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAAsAPzmEuVOvKKWisAgB4CcJZwAAUfUY2BvbgADrVcj8m36ktODUbCcngB4AAAA="
-            className="object-cover object-[50%_58%]"
+            // Portrait viewports crop the centre of the frame, which on the
+            // industrial photo is sky and haze: anchor the crop on the right
+            // third so the refinery stays in view below lg.
+            className="object-cover object-[82%_62%] lg:object-[50%_58%]"
           />
         </div>
       </div>
