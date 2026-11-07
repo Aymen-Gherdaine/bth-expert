@@ -109,8 +109,8 @@ Quatre principes tranchent tout :
 
 | Token | Définition | Rôle |
 |---|---|---|
-| `--overlay-hero` | `linear-gradient(180deg, rgba(15,28,18,0.35) 0%, rgba(15,28,18,0.65) 100%)` | Lisibilité du texte sur image hero |
-| `--overlay-hero-side` | `linear-gradient(90deg, rgba(15,28,18,0.7) 0%, transparent 70%)` | Pour texte aligné à gauche (style GISI) |
+| `--overlay-hero` | `linear-gradient(180deg, transparent 0%, transparent 28%, rgba(10,20,12,0.58) 100%)` | Voile sous le titre seulement, la photo reste intacte en haut |
+| `--overlay-hero-side` | `linear-gradient(90deg, rgba(10,20,12,0.55) 0%, transparent 55%)` | Poids à gauche sous le titre, disparaît avant le milieu |
 
 ### Le ratio lumière (LA règle clé)
 

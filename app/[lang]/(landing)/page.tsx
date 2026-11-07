@@ -65,24 +65,22 @@ export default async function HomePage({
           the tall <main>, the post-hero block (z-10, opaque) slides over it. */}
       <HeroCurtain>
         <section className="relative min-h-svh flex items-end overflow-hidden pt-20 pb-10 lg:py-0 lg:pb-24 bg-brand-deep">
-          {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
+          {/* Full-bleed image — Ken Burns + scroll parallax, no veil on the photo */}
           <HeroBackground src="/hero-industrie.webp" />
 
-          {/* Cinematic gradient veil — lets the image read up top, holds the
-              type legible below (manifesto §3, --overlay-hero) */}
+          {/* Scrim under the headline only: transparent over the top 28 %,
+              darkens toward the bottom where the type sits (--overlay-hero) */}
           <div
             aria-hidden
             className="absolute inset-0"
             style={{ background: "var(--overlay-hero)" }}
           />
-          {/* Side weight for the bottom-left headline (--overlay-hero-side) */}
+          {/* Left weight for the bottom-left headline, fades out by mid-frame */}
           <div
             aria-hidden
             className="absolute inset-0"
             style={{ background: "var(--overlay-hero-side)" }}
           />
-          {/* Film grain — kills the flat digital feel */}
-          <div aria-hidden className="hero-grain absolute inset-0" />
 
           <Container className="relative z-10">
             <div className="max-w-4xl">

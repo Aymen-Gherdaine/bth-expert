@@ -71,7 +71,7 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             alt={alt}
             fill
             priority={priority}
-            quality={65}
+            quality={80}
             sizes="100vw"
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUAAsAPzmEuVOvKKWisAgB4CcJZwAAUfUY2BvbgADrVcj8m36ktODUbCcngB4AAAA="

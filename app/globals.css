@@ -39,8 +39,11 @@
   --color-on-brand-faint:  color-mix(in srgb, var(--color-cream) 55%, var(--color-brand));
 
   /* ── Cinematic hero overlays ── */
-  --overlay-hero:      linear-gradient(180deg, rgb(15 28 18 / 0.35) 0%, rgb(15 28 18 / 0.65) 100%);
-  --overlay-hero-side: linear-gradient(90deg, rgb(15 28 18 / 0.7) 0%, transparent 70%);
+  /* One scrim only where the headline sits (bottom-left): the sky and the
+     right-hand two thirds of the photo stay untouched. Darkening the whole
+     frame is what made the hero read as washed out. */
+  --overlay-hero:      linear-gradient(180deg, transparent 0%, transparent 28%, rgb(10 20 12 / 0.58) 100%);
+  --overlay-hero-side: linear-gradient(90deg, rgb(10 20 12 / 0.55) 0%, transparent 55%);
 
   /* ── Fonts (IBM Plex superfamily: Sans for display + body, Mono for
      regulatory references, Sans Arabic swapped in under [lang="ar"]) ── */
@@ -432,13 +435,6 @@ header[data-overlay="true"] .lang-switcher-locale:hover {
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-pulse::after { animation: none; opacity: 0.5; transform: translateY(80%); }
-}
-
-/* Film grain — SVG turbulence, imperceptible but kills flat digital feel */
-.hero-grain {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.05;
-  mix-blend-mode: overlay;
 }
 
 /* ── Hero Ken Burns — slow ambient zoom, plays once and holds ──────────── */
