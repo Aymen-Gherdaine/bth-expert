@@ -20,7 +20,10 @@ export function SmoothScroll() {
     // Skip expensive per-frame updates when scrolling faster than 3000px/s
     ScrollTrigger.defaults({ fastScrollEnd: 3000 });
 
-    const lenis = new Lenis({ duration: 1.0 });
+    // lerp, not duration: the position follows the wheel exponentially and
+    // settles where the hand stops, instead of chasing it for a second
+    // (apple-design §2, direct manipulation). Touch is left native.
+    const lenis = new Lenis({ lerp: 0.12 });
     lenis.on("scroll", ScrollTrigger.update);
     // Expose for programmatic scrolls (e.g. the scroll-to-top button)
     (window as unknown as { lenis?: Lenis }).lenis = lenis;
