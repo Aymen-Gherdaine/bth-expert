@@ -2,14 +2,8 @@ import { SECTION_PX } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import { TerrainBackdrop } from "@/components/sections/Terrain";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import type { BreadcrumbItem } from "@/lib/schema";
-import type { Locale } from "@/lib/i18n-config";
 
 interface TerrainHeroProps {
-  lang?: Locale;
-  /** Trail without the home entry; rendered above the title when given. */
-  breadcrumb?: BreadcrumbItem[];
   src: string;
   heading: string;
   subheading: string;
@@ -26,7 +20,7 @@ interface TerrainHeroProps {
  * (title block + index rail), not a viewport-high void with the title pushed
  * to the bottom: the topographic artwork reads as texture behind text.
  */
-export function TerrainHero({ lang, breadcrumb, src, heading, subheading, index }: TerrainHeroProps) {
+export function TerrainHero({ src, heading, subheading, index }: TerrainHeroProps) {
   const hasIndex = index !== undefined && index.length > 0;
 
   return (
@@ -43,7 +37,6 @@ export function TerrainHero({ lang, breadcrumb, src, heading, subheading, index 
       <div className={`relative z-10 ${SECTION_PX} pt-20 sm:pt-24 lg:pt-32 pb-14 sm:pb-16 lg:pb-20`}>
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className={hasIndex ? "lg:col-span-7 xl:col-span-7" : "lg:col-span-9 xl:col-span-8"}>
-            {lang && breadcrumb && <Breadcrumb lang={lang} items={breadcrumb} tone="dark" className="mb-8" />}
             <RevealText
               as="h1"
               className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05]"

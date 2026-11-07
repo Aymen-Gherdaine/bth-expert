@@ -69,7 +69,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                   <FadeInItem key={fiche.slug}>
                     <Link
                       href={`/${lang}/ressources/${fiche.slug}`}
-                      className="press-row group grid gap-x-8 gap-y-4 py-8 lg:py-10 border-b border-line sm:grid-cols-12"
+                      className="group grid gap-x-8 gap-y-4 py-8 lg:py-10 border-b border-line sm:grid-cols-12"
                     >
                       <div className="sm:col-span-3">
                         <p
@@ -97,7 +97,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                           {note}
                         </p>
                         <span className={`${arrowCls} mt-4`}>
-                          <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
+                          <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                           {labels.readFiche}
                           <span aria-hidden className={arrowGlyph}>→</span>
                         </span>
@@ -145,9 +145,9 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                     {step.service && (
                       <Link
                         href={`/${lang}/services/${step.service.slug}`}
-                        className="press-row group mt-auto pt-6 inline-flex items-center gap-2 min-h-11 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                        className="group mt-auto pt-6 inline-flex items-center gap-2 min-h-11 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                       >
-                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
+                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                         {step.service.label}
                         <span aria-hidden className={arrowGlyph}>→</span>
                       </Link>
@@ -172,7 +172,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                 <FadeInItem key={p.slug}>
                   <Link
                     href={`/${lang}/projets/${p.slug}`}
-                    className="press-row group grid gap-x-8 gap-y-3 py-8 lg:py-10 border-b border-line lg:grid-cols-12"
+                    className="group grid gap-x-8 gap-y-3 py-8 lg:py-10 border-b border-line lg:grid-cols-12"
                   >
                     <div className="lg:col-span-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 lg:block">
                       <span className="font-mono font-light text-ink tabular-nums tracking-[-0.02em]" style={{ fontSize: "var(--text-h3)" }} dir="ltr">
@@ -193,7 +193,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                         {p.excerpt}
                       </p>
                       <span className={`${arrowCls} mt-4`}>
-                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
+                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                         {labels.readProjet}
                         <span aria-hidden className={arrowGlyph}>→</span>
                       </span>

@@ -5,11 +5,9 @@ import { Faq } from "@/components/sections/Faq";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import type { Fiche, RessourcesDict } from "@/lib/ressources";
 import type { Locale } from "@/lib/i18n-config";
-import type { BreadcrumbItem } from "@/lib/schema";
 
 interface RessourceDocumentProps {
   lang: Locale;
-  breadcrumb?: BreadcrumbItem[];
   fiche: Fiche;
   labels: RessourcesDict;
   related: Fiche[];
@@ -22,14 +20,14 @@ const paragraphCls =
   "font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]";
 
 const arrowLinkCls =
-  "press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 /**
  * One regulatory sheet or the procedure guide. The light ServiceHero carries
  * the text's identity (reference, date, authority rail); the body is a
  * numbered ledger like the legal pages; FAQ feeds the FAQPage schema.
  */
-export function RessourceDocument({ lang, breadcrumb, fiche, labels, related, updatedAt }: RessourceDocumentProps) {
+export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: RessourceDocumentProps) {
   const updated = new Date(updatedAt).toLocaleDateString(DATE_LOCALE[lang], {
     day: "numeric",
     month: "long",
@@ -37,7 +35,7 @@ export function RessourceDocument({ lang, breadcrumb, fiche, labels, related, up
   });
   return (
     <>
-      <ServiceHero lang={lang} breadcrumb={breadcrumb} heading={fiche.title} subheading={fiche.summary} meta={fiche.meta} />
+      <ServiceHero heading={fiche.title} subheading={fiche.summary} meta={fiche.meta} />
 
       {/* ── Official title strip ───────────────────────────────────── */}
       <section className="bg-cream-warm">
@@ -112,7 +110,7 @@ export function RessourceDocument({ lang, breadcrumb, fiche, labels, related, up
                     <li key={svc.slug} className="border-b border-line">
                       <Link
                         href={`/${lang}/services/${svc.slug}`}
-                        className="press-row group flex items-center justify-between gap-6 py-4 min-h-11 font-display font-light text-ink tracking-[-0.01em] hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                        className="group flex items-center justify-between gap-6 py-4 min-h-11 font-display font-light text-ink tracking-[-0.01em] hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                         style={{ fontSize: "var(--text-h3)" }}
                       >
                         {svc.label}
@@ -138,7 +136,7 @@ export function RessourceDocument({ lang, breadcrumb, fiche, labels, related, up
                       <li key={r.slug} className="border-b border-line">
                         <Link
                           href={`/${lang}/ressources/${r.slug}`}
-                          className="press-row group flex items-baseline gap-5 py-4 min-h-11 hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                          className="group flex items-baseline gap-5 py-4 min-h-11 hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                         >
                           <span
                             className="font-mono text-gold-ink tabular-nums shrink-0 w-16"
@@ -197,7 +195,7 @@ export function RessourceDocument({ lang, breadcrumb, fiche, labels, related, up
             </p>
             <Link
               href={`/${lang}/contact`}
-              className="press mt-10 inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep transition-[background-color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="mt-10 inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {labels.cta.button}
             </Link>

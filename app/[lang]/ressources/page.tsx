@@ -37,10 +37,9 @@ export default async function RessourcesPage({
   const guide = fiches.find((f) => f.kind === "guide") ?? null;
   const posts = (await listContentByDate(lang, "blog")).slice(0, 3);
 
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: r.nav, url: `https://bthexpert.com/${lang}/ressources` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   return (
     <>
@@ -48,7 +47,7 @@ export default async function RessourcesPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <ServiceHero lang={lang} breadcrumb={crumbs}
+      <ServiceHero
         heading={r.hero.heading}
         subheading={r.hero.subheading}
         meta={textes.map((f) => ({ label: f.typeLabel, value: f.ref }))}

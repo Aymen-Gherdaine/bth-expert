@@ -515,16 +515,6 @@ export default config({
           successTitle: fields.text({ label: "Titre — succès" }),
           successMessage: fields.text({ label: "Message — succès" }),
           errorMessage: fields.text({ label: "Message — erreur", multiline: true }),
-          errors: fields.object(
-            {
-              name: fields.text({ label: "Nom manquant" }),
-              phone: fields.text({ label: "Téléphone manquant ou invalide" }),
-              email: fields.text({ label: "Email invalide" }),
-              projectType: fields.text({ label: "Type de projet non choisi" }),
-              consent: fields.text({ label: "Consentement non coché" }),
-            },
-            { label: "Messages de validation (sous chaque champ)" }
-          ),
         }),
         process: fields.object({
           heading: fields.text({ label: "Titre" }),

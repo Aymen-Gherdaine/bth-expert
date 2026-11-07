@@ -42,7 +42,7 @@ export function HeroBackground({ src, alt = "", priority = true }: HeroBackgroun
             trigger: el,
             start: "top top",
             end: "bottom top",
-            scrub: 0.15, // just enough smoothing to hide wheel steps, no visible lag
+            scrub: 0.5,
           },
         }
       );

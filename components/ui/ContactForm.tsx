@@ -18,26 +18,11 @@ interface ContactFormProps {
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
-/** Fields that carry a per-field message; the honeypot and message are free. */
-type FieldName = "name" | "email" | "phone" | "projectType" | "consent";
-const FIELD_NAMES: readonly FieldName[] = ["name", "email", "phone", "projectType", "consent"];
-type FieldErrors = Partial<Record<FieldName, string>>;
-type FieldElement = HTMLInputElement | HTMLSelectElement;
-
-function isField(el: Element | null): el is FieldElement {
-  return (
-    (el instanceof HTMLInputElement || el instanceof HTMLSelectElement) &&
-    (FIELD_NAMES as readonly string[]).includes(el.name)
-  );
-}
-
 const labelCls =
   "block text-[length:var(--text-small)] font-medium text-ink mb-2";
 
-const errorCls = "mt-2 text-[length:var(--text-caption)] text-[#b42318] leading-[1.5]";
-
 const inputCls =
-  "w-full bg-white border border-line aria-[invalid=true]:border-[#b42318] rounded-[var(--radius-md)] px-4 py-3.5 text-[length:var(--text-body)] text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--color-gold)_22%,transparent)] transition-[border-color,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "w-full bg-white border border-line rounded-[var(--radius-md)] px-4 py-3.5 text-[length:var(--text-body)] text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--color-gold)_22%,transparent)] transition-[border-color,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 function Required() {
   return (
@@ -51,7 +36,7 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [state, setState] = useState<FormState>("idle");
-  const [errors, setErrors] = useState<FieldErrors>({});
+  const [isValid, setIsValid] = useState(false);
 
   useGSAP(
     () => {
@@ -71,48 +56,13 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
     { scope: cardRef }
   );
 
-  // Inline validation (apple-design §16, feedback): a field is judged when
-  // the user leaves it, re-judged on every change once it has been flagged
-  // so the message clears as they fix it, and the submit button is never
-  // disabled — pressing it shows exactly what is missing and focuses it.
-  function messageFor(el: FieldElement): string | undefined {
-    return el.validity.valid ? undefined : dict.errors[el.name as FieldName];
-  }
-
-  function validateField(el: FieldElement): boolean {
-    const message = messageFor(el);
-    setErrors((prev) => (prev[el.name as FieldName] === message ? prev : { ...prev, [el.name]: message }));
-    return message === undefined;
-  }
-
-  function handleBlur(e: React.FocusEvent<HTMLFormElement>) {
-    if (isField(e.target)) validateField(e.target);
-  }
-
-  function handleChange(e: React.FormEvent<HTMLFormElement>) {
-    const el = e.target as Element;
-    if (isField(el) && errors[el.name as FieldName]) validateField(el);
-  }
-
-  function validateAll(form: HTMLFormElement): boolean {
-    const next: FieldErrors = {};
-    let firstInvalid: FieldElement | null = null;
-    for (const el of Array.from(form.elements)) {
-      if (!isField(el)) continue;
-      const message = messageFor(el);
-      if (message) {
-        next[el.name as FieldName] = message;
-        firstInvalid ??= el;
-      }
-    }
-    setErrors(next);
-    firstInvalid?.focus();
-    return firstInvalid === null;
+  function handleChange() {
+    setIsValid(formRef.current?.checkValidity() ?? false);
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!validateAll(e.currentTarget)) return;
+    if (!formRef.current?.checkValidity()) return;
     setState("submitting");
 
     const data = new FormData(e.currentTarget);
@@ -160,7 +110,6 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
-          onBlur={handleBlur}
           onChange={handleChange}
           noValidate
           className="space-y-5"
@@ -188,14 +137,7 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
               placeholder={dict.namePlaceholder}
               className={inputCls}
               autoComplete="name"
-              aria-invalid={errors.name ? true : undefined}
-              aria-describedby={errors.name ? "name-error" : undefined}
             />
-            {errors.name && (
-              <p id="name-error" className={errorCls}>
-                {errors.name}
-              </p>
-            )}
           </div>
 
           <div className="sm:grid sm:grid-cols-2 sm:gap-5 space-y-5 sm:space-y-0">
@@ -210,14 +152,7 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
                 placeholder={dict.emailPlaceholder}
                 className={inputCls}
                 autoComplete="email"
-                aria-invalid={errors.email ? true : undefined}
-                aria-describedby={errors.email ? "email-error" : undefined}
               />
-              {errors.email && (
-                <p id="email-error" className={errorCls}>
-                  {errors.email}
-                </p>
-              )}
             </div>
             <div data-form-field>
               <label htmlFor="phone" className={labelCls}>
@@ -229,20 +164,10 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
                 name="phone"
                 type="tel"
                 required
-                // Compiled with the RegExp `v` flag by the browser: ( ) and - must be
-                // escaped inside the class or the pattern is silently ignored.
-                pattern="[+0-9][0-9 .\(\)\-]{7,}"
                 placeholder={dict.phonePlaceholder}
                 className={inputCls}
                 autoComplete="tel"
-                aria-invalid={errors.phone ? true : undefined}
-                aria-describedby={errors.phone ? "phone-error" : undefined}
               />
-              {errors.phone && (
-                <p id="phone-error" className={errorCls}>
-                  {errors.phone}
-                </p>
-              )}
             </div>
           </div>
 
@@ -257,8 +182,6 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
               required
               defaultValue=""
               className={`${inputCls} cursor-pointer pe-10`}
-              aria-invalid={errors.projectType ? true : undefined}
-              aria-describedby={errors.projectType ? "projectType-error" : undefined}
             >
               <option value="" disabled>
                 {dict.projectTypePlaceholder}
@@ -269,11 +192,6 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
                 </option>
               ))}
             </select>
-            {errors.projectType && (
-              <p id="projectType-error" className={errorCls}>
-                {errors.projectType}
-              </p>
-            )}
           </div>
 
           <div data-form-field>
@@ -306,26 +224,19 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
                 value="oui"
                 required
                 className="mt-1 size-4 shrink-0 accent-[var(--color-brand)] cursor-pointer"
-                aria-invalid={errors.consent ? true : undefined}
-                aria-describedby={errors.consent ? "consent-error" : undefined}
               />
               <span className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
                 {privacy.consentLabel}
                 <Required />
               </span>
             </label>
-            {errors.consent && (
-              <p id="consent-error" className={errorCls}>
-                {errors.consent}
-              </p>
-            )}
           </div>
 
           <p className="text-[length:var(--text-caption)] text-muted leading-[1.6]">
             {dict.privacyNote}{" "}
             <Link
               href={privacy.href}
-              className="press-row inline-flex items-center min-h-11 -my-3 underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
+              className="inline-flex items-center min-h-11 -my-3 underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
             >
               {privacy.label}
             </Link>
@@ -334,8 +245,8 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
           <div data-form-field>
             <button
               type="submit"
-              disabled={state === "submitting"}
-              className="press w-full inline-flex items-center justify-center px-6 py-4 rounded-[var(--radius-md)] bg-brand text-cream text-[0.9375rem] font-medium tracking-tight hover:bg-brand-soft transition-[background-color,opacity] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-brand"
+              disabled={!isValid || state === "submitting"}
+              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-[var(--radius-md)] bg-brand text-cream text-[0.9375rem] font-medium tracking-tight hover:bg-brand-soft hover:tracking-[0.02em] transition-[background-color,letter-spacing,opacity] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-brand disabled:hover:tracking-tight"
             >
               {state === "submitting" ? dict.submitting : dict.submit}
             </button>

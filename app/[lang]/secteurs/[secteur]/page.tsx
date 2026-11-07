@@ -54,11 +54,10 @@ export default async function SecteurPage({
     serviceType: item.title,
     lang,
   });
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },
     { name: item.title, url: `https://bthexpert.com/${lang}/secteurs/${secteur}` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   const chipCls =
     "inline-flex items-center rounded-full border border-line px-4 py-2 text-[length:var(--text-small)] text-ink-soft transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] hover:border-gold hover:text-ink";
@@ -75,7 +74,7 @@ export default async function SecteurPage({
       />
 
       {/* ── Hero — shared editorial light hero ───────────────── */}
-      <ServiceHero lang={lang} breadcrumb={crumbs}
+      <ServiceHero
         heading={item.title}
         subheading={item.intro}
       />
@@ -194,7 +193,7 @@ export default async function SecteurPage({
               </p>
               <Link
                 href={`/${lang}/contact`}
-                className="press inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep transition-[background-color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
               >
                 {s.cta.button}
               </Link>

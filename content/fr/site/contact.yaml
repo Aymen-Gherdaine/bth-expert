@@ -38,12 +38,6 @@ form:
   successTitle: Message envoyé.
   successMessage: Merci, nous vous répondrons sous 48 heures.
   errorMessage: Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.com.
-  errors:
-    name: Indiquez votre nom complet.
-    phone: 'Indiquez un numéro de téléphone joignable, par exemple +213 6XX XX XX XX.'
-    email: Cette adresse e-mail n'est pas valide.
-    projectType: Choisissez le type de projet.
-    consent: Cochez la case pour que nous puissions traiter votre demande.
 process:
   heading: À quoi s'attendre
   steps:

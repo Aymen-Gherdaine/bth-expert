@@ -39,11 +39,10 @@ export default async function EIEPage({
     lang,
   });
   const jsonLdFaq = schemaFAQ(dict.eie.faq.map((i) => ({ question: i.q, answer: i.a })));
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
     { name: dict.eie.hero.heading, url: `https://bthexpert.com/${lang}${PATH}` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   return (
     <>
@@ -59,7 +58,7 @@ export default async function EIEPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <ServicePageBody breadcrumb={crumbs} lang={lang} service={dict.eie} heroMeta={dict.eie.heroMeta} faq={dict.eie.faq} />
+      <ServicePageBody lang={lang} service={dict.eie} heroMeta={dict.eie.heroMeta} faq={dict.eie.faq} />
     </>
   );
 }

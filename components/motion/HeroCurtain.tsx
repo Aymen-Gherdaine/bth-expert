@@ -30,7 +30,7 @@ export function HeroCurtain({ children }: { children: ReactNode }) {
           trigger: el,
           start: "top top",
           end: "bottom top",
-          scrub: true, // 1:1 with the scroll — a lagging dim reads as latency
+          scrub: 0.5,
         },
       }
     );

@@ -105,15 +105,15 @@ export default async function HomePage({
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
                 <Link
                   href={`/${lang}/contact`}
-                  className="press inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep transition-[background-color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   {h.hero.cta}
                 </Link>
                 <Link
                   href={`/${lang}/services`}
-                  className="press-row group inline-flex items-center gap-2.5 min-h-11 py-2 -my-2 text-cream/75 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="group inline-flex items-center gap-2.5 min-h-11 py-2 -my-2 text-cream/75 text-[0.9375rem] tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
-                  <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
+                  <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
                   {h.hero.ctaSecondary}
                   <span aria-hidden className="inline-block ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
                 </Link>
@@ -180,7 +180,7 @@ export default async function HomePage({
               </p>
               <Link
                 href={`/${lang}/contact`}
-                className="press inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep transition-[background-color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
               >
                 {h.contact.cta}
               </Link>

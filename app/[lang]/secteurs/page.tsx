@@ -35,10 +35,9 @@ export default async function SecteursPage({
   const s = dict.secteurs;
 
   const jsonLd = schemaLocalBusiness(lang);
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   return (
     <>
@@ -52,7 +51,7 @@ export default async function SecteursPage({
       />
 
       {/* ── Hero — shared editorial light hero ───────────────── */}
-      <TerrainHero lang={lang} breadcrumb={crumbs}
+      <TerrainHero
         src="/generated/section-secteurs.svg"
         heading={s.hero.heading}
         subheading={s.hero.subheading}
@@ -67,7 +66,7 @@ export default async function SecteursPage({
               <FadeInItem key={item.slug}>
                 <Link
                   href={`/${lang}/secteurs/${item.slug}`}
-                  className="press-row group block border-b border-line"
+                  className="group block border-b border-line"
                 >
                   <div className="py-10 lg:py-14 lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12">
                     {/* Index numeral */}

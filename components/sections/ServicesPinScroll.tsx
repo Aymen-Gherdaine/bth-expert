@@ -232,7 +232,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                     : `/${lang}/services`
                 }
                 data-row
-                className="press-row group relative block border-t border-line py-8 lg:py-14"
+                className="group relative block border-t border-line py-8 lg:py-14"
               >
                 <div className="flex items-start gap-5 lg:gap-7">
                   <span className="shrink-0 pt-1.5 w-9 font-mono text-gold-ink leading-none text-[length:var(--text-small)] tabular-nums">
@@ -265,7 +265,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
         <div className="mt-12 lg:mt-16">
           <Link
             href={`/${lang}/services`}
-            className="press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-ink tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-ink tracking-tight hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             {services.cta}
             <span

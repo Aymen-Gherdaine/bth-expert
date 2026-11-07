@@ -74,15 +74,15 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
         onClick={() => setOpen(true)}
         aria-label={a11y.open}
         aria-expanded={open}
-        className="press group relative z-[60] grid h-11 w-11 place-items-center -me-2.5"
+        className="group relative z-[60] grid h-11 w-11 place-items-center -me-2.5"
       >
         {/* Strata mark — uneven contour lines (gold middle) echoing the
             topographic artwork; they align into a clean hamburger on
             hover/focus. */}
         <span className="flex h-[18px] w-6 flex-col items-start justify-between">
-          <span className="h-px w-6 bg-current" />
-          <span className="h-px w-6 bg-gold origin-left rtl:origin-right scale-x-[0.58] transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-100 group-focus-visible:scale-x-100" />
-          <span className="h-px w-6 bg-current origin-left rtl:origin-right scale-x-[0.83] transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-100 group-focus-visible:scale-x-100" />
+          <span className="h-px w-6 bg-current transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+          <span className="h-px w-3.5 bg-gold transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-6 group-focus-visible:w-6" />
+          <span className="h-px w-5 bg-current transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-6 group-focus-visible:w-6" />
         </span>
       </button>
 
@@ -105,7 +105,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
             type="button"
             onClick={() => setOpen(false)}
             aria-label={a11y.close}
-            className="press relative grid h-11 w-11 place-items-center -me-2.5"
+            className="relative grid h-11 w-11 place-items-center -me-2.5"
           >
             <span className="absolute h-px w-6 rotate-45 bg-cream" />
             <span className="absolute h-px w-6 -rotate-45 bg-cream" />
@@ -120,7 +120,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
               href={item.href}
               onClick={() => setOpen(false)}
               className="mobile-menu-link group flex items-baseline gap-4 py-4 border-b border-cream/10"
-              style={{ transitionDelay: open ? `${40 + i * 35}ms` : "0ms" }}
+              style={{ transitionDelay: open ? `${120 + i * 70}ms` : "0ms" }}
             >
               <span
                 className="font-mono text-gold tabular-nums"
@@ -141,18 +141,18 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
         {/* Footer of the drawer — contact + CTA */}
         <div
           className="mobile-menu-link px-5 sm:px-6 pb-10 pt-6 space-y-5"
-          style={{ transitionDelay: open ? `${40 + items.length * 35}ms` : "0ms" }}
+          style={{ transitionDelay: open ? `${120 + items.length * 70}ms` : "0ms" }}
         >
           <Link
             href={ctaHref}
             onClick={() => setOpen(false)}
-            className="press inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight"
+            className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight"
           >
             {ctaLabel}
           </Link>
           <div className="flex flex-col text-cream/70 text-sm">
-            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} dir="ltr" className="press-row inline-flex w-fit items-center min-h-11">{phone}</a>
-            <a href={`mailto:${email}`} className="press-row inline-flex w-fit items-center min-h-11">{email}</a>
+            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} dir="ltr" className="inline-flex w-fit items-center min-h-11">{phone}</a>
+            <a href={`mailto:${email}`} className="inline-flex w-fit items-center min-h-11">{email}</a>
           </div>
         </div>
       </div>

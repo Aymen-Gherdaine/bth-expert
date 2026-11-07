@@ -39,11 +39,10 @@ export default async function EDDPage({
     lang,
   });
   const jsonLdFaq = schemaFAQ(dict.edd.faq.map((i) => ({ question: i.q, answer: i.a })));
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
     { name: dict.edd.hero.heading, url: `https://bthexpert.com/${lang}${PATH}` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   return (
     <>
@@ -59,7 +58,7 @@ export default async function EDDPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <ServicePageBody breadcrumb={crumbs} lang={lang} service={dict.edd} heroMeta={dict.edd.heroMeta} faq={dict.edd.faq} />
+      <ServicePageBody lang={lang} service={dict.edd} heroMeta={dict.edd.heroMeta} faq={dict.edd.faq} />
     </>
   );
 }

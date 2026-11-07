@@ -29,10 +29,9 @@ export default async function MentionsLegalesPage({
   const { lang: rawLang } = await params;
   const lang = validateLocale(rawLang);
   const page = getLegalPage("mentions", lang);
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: page.heading, url: `https://bthexpert.com/${lang}/${page.slug}` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   return (
     <>
@@ -40,7 +39,7 @@ export default async function MentionsLegalesPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <LegalDocument breadcrumb={crumbs} page={page} updatedAt={LEGAL_UPDATED_AT} lang={lang} />
+      <LegalDocument page={page} updatedAt={LEGAL_UPDATED_AT} lang={lang} />
     </>
   );
 }

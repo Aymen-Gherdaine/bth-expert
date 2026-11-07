@@ -2,14 +2,11 @@ import { SECTION_PX, Container } from "@/components/layout/Container";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import type { LegalPage } from "@/lib/legal-content";
 import type { Locale } from "@/lib/i18n-config";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import type { BreadcrumbItem } from "@/lib/schema";
 
 interface LegalDocumentProps {
   page: LegalPage;
   updatedAt: string;
   lang: Locale;
-  breadcrumb?: BreadcrumbItem[];
 }
 
 const DATE_LOCALE: Record<Locale, string> = { fr: "fr-DZ", ar: "ar-DZ", en: "en-GB" };
@@ -22,7 +19,7 @@ const paragraphCls =
  * numbered articles in a prose measure. Server-rendered — the text is the
  * point here, not the motion.
  */
-export function LegalDocument({ page, updatedAt, lang, breadcrumb }: LegalDocumentProps) {
+export function LegalDocument({ page, updatedAt, lang }: LegalDocumentProps) {
   const updated = new Date(updatedAt).toLocaleDateString(DATE_LOCALE[lang], {
     day: "numeric",
     month: "long",
@@ -35,7 +32,6 @@ export function LegalDocument({ page, updatedAt, lang, breadcrumb }: LegalDocume
         <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-12 lg:pb-16`}>
           <Container variant="narrow" className="px-0 mx-0">
             <FadeIn>
-              {breadcrumb && <Breadcrumb lang={lang} items={breadcrumb} className="mb-8" />}
               <h1
                 className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"
                 style={{ fontSize: "var(--text-h1)" }}

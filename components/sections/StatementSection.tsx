@@ -92,7 +92,7 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
               trigger: photo,
               start: "top bottom",
               end: "bottom top",
-              scrub: 0.15,
+              scrub: 0.5,
             },
           }
         );
@@ -133,7 +133,7 @@ export function StatementSection({ lang, content }: StatementSectionProps) {
             <div ref={ctaRef} className="mt-10">
               <Link
                 href={`/${lang}/services`}
-                className="press-row inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-gold-ink tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                className="inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-gold-ink tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
               >
                 {content.cta} <span aria-hidden>→</span>
               </Link>

@@ -39,11 +39,10 @@ export default async function PGEPage({
     lang,
   });
   const jsonLdFaq = schemaFAQ(dict.pge.faq.map((i) => ({ question: i.q, answer: i.a })));
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
     { name: dict.pge.hero.heading, url: `https://bthexpert.com/${lang}${PATH}` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   return (
     <>
@@ -59,7 +58,7 @@ export default async function PGEPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <ServicePageBody breadcrumb={crumbs} lang={lang} service={dict.pge} heroMeta={dict.pge.heroMeta} faq={dict.pge.faq} />
+      <ServicePageBody lang={lang} service={dict.pge} heroMeta={dict.pge.heroMeta} faq={dict.pge.faq} />
     </>
   );
 }

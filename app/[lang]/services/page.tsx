@@ -35,10 +35,9 @@ export default async function ServicesPage({
   const items = dict.home.services.items;
 
   const jsonLd = schemaLocalBusiness(lang);
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   const serviceLinks: Record<string, string> = {
     EIE: `/${lang}/services/etude-impact-environnemental`,
@@ -67,7 +66,7 @@ export default async function ServicesPage({
       />
 
       {/* ── Hero — shared editorial light hero ─────────────────── */}
-      <TerrainHero lang={lang} breadcrumb={crumbs}
+      <TerrainHero
         src="/generated/section-services.svg"
         heading={s.hero.heading}
         subheading={s.hero.subheading}

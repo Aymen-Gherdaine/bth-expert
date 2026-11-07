@@ -228,27 +228,9 @@ const HOME_LABEL: Record<string, string> = {
   en: "Home",
 };
 
-export const BREADCRUMB_NAV_LABEL: Record<string, string> = {
-  fr: "Fil d'Ariane",
-  ar: "مسار التصفح",
-  en: "Breadcrumb",
-};
-
 export interface BreadcrumbItem {
   name: string;
   url: string;
-}
-
-/**
- * The same trail the JSON-LD publishes, with site-relative hrefs for the
- * visible navigation (apple-design §16, wayfinding: where am I, where can
- * I go). `items` ne doit pas inclure l'accueil, ajouté en tête.
- */
-export function breadcrumbTrail(lang: string, items: BreadcrumbItem[]): { name: string; href: string }[] {
-  return [
-    { name: HOME_LABEL[lang] ?? HOME_LABEL.fr, href: `/${lang}` },
-    ...items.map((item) => ({ name: item.name, href: item.url.replace(BASE_URL, "") })),
-  ];
 }
 
 /** `items` ne doit pas inclure l'accueil — il est ajouté automatiquement en tête. */

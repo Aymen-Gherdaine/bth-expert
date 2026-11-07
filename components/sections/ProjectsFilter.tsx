@@ -59,10 +59,12 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
 
   const filterCls = (isActive: boolean) =>
     [
-      "press relative inline-flex items-center min-h-11 font-sans pb-1 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]",
+      "relative inline-flex items-center min-h-11 font-sans pb-1 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]",
       "text-[length:var(--text-caption)]",
-      "after:absolute after:inset-x-0 after:-bottom-px after:h-px after:bg-gold after:origin-left rtl:after:origin-right after:transition-transform after:duration-[var(--duration-spring)] after:ease-[var(--ease-spring)]",
-      isActive ? "text-ink after:scale-x-100" : "text-muted hover:text-ink after:scale-x-0",
+      isActive ? "text-ink" : "text-muted hover:text-ink",
+      isActive
+        ? "after:absolute after:inset-x-0 after:-bottom-px after:h-px after:bg-gold"
+        : "",
     ].join(" ");
 
   return (
@@ -97,7 +99,7 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
             key={item.slug}
             data-card
             href={`/${lang}/projets/${item.slug}`}
-            className="press group block border border-line rounded-[var(--radius-md)] bg-cream-soft p-7 lg:p-8 hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-[transform,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="group block border border-line rounded-[var(--radius-md)] bg-cream-soft p-7 lg:p-8 hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-[transform,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             <div className="flex items-center justify-between mb-5">
               <span className="text-[length:var(--text-caption)] text-gold-ink">

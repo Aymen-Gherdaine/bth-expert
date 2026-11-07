@@ -45,7 +45,7 @@ export function ScrollToTop({ lang }: { lang: Locale }) {
 
   const toTop = () => {
     const lenis = (window as unknown as { lenis?: Lenis }).lenis;
-    if (lenis) lenis.scrollTo(0, { duration: 0.8 });
+    if (lenis) lenis.scrollTo(0, { duration: 1.4 });
     else window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

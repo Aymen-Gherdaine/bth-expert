@@ -65,11 +65,6 @@
   --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
   --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
-  /* Critically damped spring (apple-design §4): damping ratio 1, response
-     0.30 s, sampled as a CSS linear() curve — settles with no overshoot in
-     355 ms. For things the user presses: menu, filters, scroll-to-top. */
-  --ease-spring:      linear(0, 0.0391, 0.1284, 0.2383, 0.3515, 0.4584, 0.5544, 0.6377, 0.7082, 0.7669, 0.815, 0.854, 0.8854, 0.9104, 0.9302, 0.9458, 0.9581, 0.9677, 0.9751, 0.9809, 0.9853, 0.9888, 0.9914, 0.9935, 0.995);
-  --duration-spring:  355ms;
 
   /* ── Durations ── */
   --duration-fast: 200ms;
@@ -237,88 +232,14 @@
    ───────────────────────────────────────────────────────────── */
 #site-header[data-overlay="true"] header {
   color: var(--color-cream);
-  transition: color 0.5s var(--ease-out-expo);
-}
-#site-header[data-overlay="true"] header::before {
-  opacity: 0;
-  transition: opacity 0.5s var(--ease-out-expo);
-}
-#site-header[data-overlay="true"][data-solid="true"] header::before {
-  opacity: 1;
+  transition: background-color 0.5s var(--ease-out-expo),
+              border-color 0.5s var(--ease-out-expo),
+              color 0.5s var(--ease-out-expo);
 }
 #site-header[data-overlay="true"][data-solid="true"] header {
+  background-color: rgb(250 247 242 / 0.96);
+  border-bottom-color: var(--color-line);
   color: var(--color-ink);
-}
-
-/* ─────────────────────────────────────────────────────────────
-   Header material (apple-design §12) — a translucent layer the page
-   scrolls under, not an opaque strip. The light catching the material
-   is a bright top edge; the separation from content is a short
-   gradient (scroll-edge effect), not a 1 px rule. Translucency and the
-   blur yield to the two accessibility preferences below.
-   ───────────────────────────────────────────────────────────── */
-:root {
-  /* 0.84, not lower: at 0.72 the dark hero right under the bar bled into
-     its lower half through the blur and read as a dirty gradient. */
-  --header-material-bg: rgb(250 247 242 / 0.84);
-  --header-material-filter: blur(16px) saturate(160%);
-}
-/* The material lives on a ::before layer, never on the bar itself: a
-   backdrop-filter on an element turns it into the containing block of its
-   fixed descendants, and the mobile drawer (position: fixed, inside the
-   bar) would be sized to the 4 rem bar instead of the viewport. */
-.header-material,
-#site-header[data-overlay="true"] header {
-  position: relative;
-  isolation: isolate;
-}
-.header-material::before,
-#site-header[data-overlay="true"] header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-color: var(--header-material-bg);
-  -webkit-backdrop-filter: var(--header-material-filter);
-  backdrop-filter: var(--header-material-filter);
-}
-/* The edge: fades the content out over 0.5rem where it meets the bar */
-.header-edge {
-  position: relative;
-}
-.header-edge::after,
-#site-header[data-overlay="true"][data-solid="true"] header::after {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  top: 100%;
-  height: 0.5rem;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgb(26 46 30 / 0.06), transparent);
-}
-@media (prefers-reduced-transparency: reduce) {
-  :root {
-    --header-material-bg: rgb(250 247 242 / 0.98);
-    --header-material-filter: none;
-  }
-}
-@media (prefers-contrast: more) {
-  :root {
-    --header-material-bg: var(--color-cream);
-    --header-material-filter: none;
-  }
-  .header-material,
-  #site-header[data-overlay="true"][data-solid="true"] header {
-    border-bottom: 1px solid var(--color-ink);
-  }
-  #site-header[data-overlay="true"] header {
-    transition: none;
-  }
-  .header-edge::after,
-  #site-header[data-overlay="true"][data-solid="true"] header::after {
-    display: none;
-  }
 }
 
 /* Utility topbar — collapses together with the solidify (overlay only) */
@@ -358,31 +279,27 @@
   visibility: hidden;
   transform: translateY(-12px);
   pointer-events: none;
-  transition: opacity var(--duration-spring) var(--ease-spring),
-              transform var(--duration-spring) var(--ease-spring),
-              visibility 0s linear var(--duration-spring);
+  transition: opacity 0.4s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo),
+              visibility 0s linear 0.5s;
 }
 .mobile-menu[data-open="true"] {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
-  transition: opacity var(--duration-spring) var(--ease-spring),
-              transform var(--duration-spring) var(--ease-spring);
+  transition: opacity 0.4s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo);
 }
 .mobile-menu-link {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity var(--duration-spring) var(--ease-spring),
-              transform var(--duration-spring) var(--ease-spring);
+  transition: opacity 0.5s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo);
 }
 .mobile-menu[data-open="true"] .mobile-menu-link {
   opacity: 1;
   transform: translateY(0);
-}
-.mobile-menu[data-open="true"] .mobile-menu-link:active {
-  opacity: 0.55;
-  transition-duration: 60ms;
 }
 @media (prefers-reduced-motion: reduce) {
   .mobile-menu,
@@ -395,50 +312,19 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Pressed state (apple-design §1) — feedback on pointer-down, before
-   the click fires. Unlayered on purpose: it must win over the Tailwind
-   transition-* utilities set on the same element. Scale for buttons,
-   chips and cards; a dim for text links and full-width rows (scaling a
-   1000 px row by 3 % shifts its edges by 15 px). Kept under
-   reduced-motion: 100 ms with no travel is not vestibular.
-   ───────────────────────────────────────────────────────────── */
-.press,
-.press-row {
-  transition-property: transform, opacity, color, background-color, border-color, box-shadow, letter-spacing, gap;
-  transition-duration: var(--duration-base);
-  transition-timing-function: var(--ease-out-expo);
-}
-.press:active {
-  transform: scale(0.97);
-  transition-duration: 100ms;
-}
-.press-row:active {
-  opacity: 0.55;
-  transition-duration: 60ms;
-}
-.press:disabled,
-.press[aria-disabled="true"] {
-  transform: none;
-}
-
-/* ─────────────────────────────────────────────────────────────
    Scroll-to-top control — hidden until past the first viewport
    ───────────────────────────────────────────────────────────── */
 .scroll-top {
   opacity: 0;
   transform: translateY(14px) scale(0.9);
   pointer-events: none;
-  transition: opacity var(--duration-spring) var(--ease-spring),
-              transform var(--duration-spring) var(--ease-spring);
+  transition: opacity 0.45s var(--ease-out-expo),
+              transform 0.45s var(--ease-out-expo);
 }
 .scroll-top[data-visible="true"] {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
-}
-.scroll-top[data-visible="true"]:active {
-  transform: translateY(0) scale(0.94);
-  transition-duration: 100ms;
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-top { transition: opacity 0.2s linear; transform: none; }

@@ -306,19 +306,19 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
             <a
               href={`tel:${content.phone.replace(/[\s()]/g, "")}`}
               dir="ltr"
-              className="press-row inline-flex w-fit items-center min-h-11 text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="inline-flex w-fit items-center min-h-11 text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {content.phone}
             </a>
             <a
               href={`mailto:${content.email}`}
-              className="press-row inline-flex w-fit items-center min-h-11 text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="inline-flex w-fit items-center min-h-11 text-cream/80 hover:text-gold transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {content.email}
             </a>
             <Link
               href={`/${lang}/contact`}
-              className="press-row mt-2 inline-flex w-fit items-center min-h-11 gap-2 font-sans font-medium text-gold tracking-tight hover:gap-3 hover:text-cream transition-[gap,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="mt-2 inline-flex w-fit items-center min-h-11 gap-2 font-sans font-medium text-gold tracking-tight hover:gap-3 hover:text-cream transition-[gap,color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {content.cta} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
             </Link>
@@ -330,7 +330,7 @@ export function ZonesSection({ lang, content }: ZonesSectionProps) {
             </p>
             <Link
               href={`/${lang}/oran`}
-              className="press-row mt-4 inline-block text-[length:var(--text-small)] text-cream/35 hover:text-cream/60 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="mt-4 inline-block text-[length:var(--text-small)] text-cream/35 hover:text-cream/60 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {ORAN_LINK[lang]} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
             </Link>

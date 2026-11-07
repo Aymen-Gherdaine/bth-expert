@@ -54,10 +54,9 @@ export default async function BlogPagedPage({
   const { items: posts, page, totalPages } = paginate(allPosts, requestedPage);
   if (page !== requestedPage) notFound();
 
-  const crumbs = [
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
     { name: b.hero.heading, url: `https://bthexpert.com/${lang}/blog` },
-  ];
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
+  ]);
 
   return (
     <>
@@ -66,7 +65,7 @@ export default async function BlogPagedPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      <ServiceHero lang={lang} breadcrumb={crumbs} heading={b.hero.heading} subheading={b.hero.subheading} />
+      <ServiceHero heading={b.hero.heading} subheading={b.hero.subheading} />
 
       <section className="bg-cream-soft">
         <div className={`${SECTION_PX} pb-24 lg:pb-32`}>
