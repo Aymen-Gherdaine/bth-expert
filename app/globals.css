@@ -301,6 +301,10 @@
   opacity: 1;
   transform: translateY(0);
 }
+.mobile-menu[data-open="true"] .mobile-menu-link:active {
+  opacity: 0.55;
+  transition-duration: 60ms;
+}
 @media (prefers-reduced-motion: reduce) {
   .mobile-menu,
   .mobile-menu[data-open="true"],
@@ -309,6 +313,33 @@
     transform: none;
     transition: opacity 0.2s linear, visibility 0s;
   }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Pressed state (apple-design §1) — feedback on pointer-down, before
+   the click fires. Unlayered on purpose: it must win over the Tailwind
+   transition-* utilities set on the same element. Scale for buttons,
+   chips and cards; a dim for text links and full-width rows (scaling a
+   1000 px row by 3 % shifts its edges by 15 px). Kept under
+   reduced-motion: 100 ms with no travel is not vestibular.
+   ───────────────────────────────────────────────────────────── */
+.press,
+.press-row {
+  transition-property: transform, opacity, color, background-color, border-color, box-shadow, letter-spacing, gap;
+  transition-duration: var(--duration-base);
+  transition-timing-function: var(--ease-out-expo);
+}
+.press:active {
+  transform: scale(0.97);
+  transition-duration: 100ms;
+}
+.press-row:active {
+  opacity: 0.55;
+  transition-duration: 60ms;
+}
+.press:disabled,
+.press[aria-disabled="true"] {
+  transform: none;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -325,6 +356,10 @@
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
+}
+.scroll-top[data-visible="true"]:active {
+  transform: translateY(0) scale(0.94);
+  transition-duration: 100ms;
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-top { transition: opacity 0.2s linear; transform: none; }

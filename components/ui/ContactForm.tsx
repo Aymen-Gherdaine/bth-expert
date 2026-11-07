@@ -236,7 +236,7 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
             {dict.privacyNote}{" "}
             <Link
               href={privacy.href}
-              className="inline-flex items-center min-h-11 -my-3 underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
+              className="press-row inline-flex items-center min-h-11 -my-3 underline underline-offset-2 hover:text-ink transition-colors duration-[var(--duration-fast)]"
             >
               {privacy.label}
             </Link>
@@ -246,7 +246,7 @@ export function ContactForm({ dict, lang, privacy }: ContactFormProps) {
             <button
               type="submit"
               disabled={!isValid || state === "submitting"}
-              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-[var(--radius-md)] bg-brand text-cream text-[0.9375rem] font-medium tracking-tight hover:bg-brand-soft hover:tracking-[0.02em] transition-[background-color,letter-spacing,opacity] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-brand disabled:hover:tracking-tight"
+              className="press w-full inline-flex items-center justify-center px-6 py-4 rounded-[var(--radius-md)] bg-brand text-cream text-[0.9375rem] font-medium tracking-tight hover:bg-brand-soft hover:tracking-[0.02em] transition-[background-color,letter-spacing,opacity] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-brand disabled:hover:tracking-tight"
             >
               {state === "submitting" ? dict.submitting : dict.submit}
             </button>

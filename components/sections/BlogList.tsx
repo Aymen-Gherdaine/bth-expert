@@ -35,7 +35,7 @@ export function BlogList({ lang, posts, startIndex, empty, readMore }: BlogListP
     <FadeInStagger className="border-t border-line">
       {posts.map((post, index) => (
         <FadeInItem key={post.slug}>
-          <Link href={`/${lang}/blog/${post.slug}`} className="group block border-b border-line">
+          <Link href={`/${lang}/blog/${post.slug}`} className="press-row group block border-b border-line">
             <div className="py-10 lg:py-14 lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12">
               <div className="lg:col-span-2 mb-5 lg:mb-0">
                 <span
@@ -120,7 +120,7 @@ export function BlogPagination({
         {page > 1 ? (
           <Link
             href={hrefForPage(page - 1)}
-            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             <span
               aria-hidden
@@ -141,7 +141,7 @@ export function BlogPagination({
         {page < totalPages ? (
           <Link
             href={hrefForPage(page + 1)}
-            className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             {nextLabel}
             <span

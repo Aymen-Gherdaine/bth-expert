@@ -10,7 +10,7 @@ interface ReglementationSectionProps {
 }
 
 const linkCls =
-  "group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 /**
  * Regulatory register on the landing: the texts behind our studies, read from

@@ -66,7 +66,7 @@ export default async function SecteursPage({
               <FadeInItem key={item.slug}>
                 <Link
                   href={`/${lang}/secteurs/${item.slug}`}
-                  className="group block border-b border-line"
+                  className="press-row group block border-b border-line"
                 >
                   <div className="py-10 lg:py-14 lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12">
                     {/* Index numeral */}

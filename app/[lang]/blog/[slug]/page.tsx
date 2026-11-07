@@ -144,7 +144,7 @@ export default async function BlogPostPage({
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-10">
               <Link
                 href={`/${lang}/blog`}
-                className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)]"
+                className="press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)]"
               >
                 <span
                   aria-hidden
@@ -205,7 +205,7 @@ export default async function BlogPostPage({
           <FadeIn>
             <Link
               href={`/${lang}/blog`}
-              className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               <span
                 aria-hidden

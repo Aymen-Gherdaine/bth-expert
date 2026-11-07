@@ -80,7 +80,7 @@ export default async function ProjetPage({
         <div className={`${SECTION_PX} pt-16 lg:pt-24`}>
           <Link
             href={`/${lang}/secteurs/${item.secteurSlug}`}
-            className="inline-flex items-center min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+            className="press-row inline-flex items-center min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
           >
             {item.secteur}
           </Link>
@@ -158,13 +158,13 @@ export default async function ProjetPage({
               <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
                 <Link
                   href={`/${lang}/contact`}
-                  className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="press inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   {d.cta.button}
                 </Link>
                 <Link
                   href={`/${lang}/projets`}
-                  className="group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-cream/60 hover:text-cream transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   <span
                     aria-hidden

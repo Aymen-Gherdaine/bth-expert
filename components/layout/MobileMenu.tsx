@@ -74,7 +74,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
         onClick={() => setOpen(true)}
         aria-label={a11y.open}
         aria-expanded={open}
-        className="group relative z-[60] grid h-11 w-11 place-items-center -me-2.5"
+        className="press group relative z-[60] grid h-11 w-11 place-items-center -me-2.5"
       >
         {/* Strata mark — uneven contour lines (gold middle) echoing the
             topographic artwork; they align into a clean hamburger on
@@ -105,7 +105,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
             type="button"
             onClick={() => setOpen(false)}
             aria-label={a11y.close}
-            className="relative grid h-11 w-11 place-items-center -me-2.5"
+            className="press relative grid h-11 w-11 place-items-center -me-2.5"
           >
             <span className="absolute h-px w-6 rotate-45 bg-cream" />
             <span className="absolute h-px w-6 -rotate-45 bg-cream" />
@@ -146,13 +146,13 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
           <Link
             href={ctaHref}
             onClick={() => setOpen(false)}
-            className="inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight"
+            className="press inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight"
           >
             {ctaLabel}
           </Link>
           <div className="flex flex-col text-cream/70 text-sm">
-            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} dir="ltr" className="inline-flex w-fit items-center min-h-11">{phone}</a>
-            <a href={`mailto:${email}`} className="inline-flex w-fit items-center min-h-11">{email}</a>
+            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} dir="ltr" className="press-row inline-flex w-fit items-center min-h-11">{phone}</a>
+            <a href={`mailto:${email}`} className="press-row inline-flex w-fit items-center min-h-11">{email}</a>
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ export function ServicesIndexList({ items }: ServicesIndexListProps) {
         return (
           <FadeInItem key={item.abbr}>
             {item.href ? (
-              <Link href={item.href} className="block">
+              <Link href={item.href} className="press-row block">
                 {row}
               </Link>
             ) : (

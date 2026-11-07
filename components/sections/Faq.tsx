@@ -35,7 +35,7 @@ export function Faq({ heading, items }: FaqProps) {
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-6 py-6 text-start"
+                  className="press-row flex w-full items-center justify-between gap-6 py-6 text-start"
                 >
                   <span
                     className="font-display font-light text-ink tracking-[-0.01em] leading-[1.3]"

@@ -20,7 +20,7 @@ const paragraphCls =
   "font-sans text-ink-soft leading-[1.75] text-[length:var(--text-body)]";
 
 const arrowLinkCls =
-  "group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
+  "press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
 
 /**
  * One regulatory sheet or the procedure guide. The light ServiceHero carries
@@ -110,7 +110,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
                     <li key={svc.slug} className="border-b border-line">
                       <Link
                         href={`/${lang}/services/${svc.slug}`}
-                        className="group flex items-center justify-between gap-6 py-4 min-h-11 font-display font-light text-ink tracking-[-0.01em] hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                        className="press-row group flex items-center justify-between gap-6 py-4 min-h-11 font-display font-light text-ink tracking-[-0.01em] hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                         style={{ fontSize: "var(--text-h3)" }}
                       >
                         {svc.label}
@@ -136,7 +136,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
                       <li key={r.slug} className="border-b border-line">
                         <Link
                           href={`/${lang}/ressources/${r.slug}`}
-                          className="group flex items-baseline gap-5 py-4 min-h-11 hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                          className="press-row group flex items-baseline gap-5 py-4 min-h-11 hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                         >
                           <span
                             className="font-mono text-gold-ink tabular-nums shrink-0 w-16"
@@ -195,7 +195,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
             </p>
             <Link
               href={`/${lang}/contact`}
-              className="mt-10 inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+              className="press mt-10 inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
             >
               {labels.cta.button}
             </Link>
