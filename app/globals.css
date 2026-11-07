@@ -65,6 +65,11 @@
   --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
   --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Critically damped spring (apple-design §4): damping ratio 1, response
+     0.30 s, sampled as a CSS linear() curve — settles with no overshoot in
+     355 ms. For things the user presses: menu, filters, scroll-to-top. */
+  --ease-spring:      linear(0, 0.0391, 0.1284, 0.2383, 0.3515, 0.4584, 0.5544, 0.6377, 0.7082, 0.7669, 0.815, 0.854, 0.8854, 0.9104, 0.9302, 0.9458, 0.9581, 0.9677, 0.9751, 0.9809, 0.9853, 0.9888, 0.9914, 0.9935, 0.995);
+  --duration-spring:  355ms;
 
   /* ── Durations ── */
   --duration-fast: 200ms;
@@ -331,23 +336,23 @@
   visibility: hidden;
   transform: translateY(-12px);
   pointer-events: none;
-  transition: opacity 0.4s var(--ease-out-expo),
-              transform 0.5s var(--ease-out-expo),
-              visibility 0s linear 0.5s;
+  transition: opacity var(--duration-spring) var(--ease-spring),
+              transform var(--duration-spring) var(--ease-spring),
+              visibility 0s linear var(--duration-spring);
 }
 .mobile-menu[data-open="true"] {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
-  transition: opacity 0.4s var(--ease-out-expo),
-              transform 0.5s var(--ease-out-expo);
+  transition: opacity var(--duration-spring) var(--ease-spring),
+              transform var(--duration-spring) var(--ease-spring);
 }
 .mobile-menu-link {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.5s var(--ease-out-expo),
-              transform 0.5s var(--ease-out-expo);
+  transition: opacity var(--duration-spring) var(--ease-spring),
+              transform var(--duration-spring) var(--ease-spring);
 }
 .mobile-menu[data-open="true"] .mobile-menu-link {
   opacity: 1;
@@ -401,8 +406,8 @@
   opacity: 0;
   transform: translateY(14px) scale(0.9);
   pointer-events: none;
-  transition: opacity 0.45s var(--ease-out-expo),
-              transform 0.45s var(--ease-out-expo);
+  transition: opacity var(--duration-spring) var(--ease-spring),
+              transform var(--duration-spring) var(--ease-spring);
 }
 .scroll-top[data-visible="true"] {
   opacity: 1;

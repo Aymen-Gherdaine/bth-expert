@@ -120,7 +120,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
               href={item.href}
               onClick={() => setOpen(false)}
               className="mobile-menu-link group flex items-baseline gap-4 py-4 border-b border-cream/10"
-              style={{ transitionDelay: open ? `${120 + i * 70}ms` : "0ms" }}
+              style={{ transitionDelay: open ? `${40 + i * 35}ms` : "0ms" }}
             >
               <span
                 className="font-mono text-gold tabular-nums"
@@ -141,7 +141,7 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
         {/* Footer of the drawer — contact + CTA */}
         <div
           className="mobile-menu-link px-5 sm:px-6 pb-10 pt-6 space-y-5"
-          style={{ transitionDelay: open ? `${120 + items.length * 70}ms` : "0ms" }}
+          style={{ transitionDelay: open ? `${40 + items.length * 35}ms` : "0ms" }}
         >
           <Link
             href={ctaHref}

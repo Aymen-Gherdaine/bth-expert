@@ -61,10 +61,8 @@ export function ProjectsFilter({ items, allLabel, lang }: ProjectsFilterProps) {
     [
       "press relative inline-flex items-center min-h-11 font-sans pb-1 transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]",
       "text-[length:var(--text-caption)]",
-      isActive ? "text-ink" : "text-muted hover:text-ink",
-      isActive
-        ? "after:absolute after:inset-x-0 after:-bottom-px after:h-px after:bg-gold"
-        : "",
+      "after:absolute after:inset-x-0 after:-bottom-px after:h-px after:bg-gold after:origin-left rtl:after:origin-right after:transition-transform after:duration-[var(--duration-spring)] after:ease-[var(--ease-spring)]",
+      isActive ? "text-ink after:scale-x-100" : "text-muted hover:text-ink after:scale-x-0",
     ].join(" ");
 
   return (
