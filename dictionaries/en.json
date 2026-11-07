@@ -75,7 +75,14 @@
       "submitting": "Sending...",
       "successTitle": "Message sent.",
       "successMessage": "Thank you, we will get back to you within 48 hours.",
-      "errorMessage": "An error occurred. Please try again or write to us directly at info@bthexpert.com."
+      "errorMessage": "An error occurred. Please try again or write to us directly at info@bthexpert.com.",
+      "errors": {
+        "name": "Enter your full name.",
+        "phone": "Enter a phone number we can reach you on, for example +213 6XX XX XX XX.",
+        "email": "This email address is not valid.",
+        "projectType": "Choose the project type.",
+        "consent": "Tick the box so we can process your request."
+      }
     },
     "process": {
       "heading": "What to expect",
