@@ -237,9 +237,61 @@
               color 0.5s var(--ease-out-expo);
 }
 #site-header[data-overlay="true"][data-solid="true"] header {
-  background-color: rgb(250 247 242 / 0.96);
-  border-bottom-color: var(--color-line);
+  background-color: var(--header-material-bg);
+  -webkit-backdrop-filter: var(--header-material-filter);
+  backdrop-filter: var(--header-material-filter);
   color: var(--color-ink);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Header material (apple-design §12) — a translucent layer the page
+   scrolls under, not an opaque strip. The light catching the material
+   is a bright top edge; the separation from content is a short
+   gradient (scroll-edge effect), not a 1 px rule. Translucency and the
+   blur yield to the two accessibility preferences below.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --header-material-bg: rgb(250 247 242 / 0.72);
+  --header-material-filter: blur(20px) saturate(160%);
+}
+.header-material {
+  background-color: var(--header-material-bg);
+  -webkit-backdrop-filter: var(--header-material-filter);
+  backdrop-filter: var(--header-material-filter);
+}
+/* The edge: fades the content out over 0.5rem where it meets the bar */
+.header-edge {
+  position: relative;
+}
+.header-edge::after,
+#site-header[data-overlay="true"][data-solid="true"] header::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  height: 0.5rem;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgb(26 46 30 / 0.06), transparent);
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --header-material-bg: rgb(250 247 242 / 0.98);
+    --header-material-filter: none;
+  }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --header-material-bg: var(--color-cream);
+    --header-material-filter: none;
+  }
+  .header-material,
+  #site-header[data-overlay="true"][data-solid="true"] header {
+    border-bottom: 1px solid var(--color-ink);
+  }
+  .header-edge::after,
+  #site-header[data-overlay="true"][data-solid="true"] header::after {
+    display: none;
+  }
 }
 
 /* Utility topbar — collapses together with the solidify (overlay only) */
