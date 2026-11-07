@@ -16,7 +16,7 @@ interface MethodPinScrollProps {
   heading: string;
   steps: Step[];
   image?: string;
-  /** Localised "Méthode" eyebrow shown over the sticky image. */
+  /** Localised "Méthode" caption shown over the sticky image. */
   methodLabel: string;
 }
 
@@ -125,13 +125,9 @@ export function MethodPinScroll({
   return (
     <section ref={sectionRef} className="bg-cream relative z-10">
       <div className={`${SECTION_PX} py-20 lg:py-28`}>
-        <span
-          data-reveal
-          className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold text-[length:var(--text-caption)] mb-7"
-        >
-          <span aria-hidden className="w-8 h-px bg-gold" />
+        <h2 data-reveal className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15] text-[length:var(--text-h2)]">
           {heading}
-        </span>
+        </h2>
 
         <div className="mt-10 lg:mt-14 lg:grid lg:grid-cols-12 lg:gap-14 xl:gap-16">
           {/* Image band on mobile, sticky panel the steps scroll past on desktop */}
@@ -167,7 +163,7 @@ export function MethodPinScroll({
                 </span>
                 <span
                   aria-hidden
-                  className="absolute start-8 bottom-8 font-sans uppercase tracking-[0.22em] text-gold text-[length:var(--text-caption)]"
+                  className="absolute start-8 bottom-8 font-sans text-gold text-[length:var(--text-caption)]"
                 >
                   {methodLabel}
                 </span>
@@ -190,7 +186,7 @@ export function MethodPinScroll({
             {steps.map((step) => (
               <div key={step.number} data-step className="border-t border-line py-8 lg:py-14">
                 <div className="flex items-start gap-5 lg:gap-7">
-                  <span className="shrink-0 pt-1.5 w-9 font-display text-gold leading-none text-[length:var(--text-small)] tabular-nums">
+                  <span className="shrink-0 pt-1.5 w-9 font-mono text-gold leading-none text-[length:var(--text-small)] tabular-nums">
                     {step.number}
                   </span>
                   <div className="flex-1 min-w-0">

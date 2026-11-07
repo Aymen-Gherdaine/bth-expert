@@ -15,23 +15,9 @@ import { ZonesSection } from "@/components/sections/ZonesSection";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { HeroCurtain } from "@/components/motion/HeroCurtain";
 import { HeroBackground } from "@/components/motion/HeroBackground";
-import { HeroFilet } from "@/components/motion/HeroFilet";
 import { CtaVideo } from "@/components/motion/CtaVideo";
 import { Faq } from "@/components/sections/Faq";
 import { ScrollPulse } from "@/components/motion/ScrollPulse";
-
-// Si la 2ᵉ partie du titre commence par « & », on l'italicise (détail
-// typographique du hero). Sinon on rend le texte tel quel.
-function renderHeadlinePart2(text: string) {
-  const [lead, ...rest] = text.split(" ");
-  if (lead !== "&") return text;
-  return (
-    <>
-      <span className="italic font-light">{"&"}</span>
-      {rest.length ? ` ${rest.join(" ")}` : ""}
-    </>
-  );
-}
 
 export async function generateMetadata({
   params,
@@ -79,35 +65,25 @@ export default async function HomePage({
           the tall <main>, the post-hero block (z-10, opaque) slides over it. */}
       <HeroCurtain>
         <section className="relative min-h-svh flex items-end overflow-hidden pt-20 pb-10 lg:py-0 lg:pb-24 bg-brand-deep">
-          {/* Full-bleed image — Ken Burns + scroll parallax behind a uniform veil */}
+          {/* Full-bleed image — Ken Burns + scroll parallax, no veil on the photo */}
           <HeroBackground src="/hero-industrie.webp" />
 
-          {/* Cinematic gradient veil — lets the image read up top, holds the
-              type legible below (manifesto §3, --overlay-hero) */}
+          {/* Scrim under the headline only: transparent over the top 28 %,
+              darkens toward the bottom where the type sits (--overlay-hero) */}
           <div
             aria-hidden
             className="absolute inset-0"
             style={{ background: "var(--overlay-hero)" }}
           />
-          {/* Side weight for the bottom-left headline (--overlay-hero-side) */}
+          {/* Left weight for the bottom-left headline, fades out by mid-frame */}
           <div
             aria-hidden
             className="absolute inset-0"
             style={{ background: "var(--overlay-hero-side)" }}
           />
-          {/* Film grain — kills the flat digital feel */}
-          <div aria-hidden className="hero-grain absolute inset-0" />
 
           <Container className="relative z-10">
             <div className="max-w-4xl">
-              <HeroFilet className="block w-14 h-px bg-gold mb-7 origin-left" />
-              <RevealText
-                className="block font-sans text-[0.8125rem] uppercase tracking-[0.22em] text-gold mb-8"
-                delay={0.1}
-              >
-                {h.hero.eyebrow}
-              </RevealText>
-
               <RevealText
                 as="h1"
                 className="font-display font-light text-cream leading-[1.1] sm:leading-[1.04] tracking-[-0.03em]"
@@ -115,8 +91,8 @@ export default async function HomePage({
                 delay={0.25}
               >
                 {h.hero.headlinePart1}{" "}
-                <span className="italic font-normal">{h.hero.headlineEmphasis}</span>{" "}
-                {renderHeadlinePart2(h.hero.headlinePart2)}
+                <span className="font-semibold">{h.hero.headlineEmphasis}</span>{" "}
+                {h.hero.headlinePart2}
               </RevealText>
 
               <RevealText
@@ -193,9 +169,6 @@ export default async function HomePage({
         <Container className="relative z-10">
           <FadeIn>
             <div className="max-w-3xl">
-              <p className="text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-6">
-                {h.contact.eyebrow}
-              </p>
               <h2
                 className="font-display font-light text-cream tracking-[-0.03em] leading-[1.05] mb-8"
                 style={{ fontSize: "clamp(2.25rem, 4vw + 0.5rem, 4.5rem)" }}

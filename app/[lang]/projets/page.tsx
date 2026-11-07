@@ -53,7 +53,6 @@ export default async function ProjetsPage({
       {/* ── Hero — shared editorial ServiceHero (was a flat pt-32 block) ─ */}
       <TerrainHero
         src="/generated/section-projets.svg"
-        eyebrow={p.hero.eyebrow}
         heading={p.hero.heading}
         subheading={p.hero.subheading}
         index={p.items.map((item) => item.title)}

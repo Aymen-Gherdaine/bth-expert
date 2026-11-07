@@ -2,7 +2,6 @@ meta:
   title: Contact — Demander un devis | BTH Expert
   description: Contactez BTH Expert pour une étude d'impact, une étude de dangers ou un audit HSE. Réponse sous 48h. Basé à Oran, intervient dans toute l'Algérie.
 hero:
-  eyebrow: Contact
   headingStart: Parlons de votre
   headingEmphasis: projet
   intro: Vous avez un projet industriel nécessitant un accompagnement environnemental ou réglementaire ? Contactez-nous pour une consultation initiale.
@@ -40,7 +39,6 @@ form:
   successMessage: Merci, nous vous répondrons sous 48 heures.
   errorMessage: Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@bthexpert.com.
 process:
-  eyebrow: Notre processus
   heading: À quoi s'attendre
   steps:
     - number: '01'

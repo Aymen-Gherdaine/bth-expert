@@ -53,7 +53,6 @@ export default async function SecteursPage({
       {/* ── Hero — shared editorial light hero ───────────────── */}
       <TerrainHero
         src="/generated/section-secteurs.svg"
-        eyebrow={s.hero.eyebrow}
         heading={s.hero.heading}
         subheading={s.hero.subheading}
         index={s.list.map((item) => item.title)}
@@ -74,7 +73,7 @@ export default async function SecteursPage({
                     <div className="lg:col-span-2 mb-5 lg:mb-0">
                       <span
                         aria-hidden
-                        className="font-display font-light text-line tabular-nums leading-none tracking-[-0.02em] transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-gold"
+                        className="font-mono font-light text-line tabular-nums leading-none tracking-[-0.02em] transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:text-gold"
                         style={{ fontSize: "clamp(2.75rem, 4vw + 1rem, 4.5rem)" }}
                       >
                         {String(index + 1).padStart(2, "0")}

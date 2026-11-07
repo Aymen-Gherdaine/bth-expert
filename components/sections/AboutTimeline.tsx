@@ -13,7 +13,6 @@ interface Milestone {
 }
 
 interface AboutTimelineProps {
-  eyebrow: string;
   heading: string;
   milestones: Milestone[];
 }
@@ -24,7 +23,7 @@ interface AboutTimelineProps {
  * sequence. Logical properties (start/ps) keep it RTL-correct. Honours
  * prefers-reduced-motion (renders fully, no animation).
  */
-export function AboutTimeline({ eyebrow, heading, milestones }: AboutTimelineProps) {
+export function AboutTimeline({ heading, milestones }: AboutTimelineProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -62,12 +61,6 @@ export function AboutTimeline({ eyebrow, heading, milestones }: AboutTimelinePro
     <section ref={sectionRef} className="bg-brand-deep text-cream overflow-hidden">
       <Container>
         <div className="py-24 lg:py-32">
-          <span
-            className="block font-sans uppercase text-gold mb-6"
-            style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
-          >
-            — {eyebrow}
-          </span>
           <h2
             className="font-display font-light tracking-[-0.02em] leading-[1.15] text-[var(--color-on-brand-strong)] mb-16 lg:mb-20"
             style={{ fontSize: "var(--text-h2)" }}

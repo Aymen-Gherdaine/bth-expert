@@ -50,7 +50,6 @@ const why = fields.object(
 
 const heroSimple = fields.object(
   {
-    eyebrow: fields.text({ label: "Eyebrow" }),
     heading: fields.text({ label: "Titre" }),
     subheading: fields.text({ label: "Sous-titre", multiline: true }),
   },
@@ -337,7 +336,6 @@ export default config({
       format: "yaml",
       schema: {
         hero: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           headlinePart1: fields.text({ label: "Titre — partie 1" }),
           headlineEmphasis: fields.text({ label: "Titre — mot en emphase" }),
           headlinePart2: fields.text({ label: "Titre — partie 2" }),
@@ -347,7 +345,6 @@ export default config({
         }),
         services: fields.object({
           sectionNumber: fields.text({ label: "Numéro de section" }),
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           items: fields.array(
             fields.object({
@@ -361,7 +358,6 @@ export default config({
           cta: fields.text({ label: "Bouton — Voir tous les services" }),
         }),
         stats: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           items: fields.array(
             fields.object({
               value: fields.text({ label: "Valeur" }),
@@ -373,14 +369,12 @@ export default config({
         }),
         equipe: fields.object({
           sectionNumber: fields.text({ label: "Numéro de section" }),
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           description: fields.text({ label: "Description", multiline: true }),
           cta: fields.text({ label: "Bouton" }),
         }),
         contact: fields.object({
           sectionNumber: fields.text({ label: "Numéro de section" }),
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           description: fields.text({ label: "Description", multiline: true }),
           cta: fields.text({ label: "Bouton" }),
@@ -395,7 +389,6 @@ export default config({
           }),
         }),
         about: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           manifesto: fields.text({ label: "Manifeste", multiline: true }),
           domains: fields.array(fields.text({ label: "Domaine" }), {
             label: "Domaines d'expertise",
@@ -412,7 +405,6 @@ export default config({
           cta: fields.text({ label: "CTA" }),
         }, { label: "Section Statement" }),
         zones: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           address: fields.text({ label: "Adresse", multiline: true }),
           phone: fields.text({ label: "Téléphone" }),
@@ -484,7 +476,6 @@ export default config({
       schema: {
         meta: meta(),
         hero: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           headingStart: fields.text({ label: "Titre (début)" }),
           headingEmphasis: fields.text({ label: "Titre (mot en emphase)" }),
           intro: fields.text({ label: "Introduction", multiline: true }),
@@ -526,7 +517,6 @@ export default config({
           errorMessage: fields.text({ label: "Message — erreur", multiline: true }),
         }),
         process: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           steps: fields.array(step, {
             label: "Étapes",
@@ -619,7 +609,6 @@ export default config({
         meta: meta(),
         hero: heroSimple,
         timeline: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           milestones: fields.array(
             fields.object({
@@ -639,7 +628,6 @@ export default config({
           description: fields.text({ label: "Description", multiline: true }),
         }),
         expertise: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           experts: fields.array(
             fields.object({
@@ -651,7 +639,6 @@ export default config({
           ),
         }),
         values: fields.object({
-          eyebrow: fields.text({ label: "Eyebrow" }),
           heading: fields.text({ label: "Titre" }),
           items: fields.array(
             fields.object({
@@ -720,7 +707,6 @@ export default config({
         cta: cta(),
         homeSection: fields.object(
           {
-            eyebrow: fields.text({ label: "Eyebrow" }),
             heading: fields.text({ label: "Titre" }),
             intro: fields.text({ label: "Intro", multiline: true }),
             note: fields.text({ label: "Note", multiline: true }),

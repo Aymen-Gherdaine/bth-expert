@@ -32,13 +32,6 @@ export function LegalDocument({ page, updatedAt, lang }: LegalDocumentProps) {
         <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-12 lg:pb-16`}>
           <Container variant="narrow" className="px-0 mx-0">
             <FadeIn>
-              <span aria-hidden className="block w-14 h-px bg-gold mb-8" />
-              <span
-                className="block font-sans uppercase tracking-[0.2em] text-gold-ink mb-6"
-                style={{ fontSize: "var(--text-caption)" }}
-              >
-                {page.eyebrow}
-              </span>
               <h1
                 className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"
                 style={{ fontSize: "var(--text-h1)" }}
@@ -63,7 +56,7 @@ export function LegalDocument({ page, updatedAt, lang }: LegalDocumentProps) {
                 <article className="grid gap-4 py-10 lg:py-12 border-b border-line sm:grid-cols-12 sm:gap-8">
                   <div className="sm:col-span-4 flex items-baseline gap-4">
                     <span
-                      className="font-display text-gold-ink tabular-nums"
+                      className="font-mono text-gold-ink tabular-nums"
                       style={{ fontSize: "var(--text-small)" }}
                     >
                       {String(i + 1).padStart(2, "0")}

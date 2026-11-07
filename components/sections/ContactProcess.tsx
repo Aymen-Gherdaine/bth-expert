@@ -80,12 +80,6 @@ export function ContactProcess({ dict }: ContactProcessProps) {
     <section ref={sectionRef} className="bg-white border-t border-line overflow-hidden">
       <Container>
         <div className="py-24 lg:py-32">
-          <span
-            className="block font-sans uppercase text-gold mb-6"
-            style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
-          >
-            — {dict.eyebrow}
-          </span>
           <h2
             className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15]"
             style={{ fontSize: "var(--text-h2)" }}

@@ -16,7 +16,6 @@ interface ServiceItem {
 
 interface ServiceContent {
   sectionNumber: string;
-  eyebrow: string;
   heading: string;
   items: ServiceItem[];
   itemCta: string;
@@ -64,7 +63,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
 
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      // ── Header — eyebrow → title → intro on entry ──────────────────
+      // ── Header — title → intro on entry ────────────────────────────
       const head = section.querySelectorAll<HTMLElement>("[data-reveal]");
       if (head.length && !reduce) {
         gsap.from(head, {
@@ -160,13 +159,6 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
     <section ref={sectionRef} className="bg-cream relative z-10">
       <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-24 lg:pb-32`}>
         {/* ── Header ─────────────────────────────────────────────── */}
-        <span
-          data-reveal
-          className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)] mb-7"
-        >
-          <span aria-hidden className="w-8 h-px bg-gold-ink" />
-          {services.eyebrow}
-        </span>
         <h2
           data-reveal
           className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05] max-w-3xl"
@@ -210,7 +202,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                 <span
                   data-active-label
                   aria-hidden
-                  className="absolute start-8 bottom-10 font-sans uppercase tracking-[0.22em] text-gold text-[length:var(--text-caption)]"
+                  className="absolute start-8 bottom-10 font-sans text-gold text-[length:var(--text-caption)]"
                 >
                   {services.items[0]?.abbr}
                 </span>
@@ -243,7 +235,7 @@ export function ServicesPinScroll({ lang, services }: ServicesPinScrollProps) {
                 className="group relative block border-t border-line py-8 lg:py-14"
               >
                 <div className="flex items-start gap-5 lg:gap-7">
-                  <span className="shrink-0 pt-1.5 w-9 font-display text-gold-ink leading-none text-[length:var(--text-small)] tabular-nums">
+                  <span className="shrink-0 pt-1.5 w-9 font-mono text-gold-ink leading-none text-[length:var(--text-small)] tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1 min-w-0">

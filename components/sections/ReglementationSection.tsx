@@ -16,7 +16,7 @@ const linkCls =
  * Regulatory register on the landing: the texts behind our studies, read from
  * the Keystatic « Ressources » collection (one line per fiche, `homeLine`).
  *
- * Breaks the eyebrow → title → paragraph → arrow rhythm of the other
+ * Breaks the title → paragraph → arrow rhythm of the other
  * sections on purpose: the display element is the text reference itself
  * ("07-145"), set like a ledger. It is also the most useful block on the
  * page for an industrial reader, and the one no template can ship.
@@ -33,12 +33,8 @@ export function ReglementationSection({ lang, ressources }: ReglementationSectio
           {/* ── Left: sticky intro ─────────────────────────────────── */}
           <div className="lg:col-span-4">
             <FadeIn className="lg:sticky lg:top-32">
-              <span className="inline-flex items-center gap-3 font-sans uppercase tracking-[0.2em] text-gold-ink text-[length:var(--text-caption)]">
-                <span aria-hidden className="w-8 h-px bg-gold-ink" />
-                {c.eyebrow}
-              </span>
               <h2
-                className="mt-8 font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"
+                className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"
                 style={{ fontSize: "var(--text-h2)" }}
               >
                 {c.heading}
@@ -59,14 +55,14 @@ export function ReglementationSection({ lang, ressources }: ReglementationSectio
                 <article className="grid gap-x-8 gap-y-4 py-8 lg:py-10 border-b border-line sm:grid-cols-12">
                   <div className="sm:col-span-3">
                     <p
-                      className="font-display font-light text-ink tracking-[-0.03em] leading-none tabular-nums"
+                      className="font-mono font-light text-ink tracking-[-0.03em] leading-none tabular-nums"
                       style={{ fontSize: "clamp(2.25rem, 2.6vw + 1rem, 3.5rem)" }}
                       dir="ltr"
                     >
                       {entry.ref}
                     </p>
                     <p
-                      className="mt-3 font-sans uppercase tracking-[0.14em] text-gold-ink"
+                      className="mt-3 font-sans text-muted text-[length:var(--text-caption)]"
                       style={{ fontSize: "var(--text-caption)" }}
                     >
                       {entry.typeLabel} · {entry.date}

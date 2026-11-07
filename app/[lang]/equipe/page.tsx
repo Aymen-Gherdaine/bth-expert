@@ -61,7 +61,6 @@ export default async function EquipePage({
       />
 
       <ServiceHero
-        eyebrow={eq.hero.eyebrow}
         heading={eq.hero.heading}
         subheading={eq.hero.subheading}
       />

@@ -37,7 +37,6 @@
       "description": "Contact BTH Expert for an Environmental Impact Assessment, a Hazard Study, or an HSE Audit. Response within 48 hours. Based in Oran, operating throughout Algeria."
     },
     "hero": {
-      "eyebrow": "Contact",
       "headingStart": "Let's talk about your",
       "headingEmphasis": "project",
       "intro": "Do you have an industrial project requiring environmental or regulatory support? Contact us for an initial consultation."
@@ -79,7 +78,6 @@
       "errorMessage": "An error occurred. Please try again or write to us directly at info@bthexpert.com."
     },
     "process": {
-      "eyebrow": "Our process",
       "heading": "What to expect",
       "steps": [
         {
@@ -111,7 +109,6 @@
       "description": "Meet the BTH Expert team. Engineers and experts accredited by the Algerian Ministry of Environment. Manager: Amine Lahmer. Based in Oran."
     },
     "hero": {
-      "eyebrow": "Certified Experts · Oran, Algeria",
       "heading": "Experts & partners",
       "subheading": "Experience gained within major Canadian engineering groups, applied to the regulatory and industrial realities of Algeria."
     },
@@ -153,7 +150,6 @@
       "description": "Environmental impact assessments, hazard studies, HSE audits and environmental management plans. BTH Expert, certified consultancy in Oran."
     },
     "hero": {
-      "eyebrow": "Certified consultancy",
       "heading": "Our environmental services",
       "subheading": "Four major service categories to support your regulatory obligations, from project review to commissioning."
     }
@@ -164,7 +160,6 @@
       "description": "Certified consultancy for conducting Environmental Impact Assessments (EIA) in Algeria. Reports compliant with Ministry of Environment requirements. Based in Oran."
     },
     "hero": {
-      "eyebrow": "EIE · Ministry of Environment Accreditation",
       "heading": "Environmental Impact Assessment",
       "subheading": "The EIA is the regulatory document that assesses a project's impacts on its natural, human and socio-economic environment. It is mandatory for classified installations where the nomenclature requires it and for the projects listed by Executive Decree No. 07-145, as amended in 2018 and 2019."
     },
@@ -241,7 +236,6 @@
       "description": "Certified consultancy for conducting Hazard Studies (EDD) in Algeria: major risk analysis, accident scenarios, effect zones, and prevention plans. Based in Oran."
     },
     "hero": {
-      "eyebrow": "EDD · Classified Establishments",
       "heading": "Hazard Study",
       "subheading": "The Hazard Study identifies and characterizes the risks of major accidents at an industrial facility, assesses their consequences, and defines control measures. It is required for classified establishments subject to authorization."
     },
@@ -318,7 +312,6 @@
       "description": "Hygiene, safety and environment (HSE) audit and regulatory compliance assessment for industrial sites in Algeria. Gap identification and prioritized action plan. Certified consultancy in Oran."
     },
     "hero": {
-      "eyebrow": "HSE · Regulatory Compliance",
       "heading": "HSE Audit & Compliance",
       "subheading": "The HSE Audit establishes the compliance status of a site with respect to hygiene, safety and environmental requirements. It highlights regulatory gaps and prioritizes the corrective actions to be taken."
     },
@@ -395,7 +388,6 @@
       "description": "Development of Environmental Management Plans (PGE) for monitoring mitigation measures throughout the entire project lifecycle. Certified consultancy in Algeria, based in Oran."
     },
     "hero": {
-      "eyebrow": "PGE · Environmental monitoring",
       "heading": "Environmental Management Plan",
       "subheading": "The Environmental Management Plan translates the commitments of the impact assessment into concrete measures: it organises the mitigation, surveillance, and monitoring of a project's effects, from the construction phase through to operation."
     },
@@ -472,7 +464,6 @@
       "description": "BTH Expert, certified environmental consultancy based in Oran (Bir El Djir). Impact assessments, hazard studies and HSE audits for industrial projects in Oran and western Algeria."
     },
     "hero": {
-      "eyebrow": "Bir El Djir, Oran · Algeria",
       "heading": "Environmental Consultancy in Oran",
       "subheading": "Accredited by the Ministry of Environment, BTH Expert supports industrial, mining and infrastructure project owners in the wilaya of Oran and across western Algeria."
     },
@@ -511,7 +502,6 @@
       "description": "BTH Expert supports industry & petrochemicals, energy & hydrocarbons, infrastructure & construction, and agriculture & hydraulics. Environmental Impact Assessments, Hazard Studies and HSE Audits in Algeria."
     },
     "hero": {
-      "eyebrow": "Sectors",
       "heading": "Sector-specific expertise",
       "subheading": "Each industry carries its own environmental and regulatory challenges. BTH Expert tailors its methodology to the technical realities of your sector."
     },
@@ -928,12 +918,10 @@
       "description": "BTH Expert, certified environmental consultancy based in Oran. International expertise, ministerial accreditation and a multidisciplinary approach serving Algerian industry."
     },
     "hero": {
-      "eyebrow": "About · Certified Consultancy · Oran, Algeria",
       "heading": "A consultancy at the service of Algerian industry",
       "subheading": "BTH Expert pairs international experience, gained within major engineering groups, with precise knowledge of the Algerian regulatory framework. We support industrial project owners from the impact assessment through to authorisation."
     },
     "timeline": {
-      "eyebrow": "Our journey",
       "heading": "International expertise at the service of Algeria",
       "milestones": [
         {
@@ -972,7 +960,6 @@
       "description": "Our model combines the expertise of an accredited consultant with the know-how of BTH Consult. This partnership strengthens our capacity to intervene and mobilises a multidisciplinary team (environment, water, health, safety and engineering) for projects of regional and national scope."
     },
     "values": {
-      "eyebrow": "Our approach",
       "heading": "Regulatory rigour, field-level grounding",
       "items": [
         {
@@ -1011,7 +998,6 @@
       "button": "Get in touch"
     },
     "expertise": {
-      "eyebrow": "Expertise",
       "heading": "The expertise behind every study",
       "experts": [
         {
@@ -1033,7 +1019,6 @@
       "description": "Environmental Impact Assessments, Hazard Studies and HSE Audits conducted by BTH Expert for industry, energy and hydraulics in Algeria. Examples of achievements by sector."
     },
     "hero": {
-      "eyebrow": "Achievements",
       "heading": "Studies that secure projects",
       "subheading": "An overview of our environmental and regulatory interventions, from petrochemical complexes to irrigated perimeters."
     },
@@ -1107,7 +1092,6 @@
       "description": "Analyses, guides and regulatory news on Environmental Impact Assessment, Hazard Study and environmental compliance in Algeria, by BTH Expert."
     },
     "hero": {
-      "eyebrow": "Resources · Environmental Regulations",
       "heading": "The BTH Expert Blog",
       "subheading": "Regulatory insights and practical guides on Environmental Impact Assessment, Hazard Study and environmental compliance in Algeria, by our team of accredited experts."
     },
@@ -1124,7 +1108,6 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Accredited by the Ministry of Environment · Oran, Algeria",
       "headlinePart1": "Environmental",
       "headlineEmphasis": "& industrial",
       "headlinePart2": "expertise",
@@ -1134,7 +1117,6 @@
     },
     "services": {
       "sectionNumber": "01",
-      "eyebrow": "Services",
       "heading": "Four studies. One goal, the authorisation of your site.",
       "items": [
         {
@@ -1162,7 +1144,6 @@
       "cta": "View all services"
     },
     "stats": {
-      "eyebrow": "By the numbers",
       "items": [
         {
           "value": "10+",
@@ -1188,14 +1169,12 @@
     },
     "equipe": {
       "sectionNumber": "02",
-      "eyebrow": "Team",
       "heading": "Experts recognized by the Ministry",
       "description": "Accredited engineers with a thorough command of the Algerian regulatory framework and international ISO/IEC standards. BTH Expert works in partnership with BTH Consult for large-scale regional projects.",
       "cta": "Meet the team"
     },
     "contact": {
       "sectionNumber": "03",
-      "eyebrow": "Contact",
       "heading": "Project underway? Let's talk.",
       "description": "Tell us about your project, your regulatory constraints, and your timeline. We will get back to you within 48 hours.",
       "cta": "Request a quote",
@@ -1228,7 +1207,6 @@
       ]
     },
     "about": {
-      "eyebrow": "About",
       "manifesto": "No industrial project obtains its authorization without a compliant environmental study. That is our business, and our commitment.",
       "domains": [
         "Environment",
@@ -1246,7 +1224,6 @@
       "cta": "Discover our services"
     },
     "zones": {
-      "eyebrow": "Coverage areas",
       "heading": "Oran, at the heart of western Algeria",
       "address": "40, Lotissement 119\nBir El Djir, Oran",
       "phone": "+213 (670) 70 81 38",
@@ -1262,7 +1239,6 @@
       "description": "Practical sheets checked against the Official Journal: Law 03-10, Decrees 07-145, 06-198, 07-144, Law 24-04, Decree 23-324, and a step-by-step guide to authorising a classified installation in Algeria, by an accredited consultancy."
     },
     "hero": {
-      "eyebrow": "Resources · Algerian regulations",
       "heading": "Understand the regulatory framework of your project",
       "subheading": "One sheet per text and a step-by-step procedure guide, written by an accredited consultancy for project owners from the texts published in the Official Journal. Not a summary of the law: what each text actually changes for your file."
     },
@@ -1285,7 +1261,6 @@
       "button": "Request a quote"
     },
     "homeSection": {
-      "eyebrow": "Regulatory framework",
       "heading": "The texts that trigger your study",
       "intro": "Six texts structure the authorisation of a facility in Algeria. Knowing which one applies to your project already tells you which study to file, with whom, and within what timeframe.",
       "note": "Indicative reading. Only the versions published in the Official Journal are authoritative."

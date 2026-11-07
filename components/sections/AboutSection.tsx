@@ -9,7 +9,6 @@ import { gsap, SplitText } from "@/lib/gsap";
 import type { Locale } from "@/lib/i18n";
 
 interface AboutContent {
-  eyebrow: string;
   manifesto: string;
   domains: string[];
   body1: string;
@@ -50,18 +49,6 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
             scrollTrigger: { trigger: line, start: "top 85%", once: true },
           }
         );
-      }
-
-      // ── Eyebrow ────────────────────────────────────────────────────
-      const eyebrow = section.querySelector<HTMLElement>("[data-about-eyebrow]");
-      if (eyebrow) {
-        gsap.from(eyebrow, {
-          y: 16,
-          opacity: 0,
-          duration: 0.7,
-          ease: "expo.out",
-          scrollTrigger: { trigger: eyebrow, start: "top 85%", once: true },
-        });
       }
 
       // ── Manifesto — words ink in one by one as the user scrolls ────
@@ -191,14 +178,6 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
           style={{ backgroundColor: "var(--color-gold)", opacity: 0.5 }}
         />
 
-        <span
-          data-about-eyebrow
-          className="block font-sans uppercase text-gold-ink mb-10"
-          style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
-        >
-          {content.eyebrow}
-        </span>
-
         {/* Manifesto — ink words light up over the warm cream */}
         <h2
           data-about-manifesto
@@ -221,7 +200,7 @@ export function AboutSection({ lang, content }: AboutSectionProps) {
                 />
                 <div data-domain-label className="flex items-baseline gap-5">
                   <span
-                    className="font-display text-gold-ink tabular-nums"
+                    className="font-mono text-gold-ink tabular-nums"
                     style={{ fontSize: "var(--text-small)" }}
                   >
                     {String(i + 1).padStart(2, "0")}

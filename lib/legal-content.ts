@@ -35,7 +35,6 @@ export interface LegalPage {
   navLabel: string;
   metaTitle: string;
   metaDescription: string;
-  eyebrow: string;
   heading: string;
   updatedLabel: string;
   sections: LegalSection[];
@@ -112,7 +111,6 @@ const MENTIONS: Record<Locale, LegalPage> = {
     navLabel: "Mentions légales",
     metaTitle: "Mentions légales | BTH Expert",
     metaDescription: `Mentions légales du site bthexpert.com édité par ${legalName}, bureau d'études en environnement et sécurité industrielle agréé, établi à Oran, Algérie.`,
-    eyebrow: "Informations légales",
     heading: "Mentions légales",
     updatedLabel: "Dernière mise à jour",
     sections: [
@@ -179,7 +177,6 @@ const MENTIONS: Record<Locale, LegalPage> = {
     navLabel: "الإشعار القانوني",
     metaTitle: "الإشعار القانوني | BTH Expert",
     metaDescription: `الإشعار القانوني لموقع bthexpert.com الذي تنشره ${legalName}، مكتب دراسات معتمد في البيئة والسلامة الصناعية، مقره وهران، الجزائر.`,
-    eyebrow: "معلومات قانونية",
     heading: "الإشعار القانوني",
     updatedLabel: "آخر تحديث",
     sections: [
@@ -246,7 +243,6 @@ const MENTIONS: Record<Locale, LegalPage> = {
     navLabel: "Legal notice",
     metaTitle: "Legal notice | BTH Expert",
     metaDescription: `Legal notice for bthexpert.com, published by ${legalName}, an accredited environmental and industrial-safety consultancy established in Oran, Algeria.`,
-    eyebrow: "Legal information",
     heading: "Legal notice",
     updatedLabel: "Last updated",
     sections: [
@@ -319,7 +315,6 @@ const PRIVACY: Record<Locale, LegalPage> = {
     navLabel: "Politique de confidentialité",
     metaTitle: "Politique de confidentialité | BTH Expert",
     metaDescription: `Comment ${legalName} collecte, utilise et protège vos données personnelles, et vos droits au titre de la loi n° 18-07 du 10 juin 2018.`,
-    eyebrow: "Données personnelles",
     heading: "Politique de confidentialité",
     updatedLabel: "Dernière mise à jour",
     sections: [
@@ -429,7 +424,6 @@ const PRIVACY: Record<Locale, LegalPage> = {
     navLabel: "سياسة الخصوصية",
     metaTitle: "سياسة الخصوصية | BTH Expert",
     metaDescription: `كيف تجمع ${legalName} بياناتكم الشخصية وتستعملها وتحميها، وما هي حقوقكم بموجب القانون رقم 18-07 المؤرخ في 10 يونيو 2018.`,
-    eyebrow: "البيانات الشخصية",
     heading: "سياسة الخصوصية",
     updatedLabel: "آخر تحديث",
     sections: [
@@ -535,7 +529,6 @@ const PRIVACY: Record<Locale, LegalPage> = {
     navLabel: "Privacy policy",
     metaTitle: "Privacy policy | BTH Expert",
     metaDescription: `How ${legalName} collects, uses and protects your personal data, and your rights under Algerian Law No. 18-07 of 10 June 2018.`,
-    eyebrow: "Personal data",
     heading: "Privacy policy",
     updatedLabel: "Last updated",
     sections: [

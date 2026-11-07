@@ -8,7 +8,7 @@ Site vitrine premium pour **BTH Expert**, bureau d'études environnemental agré
 - Framer Motion pour les animations
 - Keystatic CMS (git-based, content/ en markdown)
 - Déploiement Netlify
-- Polices : Fraunces (titres) + Geist (corps) ; IBM Plex Sans Arabic en AR (pas d'italique en arabe)
+- Polices : IBM Plex Sans (titres + corps), IBM Plex Mono (références réglementaires, chiffres) ; IBM Plex Sans Arabic en AR (pas d'italique, emphase par la graisse)
 - Couleurs : `#1a2e1e` (vert), `#C9A96E` (or), `#F5F0E8` (crème)
 
 ## Règles de travail non négociables

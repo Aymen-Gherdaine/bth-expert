@@ -30,7 +30,7 @@ export async function generateMetadata({
 }
 
 const captionCls =
-  "block text-[length:var(--text-caption)] uppercase tracking-widest text-gold mb-1.5";
+  "block text-[length:var(--text-caption)] text-muted mb-1.5";
 
 const valueLinkCls =
   "inline-flex items-center min-h-11 py-1 -my-1 text-[length:var(--text-body)] text-ink leading-snug hover:text-brand transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]";
@@ -104,18 +104,12 @@ export default async function ContactPage({
                 ))}
               </div>
 
-              <span
-                className="block font-sans uppercase text-gold mb-6"
-                style={{ fontSize: "var(--text-caption)", letterSpacing: "0.22em" }}
-              >
-                — {c.hero.eyebrow}
-              </span>
               <RevealText
                 as="h1"
                 className="font-display font-medium tracking-[-0.02em] leading-[1.02] text-[clamp(2.5rem,2.5vw+1.5rem,3.5rem)] text-ink mb-6"
               >
                 {c.hero.headingStart}{" "}
-                <em className="italic font-light text-gold">
+                <em className="not-italic text-gold">
                   {c.hero.headingEmphasis}
                 </em>
               </RevealText>

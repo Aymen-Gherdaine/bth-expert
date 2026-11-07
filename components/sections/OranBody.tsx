@@ -26,7 +26,6 @@ export function OranBody({ services, zones, nap }: OranBodyProps) {
         <div className="border-t border-line py-16 lg:py-24 lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className="lg:col-span-5 mb-8 lg:mb-0">
             <FadeIn>
-              <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
               <h2
                 className="font-display font-light text-ink tracking-[-0.02em] leading-[1.15]"
                 style={{ fontSize: "var(--text-h2)" }}
@@ -69,7 +68,7 @@ export function OranBody({ services, zones, nap }: OranBodyProps) {
                   <div className="group flex items-baseline gap-4 border-b border-line py-4">
                     <span
                       aria-hidden
-                      className="font-display text-gold leading-none tabular-nums"
+                      className="font-mono text-gold leading-none tabular-nums"
                       style={{ fontSize: "var(--text-small)" }}
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -89,7 +88,6 @@ export function OranBody({ services, zones, nap }: OranBodyProps) {
       <div className="border-t border-line bg-cream-deep">
         <div className={`${SECTION_PX} py-16 lg:py-24`}>
           <FadeIn>
-            <span aria-hidden className="block w-12 h-px bg-gold mb-7" />
             <h2
               className="font-display font-medium tracking-[-0.01em] text-ink mb-10"
               style={{ fontSize: "var(--text-h3)" }}
