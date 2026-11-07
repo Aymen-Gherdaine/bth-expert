@@ -80,13 +80,13 @@ export function ReglementationSection({ lang, ressources }: ReglementationSectio
                     </p>
                     <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-2">
                       <Link href={`/${lang}/ressources/${entry.slug}`} className={`${linkCls} text-brand`}>
-                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
                         {ressources.readFiche}
                         <span aria-hidden className="inline-block ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
                       </Link>
                       {entry.services[0] && (
                         <Link href={`/${lang}/services/${entry.services[0].slug}`} className={`${linkCls} text-ink-soft`}>
-                          <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                          <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
                           {entry.services[0].label}
                           <span aria-hidden className="inline-block ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">→</span>
                         </Link>

@@ -97,7 +97,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                           {note}
                         </p>
                         <span className={`${arrowCls} mt-4`}>
-                          <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                          <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
                           {labels.readFiche}
                           <span aria-hidden className={arrowGlyph}>→</span>
                         </span>
@@ -147,7 +147,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                         href={`/${lang}/services/${step.service.slug}`}
                         className="press-row group mt-auto pt-6 inline-flex items-center gap-2 min-h-11 font-sans font-medium text-brand text-[length:var(--text-small)] tracking-tight hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                       >
-                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
                         {step.service.label}
                         <span aria-hidden className={arrowGlyph}>→</span>
                       </Link>
@@ -193,7 +193,7 @@ export function SecteurDossier({ lang, labels, secteur, ressources, projets }: S
                         {p.excerpt}
                       </p>
                       <span className={`${arrowCls} mt-4`}>
-                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                        <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
                         {labels.readProjet}
                         <span aria-hidden className={arrowGlyph}>→</span>
                       </span>

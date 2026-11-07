@@ -70,7 +70,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
                       {f.summary}
                     </p>
                     <span className={`${arrowCls} mt-5`}>
-                      <span aria-hidden className="w-5 h-px bg-gold shrink-0 group-hover:w-7 transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
+                      <span aria-hidden className="w-5 h-px bg-gold shrink-0 origin-left rtl:origin-right transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-[1.4]" />
                       {labels.readFiche}
                       <span aria-hidden className="inline-block rtl:-scale-x-100 transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1">→</span>
                     </span>
@@ -112,7 +112,7 @@ export function RessourcesIndex({ lang, labels, textes, guide, posts, readMore, 
                 </p>
                 <Link
                   href={`/${lang}/ressources/${guide.slug}`}
-                  className="press mt-10 inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep hover:tracking-[0.01em] transition-[background-color,letter-spacing] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
+                  className="press mt-10 inline-flex items-center px-7 py-3.5 rounded-sm bg-gold text-brand-deep font-medium text-[0.9375rem] tracking-tight hover:bg-gold-deep transition-[background-color] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
                 >
                   {labels.readGuide}
                 </Link>

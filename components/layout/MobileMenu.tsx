@@ -80,9 +80,9 @@ export function MobileMenu({ items, phone, email, ctaLabel, ctaHref, lang }: Mob
             topographic artwork; they align into a clean hamburger on
             hover/focus. */}
         <span className="flex h-[18px] w-6 flex-col items-start justify-between">
-          <span className="h-px w-6 bg-current transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)]" />
-          <span className="h-px w-3.5 bg-gold transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-6 group-focus-visible:w-6" />
-          <span className="h-px w-5 bg-current transition-[width] duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:w-6 group-focus-visible:w-6" />
+          <span className="h-px w-6 bg-current" />
+          <span className="h-px w-6 bg-gold origin-left rtl:origin-right scale-x-[0.58] transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-100 group-focus-visible:scale-x-100" />
+          <span className="h-px w-6 bg-current origin-left rtl:origin-right scale-x-[0.83] transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)] group-hover:scale-x-100 group-focus-visible:scale-x-100" />
         </span>
       </button>
 
