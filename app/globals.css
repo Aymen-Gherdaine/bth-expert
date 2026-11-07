@@ -237,14 +237,16 @@
    ───────────────────────────────────────────────────────────── */
 #site-header[data-overlay="true"] header {
   color: var(--color-cream);
-  transition: background-color 0.5s var(--ease-out-expo),
-              border-color 0.5s var(--ease-out-expo),
-              color 0.5s var(--ease-out-expo);
+  transition: color 0.5s var(--ease-out-expo);
+}
+#site-header[data-overlay="true"] header::before {
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-expo);
+}
+#site-header[data-overlay="true"][data-solid="true"] header::before {
+  opacity: 1;
 }
 #site-header[data-overlay="true"][data-solid="true"] header {
-  background-color: var(--header-material-bg);
-  -webkit-backdrop-filter: var(--header-material-filter);
-  backdrop-filter: var(--header-material-filter);
   color: var(--color-ink);
 }
 
@@ -259,7 +261,22 @@
   --header-material-bg: rgb(250 247 242 / 0.72);
   --header-material-filter: blur(20px) saturate(160%);
 }
-.header-material {
+/* The material lives on a ::before layer, never on the bar itself: a
+   backdrop-filter on an element turns it into the containing block of its
+   fixed descendants, and the mobile drawer (position: fixed, inside the
+   bar) would be sized to the 4 rem bar instead of the viewport. */
+.header-material,
+#site-header[data-overlay="true"] header {
+  position: relative;
+  isolation: isolate;
+}
+.header-material::before,
+#site-header[data-overlay="true"] header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-color: var(--header-material-bg);
   -webkit-backdrop-filter: var(--header-material-filter);
   backdrop-filter: var(--header-material-filter);
@@ -292,6 +309,9 @@
   .header-material,
   #site-header[data-overlay="true"][data-solid="true"] header {
     border-bottom: 1px solid var(--color-ink);
+  }
+  #site-header[data-overlay="true"] header {
+    transition: none;
   }
   .header-edge::after,
   #site-header[data-overlay="true"][data-solid="true"] header::after {
