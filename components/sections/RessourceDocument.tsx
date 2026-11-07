@@ -5,9 +5,11 @@ import { Faq } from "@/components/sections/Faq";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
 import type { Fiche, RessourcesDict } from "@/lib/ressources";
 import type { Locale } from "@/lib/i18n-config";
+import type { BreadcrumbItem } from "@/lib/schema";
 
 interface RessourceDocumentProps {
   lang: Locale;
+  breadcrumb?: BreadcrumbItem[];
   fiche: Fiche;
   labels: RessourcesDict;
   related: Fiche[];
@@ -27,7 +29,7 @@ const arrowLinkCls =
  * the text's identity (reference, date, authority rail); the body is a
  * numbered ledger like the legal pages; FAQ feeds the FAQPage schema.
  */
-export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: RessourceDocumentProps) {
+export function RessourceDocument({ lang, breadcrumb, fiche, labels, related, updatedAt }: RessourceDocumentProps) {
   const updated = new Date(updatedAt).toLocaleDateString(DATE_LOCALE[lang], {
     day: "numeric",
     month: "long",
@@ -35,7 +37,7 @@ export function RessourceDocument({ lang, fiche, labels, related, updatedAt }: R
   });
   return (
     <>
-      <ServiceHero heading={fiche.title} subheading={fiche.summary} meta={fiche.meta} />
+      <ServiceHero lang={lang} breadcrumb={breadcrumb} heading={fiche.title} subheading={fiche.summary} meta={fiche.meta} />
 
       {/* ── Official title strip ───────────────────────────────────── */}
       <section className="bg-cream-warm">

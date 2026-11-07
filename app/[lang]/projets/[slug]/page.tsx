@@ -53,10 +53,11 @@ export default async function ProjetPage({
     description: item.excerpt,
     datePublished: `${item.annee}-01-01`,
   });
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.projets, url: `https://bthexpert.com/${lang}/projets` },
     { name: item.title, url: `https://bthexpert.com/${lang}/projets/${slug}` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   const beats = [
     { label: d.contexteLabel, body: item.contexte },
@@ -75,18 +76,7 @@ export default async function ProjetPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      {/* ── Hero — secteur breadcrumb above the shared editorial ServiceHero ─ */}
-      <div className="bg-cream-soft">
-        <div className={`${SECTION_PX} pt-16 lg:pt-24`}>
-          <Link
-            href={`/${lang}/secteurs/${item.secteurSlug}`}
-            className="press-row inline-flex items-center min-h-11 py-2 -my-2 font-sans font-medium text-brand text-[length:var(--text-small)] hover:text-gold-deep transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
-          >
-            {item.secteur}
-          </Link>
-        </div>
-      </div>
-      <ServiceHero heading={item.title} subheading={item.excerpt} />
+      <ServiceHero lang={lang} breadcrumb={crumbs} heading={item.title} subheading={item.excerpt} />
 
       {/* ── Meta strip — secteur / mission chips / année, enlivened ───── */}
       <section className="bg-cream-soft">

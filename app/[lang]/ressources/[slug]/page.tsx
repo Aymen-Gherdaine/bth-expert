@@ -50,10 +50,11 @@ export default async function RessourcePage({
     .filter((f): f is NonNullable<typeof f> => f !== undefined);
 
   const url = `https://bthexpert.com/${lang}/ressources/${slug}`;
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: r.nav, url: `https://bthexpert.com/${lang}/ressources` },
     { name: fiche.title, url },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
   const jsonLdArticle = schemaArticle({
     title: fiche.metaTitle,
     url,
@@ -78,7 +79,7 @@ export default async function RessourcePage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
         />
       )}
-      <RessourceDocument
+      <RessourceDocument breadcrumb={crumbs}
         lang={lang}
         fiche={fiche}
         labels={r}

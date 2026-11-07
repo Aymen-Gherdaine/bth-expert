@@ -36,9 +36,10 @@ export default async function OranPage({
   const o = dict.oran;
 
   const jsonLd = schemaLocalBusiness(lang);
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: ORAN_LABEL[lang] ?? ORAN_LABEL.fr, url: `https://bthexpert.com/${lang}/oran` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -51,7 +52,7 @@ export default async function OranPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      <ServiceHero
+      <ServiceHero lang={lang} breadcrumb={crumbs}
         heading={o.hero.heading}
         subheading={o.hero.subheading}
       />

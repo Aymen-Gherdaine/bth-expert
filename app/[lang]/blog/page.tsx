@@ -37,9 +37,10 @@ export default async function BlogPage({
   const allPosts = await listContentByDate(lang, "blog");
   const { items: posts, page, totalPages } = paginate(allPosts, 1);
 
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: b.hero.heading, url: `https://bthexpert.com/${lang}/blog` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -48,7 +49,7 @@ export default async function BlogPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      <ServiceHero heading={b.hero.heading} subheading={b.hero.subheading} />
+      <ServiceHero lang={lang} breadcrumb={crumbs} heading={b.hero.heading} subheading={b.hero.subheading} />
 
       <section className="bg-cream-soft">
         <div className={`${SECTION_PX} pb-24 lg:pb-32`}>

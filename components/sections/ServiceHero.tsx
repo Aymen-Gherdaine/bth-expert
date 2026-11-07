@@ -1,6 +1,9 @@
 import { SECTION_PX } from "@/components/layout/Container";
 import { RevealText } from "@/components/animations/RevealText";
 import { FadeInStagger, FadeInItem } from "@/components/motion/FadeIn";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { BreadcrumbItem } from "@/lib/schema";
+import type { Locale } from "@/lib/i18n-config";
 
 interface MetaItem {
   label: string;
@@ -8,6 +11,9 @@ interface MetaItem {
 }
 
 interface ServiceHeroProps {
+  lang?: Locale;
+  /** Trail without the home entry; rendered above the title when given. */
+  breadcrumb?: BreadcrumbItem[];
   heading: string;
   subheading: string;
   meta?: MetaItem[];
@@ -19,12 +25,13 @@ interface ServiceHeroProps {
  * service (cadre, livrable, dépôt…). The dark cinematic hero stays exclusive
  * to the landing; service pages open warm and structured, image lives below.
  */
-export function ServiceHero({ heading, subheading, meta }: ServiceHeroProps) {
+export function ServiceHero({ lang, breadcrumb, heading, subheading, meta }: ServiceHeroProps) {
   return (
     <section className="bg-cream-soft">
       <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-16 lg:pb-24`}>
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
           <div className="lg:col-span-8">
+            {lang && breadcrumb && <Breadcrumb lang={lang} items={breadcrumb} className="mb-8" />}
             <RevealText
               as="h1"
               className="font-display font-light text-ink tracking-[-0.03em] leading-[1.05]"

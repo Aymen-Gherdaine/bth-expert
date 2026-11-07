@@ -37,9 +37,10 @@ export default async function AboutPage({
   const dict = await getDictionary(lang);
   const a = dict.apropos;
   const jsonLd = schemaLocalBusiness(lang);
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.apropos, url: `https://bthexpert.com/${lang}/a-propos` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -53,7 +54,7 @@ export default async function AboutPage({
       />
 
       {/* ── Hero — full-height dark cinematic hero ────────────── */}
-      <TerrainHero
+      <TerrainHero lang={lang} breadcrumb={crumbs}
         src="/generated/section-apropos.svg"
         heading={a.hero.heading}
         subheading={a.hero.subheading}

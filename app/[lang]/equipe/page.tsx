@@ -45,9 +45,10 @@ export default async function EquipePage({
       worksFor: { "@type": "Organization", name: "BTH Expert", url: "https://bthexpert.com" },
     })),
   };
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.equipe, url: equipeUrl },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -60,7 +61,7 @@ export default async function EquipePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      <ServiceHero
+      <ServiceHero lang={lang} breadcrumb={crumbs}
         heading={eq.hero.heading}
         subheading={eq.hero.subheading}
       />

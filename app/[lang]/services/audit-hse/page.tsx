@@ -39,10 +39,11 @@ export default async function HSEPage({
     lang,
   });
   const jsonLdFaq = schemaFAQ(dict.hse.faq.map((i) => ({ question: i.q, answer: i.a })));
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.services, url: `https://bthexpert.com/${lang}/services` },
     { name: dict.hse.hero.heading, url: `https://bthexpert.com/${lang}${PATH}` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -58,7 +59,7 @@ export default async function HSEPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <ServicePageBody lang={lang} service={dict.hse} heroMeta={dict.hse.heroMeta} faq={dict.hse.faq} />
+      <ServicePageBody breadcrumb={crumbs} lang={lang} service={dict.hse} heroMeta={dict.hse.heroMeta} faq={dict.hse.faq} />
     </>
   );
 }

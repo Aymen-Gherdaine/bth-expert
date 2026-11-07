@@ -1,6 +1,7 @@
 import { SECTION_PX } from "@/components/layout/Container";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { notFound } from "next/navigation";
 import { getDictionary, validateLocale, locales } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
@@ -102,10 +103,11 @@ export default async function BlogPostPage({
     datePublished: post.frontmatter.date ?? "",
     authorName: post.frontmatter.author,
   });
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: b.hero.heading, url: `https://bthexpert.com/${lang}/blog` },
     { name: post.frontmatter.title, url },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   const faq = post.frontmatter.faq as BlogFaqItem[] | undefined;
   const jsonLdFaq =
@@ -140,21 +142,7 @@ export default async function BlogPostPage({
         <div className={`${SECTION_PX} pt-20 lg:pt-28 pb-14 lg:pb-20`}>
           <div className="max-w-[var(--container-prose)] mx-auto">
 
-            {/* Back link + category */}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-10">
-              <Link
-                href={`/${lang}/blog`}
-                className="press-row group inline-flex items-center gap-2 min-h-11 py-2 -my-2 font-sans text-[length:var(--text-small)] text-muted hover:text-brand transition-colors duration-[var(--duration-base)]"
-              >
-                <span
-                  aria-hidden
-                  className="inline-block transition-transform duration-[var(--duration-base)] ltr:group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5 rtl:-scale-x-100"
-                >
-                  ←
-                </span>
-                {b.backLabel}
-              </Link>
-            </div>
+            <Breadcrumb lang={lang} items={crumbs} className="mb-10" />
 
             {/* Title */}
             <h1

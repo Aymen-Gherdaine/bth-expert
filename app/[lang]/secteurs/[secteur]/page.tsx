@@ -54,10 +54,11 @@ export default async function SecteurPage({
     serviceType: item.title,
     lang,
   });
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },
     { name: item.title, url: `https://bthexpert.com/${lang}/secteurs/${secteur}` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   const chipCls =
     "inline-flex items-center rounded-full border border-line px-4 py-2 text-[length:var(--text-small)] text-ink-soft transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)] hover:border-gold hover:text-ink";
@@ -74,7 +75,7 @@ export default async function SecteurPage({
       />
 
       {/* ── Hero — shared editorial light hero ───────────────── */}
-      <ServiceHero
+      <ServiceHero lang={lang} breadcrumb={crumbs}
         heading={item.title}
         subheading={item.intro}
       />

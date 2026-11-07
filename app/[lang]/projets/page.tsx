@@ -35,9 +35,10 @@ export default async function ProjetsPage({
   const p = dict.projets;
 
   const jsonLd = schemaLocalBusiness(lang);
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.projets, url: `https://bthexpert.com/${lang}/projets` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -51,7 +52,7 @@ export default async function ProjetsPage({
       />
 
       {/* ── Hero — shared editorial ServiceHero (was a flat pt-32 block) ─ */}
-      <TerrainHero
+      <TerrainHero lang={lang} breadcrumb={crumbs}
         src="/generated/section-projets.svg"
         heading={p.hero.heading}
         subheading={p.hero.subheading}

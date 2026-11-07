@@ -35,9 +35,10 @@ export default async function SecteursPage({
   const s = dict.secteurs;
 
   const jsonLd = schemaLocalBusiness(lang);
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.secteurs, url: `https://bthexpert.com/${lang}/secteurs` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -51,7 +52,7 @@ export default async function SecteursPage({
       />
 
       {/* ── Hero — shared editorial light hero ───────────────── */}
-      <TerrainHero
+      <TerrainHero lang={lang} breadcrumb={crumbs}
         src="/generated/section-secteurs.svg"
         heading={s.hero.heading}
         subheading={s.hero.subheading}

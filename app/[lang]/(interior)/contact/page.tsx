@@ -9,6 +9,7 @@ import { Container } from "@/components/layout/Container";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { ContactProcess } from "@/components/sections/ContactProcess";
 import { RevealText } from "@/components/animations/RevealText";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 import { socialLinks } from "@/lib/social-links";
 
@@ -54,9 +55,10 @@ export default async function ContactPage({
       .join("")
   );
   const jsonLd = schemaLocalBusiness(lang);
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: dict.nav.contact, url: `https://bthexpert.com/${lang}/contact` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     c.info.address
   )}`;
@@ -104,6 +106,7 @@ export default async function ContactPage({
                 ))}
               </div>
 
+              <Breadcrumb lang={lang} items={crumbs} className="mb-8" />
               <RevealText
                 as="h1"
                 className="font-display font-medium tracking-[-0.02em] leading-[1.02] text-[clamp(2.5rem,2.5vw+1.5rem,3.5rem)] text-ink mb-6"

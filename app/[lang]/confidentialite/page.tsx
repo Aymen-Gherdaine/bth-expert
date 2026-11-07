@@ -29,9 +29,10 @@ export default async function ConfidentialitePage({
   const { lang: rawLang } = await params;
   const lang = validateLocale(rawLang);
   const page = getLegalPage("privacy", lang);
-  const jsonLdBreadcrumb = schemaBreadcrumb(lang, [
+  const crumbs = [
     { name: page.heading, url: `https://bthexpert.com/${lang}/${page.slug}` },
-  ]);
+  ];
+  const jsonLdBreadcrumb = schemaBreadcrumb(lang, crumbs);
 
   return (
     <>
@@ -39,7 +40,7 @@ export default async function ConfidentialitePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <LegalDocument page={page} updatedAt={LEGAL_UPDATED_AT} lang={lang} />
+      <LegalDocument breadcrumb={crumbs} page={page} updatedAt={LEGAL_UPDATED_AT} lang={lang} />
     </>
   );
 }

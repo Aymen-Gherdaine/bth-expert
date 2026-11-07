@@ -5,6 +5,7 @@ import { MethodPinScroll } from "./MethodPinScroll";
 import { Faq } from "./Faq";
 import { FadeIn } from "@/components/motion/FadeIn";
 import type { Locale } from "@/lib/i18n";
+import type { BreadcrumbItem } from "@/lib/schema";
 
 interface MetaItem {
   label: string;
@@ -32,6 +33,7 @@ interface ServiceContent {
 
 interface ServicePageBodyProps {
   lang: Locale;
+  breadcrumb?: BreadcrumbItem[];
   service: ServiceContent;
   heroMeta?: MetaItem[];
   faq?: FaqItem[];
@@ -58,6 +60,7 @@ const FAQ_HEADING: Record<Locale, string> = {
  */
 export function ServicePageBody({
   lang,
+  breadcrumb,
   service,
   heroMeta,
   faq,
@@ -67,6 +70,8 @@ export function ServicePageBody({
   return (
     <>
       <ServiceHero
+        lang={lang}
+        breadcrumb={breadcrumb}
         heading={service.hero.heading}
         subheading={service.hero.subheading}
         meta={heroMeta}
