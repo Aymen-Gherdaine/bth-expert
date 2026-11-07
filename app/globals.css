@@ -258,8 +258,10 @@
    blur yield to the two accessibility preferences below.
    ───────────────────────────────────────────────────────────── */
 :root {
-  --header-material-bg: rgb(250 247 242 / 0.72);
-  --header-material-filter: blur(20px) saturate(160%);
+  /* 0.84, not lower: at 0.72 the dark hero right under the bar bled into
+     its lower half through the blur and read as a dirty gradient. */
+  --header-material-bg: rgb(250 247 242 / 0.84);
+  --header-material-filter: blur(16px) saturate(160%);
 }
 /* The material lives on a ::before layer, never on the bar itself: a
    backdrop-filter on an element turns it into the containing block of its
